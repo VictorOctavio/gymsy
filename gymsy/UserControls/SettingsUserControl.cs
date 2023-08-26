@@ -16,5 +16,10 @@ namespace gymsy.UserControls
         {
             InitializeComponent();
         }
+
+        private void a_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

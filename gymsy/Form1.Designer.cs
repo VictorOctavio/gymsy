@@ -384,13 +384,14 @@
             // 
             // mainWrapper
             // 
-            mainWrapper.BackColor = Color.FromArgb(15, 0, 30);
+            mainWrapper.BackColor = Color.FromArgb(15, 0, 40);
             mainWrapper.BackgroundImageLayout = ImageLayout.None;
             mainWrapper.Dock = DockStyle.Fill;
-            mainWrapper.ForeColor = Color.White;
+            mainWrapper.ForeColor = Color.Black;
             mainWrapper.Location = new Point(0, 0);
-            mainWrapper.Margin = new Padding(0);
+            mainWrapper.Margin = new Padding(100, 0, 0, 0);
             mainWrapper.Name = "mainWrapper";
+            mainWrapper.Padding = new Padding(300, 0, 0, 0);
             mainWrapper.Size = new Size(1184, 781);
             mainWrapper.TabIndex = 0;
             // 
@@ -402,6 +403,7 @@
             ClientSize = new Size(1184, 781);
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
+            ForeColor = SystemColors.ActiveCaptionText;
             Name = "Form1";
             Text = "Gymsy";
             tableLayoutPanel1.ResumeLayout(false);

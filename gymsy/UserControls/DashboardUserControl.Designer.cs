@@ -36,11 +36,12 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(473, 182);
+            label1.Location = new Point(443, 298);
             label1.Name = "label1";
             label1.Size = new Size(289, 37);
             label1.TabIndex = 1;
             label1.Text = "DashboardUserControl";
+            label1.Click += label1_Click;
             // 
             // DashboardUserControl
             // 
@@ -49,7 +50,7 @@
             Controls.Add(label1);
             Margin = new Padding(0);
             Name = "DashboardUserControl";
-            Size = new Size(1200, 400);
+            Size = new Size(1200, 610);
             ResumeLayout(false);
             PerformLayout();
         }

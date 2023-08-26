@@ -99,6 +99,7 @@ namespace gymsy
                 sidebar.Width -= 10;
                 if (sidebar.Width == sidebar.MinimumSize.Width)
                 {
+                    mainWrapper.Padding = new Padding(100, 0, 0, 0);
                     sidebarExpand = false;
                     sidebarTimer.Stop();
                 }
@@ -108,6 +109,7 @@ namespace gymsy
                 sidebar.Width += 10;
                 if (sidebar.Width == sidebar.MaximumSize.Width)
                 {
+                    mainWrapper.Padding = new Padding(300, 0, 0, 0);
                     sidebarExpand = true;
                     sidebarTimer.Stop();
                 }
