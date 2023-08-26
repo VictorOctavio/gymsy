@@ -145,9 +145,6 @@ namespace gymsy
             this.Close();
         }
 
-        private void mainWrapper_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }
