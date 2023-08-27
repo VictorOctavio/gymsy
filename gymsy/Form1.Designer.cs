@@ -50,7 +50,6 @@
             sidebarTimer = new System.Windows.Forms.Timer(components);
             btnAddTimer = new System.Windows.Forms.Timer(components);
             mainWrapper = new Panel();
-            panelTest = new Panel();
             navbar = new Panel();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -398,7 +397,6 @@
             // 
             mainWrapper.BackColor = Color.White;
             mainWrapper.BackgroundImageLayout = ImageLayout.None;
-            mainWrapper.Controls.Add(panelTest);
             mainWrapper.Controls.Add(navbar);
             mainWrapper.Dock = DockStyle.Fill;
             mainWrapper.ForeColor = Color.Black;
@@ -408,15 +406,6 @@
             mainWrapper.Padding = new Padding(260, 0, 0, 0);
             mainWrapper.Size = new Size(1177, 533);
             mainWrapper.TabIndex = 0;
-            // 
-            // panelTest
-            // 
-            panelTest.BackColor = Color.IndianRed;
-            panelTest.Location = new Point(366, 102);
-            panelTest.Name = "panelTest";
-            panelTest.Size = new Size(556, 276);
-            panelTest.TabIndex = 1;
-            panelTest.Paint += panelTest_Paint;
             // 
             // navbar
             // 
@@ -567,6 +556,5 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Panel panelTest;
     }
 }

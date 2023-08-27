@@ -156,10 +156,6 @@ namespace gymsy
 
         }
 
-        private void panelTest_Paint(object sender, PaintEventArgs e)
-        {
-            panelTest.Location = new Point(100, 100);
-            panelTest.BackColor = Color.AliceBlue;
-        }
+        
     }
 }
