@@ -150,5 +150,16 @@ namespace gymsy
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelTest_Paint(object sender, PaintEventArgs e)
+        {
+            panelTest.Location = new Point(100, 100);
+            panelTest.BackColor = Color.AliceBlue;
+        }
     }
 }

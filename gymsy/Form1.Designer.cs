@@ -50,7 +50,15 @@
             sidebarTimer = new System.Windows.Forms.Timer(components);
             btnAddTimer = new System.Windows.Forms.Timer(components);
             mainWrapper = new Panel();
+            panelTest = new Panel();
             navbar = new Panel();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            button1 = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             menuButton = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
@@ -60,6 +68,9 @@
             panelNavUser.SuspendLayout();
             panelBtnAdd.SuspendLayout();
             mainWrapper.SuspendLayout();
+            navbar.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -180,7 +191,7 @@
             sidebar.MaximumSize = new Size(260, 0);
             sidebar.MinimumSize = new Size(70, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(260, 654);
+            sidebar.Size = new Size(260, 533);
             sidebar.TabIndex = 0;
             // 
             // panel3
@@ -213,7 +224,7 @@
             panelNavUser.Controls.Add(btnNavSettings);
             panelNavUser.Controls.Add(button4);
             panelNavUser.Dock = DockStyle.Bottom;
-            panelNavUser.Location = new Point(0, 531);
+            panelNavUser.Location = new Point(0, 410);
             panelNavUser.Margin = new Padding(0);
             panelNavUser.Name = "panelNavUser";
             panelNavUser.Size = new Size(260, 123);
@@ -387,6 +398,7 @@
             // 
             mainWrapper.BackColor = Color.White;
             mainWrapper.BackgroundImageLayout = ImageLayout.None;
+            mainWrapper.Controls.Add(panelTest);
             mainWrapper.Controls.Add(navbar);
             mainWrapper.Dock = DockStyle.Fill;
             mainWrapper.ForeColor = Color.Black;
@@ -394,25 +406,117 @@
             mainWrapper.Margin = new Padding(0);
             mainWrapper.Name = "mainWrapper";
             mainWrapper.Padding = new Padding(260, 0, 0, 0);
-            mainWrapper.Size = new Size(1253, 654);
+            mainWrapper.Size = new Size(1177, 533);
             mainWrapper.TabIndex = 0;
+            // 
+            // panelTest
+            // 
+            panelTest.BackColor = Color.IndianRed;
+            panelTest.Location = new Point(366, 102);
+            panelTest.Name = "panelTest";
+            panelTest.Size = new Size(556, 276);
+            panelTest.TabIndex = 1;
+            panelTest.Paint += panelTest_Paint;
             // 
             // navbar
             // 
             navbar.BackColor = Color.FromArgb(9, 0, 20);
+            navbar.Controls.Add(panel1);
             navbar.Dock = DockStyle.Top;
             navbar.Location = new Point(260, 0);
             navbar.Margin = new Padding(0);
             navbar.Name = "navbar";
-            navbar.Size = new Size(993, 70);
+            navbar.Size = new Size(917, 70);
             navbar.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel1.BackColor = Color.DarkCyan;
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(573, 0);
+            panel1.Margin = new Padding(0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(344, 70);
+            panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label2);
+            panel2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(288, 70);
+            panel2.TabIndex = 1;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.Transparent;
+            label5.Location = new Point(143, 27);
+            label5.Name = "label5";
+            label5.Size = new Size(93, 32);
+            label5.TabIndex = 3;
+            label5.Text = "$ 155K";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.Transparent;
+            label4.Location = new Point(148, 8);
+            label4.Name = "label4";
+            label4.Size = new Size(59, 21);
+            label4.TabIndex = 2;
+            label4.Text = "TOTAL/";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.Transparent;
+            label3.Location = new Point(42, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(47, 21);
+            label3.TabIndex = 1;
+            label3.Text = "MES/";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Transparent;
+            label2.Location = new Point(35, 28);
+            label2.Name = "label2";
+            label2.Size = new Size(86, 32);
+            label2.TabIndex = 0;
+            label2.Text = "$ 4.5K";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.DarkOrange;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(285, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(61, 70);
+            button1.TabIndex = 0;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1253, 654);
+            ClientSize = new Size(1177, 533);
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
@@ -427,6 +531,10 @@
             panelNavUser.PerformLayout();
             panelBtnAdd.ResumeLayout(false);
             mainWrapper.ResumeLayout(false);
+            navbar.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -452,5 +560,13 @@
         private Button btnNavSignout;
         private Panel mainWrapper;
         private Panel navbar;
+        private Panel panel1;
+        private Button button1;
+        private Panel panel2;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Panel panelTest;
     }
 }
