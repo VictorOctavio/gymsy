@@ -175,10 +175,10 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Margin = new Padding(0);
-            sidebar.MaximumSize = new Size(300, 0);
+            sidebar.MaximumSize = new Size(260, 0);
             sidebar.MinimumSize = new Size(70, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(300, 781);
+            sidebar.Size = new Size(260, 781);
             sidebar.TabIndex = 0;
             // 
             // panelNavUser
@@ -192,7 +192,7 @@
             panelNavUser.Location = new Point(0, 657);
             panelNavUser.Margin = new Padding(0);
             panelNavUser.Name = "panelNavUser";
-            panelNavUser.Size = new Size(300, 124);
+            panelNavUser.Size = new Size(260, 124);
             panelNavUser.TabIndex = 2;
             // 
             // btnNavSignout
@@ -204,7 +204,7 @@
             btnNavSignout.FlatStyle = FlatStyle.Flat;
             btnNavSignout.ForeColor = SystemColors.ButtonFace;
             btnNavSignout.Image = Properties.Resources.logout_item;
-            btnNavSignout.Location = new Point(268, 41);
+            btnNavSignout.Location = new Point(220, 41);
             btnNavSignout.Margin = new Padding(0);
             btnNavSignout.Name = "btnNavSignout";
             btnNavSignout.Size = new Size(27, 43);
@@ -234,7 +234,7 @@
             btnNavSettings.FlatStyle = FlatStyle.Flat;
             btnNavSettings.ForeColor = SystemColors.ButtonFace;
             btnNavSettings.Image = Properties.Resources.setting_item;
-            btnNavSettings.Location = new Point(236, 41);
+            btnNavSettings.Location = new Point(186, 41);
             btnNavSettings.Margin = new Padding(0);
             btnNavSettings.Name = "btnNavSettings";
             btnNavSettings.Size = new Size(33, 43);
@@ -256,10 +256,10 @@
             button4.Location = new Point(0, 24);
             button4.Margin = new Padding(0);
             button4.Name = "button4";
-            button4.Size = new Size(236, 75);
+            button4.Size = new Size(164, 75);
             button4.TabIndex = 0;
             button4.TabStop = false;
-            button4.Text = "Valentín Barco";
+            button4.Text = "Barco1";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.TextImageRelation = TextImageRelation.ImageBeforeText;
             button4.UseVisualStyleBackColor = false;
