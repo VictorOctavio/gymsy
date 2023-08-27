@@ -20,13 +20,18 @@
             base.Dispose(disposing);
         }
 
+        private Panel GetMainWrapper()
+        {
+            return mainWrapper;
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent(Panel mainWrapper)
         {
             components = new System.ComponentModel.Container();
             TableLayoutPanel tableLayoutPanel1;
@@ -178,7 +183,7 @@
             sidebar.MaximumSize = new Size(300, 0);
             sidebar.MinimumSize = new Size(70, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(300, 781);
+            sidebar.Size = new Size(300, 749);
             sidebar.TabIndex = 0;
             // 
             // panelNavUser
@@ -189,7 +194,7 @@
             panelNavUser.Controls.Add(btnNavSettings);
             panelNavUser.Controls.Add(button4);
             panelNavUser.Dock = DockStyle.Bottom;
-            panelNavUser.Location = new Point(0, 657);
+            panelNavUser.Location = new Point(0, 625);
             panelNavUser.Margin = new Padding(0);
             panelNavUser.Name = "panelNavUser";
             panelNavUser.Size = new Size(300, 124);
@@ -392,15 +397,16 @@
             mainWrapper.Margin = new Padding(100, 0, 0, 0);
             mainWrapper.Name = "mainWrapper";
             mainWrapper.Padding = new Padding(300, 0, 0, 0);
-            mainWrapper.Size = new Size(1184, 781);
+            mainWrapper.Size = new Size(1184, 749);
             mainWrapper.TabIndex = 0;
+            mainWrapper.Paint += mainWrapper_Paint;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1184, 781);
+            ClientSize = new Size(1184, 749);
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;

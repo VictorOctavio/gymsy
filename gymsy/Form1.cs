@@ -15,7 +15,7 @@ namespace gymsy
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(GetMainWrapper());
             InitializeNavigationControl();
             InitializeNavigationButtons();
         }
