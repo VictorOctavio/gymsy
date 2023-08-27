@@ -38,7 +38,6 @@
             pictureBox1 = new PictureBox();
             labelErrorEmail = new Label();
             labelErrorPassWord = new Label();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -150,23 +149,11 @@
             labelErrorPassWord.ImageAlign = ContentAlignment.MiddleLeft;
             labelErrorPassWord.Location = new Point(70, 269);
             labelErrorPassWord.Name = "labelErrorPassWord";
-            labelErrorPassWord.Size = new Size(82, 25);
+            labelErrorPassWord.Size = new Size(72, 25);
             labelErrorPassWord.TabIndex = 9;
             labelErrorPassWord.Text = "Moficar";
             labelErrorPassWord.TextAlign = ContentAlignment.MiddleRight;
             labelErrorPassWord.Visible = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.DarkOrange;
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(606, 24);
-            button1.Name = "button1";
-            button1.Size = new Size(131, 36);
-            button1.TabIndex = 10;
-            button1.Text = "Ingresar";
-            button1.UseVisualStyleBackColor = false;
             // 
             // LoginDesing
             // 
@@ -174,7 +161,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 0, 40);
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
             Controls.Add(labelErrorPassWord);
             Controls.Add(labelErrorEmail);
             Controls.Add(pictureBox1);
@@ -207,6 +193,5 @@
         private TextBox textBoxPasswordUser;
         private Label labelErrorEmail;
         private Label labelErrorPassWord;
-        private Button button1;
     }
 }

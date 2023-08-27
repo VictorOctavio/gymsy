@@ -36,6 +36,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(443, 298);
             label1.Name = "label1";
             label1.Size = new Size(289, 37);
@@ -47,6 +48,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 0, 40);
             Controls.Add(label1);
             Margin = new Padding(0);
             Name = "DashboardUserControl";

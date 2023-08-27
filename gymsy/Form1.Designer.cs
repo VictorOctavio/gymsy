@@ -20,18 +20,13 @@
             base.Dispose(disposing);
         }
 
-        private Panel GetMainWrapper()
-        {
-            return mainWrapper;
-        }
-
         #region Windows Form Designer generated code
 
         /// <summary>
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent(Panel mainWrapper)
+        private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
             TableLayoutPanel tableLayoutPanel1;
@@ -180,10 +175,10 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Margin = new Padding(0);
-            sidebar.MaximumSize = new Size(300, 0);
+            sidebar.MaximumSize = new Size(260, 0);
             sidebar.MinimumSize = new Size(70, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(300, 749);
+            sidebar.Size = new Size(260, 781);
             sidebar.TabIndex = 0;
             // 
             // panelNavUser
@@ -194,10 +189,10 @@
             panelNavUser.Controls.Add(btnNavSettings);
             panelNavUser.Controls.Add(button4);
             panelNavUser.Dock = DockStyle.Bottom;
-            panelNavUser.Location = new Point(0, 625);
+            panelNavUser.Location = new Point(0, 657);
             panelNavUser.Margin = new Padding(0);
             panelNavUser.Name = "panelNavUser";
-            panelNavUser.Size = new Size(300, 124);
+            panelNavUser.Size = new Size(260, 124);
             panelNavUser.TabIndex = 2;
             // 
             // btnNavSignout
@@ -209,7 +204,7 @@
             btnNavSignout.FlatStyle = FlatStyle.Flat;
             btnNavSignout.ForeColor = SystemColors.ButtonFace;
             btnNavSignout.Image = Properties.Resources.logout_item;
-            btnNavSignout.Location = new Point(268, 41);
+            btnNavSignout.Location = new Point(220, 41);
             btnNavSignout.Margin = new Padding(0);
             btnNavSignout.Name = "btnNavSignout";
             btnNavSignout.Size = new Size(27, 43);
@@ -239,7 +234,7 @@
             btnNavSettings.FlatStyle = FlatStyle.Flat;
             btnNavSettings.ForeColor = SystemColors.ButtonFace;
             btnNavSettings.Image = Properties.Resources.setting_item;
-            btnNavSettings.Location = new Point(236, 41);
+            btnNavSettings.Location = new Point(186, 41);
             btnNavSettings.Margin = new Padding(0);
             btnNavSettings.Name = "btnNavSettings";
             btnNavSettings.Size = new Size(33, 43);
@@ -261,10 +256,10 @@
             button4.Location = new Point(0, 24);
             button4.Margin = new Padding(0);
             button4.Name = "button4";
-            button4.Size = new Size(236, 75);
+            button4.Size = new Size(164, 75);
             button4.TabIndex = 0;
             button4.TabStop = false;
-            button4.Text = "Valentín Barco";
+            button4.Text = "Barco1";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.TextImageRelation = TextImageRelation.ImageBeforeText;
             button4.UseVisualStyleBackColor = false;
@@ -397,16 +392,15 @@
             mainWrapper.Margin = new Padding(100, 0, 0, 0);
             mainWrapper.Name = "mainWrapper";
             mainWrapper.Padding = new Padding(300, 0, 0, 0);
-            mainWrapper.Size = new Size(1184, 749);
+            mainWrapper.Size = new Size(1184, 781);
             mainWrapper.TabIndex = 0;
-            //mainWrapper.Paint += mainWrapper_Paint;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1184, 749);
+            ClientSize = new Size(1184, 781);
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
