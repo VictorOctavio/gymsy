@@ -392,7 +392,7 @@
             mainWrapper.Margin = new Padding(100, 0, 0, 0);
             mainWrapper.Name = "mainWrapper";
             mainWrapper.Padding = new Padding(300, 0, 0, 0);
-            mainWrapper.Size = new Size(1184, 781);
+            mainWrapper.Size = new Size(1154, 781);
             mainWrapper.TabIndex = 0;
             // 
             // Form1
@@ -400,7 +400,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1184, 781);
+            ClientSize = new Size(1154, 781);
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
