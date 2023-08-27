@@ -399,7 +399,7 @@
             mainWrapper.Padding = new Padding(300, 0, 0, 0);
             mainWrapper.Size = new Size(1184, 749);
             mainWrapper.TabIndex = 0;
-            mainWrapper.Paint += mainWrapper_Paint;
+            //mainWrapper.Paint += mainWrapper_Paint;
             // 
             // Form1
             // 

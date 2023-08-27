@@ -150,7 +150,7 @@
             labelErrorPassWord.ImageAlign = ContentAlignment.MiddleLeft;
             labelErrorPassWord.Location = new Point(70, 269);
             labelErrorPassWord.Name = "labelErrorPassWord";
-            labelErrorPassWord.Size = new Size(72, 25);
+            labelErrorPassWord.Size = new Size(82, 25);
             labelErrorPassWord.TabIndex = 9;
             labelErrorPassWord.Text = "Moficar";
             labelErrorPassWord.TextAlign = ContentAlignment.MiddleRight;

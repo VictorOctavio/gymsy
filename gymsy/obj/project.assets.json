@@ -3307,11 +3307,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jeremias\\Source\\Repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
+      "projectUniqueName": "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
       "projectName": "gymsy",
-      "projectPath": "C:\\Users\\Jeremias\\Source\\Repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
+      "projectPath": "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
       "packagesPath": "C:\\Users\\Jeremias\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jeremias\\Source\\Repos\\VictorOctavio\\gymsy\\gymsy\\obj\\",
+      "outputPath": "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

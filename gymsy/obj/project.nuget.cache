@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FrblH3SU8WU1MQR/rRfB1V8PHtBvfimo+jCtEinZ4QAlpdtn+LZ/ww8hca22hmFuzr/4ggTgVNYDa7tdAu88/Q==",
+  "dgSpecHash": "yD6A4gryL3JUEeK3pBzwrOL6Z4pYugWJ/sHW3IAKisTXiGGvBETDTtBD2ISTCIZHNiKxO/fhEC0ssXGBE+xy4g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jeremias\\Source\\Repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
+  "projectFilePath": "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jeremias\\.nuget\\packages\\bunifu.licensing\\5.0.0\\bunifu.licensing.5.0.0.nupkg.sha512",
     "C:\\Users\\Jeremias\\.nuget\\packages\\bunifu.ui.winforms\\6.1.0\\bunifu.ui.winforms.6.1.0.nupkg.sha512",
