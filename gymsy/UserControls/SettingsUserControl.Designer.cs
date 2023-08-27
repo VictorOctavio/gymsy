@@ -51,8 +51,8 @@
             a.Anchor = AnchorStyles.Top;
             a.AutoSize = true;
             a.Font = new Font("Segoe UI", 29F, FontStyle.Regular, GraphicsUnit.Point);
-            a.ForeColor = SystemColors.ButtonFace;
-            a.Location = new Point(770, 0);
+            a.ForeColor = SystemColors.ActiveCaptionText;
+            a.Location = new Point(541, 0);
             a.Name = "a";
             a.Size = new Size(263, 52);
             a.TabIndex = 0;
@@ -63,6 +63,7 @@
             // 
             panel1.Anchor = AnchorStyles.None;
             panel1.AutoScroll = true;
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(textBox4);
             panel1.Controls.Add(textBox3);
             panel1.Controls.Add(textBox5);
@@ -134,7 +135,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.ButtonHighlight;
+            label4.ForeColor = SystemColors.ActiveCaptionText;
             label4.Location = new Point(507, 484);
             label4.Name = "label4";
             label4.Size = new Size(104, 25);
@@ -145,7 +146,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.ForeColor = SystemColors.ActiveCaptionText;
             label3.Location = new Point(507, 396);
             label3.Name = "label3";
             label3.Size = new Size(79, 25);
@@ -156,7 +157,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.ForeColor = SystemColors.ActiveCaptionText;
             label2.Location = new Point(507, 312);
             label2.Name = "label2";
             label2.Size = new Size(101, 25);
@@ -180,7 +181,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(624, 161);
+            button1.Location = new Point(624, 180);
             button1.Name = "button1";
             button1.Size = new Size(75, 34);
             button1.TabIndex = 3;
@@ -190,7 +191,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.gorilla_avatar;
-            pictureBox1.Location = new Point(624, 87);
+            pictureBox1.Location = new Point(624, 106);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(69, 68);
             pictureBox1.TabIndex = 2;
@@ -200,7 +201,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(508, 230);
             label1.Name = "label1";
             label1.Size = new Size(78, 25);

@@ -25,6 +25,7 @@ namespace gymsy
             {
                 // set every UserControl's dock style to fill so that it will occupy the space inside the panel
                 userControlList[i].Dock = DockStyle.Fill;
+
                 // add all the UserControl inside the panel
                 panel.Controls.Add(userControlList[i]);
             }
@@ -34,7 +35,7 @@ namespace gymsy
         {
             if (index < userControlList.Count())
             {
-                userControlList[index].BringToFront(); // display only the selected UserControl using index
+                userControlList[index].BringToFront(); // render the selected UserControl
             }
         }
     }

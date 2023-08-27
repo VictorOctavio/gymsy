@@ -6,8 +6,8 @@ namespace gymsy
     {
         NavigationControl navigationControl;
         NavigationButtons navigationButtons;
-        bool sidebarExpand;
-        bool btnAddExpand;
+        bool sidebarExpand = true;
+        bool btnAddExpand = false;
 
         // Set colors buttons
         Color btnDefaultColor = Color.Transparent;
@@ -20,6 +20,7 @@ namespace gymsy
             InitializeNavigationButtons();
         }
 
+        // Inicializamos el controlador con la navegacion, pasando los controles y en panel mainWrapper en donde se renderizará
         private void InitializeNavigationControl()
         {
             List<UserControl> userControls = new List<UserControl>()
@@ -31,6 +32,7 @@ namespace gymsy
             navigationControl.Display(0);
         }
 
+        // Inicializamos los botones asociados a la navegacion y manejamos el btn activo (HIghlight)
         private void InitializeNavigationButtons()
         {
             List<Button> buttons = new List<Button>()
@@ -41,7 +43,7 @@ namespace gymsy
         }
 
 
-        // Navigation BTNS
+        // Handle BTN Navegatios
         private void btnNavDashboard_Click(object sender, EventArgs e)
         {
             navigationControl.Display(0);
@@ -81,41 +83,45 @@ namespace gymsy
 
 
 
-        // TIMERS
-        private void menuButton_Click(object sender, EventArgs e)
+        // START TIMERS
+        private void menuButton_Click(object sender, EventArgs e) // Timer despligue panel 
         {
             sidebarTimer.Start();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e) // Timer dropdown btn add
         {
             btnAddTimer.Start();
         }
 
+        // Control timer for panel
         private void timer1_Tick(object sender, EventArgs e)
         {
+            // asignamos que el sidebar ocupe la menor anchura y modificamos el padding del main
             if (sidebarExpand)
             {
                 sidebar.Width -= 10;
                 if (sidebar.Width == sidebar.MinimumSize.Width)
                 {
-                    mainWrapper.Padding = new Padding(100, 0, 0, 0);
+                    mainWrapper.Padding = new Padding(70, 0, 0, 0);
                     sidebarExpand = false;
                     sidebarTimer.Stop();
                 }
             }
+            // asignamos que el sidebar ocupe la mayor anchura y modificamos el padding del main
             else
             {
                 sidebar.Width += 10;
                 if (sidebar.Width == sidebar.MaximumSize.Width)
                 {
-                    mainWrapper.Padding = new Padding(300, 0, 0, 0);
+                    mainWrapper.Padding = new Padding(260, 0, 0, 0);
                     sidebarExpand = true;
                     sidebarTimer.Stop();
                 }
             }
         }
 
+        // Control timer for dropdown btn add
         private void btnAddTimer_Tick(object sender, EventArgs e)
         {
             if (btnAddExpand)
@@ -144,7 +150,5 @@ namespace gymsy
         {
             this.Close();
         }
-
-
     }
 }
