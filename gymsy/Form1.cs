@@ -80,9 +80,6 @@ namespace gymsy
             navigationButtons.Highlight(btnNavAddClient);
         }
 
-
-
-
         // START TIMERS
         private void menuButton_Click(object sender, EventArgs e) // Timer despligue panel 
         {
