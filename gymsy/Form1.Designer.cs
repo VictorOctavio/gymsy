@@ -75,7 +75,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.4072456F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.2594223F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new Size(300, 184);
+            tableLayoutPanel1.Size = new Size(260, 184);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // btnNavClients
@@ -96,7 +96,7 @@
             btnNavClients.Name = "btnNavClients";
             btnNavClients.Padding = new Padding(20, 0, 0, 0);
             btnNavClients.RightToLeft = RightToLeft.No;
-            btnNavClients.Size = new Size(300, 61);
+            btnNavClients.Size = new Size(260, 61);
             btnNavClients.TabIndex = 1;
             btnNavClients.Text = "     Clients";
             btnNavClients.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -121,7 +121,7 @@
             btnNavPayments.Name = "btnNavPayments";
             btnNavPayments.Padding = new Padding(10, 0, 0, 0);
             btnNavPayments.RightToLeft = RightToLeft.No;
-            btnNavPayments.Size = new Size(300, 62);
+            btnNavPayments.Size = new Size(260, 62);
             btnNavPayments.TabIndex = 2;
             btnNavPayments.Text = "   Payments";
             btnNavPayments.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -146,7 +146,7 @@
             btnNavDashboard.Name = "btnNavDashboard";
             btnNavDashboard.Padding = new Padding(10, 0, 0, 0);
             btnNavDashboard.RightToLeft = RightToLeft.No;
-            btnNavDashboard.Size = new Size(300, 61);
+            btnNavDashboard.Size = new Size(260, 61);
             btnNavDashboard.TabIndex = 0;
             btnNavDashboard.Text = "  Dashboard";
             btnNavDashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -364,7 +364,7 @@
             btnAdd.Margin = new Padding(0);
             btnAdd.Name = "btnAdd";
             btnAdd.Padding = new Padding(18, 0, 0, 0);
-            btnAdd.Size = new Size(299, 65);
+            btnAdd.Size = new Size(260, 65);
             btnAdd.TabIndex = 0;
             btnAdd.Text = "    Add";
             btnAdd.TextAlign = ContentAlignment.MiddleLeft;
