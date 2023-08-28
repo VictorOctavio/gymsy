@@ -8,6 +8,7 @@ namespace gymsy
         NavigationButtons navigationButtons;
         bool sidebarExpand = true;
         bool btnAddExpand = false;
+        bool btnNotificationsExpand = false;
 
         // Set colors buttons
         Color btnDefaultColor = Color.Transparent;
@@ -93,6 +94,10 @@ namespace gymsy
         {
             btnAddTimer.Start();
         }
+        private void btnNotifications_Click(object sender, EventArgs e)
+        {
+            timerNavbarNotifications.Start();
+        }
 
         // Control timer for panel
         private void timer1_Tick(object sender, EventArgs e)
@@ -144,6 +149,31 @@ namespace gymsy
             }
         }
 
+        // Control timer for dropdown  notifications
+        private void timerNavbarNotifications_Tick(object sender, EventArgs e)
+        {
+            if (btnNotificationsExpand)
+            {
+                panelNotifications.BorderStyle = BorderStyle.None;
+                panelNotifications.Height -= 10;
+                if (panelNotifications.Height == panelNotifications.MinimumSize.Height)
+                {
+                    btnNotificationsExpand = false;
+                    timerNavbarNotifications.Stop();
+                }
+            }
+            else
+            {
+                panelNotifications.BorderStyle = BorderStyle.FixedSingle;
+                panelNotifications.Height += 10;
+                if (panelNotifications.Height == panelNotifications.MaximumSize.Height)
+                {
+                    btnNotificationsExpand = true;
+                    timerNavbarNotifications.Stop();
+                }
+            }
+        }
+
 
         // SIGNOUT SESSION BTN
         private void btnNavSignout_Click(object sender, EventArgs e)
@@ -151,11 +181,6 @@ namespace gymsy
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        
     }
 }

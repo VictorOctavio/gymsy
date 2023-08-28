@@ -57,7 +57,11 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            button1 = new Button();
+            btnNotifications = new Button();
+            panel5 = new Panel();
+            panelNotifications = new Panel();
+            label6 = new Label();
+            timerNavbarNotifications = new System.Windows.Forms.Timer(components);
             tableLayoutPanel1 = new TableLayoutPanel();
             menuButton = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
@@ -70,6 +74,7 @@
             navbar.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panelNotifications.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -80,7 +85,7 @@
             tableLayoutPanel1.Controls.Add(btnNavClients, 0, 1);
             tableLayoutPanel1.Controls.Add(btnNavPayments, 0, 1);
             tableLayoutPanel1.Controls.Add(btnNavDashboard, 0, 0);
-            tableLayoutPanel1.Location = new Point(0, 143);
+            tableLayoutPanel1.Location = new Point(0, 127);
             tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
@@ -190,7 +195,7 @@
             sidebar.MaximumSize = new Size(260, 0);
             sidebar.MinimumSize = new Size(70, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(260, 533);
+            sidebar.Size = new Size(260, 712);
             sidebar.TabIndex = 0;
             // 
             // panel3
@@ -199,9 +204,9 @@
             panel3.Controls.Add(label1);
             panel3.Controls.Add(menuButton);
             panel3.ForeColor = SystemColors.ActiveCaption;
-            panel3.Location = new Point(-8, 0);
+            panel3.Location = new Point(0, 1);
             panel3.Name = "panel3";
-            panel3.Size = new Size(268, 70);
+            panel3.Size = new Size(259, 70);
             panel3.TabIndex = 1;
             // 
             // label1
@@ -223,7 +228,7 @@
             panelNavUser.Controls.Add(btnNavSettings);
             panelNavUser.Controls.Add(button4);
             panelNavUser.Dock = DockStyle.Bottom;
-            panelNavUser.Location = new Point(0, 410);
+            panelNavUser.Location = new Point(0, 589);
             panelNavUser.Margin = new Padding(0);
             panelNavUser.Name = "panelNavUser";
             panelNavUser.Size = new Size(260, 123);
@@ -304,7 +309,7 @@
             panelBtnAdd.Controls.Add(btnNavAddPlan);
             panelBtnAdd.Controls.Add(btnNavAddClient);
             panelBtnAdd.Controls.Add(btnAdd);
-            panelBtnAdd.Location = new Point(0, 330);
+            panelBtnAdd.Location = new Point(0, 314);
             panelBtnAdd.MaximumSize = new Size(260, 154);
             panelBtnAdd.MinimumSize = new Size(260, 60);
             panelBtnAdd.Name = "panelBtnAdd";
@@ -326,7 +331,7 @@
             btnNavAddPlan.Location = new Point(2, 106);
             btnNavAddPlan.Margin = new Padding(0);
             btnNavAddPlan.Name = "btnNavAddPlan";
-            btnNavAddPlan.Padding = new Padding(30, 0, 0, 0);
+            btnNavAddPlan.Padding = new Padding(20, 0, 0, 0);
             btnNavAddPlan.Size = new Size(258, 39);
             btnNavAddPlan.TabIndex = 2;
             btnNavAddPlan.Text = "       Plan";
@@ -350,7 +355,7 @@
             btnNavAddClient.Location = new Point(2, 65);
             btnNavAddClient.Margin = new Padding(0);
             btnNavAddClient.Name = "btnNavAddClient";
-            btnNavAddClient.Padding = new Padding(30, 0, 0, 0);
+            btnNavAddClient.Padding = new Padding(20, 0, 0, 0);
             btnNavAddClient.Size = new Size(258, 39);
             btnNavAddClient.TabIndex = 1;
             btnNavAddClient.Text = "       Client";
@@ -404,30 +409,35 @@
             mainWrapper.Margin = new Padding(0);
             mainWrapper.Name = "mainWrapper";
             mainWrapper.Padding = new Padding(260, 0, 0, 0);
-            mainWrapper.Size = new Size(1177, 533);
+            mainWrapper.Size = new Size(1177, 712);
             mainWrapper.TabIndex = 0;
             // 
             // navbar
             // 
-            navbar.BackColor = Color.FromArgb(9, 0, 20);
+            navbar.BackColor = Color.Transparent;
             navbar.Controls.Add(panel1);
+            navbar.Controls.Add(panel5);
+            navbar.Controls.Add(panelNotifications);
             navbar.Dock = DockStyle.Top;
             navbar.Location = new Point(260, 0);
             navbar.Margin = new Padding(0);
+            navbar.MaximumSize = new Size(0, 133);
+            navbar.MinimumSize = new Size(0, 70);
             navbar.Name = "navbar";
-            navbar.Size = new Size(917, 70);
+            navbar.Size = new Size(917, 133);
             navbar.TabIndex = 0;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel1.BackColor = Color.DarkCyan;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(573, 0);
+            panel1.Controls.Add(btnNotifications);
+            panel1.Location = new Point(569, 0);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(344, 70);
+            panel1.Size = new Size(348, 70);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -437,9 +447,9 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            panel2.Location = new Point(0, 0);
+            panel2.Location = new Point(3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(288, 70);
+            panel2.Size = new Size(277, 64);
             panel2.TabIndex = 1;
             // 
             // label5
@@ -486,26 +496,63 @@
             label2.TabIndex = 0;
             label2.Text = "$ 4.5K";
             // 
-            // button1
+            // btnNotifications
             // 
-            button1.BackColor = Color.DarkOrange;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(285, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(61, 70);
-            button1.TabIndex = 0;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnNotifications.BackColor = Color.DarkOrange;
+            btnNotifications.Cursor = Cursors.Hand;
+            btnNotifications.FlatAppearance.BorderSize = 0;
+            btnNotifications.FlatStyle = FlatStyle.Flat;
+            btnNotifications.Image = (Image)resources.GetObject("btnNotifications.Image");
+            btnNotifications.Location = new Point(285, 0);
+            btnNotifications.Name = "btnNotifications";
+            btnNotifications.Size = new Size(61, 70);
+            btnNotifications.TabIndex = 0;
+            btnNotifications.UseVisualStyleBackColor = false;
+            btnNotifications.Click += btnNotifications_Click;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(9, 0, 20);
+            panel5.Dock = DockStyle.Top;
+            panel5.ForeColor = Color.Black;
+            panel5.Location = new Point(0, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(917, 70);
+            panel5.TabIndex = 2;
+            // 
+            // panelNotifications
+            // 
+            panelNotifications.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panelNotifications.BackColor = Color.White;
+            panelNotifications.Controls.Add(label6);
+            panelNotifications.Location = new Point(569, 70);
+            panelNotifications.MaximumSize = new Size(0, 62);
+            panelNotifications.Name = "panelNotifications";
+            panelNotifications.Size = new Size(348, 10);
+            panelNotifications.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.FlatStyle = FlatStyle.Flat;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(46, 21);
+            label6.Name = "label6";
+            label6.Size = new Size(255, 21);
+            label6.TabIndex = 0;
+            label6.Text = "No tienes notificaciones pendientes";
+            // 
+            // timerNavbarNotifications
+            // 
+            timerNavbarNotifications.Interval = 5;
+            timerNavbarNotifications.Tick += timerNavbarNotifications_Tick;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1177, 533);
+            ClientSize = new Size(1177, 712);
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
@@ -524,6 +571,8 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panelNotifications.ResumeLayout(false);
+            panelNotifications.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -550,11 +599,15 @@
         private Panel mainWrapper;
         private Panel navbar;
         private Panel panel1;
-        private Button button1;
         private Panel panel2;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
+        private Button btnNotifications;
+        private Panel panelNotifications;
+        private Panel panel5;
+        private Label label6;
+        private System.Windows.Forms.Timer timerNavbarNotifications;
     }
 }
