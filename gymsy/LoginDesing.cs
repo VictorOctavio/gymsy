@@ -19,10 +19,7 @@ namespace gymsy
             InitializeComponent();
         }
 
-        private void LoginDesing_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -91,6 +88,11 @@ namespace gymsy
         private void textBoxPasswordUser_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
