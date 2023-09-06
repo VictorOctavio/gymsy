@@ -195,7 +195,7 @@
             sidebar.MaximumSize = new Size(260, 0);
             sidebar.MinimumSize = new Size(70, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(260, 712);
+            sidebar.Size = new Size(260, 761);
             sidebar.TabIndex = 0;
             // 
             // panel3
@@ -228,7 +228,7 @@
             panelNavUser.Controls.Add(btnNavSettings);
             panelNavUser.Controls.Add(button4);
             panelNavUser.Dock = DockStyle.Bottom;
-            panelNavUser.Location = new Point(0, 589);
+            panelNavUser.Location = new Point(0, 638);
             panelNavUser.Margin = new Padding(0);
             panelNavUser.Name = "panelNavUser";
             panelNavUser.Size = new Size(260, 123);
@@ -409,7 +409,7 @@
             mainWrapper.Margin = new Padding(0);
             mainWrapper.Name = "mainWrapper";
             mainWrapper.Padding = new Padding(260, 0, 0, 0);
-            mainWrapper.Size = new Size(1177, 712);
+            mainWrapper.Size = new Size(1184, 761);
             mainWrapper.TabIndex = 0;
             // 
             // navbar
@@ -424,7 +424,7 @@
             navbar.MaximumSize = new Size(0, 133);
             navbar.MinimumSize = new Size(0, 70);
             navbar.Name = "navbar";
-            navbar.Size = new Size(917, 133);
+            navbar.Size = new Size(924, 133);
             navbar.TabIndex = 0;
             // 
             // panel1
@@ -434,7 +434,7 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(btnNotifications);
-            panel1.Location = new Point(569, 0);
+            panel1.Location = new Point(576, 0);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
             panel1.Size = new Size(348, 70);
@@ -517,7 +517,7 @@
             panel5.ForeColor = Color.Black;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(917, 70);
+            panel5.Size = new Size(924, 70);
             panel5.TabIndex = 2;
             // 
             // panelNotifications
@@ -525,7 +525,7 @@
             panelNotifications.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelNotifications.BackColor = Color.White;
             panelNotifications.Controls.Add(label6);
-            panelNotifications.Location = new Point(569, 70);
+            panelNotifications.Location = new Point(576, 70);
             panelNotifications.MaximumSize = new Size(0, 62);
             panelNotifications.Name = "panelNotifications";
             panelNotifications.Size = new Size(348, 10);
@@ -552,10 +552,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1177, 712);
+            ClientSize = new Size(1184, 761);
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
+            MinimumSize = new Size(1200, 700);
             Name = "Form1";
             Text = "Gymsy";
             tableLayoutPanel1.ResumeLayout(false);
