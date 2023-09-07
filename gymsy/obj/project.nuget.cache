@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Q8vPz/8q9S3SHyZQqAtXBPhuZcjqatDeL7vcYu/bVOPHDqp4tewQyXFDvDUHexkWg2QZm/q9mDJcFOefz2YH/g==",
+  "dgSpecHash": "CY2D264putSdX4n0RNskoHS13ceDam88YYoFCE2eqmcYLw9uOXVIVVLpqxKZ6d3wd6+CIj21+0z4G07BYaO8dw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jeremias\\Source\\Repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jeremias\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512"
+    "C:\\Users\\Jeremias\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
   ],
   "logs": []
 }
