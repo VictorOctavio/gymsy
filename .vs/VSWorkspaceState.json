@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\gymsy"
+    "\\gymsy",
+    "\\gymsy\\bin\\Debug",
+    "\\gymsy\\bin\\Release",
+    "\\gymsy\\UserControls"
   ],
-  "SelectedNode": "\\gymsy\\Form1.cs",
+  "SelectedNode": "\\gymsy\\UserControls\\ClientsUserControl.cs",
   "PreviewInSolutionExplorer": false
 }

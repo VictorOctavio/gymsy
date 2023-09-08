@@ -17,7 +17,6 @@ namespace gymsy.UserControls
             InitializeComponent();
         }
 
-        
 
     }
 }
