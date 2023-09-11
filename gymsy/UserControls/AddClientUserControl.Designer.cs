@@ -31,11 +31,23 @@
             label1 = new Label();
             panel1 = new Panel();
             panel3 = new Panel();
+            button1 = new Button();
+            textBox8 = new TextBox();
+            label19 = new Label();
+            label20 = new Label();
+            textBox6 = new TextBox();
+            label17 = new Label();
+            label18 = new Label();
+            textBox7 = new TextBox();
+            label15 = new Label();
+            label16 = new Label();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
+            textBox5 = new TextBox();
+            BAddUser = new FontAwesome.Sharp.IconButton();
             label14 = new Label();
             label12 = new Label();
             a = new Label();
             panel2 = new Panel();
-            BAddUser = new FontAwesome.Sharp.IconButton();
             label13 = new Label();
             label10 = new Label();
             label11 = new Label();
@@ -53,18 +65,6 @@
             textBox3 = new TextBox();
             label5 = new Label();
             label4 = new Label();
-            textBox5 = new TextBox();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            textBox7 = new TextBox();
-            label15 = new Label();
-            label16 = new Label();
-            textBox6 = new TextBox();
-            label17 = new Label();
-            label18 = new Label();
-            textBox8 = new TextBox();
-            label19 = new Label();
-            label20 = new Label();
-            button1 = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -114,6 +114,144 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(412, 439);
             panel3.TabIndex = 52;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button1.AutoSize = true;
+            button1.BackColor = Color.DarkOrange;
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(240, 271);
+            button1.Name = "button1";
+            button1.Size = new Size(47, 44);
+            button1.TabIndex = 62;
+            button1.Text = "...";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(35, 282);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(199, 23);
+            textBox8.TabIndex = 59;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.ForeColor = Color.Red;
+            label19.Location = new Point(34, 310);
+            label19.Name = "label19";
+            label19.Size = new Size(105, 15);
+            label19.TabIndex = 60;
+            label19.Text = "*Campo requerido";
+            label19.Visible = false;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(34, 262);
+            label20.Name = "label20";
+            label20.Size = new Size(58, 15);
+            label20.TabIndex = 61;
+            label20.Text = "Instructor";
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(35, 206);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(199, 23);
+            textBox6.TabIndex = 56;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.ForeColor = Color.Red;
+            label17.Location = new Point(34, 234);
+            label17.Name = "label17";
+            label17.Size = new Size(105, 15);
+            label17.TabIndex = 57;
+            label17.Text = "*Campo requerido";
+            label17.Visible = false;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(34, 186);
+            label18.Name = "label18";
+            label18.Size = new Size(69, 15);
+            label18.TabIndex = 58;
+            label18.Text = "Descripcion";
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(35, 120);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(199, 23);
+            textBox7.TabIndex = 53;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.ForeColor = Color.Red;
+            label15.Location = new Point(34, 148);
+            label15.Name = "label15";
+            label15.Size = new Size(105, 15);
+            label15.TabIndex = 54;
+            label15.Text = "*Campo requerido";
+            label15.Visible = false;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(34, 100);
+            label16.Name = "label16";
+            label16.Size = new Size(40, 15);
+            label16.TabIndex = 55;
+            label16.Text = "Precio";
+            // 
+            // iconButton2
+            // 
+            iconButton2.BackColor = Color.DarkOrange;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.ForeColor = Color.Transparent;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            iconButton2.IconColor = Color.White;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.Location = new Point(300, 34);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(77, 47);
+            iconButton2.TabIndex = 55;
+            iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(91, 50);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(199, 23);
+            textBox5.TabIndex = 53;
+            // 
+            // BAddUser
+            // 
+            BAddUser.BackColor = Color.FromArgb(0, 192, 0);
+            BAddUser.BackgroundImageLayout = ImageLayout.Zoom;
+            BAddUser.FlatStyle = FlatStyle.Flat;
+            BAddUser.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BAddUser.ForeColor = Color.Transparent;
+            BAddUser.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            BAddUser.IconColor = Color.White;
+            BAddUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BAddUser.IconSize = 60;
+            BAddUser.ImageAlign = ContentAlignment.MiddleRight;
+            BAddUser.Location = new Point(205, 367);
+            BAddUser.Name = "BAddUser";
+            BAddUser.Size = new Size(192, 56);
+            BAddUser.TabIndex = 54;
+            BAddUser.Text = "Guardar Cliente";
+            BAddUser.TextAlign = ContentAlignment.MiddleLeft;
+            BAddUser.UseVisualStyleBackColor = false;
             // 
             // label14
             // 
@@ -174,26 +312,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(442, 439);
             panel2.TabIndex = 51;
-            // 
-            // BAddUser
-            // 
-            BAddUser.BackColor = Color.FromArgb(0, 192, 0);
-            BAddUser.BackgroundImageLayout = ImageLayout.Zoom;
-            BAddUser.FlatStyle = FlatStyle.Flat;
-            BAddUser.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BAddUser.ForeColor = Color.Transparent;
-            BAddUser.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            BAddUser.IconColor = Color.White;
-            BAddUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BAddUser.IconSize = 60;
-            BAddUser.ImageAlign = ContentAlignment.MiddleRight;
-            BAddUser.Location = new Point(205, 367);
-            BAddUser.Name = "BAddUser";
-            BAddUser.Size = new Size(192, 56);
-            BAddUser.TabIndex = 54;
-            BAddUser.Text = "Guardar Cliente";
-            BAddUser.TextAlign = ContentAlignment.MiddleLeft;
-            BAddUser.UseVisualStyleBackColor = false;
             // 
             // label13
             // 
@@ -370,124 +488,6 @@
             label4.Size = new Size(51, 15);
             label4.TabIndex = 41;
             label4.Text = "Apellido";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(91, 50);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(199, 23);
-            textBox5.TabIndex = 53;
-            // 
-            // iconButton2
-            // 
-            iconButton2.BackColor = Color.DarkOrange;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.ForeColor = Color.Transparent;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(300, 34);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(77, 47);
-            iconButton2.TabIndex = 55;
-            iconButton2.UseVisualStyleBackColor = false;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(35, 120);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(199, 23);
-            textBox7.TabIndex = 53;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.ForeColor = Color.Red;
-            label15.Location = new Point(34, 148);
-            label15.Name = "label15";
-            label15.Size = new Size(105, 15);
-            label15.TabIndex = 54;
-            label15.Text = "*Campo requerido";
-            label15.Visible = false;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(34, 100);
-            label16.Name = "label16";
-            label16.Size = new Size(40, 15);
-            label16.TabIndex = 55;
-            label16.Text = "Precio";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(35, 206);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(199, 23);
-            textBox6.TabIndex = 56;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.ForeColor = Color.Red;
-            label17.Location = new Point(34, 234);
-            label17.Name = "label17";
-            label17.Size = new Size(105, 15);
-            label17.TabIndex = 57;
-            label17.Text = "*Campo requerido";
-            label17.Visible = false;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(34, 186);
-            label18.Name = "label18";
-            label18.Size = new Size(69, 15);
-            label18.TabIndex = 58;
-            label18.Text = "Descripcion";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(35, 282);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(199, 23);
-            textBox8.TabIndex = 59;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.ForeColor = Color.Red;
-            label19.Location = new Point(34, 310);
-            label19.Name = "label19";
-            label19.Size = new Size(105, 15);
-            label19.TabIndex = 60;
-            label19.Text = "*Campo requerido";
-            label19.Visible = false;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(34, 262);
-            label20.Name = "label20";
-            label20.Size = new Size(58, 15);
-            label20.TabIndex = 61;
-            label20.Text = "Instructor";
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button1.AutoSize = true;
-            button1.BackColor = Color.DarkOrange;
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(240, 271);
-            button1.Name = "button1";
-            button1.Size = new Size(47, 44);
-            button1.TabIndex = 62;
-            button1.Text = "...";
-            button1.UseVisualStyleBackColor = false;
             // 
             // AddClientUserControl
             // 
