@@ -4,9 +4,6 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="LoginDesing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -14,6 +11,21 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\AddPlanUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\AdminControls\AddInstructorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\AdminControls\DashboardAdminControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\AdminControls\InstructorsAdminControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ClientControls\AboutClientControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ClientControls\ProgressClientControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\ClientsUserControl.cs">
@@ -26,6 +38,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\SettingsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\WalletUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
