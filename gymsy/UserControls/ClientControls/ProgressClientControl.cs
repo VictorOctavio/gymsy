@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gymsy
+namespace gymsy.UserControls.ClientControls
 {
-    public partial class Form2 : Form
+    public partial class ProgressClientControl : UserControl
     {
-        public Form2()
+        public ProgressClientControl()
         {
             InitializeComponent();
         }
