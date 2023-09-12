@@ -921,6 +921,7 @@
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
+            MinimumSize = new Size(1200, 700);
             Name = "Form1";
             Text = "Gymsy";
             ((System.ComponentModel.ISupportInitialize)menuButton).EndInit();
