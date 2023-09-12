@@ -33,6 +33,11 @@ namespace gymsy
 
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
+            
+            Form1 form1 = new Form1("admin");
+            form1.Show();
+            return;
+
             //se captura un error en caso de haberlo
             try
             {

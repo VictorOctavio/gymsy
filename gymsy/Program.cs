@@ -10,13 +10,10 @@ namespace gymsy
         [STAThread]
         static void Main()
         {
-
             // Settings
-            
-
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
-            //Application.Run(new LoginDesing());
+            //Application.Run(new Form1());
+            Application.Run(new LoginDesing());
         }
     }
 }

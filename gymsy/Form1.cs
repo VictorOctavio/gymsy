@@ -1,4 +1,6 @@
 using gymsy.UserControls;
+using gymsy.UserControls.AdminControls;
+using gymsy.UserControls.ClientControls;
 
 namespace gymsy
 {
@@ -14,35 +16,91 @@ namespace gymsy
         Color btnDefaultColor = Color.Transparent;
         Color btnSelectedColor = Color.DarkCyan;
 
-        public Form1()
+        // Set user
+        private string userRol;
+
+        public Form1(string rol)
         {
+            this.userRol = rol;
             InitializeComponent();
-            InitializeNavigationControl();
-            InitializeNavigationButtons();
+            InitializeNavigationControl(rol);
+            InitializeNavigationButtons(rol);
+            InitializeUserRol(rol);
         }
 
         // Inicializamos el controlador con la navegacion, pasando los controles y en panel mainWrapper en donde se renderizará
-        private void InitializeNavigationControl()
+        private void InitializeNavigationControl(string rol = "instructor")
         {
+
+            List<UserControl> userControlsList = new List<UserControl>();
+
             List<UserControl> userControls = new List<UserControl>()
             { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(),
-              new AddClientUserControl(), new AddPlanUserControl()
+              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl()
             };
 
-            navigationControl = new NavigationControl(userControls, mainWrapper);
+            List<UserControl> adminControls = new List<UserControl>()
+            { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(),
+            new AddInstructorControl(), new DashboardAdminControl(), new WalletUserControl()
+            };
+
+            List<UserControl> clientControls = new List<UserControl>()
+            { new AboutClientControl(), new ProgressClientControl(), new PaymentsUserControl(), new SettingsUserControl(),
+            };
+
+            if (rol == "admin") userControlsList = adminControls;
+            else if (rol == "client") userControlsList = clientControls;
+            else userControlsList = userControls;
+
+            navigationControl = new NavigationControl(userControlsList, mainWrapper);
             navigationControl.Display(0);
         }
 
         // Inicializamos los botones asociados a la navegacion y manejamos el btn activo (HIghlight)
-        private void InitializeNavigationButtons()
+        private void InitializeNavigationButtons(string rol = "admin")
         {
+            List<Button> buttonsRol = new List<Button>();
+
             List<Button> buttons = new List<Button>()
             { btnNavDashboard, btnNavPayments, btnNavClients, btnNavAddClient, btnNavAddPlan};
 
-            navigationButtons = new NavigationButtons(buttons, btnDefaultColor, btnSelectedColor);
-            navigationButtons.Highlight(btnNavDashboard);
+            List<Button> buttonsAdmin = new List<Button>()
+            { btnNavDashAdmin, btnNavInstructorAdmin, btnNavPaysAdmin, btnAddInstructor};
+
+            List<Button> buttonsClient = new List<Button>()
+            { btnNavAboutme, btnNavProgress, btnNavPaysClient};
+
+
+            if (rol == "admin") buttonsRol = buttonsAdmin;
+            else if (rol == "client") buttonsRol = buttonsClient;
+            else buttonsRol = buttons;
+
+
+            navigationButtons = new NavigationButtons(buttonsRol, btnDefaultColor, btnSelectedColor);
+            navigationButtons.Highlight(buttonsRol[0]);
         }
 
+        private void InitializeUserRol(string rol)
+        {
+            switch (rol)
+            {
+                case "admin":
+                    tableLayoutAdmin.Visible = true;
+                    panelAddAdmin.Visible = true;
+                    break;
+                case "instructor":
+                    tableLayout.Visible = true;
+                    panelBtnAdd.Visible = true;
+                    break;
+                case "client":
+                    panelNavRight.Visible = false;
+                    tableLayoutClient.Visible = true;
+                    break;
+                default:
+                    tableLayoutClient.Visible = true;
+                    break;
+            }
+        }
 
         // Handle BTN Navegatios
         private void btnNavDashboard_Click(object sender, EventArgs e)
@@ -81,6 +139,58 @@ namespace gymsy
             navigationButtons.Highlight(btnNavAddClient);
         }
 
+
+        // ------------------------------------------------------------------
+        // BTN ADMIN
+        private void btnNavDashAdmin_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(0);
+            navigationButtons.Highlight(btnNavDashAdmin);
+        }
+
+        private void btnNavInstructorAdmin_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(1);
+            navigationButtons.Highlight(btnNavInstructorAdmin);
+        }
+
+        private void btnNavPaysAdmin_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(2);
+            navigationButtons.Highlight(btnNavPaysAdmin);
+        }
+        private void btnAddInstructor_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(4);
+            navigationButtons.Highlight(btnAddInstructor);
+        }
+
+        // ------ btn client nav
+        private void btnNavAboutme_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(0);
+            navigationButtons.Highlight(btnNavAboutme);
+        }
+
+        private void btnNavProgress_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(1);
+            navigationButtons.Highlight(btnNavProgress);
+        }
+
+        private void btnNavPaysClient_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(2);
+            navigationButtons.Highlight(btnNavPaysClient);
+        }
+
+
+        private void btnWalletNav_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(6);
+            navigationButtons.Highlight(new Button());
+        }
+
         // START TIMERS
         private void menuButton_Click(object sender, EventArgs e) // Timer despligue panel 
         {
@@ -95,6 +205,11 @@ namespace gymsy
         {
             timerNavbarNotifications.Start();
         }
+        private void btnAddAdmin_Click(object sender, EventArgs e)
+        {
+            timerAddAdmin.Start();
+        }
+
 
         // Control timer for panel
         private void timer1_Tick(object sender, EventArgs e)
@@ -171,6 +286,28 @@ namespace gymsy
             }
         }
 
+        //Control add admin btn
+        private void btnAddAdminTimer_Tick(object sender, EventArgs e)
+        {
+            if (btnAddExpand)
+            {
+                panelAddAdmin.Height -= 10;
+                if (panelAddAdmin.Height == panelAddAdmin.MinimumSize.Height)
+                {
+                    btnAddExpand = false;
+                    timerAddAdmin.Stop();
+                }
+            }
+            else
+            {
+                panelAddAdmin.Height += 10;
+                if (panelAddAdmin.Height == panelAddAdmin.MaximumSize.Height)
+                {
+                    btnAddExpand = true;
+                    timerAddAdmin.Stop();
+                }
+            }
+        }
 
         // SIGNOUT SESSION BTN
         private void btnNavSignout_Click(object sender, EventArgs e)
