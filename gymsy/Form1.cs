@@ -203,7 +203,7 @@ namespace gymsy
         }
         private void btnNotifications_Click(object sender, EventArgs e)
         {
-            timerNavbarNotifications.Start();
+            //timerNavbarNotifications.Start();
         }
         private void btnAddAdmin_Click(object sender, EventArgs e)
         {

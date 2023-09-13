@@ -10,10 +10,10 @@
     <Compile Update="LoginDesing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserControls\AddClientUserControl.cs">
+    <Compile Update="UserControls\InstructorControl\AddClientUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\AddPlanUserControl.cs">
+    <Compile Update="UserControls\InstructorControl\AddPlanUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\AdminControls\AddInstructorControl.cs">
@@ -31,13 +31,13 @@
     <Compile Update="UserControls\ClientControls\ProgressClientControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\ClientsUserControl.cs">
+    <Compile Update="UserControls\InstructorControl\ClientsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\DashboardUserControl.cs">
+    <Compile Update="UserControls\InstructorControl\DashboardUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\PaymentsUserControl.cs">
+    <Compile Update="UserControls\InstructorControl\PaymentsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\SettingsUserControl.cs">

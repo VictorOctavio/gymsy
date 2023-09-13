@@ -27,7 +27,6 @@ C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-window
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\gymsy.dll
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\gymsy.pdb
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.Form1.resources
-C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.Form2.resources
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.LoginDesing.resources
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.Properties.Resources.resources
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.AddClientUserControl.resources
@@ -141,3 +140,11 @@ C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.
 C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.ClientControls.ProgressClientControl.resources
 C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.AdminControls.InstructorsAdminControl.resources
 C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.WalletUserControl.resources
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.AdminControls.AddInstructorControl.resources
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.AdminControls.DashboardAdminControl.resources
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.AdminControls.InstructorsAdminControl.resources
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.ClientControls.AboutClientControl.resources
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.ClientControls.ProgressClientControl.resources
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.WalletUserControl.resources
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.csproj.CopyComplete

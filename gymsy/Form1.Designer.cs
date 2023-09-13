@@ -147,7 +147,7 @@
             sidebar.MaximumSize = new Size(260, 0);
             sidebar.MinimumSize = new Size(70, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(260, 761);
+            sidebar.Size = new Size(260, 749);
             sidebar.TabIndex = 0;
             // 
             // panelAddAdmin
@@ -545,7 +545,7 @@
             panelNavUser.Controls.Add(btnNavSettings);
             panelNavUser.Controls.Add(button4);
             panelNavUser.Dock = DockStyle.Bottom;
-            panelNavUser.Location = new Point(0, 638);
+            panelNavUser.Location = new Point(0, 626);
             panelNavUser.Margin = new Padding(0);
             panelNavUser.Name = "panelNavUser";
             panelNavUser.Size = new Size(260, 123);
@@ -718,7 +718,7 @@
             // 
             // mainWrapper
             // 
-            mainWrapper.BackColor = Color.White;
+            mainWrapper.BackColor = Color.FromArgb(16, 8, 23);
             mainWrapper.BackgroundImageLayout = ImageLayout.None;
             mainWrapper.Controls.Add(navbar);
             mainWrapper.Dock = DockStyle.Fill;
@@ -727,7 +727,7 @@
             mainWrapper.Margin = new Padding(0);
             mainWrapper.Name = "mainWrapper";
             mainWrapper.Padding = new Padding(260, 0, 0, 0);
-            mainWrapper.Size = new Size(1358, 761);
+            mainWrapper.Size = new Size(1358, 749);
             mainWrapper.TabIndex = 0;
             // 
             // navbar
@@ -742,20 +742,19 @@
             navbar.MaximumSize = new Size(0, 133);
             navbar.MinimumSize = new Size(0, 70);
             navbar.Name = "navbar";
-            navbar.Size = new Size(1098, 133);
+            navbar.Size = new Size(1098, 71);
             navbar.TabIndex = 0;
             // 
             // panelNavRight
             // 
             panelNavRight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelNavRight.BackColor = Color.DarkCyan;
-            panelNavRight.BorderStyle = BorderStyle.FixedSingle;
             panelNavRight.Controls.Add(panel2);
             panelNavRight.Controls.Add(btnNotifications);
             panelNavRight.Location = new Point(750, 0);
             panelNavRight.Margin = new Padding(0);
             panelNavRight.Name = "panelNavRight";
-            panelNavRight.Size = new Size(348, 70);
+            panelNavRight.Size = new Size(348, 71);
             panelNavRight.TabIndex = 0;
             // 
             // panel2
@@ -768,7 +767,7 @@
             panel2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             panel2.Location = new Point(3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(277, 64);
+            panel2.Size = new Size(276, 69);
             panel2.TabIndex = 1;
             // 
             // btnWalletNav
@@ -852,6 +851,7 @@
             panel5.Dock = DockStyle.Top;
             panel5.ForeColor = Color.Black;
             panel5.Location = new Point(0, 0);
+            panel5.Margin = new Padding(0);
             panel5.Name = "panel5";
             panel5.Size = new Size(1098, 70);
             panel5.TabIndex = 2;
@@ -917,13 +917,15 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1358, 761);
+            ClientSize = new Size(1358, 749);
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
             MinimumSize = new Size(1200, 700);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gymsy";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)menuButton).EndInit();
             sidebar.ResumeLayout(false);
             panelAddAdmin.ResumeLayout(false);

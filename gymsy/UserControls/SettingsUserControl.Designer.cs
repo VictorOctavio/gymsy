@@ -92,7 +92,7 @@
             settingsWrapper.AutoScroll = true;
             settingsWrapper.AutoScrollMinSize = new Size(800, 700);
             settingsWrapper.AutoSize = true;
-            settingsWrapper.BackColor = Color.White;
+            settingsWrapper.BackColor = Color.FromArgb(16, 8, 23);
             settingsWrapper.Controls.Add(comboBoxAvatar);
             settingsWrapper.Controls.Add(gorilla_avatar);
             settingsWrapper.Controls.Add(panelError);
@@ -114,6 +114,7 @@
             settingsWrapper.Name = "settingsWrapper";
             settingsWrapper.Size = new Size(1366, 768);
             settingsWrapper.TabIndex = 1;
+            settingsWrapper.Paint += settingsWrapper_Paint;
             // 
             // comboBoxAvatar
             // 
