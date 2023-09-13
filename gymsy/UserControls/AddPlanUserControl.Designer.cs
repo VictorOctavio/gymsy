@@ -245,9 +245,7 @@
         private Label AddPlanUserConrol;
         private Panel panel1;
         private Panel panel2;
-        private FontAwesome.Sharp.IconButton BAddPlan;
         private TextBox textBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private DataGridView driedUsers;
         private DataGridViewTextBoxColumn id_plan;
         private DataGridViewTextBoxColumn precio;
