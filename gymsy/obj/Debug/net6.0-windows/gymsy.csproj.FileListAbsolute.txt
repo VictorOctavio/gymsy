@@ -148,3 +148,4 @@ C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-window
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.ClientControls.ProgressClientControl.resources
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.WalletUserControl.resources
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.csproj.CopyComplete
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\CustomControls.RJControls.RJTextBox.resources
