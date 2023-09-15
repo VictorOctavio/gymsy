@@ -4,6 +4,9 @@
     <Compile Update="ClassCustom\Class1.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="ClassCustom\RJComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ClassCustom\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
