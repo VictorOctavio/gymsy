@@ -28,28 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panelWalletWrapper = new Panel();
             panel2 = new Panel();
             panel5 = new Panel();
-            label13 = new Label();
+            labelTransactionError = new ClassCustom.RJButton();
+            comboBoxInstructors = new ComboBox();
+            btnNewTransaction = new ClassCustom.RJButton();
+            rjButton2 = new ClassCustom.RJButton();
+            rjButton1 = new ClassCustom.RJButton();
             label6 = new Label();
-            label12 = new Label();
             label11 = new Label();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
-            label8 = new Label();
-            textBox6 = new TextBox();
+            textBoxAmount = new TextBox();
             label9 = new Label();
-            label10 = new Label();
             panel6 = new Panel();
-            button2 = new Button();
+            labelErrorWithdraw = new ClassCustom.RJButton();
+            btnNewWithdraw = new ClassCustom.RJButton();
+            label8 = new Label();
+            textBoxWithdraw = new TextBox();
+            rjButton3 = new ClassCustom.RJButton();
             label7 = new Label();
-            label14 = new Label();
-            label16 = new Label();
-            textBox1 = new TextBox();
-            label15 = new Label();
             panel1 = new Panel();
+            PanelInvoiceWallet = new Panel();
+            BtnCloseInvoice = new ClassCustom.RJButton();
+            label12 = new Label();
+            rjButton4 = new ClassCustom.RJButton();
+            label10 = new Label();
             panel4 = new Panel();
             label5 = new Label();
             label2 = new Label();
@@ -58,6 +70,7 @@
             panel3 = new Panel();
             label4 = new Label();
             dataGridTransactions = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
             gridDate = new DataGridViewTextBoxColumn();
             gridType = new DataGridViewTextBoxColumn();
             gridAmount = new DataGridViewTextBoxColumn();
@@ -67,6 +80,7 @@
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             panel1.SuspendLayout();
+            PanelInvoiceWallet.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridTransactions).BeginInit();
@@ -84,266 +98,451 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.DarkSlateBlue;
+            panel2.BackColor = Color.White;
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel6);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(760, 0);
+            panel2.Location = new Point(737, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(325, 632);
+            panel2.Size = new Size(348, 632);
             panel2.TabIndex = 1;
             // 
             // panel5
             // 
-            panel5.Controls.Add(label13);
+            panel5.Controls.Add(labelTransactionError);
+            panel5.Controls.Add(comboBoxInstructors);
+            panel5.Controls.Add(btnNewTransaction);
+            panel5.Controls.Add(rjButton2);
+            panel5.Controls.Add(rjButton1);
             panel5.Controls.Add(label6);
-            panel5.Controls.Add(label12);
             panel5.Controls.Add(label11);
-            panel5.Controls.Add(comboBox1);
-            panel5.Controls.Add(button1);
-            panel5.Controls.Add(label8);
-            panel5.Controls.Add(textBox6);
+            panel5.Controls.Add(textBoxAmount);
             panel5.Controls.Add(label9);
-            panel5.Controls.Add(label10);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(325, 344);
+            panel5.Size = new Size(348, 366);
             panel5.TabIndex = 38;
             // 
-            // label13
+            // labelTransactionError
             // 
-            label13.AutoSize = true;
-            label13.BackColor = Color.Transparent;
-            label13.FlatStyle = FlatStyle.Flat;
-            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.ForeColor = Color.Red;
-            label13.Location = new Point(47, 249);
-            label13.Name = "label13";
-            label13.Size = new Size(85, 21);
-            label13.TabIndex = 41;
-            label13.Text = "*requerido";
+            labelTransactionError.BackColor = Color.White;
+            labelTransactionError.BackgroundColor = Color.White;
+            labelTransactionError.BorderColor = Color.Crimson;
+            labelTransactionError.BorderRadius = 12;
+            labelTransactionError.BorderSize = 1;
+            labelTransactionError.FlatAppearance.BorderSize = 0;
+            labelTransactionError.FlatStyle = FlatStyle.Flat;
+            labelTransactionError.Flip = FontAwesome.Sharp.FlipOrientation.Vertical;
+            labelTransactionError.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            labelTransactionError.ForeColor = Color.Red;
+            labelTransactionError.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            labelTransactionError.IconColor = Color.Red;
+            labelTransactionError.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            labelTransactionError.IconSize = 1;
+            labelTransactionError.ImageAlign = ContentAlignment.MiddleLeft;
+            labelTransactionError.Location = new Point(57, 245);
+            labelTransactionError.Margin = new Padding(0);
+            labelTransactionError.Name = "labelTransactionError";
+            labelTransactionError.Size = new Size(271, 26);
+            labelTransactionError.TabIndex = 46;
+            labelTransactionError.Text = "Retirar";
+            labelTransactionError.TextColor = Color.Red;
+            labelTransactionError.UseVisualStyleBackColor = false;
+            labelTransactionError.Visible = false;
+            // 
+            // comboBoxInstructors
+            // 
+            comboBoxInstructors.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxInstructors.FormattingEnabled = true;
+            comboBoxInstructors.IntegralHeight = false;
+            comboBoxInstructors.Items.AddRange(new object[] { "Instructor1,", "Instructor2,", "Instructor3" });
+            comboBoxInstructors.Location = new Point(57, 209);
+            comboBoxInstructors.Name = "comboBoxInstructors";
+            comboBoxInstructors.Size = new Size(271, 29);
+            comboBoxInstructors.TabIndex = 32;
+            // 
+            // btnNewTransaction
+            // 
+            btnNewTransaction.BackColor = Color.Green;
+            btnNewTransaction.BackgroundColor = Color.Green;
+            btnNewTransaction.BorderColor = Color.PaleVioletRed;
+            btnNewTransaction.BorderRadius = 12;
+            btnNewTransaction.BorderSize = 0;
+            btnNewTransaction.Cursor = Cursors.Hand;
+            btnNewTransaction.FlatAppearance.BorderSize = 0;
+            btnNewTransaction.FlatStyle = FlatStyle.Flat;
+            btnNewTransaction.Flip = FontAwesome.Sharp.FlipOrientation.Vertical;
+            btnNewTransaction.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNewTransaction.ForeColor = Color.White;
+            btnNewTransaction.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
+            btnNewTransaction.IconColor = Color.White;
+            btnNewTransaction.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNewTransaction.IconSize = 30;
+            btnNewTransaction.ImageAlign = ContentAlignment.MiddleRight;
+            btnNewTransaction.Location = new Point(110, 276);
+            btnNewTransaction.Margin = new Padding(0);
+            btnNewTransaction.Name = "btnNewTransaction";
+            btnNewTransaction.Padding = new Padding(10, 0, 10, 0);
+            btnNewTransaction.Size = new Size(159, 49);
+            btnNewTransaction.TabIndex = 44;
+            btnNewTransaction.Text = "Transferir";
+            btnNewTransaction.TextAlign = ContentAlignment.MiddleLeft;
+            btnNewTransaction.TextColor = Color.White;
+            btnNewTransaction.UseVisualStyleBackColor = false;
+            btnNewTransaction.Click += btnNewTransaction_Click;
+            // 
+            // rjButton2
+            // 
+            rjButton2.BackColor = Color.Transparent;
+            rjButton2.BackgroundColor = Color.Transparent;
+            rjButton2.BorderColor = Color.Transparent;
+            rjButton2.BorderRadius = 30;
+            rjButton2.BorderSize = 0;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton2.ForeColor = Color.DimGray;
+            rjButton2.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            rjButton2.IconColor = Color.Green;
+            rjButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton2.IconSize = 40;
+            rjButton2.Location = new Point(10, 201);
+            rjButton2.Margin = new Padding(0);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Size = new Size(50, 47);
+            rjButton2.TabIndex = 43;
+            rjButton2.TextColor = Color.DimGray;
+            rjButton2.UseVisualStyleBackColor = false;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.Transparent;
+            rjButton1.BackgroundColor = Color.Transparent;
+            rjButton1.BorderColor = Color.Transparent;
+            rjButton1.BorderRadius = 30;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.ForeColor = Color.DimGray;
+            rjButton1.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            rjButton1.IconColor = Color.Green;
+            rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton1.IconSize = 35;
+            rjButton1.Location = new Point(5, 127);
+            rjButton1.Margin = new Padding(0);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(50, 47);
+            rjButton1.TabIndex = 42;
+            rjButton1.TextColor = Color.DimGray;
+            rjButton1.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.White;
+            label6.ForeColor = SystemColors.ActiveCaptionText;
             label6.ImageAlign = ContentAlignment.MiddleLeft;
-            label6.Location = new Point(43, 36);
+            label6.Location = new Point(55, 42);
             label6.Name = "label6";
             label6.Size = new Size(254, 37);
             label6.TabIndex = 4;
             label6.Text = "Nueva Transferencia";
             label6.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label12
-            // 
-            label12.Anchor = AnchorStyles.None;
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.ForeColor = SystemColors.Control;
-            label12.Image = Properties.Resources.people_item;
-            label12.Location = new Point(11, 212);
-            label12.Name = "label12";
-            label12.Size = new Size(31, 37);
-            label12.TabIndex = 40;
-            label12.Text = "  ";
-            // 
             // label11
             // 
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.ForeColor = SystemColors.Control;
-            label11.Location = new Point(45, 189);
+            label11.ForeColor = SystemColors.ActiveCaptionText;
+            label11.Location = new Point(53, 181);
             label11.Name = "label11";
             label11.Size = new Size(77, 25);
             label11.TabIndex = 39;
             label11.Text = "Destino:";
             // 
-            // comboBox1
+            // textBoxAmount
             // 
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.IntegralHeight = false;
-            comboBox1.Items.AddRange(new object[] { "Instructor1,", "Instructor2,", "Instructor3" });
-            comboBox1.Location = new Point(48, 217);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(266, 29);
-            comboBox1.TabIndex = 32;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top;
-            button1.BackColor = Color.DarkOrange;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(75, 285);
-            button1.Name = "button1";
-            button1.Size = new Size(211, 34);
-            button1.TabIndex = 31;
-            button1.Text = "Transferir";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            label8.Anchor = AnchorStyles.None;
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = SystemColors.Control;
-            label8.Location = new Point(11, 126);
-            label8.Name = "label8";
-            label8.Size = new Size(32, 37);
-            label8.TabIndex = 30;
-            label8.Text = "$";
-            // 
-            // textBox6
-            // 
-            textBox6.Anchor = AnchorStyles.None;
-            textBox6.Cursor = Cursors.Hand;
-            textBox6.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox6.ForeColor = Color.FromArgb(9, 0, 20);
-            textBox6.Location = new Point(43, 127);
-            textBox6.Margin = new Padding(5);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(271, 36);
-            textBox6.TabIndex = 11;
+            textBoxAmount.Anchor = AnchorStyles.None;
+            textBoxAmount.BorderStyle = BorderStyle.FixedSingle;
+            textBoxAmount.Cursor = Cursors.Hand;
+            textBoxAmount.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxAmount.ForeColor = Color.FromArgb(9, 0, 20);
+            textBoxAmount.Location = new Point(55, 131);
+            textBoxAmount.Margin = new Padding(5);
+            textBoxAmount.Multiline = true;
+            textBoxAmount.Name = "textBoxAmount";
+            textBoxAmount.Size = new Size(271, 36);
+            textBoxAmount.TabIndex = 11;
+            textBoxAmount.KeyPress += textBoxAmount_KeyPress;
             // 
             // label9
             // 
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.ForeColor = SystemColors.Control;
-            label9.Location = new Point(41, 100);
+            label9.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = SystemColors.ActiveCaptionText;
+            label9.Location = new Point(53, 104);
             label9.Name = "label9";
-            label9.Size = new Size(66, 25);
+            label9.Size = new Size(69, 25);
             label9.TabIndex = 1;
             label9.Text = "Monto";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.Transparent;
-            label10.FlatStyle = FlatStyle.Flat;
-            label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.ForeColor = Color.Red;
-            label10.Location = new Point(43, 164);
-            label10.Name = "label10";
-            label10.Size = new Size(85, 21);
-            label10.TabIndex = 29;
-            label10.Text = "*requerido";
-            // 
             // panel6
             // 
-            panel6.Controls.Add(button2);
+            panel6.Controls.Add(labelErrorWithdraw);
+            panel6.Controls.Add(btnNewWithdraw);
+            panel6.Controls.Add(label8);
+            panel6.Controls.Add(textBoxWithdraw);
+            panel6.Controls.Add(rjButton3);
             panel6.Controls.Add(label7);
-            panel6.Controls.Add(label14);
-            panel6.Controls.Add(label16);
-            panel6.Controls.Add(textBox1);
-            panel6.Controls.Add(label15);
             panel6.Dock = DockStyle.Bottom;
-            panel6.Location = new Point(0, 379);
+            panel6.Location = new Point(0, 363);
             panel6.Name = "panel6";
-            panel6.Size = new Size(325, 253);
+            panel6.Size = new Size(348, 269);
             panel6.TabIndex = 43;
             // 
-            // button2
+            // labelErrorWithdraw
             // 
-            button2.Anchor = AnchorStyles.Top;
-            button2.BackColor = Color.DarkOrange;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(75, 168);
-            button2.Name = "button2";
-            button2.Size = new Size(211, 34);
-            button2.TabIndex = 42;
-            button2.Text = "Retirar";
-            button2.TextImageRelation = TextImageRelation.ImageAboveText;
-            button2.UseVisualStyleBackColor = false;
+            labelErrorWithdraw.BackColor = Color.White;
+            labelErrorWithdraw.BackgroundColor = Color.White;
+            labelErrorWithdraw.BorderColor = Color.Crimson;
+            labelErrorWithdraw.BorderRadius = 12;
+            labelErrorWithdraw.BorderSize = 1;
+            labelErrorWithdraw.FlatAppearance.BorderSize = 0;
+            labelErrorWithdraw.FlatStyle = FlatStyle.Flat;
+            labelErrorWithdraw.Flip = FontAwesome.Sharp.FlipOrientation.Vertical;
+            labelErrorWithdraw.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            labelErrorWithdraw.ForeColor = Color.Red;
+            labelErrorWithdraw.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            labelErrorWithdraw.IconColor = Color.Red;
+            labelErrorWithdraw.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            labelErrorWithdraw.IconSize = 1;
+            labelErrorWithdraw.ImageAlign = ContentAlignment.MiddleLeft;
+            labelErrorWithdraw.Location = new Point(55, 169);
+            labelErrorWithdraw.Margin = new Padding(0);
+            labelErrorWithdraw.Name = "labelErrorWithdraw";
+            labelErrorWithdraw.Padding = new Padding(5, 0, 0, 0);
+            labelErrorWithdraw.Size = new Size(271, 26);
+            labelErrorWithdraw.TabIndex = 47;
+            labelErrorWithdraw.Text = "Retirar";
+            labelErrorWithdraw.TextColor = Color.Red;
+            labelErrorWithdraw.UseVisualStyleBackColor = false;
+            labelErrorWithdraw.Visible = false;
+            // 
+            // btnNewWithdraw
+            // 
+            btnNewWithdraw.BackColor = Color.Green;
+            btnNewWithdraw.BackgroundColor = Color.Green;
+            btnNewWithdraw.BorderColor = Color.PaleVioletRed;
+            btnNewWithdraw.BorderRadius = 12;
+            btnNewWithdraw.BorderSize = 0;
+            btnNewWithdraw.Cursor = Cursors.Hand;
+            btnNewWithdraw.FlatAppearance.BorderSize = 0;
+            btnNewWithdraw.FlatStyle = FlatStyle.Flat;
+            btnNewWithdraw.Flip = FontAwesome.Sharp.FlipOrientation.Vertical;
+            btnNewWithdraw.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNewWithdraw.ForeColor = Color.White;
+            btnNewWithdraw.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            btnNewWithdraw.IconColor = Color.White;
+            btnNewWithdraw.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNewWithdraw.IconSize = 30;
+            btnNewWithdraw.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNewWithdraw.Location = new Point(110, 199);
+            btnNewWithdraw.Margin = new Padding(0);
+            btnNewWithdraw.Name = "btnNewWithdraw";
+            btnNewWithdraw.Padding = new Padding(10, 0, 20, 0);
+            btnNewWithdraw.Size = new Size(159, 49);
+            btnNewWithdraw.TabIndex = 45;
+            btnNewWithdraw.Text = "Retirar";
+            btnNewWithdraw.TextAlign = ContentAlignment.MiddleRight;
+            btnNewWithdraw.TextColor = Color.White;
+            btnNewWithdraw.UseVisualStyleBackColor = false;
+            btnNewWithdraw.Click += btnNewWithdraw_Click;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.None;
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = SystemColors.ActiveCaptionText;
+            label8.Location = new Point(55, 98);
+            label8.Name = "label8";
+            label8.Size = new Size(69, 25);
+            label8.TabIndex = 44;
+            label8.Text = "Monto";
+            // 
+            // textBoxWithdraw
+            // 
+            textBoxWithdraw.Anchor = AnchorStyles.None;
+            textBoxWithdraw.BorderStyle = BorderStyle.FixedSingle;
+            textBoxWithdraw.Cursor = Cursors.Hand;
+            textBoxWithdraw.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxWithdraw.ForeColor = Color.FromArgb(9, 0, 20);
+            textBoxWithdraw.Location = new Point(55, 126);
+            textBoxWithdraw.Margin = new Padding(5);
+            textBoxWithdraw.Multiline = true;
+            textBoxWithdraw.Name = "textBoxWithdraw";
+            textBoxWithdraw.Size = new Size(271, 36);
+            textBoxWithdraw.TabIndex = 44;
+            textBoxWithdraw.KeyPress += textBoxAmount_KeyPress;
+            // 
+            // rjButton3
+            // 
+            rjButton3.BackColor = Color.Transparent;
+            rjButton3.BackgroundColor = Color.Transparent;
+            rjButton3.BorderColor = Color.Transparent;
+            rjButton3.BorderRadius = 30;
+            rjButton3.BorderSize = 0;
+            rjButton3.FlatAppearance.BorderSize = 0;
+            rjButton3.FlatStyle = FlatStyle.Flat;
+            rjButton3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton3.ForeColor = Color.DimGray;
+            rjButton3.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            rjButton3.IconColor = Color.Green;
+            rjButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton3.IconSize = 35;
+            rjButton3.Location = new Point(7, 123);
+            rjButton3.Margin = new Padding(0);
+            rjButton3.Name = "rjButton3";
+            rjButton3.Size = new Size(50, 47);
+            rjButton3.TabIndex = 43;
+            rjButton3.TextColor = Color.DimGray;
+            rjButton3.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.ForeColor = Color.White;
+            label7.ForeColor = SystemColors.ActiveCaptionText;
             label7.ImageAlign = ContentAlignment.MiddleLeft;
-            label7.Location = new Point(86, 16);
+            label7.Location = new Point(87, 47);
             label7.Name = "label7";
             label7.Size = new Size(172, 37);
             label7.TabIndex = 5;
             label7.Text = "Nuevo Retiro";
             // 
-            // label14
-            // 
-            label14.Anchor = AnchorStyles.None;
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.ForeColor = SystemColors.Control;
-            label14.Location = new Point(14, 103);
-            label14.Name = "label14";
-            label14.Size = new Size(32, 37);
-            label14.TabIndex = 42;
-            label14.Text = "$";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.BackColor = Color.Transparent;
-            label16.FlatStyle = FlatStyle.Flat;
-            label16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.ForeColor = Color.Red;
-            label16.Location = new Point(51, 142);
-            label16.Name = "label16";
-            label16.Size = new Size(85, 21);
-            label16.TabIndex = 41;
-            label16.Text = "*requerido";
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Cursor = Cursors.Hand;
-            textBox1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.FromArgb(9, 0, 20);
-            textBox1.Location = new Point(48, 103);
-            textBox1.Margin = new Padding(5);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(266, 36);
-            textBox1.TabIndex = 40;
-            // 
-            // label15
-            // 
-            label15.Anchor = AnchorStyles.None;
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.ForeColor = SystemColors.Control;
-            label15.Location = new Point(48, 73);
-            label15.Name = "label15";
-            label15.Size = new Size(66, 25);
-            label15.TabIndex = 39;
-            label15.Text = "Monto";
-            // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.FromArgb(16, 8, 30);
+            panel1.Controls.Add(PanelInvoiceWallet);
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(panel3);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1085, 632);
             panel1.TabIndex = 0;
+            // 
+            // PanelInvoiceWallet
+            // 
+            PanelInvoiceWallet.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PanelInvoiceWallet.AutoSize = true;
+            PanelInvoiceWallet.BackColor = Color.White;
+            PanelInvoiceWallet.BorderStyle = BorderStyle.FixedSingle;
+            PanelInvoiceWallet.Controls.Add(BtnCloseInvoice);
+            PanelInvoiceWallet.Controls.Add(label12);
+            PanelInvoiceWallet.Controls.Add(rjButton4);
+            PanelInvoiceWallet.Controls.Add(label10);
+            PanelInvoiceWallet.Location = new Point(176, 93);
+            PanelInvoiceWallet.Margin = new Padding(0);
+            PanelInvoiceWallet.MaximumSize = new Size(353, 169);
+            PanelInvoiceWallet.Name = "PanelInvoiceWallet";
+            PanelInvoiceWallet.Size = new Size(353, 169);
+            PanelInvoiceWallet.TabIndex = 5;
+            PanelInvoiceWallet.Visible = false;
+            // 
+            // BtnCloseInvoice
+            // 
+            BtnCloseInvoice.Anchor = AnchorStyles.None;
+            BtnCloseInvoice.BackColor = Color.Crimson;
+            BtnCloseInvoice.BackgroundColor = Color.Crimson;
+            BtnCloseInvoice.BorderColor = Color.PaleVioletRed;
+            BtnCloseInvoice.BorderRadius = 3;
+            BtnCloseInvoice.BorderSize = 0;
+            BtnCloseInvoice.Cursor = Cursors.Hand;
+            BtnCloseInvoice.FlatAppearance.BorderSize = 0;
+            BtnCloseInvoice.FlatStyle = FlatStyle.Flat;
+            BtnCloseInvoice.Flip = FontAwesome.Sharp.FlipOrientation.Vertical;
+            BtnCloseInvoice.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnCloseInvoice.ForeColor = Color.White;
+            BtnCloseInvoice.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            BtnCloseInvoice.IconColor = Color.White;
+            BtnCloseInvoice.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnCloseInvoice.IconSize = 20;
+            BtnCloseInvoice.Location = new Point(316, 4);
+            BtnCloseInvoice.Margin = new Padding(0);
+            BtnCloseInvoice.Name = "BtnCloseInvoice";
+            BtnCloseInvoice.Size = new Size(31, 25);
+            BtnCloseInvoice.TabIndex = 49;
+            BtnCloseInvoice.TextAlign = ContentAlignment.MiddleLeft;
+            BtnCloseInvoice.TextColor = Color.White;
+            BtnCloseInvoice.UseVisualStyleBackColor = false;
+            BtnCloseInvoice.Click += BtnCloseInvoice_Click;
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.ForeColor = Color.DarkOrange;
+            label12.Location = new Point(77, 78);
+            label12.Name = "label12";
+            label12.Size = new Size(201, 21);
+            label12.TabIndex = 48;
+            label12.Text = "Descripcion de la operacion";
+            label12.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // rjButton4
+            // 
+            rjButton4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            rjButton4.BackColor = Color.DarkOrange;
+            rjButton4.BackgroundColor = Color.DarkOrange;
+            rjButton4.BorderColor = Color.PaleVioletRed;
+            rjButton4.BorderRadius = 12;
+            rjButton4.BorderSize = 0;
+            rjButton4.Cursor = Cursors.Hand;
+            rjButton4.FlatAppearance.BorderSize = 0;
+            rjButton4.FlatStyle = FlatStyle.Flat;
+            rjButton4.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            rjButton4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton4.ForeColor = Color.White;
+            rjButton4.IconChar = FontAwesome.Sharp.IconChar.Download;
+            rjButton4.IconColor = Color.White;
+            rjButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton4.IconSize = 30;
+            rjButton4.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton4.Location = new Point(54, 109);
+            rjButton4.Margin = new Padding(0);
+            rjButton4.Name = "rjButton4";
+            rjButton4.Padding = new Padding(10, 0, 10, 0);
+            rjButton4.Size = new Size(254, 42);
+            rjButton4.TabIndex = 47;
+            rjButton4.Text = "Descargar Comprobante";
+            rjButton4.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton4.TextColor = Color.White;
+            rjButton4.UseVisualStyleBackColor = false;
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = SystemColors.ActiveCaptionText;
+            label10.ImageAlign = ContentAlignment.MiddleLeft;
+            label10.Location = new Point(69, 31);
+            label10.Name = "label10";
+            label10.Size = new Size(230, 37);
+            label10.TabIndex = 47;
+            label10.Text = "Operacion Exitosa";
+            label10.TextAlign = ContentAlignment.TopCenter;
             // 
             // panel4
             // 
@@ -353,9 +552,9 @@
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(label1);
-            panel4.Location = new Point(3, 86);
+            panel4.Location = new Point(2, 114);
             panel4.Name = "panel4";
-            panel4.Size = new Size(349, 177);
+            panel4.Size = new Size(319, 174);
             panel4.TabIndex = 4;
             // 
             // label5
@@ -364,7 +563,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.DarkCyan;
-            label5.Location = new Point(47, 12);
+            label5.Location = new Point(32, 18);
             label5.Name = "label5";
             label5.Size = new Size(106, 28);
             label5.TabIndex = 2;
@@ -377,7 +576,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.DarkCyan;
-            label2.Location = new Point(47, 128);
+            label2.Location = new Point(32, 118);
             label2.Name = "label2";
             label2.Size = new Size(66, 28);
             label2.TabIndex = 1;
@@ -388,10 +587,11 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(35, 63);
+            label1.Font = new Font("DejaVu Sans Condensed", 39.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(24, 55);
             label1.Name = "label1";
-            label1.Size = new Size(248, 72);
+            label1.Size = new Size(252, 61);
             label1.TabIndex = 0;
             label1.Text = "$ 128984";
             label1.TextAlign = ContentAlignment.MiddleLeft;
@@ -400,8 +600,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
             label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(3, 19);
+            label3.Location = new Point(3, 23);
             label3.Name = "label3";
             label3.Size = new Size(223, 54);
             label3.TabIndex = 3;
@@ -409,20 +610,22 @@
             // 
             // panel3
             // 
+            panel3.BackColor = Color.FromArgb(6, 8, 20);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(dataGridTransactions);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 282);
-            panel3.MinimumSize = new Size(0, 350);
+            panel3.Location = new Point(0, 312);
+            panel3.MinimumSize = new Size(0, 320);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1085, 350);
+            panel3.Size = new Size(1085, 320);
             panel3.TabIndex = 2;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(3, 25);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(3, 17);
             label4.Name = "label4";
             label4.Size = new Size(276, 37);
             label4.TabIndex = 4;
@@ -432,50 +635,124 @@
             // dataGridTransactions
             // 
             dataGridTransactions.AllowUserToAddRows = false;
+            dataGridTransactions.AllowUserToDeleteRows = false;
+            dataGridTransactions.AllowUserToResizeColumns = false;
+            dataGridTransactions.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.Transparent;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridTransactions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridTransactions.BackgroundColor = Color.GhostWhite;
+            dataGridTransactions.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridTransactions.BackgroundColor = Color.FromArgb(6, 8, 20);
+            dataGridTransactions.CausesValidation = false;
             dataGridTransactions.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Transparent;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridTransactions.Columns.AddRange(new DataGridViewColumn[] { gridDate, gridType, gridAmount, gridDescription });
-            dataGridTransactions.GridColor = SystemColors.Control;
-            dataGridTransactions.Location = new Point(0, 83);
+            dataGridTransactions.Columns.AddRange(new DataGridViewColumn[] { ID, gridDate, gridType, gridAmount, gridDescription });
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dataGridTransactions.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridTransactions.GridColor = Color.Black;
+            dataGridTransactions.Location = new Point(0, 67);
             dataGridTransactions.Margin = new Padding(0);
+            dataGridTransactions.MultiSelect = false;
             dataGridTransactions.Name = "dataGridTransactions";
             dataGridTransactions.ReadOnly = true;
-            dataGridTransactions.RowTemplate.Height = 25;
-            dataGridTransactions.Size = new Size(1085, 267);
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.IndianRed;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.GrayText;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dataGridTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridTransactions.RowHeadersVisible = false;
+            dataGridTransactions.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle9.SelectionBackColor = Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = Color.White;
+            dataGridTransactions.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridTransactions.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
+            dataGridTransactions.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
+            dataGridTransactions.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
+            dataGridTransactions.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridTransactions.RowTemplate.Height = 30;
+            dataGridTransactions.ScrollBars = ScrollBars.None;
+            dataGridTransactions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridTransactions.Size = new Size(1085, 253);
             dataGridTransactions.TabIndex = 2;
+            // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            ID.Resizable = DataGridViewTriState.True;
+            ID.Visible = false;
             // 
             // gridDate
             // 
             gridDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.BackColor = Color.Transparent;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Transparent;
+            gridDate.DefaultCellStyle = dataGridViewCellStyle3;
             gridDate.HeaderText = "Fecha";
             gridDate.Name = "gridDate";
             gridDate.ReadOnly = true;
             // 
             // gridType
             // 
+            dataGridViewCellStyle4.BackColor = Color.Transparent;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            gridType.DefaultCellStyle = dataGridViewCellStyle4;
             gridType.HeaderText = "Tipo";
             gridType.Name = "gridType";
             gridType.ReadOnly = true;
             // 
             // gridAmount
             // 
-            gridAmount.HeaderText = "Monton";
+            dataGridViewCellStyle5.BackColor = Color.Transparent;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = Color.Transparent;
+            gridAmount.DefaultCellStyle = dataGridViewCellStyle5;
+            gridAmount.HeaderText = "Monto";
             gridAmount.Name = "gridAmount";
             gridAmount.ReadOnly = true;
             // 
             // gridDescription
             // 
             gridDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.BackColor = Color.Transparent;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Transparent;
+            gridDescription.DefaultCellStyle = dataGridViewCellStyle6;
             gridDescription.HeaderText = "Descripcion";
             gridDescription.Name = "gridDescription";
             gridDescription.ReadOnly = true;
@@ -495,6 +772,8 @@
             panel6.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            PanelInvoiceWallet.ResumeLayout(false);
+            PanelInvoiceWallet.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
@@ -512,10 +791,6 @@
         private Label label2;
         private Label label1;
         private Panel panel3;
-        private DataGridViewTextBoxColumn gridDate;
-        private DataGridViewTextBoxColumn gridType;
-        private DataGridViewTextBoxColumn gridAmount;
-        private DataGridViewTextBoxColumn gridDescription;
         private Label label3;
         private Label label4;
         private Panel panel4;
@@ -524,19 +799,28 @@
         private Label label6;
         private Panel panel5;
         private Label label8;
-        private TextBox textBox6;
+        private TextBox textBoxAmount;
         private Label label9;
-        private Label label10;
-        private Button button1;
         private Label label11;
-        private ComboBox comboBox1;
-        private Label label12;
-        private Label label13;
-        private Button button2;
-        private Label label14;
-        private TextBox textBox1;
-        private Label label15;
-        private Label label16;
+        private ComboBox comboBoxInstructors;
         private Panel panel6;
+        private ClassCustom.RJButton rjButton1;
+        private ClassCustom.RJButton rjButton2;
+        private TextBox textBoxWithdraw;
+        private ClassCustom.RJButton rjButton3;
+        private ClassCustom.RJButton btnNewWithdraw;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn gridDate;
+        private DataGridViewTextBoxColumn gridType;
+        private DataGridViewTextBoxColumn gridAmount;
+        private DataGridViewTextBoxColumn gridDescription;
+        private ClassCustom.RJButton labelTransactionError;
+        private ClassCustom.RJButton labelErrorWithdraw;
+        private Panel PanelInvoiceWallet;
+        private Label label10;
+        private Label label12;
+        private ClassCustom.RJButton rjButton4;
+        private ClassCustom.RJButton btnNewTransaction;
+        private ClassCustom.RJButton BtnCloseInvoice;
     }
 }

@@ -35,27 +35,28 @@
             label3 = new Label();
             textBoxEmailUser = new TextBox();
             buttonSignIn = new Button();
-            label4 = new Label();
             pictureBox1 = new PictureBox();
-            labelErrorEmail = new Label();
-            labelErrorPassWord = new Label();
+            labelErrorPass = new Label();
             button1 = new Button();
             button2 = new Button();
+            labelErrorNickname = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // textBoxPasswordUser
             // 
+            textBoxPasswordUser.Anchor = AnchorStyles.None;
             textBoxPasswordUser.BackColor = SystemColors.WindowFrame;
             textBoxPasswordUser.BorderStyle = BorderStyle.None;
-            textBoxPasswordUser.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPasswordUser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxPasswordUser.ForeColor = SystemColors.WindowText;
             textBoxPasswordUser.Location = new Point(19, 243);
+            textBoxPasswordUser.MaxLength = 50;
             textBoxPasswordUser.Multiline = true;
             textBoxPasswordUser.Name = "textBoxPasswordUser";
+            textBoxPasswordUser.PasswordChar = '*';
             textBoxPasswordUser.Size = new Size(263, 36);
             textBoxPasswordUser.TabIndex = 4;
-            textBoxPasswordUser.TextChanged += textBoxPasswordUser_TextChanged;
             // 
             // label1
             // 
@@ -67,7 +68,6 @@
             label1.Size = new Size(140, 30);
             label1.TabIndex = 0;
             label1.Text = "Inicia Sesión";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -97,15 +97,14 @@
             // 
             textBoxEmailUser.BackColor = SystemColors.WindowFrame;
             textBoxEmailUser.BorderStyle = BorderStyle.None;
-            textBoxEmailUser.Cursor = Cursors.Hand;
-            textBoxEmailUser.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxEmailUser.Cursor = Cursors.IBeam;
+            textBoxEmailUser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxEmailUser.Location = new Point(18, 159);
             textBoxEmailUser.MaxLength = 6;
             textBoxEmailUser.Multiline = true;
             textBoxEmailUser.Name = "textBoxEmailUser";
             textBoxEmailUser.Size = new Size(264, 35);
             textBoxEmailUser.TabIndex = 3;
-            textBoxEmailUser.TextChanged += textBoxEmailUser_TextChanged;
             // 
             // buttonSignIn
             // 
@@ -116,25 +115,13 @@
             buttonSignIn.FlatStyle = FlatStyle.Flat;
             buttonSignIn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSignIn.ForeColor = Color.White;
-            buttonSignIn.Location = new Point(62, 316);
+            buttonSignIn.Location = new Point(62, 322);
             buttonSignIn.Name = "buttonSignIn";
             buttonSignIn.Size = new Size(185, 38);
             buttonSignIn.TabIndex = 5;
             buttonSignIn.Text = "Iniciar sesión";
             buttonSignIn.UseVisualStyleBackColor = false;
             buttonSignIn.Click += buttonSignIn_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Cursor = Cursors.Hand;
-            label4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.Silver;
-            label4.Location = new Point(76, 369);
-            label4.Name = "label4";
-            label4.Size = new Size(150, 19);
-            label4.TabIndex = 6;
-            label4.Text = "¿Olvido su contraseña?";
             // 
             // pictureBox1
             // 
@@ -149,31 +136,19 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // labelErrorEmail
+            // labelErrorPass
             // 
-            labelErrorEmail.AutoSize = true;
-            labelErrorEmail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            labelErrorEmail.ForeColor = Color.Crimson;
-            labelErrorEmail.Location = new Point(19, 196);
-            labelErrorEmail.Name = "labelErrorEmail";
-            labelErrorEmail.Size = new Size(55, 19);
-            labelErrorEmail.TabIndex = 8;
-            labelErrorEmail.Text = "Moficar";
-            labelErrorEmail.Visible = false;
-            // 
-            // labelErrorPassWord
-            // 
-            labelErrorPassWord.AutoSize = true;
-            labelErrorPassWord.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            labelErrorPassWord.ForeColor = Color.Crimson;
-            labelErrorPassWord.ImageAlign = ContentAlignment.MiddleLeft;
-            labelErrorPassWord.Location = new Point(19, 283);
-            labelErrorPassWord.Name = "labelErrorPassWord";
-            labelErrorPassWord.Size = new Size(55, 19);
-            labelErrorPassWord.TabIndex = 9;
-            labelErrorPassWord.Text = "Moficar";
-            labelErrorPassWord.TextAlign = ContentAlignment.MiddleRight;
-            labelErrorPassWord.Visible = false;
+            labelErrorPass.AutoSize = true;
+            labelErrorPass.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelErrorPass.ForeColor = Color.Crimson;
+            labelErrorPass.ImageAlign = ContentAlignment.MiddleLeft;
+            labelErrorPass.Location = new Point(19, 282);
+            labelErrorPass.Name = "labelErrorPass";
+            labelErrorPass.Size = new Size(78, 19);
+            labelErrorPass.TabIndex = 9;
+            labelErrorPass.Text = "Obligatorio";
+            labelErrorPass.TextAlign = ContentAlignment.MiddleRight;
+            labelErrorPass.Visible = false;
             // 
             // button1
             // 
@@ -184,11 +159,11 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(491, 59);
+            button1.Location = new Point(493, 59);
             button1.Name = "button1";
             button1.Size = new Size(81, 36);
             button1.TabIndex = 10;
-            button1.Text = "Ingresar";
+            button1.Text = "DEMO";
             button1.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -201,13 +176,27 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.DarkCyan;
-            button2.Location = new Point(560, 4);
+            button2.Location = new Point(563, 2);
             button2.Name = "button2";
-            button2.Size = new Size(25, 34);
+            button2.Size = new Size(28, 42);
             button2.TabIndex = 11;
             button2.Text = "X";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
+            // 
+            // labelErrorNickname
+            // 
+            labelErrorNickname.AutoSize = true;
+            labelErrorNickname.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelErrorNickname.ForeColor = Color.Crimson;
+            labelErrorNickname.ImageAlign = ContentAlignment.MiddleLeft;
+            labelErrorNickname.Location = new Point(19, 197);
+            labelErrorNickname.Name = "labelErrorNickname";
+            labelErrorNickname.Size = new Size(78, 19);
+            labelErrorNickname.TabIndex = 12;
+            labelErrorNickname.Text = "Obligatorio";
+            labelErrorNickname.TextAlign = ContentAlignment.MiddleRight;
+            labelErrorNickname.Visible = false;
             // 
             // LoginDesing
             // 
@@ -215,12 +204,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(9, 0, 15);
             ClientSize = new Size(600, 420);
+            Controls.Add(labelErrorNickname);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(labelErrorPassWord);
-            Controls.Add(labelErrorEmail);
+            Controls.Add(labelErrorPass);
             Controls.Add(pictureBox1);
-            Controls.Add(label4);
             Controls.Add(buttonSignIn);
             Controls.Add(textBoxPasswordUser);
             Controls.Add(textBoxEmailUser);
@@ -244,12 +232,11 @@
         private Label label3;
         private TextBox textBoxEmailUser;
         private Button buttonSignIn;
-        private Label label4;
         private PictureBox pictureBox1;
         private TextBox textBoxPasswordUser;
-        private Label labelErrorEmail;
-        private Label labelErrorPassWord;
+        private Label labelErrorPass;
         private Button button1;
         private Button button2;
+        private Label labelErrorNickname;
     }
 }

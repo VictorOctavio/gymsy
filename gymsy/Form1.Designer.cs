@@ -147,7 +147,7 @@
             sidebar.MaximumSize = new Size(260, 0);
             sidebar.MinimumSize = new Size(70, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(260, 761);
+            sidebar.Size = new Size(260, 749);
             sidebar.TabIndex = 0;
             // 
             // panelAddAdmin
@@ -180,7 +180,7 @@
             btnAddAdmin.Margin = new Padding(0);
             btnAddAdmin.Name = "btnAddAdmin";
             btnAddAdmin.Padding = new Padding(18, 0, 0, 0);
-            btnAddAdmin.Size = new Size(258, 65);
+            btnAddAdmin.Size = new Size(257, 65);
             btnAddAdmin.TabIndex = 0;
             btnAddAdmin.Text = "    Add";
             btnAddAdmin.TextAlign = ContentAlignment.MiddleLeft;
@@ -249,7 +249,7 @@
             tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutClient.Size = new Size(260, 192);
+            tableLayoutClient.Size = new Size(257, 192);
             tableLayoutClient.TabIndex = 4;
             tableLayoutClient.Visible = false;
             // 
@@ -271,7 +271,7 @@
             btnNavPaysClient.Name = "btnNavPaysClient";
             btnNavPaysClient.Padding = new Padding(10, 0, 0, 0);
             btnNavPaysClient.RightToLeft = RightToLeft.No;
-            btnNavPaysClient.Size = new Size(260, 64);
+            btnNavPaysClient.Size = new Size(257, 64);
             btnNavPaysClient.TabIndex = 3;
             btnNavPaysClient.Text = "  Pays";
             btnNavPaysClient.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -296,7 +296,7 @@
             btnNavProgress.Name = "btnNavProgress";
             btnNavProgress.Padding = new Padding(20, 0, 0, 0);
             btnNavProgress.RightToLeft = RightToLeft.No;
-            btnNavProgress.Size = new Size(260, 64);
+            btnNavProgress.Size = new Size(257, 64);
             btnNavProgress.TabIndex = 2;
             btnNavProgress.Text = "    Progress";
             btnNavProgress.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -321,7 +321,7 @@
             btnNavAboutme.Name = "btnNavAboutme";
             btnNavAboutme.Padding = new Padding(10, 0, 0, 0);
             btnNavAboutme.RightToLeft = RightToLeft.No;
-            btnNavAboutme.Size = new Size(260, 64);
+            btnNavAboutme.Size = new Size(257, 64);
             btnNavAboutme.TabIndex = 1;
             btnNavAboutme.Text = " About me";
             btnNavAboutme.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -336,13 +336,13 @@
             tableLayoutAdmin.Controls.Add(btnNavPaysAdmin, 0, 2);
             tableLayoutAdmin.Controls.Add(btnNavInstructorAdmin, 0, 1);
             tableLayoutAdmin.Controls.Add(btnNavDashAdmin, 0, 0);
-            tableLayoutAdmin.Location = new Point(0, 134);
+            tableLayoutAdmin.Location = new Point(1, 136);
             tableLayoutAdmin.Name = "tableLayoutAdmin";
             tableLayoutAdmin.RowCount = 3;
             tableLayoutAdmin.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutAdmin.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutAdmin.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutAdmin.Size = new Size(260, 192);
+            tableLayoutAdmin.Size = new Size(259, 192);
             tableLayoutAdmin.TabIndex = 3;
             tableLayoutAdmin.Visible = false;
             // 
@@ -364,7 +364,7 @@
             btnNavPaysAdmin.Name = "btnNavPaysAdmin";
             btnNavPaysAdmin.Padding = new Padding(10, 0, 0, 0);
             btnNavPaysAdmin.RightToLeft = RightToLeft.No;
-            btnNavPaysAdmin.Size = new Size(260, 64);
+            btnNavPaysAdmin.Size = new Size(259, 64);
             btnNavPaysAdmin.TabIndex = 3;
             btnNavPaysAdmin.Text = "  Payments";
             btnNavPaysAdmin.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -389,11 +389,12 @@
             btnNavInstructorAdmin.Name = "btnNavInstructorAdmin";
             btnNavInstructorAdmin.Padding = new Padding(20, 0, 0, 0);
             btnNavInstructorAdmin.RightToLeft = RightToLeft.No;
-            btnNavInstructorAdmin.Size = new Size(260, 64);
+            btnNavInstructorAdmin.Size = new Size(259, 64);
             btnNavInstructorAdmin.TabIndex = 2;
             btnNavInstructorAdmin.Text = "    Instructors";
             btnNavInstructorAdmin.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnNavInstructorAdmin.UseVisualStyleBackColor = false;
+            btnNavInstructorAdmin.Visible = false;
             btnNavInstructorAdmin.Click += btnNavInstructorAdmin_Click;
             // 
             // btnNavDashAdmin
@@ -414,7 +415,7 @@
             btnNavDashAdmin.Name = "btnNavDashAdmin";
             btnNavDashAdmin.Padding = new Padding(10, 0, 0, 0);
             btnNavDashAdmin.RightToLeft = RightToLeft.No;
-            btnNavDashAdmin.Size = new Size(260, 64);
+            btnNavDashAdmin.Size = new Size(259, 64);
             btnNavDashAdmin.TabIndex = 1;
             btnNavDashAdmin.Text = " Dashboard";
             btnNavDashAdmin.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -545,7 +546,7 @@
             panelNavUser.Controls.Add(btnNavSettings);
             panelNavUser.Controls.Add(button4);
             panelNavUser.Dock = DockStyle.Bottom;
-            panelNavUser.Location = new Point(0, 638);
+            panelNavUser.Location = new Point(0, 626);
             panelNavUser.Margin = new Padding(0);
             panelNavUser.Name = "panelNavUser";
             panelNavUser.Size = new Size(260, 123);
@@ -718,7 +719,7 @@
             // 
             // mainWrapper
             // 
-            mainWrapper.BackColor = Color.White;
+            mainWrapper.BackColor = Color.FromArgb(16, 8, 30);
             mainWrapper.BackgroundImageLayout = ImageLayout.None;
             mainWrapper.Controls.Add(navbar);
             mainWrapper.Dock = DockStyle.Fill;
@@ -727,7 +728,7 @@
             mainWrapper.Margin = new Padding(0);
             mainWrapper.Name = "mainWrapper";
             mainWrapper.Padding = new Padding(260, 0, 0, 0);
-            mainWrapper.Size = new Size(1358, 761);
+            mainWrapper.Size = new Size(1358, 749);
             mainWrapper.TabIndex = 0;
             // 
             // navbar
@@ -742,20 +743,20 @@
             navbar.MaximumSize = new Size(0, 133);
             navbar.MinimumSize = new Size(0, 70);
             navbar.Name = "navbar";
-            navbar.Size = new Size(1098, 133);
+            navbar.Size = new Size(1098, 71);
             navbar.TabIndex = 0;
             // 
             // panelNavRight
             // 
             panelNavRight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelNavRight.BackColor = Color.DarkCyan;
-            panelNavRight.BorderStyle = BorderStyle.FixedSingle;
             panelNavRight.Controls.Add(panel2);
             panelNavRight.Controls.Add(btnNotifications);
+            panelNavRight.ForeColor = Color.White;
             panelNavRight.Location = new Point(750, 0);
             panelNavRight.Margin = new Padding(0);
             panelNavRight.Name = "panelNavRight";
-            panelNavRight.Size = new Size(348, 70);
+            panelNavRight.Size = new Size(348, 71);
             panelNavRight.TabIndex = 0;
             // 
             // panel2
@@ -766,9 +767,10 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            panel2.ForeColor = Color.White;
             panel2.Location = new Point(3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(277, 64);
+            panel2.Size = new Size(283, 69);
             panel2.TabIndex = 1;
             // 
             // btnWalletNav
@@ -792,7 +794,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.Transparent;
+            label5.ForeColor = Color.White;
             label5.Location = new Point(143, 27);
             label5.Name = "label5";
             label5.Size = new Size(93, 32);
@@ -803,7 +805,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.Transparent;
+            label4.ForeColor = Color.White;
             label4.Location = new Point(148, 8);
             label4.Name = "label4";
             label4.Size = new Size(59, 21);
@@ -814,7 +816,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.Transparent;
+            label3.ForeColor = Color.White;
             label3.Location = new Point(42, 9);
             label3.Name = "label3";
             label3.Size = new Size(47, 21);
@@ -825,7 +827,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Transparent;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(35, 28);
             label2.Name = "label2";
             label2.Size = new Size(86, 32);
@@ -839,7 +841,7 @@
             btnNotifications.FlatAppearance.BorderSize = 0;
             btnNotifications.FlatStyle = FlatStyle.Flat;
             btnNotifications.Image = (Image)resources.GetObject("btnNotifications.Image");
-            btnNotifications.Location = new Point(285, 0);
+            btnNotifications.Location = new Point(284, 0);
             btnNotifications.Name = "btnNotifications";
             btnNotifications.Size = new Size(61, 70);
             btnNotifications.TabIndex = 0;
@@ -852,8 +854,9 @@
             panel5.Dock = DockStyle.Top;
             panel5.ForeColor = Color.Black;
             panel5.Location = new Point(0, 0);
+            panel5.Margin = new Padding(0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1098, 70);
+            panel5.Size = new Size(1098, 71);
             panel5.TabIndex = 2;
             // 
             // panelNotifications
@@ -861,7 +864,7 @@
             panelNotifications.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelNotifications.BackColor = Color.White;
             panelNotifications.Controls.Add(label6);
-            panelNotifications.Location = new Point(750, 70);
+            panelNotifications.Location = new Point(743, 70);
             panelNotifications.MaximumSize = new Size(0, 62);
             panelNotifications.Name = "panelNotifications";
             panelNotifications.Size = new Size(348, 10);
@@ -917,12 +920,15 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1358, 761);
+            ClientSize = new Size(1358, 749);
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
+            MinimumSize = new Size(1200, 700);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gymsy";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)menuButton).EndInit();
             sidebar.ResumeLayout(false);
             panelAddAdmin.ResumeLayout(false);

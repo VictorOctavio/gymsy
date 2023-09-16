@@ -80,7 +80,7 @@
             a.Anchor = AnchorStyles.Top;
             a.AutoSize = true;
             a.Font = new Font("Segoe UI", 29F, FontStyle.Regular, GraphicsUnit.Point);
-            a.ForeColor = SystemColors.ActiveCaptionText;
+            a.ForeColor = Color.White;
             a.Location = new Point(535, 25);
             a.Name = "a";
             a.Size = new Size(263, 52);
@@ -92,7 +92,7 @@
             settingsWrapper.AutoScroll = true;
             settingsWrapper.AutoScrollMinSize = new Size(800, 700);
             settingsWrapper.AutoSize = true;
-            settingsWrapper.BackColor = Color.White;
+            settingsWrapper.BackColor = Color.FromArgb(16, 8, 30);
             settingsWrapper.Controls.Add(comboBoxAvatar);
             settingsWrapper.Controls.Add(gorilla_avatar);
             settingsWrapper.Controls.Add(panelError);
@@ -114,6 +114,7 @@
             settingsWrapper.Name = "settingsWrapper";
             settingsWrapper.Size = new Size(1366, 768);
             settingsWrapper.TabIndex = 1;
+            settingsWrapper.Paint += settingsWrapper_Paint;
             // 
             // comboBoxAvatar
             // 
@@ -170,7 +171,7 @@
             // 
             panelErrorText.AutoSize = true;
             panelErrorText.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            panelErrorText.Location = new Point(78, 18);
+            panelErrorText.Location = new Point(63, 19);
             panelErrorText.Name = "panelErrorText";
             panelErrorText.Size = new Size(145, 18);
             panelErrorText.TabIndex = 0;
@@ -198,7 +199,7 @@
             label13.Anchor = AnchorStyles.Top;
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.ForeColor = SystemColors.ActiveCaptionText;
+            label13.ForeColor = Color.White;
             label13.Location = new Point(320, 473);
             label13.Name = "label13";
             label13.Size = new Size(145, 36);
@@ -234,7 +235,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.ForeColor = SystemColors.ActiveCaptionText;
+            label9.ForeColor = Color.White;
             label9.Location = new Point(4, 12);
             label9.Name = "label9";
             label9.Size = new Size(108, 25);
@@ -284,7 +285,7 @@
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.ForeColor = SystemColors.ActiveCaptionText;
+            label11.ForeColor = Color.White;
             label11.Location = new Point(4, 12);
             label11.Name = "label11";
             label11.Size = new Size(106, 25);
@@ -369,7 +370,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.ForeColor = Color.White;
             label1.Location = new Point(2, 22);
             label1.Name = "label1";
             label1.Size = new Size(78, 25);
@@ -430,7 +431,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.ActiveCaptionText;
+            label5.ForeColor = Color.White;
             label5.Location = new Point(3, 18);
             label5.Name = "label5";
             label5.Size = new Size(54, 25);
@@ -480,7 +481,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(3, 18);
             label2.Name = "label2";
             label2.Size = new Size(90, 25);
@@ -530,7 +531,7 @@
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.ForeColor = SystemColors.ActiveCaptionText;
+            label7.ForeColor = Color.White;
             label7.Location = new Point(2, 18);
             label7.Name = "label7";
             label7.Size = new Size(78, 25);

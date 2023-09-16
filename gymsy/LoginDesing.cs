@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gymsy.utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,80 +21,34 @@ namespace gymsy
         }
 
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
-            
-            Form1 form1 = new Form1("admin");
-            form1.Show();
-            return;
+
+            labelErrorPass.Visible = false;
+            labelErrorNickname.Visible = false;
 
             //se captura un error en caso de haberlo
             try
             {
                 // Validar que los campos no estén vacíos o solo con espacios
-                if (string.IsNullOrWhiteSpace(textBoxEmailUser.Text) || string.IsNullOrWhiteSpace(textBoxPasswordUser.Text))
-                {
-                    MessageBox.Show("Por favor, complete todos los campos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                if (!Utility.IsValidTextBox(textBoxEmailUser, labelErrorNickname)
+                    || !Utility.IsValidTextBox(textBoxPasswordUser, labelErrorPass)) return;
                 else
                 {
-                    //Si no verifica el formato de correo electronico
-                    if (!IsValidEmail(textBoxEmailUser.Text))
-                    {
-                        //Mostrar un mensaje de error debajo del textBox
 
-                    }
-                    else
-                    {
-
-                        //No hubo error debe procederse a validar en la base de datos
-
-                    }
+                    //this.Hide();
+                    Form1 initForm = new Form1("instructor");
+                    initForm.Show();
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error inesperado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                labelErrorPass.Text = "Nickname o Contraseña incorrecta :( ";
+                labelErrorPass.Visible = true;
             }
         }
 
-        private void textBoxEmailUser_TextChanged(object sender, EventArgs e)
-        {
-            //se captura un error en caso de haberlo
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {//Se muestra un menaje de que ocurrio algo inesperado
-                MessageBox.Show("Ocurrió un error inesperado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Función para validar el formato del correo electrónico utilizando expresiones regulares.
-        private bool IsValidEmail(string email)
-        {
-            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
-            Regex regex = new Regex(pattern);
-            return regex.IsMatch(email);
-        }
-
-        private void textBoxPasswordUser_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {

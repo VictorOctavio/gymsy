@@ -75,6 +75,9 @@ namespace gymsy.UserControls
             panelError.Visible = false;
         }
 
+        private void settingsWrapper_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
