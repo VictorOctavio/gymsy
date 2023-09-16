@@ -190,7 +190,7 @@
             btnNewTransaction.TextAlign = ContentAlignment.MiddleLeft;
             btnNewTransaction.TextColor = Color.White;
             btnNewTransaction.UseVisualStyleBackColor = false;
-            btnNewTransaction.Click += btnNewTransaction_Click;
+            btnNewTransaction.Click += BtnNewTransaction_Click;
             // 
             // rjButton2
             // 
@@ -277,7 +277,7 @@
             textBoxAmount.Name = "textBoxAmount";
             textBoxAmount.Size = new Size(271, 36);
             textBoxAmount.TabIndex = 11;
-            textBoxAmount.KeyPress += textBoxAmount_KeyPress;
+            textBoxAmount.KeyPress += TextBoxAmount_KeyPress;
             // 
             // label9
             // 
@@ -361,7 +361,7 @@
             btnNewWithdraw.TextAlign = ContentAlignment.MiddleRight;
             btnNewWithdraw.TextColor = Color.White;
             btnNewWithdraw.UseVisualStyleBackColor = false;
-            btnNewWithdraw.Click += btnNewWithdraw_Click;
+            btnNewWithdraw.Click += BtnNewWithdraw_Click;
             // 
             // label8
             // 
@@ -388,7 +388,7 @@
             textBoxWithdraw.Name = "textBoxWithdraw";
             textBoxWithdraw.Size = new Size(271, 36);
             textBoxWithdraw.TabIndex = 44;
-            textBoxWithdraw.KeyPress += textBoxAmount_KeyPress;
+            textBoxWithdraw.KeyPress += TextBoxAmount_KeyPress;
             // 
             // rjButton3
             // 

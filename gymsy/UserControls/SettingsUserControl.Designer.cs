@@ -114,7 +114,7 @@
             settingsWrapper.Name = "settingsWrapper";
             settingsWrapper.Size = new Size(1366, 768);
             settingsWrapper.TabIndex = 1;
-            settingsWrapper.Paint += settingsWrapper_Paint;
+            settingsWrapper.Paint += SettingsWrapper_Paint;
             // 
             // comboBoxAvatar
             // 
@@ -165,7 +165,7 @@
             panelErrorBtnClose.TabIndex = 1;
             panelErrorBtnClose.Text = "X";
             panelErrorBtnClose.UseVisualStyleBackColor = false;
-            panelErrorBtnClose.Click += panelErrorBtnClose_Click;
+            panelErrorBtnClose.Click += PanelErrorBtnClose_Click;
             // 
             // panelErrorText
             // 
@@ -192,7 +192,7 @@
             btnChangePassword.TabIndex = 39;
             btnChangePassword.Text = "Cambiar ";
             btnChangePassword.UseVisualStyleBackColor = false;
-            btnChangePassword.Click += btnChangePassword_Click;
+            btnChangePassword.Click += BtnChangePassword_Click;
             // 
             // label13
             // 
@@ -322,7 +322,7 @@
             btnSaveChanges.TabIndex = 10;
             btnSaveChanges.Text = "Guardar Cambios";
             btnSaveChanges.UseVisualStyleBackColor = false;
-            btnSaveChanges.Click += btnSaveChanges_Click;
+            btnSaveChanges.Click += BtnSaveChanges_Click;
             // 
             // btnEditAvatar
             // 
@@ -339,7 +339,7 @@
             btnEditAvatar.TabIndex = 3;
             btnEditAvatar.Text = "Editar";
             btnEditAvatar.UseVisualStyleBackColor = false;
-            btnEditAvatar.Click += btnEditAvatar_Click;
+            btnEditAvatar.Click += BtnEditAvatar_Click;
             // 
             // panel2
             // 
@@ -519,11 +519,11 @@
             tbSurname.Cursor = Cursors.Hand;
             tbSurname.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             tbSurname.ForeColor = Color.FromArgb(9, 0, 20);
-            tbSurname.Location = new Point(0, 43);
+            tbSurname.Location = new Point(0, 46);
             tbSurname.Margin = new Padding(5);
             tbSurname.Multiline = true;
             tbSurname.Name = "tbSurname";
-            tbSurname.Size = new Size(335, 40);
+            tbSurname.Size = new Size(335, 37);
             tbSurname.TabIndex = 11;
             // 
             // label7

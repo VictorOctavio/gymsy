@@ -63,6 +63,7 @@ C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-window
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.ClientControls.ProgressClientControl.resources
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.WalletUserControl.resources
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Azure.Core.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Azure.Identity.dll
@@ -109,3 +110,7 @@ C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\win-x86\na
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.InvoiceUserControl.resources
+=======
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\CustomControls.RJControls.RJTextBox.resources
+>>>>>>> e0fdac7f9968de5e766d795164501eab6383bda6
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\CustomControls.RJControls.RJTextBox.resources

@@ -20,7 +20,7 @@ namespace gymsy.UserControls
         }
 
 
-        private void btnSaveChanges_Click(object sender, EventArgs e)
+        private void BtnSaveChanges_Click(object sender, EventArgs e)
         {
 
             // Validate textbox is not null
@@ -37,7 +37,7 @@ namespace gymsy.UserControls
 
 
 
-        private void btnChangePassword_Click(object sender, EventArgs e)
+        private void BtnChangePassword_Click(object sender, EventArgs e)
         {
 
             List<TextBox> textBoxList = new List<TextBox>()
@@ -51,7 +51,7 @@ namespace gymsy.UserControls
         }
 
         // Change avatar user
-        private void btnEditAvatar_Click(object sender, EventArgs e)
+        private void BtnEditAvatar_Click(object sender, EventArgs e)
         {
             MessageBox.Show(comboBoxAvatar.Text);
         }
@@ -70,12 +70,12 @@ namespace gymsy.UserControls
         }
 
         // Close panel error
-        private void panelErrorBtnClose_Click(object sender, EventArgs e)
+        private void PanelErrorBtnClose_Click(object sender, EventArgs e)
         {
             panelError.Visible = false;
         }
 
-        private void settingsWrapper_Paint(object sender, PaintEventArgs e)
+        private void SettingsWrapper_Paint(object sender, PaintEventArgs e)
         {
 
         }

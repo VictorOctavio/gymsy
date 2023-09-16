@@ -25,12 +25,12 @@ namespace gymsy.UserControls
             dataGridTransactions.Rows.Add(1, "01/06/23", "Retiro", "$ 17500", "Destino: Tú");
         }
 
-        private void textBoxAmount_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBoxAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utility.TextBoxOnlyNumbersWithDecimal(sender, e);
         }
 
-        private void btnNewTransaction_Click(object sender, EventArgs e)
+        private void BtnNewTransaction_Click(object sender, EventArgs e)
         {
             // Ocultar errores anteriores
             labelTransactionError.Visible = false;
@@ -62,7 +62,7 @@ namespace gymsy.UserControls
             }
         }
 
-        private void btnNewWithdraw_Click(object sender, EventArgs e)
+        private void BtnNewWithdraw_Click(object sender, EventArgs e)
         {
             // Ocultar errores anteriores
             labelErrorWithdraw.Visible = false;

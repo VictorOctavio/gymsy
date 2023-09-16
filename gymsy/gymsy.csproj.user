@@ -4,6 +4,12 @@
     <Compile Update="ClassCustom\Class1.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="ClassCustom\RJComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ClassCustom\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -49,5 +55,10 @@
     <Compile Update="UserControls\WalletUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="UserControls\ClientControls\AboutClientControl.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
