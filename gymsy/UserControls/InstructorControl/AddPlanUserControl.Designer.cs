@@ -46,6 +46,8 @@
             precio = new DataGridViewTextBoxColumn();
             descripcion = new DataGridViewTextBoxColumn();
             nav = new Panel();
+            BCancelarBusqueda = new ClassCustom.RJButton();
+            LModoBusqueda = new Label();
             TBBusqueda = new CustomControls.RJControls.RJTextBox();
             BBuscar = new ClassCustom.RJButton();
             BAgregarPlan = new ClassCustom.RJButton();
@@ -289,6 +291,8 @@
             // nav
             // 
             nav.BackColor = Color.FromArgb(16, 8, 23);
+            nav.Controls.Add(BCancelarBusqueda);
+            nav.Controls.Add(LModoBusqueda);
             nav.Controls.Add(TBBusqueda);
             nav.Controls.Add(BBuscar);
             nav.Dock = DockStyle.Top;
@@ -297,6 +301,46 @@
             nav.Name = "nav";
             nav.Size = new Size(1000, 124);
             nav.TabIndex = 6;
+            // 
+            // BCancelarBusqueda
+            // 
+            BCancelarBusqueda.BackColor = Color.FromArgb(192, 0, 0);
+            BCancelarBusqueda.BackgroundColor = Color.FromArgb(192, 0, 0);
+            BCancelarBusqueda.BorderColor = Color.PaleVioletRed;
+            BCancelarBusqueda.BorderRadius = 15;
+            BCancelarBusqueda.BorderSize = 0;
+            BCancelarBusqueda.FlatAppearance.BorderSize = 0;
+            BCancelarBusqueda.FlatStyle = FlatStyle.Flat;
+            BCancelarBusqueda.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BCancelarBusqueda.ForeColor = Color.White;
+            BCancelarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            BCancelarBusqueda.IconColor = Color.White;
+            BCancelarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BCancelarBusqueda.IconSize = 40;
+            BCancelarBusqueda.ImageAlign = ContentAlignment.MiddleRight;
+            BCancelarBusqueda.Location = new Point(671, 60);
+            BCancelarBusqueda.Name = "BCancelarBusqueda";
+            BCancelarBusqueda.Padding = new Padding(10, 0, 0, 0);
+            BCancelarBusqueda.Size = new Size(202, 49);
+            BCancelarBusqueda.TabIndex = 79;
+            BCancelarBusqueda.Text = "Cancelar Busqueda";
+            BCancelarBusqueda.TextAlign = ContentAlignment.MiddleLeft;
+            BCancelarBusqueda.TextColor = Color.White;
+            BCancelarBusqueda.UseVisualStyleBackColor = false;
+            BCancelarBusqueda.Visible = false;
+            BCancelarBusqueda.Click += BCancelarBusqueda_Click;
+            // 
+            // LModoBusqueda
+            // 
+            LModoBusqueda.AutoSize = true;
+            LModoBusqueda.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            LModoBusqueda.ForeColor = Color.FromArgb(230, 237, 243);
+            LModoBusqueda.Location = new Point(148, 26);
+            LModoBusqueda.Name = "LModoBusqueda";
+            LModoBusqueda.Size = new Size(151, 25);
+            LModoBusqueda.TabIndex = 79;
+            LModoBusqueda.Text = "Modo Busqueda";
+            LModoBusqueda.Visible = false;
             // 
             // TBBusqueda
             // 
@@ -340,6 +384,7 @@
             BBuscar.TabIndex = 6;
             BBuscar.TextColor = Color.White;
             BBuscar.UseVisualStyleBackColor = false;
+            BBuscar.Click += BBuscar_Click;
             // 
             // BAgregarPlan
             // 
@@ -380,6 +425,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DGPlan).EndInit();
             nav.ResumeLayout(false);
+            nav.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -402,5 +448,7 @@
         private ClassCustom.RJButton BEliminarPlan;
         private ClassCustom.RJButton BEditarPlan;
         private Label LModoEditOrAdd;
+        private ClassCustom.RJButton BCancelarBusqueda;
+        private Label LModoBusqueda;
     }
 }
