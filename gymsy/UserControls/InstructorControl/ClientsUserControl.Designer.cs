@@ -42,11 +42,11 @@
             wallet = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel2 = new Panel();
-            rjButton1 = new ClassCustom.RJButton();
+            rjButton2 = new ClassCustom.RJButton();
+            rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             rjButton4 = new ClassCustom.RJButton();
             rjButton3 = new ClassCustom.RJButton();
-            rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            rjButton2 = new ClassCustom.RJButton();
+            rjButton1 = new ClassCustom.RJButton();
             ((System.ComponentModel.ISupportInitialize)driedUsers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -68,8 +68,9 @@
             driedUsers.AllowUserToDeleteRows = false;
             driedUsers.AllowUserToResizeColumns = false;
             driedUsers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(69, 34, 99);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(16, 8, 23);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(69, 34, 99);
             driedUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             driedUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             driedUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -164,30 +165,48 @@
             panel2.Size = new Size(1000, 114);
             panel2.TabIndex = 4;
             // 
-            // rjButton1
+            // rjButton2
             // 
-            rjButton1.BackColor = Color.FromArgb(41, 147, 45);
-            rjButton1.BackgroundColor = Color.FromArgb(41, 147, 45);
-            rjButton1.BorderColor = Color.PaleVioletRed;
-            rjButton1.BorderRadius = 15;
-            rjButton1.BorderSize = 0;
-            rjButton1.FlatAppearance.BorderSize = 0;
-            rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            rjButton1.ForeColor = Color.White;
-            rjButton1.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            rjButton1.IconColor = Color.FromArgb(230, 237, 243);
-            rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            rjButton1.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton1.Location = new Point(368, 36);
-            rjButton1.Name = "rjButton1";
-            rjButton1.Padding = new Padding(10, 0, 0, 0);
-            rjButton1.Size = new Size(188, 53);
-            rjButton1.TabIndex = 65;
-            rjButton1.Text = "Agregar Cliente";
-            rjButton1.TextAlign = ContentAlignment.MiddleLeft;
-            rjButton1.TextColor = Color.White;
-            rjButton1.UseVisualStyleBackColor = false;
+            rjButton2.BackColor = Color.DarkOrange;
+            rjButton2.BackgroundColor = Color.DarkOrange;
+            rjButton2.BorderColor = Color.PaleVioletRed;
+            rjButton2.BorderRadius = 25;
+            rjButton2.BorderSize = 0;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.ForeColor = Color.White;
+            rjButton2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            rjButton2.IconColor = Color.White;
+            rjButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton2.IconSize = 30;
+            rjButton2.Location = new Point(287, 36);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Size = new Size(50, 50);
+            rjButton2.TabIndex = 81;
+            rjButton2.TextColor = Color.White;
+            rjButton2.UseVisualStyleBackColor = false;
+            // 
+            // rjTextBox1
+            // 
+            rjTextBox1.BackColor = Color.FromArgb(69, 34, 99);
+            rjTextBox1.BorderColor = Color.Transparent;
+            rjTextBox1.BorderFocusColor = Color.HotPink;
+            rjTextBox1.BorderRadius = 15;
+            rjTextBox1.BorderSize = 2;
+            rjTextBox1.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            rjTextBox1.ForeColor = Color.FromArgb(230, 237, 243);
+            rjTextBox1.Location = new Point(57, 46);
+            rjTextBox1.Margin = new Padding(4);
+            rjTextBox1.Multiline = false;
+            rjTextBox1.Name = "rjTextBox1";
+            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox1.PasswordChar = false;
+            rjTextBox1.PlaceholderColor = Color.DarkGray;
+            rjTextBox1.PlaceholderText = "Ingrese un nombre...";
+            rjTextBox1.Size = new Size(208, 31);
+            rjTextBox1.TabIndex = 80;
+            rjTextBox1.Texts = "";
+            rjTextBox1.UnderlinedStyle = false;
             // 
             // rjButton4
             // 
@@ -241,48 +260,30 @@
             rjButton3.TextColor = Color.White;
             rjButton3.UseVisualStyleBackColor = false;
             // 
-            // rjTextBox1
+            // rjButton1
             // 
-            rjTextBox1.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox1.BorderColor = Color.Transparent;
-            rjTextBox1.BorderFocusColor = Color.HotPink;
-            rjTextBox1.BorderRadius = 15;
-            rjTextBox1.BorderSize = 2;
-            rjTextBox1.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox1.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox1.Location = new Point(57, 46);
-            rjTextBox1.Margin = new Padding(4);
-            rjTextBox1.Multiline = false;
-            rjTextBox1.Name = "rjTextBox1";
-            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox1.PasswordChar = false;
-            rjTextBox1.PlaceholderColor = Color.DarkGray;
-            rjTextBox1.PlaceholderText = "Ingrese un nombre...";
-            rjTextBox1.Size = new Size(208, 31);
-            rjTextBox1.TabIndex = 80;
-            rjTextBox1.Texts = "";
-            rjTextBox1.UnderlinedStyle = false;
-            // 
-            // rjButton2
-            // 
-            rjButton2.BackColor = Color.DarkOrange;
-            rjButton2.BackgroundColor = Color.DarkOrange;
-            rjButton2.BorderColor = Color.PaleVioletRed;
-            rjButton2.BorderRadius = 25;
-            rjButton2.BorderSize = 0;
-            rjButton2.FlatAppearance.BorderSize = 0;
-            rjButton2.FlatStyle = FlatStyle.Flat;
-            rjButton2.ForeColor = Color.White;
-            rjButton2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            rjButton2.IconColor = Color.White;
-            rjButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            rjButton2.IconSize = 30;
-            rjButton2.Location = new Point(287, 36);
-            rjButton2.Name = "rjButton2";
-            rjButton2.Size = new Size(50, 50);
-            rjButton2.TabIndex = 81;
-            rjButton2.TextColor = Color.White;
-            rjButton2.UseVisualStyleBackColor = false;
+            rjButton1.BackColor = Color.FromArgb(41, 147, 45);
+            rjButton1.BackgroundColor = Color.FromArgb(41, 147, 45);
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 15;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.ForeColor = Color.White;
+            rjButton1.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            rjButton1.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton1.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton1.Location = new Point(368, 36);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Padding = new Padding(10, 0, 0, 0);
+            rjButton1.Size = new Size(188, 53);
+            rjButton1.TabIndex = 65;
+            rjButton1.Text = "Agregar Cliente";
+            rjButton1.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
             // 
             // ClientsUserControl
             // 

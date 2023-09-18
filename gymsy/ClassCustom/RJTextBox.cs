@@ -194,6 +194,32 @@ namespace CustomControls.RJControls
 
 
         #endregion
+        //#-> Metodos agregados para que funcione como un textBox normal
+        public void Clear()
+        {
+            if (textBox1 != null)
+            {
+                textBox1.Clear();
+            }
+        }
+        public bool Contains(string texto)
+        {
+            return textBox1.Text.Contains(texto);
+        
+        }
+
+        public override string Text
+        {
+            get
+            {
+                return textBox1.Text;
+            }
+            set
+            {
+                textBox1.Text = value;
+                SetPlaceholder();
+            }
+        }
 
         #region -> Overridden methods
         protected override void OnResize(EventArgs e)
@@ -332,6 +358,7 @@ namespace CustomControls.RJControls
         #endregion
 
         #region -> TextBox events
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (_TextChanged != null)

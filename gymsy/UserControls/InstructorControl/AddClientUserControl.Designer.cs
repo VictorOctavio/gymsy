@@ -32,8 +32,8 @@
             panel1 = new Panel();
             panel3 = new Panel();
             rjTextBox7 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox6 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox5 = new CustomControls.RJControls.RJTextBox();
+            TBDescripcion = new CustomControls.RJControls.RJTextBox();
+            TBPrecio = new CustomControls.RJControls.RJTextBox();
             rjComboBox1 = new CustomControls.RJControls.RJComboBox();
             rjButton1 = new ClassCustom.RJButton();
             label19 = new Label();
@@ -44,12 +44,11 @@
             label12 = new Label();
             a = new Label();
             panel2 = new Panel();
-            rjTextBox4 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox3 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox2 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox1 = new CustomControls.RJControls.RJTextBox();
+            TBCorreo = new CustomControls.RJControls.RJTextBox();
+            TBUsuario = new CustomControls.RJControls.RJTextBox();
+            TBApellido = new CustomControls.RJControls.RJTextBox();
+            TBNombre = new CustomControls.RJControls.RJTextBox();
             rjButton4 = new ClassCustom.RJButton();
-            label13 = new Label();
             label10 = new Label();
             label11 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -61,6 +60,9 @@
             label7 = new Label();
             label5 = new Label();
             label4 = new Label();
+            label13 = new Label();
+            label15 = new Label();
+            rjComboBox2 = new CustomControls.RJControls.RJComboBox();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -80,12 +82,12 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(16, 8, 23);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(a);
             panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Fill;
             panel1.ForeColor = Color.FromArgb(230, 237, 243);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -95,9 +97,11 @@
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel3.Controls.Add(rjComboBox2);
+            panel3.Controls.Add(label13);
             panel3.Controls.Add(rjTextBox7);
-            panel3.Controls.Add(rjTextBox6);
-            panel3.Controls.Add(rjTextBox5);
+            panel3.Controls.Add(TBDescripcion);
+            panel3.Controls.Add(TBPrecio);
             panel3.Controls.Add(rjComboBox1);
             panel3.Controls.Add(rjButton1);
             panel3.Controls.Add(label19);
@@ -107,7 +111,7 @@
             panel3.Controls.Add(label14);
             panel3.Location = new Point(539, 76);
             panel3.Name = "panel3";
-            panel3.Size = new Size(412, 439);
+            panel3.Size = new Size(458, 439);
             panel3.TabIndex = 52;
             // 
             // rjTextBox7
@@ -119,7 +123,7 @@
             rjTextBox7.BorderSize = 2;
             rjTextBox7.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             rjTextBox7.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox7.Location = new Point(34, 255);
+            rjTextBox7.Location = new Point(34, 309);
             rjTextBox7.Margin = new Padding(4);
             rjTextBox7.Multiline = false;
             rjTextBox7.Name = "rjTextBox7";
@@ -132,49 +136,51 @@
             rjTextBox7.Texts = "";
             rjTextBox7.UnderlinedStyle = false;
             // 
-            // rjTextBox6
+            // TBDescripcion
             // 
-            rjTextBox6.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox6.BorderColor = Color.Transparent;
-            rjTextBox6.BorderFocusColor = Color.HotPink;
-            rjTextBox6.BorderRadius = 15;
-            rjTextBox6.BorderSize = 2;
-            rjTextBox6.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox6.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox6.Location = new Point(34, 178);
-            rjTextBox6.Margin = new Padding(4);
-            rjTextBox6.Multiline = false;
-            rjTextBox6.Name = "rjTextBox6";
-            rjTextBox6.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox6.PasswordChar = false;
-            rjTextBox6.PlaceholderColor = Color.DarkGray;
-            rjTextBox6.PlaceholderText = "Ingrese un nombre...";
-            rjTextBox6.Size = new Size(204, 31);
-            rjTextBox6.TabIndex = 69;
-            rjTextBox6.Texts = "";
-            rjTextBox6.UnderlinedStyle = false;
+            TBDescripcion.BackColor = Color.FromArgb(69, 34, 99);
+            TBDescripcion.BorderColor = Color.Transparent;
+            TBDescripcion.BorderFocusColor = Color.HotPink;
+            TBDescripcion.BorderRadius = 15;
+            TBDescripcion.BorderSize = 2;
+            TBDescripcion.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBDescripcion.ForeColor = Color.FromArgb(230, 237, 243);
+            TBDescripcion.Location = new Point(34, 178);
+            TBDescripcion.Margin = new Padding(4);
+            TBDescripcion.Multiline = false;
+            TBDescripcion.Name = "TBDescripcion";
+            TBDescripcion.Padding = new Padding(10, 7, 10, 7);
+            TBDescripcion.PasswordChar = false;
+            TBDescripcion.PlaceholderColor = Color.DarkGray;
+            TBDescripcion.PlaceholderText = "Ingrese un nombre...";
+            TBDescripcion.Size = new Size(204, 31);
+            TBDescripcion.TabIndex = 69;
+            TBDescripcion.Texts = "";
+            TBDescripcion.UnderlinedStyle = false;
+            TBDescripcion.KeyPress += TBDescripcion_KeyPress;
             // 
-            // rjTextBox5
+            // TBPrecio
             // 
-            rjTextBox5.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox5.BorderColor = Color.Transparent;
-            rjTextBox5.BorderFocusColor = Color.HotPink;
-            rjTextBox5.BorderRadius = 15;
-            rjTextBox5.BorderSize = 2;
-            rjTextBox5.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox5.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox5.Location = new Point(34, 119);
-            rjTextBox5.Margin = new Padding(4);
-            rjTextBox5.Multiline = false;
-            rjTextBox5.Name = "rjTextBox5";
-            rjTextBox5.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox5.PasswordChar = false;
-            rjTextBox5.PlaceholderColor = Color.DarkGray;
-            rjTextBox5.PlaceholderText = "Ingrese un nombre...";
-            rjTextBox5.Size = new Size(204, 31);
-            rjTextBox5.TabIndex = 68;
-            rjTextBox5.Texts = "";
-            rjTextBox5.UnderlinedStyle = false;
+            TBPrecio.BackColor = Color.FromArgb(69, 34, 99);
+            TBPrecio.BorderColor = Color.Transparent;
+            TBPrecio.BorderFocusColor = Color.HotPink;
+            TBPrecio.BorderRadius = 15;
+            TBPrecio.BorderSize = 2;
+            TBPrecio.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBPrecio.ForeColor = Color.FromArgb(230, 237, 243);
+            TBPrecio.Location = new Point(34, 119);
+            TBPrecio.Margin = new Padding(4);
+            TBPrecio.Multiline = false;
+            TBPrecio.Name = "TBPrecio";
+            TBPrecio.Padding = new Padding(10, 7, 10, 7);
+            TBPrecio.PasswordChar = false;
+            TBPrecio.PlaceholderColor = Color.DarkGray;
+            TBPrecio.PlaceholderText = "Ingrese un nombre...";
+            TBPrecio.Size = new Size(204, 31);
+            TBPrecio.TabIndex = 68;
+            TBPrecio.Texts = "";
+            TBPrecio.UnderlinedStyle = false;
+            TBPrecio.KeyPress += TBPrecio_KeyPress;
             // 
             // rjComboBox1
             // 
@@ -187,7 +193,7 @@
             rjComboBox1.IconColor = Color.MediumSlateBlue;
             rjComboBox1.ListBackColor = Color.FromArgb(230, 228, 245);
             rjComboBox1.ListTextColor = Color.DimGray;
-            rjComboBox1.Location = new Point(45, 50);
+            rjComboBox1.Location = new Point(34, 52);
             rjComboBox1.MinimumSize = new Size(200, 30);
             rjComboBox1.Name = "rjComboBox1";
             rjComboBox1.Padding = new Padding(1);
@@ -235,7 +241,7 @@
             // 
             label20.AutoSize = true;
             label20.ForeColor = Color.FromArgb(230, 237, 243);
-            label20.Location = new Point(34, 229);
+            label20.Location = new Point(34, 283);
             label20.Name = "label20";
             label20.Size = new Size(58, 15);
             label20.TabIndex = 61;
@@ -267,7 +273,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = Color.FromArgb(230, 237, 243);
-            label14.Location = new Point(115, 12);
+            label14.Location = new Point(34, 13);
             label14.Name = "label14";
             label14.Size = new Size(118, 25);
             label14.TabIndex = 53;
@@ -299,12 +305,12 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(rjTextBox4);
-            panel2.Controls.Add(rjTextBox3);
-            panel2.Controls.Add(rjTextBox2);
-            panel2.Controls.Add(rjTextBox1);
+            panel2.Controls.Add(label15);
+            panel2.Controls.Add(TBCorreo);
+            panel2.Controls.Add(TBUsuario);
+            panel2.Controls.Add(TBApellido);
+            panel2.Controls.Add(TBNombre);
             panel2.Controls.Add(rjButton4);
-            panel2.Controls.Add(label13);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(iconPictureBox1);
@@ -316,98 +322,100 @@
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
-            panel2.Location = new Point(78, 76);
+            panel2.Location = new Point(3, 76);
             panel2.Name = "panel2";
-            panel2.Size = new Size(455, 439);
+            panel2.Size = new Size(530, 439);
             panel2.TabIndex = 51;
             // 
-            // rjTextBox4
+            // TBCorreo
             // 
-            rjTextBox4.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox4.BorderColor = Color.Transparent;
-            rjTextBox4.BorderFocusColor = Color.HotPink;
-            rjTextBox4.BorderRadius = 15;
-            rjTextBox4.BorderSize = 2;
-            rjTextBox4.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox4.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox4.Location = new Point(23, 290);
-            rjTextBox4.Margin = new Padding(4);
-            rjTextBox4.Multiline = false;
-            rjTextBox4.Name = "rjTextBox4";
-            rjTextBox4.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox4.PasswordChar = false;
-            rjTextBox4.PlaceholderColor = Color.DarkGray;
-            rjTextBox4.PlaceholderText = "Ingrese un correo...";
-            rjTextBox4.Size = new Size(204, 31);
-            rjTextBox4.TabIndex = 70;
-            rjTextBox4.Texts = "";
-            rjTextBox4.UnderlinedStyle = false;
+            TBCorreo.BackColor = Color.FromArgb(69, 34, 99);
+            TBCorreo.BorderColor = Color.Transparent;
+            TBCorreo.BorderFocusColor = Color.HotPink;
+            TBCorreo.BorderRadius = 15;
+            TBCorreo.BorderSize = 2;
+            TBCorreo.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBCorreo.ForeColor = Color.FromArgb(230, 237, 243);
+            TBCorreo.Location = new Point(23, 290);
+            TBCorreo.Margin = new Padding(4);
+            TBCorreo.Multiline = true;
+            TBCorreo.Name = "TBCorreo";
+            TBCorreo.Padding = new Padding(10, 7, 10, 7);
+            TBCorreo.PasswordChar = false;
+            TBCorreo.PlaceholderColor = Color.DarkGray;
+            TBCorreo.PlaceholderText = "Ingrese un correo...";
+            TBCorreo.Size = new Size(204, 31);
+            TBCorreo.TabIndex = 70;
+            TBCorreo.Texts = "";
+            TBCorreo.UnderlinedStyle = false;
             // 
-            // rjTextBox3
+            // TBUsuario
             // 
-            rjTextBox3.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox3.BorderColor = Color.Transparent;
-            rjTextBox3.BorderFocusColor = Color.HotPink;
-            rjTextBox3.BorderRadius = 15;
-            rjTextBox3.BorderSize = 2;
-            rjTextBox3.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox3.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox3.Location = new Point(23, 213);
-            rjTextBox3.Margin = new Padding(4);
-            rjTextBox3.Multiline = false;
-            rjTextBox3.Name = "rjTextBox3";
-            rjTextBox3.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox3.PasswordChar = false;
-            rjTextBox3.PlaceholderColor = Color.DarkGray;
-            rjTextBox3.PlaceholderText = "Ingrese un usuario...";
-            rjTextBox3.Size = new Size(204, 31);
-            rjTextBox3.TabIndex = 69;
-            rjTextBox3.Texts = "";
-            rjTextBox3.UnderlinedStyle = false;
+            TBUsuario.BackColor = Color.FromArgb(69, 34, 99);
+            TBUsuario.BorderColor = Color.Transparent;
+            TBUsuario.BorderFocusColor = Color.HotPink;
+            TBUsuario.BorderRadius = 15;
+            TBUsuario.BorderSize = 2;
+            TBUsuario.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBUsuario.ForeColor = Color.FromArgb(230, 237, 243);
+            TBUsuario.Location = new Point(23, 213);
+            TBUsuario.Margin = new Padding(4);
+            TBUsuario.Multiline = false;
+            TBUsuario.Name = "TBUsuario";
+            TBUsuario.Padding = new Padding(10, 7, 10, 7);
+            TBUsuario.PasswordChar = false;
+            TBUsuario.PlaceholderColor = Color.DarkGray;
+            TBUsuario.PlaceholderText = "Ingrese un usuario...";
+            TBUsuario.Size = new Size(204, 31);
+            TBUsuario.TabIndex = 69;
+            TBUsuario.Texts = "";
+            TBUsuario.UnderlinedStyle = false;
             // 
-            // rjTextBox2
+            // TBApellido
             // 
-            rjTextBox2.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox2.BorderColor = Color.Transparent;
-            rjTextBox2.BorderFocusColor = Color.HotPink;
-            rjTextBox2.BorderRadius = 15;
-            rjTextBox2.BorderSize = 2;
-            rjTextBox2.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox2.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox2.Location = new Point(23, 139);
-            rjTextBox2.Margin = new Padding(4);
-            rjTextBox2.Multiline = false;
-            rjTextBox2.Name = "rjTextBox2";
-            rjTextBox2.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox2.PasswordChar = false;
-            rjTextBox2.PlaceholderColor = Color.DarkGray;
-            rjTextBox2.PlaceholderText = "Ingrese un apellido...";
-            rjTextBox2.Size = new Size(204, 31);
-            rjTextBox2.TabIndex = 68;
-            rjTextBox2.Texts = "";
-            rjTextBox2.UnderlinedStyle = false;
+            TBApellido.BackColor = Color.FromArgb(69, 34, 99);
+            TBApellido.BorderColor = Color.Transparent;
+            TBApellido.BorderFocusColor = Color.HotPink;
+            TBApellido.BorderRadius = 15;
+            TBApellido.BorderSize = 2;
+            TBApellido.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBApellido.ForeColor = Color.FromArgb(230, 237, 243);
+            TBApellido.Location = new Point(23, 139);
+            TBApellido.Margin = new Padding(4);
+            TBApellido.Multiline = false;
+            TBApellido.Name = "TBApellido";
+            TBApellido.Padding = new Padding(10, 7, 10, 7);
+            TBApellido.PasswordChar = false;
+            TBApellido.PlaceholderColor = Color.DarkGray;
+            TBApellido.PlaceholderText = "Ingrese un apellido...";
+            TBApellido.Size = new Size(204, 31);
+            TBApellido.TabIndex = 68;
+            TBApellido.Texts = "";
+            TBApellido.UnderlinedStyle = false;
+            TBApellido.KeyPress += TBApellido_KeyPress;
             // 
-            // rjTextBox1
+            // TBNombre
             // 
-            rjTextBox1.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox1.BorderColor = Color.Transparent;
-            rjTextBox1.BorderFocusColor = Color.HotPink;
-            rjTextBox1.BorderRadius = 15;
-            rjTextBox1.BorderSize = 2;
-            rjTextBox1.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox1.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox1.Location = new Point(23, 69);
-            rjTextBox1.Margin = new Padding(4);
-            rjTextBox1.Multiline = false;
-            rjTextBox1.Name = "rjTextBox1";
-            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox1.PasswordChar = false;
-            rjTextBox1.PlaceholderColor = Color.DarkGray;
-            rjTextBox1.PlaceholderText = "Ingrese un nombre...";
-            rjTextBox1.Size = new Size(204, 31);
-            rjTextBox1.TabIndex = 67;
-            rjTextBox1.Texts = "";
-            rjTextBox1.UnderlinedStyle = false;
+            TBNombre.BackColor = Color.FromArgb(69, 34, 99);
+            TBNombre.BorderColor = Color.Transparent;
+            TBNombre.BorderFocusColor = Color.HotPink;
+            TBNombre.BorderRadius = 15;
+            TBNombre.BorderSize = 2;
+            TBNombre.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBNombre.ForeColor = Color.FromArgb(230, 237, 243);
+            TBNombre.Location = new Point(23, 69);
+            TBNombre.Margin = new Padding(4);
+            TBNombre.Multiline = false;
+            TBNombre.Name = "TBNombre";
+            TBNombre.Padding = new Padding(10, 7, 10, 7);
+            TBNombre.PasswordChar = false;
+            TBNombre.PlaceholderColor = Color.DarkGray;
+            TBNombre.PlaceholderText = "Ingrese un nombre...";
+            TBNombre.Size = new Size(204, 31);
+            TBNombre.TabIndex = 67;
+            TBNombre.Texts = "";
+            TBNombre.UnderlinedStyle = false;
+            TBNombre.KeyPress += TBNombre_KeyPress;
             // 
             // rjButton4
             // 
@@ -434,25 +442,13 @@
             rjButton4.TextColor = Color.White;
             rjButton4.UseVisualStyleBackColor = false;
             // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.Top;
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.ForeColor = Color.FromArgb(230, 237, 243);
-            label13.Location = new Point(138, 12);
-            label13.Name = "label13";
-            label13.Size = new Size(155, 25);
-            label13.TabIndex = 52;
-            label13.Text = "Datos del Cliente";
-            // 
             // label10
             // 
             label10.Anchor = AnchorStyles.Top;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.ActiveCaptionText;
-            label10.Location = new Point(-157, 40);
+            label10.Location = new Point(-392, 40);
             label10.Name = "label10";
             label10.Size = new Size(155, 25);
             label10.TabIndex = 48;
@@ -479,9 +475,9 @@
             iconPictureBox1.IconColor = Color.FromArgb(230, 237, 243);
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 159;
-            iconPictureBox1.Location = new Point(249, 50);
+            iconPictureBox1.Location = new Point(239, 50);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(162, 159);
+            iconPictureBox1.Size = new Size(198, 159);
             iconPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             iconPictureBox1.TabIndex = 35;
             iconPictureBox1.TabStop = false;
@@ -570,6 +566,49 @@
             label4.TabIndex = 41;
             label4.Text = "Apellido";
             // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.Top;
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.ForeColor = Color.FromArgb(230, 237, 243);
+            label13.Location = new Point(32, 219);
+            label13.Name = "label13";
+            label13.Size = new Size(118, 25);
+            label13.TabIndex = 71;
+            label13.Text = "Asignar plan";
+            // 
+            // label15
+            // 
+            label15.Anchor = AnchorStyles.Top;
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.ForeColor = Color.FromArgb(230, 237, 243);
+            label15.Location = new Point(143, 13);
+            label15.Name = "label15";
+            label15.Size = new Size(118, 25);
+            label15.TabIndex = 72;
+            label15.Text = "Asignar plan";
+            // 
+            // rjComboBox2
+            // 
+            rjComboBox2.BackColor = Color.WhiteSmoke;
+            rjComboBox2.BorderColor = Color.MediumSlateBlue;
+            rjComboBox2.BorderSize = 1;
+            rjComboBox2.DropDownStyle = ComboBoxStyle.DropDown;
+            rjComboBox2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            rjComboBox2.ForeColor = Color.DimGray;
+            rjComboBox2.IconColor = Color.MediumSlateBlue;
+            rjComboBox2.ListBackColor = Color.FromArgb(230, 228, 245);
+            rjComboBox2.ListTextColor = Color.DimGray;
+            rjComboBox2.Location = new Point(32, 250);
+            rjComboBox2.MinimumSize = new Size(200, 30);
+            rjComboBox2.Name = "rjComboBox2";
+            rjComboBox2.Padding = new Padding(1);
+            rjComboBox2.Size = new Size(219, 30);
+            rjComboBox2.TabIndex = 72;
+            rjComboBox2.Texts = "";
+            // 
             // AddClientUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -609,7 +648,6 @@
         private Label label6;
         private Label label7;
         private Panel panel2;
-        private Label label13;
         private Panel panel3;
         private Label label14;
         private Label label19;
@@ -618,13 +656,16 @@
         private Label label16;
         private ClassCustom.RJButton rjButton1;
         private ClassCustom.RJButton rjButton4;
-        private CustomControls.RJControls.RJTextBox rjTextBox4;
-        private CustomControls.RJControls.RJTextBox rjTextBox3;
-        private CustomControls.RJControls.RJTextBox rjTextBox2;
-        private CustomControls.RJControls.RJTextBox rjTextBox1;
+        private CustomControls.RJControls.RJTextBox TBCorreo;
+        private CustomControls.RJControls.RJTextBox TBUsuario;
+        private CustomControls.RJControls.RJTextBox TBApellido;
+        private CustomControls.RJControls.RJTextBox TBNombre;
         private CustomControls.RJControls.RJComboBox rjComboBox1;
         private CustomControls.RJControls.RJTextBox rjTextBox7;
-        private CustomControls.RJControls.RJTextBox rjTextBox6;
-        private CustomControls.RJControls.RJTextBox rjTextBox5;
+        private CustomControls.RJControls.RJTextBox TBDescripcion;
+        private CustomControls.RJControls.RJTextBox TBPrecio;
+        private CustomControls.RJControls.RJComboBox rjComboBox2;
+        private Label label13;
+        private Label label15;
     }
 }
