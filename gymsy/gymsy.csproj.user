@@ -57,6 +57,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="UserControls\ClientControls\AboutClientControl.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

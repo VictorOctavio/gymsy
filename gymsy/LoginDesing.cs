@@ -1,4 +1,6 @@
-﻿using gymsy.utilities;
+﻿using gymsy.Models;
+using gymsy.utilities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +21,6 @@ namespace gymsy
         {
             InitializeComponent();
         }
-
 
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
