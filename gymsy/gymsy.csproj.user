@@ -10,49 +10,49 @@
     <Compile Update="ClassCustom\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Form1.cs">
+    <Compile Update="App\Views\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LoginDesing.cs">
+    <Compile Update="App\Views\AuthView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserControls\InstructorControl\AddClientUserControl.cs">
+    <Compile Update="App\Views\UserControls\InstructorControl\AddClientUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\InstructorControl\AddPlanUserControl.cs">
+    <Compile Update="App\Views\UserControls\InstructorControl\AddPlanUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\AdminControls\AddInstructorControl.cs">
+    <Compile Update="App\Views\UserControls\AdminControls\AddInstructorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\AdminControls\DashboardAdminControl.cs">
+    <Compile Update="App\Views\UserControls\AdminControls\DashboardAdminControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\AdminControls\InstructorsAdminControl.cs">
+    <Compile Update="App\Views\UserControls\AdminControls\InstructorsAdminControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\ClientControls\AboutClientControl.cs">
+    <Compile Update="App\Views\UserControls\ClientControls\AboutClientControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\ClientControls\ProgressClientControl.cs">
+    <Compile Update="App\Views\UserControls\ClientControls\ProgressClientControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\InstructorControl\ClientsUserControl.cs">
+    <Compile Update="App\Views\UserControls\InstructorControl\ClientsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\InstructorControl\DashboardUserControl.cs">
+    <Compile Update="App\Views\UserControls\InstructorControl\DashboardUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\InstructorControl\PaymentsUserControl.cs">
+    <Compile Update="App\Views\UserControls\InstructorControl\PaymentsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\InvoiceUserControl.cs">
+    <Compile Update="App\Views\UserControls\InvoiceUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\SettingsUserControl.cs">
+    <Compile Update="App\Views\UserControls\SettingsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\WalletUserControl.cs">
+    <Compile Update="App\Views\UserControls\WalletUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -60,7 +60,7 @@
     <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="UserControls\ClientControls\AboutClientControl.resx">
+    <EmbeddedResource Update="App\Views\UserControls\ClientControls\AboutClientControl.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
