@@ -1,6 +1,6 @@
 ﻿namespace gymsy
 {
-    partial class LoginDesing
+    partial class AuthView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginDesing));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthView));
             textBoxPasswordUser = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -40,7 +40,10 @@
             button1 = new Button();
             button2 = new Button();
             labelErrorNickname = new Label();
+            Spinner = new PictureBox();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Spinner).BeginInit();
             SuspendLayout();
             // 
             // textBoxPasswordUser
@@ -100,7 +103,7 @@
             textBoxEmailUser.Cursor = Cursors.IBeam;
             textBoxEmailUser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxEmailUser.Location = new Point(18, 159);
-            textBoxEmailUser.MaxLength = 6;
+            textBoxEmailUser.MaxLength = 7;
             textBoxEmailUser.Multiline = true;
             textBoxEmailUser.Name = "textBoxEmailUser";
             textBoxEmailUser.Size = new Size(264, 35);
@@ -121,7 +124,6 @@
             buttonSignIn.TabIndex = 5;
             buttonSignIn.Text = "Iniciar sesión";
             buttonSignIn.UseVisualStyleBackColor = false;
-            buttonSignIn.Click += buttonSignIn_Click;
             // 
             // pictureBox1
             // 
@@ -182,7 +184,6 @@
             button2.TabIndex = 11;
             button2.Text = "X";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // labelErrorNickname
             // 
@@ -198,12 +199,31 @@
             labelErrorNickname.TextAlign = ContentAlignment.MiddleRight;
             labelErrorNickname.Visible = false;
             // 
-            // LoginDesing
+            // Spinner
+            // 
+            Spinner.Anchor = AnchorStyles.Top;
+            Spinner.Image = (Image)resources.GetObject("Spinner.Image");
+            Spinner.Location = new Point(126, 363);
+            Spinner.Margin = new Padding(0);
+            Spinner.Name = "Spinner";
+            Spinner.Size = new Size(41, 38);
+            Spinner.SizeMode = PictureBoxSizeMode.Zoom;
+            Spinner.TabIndex = 46;
+            Spinner.TabStop = false;
+            Spinner.Visible = false;
+            // 
+            // sqlCommand1
+            // 
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.EnableOptimizedParameterBinding = false;
+            // 
+            // AuthView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(9, 0, 15);
             ClientSize = new Size(600, 420);
+            Controls.Add(Spinner);
             Controls.Add(labelErrorNickname);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -217,10 +237,11 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(600, 420);
-            Name = "LoginDesing";
+            Name = "AuthView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginDesing";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Spinner).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -238,5 +259,7 @@
         private Button button1;
         private Button button2;
         private Label labelErrorNickname;
+        private PictureBox Spinner;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }

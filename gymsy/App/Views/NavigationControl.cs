@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gymsy
+namespace gymsy.App.Views
 {
     public class NavigationControl
     {

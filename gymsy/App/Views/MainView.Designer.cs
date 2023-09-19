@@ -1,6 +1,6 @@
 ﻿namespace gymsy
 {
-    partial class Form1
+    partial class MainView
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             PictureBox menuButton;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             button1 = new Button();
             sidebar = new Panel();
             panelAddAdmin = new Panel();
@@ -243,7 +243,7 @@
             tableLayoutClient.Controls.Add(btnNavPaysClient, 0, 2);
             tableLayoutClient.Controls.Add(btnNavProgress, 0, 1);
             tableLayoutClient.Controls.Add(btnNavAboutme, 0, 0);
-            tableLayoutClient.Location = new Point(0, 133);
+            tableLayoutClient.Location = new Point(1, 134);
             tableLayoutClient.Name = "tableLayoutClient";
             tableLayoutClient.RowCount = 3;
             tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -394,7 +394,6 @@
             btnNavInstructorAdmin.Text = "    Instructors";
             btnNavInstructorAdmin.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnNavInstructorAdmin.UseVisualStyleBackColor = false;
-            btnNavInstructorAdmin.Visible = false;
             btnNavInstructorAdmin.Click += btnNavInstructorAdmin_Click;
             // 
             // btnNavDashAdmin
@@ -915,7 +914,7 @@
             timerAddAdmin.Interval = 5;
             timerAddAdmin.Tick += btnAddAdminTimer_Tick;
             // 
-            // Form1
+            // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -925,7 +924,7 @@
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
             MinimumSize = new Size(1200, 700);
-            Name = "Form1";
+            Name = "MainView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gymsy";
             WindowState = FormWindowState.Maximized;

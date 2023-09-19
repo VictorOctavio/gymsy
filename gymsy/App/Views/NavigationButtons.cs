@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace gymsy
+namespace gymsy.App.Views
 {
     public class NavigationButtons
     {
@@ -12,9 +12,9 @@ namespace gymsy
         Color defaultColor;
         Color selectedColor;
 
-        public NavigationButtons(List<Button> buttonsList, Color defaultColor, Color selectedColor) 
+        public NavigationButtons(List<Button> buttonsList, Color defaultColor, Color selectedColor)
         {
-            this.buttons = buttonsList;
+            buttons = buttonsList;
             this.selectedColor = selectedColor;
             this.defaultColor = defaultColor;
             SetButtonColor();
@@ -32,7 +32,7 @@ namespace gymsy
         {
             foreach (Button button in buttons)
             {
-                if(button == selectedButton)
+                if (button == selectedButton)
                 {
                     button.BackColor = selectedColor;
                     button.ForeColor = Color.White;

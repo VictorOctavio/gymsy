@@ -1,11 +1,17 @@
+using gymsy.App.Models;
+using gymsy.App.Views;
+using gymsy.App.Views.Interfaces;
 using gymsy.UserControls;
 using gymsy.UserControls.AdminControls;
 using gymsy.UserControls.ClientControls;
 
 namespace gymsy
 {
-    public partial class Form1 : Form
+    public partial class MainView : Form, IMainView
     {
+        // Roles de usuario 
+        List<string> rols = new List<string>() { "admin", "instructor", "client" };
+
         NavigationControl navigationControl;
         NavigationButtons navigationButtons;
         bool sidebarExpand = true;
@@ -16,17 +22,40 @@ namespace gymsy
         Color btnDefaultColor = Color.Transparent;
         Color btnSelectedColor = Color.DarkCyan;
 
-        // Set user
-        private string userRol;
 
-        public Form1(string rol)
+        // properties
+        private bool IsSuccessful;
+        private Person person;
+        private string Message;
+
+
+        public MainView(Person person)
         {
-            this.userRol = rol;
             InitializeComponent();
-            InitializeNavigationControl(rol);
-            InitializeNavigationButtons(rol);
-            InitializeUserRol(rol);
+            InitializeNavigationControl(this.rols[person.RolId]);
+            InitializeNavigationButtons(this.rols[person.RolId]);
+            InitializeUserRol(this.rols[person.RolId]);
         }
+
+        // Getters and Setters
+        Person IMainView.person
+        {
+            get { return person; }
+            set { person = value; }
+        }
+
+        bool IMainView.IsSuccessful
+        {
+            get { return IsSuccessful; }
+            set { IsSuccessful = value; }
+        }
+
+        string IMainView.Message
+        {
+            get { return Message; }
+            set { Message = value; }
+        }
+
 
         // Inicializamos el controlador con la navegacion, pasando los controles y en panel mainWrapper en donde se renderizará
         private void InitializeNavigationControl(string rol = "instructor")

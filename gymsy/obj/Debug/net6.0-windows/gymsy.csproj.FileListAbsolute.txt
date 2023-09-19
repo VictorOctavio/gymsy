@@ -65,16 +65,16 @@ C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-window
 C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.csproj.CopyComplete
 <<<<<<< HEAD
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
-C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Azure.Core.dll
-C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Azure.Identity.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.InvoiceUserControl.resources
+=======
+C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\CustomControls.RJControls.RJTextBox.resources
+>>>>>>> e0fdac7f9968de5e766d795164501eab6383bda6
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\CustomControls.RJControls.RJTextBox.resources
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Humanizer.dll
-C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -85,6 +85,15 @@ C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Extension
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Mono.TextTemplating.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Azure.Core.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Azure.Identity.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
@@ -94,13 +103,10 @@ C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.IdentityM
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.SqlServer.Server.dll
-C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Mono.TextTemplating.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\System.Memory.Data.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
-C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
-C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\System.Text.Json.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -108,9 +114,7 @@ C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\win-arm64\
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.InvoiceUserControl.resources
-=======
-C:\Users\Jeremias\Source\Repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\CustomControls.RJControls.RJTextBox.resources
->>>>>>> e0fdac7f9968de5e766d795164501eab6383bda6
-C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\CustomControls.RJControls.RJTextBox.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\gymsy.dll.config
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.MainForm.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.AuthView.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.MainView.resources
