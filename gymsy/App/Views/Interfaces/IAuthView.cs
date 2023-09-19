@@ -23,5 +23,7 @@ namespace gymsy.App.Views.Interfaces
 
         // Methods
         void Show();
+        void Close();
+        void Hide();
     }
 }

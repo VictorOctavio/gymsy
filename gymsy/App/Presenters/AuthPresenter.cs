@@ -31,8 +31,7 @@ namespace gymsy.App.Presenters
         {
             try
             {
-                //MessageBox.Show(this.authView.Nickname + " - " + this.gymsydb.Peoples.Count());
-                
+     
                 // Signin to database
                 var peopleFound = this.gymsydb.Peoples
                                               .Where(people => people.Nickname == this.authView.Nickname)
@@ -52,9 +51,11 @@ namespace gymsy.App.Presenters
                     {
 
                         // Open form
+                        this.authView.Hide();
                         IMainView view = new MainView(peopleFound);
                         new MainPresenter(view, gymsydb);
                         view.Show();
+                        
 
                     }
                 }

@@ -1,3 +1,0 @@
-connection string
-Scaffold-DbContext "Server=localhost; Database=gymsy_db; Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
-Scaffold-DbContext "Server=localhost; Database=gymsy_db; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models

@@ -59,6 +59,7 @@ namespace gymsy
             set { textBoxPasswordUser.Text = value; }
         }
 
+
         // Constructor
         public AuthView()
         {
