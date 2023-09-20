@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Options;
 using System.Windows.Forms;
 
 namespace gymsy
@@ -10,6 +11,8 @@ namespace gymsy
         [STAThread]
         static void Main()
         {
+
+           // => optionsBuilder.UseSqlServer("Server=DESKTOP-R1CB0VV\\SQLEXPRESS;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;");
             // Settings
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1("instructor"));

@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace gymsy.Models;
+
+public partial class Rol
+{
+    public int Id { get; set; }
+
+    public int Name { get; set; }
+
+    public virtual ICollection<Person> People { get; set; } = new List<Person>();
+}
