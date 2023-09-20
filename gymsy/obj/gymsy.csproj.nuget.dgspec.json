@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj": {}
+    "C:\\Users\\byOCT1\\Desktop\\gymsy\\gymsy\\gymsy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj": {
+    "C:\\Users\\byOCT1\\Desktop\\gymsy\\gymsy\\gymsy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
+        "projectUniqueName": "C:\\Users\\byOCT1\\Desktop\\gymsy\\gymsy\\gymsy.csproj",
         "projectName": "gymsy",
-        "projectPath": "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
-        "packagesPath": "C:\\Users\\Jeremias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\obj\\",
+        "projectPath": "C:\\Users\\byOCT1\\Desktop\\gymsy\\gymsy\\gymsy.csproj",
+        "packagesPath": "C:\\Users\\byOCT1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\byOCT1\\Desktop\\gymsy\\gymsy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Jeremias\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\byOCT1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -50,6 +50,10 @@
               "version": "[6.3.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
               "target": "Package",
               "version": "[7.0.11, )"
             },

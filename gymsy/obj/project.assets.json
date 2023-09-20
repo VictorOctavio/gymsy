@@ -2878,28 +2878,29 @@
     "net6.0-windows7.0": [
       "FontAwesome.Sharp >= 6.3.0",
       "Microsoft.EntityFrameworkCore >= 7.0.11",
+      "Microsoft.EntityFrameworkCore.Analyzers >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jeremias\\.nuget\\packages\\": {},
+    "C:\\Users\\byOCT1\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
+      "projectUniqueName": "C:\\Users\\byOCT1\\Desktop\\gymsy\\gymsy\\gymsy.csproj",
       "projectName": "gymsy",
-      "projectPath": "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\gymsy.csproj",
-      "packagesPath": "C:\\Users\\Jeremias\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jeremias\\source\\repos\\VictorOctavio\\gymsy\\gymsy\\obj\\",
+      "projectPath": "C:\\Users\\byOCT1\\Desktop\\gymsy\\gymsy\\gymsy.csproj",
+      "packagesPath": "C:\\Users\\byOCT1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\byOCT1\\Desktop\\gymsy\\gymsy\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jeremias\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\byOCT1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2932,6 +2933,10 @@
             "version": "[6.3.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[7.0.11, )"
+          },
+          "Microsoft.EntityFrameworkCore.Analyzers": {
             "target": "Package",
             "version": "[7.0.11, )"
           },
