@@ -1,22 +1,31 @@
-using Microsoft.Extensions.Options;
-using System.Windows.Forms;
+using gymsy.App.Models;
+using gymsy.App.Presenters;
+using gymsy.App.Views.Interfaces;
+using gymsy.Context;
+using gymsy.Properties;
+using Microsoft.EntityFrameworkCore;
 
 namespace gymsy
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
         static void Main()
         {
+             //Config & Conect to database
+            string stringConnection = Resources.stringConnection;
+            DbContextOptionsBuilder<GymsyDbContext> optionsBuilder = new();
 
-           // => optionsBuilder.UseSqlServer("Server=DESKTOP-R1CB0VV\\SQLEXPRESS;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;");
-            // Settings
+            GymsyDbContext GymsyContextDb = new(
+               optionsBuilder.UseSqlServer(stringConnection).Options
+            );
+
+            GymsyContext.GymsyContextDB = GymsyContextDb!;
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1("instructor"));
-            //Application.Run(new LoginDesing());
+
+            IAuthView view = new AuthView();
+            new AuthPresenter(view, GymsyContextDb);
+          
+            Application.Run((Form)view);
         }
     }
 }

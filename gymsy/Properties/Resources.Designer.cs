@@ -113,16 +113,6 @@ namespace gymsy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gymsy {
-            get {
-                object obj = ResourceManager.GetObject("gymsy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap gymsy1 {
             get {
                 object obj = ResourceManager.GetObject("gymsy1", resourceCulture);
@@ -130,7 +120,16 @@ namespace gymsy.Properties {
             }
         }
         
-    
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading {
+            get {
+                object obj = ResourceManager.GetObject("loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
@@ -168,6 +167,15 @@ namespace gymsy.Properties {
             get {
                 object obj = ResourceManager.GetObject("setting_item", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Server=DESKTOP-R1CB0VV\SQLEXPRESS;Database=gymsy;Integrated Security=True;TrustServerCertificate=True.
+        /// </summary>
+        internal static string stringConnection {
+            get {
+                return ResourceManager.GetString("stringConnection", resourceCulture);
             }
         }
         
