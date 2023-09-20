@@ -2,6 +2,7 @@
 using gymsy.App.Views.Interfaces;
 using gymsy.Context;
 using gymsy.utilities;
+using gymsy.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +28,10 @@ namespace gymsy.App.Presenters
             this.authView.Show();
         }
 
-        private void Signin(object? sender, EventArgs e)
+       async private void Signin(object? sender, EventArgs e)
         {
             try
             {
-     
                 // Signin to database
                 var peopleFound = this.gymsydb.Peoples
                                               .Where(people => people.Nickname == this.authView.Nickname)
@@ -40,31 +40,42 @@ namespace gymsy.App.Presenters
                 // validar existencia del usuario
                 if (peopleFound != null) {
 
-                    //- Validar clave
-                    if(peopleFound.Password != this.authView.Password)
+                    //- Validar password
+                    if(!Bcrypt.ComparePassowrd(this.authView.Password, peopleFound.Password))
                     {
-                        MessageBox.Show("Email o contraseña incorrecta");
                         this.authView.IsSuccessful = false;
-                        this.authView.Message = "Error inesperdado";
+                        this.authView.Message = "Nickname o Contraseña Incorrecto";
+                        this.authView.HandleResponseDBMessage();
                     }
                     else
                     {
+                        this.authView.IsSuccessful = true;
+                        this.authView.Message = "Hola, "+peopleFound.Name+" :)";
+                        this.authView.HandleResponseDBMessage();
+                        this.authView.Refresh();
+
+                        
+                        // Delay
+                        Thread.Sleep(2000);
+
+                        //this.authView.Close();
 
                         // Open form
-                        this.authView.Hide();
                         IMainView view = new MainView(peopleFound);
                         new MainPresenter(view, gymsydb);
-                        view.Show();
-                        
 
+                         view.Show();
                     }
                 }
-
             }
             catch {
-               MessageBox.Show("Email o contraseña incorrecta");
                this.authView.IsSuccessful = false;
                this.authView.Message = "Error inesperdado";
+               this.authView.HandleResponseDBMessage();
+            }
+            finally
+            {
+                this.authView.Loading = false;
             }
         }
     }

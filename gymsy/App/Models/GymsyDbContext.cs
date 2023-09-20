@@ -211,7 +211,7 @@ public partial class GymsyDbContext : DbContext
 
             entity.HasIndex(e => e.Nickname, "UQ__Person__5CF1C59B3D3E79B3").IsUnique();
 
-            entity.Property(e => e.Id)
+            entity.Property(e => e.Id)   
                 .ValueGeneratedNever()
                 .HasColumnName("id");
             entity.Property(e => e.Avatar)

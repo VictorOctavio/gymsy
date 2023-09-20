@@ -34,16 +34,15 @@
             label2 = new Label();
             label3 = new Label();
             textBoxEmailUser = new TextBox();
-            buttonSignIn = new Button();
+            ButtonSignIn = new Button();
             pictureBox1 = new PictureBox();
             labelErrorPass = new Label();
             button1 = new Button();
             button2 = new Button();
             labelErrorNickname = new Label();
-            Spinner = new PictureBox();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            BtnMessageDB = new ClassCustom.RJButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Spinner).BeginInit();
             SuspendLayout();
             // 
             // textBoxPasswordUser
@@ -51,15 +50,15 @@
             textBoxPasswordUser.Anchor = AnchorStyles.None;
             textBoxPasswordUser.BackColor = SystemColors.WindowFrame;
             textBoxPasswordUser.BorderStyle = BorderStyle.None;
-            textBoxPasswordUser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPasswordUser.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxPasswordUser.ForeColor = SystemColors.WindowText;
-            textBoxPasswordUser.Location = new Point(19, 243);
+            textBoxPasswordUser.Location = new Point(19, 241);
             textBoxPasswordUser.MaxLength = 50;
-            textBoxPasswordUser.Multiline = true;
             textBoxPasswordUser.Name = "textBoxPasswordUser";
             textBoxPasswordUser.PasswordChar = '*';
-            textBoxPasswordUser.Size = new Size(263, 36);
+            textBoxPasswordUser.Size = new Size(263, 24);
             textBoxPasswordUser.TabIndex = 4;
+            textBoxPasswordUser.Text = "instruc";
             // 
             // label1
             // 
@@ -77,7 +76,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.DarkCyan;
-            label2.Location = new Point(17, 141);
+            label2.Location = new Point(17, 139);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
             label2.Size = new Size(255, 15);
@@ -89,7 +88,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(18, 222);
+            label3.Location = new Point(18, 220);
             label3.Margin = new Padding(0);
             label3.Name = "label3";
             label3.Size = new Size(89, 21);
@@ -101,29 +100,33 @@
             textBoxEmailUser.BackColor = SystemColors.WindowFrame;
             textBoxEmailUser.BorderStyle = BorderStyle.None;
             textBoxEmailUser.Cursor = Cursors.IBeam;
-            textBoxEmailUser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxEmailUser.Location = new Point(18, 159);
+            textBoxEmailUser.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxEmailUser.Location = new Point(18, 157);
+            textBoxEmailUser.Margin = new Padding(0);
             textBoxEmailUser.MaxLength = 7;
-            textBoxEmailUser.Multiline = true;
             textBoxEmailUser.Name = "textBoxEmailUser";
-            textBoxEmailUser.Size = new Size(264, 35);
+            textBoxEmailUser.Size = new Size(264, 24);
             textBoxEmailUser.TabIndex = 3;
+            textBoxEmailUser.Text = "instruc";
             // 
-            // buttonSignIn
+            // ButtonSignIn
             // 
-            buttonSignIn.BackColor = Color.DarkCyan;
-            buttonSignIn.BackgroundImageLayout = ImageLayout.None;
-            buttonSignIn.Cursor = Cursors.Hand;
-            buttonSignIn.FlatAppearance.BorderSize = 0;
-            buttonSignIn.FlatStyle = FlatStyle.Flat;
-            buttonSignIn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonSignIn.ForeColor = Color.White;
-            buttonSignIn.Location = new Point(62, 322);
-            buttonSignIn.Name = "buttonSignIn";
-            buttonSignIn.Size = new Size(185, 38);
-            buttonSignIn.TabIndex = 5;
-            buttonSignIn.Text = "Iniciar sesión";
-            buttonSignIn.UseVisualStyleBackColor = false;
+            ButtonSignIn.BackColor = Color.DarkCyan;
+            ButtonSignIn.BackgroundImageLayout = ImageLayout.None;
+            ButtonSignIn.Cursor = Cursors.Hand;
+            ButtonSignIn.FlatAppearance.BorderSize = 0;
+            ButtonSignIn.FlatAppearance.MouseDownBackColor = Color.DarkCyan;
+            ButtonSignIn.FlatAppearance.MouseOverBackColor = Color.DarkCyan;
+            ButtonSignIn.FlatStyle = FlatStyle.Flat;
+            ButtonSignIn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ButtonSignIn.ForeColor = Color.White;
+            ButtonSignIn.Location = new Point(62, 305);
+            ButtonSignIn.Margin = new Padding(0);
+            ButtonSignIn.Name = "ButtonSignIn";
+            ButtonSignIn.Size = new Size(185, 38);
+            ButtonSignIn.TabIndex = 5;
+            ButtonSignIn.Text = "Iniciar sesión";
+            ButtonSignIn.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -144,7 +147,7 @@
             labelErrorPass.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             labelErrorPass.ForeColor = Color.Crimson;
             labelErrorPass.ImageAlign = ContentAlignment.MiddleLeft;
-            labelErrorPass.Location = new Point(19, 282);
+            labelErrorPass.Location = new Point(19, 270);
             labelErrorPass.Name = "labelErrorPass";
             labelErrorPass.Size = new Size(78, 19);
             labelErrorPass.TabIndex = 9;
@@ -191,7 +194,7 @@
             labelErrorNickname.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             labelErrorNickname.ForeColor = Color.Crimson;
             labelErrorNickname.ImageAlign = ContentAlignment.MiddleLeft;
-            labelErrorNickname.Location = new Point(19, 197);
+            labelErrorNickname.Location = new Point(19, 186);
             labelErrorNickname.Name = "labelErrorNickname";
             labelErrorNickname.Size = new Size(78, 19);
             labelErrorNickname.TabIndex = 12;
@@ -199,23 +202,39 @@
             labelErrorNickname.TextAlign = ContentAlignment.MiddleRight;
             labelErrorNickname.Visible = false;
             // 
-            // Spinner
-            // 
-            Spinner.Anchor = AnchorStyles.Top;
-            Spinner.Image = (Image)resources.GetObject("Spinner.Image");
-            Spinner.Location = new Point(126, 363);
-            Spinner.Margin = new Padding(0);
-            Spinner.Name = "Spinner";
-            Spinner.Size = new Size(41, 38);
-            Spinner.SizeMode = PictureBoxSizeMode.Zoom;
-            Spinner.TabIndex = 46;
-            Spinner.TabStop = false;
-            Spinner.Visible = false;
-            // 
             // sqlCommand1
             // 
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
+            // 
+            // BtnMessageDB
+            // 
+            BtnMessageDB.BackColor = Color.Transparent;
+            BtnMessageDB.BackgroundColor = Color.Transparent;
+            BtnMessageDB.BorderColor = Color.Crimson;
+            BtnMessageDB.BorderRadius = 12;
+            BtnMessageDB.BorderSize = 1;
+            BtnMessageDB.FlatAppearance.BorderSize = 0;
+            BtnMessageDB.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            BtnMessageDB.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            BtnMessageDB.FlatStyle = FlatStyle.Flat;
+            BtnMessageDB.Flip = FontAwesome.Sharp.FlipOrientation.Vertical;
+            BtnMessageDB.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnMessageDB.ForeColor = Color.Red;
+            BtnMessageDB.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            BtnMessageDB.IconColor = Color.Red;
+            BtnMessageDB.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnMessageDB.IconSize = 1;
+            BtnMessageDB.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnMessageDB.Location = new Point(3, 370);
+            BtnMessageDB.Margin = new Padding(0);
+            BtnMessageDB.Name = "BtnMessageDB";
+            BtnMessageDB.Size = new Size(293, 31);
+            BtnMessageDB.TabIndex = 47;
+            BtnMessageDB.Text = "Retirar";
+            BtnMessageDB.TextColor = Color.Red;
+            BtnMessageDB.UseVisualStyleBackColor = false;
+            BtnMessageDB.Visible = false;
             // 
             // AuthView
             // 
@@ -223,13 +242,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(9, 0, 15);
             ClientSize = new Size(600, 420);
-            Controls.Add(Spinner);
+            Controls.Add(BtnMessageDB);
             Controls.Add(labelErrorNickname);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(labelErrorPass);
             Controls.Add(pictureBox1);
-            Controls.Add(buttonSignIn);
+            Controls.Add(ButtonSignIn);
             Controls.Add(textBoxPasswordUser);
             Controls.Add(textBoxEmailUser);
             Controls.Add(label3);
@@ -240,8 +259,8 @@
             Name = "AuthView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginDesing";
+            TransparencyKey = Color.FromArgb(192, 0, 192);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Spinner).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -252,14 +271,14 @@
         private Label label2;
         private Label label3;
         private TextBox textBoxEmailUser;
-        private Button buttonSignIn;
+        private Button ButtonSignIn;
         private PictureBox pictureBox1;
         private TextBox textBoxPasswordUser;
         private Label labelErrorPass;
         private Button button1;
         private Button button2;
         private Label labelErrorNickname;
-        private PictureBox Spinner;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private ClassCustom.RJButton BtnMessageDB;
     }
 }
