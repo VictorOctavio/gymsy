@@ -45,13 +45,23 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
-            "Bunifu.UI.WinForms": {
+            "FontAwesome.Sharp": {
               "target": "Package",
-              "version": "[6.1.0, )"
+              "version": "[6.3.0, )"
             },
-            "FontAwesome": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[4.7.0, )"
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
             }
           },
           "imports": [
