@@ -118,3 +118,4 @@ C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\gymsy.dll.config
 C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.MainForm.resources
 C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.AuthView.resources
 C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.MainView.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "6WGy/geV6IqUCj9th5rJtrtUqLdtuf3eJinVR7M5+L/dp81ehUMG/SMk0Jwe6Ws/Nyu6EfA9RZomPEG6KEfWHA==",
+  "dgSpecHash": "ea3O3lzAewmhBkjDii/cTGnod2snNHHtfczKD9SmEHYIIDkahwXoTVeuuplqZkESTSPAJhEEHAd2awt6jtzLWw==",
   "success": true,
   "projectFilePath": "C:\\Users\\byOCT1\\Desktop\\gymsy\\gymsy\\gymsy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\byOCT1\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\byOCT1\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\byOCT1\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\byOCT1\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
     "C:\\Users\\byOCT1\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\byOCT1\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

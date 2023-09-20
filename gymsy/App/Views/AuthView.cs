@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,6 +25,7 @@ namespace gymsy
         // Fields
         private string Message;
         private bool IsSuccessful;
+        private bool Loading;
 
         // Properties
         public string Nickname
@@ -47,16 +49,10 @@ namespace gymsy
             get { return Message; }
             set { Message = value; }
         }
-
-        string IAuthView.textBoxEmailUser
+        bool IAuthView.Loading
         {
-            get { return textBoxEmailUser.Text; }
-            set { textBoxEmailUser.Text = value; }
-        }
-        string IAuthView.textBoxPasswordUser
-        {
-            get { return textBoxPasswordUser.Text; }
-            set { textBoxPasswordUser.Text = value; }
+            get { return Loading; }
+            set { Loading = value; }
         }
 
 
@@ -70,10 +66,13 @@ namespace gymsy
 
         private void AssociateAndRaiseViewEvents()
         {
-            buttonSignIn.Click += delegate
+
+            ButtonSignIn.Click += delegate
             {
-                buttonSignIn.Visible = false;
-                Spinner.Visible = true;
+
+                ButtonSignIn.Text = "...";
+                ButtonSignIn.Enabled = false;
+                this.Refresh();
 
                 // Reset errors
                 labelErrorNickname.Visible = false;
@@ -85,19 +84,35 @@ namespace gymsy
                 // Delegamos funcionalidad signin
                 Signin?.Invoke(this, EventArgs.Empty);
 
-                buttonSignIn.Visible = true;
-                Spinner.Visible = false;
+                ButtonSignIn.Enabled = true;
+                ButtonSignIn.Text = "Iniciar sesión";
             };
+
 
 
             textBoxPasswordUser.KeyDown += (s, e) =>
             {
                 if (e.KeyCode == Keys.Enter)
                 {
+
+                    ButtonSignIn.Text = "...";
+                    ButtonSignIn.Enabled = false;
+                    this.Refresh();
+
+                    // Reset errors
+                    labelErrorNickname.Visible = false;
+                    labelErrorPass.Visible = false;
+
                     if (!this.IsValidTextBox()) return;
                     Signin?.Invoke(this, EventArgs.Empty);
+
+                    ButtonSignIn.Enabled = true;
+                    ButtonSignIn.Text = "Iniciar sesión";
+
                 }
             };
+
+
         }
 
         // Events
@@ -107,6 +122,27 @@ namespace gymsy
         private bool IsValidTextBox()
         {
             return Utility.IsValidTextBox(textBoxEmailUser, labelErrorNickname) && Utility.IsValidTextBox(textBoxPasswordUser, labelErrorPass);
+        }
+
+        void IAuthView.HandleResponseDBMessage()
+        {
+            if (this.IsSuccessful)
+            {
+                ButtonSignIn.Visible = false;
+                BtnMessageDB.ForeColor = Color.Green;
+                BtnMessageDB.BorderColor = Color.Green;
+                BtnMessageDB.Text = this.Message;
+                Point point = new Point(BtnMessageDB.Location.X, BtnMessageDB.Location.Y - 60);
+                BtnMessageDB.Location = point;
+            }
+            else
+            {
+                BtnMessageDB.ForeColor = Color.Red;
+                BtnMessageDB.BorderColor = Color.Red;
+                BtnMessageDB.Text = this.Message;
+            }
+
+            BtnMessageDB.Visible = true;
         }
     }
 }

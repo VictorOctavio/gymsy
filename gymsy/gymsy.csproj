@@ -9,10 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="App\Dto\**" />
+    <EmbeddedResource Remove="App\Dto\**" />
+    <None Remove="App\Dto\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="7.0.11" />

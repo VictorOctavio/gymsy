@@ -14,7 +14,6 @@ namespace gymsy.App.Views.Interfaces
         string Message { get; set; }
 
         // Methods
-
         void Show();
     }
 }

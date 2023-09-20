@@ -51,6 +51,7 @@
             btnNavDashboard = new Button();
             panel3 = new Panel();
             label1 = new Label();
+            gorilla_avatar = new PictureBox();
             panelNavUser = new Panel();
             btnNavSignout = new Button();
             labelNavRol = new Label();
@@ -86,6 +87,7 @@
             tableLayoutAdmin.SuspendLayout();
             tableLayout.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).BeginInit();
             panelNavUser.SuspendLayout();
             panelBtnAdd.SuspendLayout();
             mainWrapper.SuspendLayout();
@@ -99,12 +101,13 @@
             // 
             menuButton.Cursor = Cursors.Hand;
             menuButton.Image = (Image)resources.GetObject("menuButton.Image");
-            menuButton.Location = new Point(23, 17);
+            menuButton.Location = new Point(217, 19);
             menuButton.Name = "menuButton";
             menuButton.Size = new Size(30, 33);
             menuButton.SizeMode = PictureBoxSizeMode.StretchImage;
             menuButton.TabIndex = 0;
             menuButton.TabStop = false;
+            menuButton.Visible = false;
             menuButton.Click += menuButton_Click;
             // 
             // button1
@@ -519,6 +522,7 @@
             // 
             panel3.BackgroundImageLayout = ImageLayout.None;
             panel3.Controls.Add(label1);
+            panel3.Controls.Add(gorilla_avatar);
             panel3.Controls.Add(menuButton);
             panel3.ForeColor = SystemColors.ActiveCaption;
             panel3.Location = new Point(0, 1);
@@ -529,13 +533,25 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(70, 18);
+            label1.Location = new Point(80, 19);
             label1.Name = "label1";
-            label1.Size = new Size(88, 30);
+            label1.Size = new Size(109, 37);
             label1.TabIndex = 1;
             label1.Text = "GYMSY";
+            // 
+            // gorilla_avatar
+            // 
+            gorilla_avatar.Anchor = AnchorStyles.Top;
+            gorilla_avatar.Image = (Image)resources.GetObject("gorilla_avatar.Image");
+            gorilla_avatar.Location = new Point(6, -18);
+            gorilla_avatar.Name = "gorilla_avatar";
+            gorilla_avatar.Size = new Size(82, 106);
+            gorilla_avatar.SizeMode = PictureBoxSizeMode.Zoom;
+            gorilla_avatar.TabIndex = 46;
+            gorilla_avatar.TabStop = false;
             // 
             // panelNavUser
             // 
@@ -840,9 +856,9 @@
             btnNotifications.FlatAppearance.BorderSize = 0;
             btnNotifications.FlatStyle = FlatStyle.Flat;
             btnNotifications.Image = (Image)resources.GetObject("btnNotifications.Image");
-            btnNotifications.Location = new Point(284, 0);
+            btnNotifications.Location = new Point(287, 0);
             btnNotifications.Name = "btnNotifications";
-            btnNotifications.Size = new Size(61, 70);
+            btnNotifications.Size = new Size(61, 71);
             btnNotifications.TabIndex = 0;
             btnNotifications.UseVisualStyleBackColor = false;
             btnNotifications.Click += btnNotifications_Click;
@@ -936,6 +952,7 @@
             tableLayout.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).EndInit();
             panelNavUser.ResumeLayout(false);
             panelNavUser.PerformLayout();
             panelBtnAdd.ResumeLayout(false);
@@ -999,5 +1016,6 @@
         private Button btnAddAdmin;
         private System.Windows.Forms.Timer timerAddAdmin;
         private Button btnWalletNav;
+        private PictureBox gorilla_avatar;
     }
 }
