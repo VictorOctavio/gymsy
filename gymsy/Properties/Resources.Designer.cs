@@ -171,7 +171,7 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Server=DESKTOP-R1CB0VV\SQLEXPRESS;Database=gymsy;Integrated Security=True;TrustServerCertificate=True.
+        ///   Busca una cadena traducida similar a &quot;Server=DESKTOP-R1CB0VV\SQLEXPRESS01;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;&quot;.
         /// </summary>
         internal static string stringConnection {
             get {

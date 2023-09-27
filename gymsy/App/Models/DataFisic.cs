@@ -5,19 +5,21 @@ namespace gymsy.App.Models;
 
 public partial class DataFisic
 {
-    public int Id { get; set; }
+    public int IdDataFisic { get; set; }
 
-    public int Weight { get; set; }
+    public double Weight { get; set; }
 
-    public int Height { get; set; }
+    public double Height { get; set; }
 
     public DateTime CreatedAt { get; set; }
 
     public string? Notes { get; set; }
 
-    public int ClientId { get; set; }
+    public bool Inactive { get; set; }
 
-    public virtual Client Client { get; set; } = null!;
+    public int IdClient { get; set; }
+
+    public virtual Client IdClientNavigation { get; set; } = null!;
 
     public virtual ICollection<Image> Images { get; set; } = new List<Image>();
 }

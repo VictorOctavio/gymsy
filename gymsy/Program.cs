@@ -11,6 +11,8 @@ namespace gymsy
     {
         static void Main()
         {
+
+
              //Config & Conect to database
             string stringConnection = Resources.stringConnection;
             DbContextOptionsBuilder<GymsyDbContext> optionsBuilder = new();
