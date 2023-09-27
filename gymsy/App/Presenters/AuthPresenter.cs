@@ -38,6 +38,12 @@ namespace gymsy.App.Presenters
                                               .Where(people => people.Nickname == this.authView.Nickname)
                                               .First();
 
+                //this.authView.IsSuccessful = true;
+                //this.authView.Message = "Hola, " + peopleFound.FirstName + " :)";
+                //this.authView.HandleResponseDBMessage();
+                //this.authView.Refresh();
+                //return;
+
                 // validar existencia del usuario
                 if (peopleFound != null)
                 {

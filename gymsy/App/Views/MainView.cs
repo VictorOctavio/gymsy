@@ -10,7 +10,7 @@ namespace gymsy
     public partial class MainView : Form, IMainView
     {
         // Roles de usuario 
-        List<string> rols = new List<string>() { "admin", "instructor", "client" };
+        List<string> rols = new List<string>() {"", "admin", "instructor", "client" };
 
         NavigationControl navigationControl;
         NavigationButtons navigationButtons;
