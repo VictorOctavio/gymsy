@@ -33,7 +33,7 @@ namespace gymsy.App.Presenters
             try
             {
                 // Signin to database
-                var peopleFound = this.gymsydb.Peoples
+                var peopleFound = this.gymsydb.People
                                               .Where(people => people.Nickname == this.authView.Nickname)
                                               .First();
 
@@ -50,7 +50,7 @@ namespace gymsy.App.Presenters
                     else
                     {
                         this.authView.IsSuccessful = true;
-                        this.authView.Message = "Hola, "+peopleFound.Name+" :)";
+                        this.authView.Message = "Hola, "+peopleFound.FirstName+" :)";
                         this.authView.HandleResponseDBMessage();
                         this.authView.Refresh();
 

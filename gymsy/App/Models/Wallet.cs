@@ -5,11 +5,15 @@ namespace gymsy.App.Models;
 
 public partial class Wallet
 {
-    public int Id { get; set; }
+    public int IdWallet { get; set; }
 
-    public double Amount { get; set; }
+    public double Total { get; set; }
 
-    public int PersonId { get; set; }
+    public double Retirable { get; set; }
 
-    public virtual Person Person { get; set; } = null!;
+    public bool Inactive { get; set; }
+
+    public int IdPerson { get; set; }
+
+    public virtual Person IdPersonNavigation { get; set; } = null!;
 }

@@ -171,7 +171,7 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Server=localhost;Database=gymsy_db;Integrated Security=True;TrustServerCertificate=True.
+        ///   Busca una cadena traducida similar a Server=localhost;Database=gymsy;Integrated Security=True;TrustServerCertificate=True.
         /// </summary>
         internal static string stringConnection {
             get {
