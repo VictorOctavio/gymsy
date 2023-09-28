@@ -9,6 +9,11 @@ namespace gymsy
 {
     internal static class Program
     {
+        /// <summary>
+        /// [STAThread]
+        /// Es en los system dialogs si no lanzaran exepciones
+        /// </summary>
+        [STAThread]
         static void Main()
         {
 

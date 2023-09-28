@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="App\Views\UserControls\InstructorControl\AddClientUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ClassCustom\Class1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -15,9 +18,6 @@
     </Compile>
     <Compile Update="App\Views\AuthView.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="App\Views\UserControls\InstructorControl\AddClientUserControl.cs">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="App\Views\UserControls\InstructorControl\AddPlanUserControl.cs">
       <SubType>UserControl</SubType>
@@ -57,6 +57,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Update="App\Views\UserControls\InstructorControl\AddClientUserControl.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

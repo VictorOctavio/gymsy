@@ -12,7 +12,7 @@ namespace gymsy
         // Roles de usuario 
         List<string> rols = new List<string>() {"", "admin", "instructor", "client" };
 
-        NavigationControl navigationControl;
+        public static NavigationControl navigationControl;
         NavigationButtons navigationButtons;
         bool sidebarExpand = true;
         bool btnAddExpand = false;

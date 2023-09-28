@@ -16,5 +16,15 @@ namespace gymsy.UserControls
         {
             InitializeComponent();
         }
+
+        private void BAgregarCliente_Click(object sender, EventArgs e)
+        {
+            MainView.navigationControl.Display(4);
+        }
+
+        private void BEditarCliente_Click(object sender, EventArgs e)
+        {
+            MainView.navigationControl.Display(4);
+        }
     }
 }
