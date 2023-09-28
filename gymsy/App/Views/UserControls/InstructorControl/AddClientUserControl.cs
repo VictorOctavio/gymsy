@@ -1,12 +1,13 @@
-﻿using System;
+﻿using CustomControls.RJControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Collections.Generic;
 
 namespace gymsy.UserControls
@@ -186,16 +187,19 @@ namespace gymsy.UserControls
                                             if (!string.IsNullOrWhiteSpace(TBNombreInstructor.Text.Trim()))
                                             {
 
-                                            } else
+                                            }
+                                            else
                                             {
                                                 isValid = false;
                                             }
-                                        } else
+                                        }
+                                        else
                                         {
                                             isValid = false;
                                         }
 
-                                    } else
+                                    }
+                                    else
                                     {
                                         isValid = false;
                                     }
@@ -211,12 +215,14 @@ namespace gymsy.UserControls
 
 
 
-                                } else
+                                }
+                                else
                                 {
                                     isValid = false;
                                 }
 
-                            } else
+                            }
+                            else
                             {
                                 isValid = false;
                             }
@@ -228,7 +234,7 @@ namespace gymsy.UserControls
                     }
                     else
                     {
-                        
+
                         isValid = false;
                     }
                 }

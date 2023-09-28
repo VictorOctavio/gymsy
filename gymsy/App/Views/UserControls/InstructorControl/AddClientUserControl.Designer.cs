@@ -1,4 +1,6 @@
-﻿namespace gymsy.UserControls
+﻿using FontAwesome.Sharp;
+
+namespace gymsy.UserControls
 {
     partial class AddClientUserControl
     {
@@ -742,7 +744,17 @@
             // 
             // AddClientUserControl
             // 
+
+            // AddClientUserControl
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            Controls.Add(panel1);
+            Controls.Add(label1);
+            Margin = new Padding(0);
             Name = "AddClientUserControl";
+            Size = new Size(1000, 530);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
@@ -751,6 +763,8 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)IPImagenUsuario).EndInit();
             ResumeLayout(false);
+            PerformLayout();
+           
         }
 
         #endregion
