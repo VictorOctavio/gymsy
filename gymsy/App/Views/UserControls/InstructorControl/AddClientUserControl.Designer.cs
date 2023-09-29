@@ -307,6 +307,7 @@ namespace gymsy.UserControls
             CBPlanes.Size = new Size(219, 30);
             CBPlanes.TabIndex = 77;
             CBPlanes.Texts = "Ver planes";
+            CBPlanes.OnSelectedIndexChanged += CBPlanes_OnSelectedIndexChanged;
             // 
             // LFechaNacimiento
             // 
@@ -343,6 +344,7 @@ namespace gymsy.UserControls
             BGuardarCliente.TextAlign = ContentAlignment.MiddleLeft;
             BGuardarCliente.TextColor = Color.White;
             BGuardarCliente.UseVisualStyleBackColor = false;
+            BGuardarCliente.Click += BGuardarCliente_Click_1;
             // 
             // label2
             // 

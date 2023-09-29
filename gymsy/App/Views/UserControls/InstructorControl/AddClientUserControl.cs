@@ -51,35 +51,6 @@ namespace gymsy.UserControls
         }
 
 
-
-        private void BGuardarCliente_Click(object sender, EventArgs e)
-        {
-            try
-            { //Se verifica que se hayan ingresado todos los datos
-                bool isValidTextBoxes = isValidTextsBoxesMostrarError();
-                if (isValidTextBoxes)
-                {
-
-                    if (!this.isEditMode) //Si no se usa la vista para editar se deben guardar los datos
-                    {
-
-                    }
-                    else //La vista esta en modo edicion se deven editar los datos
-                    {
-
-                    }
-
-                }
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Exepcion inesperada!");
-                throw;
-            }
-
-        }
-
         private void rjTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Se cancela el evento KeyPress para que no se escriba nada en el textbox
@@ -299,12 +270,6 @@ namespace gymsy.UserControls
              */
 
         }
-        private void rjComboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-            TBPrecio.Text = "299.99";
-            TBDescripcion.Text = "Complemento++";
-            TBNombreInstructor.Text = "Juansito Perez";
-        }
 
         private void TBPrecio_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -322,6 +287,40 @@ namespace gymsy.UserControls
         {
             //Se cancela el evento KeyPress para que no se escriba nada en el textbox
             e.Handled = true;
+        }
+
+        private void BGuardarCliente_Click_1(object sender, EventArgs e)
+        {
+            try
+            { //Se verifica que se hayan ingresado todos los datos
+                bool isValidTextBoxes = isValidTextsBoxesMostrarError();
+                if (isValidTextBoxes)
+                {
+
+                    if (!this.isEditMode) //Si no se usa la vista para editar se deben guardar los datos
+                    {
+                        MessageBox.Show("Se Guardaron correcctamente los datos");
+                    }
+                    else //La vista esta en modo edicion se deven editar los datos
+                    {
+                        MessageBox.Show("Se Editaron correcctamente los datos");
+                    }
+
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Exepcion inesperada!");
+                throw;
+            }
+        }
+
+        private void CBPlanes_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            TBPrecio.Text = "299.99";
+            TBDescripcion.Text = "Complemento++";
+            TBNombreInstructor.Text = "Juansito Perez";
         }
     }
 
