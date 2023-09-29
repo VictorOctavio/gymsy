@@ -194,6 +194,7 @@ namespace gymsy.UserControls
             TBNombreInstructor.PasswordChar = false;
             TBNombreInstructor.PlaceholderColor = Color.DarkGray;
             TBNombreInstructor.PlaceholderText = "...";
+            TBNombreInstructor.ReadOnly = true;
             TBNombreInstructor.Size = new Size(204, 31);
             TBNombreInstructor.TabIndex = 80;
             TBNombreInstructor.Texts = "";
@@ -227,6 +228,7 @@ namespace gymsy.UserControls
             TBDescripcion.PasswordChar = false;
             TBDescripcion.PlaceholderColor = Color.DarkGray;
             TBDescripcion.PlaceholderText = "...";
+            TBDescripcion.ReadOnly = true;
             TBDescripcion.Size = new Size(204, 31);
             TBDescripcion.TabIndex = 79;
             TBDescripcion.Texts = "";
@@ -260,6 +262,7 @@ namespace gymsy.UserControls
             TBPrecio.PasswordChar = false;
             TBPrecio.PlaceholderColor = Color.DarkGray;
             TBPrecio.PlaceholderText = "...";
+            TBPrecio.ReadOnly = true;
             TBPrecio.RightToLeft = RightToLeft.No;
             TBPrecio.Size = new Size(204, 31);
             TBPrecio.TabIndex = 78;
@@ -284,6 +287,7 @@ namespace gymsy.UserControls
             TBNombre.PasswordChar = false;
             TBNombre.PlaceholderColor = Color.DarkGray;
             TBNombre.PlaceholderText = "Ingrese un nombre...";
+            TBNombre.ReadOnly = false;
             TBNombre.Size = new Size(204, 31);
             TBNombre.TabIndex = 84;
             TBNombre.Texts = "";
@@ -384,6 +388,7 @@ namespace gymsy.UserControls
             TBRutaImagen.PasswordChar = false;
             TBRutaImagen.PlaceholderColor = Color.DarkGray;
             TBRutaImagen.PlaceholderText = "Ruta...";
+            TBRutaImagen.ReadOnly = true;
             TBRutaImagen.Size = new Size(204, 31);
             TBRutaImagen.TabIndex = 81;
             TBRutaImagen.Texts = "";
@@ -499,6 +504,7 @@ namespace gymsy.UserControls
             TBContraseña.PasswordChar = false;
             TBContraseña.PlaceholderColor = Color.DarkGray;
             TBContraseña.PlaceholderText = "Ingrese una contraseña...";
+            TBContraseña.ReadOnly = false;
             TBContraseña.Size = new Size(204, 31);
             TBContraseña.TabIndex = 75;
             TBContraseña.Texts = "";
@@ -554,6 +560,7 @@ namespace gymsy.UserControls
             TBTelefono.PasswordChar = false;
             TBTelefono.PlaceholderColor = Color.DarkGray;
             TBTelefono.PlaceholderText = "Ingrese un número telefónico...";
+            TBTelefono.ReadOnly = false;
             TBTelefono.Size = new Size(204, 31);
             TBTelefono.TabIndex = 70;
             TBTelefono.Texts = "";
@@ -576,6 +583,7 @@ namespace gymsy.UserControls
             TBUsuario.PasswordChar = false;
             TBUsuario.PlaceholderColor = Color.DarkGray;
             TBUsuario.PlaceholderText = "Ingrese un usuario...";
+            TBUsuario.ReadOnly = false;
             TBUsuario.Size = new Size(204, 31);
             TBUsuario.TabIndex = 69;
             TBUsuario.Texts = "";
@@ -598,6 +606,7 @@ namespace gymsy.UserControls
             TBApellido.PasswordChar = false;
             TBApellido.PlaceholderColor = Color.DarkGray;
             TBApellido.PlaceholderText = "Ingrese un apellido...";
+            TBApellido.ReadOnly = false;
             TBApellido.Size = new Size(204, 31);
             TBApellido.TabIndex = 68;
             TBApellido.Texts = "";

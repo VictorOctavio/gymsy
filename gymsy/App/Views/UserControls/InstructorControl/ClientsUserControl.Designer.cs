@@ -366,6 +366,7 @@
             BEliminarCliente.TextAlign = ContentAlignment.MiddleLeft;
             BEliminarCliente.TextColor = Color.White;
             BEliminarCliente.UseVisualStyleBackColor = false;
+            BEliminarCliente.Click += BEliminarCliente_Click;
             // 
             // BAgregarCliente
             // 

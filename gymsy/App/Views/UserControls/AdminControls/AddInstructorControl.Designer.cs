@@ -173,9 +173,10 @@
             TBNombre.PasswordChar = false;
             TBNombre.PlaceholderColor = Color.DarkGray;
             TBNombre.PlaceholderText = "Ingrese un nombre...";
+            TBNombre.ReadOnly = false;
             TBNombre.Size = new Size(204, 31);
             TBNombre.TabIndex = 84;
-            TBNombre.Texts = "";
+            TBNombre.Text = "";
             TBNombre.UnderlinedStyle = false;
             // 
             // LFechaNacimiento
@@ -216,9 +217,10 @@
             TBRutaImagen.PasswordChar = false;
             TBRutaImagen.PlaceholderColor = Color.DarkGray;
             TBRutaImagen.PlaceholderText = "Ruta...";
+            TBRutaImagen.ReadOnly = true;
             TBRutaImagen.Size = new Size(204, 31);
             TBRutaImagen.TabIndex = 81;
-            TBRutaImagen.Texts = "";
+            TBRutaImagen.Text = "";
             TBRutaImagen.UnderlinedStyle = false;
             // 
             // BGuardarCliente
@@ -315,9 +317,10 @@
             TBContraseña.PasswordChar = false;
             TBContraseña.PlaceholderColor = Color.DarkGray;
             TBContraseña.PlaceholderText = "Ingrese una contraseña...";
+            TBContraseña.ReadOnly = false;
             TBContraseña.Size = new Size(204, 31);
             TBContraseña.TabIndex = 75;
-            TBContraseña.Texts = "";
+            TBContraseña.Text = "";
             TBContraseña.UnderlinedStyle = false;
             // 
             // label17
@@ -370,9 +373,10 @@
             TBTelefono.PasswordChar = false;
             TBTelefono.PlaceholderColor = Color.DarkGray;
             TBTelefono.PlaceholderText = "Ingrese un número telefónico...";
+            TBTelefono.ReadOnly = false;
             TBTelefono.Size = new Size(204, 31);
             TBTelefono.TabIndex = 70;
-            TBTelefono.Texts = "";
+            TBTelefono.Text = "";
             TBTelefono.UnderlinedStyle = false;
             // 
             // TBUsuario
@@ -392,9 +396,10 @@
             TBUsuario.PasswordChar = false;
             TBUsuario.PlaceholderColor = Color.DarkGray;
             TBUsuario.PlaceholderText = "Ingrese un usuario...";
+            TBUsuario.ReadOnly = false;
             TBUsuario.Size = new Size(204, 31);
             TBUsuario.TabIndex = 69;
-            TBUsuario.Texts = "";
+            TBUsuario.Text = "";
             TBUsuario.UnderlinedStyle = false;
             // 
             // TBApellido
@@ -414,9 +419,10 @@
             TBApellido.PasswordChar = false;
             TBApellido.PlaceholderColor = Color.DarkGray;
             TBApellido.PlaceholderText = "Ingrese un apellido...";
+            TBApellido.ReadOnly = false;
             TBApellido.Size = new Size(204, 31);
             TBApellido.TabIndex = 68;
-            TBApellido.Texts = "";
+            TBApellido.Text = "";
             TBApellido.UnderlinedStyle = false;
             // 
             // BTAgregarImagen

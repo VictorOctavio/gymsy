@@ -149,7 +149,7 @@ namespace gymsy.UserControls
             }
 
             //Se verifica que se hay ingresado un apellido
-            if (string.IsNullOrWhiteSpace(TBApellido.Text) && TBApellido.PlaceholderText != TBApellido.Text)
+            if (!string.IsNullOrWhiteSpace(TBApellido.Text) && TBApellido.PlaceholderText != TBApellido.Text)
             {
                 LApellidoRequerido.Visible = false;
             }
@@ -160,7 +160,7 @@ namespace gymsy.UserControls
             }
 
             //Se verifica que se hay ingresado un telefono
-            if (string.IsNullOrWhiteSpace(TBTelefono.Text) && TBTelefono.PlaceholderText != TBTelefono.Text)
+            if (!string.IsNullOrWhiteSpace(TBTelefono.Text) && TBTelefono.PlaceholderText != TBTelefono.Text)
             {
                 LTelefonoRequerido.Visible = false;
             }
@@ -172,7 +172,7 @@ namespace gymsy.UserControls
             }
 
             //Se verifica que se hay ingresado un correo
-            if (string.IsNullOrWhiteSpace(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
+            if (!string.IsNullOrWhiteSpace(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
             {
                 LUsurioRequerido.Visible = false;
             }
@@ -183,7 +183,7 @@ namespace gymsy.UserControls
             }
 
             //Se verifica que se hay ingresado una contraseña
-            if (string.IsNullOrWhiteSpace(TBContraseña.Text) && TBContraseña.PlaceholderText != TBContraseña.Text)
+            if (!string.IsNullOrWhiteSpace(TBContraseña.Text) && TBContraseña.PlaceholderText != TBContraseña.Text)
             {
                 LContraseñaRequerido.Visible = false;
             }
@@ -194,7 +194,7 @@ namespace gymsy.UserControls
                 //MessageBox.Show("Con");
             }
 
-            if (string.IsNullOrWhiteSpace(TBRutaImagen.Text) && TBRutaImagen.PlaceholderText != TBRutaImagen.Text)
+            if (!string.IsNullOrWhiteSpace(TBRutaImagen.Text) && (TBRutaImagen.PlaceholderText != TBRutaImagen.Text))
             {
                 LRuraImagen.Visible = false;
             }
