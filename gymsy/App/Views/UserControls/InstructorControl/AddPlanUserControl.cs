@@ -248,7 +248,7 @@ namespace gymsy.UserControls
         private void BCancelarBusqueda_Click(object sender, EventArgs e)
         {
             LModoBusqueda.Visible = false;
-            BCancelarBusqueda.Visible = false;  
+            BCancelarBusqueda.Visible = false;
             TBBusqueda.Clear();
 
             // Limpia cualquier ordenación previa en el DataGridView

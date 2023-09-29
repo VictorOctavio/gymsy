@@ -32,27 +32,28 @@ namespace gymsy.UserControls
         {
             label1 = new Label();
             panel1 = new Panel();
-            panel3 = new Panel();
-            TBNombreInstructor = new CustomControls.RJControls.RJTextBox();
-            TBDescripcion = new CustomControls.RJControls.RJTextBox();
-            TBPrecio = new CustomControls.RJControls.RJTextBox();
-            CBPlanes = new CustomControls.RJControls.RJComboBox();
-            BGuardarCliente = new ClassCustom.RJButton();
-            LPlanRequerido = new Label();
-            label20 = new Label();
-            label18 = new Label();
-            label16 = new Label();
-            label14 = new Label();
             label12 = new Label();
             newClientOrEditClient = new Label();
             panel2 = new Panel();
+            TBNombreInstructor = new CustomControls.RJControls.RJTextBox();
+            label5 = new Label();
+            TBDescripcion = new CustomControls.RJControls.RJTextBox();
+            IPImagenUsuario = new PictureBox();
+            TBPrecio = new CustomControls.RJControls.RJTextBox();
             TBNombre = new CustomControls.RJControls.RJTextBox();
+            CBPlanes = new CustomControls.RJControls.RJComboBox();
             LFechaNacimiento = new Label();
+            BGuardarCliente = new ClassCustom.RJButton();
             label2 = new Label();
+            LPlanRequerido = new Label();
             TBRutaImagen = new CustomControls.RJControls.RJTextBox();
+            label20 = new Label();
             label23 = new Label();
+            label18 = new Label();
             RBFemenino = new RadioButton();
+            label16 = new Label();
             label22 = new Label();
+            label14 = new Label();
             DPFechaNacimiento = new DateTimePicker();
             RBMasculino = new RadioButton();
             TBContraseña = new CustomControls.RJControls.RJTextBox();
@@ -74,10 +75,7 @@ namespace gymsy.UserControls
             LApellidoRequerido = new Label();
             label4 = new Label();
             openFileDialog1 = new OpenFileDialog();
-            IPImagenUsuario = new PictureBox();
-            label5 = new Label();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IPImagenUsuario).BeginInit();
             SuspendLayout();
@@ -87,7 +85,7 @@ namespace gymsy.UserControls
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(1469, 490);
+            label1.Location = new Point(1967, 572);
             label1.Name = "label1";
             label1.Size = new Size(277, 37);
             label1.TabIndex = 0;
@@ -95,202 +93,17 @@ namespace gymsy.UserControls
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.AutoSize = true;
             panel1.BackColor = Color.FromArgb(16, 8, 23);
-            panel1.Controls.Add(panel3);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(newClientOrEditClient);
             panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Fill;
             panel1.ForeColor = Color.FromArgb(230, 237, 243);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1000, 530);
+            panel1.Size = new Size(1991, 674);
             panel1.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel3.Controls.Add(TBNombreInstructor);
-            panel3.Controls.Add(TBDescripcion);
-            panel3.Controls.Add(TBPrecio);
-            panel3.Controls.Add(CBPlanes);
-            panel3.Controls.Add(BGuardarCliente);
-            panel3.Controls.Add(LPlanRequerido);
-            panel3.Controls.Add(label20);
-            panel3.Controls.Add(label18);
-            panel3.Controls.Add(label16);
-            panel3.Controls.Add(label14);
-            panel3.Location = new Point(714, 76);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(283, 439);
-            panel3.TabIndex = 52;
-            // 
-            // TBNombreInstructor
-            // 
-            TBNombreInstructor.BackColor = Color.FromArgb(69, 34, 99);
-            TBNombreInstructor.BorderColor = Color.Transparent;
-            TBNombreInstructor.BorderFocusColor = Color.HotPink;
-            TBNombreInstructor.BorderRadius = 15;
-            TBNombreInstructor.BorderSize = 2;
-            TBNombreInstructor.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            TBNombreInstructor.ForeColor = Color.FromArgb(230, 237, 243);
-            TBNombreInstructor.Location = new Point(21, 238);
-            TBNombreInstructor.Margin = new Padding(4);
-            TBNombreInstructor.Multiline = false;
-            TBNombreInstructor.Name = "TBNombreInstructor";
-            TBNombreInstructor.Padding = new Padding(10, 7, 10, 7);
-            TBNombreInstructor.PasswordChar = false;
-            TBNombreInstructor.PlaceholderColor = Color.DarkGray;
-            TBNombreInstructor.PlaceholderText = "...";
-            TBNombreInstructor.Size = new Size(204, 31);
-            TBNombreInstructor.TabIndex = 70;
-            TBNombreInstructor.Texts = "";
-            TBNombreInstructor.UnderlinedStyle = false;
-            // 
-            // TBDescripcion
-            // 
-            TBDescripcion.BackColor = Color.FromArgb(69, 34, 99);
-            TBDescripcion.BorderColor = Color.Transparent;
-            TBDescripcion.BorderFocusColor = Color.HotPink;
-            TBDescripcion.BorderRadius = 15;
-            TBDescripcion.BorderSize = 2;
-            TBDescripcion.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            TBDescripcion.ForeColor = Color.FromArgb(230, 237, 243);
-            TBDescripcion.Location = new Point(21, 180);
-            TBDescripcion.Margin = new Padding(4);
-            TBDescripcion.Multiline = false;
-            TBDescripcion.Name = "TBDescripcion";
-            TBDescripcion.Padding = new Padding(10, 7, 10, 7);
-            TBDescripcion.PasswordChar = false;
-            TBDescripcion.PlaceholderColor = Color.DarkGray;
-            TBDescripcion.PlaceholderText = "...";
-            TBDescripcion.Size = new Size(204, 31);
-            TBDescripcion.TabIndex = 69;
-            TBDescripcion.Texts = "";
-            TBDescripcion.UnderlinedStyle = false;
-            TBDescripcion.KeyPress += TBDescripcion_KeyPress;
-            // 
-            // TBPrecio
-            // 
-            TBPrecio.BackColor = Color.FromArgb(69, 34, 99);
-            TBPrecio.BorderColor = Color.Transparent;
-            TBPrecio.BorderFocusColor = Color.HotPink;
-            TBPrecio.BorderRadius = 15;
-            TBPrecio.BorderSize = 2;
-            TBPrecio.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            TBPrecio.ForeColor = Color.FromArgb(230, 237, 243);
-            TBPrecio.Location = new Point(21, 122);
-            TBPrecio.Margin = new Padding(4);
-            TBPrecio.Multiline = false;
-            TBPrecio.Name = "TBPrecio";
-            TBPrecio.Padding = new Padding(10, 7, 10, 7);
-            TBPrecio.PasswordChar = false;
-            TBPrecio.PlaceholderColor = Color.DarkGray;
-            TBPrecio.PlaceholderText = "...";
-            TBPrecio.Size = new Size(204, 31);
-            TBPrecio.TabIndex = 68;
-            TBPrecio.Texts = "";
-            TBPrecio.UnderlinedStyle = false;
-            TBPrecio.KeyPress += TBPrecio_KeyPress;
-            // 
-            // CBPlanes
-            // 
-            CBPlanes.BackColor = Color.WhiteSmoke;
-            CBPlanes.BorderColor = Color.MediumSlateBlue;
-            CBPlanes.BorderSize = 1;
-            CBPlanes.DropDownStyle = ComboBoxStyle.DropDownList;
-            CBPlanes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            CBPlanes.ForeColor = Color.DimGray;
-            CBPlanes.IconColor = Color.MediumSlateBlue;
-            CBPlanes.ListBackColor = Color.FromArgb(230, 228, 245);
-            CBPlanes.ListTextColor = Color.DimGray;
-            CBPlanes.Location = new Point(14, 44);
-            CBPlanes.MinimumSize = new Size(200, 30);
-            CBPlanes.Name = "CBPlanes";
-            CBPlanes.Padding = new Padding(1);
-            CBPlanes.Size = new Size(219, 30);
-            CBPlanes.TabIndex = 65;
-            CBPlanes.Texts = "Ver planes";
-            CBPlanes.OnSelectedIndexChanged += rjComboBox1_OnSelectedIndexChanged;
-            // 
-            // BGuardarCliente
-            // 
-            BGuardarCliente.BackColor = Color.FromArgb(41, 147, 45);
-            BGuardarCliente.BackgroundColor = Color.FromArgb(41, 147, 45);
-            BGuardarCliente.BorderColor = Color.PaleVioletRed;
-            BGuardarCliente.BorderRadius = 15;
-            BGuardarCliente.BorderSize = 0;
-            BGuardarCliente.FlatAppearance.BorderSize = 0;
-            BGuardarCliente.FlatStyle = FlatStyle.Flat;
-            BGuardarCliente.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BGuardarCliente.ForeColor = Color.White;
-            BGuardarCliente.IconChar = IconChar.FloppyDisk;
-            BGuardarCliente.IconColor = Color.FromArgb(230, 237, 243);
-            BGuardarCliente.IconFont = IconFont.Auto;
-            BGuardarCliente.ImageAlign = ContentAlignment.MiddleRight;
-            BGuardarCliente.Location = new Point(89, 365);
-            BGuardarCliente.Name = "BGuardarCliente";
-            BGuardarCliente.Padding = new Padding(10, 0, 0, 0);
-            BGuardarCliente.Size = new Size(188, 53);
-            BGuardarCliente.TabIndex = 64;
-            BGuardarCliente.Text = "Guardar Cliente";
-            BGuardarCliente.TextAlign = ContentAlignment.MiddleLeft;
-            BGuardarCliente.TextColor = Color.White;
-            BGuardarCliente.UseVisualStyleBackColor = false;
-            BGuardarCliente.Click += BGuardarCliente_Click;
-            // 
-            // LPlanRequerido
-            // 
-            LPlanRequerido.AutoSize = true;
-            LPlanRequerido.ForeColor = Color.Red;
-            LPlanRequerido.Location = new Point(71, 80);
-            LPlanRequerido.Name = "LPlanRequerido";
-            LPlanRequerido.Size = new Size(105, 15);
-            LPlanRequerido.TabIndex = 60;
-            LPlanRequerido.Text = "*Campo requerido";
-            LPlanRequerido.Visible = false;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.ForeColor = Color.FromArgb(230, 237, 243);
-            label20.Location = new Point(63, 217);
-            label20.Name = "label20";
-            label20.Size = new Size(121, 15);
-            label20.TabIndex = 61;
-            label20.Text = "Nombre de Instructor";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.ForeColor = Color.FromArgb(230, 237, 243);
-            label18.Location = new Point(89, 159);
-            label18.Name = "label18";
-            label18.Size = new Size(69, 15);
-            label18.TabIndex = 58;
-            label18.Text = "Descripcion";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.ForeColor = Color.FromArgb(230, 237, 243);
-            label16.Location = new Point(103, 101);
-            label16.Name = "label16";
-            label16.Size = new Size(40, 15);
-            label16.TabIndex = 55;
-            label16.Text = "Precio";
-            // 
-            // label14
-            // 
-            label14.Anchor = AnchorStyles.Top;
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.ForeColor = Color.FromArgb(230, 237, 243);
-            label14.Location = new Point(64, 13);
-            label14.Name = "label14";
-            label14.Size = new Size(118, 25);
-            label14.TabIndex = 53;
-            label14.Text = "Asignar plan";
             // 
             // label12
             // 
@@ -298,7 +111,7 @@ namespace gymsy.UserControls
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = SystemColors.ActiveCaptionText;
-            label12.Location = new Point(1323, 112);
+            label12.Location = new Point(1468, 112);
             label12.Name = "label12";
             label12.Size = new Size(153, 25);
             label12.TabIndex = 50;
@@ -310,7 +123,7 @@ namespace gymsy.UserControls
             newClientOrEditClient.AutoSize = true;
             newClientOrEditClient.Font = new Font("Segoe UI", 29F, FontStyle.Regular, GraphicsUnit.Point);
             newClientOrEditClient.ForeColor = Color.FromArgb(230, 237, 243);
-            newClientOrEditClient.Location = new Point(367, 10);
+            newClientOrEditClient.Location = new Point(393, 18);
             newClientOrEditClient.Name = "newClientOrEditClient";
             newClientOrEditClient.Size = new Size(263, 52);
             newClientOrEditClient.TabIndex = 33;
@@ -318,15 +131,27 @@ namespace gymsy.UserControls
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.AutoSize = true;
+            panel2.Controls.Add(TBNombreInstructor);
             panel2.Controls.Add(label5);
+            panel2.Controls.Add(TBDescripcion);
             panel2.Controls.Add(IPImagenUsuario);
+            panel2.Controls.Add(TBPrecio);
             panel2.Controls.Add(TBNombre);
+            panel2.Controls.Add(CBPlanes);
             panel2.Controls.Add(LFechaNacimiento);
+            panel2.Controls.Add(BGuardarCliente);
             panel2.Controls.Add(label2);
+            panel2.Controls.Add(LPlanRequerido);
             panel2.Controls.Add(TBRutaImagen);
+            panel2.Controls.Add(label20);
             panel2.Controls.Add(label23);
+            panel2.Controls.Add(label18);
             panel2.Controls.Add(RBFemenino);
+            panel2.Controls.Add(label16);
             panel2.Controls.Add(label22);
+            panel2.Controls.Add(label14);
             panel2.Controls.Add(DPFechaNacimiento);
             panel2.Controls.Add(RBMasculino);
             panel2.Controls.Add(TBContraseña);
@@ -347,10 +172,100 @@ namespace gymsy.UserControls
             panel2.Controls.Add(LUsurioRequerido);
             panel2.Controls.Add(LApellidoRequerido);
             panel2.Controls.Add(label4);
-            panel2.Location = new Point(3, 76);
+            panel2.Location = new Point(3, 73);
             panel2.Name = "panel2";
-            panel2.Size = new Size(693, 439);
+            panel2.Size = new Size(1000, 533);
             panel2.TabIndex = 51;
+            // 
+            // TBNombreInstructor
+            // 
+            TBNombreInstructor.BackColor = Color.FromArgb(69, 34, 99);
+            TBNombreInstructor.BorderColor = Color.Transparent;
+            TBNombreInstructor.BorderFocusColor = Color.HotPink;
+            TBNombreInstructor.BorderRadius = 15;
+            TBNombreInstructor.BorderSize = 2;
+            TBNombreInstructor.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBNombreInstructor.ForeColor = Color.FromArgb(230, 237, 243);
+            TBNombreInstructor.Location = new Point(740, 262);
+            TBNombreInstructor.Margin = new Padding(4);
+            TBNombreInstructor.Multiline = false;
+            TBNombreInstructor.Name = "TBNombreInstructor";
+            TBNombreInstructor.Padding = new Padding(10, 7, 10, 7);
+            TBNombreInstructor.PasswordChar = false;
+            TBNombreInstructor.PlaceholderColor = Color.DarkGray;
+            TBNombreInstructor.PlaceholderText = "...";
+            TBNombreInstructor.Size = new Size(204, 31);
+            TBNombreInstructor.TabIndex = 80;
+            TBNombreInstructor.Texts = "";
+            TBNombreInstructor.UnderlinedStyle = false;
+            TBNombreInstructor.KeyPress += TBNombreInstructor_KeyPress;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = Color.FromArgb(230, 237, 243);
+            label5.Location = new Point(542, 48);
+            label5.Name = "label5";
+            label5.Size = new Size(106, 15);
+            label5.TabIndex = 86;
+            label5.Text = "Imagen del Cliente";
+            // 
+            // TBDescripcion
+            // 
+            TBDescripcion.BackColor = Color.FromArgb(69, 34, 99);
+            TBDescripcion.BorderColor = Color.Transparent;
+            TBDescripcion.BorderFocusColor = Color.HotPink;
+            TBDescripcion.BorderRadius = 15;
+            TBDescripcion.BorderSize = 2;
+            TBDescripcion.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBDescripcion.ForeColor = Color.FromArgb(230, 237, 243);
+            TBDescripcion.Location = new Point(740, 204);
+            TBDescripcion.Margin = new Padding(4);
+            TBDescripcion.Multiline = false;
+            TBDescripcion.Name = "TBDescripcion";
+            TBDescripcion.Padding = new Padding(10, 7, 10, 7);
+            TBDescripcion.PasswordChar = false;
+            TBDescripcion.PlaceholderColor = Color.DarkGray;
+            TBDescripcion.PlaceholderText = "...";
+            TBDescripcion.Size = new Size(204, 31);
+            TBDescripcion.TabIndex = 79;
+            TBDescripcion.Texts = "";
+            TBDescripcion.UnderlinedStyle = false;
+            TBDescripcion.KeyPress += TBDescripcion_KeyPress;
+            // 
+            // IPImagenUsuario
+            // 
+            IPImagenUsuario.Image = Properties.Resources.vector_fitness_couple_doing_exercise;
+            IPImagenUsuario.Location = new Point(497, 68);
+            IPImagenUsuario.Name = "IPImagenUsuario";
+            IPImagenUsuario.Size = new Size(207, 177);
+            IPImagenUsuario.SizeMode = PictureBoxSizeMode.Zoom;
+            IPImagenUsuario.TabIndex = 85;
+            IPImagenUsuario.TabStop = false;
+            // 
+            // TBPrecio
+            // 
+            TBPrecio.BackColor = Color.FromArgb(69, 34, 99);
+            TBPrecio.BorderColor = Color.Transparent;
+            TBPrecio.BorderFocusColor = Color.HotPink;
+            TBPrecio.BorderRadius = 15;
+            TBPrecio.BorderSize = 2;
+            TBPrecio.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBPrecio.ForeColor = Color.FromArgb(230, 237, 243);
+            TBPrecio.Location = new Point(740, 146);
+            TBPrecio.Margin = new Padding(4);
+            TBPrecio.Multiline = false;
+            TBPrecio.Name = "TBPrecio";
+            TBPrecio.Padding = new Padding(10, 7, 10, 7);
+            TBPrecio.PasswordChar = false;
+            TBPrecio.PlaceholderColor = Color.DarkGray;
+            TBPrecio.PlaceholderText = "...";
+            TBPrecio.RightToLeft = RightToLeft.No;
+            TBPrecio.Size = new Size(204, 31);
+            TBPrecio.TabIndex = 78;
+            TBPrecio.Texts = "";
+            TBPrecio.UnderlinedStyle = false;
+            TBPrecio.KeyPress += TBPrecio_KeyPress_1;
             // 
             // TBNombre
             // 
@@ -374,6 +289,25 @@ namespace gymsy.UserControls
             TBNombre.Texts = "";
             TBNombre.UnderlinedStyle = false;
             // 
+            // CBPlanes
+            // 
+            CBPlanes.BackColor = Color.WhiteSmoke;
+            CBPlanes.BorderColor = Color.MediumSlateBlue;
+            CBPlanes.BorderSize = 1;
+            CBPlanes.DropDownStyle = ComboBoxStyle.DropDownList;
+            CBPlanes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            CBPlanes.ForeColor = Color.DimGray;
+            CBPlanes.IconColor = Color.MediumSlateBlue;
+            CBPlanes.ListBackColor = Color.FromArgb(230, 228, 245);
+            CBPlanes.ListTextColor = Color.DimGray;
+            CBPlanes.Location = new Point(733, 68);
+            CBPlanes.MinimumSize = new Size(200, 30);
+            CBPlanes.Name = "CBPlanes";
+            CBPlanes.Padding = new Padding(1);
+            CBPlanes.Size = new Size(219, 30);
+            CBPlanes.TabIndex = 77;
+            CBPlanes.Texts = "Ver planes";
+            // 
             // LFechaNacimiento
             // 
             LFechaNacimiento.AutoSize = true;
@@ -385,15 +319,51 @@ namespace gymsy.UserControls
             LFechaNacimiento.Text = "*Campo requerido";
             LFechaNacimiento.Visible = false;
             // 
+            // BGuardarCliente
+            // 
+            BGuardarCliente.BackColor = Color.FromArgb(41, 147, 45);
+            BGuardarCliente.BackgroundColor = Color.FromArgb(41, 147, 45);
+            BGuardarCliente.BorderColor = Color.PaleVioletRed;
+            BGuardarCliente.BorderRadius = 15;
+            BGuardarCliente.BorderSize = 0;
+            BGuardarCliente.FlatAppearance.BorderSize = 0;
+            BGuardarCliente.FlatStyle = FlatStyle.Flat;
+            BGuardarCliente.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BGuardarCliente.ForeColor = Color.White;
+            BGuardarCliente.IconChar = IconChar.FloppyDisk;
+            BGuardarCliente.IconColor = Color.FromArgb(230, 237, 243);
+            BGuardarCliente.IconFont = IconFont.Auto;
+            BGuardarCliente.ImageAlign = ContentAlignment.MiddleRight;
+            BGuardarCliente.Location = new Point(780, 423);
+            BGuardarCliente.Name = "BGuardarCliente";
+            BGuardarCliente.Padding = new Padding(10, 0, 0, 0);
+            BGuardarCliente.Size = new Size(202, 63);
+            BGuardarCliente.TabIndex = 76;
+            BGuardarCliente.Text = "Guardar Cliente";
+            BGuardarCliente.TextAlign = ContentAlignment.MiddleLeft;
+            BGuardarCliente.TextColor = Color.White;
+            BGuardarCliente.UseVisualStyleBackColor = false;
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(230, 237, 243);
-            label2.Location = new Point(522, 309);
+            label2.Location = new Point(549, 308);
             label2.Name = "label2";
             label2.Size = new Size(102, 15);
             label2.TabIndex = 82;
             label2.Text = "Ruta de la imagen";
+            // 
+            // LPlanRequerido
+            // 
+            LPlanRequerido.AutoSize = true;
+            LPlanRequerido.ForeColor = Color.Red;
+            LPlanRequerido.Location = new Point(790, 104);
+            LPlanRequerido.Name = "LPlanRequerido";
+            LPlanRequerido.Size = new Size(105, 15);
+            LPlanRequerido.TabIndex = 74;
+            LPlanRequerido.Text = "*Campo requerido";
+            LPlanRequerido.Visible = false;
             // 
             // TBRutaImagen
             // 
@@ -404,7 +374,7 @@ namespace gymsy.UserControls
             TBRutaImagen.BorderSize = 2;
             TBRutaImagen.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             TBRutaImagen.ForeColor = Color.FromArgb(230, 237, 243);
-            TBRutaImagen.Location = new Point(471, 329);
+            TBRutaImagen.Location = new Point(498, 328);
             TBRutaImagen.Margin = new Padding(4);
             TBRutaImagen.Multiline = false;
             TBRutaImagen.Name = "TBRutaImagen";
@@ -418,6 +388,16 @@ namespace gymsy.UserControls
             TBRutaImagen.UnderlinedStyle = false;
             TBRutaImagen.KeyPress += rjTextBox1_KeyPress;
             // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.ForeColor = Color.FromArgb(230, 237, 243);
+            label20.Location = new Point(782, 241);
+            label20.Name = "label20";
+            label20.Size = new Size(121, 15);
+            label20.TabIndex = 75;
+            label20.Text = "Nombre de Instructor";
+            // 
             // label23
             // 
             label23.AutoSize = true;
@@ -427,6 +407,16 @@ namespace gymsy.UserControls
             label23.Size = new Size(117, 15);
             label23.TabIndex = 80;
             label23.Text = "Fecha de nacimiento";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.ForeColor = Color.FromArgb(230, 237, 243);
+            label18.Location = new Point(808, 183);
+            label18.Name = "label18";
+            label18.Size = new Size(69, 15);
+            label18.TabIndex = 73;
+            label18.Text = "Descripcion";
             // 
             // RBFemenino
             // 
@@ -438,6 +428,16 @@ namespace gymsy.UserControls
             RBFemenino.Text = "Femenino";
             RBFemenino.UseVisualStyleBackColor = true;
             // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.ForeColor = Color.FromArgb(230, 237, 243);
+            label16.Location = new Point(822, 125);
+            label16.Name = "label16";
+            label16.Size = new Size(40, 15);
+            label16.TabIndex = 72;
+            label16.Text = "Precio";
+            // 
             // label22
             // 
             label22.AutoSize = true;
@@ -447,6 +447,18 @@ namespace gymsy.UserControls
             label22.Size = new Size(32, 15);
             label22.TabIndex = 78;
             label22.Text = "Sexo";
+            // 
+            // label14
+            // 
+            label14.Anchor = AnchorStyles.Top;
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.ForeColor = Color.FromArgb(230, 237, 243);
+            label14.Location = new Point(795, 37);
+            label14.Name = "label14";
+            label14.Size = new Size(118, 25);
+            label14.TabIndex = 71;
+            label14.Text = "Asignar plan";
             // 
             // DPFechaNacimiento
             // 
@@ -517,7 +529,7 @@ namespace gymsy.UserControls
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label15.ForeColor = Color.FromArgb(230, 237, 243);
-            label15.Location = new Point(268, 13);
+            label15.Location = new Point(403, 9);
             label15.Name = "label15";
             label15.Size = new Size(155, 25);
             label15.TabIndex = 72;
@@ -605,7 +617,7 @@ namespace gymsy.UserControls
             BTAgregarImagen.IconColor = Color.FromArgb(230, 237, 243);
             BTAgregarImagen.IconFont = IconFont.Auto;
             BTAgregarImagen.ImageAlign = ContentAlignment.MiddleRight;
-            BTAgregarImagen.Location = new Point(480, 251);
+            BTAgregarImagen.Location = new Point(507, 250);
             BTAgregarImagen.Name = "BTAgregarImagen";
             BTAgregarImagen.Padding = new Padding(10, 0, 0, 0);
             BTAgregarImagen.Size = new Size(186, 53);
@@ -622,7 +634,7 @@ namespace gymsy.UserControls
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.ActiveCaptionText;
-            label10.Location = new Point(-311, 40);
+            label10.Location = new Point(-507, 40);
             label10.Name = "label10";
             label10.Size = new Size(155, 25);
             label10.TabIndex = 48;
@@ -632,7 +644,7 @@ namespace gymsy.UserControls
             // 
             LRuraImagen.AutoSize = true;
             LRuraImagen.ForeColor = Color.Red;
-            LRuraImagen.Location = new Point(521, 365);
+            LRuraImagen.Location = new Point(548, 364);
             LRuraImagen.Name = "LRuraImagen";
             LRuraImagen.Size = new Size(105, 15);
             LRuraImagen.TabIndex = 49;
@@ -727,26 +739,6 @@ namespace gymsy.UserControls
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // IPImagenUsuario
-            // 
-            IPImagenUsuario.Image = Properties.Resources.vector_fitness_couple_doing_exercise;
-            IPImagenUsuario.Location = new Point(470, 69);
-            IPImagenUsuario.Name = "IPImagenUsuario";
-            IPImagenUsuario.Size = new Size(207, 177);
-            IPImagenUsuario.SizeMode = PictureBoxSizeMode.Zoom;
-            IPImagenUsuario.TabIndex = 85;
-            IPImagenUsuario.TabStop = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.ForeColor = Color.FromArgb(230, 237, 243);
-            label5.Location = new Point(515, 49);
-            label5.Name = "label5";
-            label5.Size = new Size(106, 15);
-            label5.TabIndex = 86;
-            label5.Text = "Imagen del Cliente";
-            // 
             // AddClientUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -756,11 +748,9 @@ namespace gymsy.UserControls
             Controls.Add(label1);
             Margin = new Padding(0);
             Name = "AddClientUserControl";
-            Size = new Size(1000, 530);
+            Size = new Size(1003, 609);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)IPImagenUsuario).EndInit();
@@ -785,21 +775,10 @@ namespace gymsy.UserControls
         private Label label6;
         private Label LUsurioRequerido;
         private Panel panel2;
-        private Panel panel3;
-        private Label label14;
-        private Label LPlanRequerido;
-        private Label label20;
-        private Label label18;
-        private Label label16;
-        private ClassCustom.RJButton BGuardarCliente;
         private ClassCustom.RJButton BTAgregarImagen;
         private CustomControls.RJControls.RJTextBox TBTelefono;
         private CustomControls.RJControls.RJTextBox TBUsuario;
         private CustomControls.RJControls.RJTextBox TBApellido;
-        private CustomControls.RJControls.RJComboBox CBPlanes;
-        private CustomControls.RJControls.RJTextBox TBNombreInstructor;
-        private CustomControls.RJControls.RJTextBox TBDescripcion;
-        private CustomControls.RJControls.RJTextBox TBPrecio;
         private Label label15;
         private CustomControls.RJControls.RJTextBox TBContraseña;
         private Label label17;
@@ -816,5 +795,15 @@ namespace gymsy.UserControls
         private CustomControls.RJControls.RJTextBox TBNombre;
         private PictureBox IPImagenUsuario;
         private Label label5;
+        private CustomControls.RJControls.RJTextBox TBNombreInstructor;
+        private CustomControls.RJControls.RJTextBox TBDescripcion;
+        private CustomControls.RJControls.RJTextBox TBPrecio;
+        private CustomControls.RJControls.RJComboBox CBPlanes;
+        private ClassCustom.RJButton BGuardarCliente;
+        private Label LPlanRequerido;
+        private Label label20;
+        private Label label18;
+        private Label label16;
+        private Label label14;
     }
 }

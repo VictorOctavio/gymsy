@@ -83,7 +83,7 @@
             LModoEditOrAdd.AutoSize = true;
             LModoEditOrAdd.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             LModoEditOrAdd.ForeColor = Color.FromArgb(230, 237, 243);
-            LModoEditOrAdd.Location = new Point(736, 140);
+            LModoEditOrAdd.Location = new Point(810, 135);
             LModoEditOrAdd.Name = "LModoEditOrAdd";
             LModoEditOrAdd.Size = new Size(137, 25);
             LModoEditOrAdd.TabIndex = 78;
@@ -105,7 +105,7 @@
             BEditarPlan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BEditarPlan.IconSize = 45;
             BEditarPlan.ImageAlign = ContentAlignment.MiddleRight;
-            BEditarPlan.Location = new Point(736, 410);
+            BEditarPlan.Location = new Point(792, 405);
             BEditarPlan.Name = "BEditarPlan";
             BEditarPlan.Padding = new Padding(10, 0, 0, 0);
             BEditarPlan.Size = new Size(172, 49);
@@ -132,7 +132,7 @@
             BEliminarPlan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BEliminarPlan.IconSize = 40;
             BEliminarPlan.ImageAlign = ContentAlignment.MiddleRight;
-            BEliminarPlan.Location = new Point(736, 465);
+            BEliminarPlan.Location = new Point(792, 460);
             BEliminarPlan.Name = "BEliminarPlan";
             BEliminarPlan.Padding = new Padding(10, 0, 0, 0);
             BEliminarPlan.Size = new Size(172, 49);
@@ -147,7 +147,7 @@
             // 
             LDescripcionRequerido.AutoSize = true;
             LDescripcionRequerido.ForeColor = Color.Red;
-            LDescripcionRequerido.Location = new Point(736, 318);
+            LDescripcionRequerido.Location = new Point(826, 313);
             LDescripcionRequerido.Name = "LDescripcionRequerido";
             LDescripcionRequerido.Size = new Size(105, 15);
             LDescripcionRequerido.TabIndex = 75;
@@ -163,7 +163,7 @@
             TBDescripcion.BorderSize = 2;
             TBDescripcion.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             TBDescripcion.ForeColor = Color.FromArgb(230, 237, 243);
-            TBDescripcion.Location = new Point(736, 283);
+            TBDescripcion.Location = new Point(776, 278);
             TBDescripcion.Margin = new Padding(4);
             TBDescripcion.Multiline = false;
             TBDescripcion.Name = "TBDescripcion";
@@ -185,7 +185,7 @@
             TBPrecio.BorderSize = 2;
             TBPrecio.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             TBPrecio.ForeColor = Color.FromArgb(230, 237, 243);
-            TBPrecio.Location = new Point(736, 200);
+            TBPrecio.Location = new Point(776, 195);
             TBPrecio.Margin = new Padding(4);
             TBPrecio.Multiline = false;
             TBPrecio.Name = "TBPrecio";
@@ -203,7 +203,7 @@
             // 
             LPrecioRequerido.AutoSize = true;
             LPrecioRequerido.ForeColor = Color.Red;
-            LPrecioRequerido.Location = new Point(736, 235);
+            LPrecioRequerido.Location = new Point(826, 230);
             LPrecioRequerido.Name = "LPrecioRequerido";
             LPrecioRequerido.Size = new Size(105, 15);
             LPrecioRequerido.TabIndex = 72;
@@ -214,7 +214,7 @@
             // 
             label18.AutoSize = true;
             label18.ForeColor = Color.FromArgb(230, 237, 243);
-            label18.Location = new Point(736, 260);
+            label18.Location = new Point(844, 255);
             label18.Name = "label18";
             label18.Size = new Size(69, 15);
             label18.TabIndex = 71;
@@ -224,7 +224,7 @@
             // 
             label16.AutoSize = true;
             label16.ForeColor = Color.FromArgb(230, 237, 243);
-            label16.Location = new Point(736, 181);
+            label16.Location = new Point(858, 176);
             label16.Name = "label16";
             label16.Size = new Size(40, 15);
             label16.TabIndex = 70;
@@ -239,6 +239,7 @@
             dataGridViewCellStyle1.BackColor = Color.FromArgb(69, 34, 99);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
             DGPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DGPlan.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DGPlan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DGPlan.BackgroundColor = Color.FromArgb(16, 8, 23);
             DGPlan.BorderStyle = BorderStyle.None;
@@ -269,7 +270,7 @@
             DGPlan.RowTemplate.Height = 25;
             DGPlan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGPlan.ShowCellErrors = false;
-            DGPlan.Size = new Size(699, 400);
+            DGPlan.Size = new Size(759, 400);
             DGPlan.TabIndex = 5;
             DGPlan.VisibleChanged += DGPlan_VisibleChanged;
             // 
@@ -290,12 +291,12 @@
             // 
             // nav
             // 
+            nav.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             nav.BackColor = Color.FromArgb(16, 8, 23);
             nav.Controls.Add(BCancelarBusqueda);
             nav.Controls.Add(LModoBusqueda);
             nav.Controls.Add(TBBusqueda);
             nav.Controls.Add(BBuscar);
-            nav.Dock = DockStyle.Top;
             nav.ForeColor = Color.FromArgb(16, 8, 23);
             nav.Location = new Point(0, 0);
             nav.Name = "nav";
@@ -401,7 +402,7 @@
             BAgregarPlan.IconColor = Color.White;
             BAgregarPlan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BAgregarPlan.ImageAlign = ContentAlignment.MiddleRight;
-            BAgregarPlan.Location = new Point(736, 355);
+            BAgregarPlan.Location = new Point(792, 350);
             BAgregarPlan.Name = "BAgregarPlan";
             BAgregarPlan.Padding = new Padding(10, 0, 0, 0);
             BAgregarPlan.Size = new Size(172, 49);

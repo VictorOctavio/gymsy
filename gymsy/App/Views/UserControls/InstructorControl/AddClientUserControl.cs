@@ -50,17 +50,7 @@ namespace gymsy.UserControls
             }
         }
 
-        private void TBPrecio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Se cancela el evento KeyPress para que no se escriba nada en el textbox
-            e.Handled = true;
-        }
 
-        private void TBDescripcion_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Se cancela el evento KeyPress para que no se escriba nada en el textbox
-            e.Handled = true;
-        }
 
         private void BGuardarCliente_Click(object sender, EventArgs e)
         {
@@ -314,6 +304,24 @@ namespace gymsy.UserControls
             TBPrecio.Text = "299.99";
             TBDescripcion.Text = "Complemento++";
             TBNombreInstructor.Text = "Juansito Perez";
+        }
+
+        private void TBPrecio_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            //Se cancela el evento KeyPress para que no se escriba nada en el textbox
+            e.Handled = true;
+        }
+
+        private void TBDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se cancela el evento KeyPress para que no se escriba nada en el textbox
+            e.Handled = true;
+        }
+
+        private void TBNombreInstructor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se cancela el evento KeyPress para que no se escriba nada en el textbox
+            e.Handled = true;
         }
     }
 
