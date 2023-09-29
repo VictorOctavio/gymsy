@@ -166,7 +166,7 @@
             TBDescripcion.PlaceholderText = "Ingrese un nombre...";
             TBDescripcion.Size = new Size(204, 31);
             TBDescripcion.TabIndex = 74;
-            TBDescripcion.Texts = "";
+            TBDescripcion.Text = "";
             TBDescripcion.UnderlinedStyle = false;
             // 
             // TBPrecio
@@ -188,7 +188,7 @@
             TBPrecio.PlaceholderText = "Ingrese un nombre...";
             TBPrecio.Size = new Size(204, 31);
             TBPrecio.TabIndex = 73;
-            TBPrecio.Texts = "";
+            TBPrecio.Text = "";
             TBPrecio.UnderlinedStyle = false;
             TBPrecio.KeyPress += TBPrecio_KeyPress;
             // 
@@ -355,7 +355,7 @@
             TBBusqueda.PlaceholderText = "Ingrese una busqueda...";
             TBBusqueda.Size = new Size(582, 31);
             TBBusqueda.TabIndex = 69;
-            TBBusqueda.Texts = "";
+            TBBusqueda.Text = "";
             TBBusqueda.UnderlinedStyle = false;
            
             // 

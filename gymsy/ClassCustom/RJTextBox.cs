@@ -157,7 +157,7 @@ namespace CustomControls.RJControls
         }
 
         [Category("RJ Code Advance")]
-        public string Text
+        public override string Text
         {
             get
             {

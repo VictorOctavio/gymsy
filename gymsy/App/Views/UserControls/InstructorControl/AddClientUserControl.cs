@@ -183,7 +183,7 @@ namespace gymsy.UserControls
             }
 
             //Se verifica que se hay ingresado una contraseña
-            if (!string.IsNullOrWhiteSpace(TBContraseña.Text) && TBContraseña.PlaceholderText != TBContraseña.Text)
+            if (!string.IsNullOrWhiteSpace(TBContraseña.Text))
             {
                 LContraseñaRequerido.Visible = false;
             }
@@ -194,14 +194,16 @@ namespace gymsy.UserControls
                 //MessageBox.Show("Con");
             }
 
-            if (!string.IsNullOrWhiteSpace(TBRutaImagen.Text) && (TBRutaImagen.PlaceholderText != TBRutaImagen.Text))
+            if (!string.IsNullOrWhiteSpace(TBRutaImagen.Text))
             {
                 LRuraImagen.Visible = false;
+                
             }
             else
             {
                 isValid = false;
                 LRuraImagen.Visible = true;
+                
                 //MessageBox.Show("Debe seleccionar una imagen");
             }
 

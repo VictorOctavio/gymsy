@@ -82,6 +82,8 @@ namespace gymsy.UserControls
                     else
                     {
                         // Agregar una nueva fila al DataGridView con los valores
+
+
                         this.idPlan++;
                         DGPlan.Rows.Add(this.idPlan, TBPrecio.Text, TBDescripcion.Text);
 

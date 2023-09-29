@@ -311,7 +311,7 @@
             TBBusqueda.PlaceholderText = "Ingrese un nombre...";
             TBBusqueda.Size = new Size(245, 31);
             TBBusqueda.TabIndex = 80;
-            TBBusqueda.Texts = "";
+            TBBusqueda.Text = "";
             TBBusqueda.UnderlinedStyle = false;
             // 
             // BEditarCliente

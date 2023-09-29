@@ -37,7 +37,6 @@
             TBNombre = new CustomControls.RJControls.RJTextBox();
             LFechaNacimiento = new Label();
             label2 = new Label();
-            TBRutaImagen = new CustomControls.RJControls.RJTextBox();
             BGuardarCliente = new ClassCustom.RJButton();
             label23 = new Label();
             RBFemenino = new RadioButton();
@@ -61,6 +60,7 @@
             LUsurioRequerido = new Label();
             LApellidoRequerido = new Label();
             label4 = new Label();
+            TBRutaImagen = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -100,12 +100,12 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(TBRutaImagen);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(TBNombre);
             panel2.Controls.Add(LFechaNacimiento);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(TBRutaImagen);
             panel2.Controls.Add(BGuardarCliente);
             panel2.Controls.Add(label23);
             panel2.Controls.Add(RBFemenino);
@@ -176,7 +176,6 @@
             TBNombre.ReadOnly = false;
             TBNombre.Size = new Size(204, 31);
             TBNombre.TabIndex = 84;
-            TBNombre.Text = "";
             TBNombre.UnderlinedStyle = false;
             // 
             // LFechaNacimiento
@@ -199,29 +198,6 @@
             label2.Size = new Size(102, 15);
             label2.TabIndex = 82;
             label2.Text = "Ruta de la imagen";
-            // 
-            // TBRutaImagen
-            // 
-            TBRutaImagen.BackColor = Color.FromArgb(69, 34, 99);
-            TBRutaImagen.BorderColor = Color.Transparent;
-            TBRutaImagen.BorderFocusColor = Color.HotPink;
-            TBRutaImagen.BorderRadius = 15;
-            TBRutaImagen.BorderSize = 2;
-            TBRutaImagen.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            TBRutaImagen.ForeColor = Color.FromArgb(230, 237, 243);
-            TBRutaImagen.Location = new Point(543, 311);
-            TBRutaImagen.Margin = new Padding(4);
-            TBRutaImagen.Multiline = false;
-            TBRutaImagen.Name = "TBRutaImagen";
-            TBRutaImagen.Padding = new Padding(10, 7, 10, 7);
-            TBRutaImagen.PasswordChar = false;
-            TBRutaImagen.PlaceholderColor = Color.DarkGray;
-            TBRutaImagen.PlaceholderText = "Ruta...";
-            TBRutaImagen.ReadOnly = true;
-            TBRutaImagen.Size = new Size(204, 31);
-            TBRutaImagen.TabIndex = 81;
-            TBRutaImagen.Text = "";
-            TBRutaImagen.UnderlinedStyle = false;
             // 
             // BGuardarCliente
             // 
@@ -320,7 +296,6 @@
             TBContraseña.ReadOnly = false;
             TBContraseña.Size = new Size(204, 31);
             TBContraseña.TabIndex = 75;
-            TBContraseña.Text = "";
             TBContraseña.UnderlinedStyle = false;
             // 
             // label17
@@ -376,7 +351,6 @@
             TBTelefono.ReadOnly = false;
             TBTelefono.Size = new Size(204, 31);
             TBTelefono.TabIndex = 70;
-            TBTelefono.Text = "";
             TBTelefono.UnderlinedStyle = false;
             // 
             // TBUsuario
@@ -399,7 +373,6 @@
             TBUsuario.ReadOnly = false;
             TBUsuario.Size = new Size(204, 31);
             TBUsuario.TabIndex = 69;
-            TBUsuario.Text = "";
             TBUsuario.UnderlinedStyle = false;
             // 
             // TBApellido
@@ -422,7 +395,6 @@
             TBApellido.ReadOnly = false;
             TBApellido.Size = new Size(204, 31);
             TBApellido.TabIndex = 68;
-            TBApellido.Text = "";
             TBApellido.UnderlinedStyle = false;
             // 
             // BTAgregarImagen
@@ -545,6 +517,19 @@
             label4.TabIndex = 41;
             label4.Text = "Apellido";
             // 
+            // TBRutaImagen
+            // 
+            TBRutaImagen.BackColor = Color.FromArgb(69, 34, 99);
+            TBRutaImagen.BorderStyle = BorderStyle.None;
+            TBRutaImagen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TBRutaImagen.ForeColor = Color.FromArgb(230, 237, 243);
+            TBRutaImagen.Location = new Point(564, 321);
+            TBRutaImagen.Name = "TBRutaImagen";
+            TBRutaImagen.PlaceholderText = "Ruta...";
+            TBRutaImagen.ReadOnly = true;
+            TBRutaImagen.Size = new Size(186, 22);
+            TBRutaImagen.TabIndex = 88;
+            // 
             // AddInstructorControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -572,7 +557,6 @@
         private CustomControls.RJControls.RJTextBox TBNombre;
         private Label LFechaNacimiento;
         private Label label2;
-        private CustomControls.RJControls.RJTextBox TBRutaImagen;
         private Label label23;
         private RadioButton RBFemenino;
         private Label label22;
@@ -597,5 +581,6 @@
         private PictureBox pictureBox1;
         private Label label5;
         private Label label15;
+        private TextBox TBRutaImagen;
     }
 }
