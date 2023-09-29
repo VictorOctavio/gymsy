@@ -144,3 +144,6 @@ _NCrunch*
 /gymsy/obj/Debug/net6.0-windows/gymsy.dll
 /gymsy/obj/Debug/net6.0-windows/gymsy.pdb
 /.vs/gymsy/DesignTimeBuild/.dtbcache.v2
+/gymsy/obj/Debug/net6.0-windows/ref/gymsy.dll
+/gymsy/App/Views/UserControls/InstructorControl/ClientsUserControl.Designer.cs
+/gymsy/obj/Debug/net6.0-windows/refint/gymsy.dll
