@@ -36,7 +36,7 @@ namespace gymsy.UserControls
             TBNombreInstructor = new CustomControls.RJControls.RJTextBox();
             TBDescripcion = new CustomControls.RJControls.RJTextBox();
             TBPrecio = new CustomControls.RJControls.RJTextBox();
-            rjComboBox1 = new CustomControls.RJControls.RJComboBox();
+            CBPlanes = new CustomControls.RJControls.RJComboBox();
             BGuardarCliente = new ClassCustom.RJButton();
             LPlanRequerido = new Label();
             label20 = new Label();
@@ -61,20 +61,20 @@ namespace gymsy.UserControls
             TBTelefono = new CustomControls.RJControls.RJTextBox();
             TBUsuario = new CustomControls.RJControls.RJTextBox();
             TBApellido = new CustomControls.RJControls.RJTextBox();
-            TBNombre = new CustomControls.RJControls.RJTextBox();
             BTAgregarImagen = new ClassCustom.RJButton();
             label10 = new Label();
             LRuraImagen = new Label();
-            IPImagenUsuario = new FontAwesome.Sharp.IconPictureBox();
+            IPImagenUsuario = new IconPictureBox();
             label8 = new Label();
             LTelefonoRequerido = new Label();
             LNombreRequerido = new Label();
             label6 = new Label();
             label3 = new Label();
-            LCorreoRequerido = new Label();
+            LUsurioRequerido = new Label();
             LApellidoRequerido = new Label();
             label4 = new Label();
             openFileDialog1 = new OpenFileDialog();
+            TBNombre = new CustomControls.RJControls.RJTextBox();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -112,7 +112,7 @@ namespace gymsy.UserControls
             panel3.Controls.Add(TBNombreInstructor);
             panel3.Controls.Add(TBDescripcion);
             panel3.Controls.Add(TBPrecio);
-            panel3.Controls.Add(rjComboBox1);
+            panel3.Controls.Add(CBPlanes);
             panel3.Controls.Add(BGuardarCliente);
             panel3.Controls.Add(LPlanRequerido);
             panel3.Controls.Add(label20);
@@ -192,24 +192,25 @@ namespace gymsy.UserControls
             TBPrecio.UnderlinedStyle = false;
             TBPrecio.KeyPress += TBPrecio_KeyPress;
             // 
-            // rjComboBox1
+            // CBPlanes
             // 
-            rjComboBox1.BackColor = Color.WhiteSmoke;
-            rjComboBox1.BorderColor = Color.MediumSlateBlue;
-            rjComboBox1.BorderSize = 1;
-            rjComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-            rjComboBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            rjComboBox1.ForeColor = Color.DimGray;
-            rjComboBox1.IconColor = Color.MediumSlateBlue;
-            rjComboBox1.ListBackColor = Color.FromArgb(230, 228, 245);
-            rjComboBox1.ListTextColor = Color.DimGray;
-            rjComboBox1.Location = new Point(21, 52);
-            rjComboBox1.MinimumSize = new Size(200, 30);
-            rjComboBox1.Name = "rjComboBox1";
-            rjComboBox1.Padding = new Padding(1);
-            rjComboBox1.Size = new Size(219, 30);
-            rjComboBox1.TabIndex = 65;
-            rjComboBox1.Texts = "";
+            CBPlanes.BackColor = Color.WhiteSmoke;
+            CBPlanes.BorderColor = Color.MediumSlateBlue;
+            CBPlanes.BorderSize = 1;
+            CBPlanes.DropDownStyle = ComboBoxStyle.DropDownList;
+            CBPlanes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            CBPlanes.ForeColor = Color.DimGray;
+            CBPlanes.IconColor = Color.MediumSlateBlue;
+            CBPlanes.ListBackColor = Color.FromArgb(230, 228, 245);
+            CBPlanes.ListTextColor = Color.DimGray;
+            CBPlanes.Location = new Point(21, 52);
+            CBPlanes.MinimumSize = new Size(200, 30);
+            CBPlanes.Name = "CBPlanes";
+            CBPlanes.Padding = new Padding(1);
+            CBPlanes.Size = new Size(219, 30);
+            CBPlanes.TabIndex = 65;
+            CBPlanes.Texts = "Ver planes";
+            CBPlanes.OnSelectedIndexChanged += rjComboBox1_OnSelectedIndexChanged;
             // 
             // BGuardarCliente
             // 
@@ -222,9 +223,9 @@ namespace gymsy.UserControls
             BGuardarCliente.FlatStyle = FlatStyle.Flat;
             BGuardarCliente.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             BGuardarCliente.ForeColor = Color.White;
-            BGuardarCliente.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            BGuardarCliente.IconChar = IconChar.FloppyDisk;
             BGuardarCliente.IconColor = Color.FromArgb(230, 237, 243);
-            BGuardarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BGuardarCliente.IconFont = IconFont.Auto;
             BGuardarCliente.ImageAlign = ContentAlignment.MiddleRight;
             BGuardarCliente.Location = new Point(21, 369);
             BGuardarCliente.Name = "BGuardarCliente";
@@ -316,6 +317,7 @@ namespace gymsy.UserControls
             // 
             // panel2
             // 
+            panel2.Controls.Add(TBNombre);
             panel2.Controls.Add(LFechaNacimiento);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(TBRutaImagen);
@@ -331,7 +333,6 @@ namespace gymsy.UserControls
             panel2.Controls.Add(TBTelefono);
             panel2.Controls.Add(TBUsuario);
             panel2.Controls.Add(TBApellido);
-            panel2.Controls.Add(TBNombre);
             panel2.Controls.Add(BTAgregarImagen);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(LRuraImagen);
@@ -341,7 +342,7 @@ namespace gymsy.UserControls
             panel2.Controls.Add(LNombreRequerido);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(LCorreoRequerido);
+            panel2.Controls.Add(LUsurioRequerido);
             panel2.Controls.Add(LApellidoRequerido);
             panel2.Controls.Add(label4);
             panel2.Location = new Point(3, 76);
@@ -565,29 +566,6 @@ namespace gymsy.UserControls
             TBApellido.UnderlinedStyle = false;
             TBApellido.KeyPress += TBApellido_KeyPress;
             // 
-            // TBNombre
-            // 
-            TBNombre.BackColor = Color.FromArgb(69, 34, 99);
-            TBNombre.BorderColor = Color.Transparent;
-            TBNombre.BorderFocusColor = Color.HotPink;
-            TBNombre.BorderRadius = 15;
-            TBNombre.BorderSize = 2;
-            TBNombre.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            TBNombre.ForeColor = Color.FromArgb(230, 237, 243);
-            TBNombre.Location = new Point(23, 69);
-            TBNombre.Margin = new Padding(4);
-            TBNombre.Multiline = false;
-            TBNombre.Name = "TBNombre";
-            TBNombre.Padding = new Padding(10, 7, 10, 7);
-            TBNombre.PasswordChar = false;
-            TBNombre.PlaceholderColor = Color.DarkGray;
-            TBNombre.PlaceholderText = "Ingrese un nombre...";
-            TBNombre.Size = new Size(204, 31);
-            TBNombre.TabIndex = 67;
-            TBNombre.Texts = "";
-            TBNombre.UnderlinedStyle = false;
-            TBNombre.KeyPress += TBNombre_KeyPress;
-            // 
             // BTAgregarImagen
             // 
             BTAgregarImagen.BackColor = Color.DarkOrange;
@@ -599,9 +577,9 @@ namespace gymsy.UserControls
             BTAgregarImagen.FlatStyle = FlatStyle.Flat;
             BTAgregarImagen.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             BTAgregarImagen.ForeColor = Color.White;
-            BTAgregarImagen.IconChar = FontAwesome.Sharp.IconChar.FileImage;
+            BTAgregarImagen.IconChar = IconChar.FileImage;
             BTAgregarImagen.IconColor = Color.FromArgb(230, 237, 243);
-            BTAgregarImagen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BTAgregarImagen.IconFont = IconFont.Auto;
             BTAgregarImagen.ImageAlign = ContentAlignment.MiddleRight;
             BTAgregarImagen.Location = new Point(494, 223);
             BTAgregarImagen.Name = "BTAgregarImagen";
@@ -639,13 +617,12 @@ namespace gymsy.UserControls
             // 
             // IPImagenUsuario
             // 
-            IPImagenUsuario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             IPImagenUsuario.BackColor = Color.FromArgb(16, 8, 23);
             IPImagenUsuario.BackgroundImageLayout = ImageLayout.Center;
             IPImagenUsuario.ForeColor = Color.FromArgb(230, 237, 243);
-            IPImagenUsuario.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            IPImagenUsuario.IconChar = IconChar.UserAlt;
             IPImagenUsuario.IconColor = Color.FromArgb(230, 237, 243);
-            IPImagenUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            IPImagenUsuario.IconFont = IconFont.Auto;
             IPImagenUsuario.IconSize = 159;
             IPImagenUsuario.Location = new Point(494, 50);
             IPImagenUsuario.Name = "IPImagenUsuario";
@@ -706,16 +683,16 @@ namespace gymsy.UserControls
             label3.TabIndex = 38;
             label3.Text = "Nombre";
             // 
-            // LCorreoRequerido
+            // LUsurioRequerido
             // 
-            LCorreoRequerido.AutoSize = true;
-            LCorreoRequerido.ForeColor = Color.Red;
-            LCorreoRequerido.Location = new Point(262, 177);
-            LCorreoRequerido.Name = "LCorreoRequerido";
-            LCorreoRequerido.Size = new Size(105, 15);
-            LCorreoRequerido.TabIndex = 43;
-            LCorreoRequerido.Text = "*Campo requerido";
-            LCorreoRequerido.Visible = false;
+            LUsurioRequerido.AutoSize = true;
+            LUsurioRequerido.ForeColor = Color.Red;
+            LUsurioRequerido.Location = new Point(262, 177);
+            LUsurioRequerido.Name = "LUsurioRequerido";
+            LUsurioRequerido.Size = new Size(105, 15);
+            LUsurioRequerido.TabIndex = 43;
+            LUsurioRequerido.Text = "*Campo requerido";
+            LUsurioRequerido.Visible = false;
             // 
             // LApellidoRequerido
             // 
@@ -742,9 +719,28 @@ namespace gymsy.UserControls
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // AddClientUserControl
+            // TBNombre
             // 
-
+            TBNombre.BackColor = Color.FromArgb(69, 34, 99);
+            TBNombre.BorderColor = Color.Transparent;
+            TBNombre.BorderFocusColor = Color.HotPink;
+            TBNombre.BorderRadius = 15;
+            TBNombre.BorderSize = 2;
+            TBNombre.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBNombre.ForeColor = Color.FromArgb(230, 237, 243);
+            TBNombre.Location = new Point(23, 69);
+            TBNombre.Margin = new Padding(4);
+            TBNombre.Multiline = false;
+            TBNombre.Name = "TBNombre";
+            TBNombre.Padding = new Padding(10, 7, 10, 7);
+            TBNombre.PasswordChar = false;
+            TBNombre.PlaceholderColor = Color.DarkGray;
+            TBNombre.PlaceholderText = "Ingrese un nombre...";
+            TBNombre.Size = new Size(204, 31);
+            TBNombre.TabIndex = 84;
+            TBNombre.Texts = "";
+            TBNombre.UnderlinedStyle = false;
+            // 
             // AddClientUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -764,7 +760,6 @@ namespace gymsy.UserControls
             ((System.ComponentModel.ISupportInitialize)IPImagenUsuario).EndInit();
             ResumeLayout(false);
             PerformLayout();
-           
         }
 
         #endregion
@@ -783,7 +778,7 @@ namespace gymsy.UserControls
         private Label label8;
         private Label LTelefonoRequerido;
         private Label label6;
-        private Label LCorreoRequerido;
+        private Label LUsurioRequerido;
         private Panel panel2;
         private Panel panel3;
         private Label label14;
@@ -796,8 +791,7 @@ namespace gymsy.UserControls
         private CustomControls.RJControls.RJTextBox TBTelefono;
         private CustomControls.RJControls.RJTextBox TBUsuario;
         private CustomControls.RJControls.RJTextBox TBApellido;
-        private CustomControls.RJControls.RJTextBox TBNombre;
-        private CustomControls.RJControls.RJComboBox rjComboBox1;
+        private CustomControls.RJControls.RJComboBox CBPlanes;
         private CustomControls.RJControls.RJTextBox TBNombreInstructor;
         private CustomControls.RJControls.RJTextBox TBDescripcion;
         private CustomControls.RJControls.RJTextBox TBPrecio;
@@ -814,5 +808,6 @@ namespace gymsy.UserControls
         private Label label2;
         private CustomControls.RJControls.RJTextBox TBRutaImagen;
         private Label LFechaNacimiento;
+        private CustomControls.RJControls.RJTextBox TBNombre;
     }
 }

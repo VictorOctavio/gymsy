@@ -31,14 +31,12 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            driedUsers = new DataGridView();
+            DGUsers = new DataGridView();
             nickname = new DataGridViewTextBoxColumn();
-            rol = new DataGridViewTextBoxColumn();
             name = new DataGridViewTextBoxColumn();
-            data_fisic = new DataGridViewTextBoxColumn();
-            last_expiration = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
             plan = new DataGridViewTextBoxColumn();
-            wallet = new DataGridViewTextBoxColumn();
+            last_expiration = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel2 = new Panel();
             label2 = new Label();
@@ -52,26 +50,26 @@
             BEditarCliente = new ClassCustom.RJButton();
             BEliminarCliente = new ClassCustom.RJButton();
             BAgregarCliente = new ClassCustom.RJButton();
-            ((System.ComponentModel.ISupportInitialize)driedUsers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGUsers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // driedUsers
+            // DGUsers
             // 
-            driedUsers.AllowUserToAddRows = false;
-            driedUsers.AllowUserToDeleteRows = false;
-            driedUsers.AllowUserToResizeColumns = false;
-            driedUsers.AllowUserToResizeRows = false;
+            DGUsers.AllowUserToAddRows = false;
+            DGUsers.AllowUserToDeleteRows = false;
+            DGUsers.AllowUserToResizeColumns = false;
+            DGUsers.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(16, 8, 23);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(69, 34, 99);
-            driedUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            driedUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            driedUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            driedUsers.BackgroundColor = Color.FromArgb(16, 8, 23);
-            driedUsers.BorderStyle = BorderStyle.None;
-            driedUsers.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            DGUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DGUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DGUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGUsers.BackgroundColor = Color.FromArgb(16, 8, 23);
+            DGUsers.BorderStyle = BorderStyle.None;
+            DGUsers.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -79,61 +77,51 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            driedUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            driedUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            driedUsers.Columns.AddRange(new DataGridViewColumn[] { nickname, rol, name, data_fisic, last_expiration, plan, wallet });
-            driedUsers.EditMode = DataGridViewEditMode.EditProgrammatically;
-            driedUsers.Location = new Point(3, 157);
-            driedUsers.Name = "driedUsers";
-            driedUsers.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            driedUsers.RowHeadersVisible = false;
+            DGUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DGUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGUsers.Columns.AddRange(new DataGridViewColumn[] { nickname, name, Telefono, plan, last_expiration });
+            DGUsers.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DGUsers.Location = new Point(3, 151);
+            DGUsers.Name = "DGUsers";
+            DGUsers.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DGUsers.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            driedUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            driedUsers.RowTemplate.Height = 25;
-            driedUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            driedUsers.ShowCellErrors = false;
-            driedUsers.Size = new Size(994, 363);
-            driedUsers.TabIndex = 1;
+            DGUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            DGUsers.RowTemplate.Height = 25;
+            DGUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGUsers.ShowCellErrors = false;
+            DGUsers.Size = new Size(994, 369);
+            DGUsers.TabIndex = 1;
             // 
             // nickname
             // 
             nickname.HeaderText = "Apodo";
             nickname.Name = "nickname";
             // 
-            // rol
-            // 
-            rol.HeaderText = "Rol";
-            rol.Name = "rol";
-            // 
             // name
             // 
             name.HeaderText = "Nombre";
             name.Name = "name";
             // 
-            // data_fisic
+            // Telefono
             // 
-            data_fisic.HeaderText = "Datos Fisicos";
-            data_fisic.Name = "data_fisic";
-            // 
-            // last_expiration
-            // 
-            last_expiration.HeaderText = "Ultimo Vencimiento";
-            last_expiration.Name = "last_expiration";
+            Telefono.HeaderText = "Telefono";
+            Telefono.Name = "Telefono";
             // 
             // plan
             // 
             plan.HeaderText = "Plan";
             plan.Name = "plan";
             // 
-            // wallet
+            // last_expiration
             // 
-            wallet.HeaderText = "Billetera";
-            wallet.Name = "wallet";
+            last_expiration.HeaderText = "Ultimo Vencimiento";
+            last_expiration.Name = "last_expiration";
             // 
             // panel1
             // 
@@ -268,6 +256,7 @@
             BCancelarBusqueda.TextColor = Color.White;
             BCancelarBusqueda.UseVisualStyleBackColor = false;
             BCancelarBusqueda.Visible = false;
+            BCancelarBusqueda.Click += BCancelarBusqueda_Click;
             // 
             // LModoBusqueda
             // 
@@ -301,6 +290,7 @@
             BBuscar.TabIndex = 81;
             BBuscar.TextColor = Color.White;
             BBuscar.UseVisualStyleBackColor = false;
+            BBuscar.Click += BBuscar_Click;
             // 
             // TBBusqueda
             // 
@@ -408,12 +398,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(driedUsers);
+            Controls.Add(DGUsers);
             Controls.Add(panel1);
             Margin = new Padding(0);
             Name = "ClientsUserControl";
             Size = new Size(1000, 530);
-            ((System.ComponentModel.ISupportInitialize)driedUsers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGUsers).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -422,15 +412,8 @@
         }
 
         #endregion
-        private DataGridView driedUsers;
+        private DataGridView DGUsers;
         private Panel panel1;
-        private DataGridViewTextBoxColumn nickname;
-        private DataGridViewTextBoxColumn rol;
-        private DataGridViewTextBoxColumn name;
-        private DataGridViewTextBoxColumn data_fisic;
-        private DataGridViewTextBoxColumn last_expiration;
-        private DataGridViewTextBoxColumn plan;
-        private DataGridViewTextBoxColumn wallet;
         private Panel panel2;
         private ClassCustom.RJButton BAgregarCliente;
         private ClassCustom.RJButton BEditarCliente;
@@ -443,5 +426,10 @@
         private Label label1;
         private ClassCustom.RJButton rjButton2;
         private ClassCustom.RJButton rjButton1;
+        private DataGridViewTextBoxColumn nickname;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn Telefono;
+        private DataGridViewTextBoxColumn plan;
+        private DataGridViewTextBoxColumn last_expiration;
     }
 }

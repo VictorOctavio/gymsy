@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using gymsy.Context;
 
 namespace gymsy.UserControls
 {
@@ -20,6 +22,12 @@ namespace gymsy.UserControls
         public AddClientUserControl()
         {
             InitializeComponent();
+
+            // Inicializar el contexto de la base de datos
+            //GymsyContext dbContext = new GymsyContext();
+
+            //Carga el comboBox con los planes
+            CargarElementosComboBox();
         }
 
         private void TBNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -58,13 +66,18 @@ namespace gymsy.UserControls
         {
             try
             { //Se verifica que se hayan ingresado todos los datos
-
-                if (!this.isEditMode) //Si no se usa la vista para editar se deben guardar los datos
+                bool isValidTextBoxes = isValidTextsBoxesMostrarError();
+                if (isValidTextBoxes)
                 {
 
-                }
-                else //La vista esta en modo edicion se deven editar los datos
-                {
+                    if (!this.isEditMode) //Si no se usa la vista para editar se deben guardar los datos
+                    {
+
+                    }
+                    else //La vista esta en modo edicion se deven editar los datos
+                    {
+
+                    }
 
                 }
 
@@ -164,85 +177,9 @@ namespace gymsy.UserControls
             bool isValid = true;
 
             //Se verifica que se hay ingresado un nombre
-            if (!string.IsNullOrWhiteSpace(TBNombre.Text.Trim()))
+            if (!string.IsNullOrWhiteSpace(TBNombre.Text) && TBNombre.PlaceholderText != TBNombre.Text)
             {
-                //Se verifica que se hay ingresado un apellido
-                if (!string.IsNullOrWhiteSpace(TBApellido.Text.Trim()))
-                {
-                    //Se verifica que se hay ingresado un telefono
-                    if (!string.IsNullOrWhiteSpace(TBTelefono.Text.Trim()))
-                    {
-                        //Se verifica que se hay ingresado un correo
-                        if (!string.IsNullOrWhiteSpace(TBUsuario.Text.Trim()))
-                        {
-                            //Se verifica que se hay ingresado una contraseña
-                            if (!string.IsNullOrWhiteSpace(TBContraseña.Text.Trim()))
-                            {
-                                if (!string.IsNullOrWhiteSpace(TBRutaImagen.Text.Trim()))
-                                {
-                                    if (!string.IsNullOrWhiteSpace(TBPrecio.Text.Trim()))
-                                    {
-                                        if (!string.IsNullOrWhiteSpace(TBDescripcion.Text.Trim()))
-                                        {
-                                            if (!string.IsNullOrWhiteSpace(TBNombreInstructor.Text.Trim()))
-                                            {
-
-                                            }
-                                            else
-                                            {
-                                                isValid = false;
-                                            }
-                                        }
-                                        else
-                                        {
-                                            isValid = false;
-                                        }
-
-                                    }
-                                    else
-                                    {
-                                        isValid = false;
-                                    }
-
-
-
-                                    // Ya que los campos son validos se deven ocultar los mensajes de error
-                                    LNombreRequerido.Visible = false;
-                                    LApellidoRequerido.Visible = false;
-                                    LTelefonoRequerido.Visible = false;
-                                    LCorreoRequerido.Visible = false;
-                                    LContraseñaRequerido.Visible = false;
-
-
-
-                                }
-                                else
-                                {
-                                    isValid = false;
-                                }
-
-                            }
-                            else
-                            {
-                                isValid = false;
-                            }
-                        }
-                        else
-                        {
-                            isValid = false;
-                        }
-                    }
-                    else
-                    {
-
-                        isValid = false;
-                    }
-                }
-                else
-                {
-                    LApellidoRequerido.Visible = true;
-                    isValid = false;
-                }
+                LNombreRequerido.Visible = false;
             }
             else
             {
@@ -250,10 +187,134 @@ namespace gymsy.UserControls
                 isValid = false;
             }
 
+            //Se verifica que se hay ingresado un apellido
+            if (string.IsNullOrWhiteSpace(TBApellido.Text) && TBApellido.PlaceholderText != TBApellido.Text)
+            {
+               LApellidoRequerido.Visible = false;
+            }
+            else
+            {
+                LApellidoRequerido.Visible = true;
+                isValid = false;
+            }
+
+            //Se verifica que se hay ingresado un telefono
+            if (string.IsNullOrWhiteSpace(TBTelefono.Text) && TBTelefono.PlaceholderText != TBTelefono.Text)
+            {
+                LTelefonoRequerido.Visible = false;
+            }
+            else
+            {
+
+                isValid = false;
+                LTelefonoRequerido.Visible = true;
+            }
+
+            //Se verifica que se hay ingresado un correo
+            if (string.IsNullOrWhiteSpace(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
+            {
+                LUsurioRequerido.Visible = false;
+            }
+            else
+            {
+                isValid = false;
+                LUsurioRequerido.Visible = true;
+            }
+
+            //Se verifica que se hay ingresado una contraseña
+            if (string.IsNullOrWhiteSpace(TBContraseña.Text) && TBContraseña.PlaceholderText != TBContraseña.Text)
+            {
+                LContraseñaRequerido.Visible = false;
+            }
+            else
+            {
+                isValid = false;
+                LContraseñaRequerido.Visible = true;
+                //MessageBox.Show("Con");
+            }
+
+            if (string.IsNullOrWhiteSpace(TBRutaImagen.Text) && TBRutaImagen.PlaceholderText != TBRutaImagen.Text)
+            {
+                LRuraImagen.Visible = false;
+            }
+            else
+            {
+                isValid = false;
+                LRuraImagen.Visible = true;
+                //MessageBox.Show("Debe seleccionar una imagen");
+            }
+
+            /*
+            if (string.IsNullOrWhiteSpace(TBPrecio.Text.Trim()) || string.IsNullOrWhiteSpace(TBDescripcion.Text.Trim()) || string.IsNullOrWhiteSpace(TBNombreInstructor.Text.Trim()))
+            {
+                LPlanRequerido.Visible = false;
+
+            }
+            else
+            {
+                isValid = false;
+                LPlanRequerido.Visible = true;
+            }
+            */
 
             return isValid;
         }
+        private void CargarElementosComboBox()
+        {
+            // Puedes agregar elementos al ComboBox de diferentes maneras.
+            // En este ejemplo, los agregaremos manualmente:
 
+            // Método 1: Agregar elementos uno por uno
+            CBPlanes.Items.Add("Complemento");
+            CBPlanes.Items.Add("Complemento+KickBoxing");
+            CBPlanes.Items.Add("Complemento+PersonalTraining");
+
+            // Método 2: Agregar una matriz de elementos
+            string[] elementos = { "Elemento 4", "Elemento 5", "Elemento 6" };
+            CBPlanes.Items.AddRange(elementos);
+
+            // También puedes cargar elementos desde una lista o cualquier otra fuente de datos.
+
+            // Establece un elemento predeterminado seleccionado (opcional)
+            CBPlanes.SelectedIndex = 0;
+
+            TBPrecio.Text = "260.99";
+            TBDescripcion.Text = "Complemento";
+            TBNombreInstructor.Text = "Juan Perez";
+
+
+            /*Cargar los planes desde la base de datos
+             
+            
+            // Cargar la descripción de los planes desde la base de datos
+            var planes = dbContext.Plan.ToList();
+
+            // Limpiar el ComboBox antes de agregar elementos
+            comboBox1.Items.Clear();
+
+            foreach (var plan in planes)
+            {
+                // Agregar la descripción del plan al ComboBox
+                comboBox1.Items.Add(plan.Descripcion);
+            }
+
+            // Establecer un elemento predeterminado seleccionado (opcional)
+            if (comboBox1.Items.Count > 0)
+            {
+                comboBox1.SelectedIndex = 0;
+                MostrarInformacionSeleccionada(0); // Mostrar información relacionada al elemento predeterminado
+            }
+             
+             
+             */
+
+        }
+        private void rjComboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            TBPrecio.Text = "299.99";
+            TBDescripcion.Text = "Complemento++";
+            TBNombreInstructor.Text = "Juansito Perez";
+        }
     }
 
 

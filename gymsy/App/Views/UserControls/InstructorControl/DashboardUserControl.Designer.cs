@@ -37,7 +37,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(443, 298);
+            label1.Location = new Point(343, 258);
             label1.Name = "label1";
             label1.Size = new Size(289, 37);
             label1.TabIndex = 1;
@@ -51,7 +51,7 @@
             Controls.Add(label1);
             Margin = new Padding(0);
             Name = "DashboardUserControl";
-            Size = new Size(1200, 610);
+            Size = new Size(1000, 530);
             ResumeLayout(false);
             PerformLayout();
         }
