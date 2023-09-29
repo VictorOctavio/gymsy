@@ -138,3 +138,9 @@ _NCrunch*
 /.vs/gymsy/v17/.suo
 /.vs/ProjectEvaluation/gymsy.metadata.v7.bin
 /.vs/ProjectEvaluation/gymsy.projects.v7.bin
+/gymsy/bin/Debug/net6.0-windows/gymsy.dll
+/gymsy/bin/Debug/net6.0-windows/gymsy.pdb
+/gymsy/obj/Debug/net6.0-windows/gymsy.csproj.GenerateResource.cache
+/gymsy/obj/Debug/net6.0-windows/gymsy.dll
+/gymsy/obj/Debug/net6.0-windows/gymsy.pdb
+/.vs/gymsy/DesignTimeBuild/.dtbcache.v2
