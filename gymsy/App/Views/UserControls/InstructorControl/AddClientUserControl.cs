@@ -190,7 +190,7 @@ namespace gymsy.UserControls
             //Se verifica que se hay ingresado un apellido
             if (string.IsNullOrWhiteSpace(TBApellido.Text) && TBApellido.PlaceholderText != TBApellido.Text)
             {
-               LApellidoRequerido.Visible = false;
+                LApellidoRequerido.Visible = false;
             }
             else
             {
