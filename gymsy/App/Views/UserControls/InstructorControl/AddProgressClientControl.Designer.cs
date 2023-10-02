@@ -212,7 +212,7 @@
             TbTitle.PlaceholderText = "Ingrese un titulo...";
             TbTitle.Size = new Size(281, 31);
             TbTitle.TabIndex = 67;
-            TbTitle.Texts = "";
+            TbTitle.Text = "";
             TbTitle.UnderlinedStyle = false;
             // 
             // label4
@@ -247,7 +247,7 @@
             rjTextBox4.PlaceholderText = "Ingrese notas...";
             rjTextBox4.Size = new Size(281, 82);
             rjTextBox4.TabIndex = 70;
-            rjTextBox4.Texts = "";
+            rjTextBox4.Text = "";
             rjTextBox4.UnderlinedStyle = false;
             // 
             // label3
@@ -294,7 +294,7 @@
             TbPeso.PlaceholderText = "Ingrese un peso...";
             TbPeso.Size = new Size(281, 31);
             TbPeso.TabIndex = 68;
-            TbPeso.Texts = "";
+            TbPeso.Text = "";
             TbPeso.UnderlinedStyle = false;
             // 
             // label10
@@ -329,7 +329,7 @@
             TbAltura.PlaceholderText = "Ingrese altura...";
             TbAltura.Size = new Size(281, 31);
             TbAltura.TabIndex = 69;
-            TbAltura.Texts = "";
+            TbAltura.Text = "";
             TbAltura.UnderlinedStyle = false;
             // 
             // LbErrAltura
