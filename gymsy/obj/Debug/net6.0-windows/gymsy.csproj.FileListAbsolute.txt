@@ -166,3 +166,4 @@ C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-window
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.genruntimeconfig.cache
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\ref\gymsy.dll
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\CustomControls.RJControls.RJComboBox.resources
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.App.Views.UserControls.ClientControls.HistoryClientControl.resources
