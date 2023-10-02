@@ -164,3 +164,4 @@ _NCrunch*
 /gymsy/bin/Debug/net6.0-windows/gymsy.deps.json
 /gymsy/obj/Debug/net6.0-windows/gymsy.csproj.AssemblyReference.cache
 
+/gymsy/obj/Debug/net6.0-windows/gymsy.csproj.CoreCompileInputs.cache

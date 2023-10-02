@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using gymsy.Context;
+using gymsy.App.Models;
 
 namespace gymsy.UserControls
 {
@@ -301,12 +302,54 @@ namespace gymsy.UserControls
 
                     if (!this.isEditMode) //Si no se usa la vista para editar se deben guardar los datos
                     {
+                        string nombre = TBNombre.Text;
+                        string apellido = TBApellido.Text;
+                        string telefono = TBTelefono.Text;
+                        string usuario = TBUsuario.Text;
+                        string contraseña = TBContraseña.Text;
+                        string rutaImagen = TBRutaImagen.Text;
+                       
+                        string sexo = "";
+
+                        if(RBMasculino.Checked)
+                        {
+                            sexo = "M";
+                        } else
+                        {
+                            sexo = "F";
+                        }
+
+                        
+
+
+
+                        Person persona = new Person
+                        {
+                            IdPerson = SimularBD.idPerson,
+                            Nickname = usuario,
+                            FirstName = nombre,
+                            Avatar = rutaImagen,
+                            Password = contraseña,
+                            CreatedAt = DateTime.Now,
+                            LastName = apellido,
+                            CBU = "CBU5",
+                            NumberPhone = telefono,
+                            Birthday = DateTime.Now.AddMonths(1),
+                            Gender = sexo,
+                            RolId = 3,
+                            Inactive = false
+                        };
+
+                        SimularBD.persons.Add(persona);
+                        SimularBD.idPerson++;
+
 
                         MessageBox.Show("Se Guardaron correcctamente los datos");
 
                     }
                     else //La vista esta en modo edicion se deven editar los datos
                     {
+
                         MessageBox.Show("Se Editaron correcctamente los datos");
                     }
 

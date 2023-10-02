@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace gymsy.Context
 {
-    internal static class SimularBD
+    public static class SimularBD
     {
-        static int idInstructor = 1;
-        static int idClient = 1;
-        static int idAdmin = 1;
-        static int idPerson = 1;
-        static int idRol = 1;
-        static int idTrainingPlan = 1;
-        static int idPay = 1;
-        static int idWallet = 1;
-        static int idDataFisic = 1;
+        public static int idInstructor = 3; //la funcion cargar ya carga 2
+        public static int idClient = 4; //la funcion cargar ya carga 3 
+        public static int idAdmin = 1; //solo hay un admin
+        public static int idPerson = 6;//en total hay 5 personas
+        public static int idRol = 1;
+        public  static int idTrainingPlan = 1;
+        public static int idPay = 1;
+        public static int idWallet = 1;
+        public static int idDataFisic = 1;
       
        public static List<Person> persons = new List<Person>();
        public static List<Instructor> instructors = new List<Instructor>();
@@ -33,7 +33,7 @@ namespace gymsy.Context
             // Creamos cinco instancias de la clase Person con todos los atributos cargados
             Person person1 = new Person
             {
-                IdPerson = idPerson,
+                IdPerson = 1,
                 Nickname = "user1",
                 FirstName = "John",
                 Avatar = "avatar1.jpg",
@@ -49,10 +49,10 @@ namespace gymsy.Context
             };
 
             Client cliente1 = new Client { 
-                IdClient = idClient,
+                IdClient = 1,
                 LastExpiration = DateTime.Now.AddMonths(1),//Se le añade un mes mas a la fecha actual
                 Inactive = false,
-                IdPerson = person1.IdPerson,
+                IdPerson = 1,
                 IdTrainingPlan = 1,
                 IdPersonNavigation = person1,
                 IdTrainingPlanNavigation = trainingPlans[0]
@@ -66,7 +66,7 @@ namespace gymsy.Context
 
             Person person2 = new Person
             {
-                IdPerson = idPerson++,
+                IdPerson = 2,
                 Nickname = "user2",
                 FirstName = "Alice",
                 Avatar = "avatar2.jpg",
@@ -83,10 +83,10 @@ namespace gymsy.Context
 
             Client cliente2 = new Client
             {
-                IdClient = idClient,
+                IdClient = 2,
                 LastExpiration = DateTime.Now.AddMonths(1),//Se le añade un mes mas a la fecha actual
                 Inactive = false,
-                IdPerson = person1.IdPerson,
+                IdPerson = 2,
                 IdTrainingPlan = 1,
                 IdPersonNavigation = person1,
                 IdTrainingPlanNavigation = trainingPlans[0]
@@ -97,7 +97,7 @@ namespace gymsy.Context
 
             Person person3 = new Person
             {
-                IdPerson = idPerson++,
+                IdPerson = 3,
                 Nickname = "user3",
                 FirstName = "Bob",
                 Avatar = "avatar3.jpg",
@@ -113,11 +113,11 @@ namespace gymsy.Context
             };
             Client cliente3 = new Client
             {
-                IdClient = idClient,
+                IdClient = 3,
                 LastExpiration = DateTime.Now.AddMonths(1),//Se le añade un mes mas a la fecha actual
                 Inactive = false,
                 IdPerson = person1.IdPerson,
-                IdTrainingPlan = 1,
+                IdTrainingPlan = 3,
                 IdPersonNavigation = person1,
                 IdTrainingPlanNavigation = trainingPlans[0]
             };
@@ -128,7 +128,7 @@ namespace gymsy.Context
 
             Person person4 = new Person
             {
-                IdPerson = idPerson++,
+                IdPerson = 4,
                 Nickname = "user4",
                 FirstName = "Eve",
                 Avatar = "avatar4.jpg",
@@ -142,13 +142,19 @@ namespace gymsy.Context
                 RolId = 2,
                 Inactive = false
             };
+            Instructor instructor1 = new Instructor
+            {
+                IdInstructor = 1,
+                IdPerson = 4,
+                IdPersonNavigation = person4
+            };
 
             persons.Add(person4);
-
+            instructors.Add(instructor1);
 
             Person person5 = new Person
             {
-                IdPerson = idPerson++,
+                IdPerson = 5,
                 Nickname = "user5",
                 FirstName = "Charlie",
                 Avatar = "avatar5.jpg",
@@ -162,8 +168,15 @@ namespace gymsy.Context
                 RolId = 2,
                 Inactive = false
             };
+            Instructor instructor2 = new Instructor
+            {
+                IdInstructor = 2,
+                IdPerson = 5,
+                IdPersonNavigation = person4
+            };
 
             persons.Add(person5);
+            instructors.Add(instructor2);
             
 
             

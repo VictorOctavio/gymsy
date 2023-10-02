@@ -236,6 +236,7 @@
             BGuardarCliente.TextAlign = ContentAlignment.MiddleLeft;
             BGuardarCliente.TextColor = Color.White;
             BGuardarCliente.UseVisualStyleBackColor = false;
+            BGuardarCliente.Click += BGuardarCliente_Click;
             // 
             // label23
             // 
