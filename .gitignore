@@ -145,7 +145,7 @@ _NCrunch*
 /gymsy/obj/Debug/net6.0-windows/gymsy.pdb
 /.vs/gymsy/DesignTimeBuild/.dtbcache.v2
 /gymsy/obj/Debug/net6.0-windows/ref/gymsy.dll
-/gymsy/App/Views/UserControls/InstructorControl/ClientsUserControl.Designer.cs
+
 /gymsy/obj/Debug/net6.0-windows/refint/gymsy.dll
 /gymsy/obj/project.nuget.cache
 /gymsy/obj/project.assets.json
@@ -160,13 +160,7 @@ _NCrunch*
 /gymsy/App/Views/MainView.resx
 /gymsy/obj/project.nuget.cache
 /gymsy/obj/gymsy.csproj.nuget.g.props
-/gymsy/App/Views/UserControls/ClientControls/HistoryClientControl.resx
-/gymsy/App/Views/UserControls/ClientControls/ProgressClientControl.resx
-/gymsy/App/Views/UserControls/InstructorControl/PaymentsUserControl.resx
-/gymsy/App/Views/UserControls/WalletUserControl.resx
+
 /gymsy/bin/Debug/net6.0-windows/gymsy.deps.json
 /gymsy/obj/Debug/net6.0-windows/gymsy.csproj.AssemblyReference.cache
-/gymsy/obj/Debug/net6.0-windows/gymsy.MainView.resources
-/gymsy/obj/Debug/net6.0-windows/gymsy.UserControls.ClientControls.ProgressClientControl.resources
-/gymsy/obj/Debug/net6.0-windows/gymsy.UserControls.DashboardUserControl.resources
-/gymsy/obj/Debug/net6.0-windows/gymsy.UserControls.PaymentsUserControl.resources
+
