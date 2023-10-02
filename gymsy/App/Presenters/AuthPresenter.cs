@@ -1,6 +1,7 @@
 ﻿using gymsy.App.Models;
 using gymsy.App.Views.Interfaces;
 using gymsy.Context;
+using gymsy.Properties;
 using gymsy.utilities;
 using gymsy.Utilities;
 using System;
@@ -32,11 +33,12 @@ namespace gymsy.App.Presenters
         {
             try
             {
+                
                 // Signin to database
                 var peopleFound = this.gymsydb.People
                                               .Where(people => people.Nickname == this.authView.Nickname)
                                               .First();
-   
+                
                 // validar existencia del usuario
                 if (peopleFound != null) {
 
@@ -62,7 +64,17 @@ namespace gymsy.App.Presenters
 
                         AppState.person = peopleFound;
                         //AppState.clients = clients;
-                        //AppState.planes = planes;
+
+                        //Lo mismo deveria ser para clientes
+
+                        var planes = this.gymsydb.TrainingPlans
+                                .Where(plan => plan.IdInstructor == peopleFound.IdPerson)
+                                .ToList();
+
+                      
+
+
+                        AppState.planes = planes;
 
                         this.authView.Hide();
 
@@ -74,10 +86,13 @@ namespace gymsy.App.Presenters
                     }
                 }
             }
-            catch {
+            catch (Exception ex)
+            {
                this.authView.IsSuccessful = false;
                this.authView.Message = "Error inesperdado";
                this.authView.HandleResponseDBMessage();
+                // Muestra un MessageBox con el mensaje de error
+                MessageBox.Show("Ocurrió un error: " + Resources.stringConnection, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

@@ -25,8 +25,8 @@ namespace gymsy.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Database=gymsy_db;Integrated Security=True;TrustServerCertificat" +
-            "e=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=DESKTOP-R1CB0VV\\SQLEXPRESS01;Database=gymsy;Integrated Security=True;Trust" +
+            "ServerCertificate=True")]
         public string stringConnection {
             get {
                 return ((string)(this["stringConnection"]));

@@ -246,11 +246,11 @@ namespace gymsy.UserControls
             TBNombreInstructor.Text = "Juan Perez";
 
 
-            /*Cargar los planes desde la base de datos
+            //Cargar los planes desde la base de datos
              
             
-            // Cargar la descripción de los planes desde la base de datos
-            var planes = dbContext.Plan.ToList();
+            /*/Cargar la descripción de los planes desde la base de datos
+            var planes = GymsyContext.Plan.ToList();
 
             // Limpiar el ComboBox antes de agregar elementos
             comboBox1.Items.Clear();
@@ -267,9 +267,9 @@ namespace gymsy.UserControls
                 comboBox1.SelectedIndex = 0;
                 MostrarInformacionSeleccionada(0); // Mostrar información relacionada al elemento predeterminado
             }
+            */
              
              
-             */
 
         }
 
@@ -301,6 +301,7 @@ namespace gymsy.UserControls
 
                     if (!this.isEditMode) //Si no se usa la vista para editar se deben guardar los datos
                     {
+
                         MessageBox.Show("Se Guardaron correcctamente los datos");
                     }
                     else //La vista esta en modo edicion se deven editar los datos
