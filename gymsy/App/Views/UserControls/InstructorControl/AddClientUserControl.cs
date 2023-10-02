@@ -197,13 +197,13 @@ namespace gymsy.UserControls
             if (!string.IsNullOrWhiteSpace(TBRutaImagen.Text))
             {
                 LRuraImagen.Visible = false;
-                
+
             }
             else
             {
                 isValid = false;
                 LRuraImagen.Visible = true;
-                
+
                 //MessageBox.Show("Debe seleccionar una imagen");
             }
 

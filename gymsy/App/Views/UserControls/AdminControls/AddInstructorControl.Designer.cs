@@ -32,6 +32,7 @@
             panel1 = new Panel();
             newClientOrEditClient = new Label();
             panel2 = new Panel();
+            TBRutaImagen = new TextBox();
             label5 = new Label();
             pictureBox1 = new PictureBox();
             TBNombre = new CustomControls.RJControls.RJTextBox();
@@ -60,7 +61,6 @@
             LUsurioRequerido = new Label();
             LApellidoRequerido = new Label();
             label4 = new Label();
-            TBRutaImagen = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -134,6 +134,19 @@
             panel2.Size = new Size(934, 439);
             panel2.TabIndex = 54;
             // 
+            // TBRutaImagen
+            // 
+            TBRutaImagen.BackColor = Color.FromArgb(69, 34, 99);
+            TBRutaImagen.BorderStyle = BorderStyle.None;
+            TBRutaImagen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TBRutaImagen.ForeColor = Color.FromArgb(230, 237, 243);
+            TBRutaImagen.Location = new Point(564, 321);
+            TBRutaImagen.Name = "TBRutaImagen";
+            TBRutaImagen.PlaceholderText = "Ruta...";
+            TBRutaImagen.ReadOnly = true;
+            TBRutaImagen.Size = new Size(186, 22);
+            TBRutaImagen.TabIndex = 88;
+            // 
             // label5
             // 
             label5.Anchor = AnchorStyles.Top;
@@ -148,7 +161,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.instructor;
+            pictureBox1.Image = Properties.Resources.instructor1;
             pictureBox1.Location = new Point(525, 41);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(240, 183);
@@ -516,19 +529,6 @@
             label4.Size = new Size(51, 15);
             label4.TabIndex = 41;
             label4.Text = "Apellido";
-            // 
-            // TBRutaImagen
-            // 
-            TBRutaImagen.BackColor = Color.FromArgb(69, 34, 99);
-            TBRutaImagen.BorderStyle = BorderStyle.None;
-            TBRutaImagen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TBRutaImagen.ForeColor = Color.FromArgb(230, 237, 243);
-            TBRutaImagen.Location = new Point(564, 321);
-            TBRutaImagen.Name = "TBRutaImagen";
-            TBRutaImagen.PlaceholderText = "Ruta...";
-            TBRutaImagen.ReadOnly = true;
-            TBRutaImagen.Size = new Size(186, 22);
-            TBRutaImagen.TabIndex = 88;
             // 
             // AddInstructorControl
             // 

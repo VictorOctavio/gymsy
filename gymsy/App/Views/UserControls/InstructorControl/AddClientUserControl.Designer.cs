@@ -35,6 +35,7 @@ namespace gymsy.UserControls
             label12 = new Label();
             newClientOrEditClient = new Label();
             panel2 = new Panel();
+            LRuraImagen = new Label();
             TBNombreInstructor = new TextBox();
             TBDescripcion = new TextBox();
             TBPrecio = new TextBox();
@@ -74,7 +75,6 @@ namespace gymsy.UserControls
             LApellidoRequerido = new Label();
             label4 = new Label();
             openFileDialog1 = new OpenFileDialog();
-            LRuraImagen = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IPImagenUsuario).BeginInit();
@@ -177,6 +177,17 @@ namespace gymsy.UserControls
             panel2.Size = new Size(1330, 533);
             panel2.TabIndex = 51;
             // 
+            // LRuraImagen
+            // 
+            LRuraImagen.AutoSize = true;
+            LRuraImagen.ForeColor = Color.Red;
+            LRuraImagen.Location = new Point(511, 363);
+            LRuraImagen.Name = "LRuraImagen";
+            LRuraImagen.Size = new Size(139, 15);
+            LRuraImagen.TabIndex = 91;
+            LRuraImagen.Text = "*Debes subir una imagen";
+            LRuraImagen.Visible = false;
+            // 
             // TBNombreInstructor
             // 
             TBNombreInstructor.BackColor = Color.FromArgb(69, 34, 99);
@@ -241,7 +252,7 @@ namespace gymsy.UserControls
             // 
             // IPImagenUsuario
             // 
-            IPImagenUsuario.Image = Properties.Resources.vector_fitness_couple_doing_exercise;
+            IPImagenUsuario.Image = Properties.Resources.vector_fitness_couple_doing_exercise1;
             IPImagenUsuario.Location = new Point(497, 68);
             IPImagenUsuario.Name = "IPImagenUsuario";
             IPImagenUsuario.Size = new Size(207, 177);
@@ -688,17 +699,6 @@ namespace gymsy.UserControls
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // LRuraImagen
-            // 
-            LRuraImagen.AutoSize = true;
-            LRuraImagen.ForeColor = Color.Red;
-            LRuraImagen.Location = new Point(511, 363);
-            LRuraImagen.Name = "LRuraImagen";
-            LRuraImagen.Size = new Size(139, 15);
-            LRuraImagen.TabIndex = 91;
-            LRuraImagen.Text = "*Debes subir una imagen";
-            LRuraImagen.Visible = false;
             // 
             // AddClientUserControl
             // 
