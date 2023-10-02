@@ -1,4 +1,6 @@
-﻿using gymsy.utilities;
+﻿using gymsy.App.Models;
+using gymsy.App.Views.Interfaces;
+using gymsy.utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,13 +14,33 @@ using TextBox = System.Windows.Forms.TextBox;
 
 namespace gymsy.UserControls
 {
-    public partial class SettingsUserControl : UserControl
+    public partial class SettingsUserControl : UserControl, ISettingView
     {
-        public SettingsUserControl()
+        Person person;
+        public bool IsSuccessful { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public SettingsUserControl(Person person)
         {
+            this.person = person;
             InitializeComponent();
+            InitializeDataComponent();
+
         }
 
+        private void InitializeDataComponent()
+        {
+            TbFirstName.Text = person.FirstName;
+            TbLastName.Text = person.LastName;
+            TbCBU.Text = person.CBU;
+            TbPhone.Text = person.NumberPhone;
+        }
+
+        Person ISettingView.person
+        {
+            get { return person; }
+            set { person = value; }
+        }
 
         private void BtnSaveChanges_Click(object sender, EventArgs e)
         {
@@ -26,16 +48,13 @@ namespace gymsy.UserControls
             // Validate textbox is not null
             List<TextBox> textBoxList = new List<TextBox>()
             {
-                tbName, tbSurname, tbNickname, tbEmail
+                TbFirstName, TbLastName, TbCBU, TbPhone
             };
             if (!this.ValidateTextBox(textBoxList)) return;
 
 
             MessageBox.Show("Data correcta");
         }
-
-
-
 
         private void BtnChangePassword_Click(object sender, EventArgs e)
         {

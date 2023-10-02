@@ -54,9 +54,9 @@
             gorilla_avatar = new PictureBox();
             panelNavUser = new Panel();
             btnNavSignout = new Button();
-            labelNavRol = new Label();
+            LabelNavRol = new Label();
             btnNavSettings = new Button();
-            button4 = new Button();
+            BtnUserAvatar = new Button();
             panelBtnAdd = new Panel();
             btnNavAddPlan = new Button();
             btnNavAddClient = new Button();
@@ -546,9 +546,9 @@
             // 
             gorilla_avatar.Anchor = AnchorStyles.Top;
             gorilla_avatar.Image = (Image)resources.GetObject("gorilla_avatar.Image");
-            gorilla_avatar.Location = new Point(6, -18);
+            gorilla_avatar.Location = new Point(10, 4);
             gorilla_avatar.Name = "gorilla_avatar";
-            gorilla_avatar.Size = new Size(82, 106);
+            gorilla_avatar.Size = new Size(68, 68);
             gorilla_avatar.SizeMode = PictureBoxSizeMode.Zoom;
             gorilla_avatar.TabIndex = 46;
             gorilla_avatar.TabStop = false;
@@ -557,9 +557,9 @@
             // 
             panelNavUser.BackColor = Color.DarkOrange;
             panelNavUser.Controls.Add(btnNavSignout);
-            panelNavUser.Controls.Add(labelNavRol);
+            panelNavUser.Controls.Add(LabelNavRol);
             panelNavUser.Controls.Add(btnNavSettings);
-            panelNavUser.Controls.Add(button4);
+            panelNavUser.Controls.Add(BtnUserAvatar);
             panelNavUser.Dock = DockStyle.Bottom;
             panelNavUser.Location = new Point(0, 626);
             panelNavUser.Margin = new Padding(0);
@@ -584,18 +584,18 @@
             btnNavSignout.UseVisualStyleBackColor = true;
             btnNavSignout.Click += btnNavSignout_Click;
             // 
-            // labelNavRol
+            // LabelNavRol
             // 
-            labelNavRol.AutoSize = true;
-            labelNavRol.BackColor = Color.Transparent;
-            labelNavRol.FlatStyle = FlatStyle.Flat;
-            labelNavRol.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelNavRol.ForeColor = Color.FromArgb(9, 0, 20);
-            labelNavRol.Location = new Point(76, 74);
-            labelNavRol.Name = "labelNavRol";
-            labelNavRol.Size = new Size(82, 15);
-            labelNavRol.TabIndex = 2;
-            labelNavRol.Text = "INSTRUCTOR";
+            LabelNavRol.AutoSize = true;
+            LabelNavRol.BackColor = Color.Transparent;
+            LabelNavRol.FlatStyle = FlatStyle.Flat;
+            LabelNavRol.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelNavRol.ForeColor = Color.FromArgb(9, 0, 20);
+            LabelNavRol.Location = new Point(76, 74);
+            LabelNavRol.Name = "LabelNavRol";
+            LabelNavRol.Size = new Size(82, 15);
+            LabelNavRol.TabIndex = 2;
+            LabelNavRol.Text = "INSTRUCTOR";
             // 
             // btnNavSettings
             // 
@@ -614,27 +614,27 @@
             btnNavSettings.UseVisualStyleBackColor = true;
             btnNavSettings.Click += btnNavSettings_Click;
             // 
-            // button4
+            // BtnUserAvatar
             // 
-            button4.BackColor = Color.Transparent;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button4.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Image = Properties.Resources.gorilla_avatar;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(2, 24);
-            button4.Margin = new Padding(0);
-            button4.Name = "button4";
-            button4.Size = new Size(162, 75);
-            button4.TabIndex = 0;
-            button4.TabStop = false;
-            button4.Text = "Barco1";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button4.UseVisualStyleBackColor = false;
+            BtnUserAvatar.BackColor = Color.Transparent;
+            BtnUserAvatar.FlatAppearance.BorderSize = 0;
+            BtnUserAvatar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            BtnUserAvatar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            BtnUserAvatar.FlatStyle = FlatStyle.Flat;
+            BtnUserAvatar.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnUserAvatar.ForeColor = Color.White;
+            BtnUserAvatar.Image = Properties.Resources.gorilla_avatar;
+            BtnUserAvatar.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnUserAvatar.Location = new Point(2, 24);
+            BtnUserAvatar.Margin = new Padding(0);
+            BtnUserAvatar.Name = "BtnUserAvatar";
+            BtnUserAvatar.Size = new Size(162, 75);
+            BtnUserAvatar.TabIndex = 0;
+            BtnUserAvatar.TabStop = false;
+            BtnUserAvatar.Text = "Barco1";
+            BtnUserAvatar.TextAlign = ContentAlignment.MiddleLeft;
+            BtnUserAvatar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BtnUserAvatar.UseVisualStyleBackColor = false;
             // 
             // panelBtnAdd
             // 
@@ -798,9 +798,9 @@
             btnWalletNav.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnWalletNav.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnWalletNav.FlatStyle = FlatStyle.Flat;
-            btnWalletNav.Location = new Point(242, 4);
+            btnWalletNav.Location = new Point(241, 5);
             btnWalletNav.Name = "btnWalletNav";
-            btnWalletNav.Size = new Size(32, 31);
+            btnWalletNav.Size = new Size(37, 33);
             btnWalletNav.TabIndex = 4;
             btnWalletNav.UseVisualStyleBackColor = false;
             btnWalletNav.Click += btnWalletNav_Click;
@@ -855,8 +855,7 @@
             btnNotifications.Cursor = Cursors.Hand;
             btnNotifications.FlatAppearance.BorderSize = 0;
             btnNotifications.FlatStyle = FlatStyle.Flat;
-            btnNotifications.Image = (Image)resources.GetObject("btnNotifications.Image");
-            btnNotifications.Location = new Point(287, 0);
+            btnNotifications.Location = new Point(287, 1);
             btnNotifications.Name = "btnNotifications";
             btnNotifications.Size = new Size(61, 71);
             btnNotifications.TabIndex = 0;
@@ -979,9 +978,9 @@
         private Button btnNavAddPlan;
         private System.Windows.Forms.Timer btnAddTimer;
         private Panel panelNavUser;
-        private Button button4;
+        private Button BtnUserAvatar;
         private Button btnNavSettings;
-        private Label labelNavRol;
+        private Label LabelNavRol;
         private Button btnNavSignout;
         private Panel mainWrapper;
         private Panel navbar;

@@ -5,13 +5,15 @@ namespace gymsy.App.Models;
 
 public partial class Image
 {
-    public int Id { get; set; }
+    public int IdImage { get; set; }
 
     public string ImageUrl { get; set; } = null!;
 
     public string? Notes { get; set; }
 
-    public int DatafisicId { get; set; }
+    public bool Inactive { get; set; }
 
-    public virtual DataFisic Datafisic { get; set; } = null!;
+    public int IdDataFisic { get; set; }
+
+    public virtual DataFisic IdDataFisicNavigation { get; set; } = null!;
 }

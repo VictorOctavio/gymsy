@@ -1,18 +1,22 @@
 using gymsy.App.Models;
+using gymsy.App.Presenters;
 using gymsy.App.Views;
 using gymsy.App.Views.Interfaces;
+using gymsy.App.Views.UserControls.ClientControls;
 using gymsy.UserControls;
 using gymsy.UserControls.AdminControls;
 using gymsy.UserControls.ClientControls;
+
+
 
 namespace gymsy
 {
     public partial class MainView : Form, IMainView
     {
         // Roles de usuario 
-        List<string> rols = new List<string>() { "admin", "instructor", "client" };
+        List<string> rols = new List<string>() { "", "admin", "instructor", "client" };
 
-        NavigationControl navigationControl;
+        public static NavigationControl navigationControl;
         NavigationButtons navigationButtons;
         bool sidebarExpand = true;
         bool btnAddExpand = false;
@@ -22,16 +26,18 @@ namespace gymsy
         Color btnDefaultColor = Color.Transparent;
         Color btnSelectedColor = Color.DarkCyan;
 
+        public event EventHandler SettingView;
 
         // properties
         private bool IsSuccessful;
         private Person person;
         private string Message;
 
-
         public MainView(Person person)
         {
+            this.person = person;
             InitializeComponent();
+            InitializeUser();
             InitializeNavigationControl(this.rols[person.RolId]);
             InitializeNavigationButtons(this.rols[person.RolId]);
             InitializeUserRol(this.rols[person.RolId]);
@@ -56,25 +62,31 @@ namespace gymsy
             set { Message = value; }
         }
 
+        private void InitializeUser()
+        {
+            BtnUserAvatar.Text = this.person.Nickname;
+            LabelNavRol.Text = this.rols[this.person.RolId].ToUpper();
+        }
 
         // Inicializamos el controlador con la navegacion, pasando los controles y en panel mainWrapper en donde se renderizará
         private void InitializeNavigationControl(string rol = "instructor")
         {
 
             List<UserControl> userControlsList = new List<UserControl>();
+            //new SettingPresenter(new SettingsUserControl(this.person), gymsyDb);
 
             List<UserControl> userControls = new List<UserControl>()
-            { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(),
-              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl()
+            { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(this.person),
+              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(), new AddProgressClientControl()
             };
 
             List<UserControl> adminControls = new List<UserControl>()
-            { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(),
+            { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(this.person),
             new AddInstructorControl(), new DashboardAdminControl(), new WalletUserControl()
             };
 
             List<UserControl> clientControls = new List<UserControl>()
-            { new AboutClientControl(), new ProgressClientControl(), new PaymentsUserControl(), new SettingsUserControl(),
+            { new AboutClientControl(), new ProgressClientControl(), new PaymentsUserControl(), new SettingsUserControl(this.person),
             };
 
             if (rol == "admin") userControlsList = adminControls;
@@ -86,7 +98,7 @@ namespace gymsy
         }
 
         // Inicializamos los botones asociados a la navegacion y manejamos el btn activo (HIghlight)
-        private void InitializeNavigationButtons(string rol = "admin")
+        private void InitializeNavigationButtons(string rol = "instructor")
         {
             List<Button> buttonsRol = new List<Button>();
 
@@ -232,6 +244,7 @@ namespace gymsy
         }
         private void btnNotifications_Click(object sender, EventArgs e)
         {
+            navigationControl.Display(7);
             //timerNavbarNotifications.Start();
         }
         private void btnAddAdmin_Click(object sender, EventArgs e)

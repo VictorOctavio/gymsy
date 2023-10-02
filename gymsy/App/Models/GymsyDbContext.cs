@@ -15,7 +15,7 @@ public partial class GymsyDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Administrator> Administrators { get; set; }
+    public virtual DbSet<Admin> Admins { get; set; }
 
     public virtual DbSet<Client> Clients { get; set; }
 
@@ -29,7 +29,7 @@ public partial class GymsyDbContext : DbContext
 
     public virtual DbSet<PayType> PayTypes { get; set; }
 
-    public virtual DbSet<Person> Peoples { get; set; }
+    public virtual DbSet<Person> People { get; set; }
 
     public virtual DbSet<Rol> Rols { get; set; }
 
@@ -38,200 +38,204 @@ public partial class GymsyDbContext : DbContext
     public virtual DbSet<Wallet> Wallets { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    { }
+    {
+
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Administrator>(entity =>
+        modelBuilder.Entity<Admin>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Administ__3213E83F09382EED");
+            entity.HasKey(e => e.IdAdmin).HasName("PK_Admin_id_admin");
 
-            entity.ToTable("Administrator");
+            entity.ToTable("Admin");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.PersonId).HasColumnName("person_id");
+            entity.Property(e => e.IdAdmin).HasColumnName("id_admin");
+            entity.Property(e => e.IdPerson).HasColumnName("id_person");
+            entity.Property(e => e.Recaudacion).HasColumnName("recaudacion");
 
-            entity.HasOne(d => d.Person).WithMany(p => p.Administrators)
-                .HasForeignKey(d => d.PersonId)
+            entity.HasOne(d => d.IdPersonNavigation).WithMany(p => p.Admins)
+                .HasForeignKey(d => d.IdPerson)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Administr__perso__628FA481");
+                .HasConstraintName("FK_Admin_id_person");
         });
 
         modelBuilder.Entity<Client>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Client__3213E83FFEC7EEB2");
+            entity.HasKey(e => e.IdClient).HasName("PK_Client_id_client");
 
             entity.ToTable("Client");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.IdClient).HasColumnName("id_client");
+            entity.Property(e => e.IdPerson).HasColumnName("id_person");
+            entity.Property(e => e.IdTrainingPlan).HasColumnName("id_trainingPlan");
+            entity.Property(e => e.Inactive).HasColumnName("inactive");
             entity.Property(e => e.LastExpiration)
                 .HasColumnType("date")
-                .HasColumnName("last_expiration");
-            entity.Property(e => e.PersonId).HasColumnName("person_id");
-            entity.Property(e => e.PlanId).HasColumnName("plan_id");
+                .HasColumnName("lastExpiration");
 
-            entity.HasOne(d => d.Person).WithMany(p => p.Clients)
-                .HasForeignKey(d => d.PersonId)
+            entity.HasOne(d => d.IdPersonNavigation).WithMany(p => p.Clients)
+                .HasForeignKey(d => d.IdPerson)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Client__person_i__6FE99F9F");
+                .HasConstraintName("FK_Client_id_person");
 
-            entity.HasOne(d => d.Plan).WithMany(p => p.Clients)
-                .HasForeignKey(d => d.PlanId)
+            entity.HasOne(d => d.IdTrainingPlanNavigation).WithMany(p => p.Clients)
+                .HasForeignKey(d => d.IdTrainingPlan)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Client__plan_id__70DDC3D8");
+                .HasConstraintName("FK_Client_id_triningPlan");
         });
 
         modelBuilder.Entity<DataFisic>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__DataFisi__3213E83FA5F7F1F8");
+            entity.HasKey(e => e.IdDataFisic).HasName("PK_DataFisic_id_dataFisic");
 
             entity.ToTable("DataFisic");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.ClientId).HasColumnName("client_id");
+            entity.Property(e => e.IdDataFisic).HasColumnName("id_dataFisic");
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("date")
                 .HasColumnName("createdAt");
             entity.Property(e => e.Height).HasColumnName("height");
+            entity.Property(e => e.IdClient).HasColumnName("id_client");
+            entity.Property(e => e.Inactive).HasColumnName("inactive");
             entity.Property(e => e.Notes)
-                .HasMaxLength(1000)
+                .HasMaxLength(500)
                 .IsUnicode(false)
                 .HasColumnName("notes");
             entity.Property(e => e.Weight).HasColumnName("weight");
 
-            entity.HasOne(d => d.Client).WithMany(p => p.DataFisics)
-                .HasForeignKey(d => d.ClientId)
+            entity.HasOne(d => d.IdClientNavigation).WithMany(p => p.DataFisics)
+                .HasForeignKey(d => d.IdClient)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__DataFisic__clien__73BA3083");
+                .HasConstraintName("FK_DataFisic_id_client");
         });
 
         modelBuilder.Entity<Image>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Image__3213E83FD96ADE33");
+            entity.HasKey(e => e.IdImage).HasName("PK_Image_id_image");
 
             entity.ToTable("Image");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.DatafisicId).HasColumnName("datafisic_id");
+            entity.Property(e => e.IdImage).HasColumnName("id_image");
+            entity.Property(e => e.IdDataFisic).HasColumnName("id_dataFisic");
             entity.Property(e => e.ImageUrl)
                 .HasMaxLength(500)
                 .IsUnicode(false)
                 .HasColumnName("imageURL");
+            entity.Property(e => e.Inactive).HasColumnName("inactive");
             entity.Property(e => e.Notes)
                 .HasMaxLength(500)
                 .IsUnicode(false)
                 .HasColumnName("notes");
 
-            entity.HasOne(d => d.Datafisic).WithMany(p => p.Images)
-                .HasForeignKey(d => d.DatafisicId)
+            entity.HasOne(d => d.IdDataFisicNavigation).WithMany(p => p.Images)
+                .HasForeignKey(d => d.IdDataFisic)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Image__datafisic__76969D2E");
+                .HasConstraintName("FK_Image_id_dataFisic");
         });
 
         modelBuilder.Entity<Instructor>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Instruct__3213E83FB5F3C23A");
+            entity.HasKey(e => e.IdInstructor).HasName("PK_Instructor_id_instructor");
 
             entity.ToTable("Instructor");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.PersonId).HasColumnName("person_id");
+            entity.Property(e => e.IdInstructor).HasColumnName("id_instructor");
+            entity.Property(e => e.IdPerson).HasColumnName("id_person");
 
-            entity.HasOne(d => d.Person).WithMany(p => p.Instructors)
-                .HasForeignKey(d => d.PersonId)
+            entity.HasOne(d => d.IdPersonNavigation).WithMany(p => p.Instructors)
+                .HasForeignKey(d => d.IdPerson)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Instructo__perso__656C112C");
+                .HasConstraintName("FK_Instructor_id_person");
         });
 
         modelBuilder.Entity<Pay>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__pay__3213E83FA8E7D6C4");
+            entity.HasKey(e => e.IdPay).HasName("PK_Pay_id_pay");
 
-            entity.ToTable("pay");
+            entity.ToTable("Pay");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.IdPay).HasColumnName("id_pay");
+            entity.Property(e => e.Amount).HasColumnName("amount");
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("date")
                 .HasColumnName("createdAt");
             entity.Property(e => e.DestinatarioId).HasColumnName("destinatario_id");
-            entity.Property(e => e.Expiration)
-                .HasColumnType("date")
-                .HasColumnName("expiration");
-            entity.Property(e => e.PaytypeId).HasColumnName("paytype_id");
+            entity.Property(e => e.IdPayType).HasColumnName("id_payType");
+            entity.Property(e => e.Inactive).HasColumnName("inactive");
             entity.Property(e => e.RemitenteId).HasColumnName("remitente_id");
 
             entity.HasOne(d => d.Destinatario).WithMany(p => p.PayDestinatarios)
                 .HasForeignKey(d => d.DestinatarioId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__pay__destinatari__797309D9");
+                .HasConstraintName("FK_Pay_id_personDes");
 
-            entity.HasOne(d => d.Paytype).WithMany(p => p.Pays)
-                .HasForeignKey(d => d.PaytypeId)
+            entity.HasOne(d => d.IdPayTypeNavigation).WithMany(p => p.Pays)
+                .HasForeignKey(d => d.IdPayType)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__pay__paytype_id__7B5B524B");
+                .HasConstraintName("FK_Pay_id_payType");
 
             entity.HasOne(d => d.Remitente).WithMany(p => p.PayRemitentes)
                 .HasForeignKey(d => d.RemitenteId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__pay__remitente_i__7A672E12");
+                .HasConstraintName("FK_Pay_id_personRem");
         });
 
         modelBuilder.Entity<PayType>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__PayType__3213E83F45680586");
+            entity.HasKey(e => e.IdPayType).HasName("PK_PayType_id_payType");
 
             entity.ToTable("PayType");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.IdPayType).HasColumnName("id_payType");
+            entity.Property(e => e.Inactive).HasColumnName("inactive");
             entity.Property(e => e.Name)
-                .HasMaxLength(50)
+                .HasMaxLength(500)
                 .IsUnicode(false)
                 .HasColumnName("name");
         });
 
         modelBuilder.Entity<Person>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Person__3213E83F06DD75FB");
+            entity.HasKey(e => e.IdPerson).HasName("PK_Person_id_person");
 
             entity.ToTable("Person");
 
-            entity.HasIndex(e => e.Nickname, "UQ__Person__5CF1C59B3D3E79B3").IsUnique();
+            entity.HasIndex(e => e.Nickname, "Q_Person_nickname").IsUnique();
 
-            entity.Property(e => e.Id)   
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.IdPerson).HasColumnName("id_person");
             entity.Property(e => e.Avatar)
                 .HasMaxLength(400)
                 .IsUnicode(false)
                 .HasColumnName("avatar");
-            entity.Property(e => e.Cbu).HasColumnName("CBU");
+            entity.Property(e => e.Birthday)
+                .HasColumnType("date")
+                .HasColumnName("birthday");
             entity.Property(e => e.CreatedAt)
                 .HasColumnType("date")
                 .HasColumnName("createdAt");
-            entity.Property(e => e.Name)
-                .HasMaxLength(50)
+            entity.Property(e => e.FirstName)
+                .HasMaxLength(100)
                 .IsUnicode(false)
-                .HasColumnName("name");
+                .HasColumnName("firstName");
+            entity.Property(e => e.Gender)
+                .HasMaxLength(1)
+                .IsUnicode(false)
+                .IsFixedLength()
+                .HasColumnName("gender");
+            entity.Property(e => e.Inactive).HasColumnName("inactive");
+            entity.Property(e => e.LastName)
+                .HasMaxLength(100)
+                .IsUnicode(false);
             entity.Property(e => e.Nickname)
                 .HasMaxLength(7)
                 .IsUnicode(false)
                 .HasColumnName("nickname");
+            entity.Property(e => e.NumberPhone)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.Password)
-                .HasMaxLength(400)
+                .HasMaxLength(500)
                 .IsUnicode(false)
                 .HasColumnName("password");
             entity.Property(e => e.RolId).HasColumnName("rol_id");
@@ -239,62 +243,60 @@ public partial class GymsyDbContext : DbContext
             entity.HasOne(d => d.Rol).WithMany(p => p.People)
                 .HasForeignKey(d => d.RolId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Person__rol_id__5FB337D6");
+                .HasConstraintName("FK_Person_id_person");
         });
 
         modelBuilder.Entity<Rol>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Rol__3213E83F15A3F7ED");
+            entity.HasKey(e => e.IdRol).HasName("PK_Rol_idRol");
 
             entity.ToTable("Rol");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.IdRol).HasColumnName("id_rol");
+            entity.Property(e => e.Inactive).HasColumnName("inactive");
             entity.Property(e => e.Name)
-                .HasMaxLength(30)
+                .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("name");
         });
 
         modelBuilder.Entity<TrainingPlan>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Training__3213E83FAE32DC38");
+            entity.HasKey(e => e.IdTrainingPlan).HasName("PK_TrainingPlan_id_trainingPlan");
 
             entity.ToTable("TrainingPlan");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.IdTrainingPlan).HasColumnName("id_trainingPlan");
             entity.Property(e => e.Description)
-                .HasMaxLength(300)
+                .HasMaxLength(500)
                 .IsUnicode(false)
                 .HasColumnName("description");
-            entity.Property(e => e.InstructorId).HasColumnName("instructor_id");
+            entity.Property(e => e.IdInstructor).HasColumnName("id_instructor");
+            entity.Property(e => e.Inactive).HasColumnName("inactive");
             entity.Property(e => e.Price).HasColumnName("price");
 
-            entity.HasOne(d => d.Instructor).WithMany(p => p.TrainingPlans)
-                .HasForeignKey(d => d.InstructorId)
+            entity.HasOne(d => d.IdInstructorNavigation).WithMany(p => p.TrainingPlans)
+                .HasForeignKey(d => d.IdInstructor)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__TrainingP__instr__6B24EA82");
+                .HasConstraintName("FK_TrainingPlan_id_instructor");
         });
 
         modelBuilder.Entity<Wallet>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Wallet__3213E83FCBCD08C3");
+            entity.HasKey(e => e.IdWallet).HasName("PK_Wallet_id_wallet");
 
             entity.ToTable("Wallet");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.Amount).HasColumnName("amount");
-            entity.Property(e => e.PersonId).HasColumnName("person_id");
+            entity.Property(e => e.IdWallet).HasColumnName("id_wallet");
+            entity.Property(e => e.IdPerson).HasColumnName("id_person");
+            entity.Property(e => e.Inactive).HasColumnName("inactive");
+            entity.Property(e => e.Retirable).HasColumnName("retirable");
+            entity.Property(e => e.Total).HasColumnName("total");
 
-            entity.HasOne(d => d.Person).WithMany(p => p.Wallets)
-                .HasForeignKey(d => d.PersonId)
+            entity.HasOne(d => d.IdPersonNavigation).WithMany(p => p.Wallets)
+                .HasForeignKey(d => d.IdPerson)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Wallet__person_i__68487DD7");
+                .HasConstraintName("FK_Wallet_id_person");
         });
 
         OnModelCreatingPartial(modelBuilder);

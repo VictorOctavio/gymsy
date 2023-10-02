@@ -5,11 +5,11 @@ namespace gymsy.App.Models;
 
 public partial class Person
 {
+    public int IdPerson { get; set; }
+
     public string Nickname { get; set; } = null!;
 
-    public int Id { get; set; }
-
-    public string Name { get; set; } = null!;
+    public string FirstName { get; set; } = null!;
 
     public string Avatar { get; set; } = null!;
 
@@ -17,11 +17,21 @@ public partial class Person
 
     public DateTime CreatedAt { get; set; }
 
-    public int Cbu { get; set; }
+    public string LastName { get; set; } = null!;
+
+    public string CBU { get; set; } = null!;
+
+    public string NumberPhone { get; set; } = null!;
+
+    public DateTime Birthday { get; set; }
+
+    public string Gender { get; set; } = null!;
 
     public int RolId { get; set; }
 
-    public virtual ICollection<Administrator> Administrators { get; set; } = new List<Administrator>();
+    public bool Inactive { get; set; }
+
+    public virtual ICollection<Admin> Admins { get; set; } = new List<Admin>();
 
     public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
 

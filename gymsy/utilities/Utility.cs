@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomControls.RJControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,16 @@ namespace gymsy.utilities
             };
         }
 
+
+        public static bool IsValidTextBoxRJ(RJTextBox textBox, Label labelError)
+        {
+            if (!String.IsNullOrWhiteSpace(textBox.Text)) return true;
+            else
+            {
+                labelError.Visible = true;
+                return false;
+            };
+        }
 
         public static bool IsValidComboBox(ComboBox comboBox, Button btnError)
         {

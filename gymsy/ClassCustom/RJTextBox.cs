@@ -11,6 +11,7 @@ using System.Drawing.Drawing2D;
 
 namespace CustomControls.RJControls
 {
+
     [DefaultEvent("_TextChanged")]
     public partial class RJTextBox : UserControl
     {
@@ -28,6 +29,8 @@ namespace CustomControls.RJControls
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
 
+        private bool isReadOnly = false;
+
         //Events
         public event EventHandler _TextChanged;
 
@@ -38,9 +41,24 @@ namespace CustomControls.RJControls
         {
             //Created by designer
             InitializeComponent();
+
+            // Configure ReadOnly property
+            textBox1.ReadOnly = isReadOnly;
         }
 
         #region -> Properties
+
+        [Category("RJ Code Advance")]
+        public bool ReadOnly
+        {
+            get { return isReadOnly; }
+            set
+            {
+                isReadOnly = value;
+                textBox1.ReadOnly = value;
+            }
+        }
+
         [Category("RJ Code Advance")]
         public Color BorderColor
         {
@@ -139,7 +157,7 @@ namespace CustomControls.RJControls
         }
 
         [Category("RJ Code Advance")]
-        public string Texts
+        public override string Text
         {
             get
             {
@@ -194,6 +212,21 @@ namespace CustomControls.RJControls
 
 
         #endregion
+        //#-> Metodos agregados para que funcione como un textBox normal
+        public void Clear()
+        {
+            if (textBox1 != null)
+            {
+                textBox1.Clear();
+            }
+        }
+        public bool Contains(string texto)
+        {
+            return textBox1.Text.Contains(texto);
+
+        }
+
+
 
         #region -> Overridden methods
         protected override void OnResize(EventArgs e)
@@ -332,6 +365,7 @@ namespace CustomControls.RJControls
         #endregion
 
         #region -> TextBox events
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (_TextChanged != null)
