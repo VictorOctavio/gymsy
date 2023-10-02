@@ -1,6 +1,7 @@
 ﻿using gymsy.App.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -31,6 +32,8 @@ namespace gymsy.Context
       public static void cargarListas()
         {
             // Creamos cinco instancias de la clase Person con todos los atributos cargados
+            
+
             Person person1 = new Person
             {
                 IdPerson = 1,
@@ -177,8 +180,20 @@ namespace gymsy.Context
 
             persons.Add(person5);
             instructors.Add(instructor2);
-            
 
+
+            TrainingPlan plan1 = new TrainingPlan
+            {
+                IdTrainingPlan = 1,
+                Price = 299,
+                Description = "Plan de entrenamiento 1",
+                Inactive = false,
+                IdInstructor = 1,
+                IdInstructorNavigation = instructor1,
+
+            };
+
+            trainingPlans.Add(plan1);
             
 
 
