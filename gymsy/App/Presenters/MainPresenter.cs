@@ -1,5 +1,6 @@
 ﻿using gymsy.App.Models;
 using gymsy.App.Views.Interfaces;
+using gymsy.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,12 @@ namespace gymsy.App.Presenters
             this.mainView.Show();
         }
 
+
         // implements
+        void SettingView ()
+        {
+            
+        }
+
     }
 }

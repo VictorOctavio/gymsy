@@ -70,9 +70,11 @@ namespace gymsy
             ButtonSignIn.Click += delegate
             {
 
+  
+
                 ButtonSignIn.Text = "...";
-                ButtonSignIn.Enabled = false;
                 this.Refresh();
+                ButtonSignIn.Enabled = false;
 
                 // Reset errors
                 labelErrorNickname.Visible = false;

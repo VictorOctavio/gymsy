@@ -9,16 +9,9 @@ namespace gymsy
 {
     internal static class Program
     {
-        /// <summary>
-        /// [STAThread]
-        /// Es en los system dialogs si no lanzaran exepciones
-        /// </summary>
-        [STAThread]
         static void Main()
         {
-
-
-             //Config & Conect to database
+            //Config & Conect to database
             string stringConnection = Resources.stringConnection;
             DbContextOptionsBuilder<GymsyDbContext> optionsBuilder = new();
 
@@ -35,4 +28,4 @@ namespace gymsy
             Application.Run((Form)view);
         }
     }
-}
+} 

@@ -16,9 +16,8 @@ namespace gymsy.App.Presenters
         private IAuthView authView;
         private GymsyDbContext gymsydb;
 
-        public AuthPresenter(IAuthView authView, GymsyDbContext gymsydb)
-        {
-
+        public AuthPresenter(IAuthView authView, GymsyDbContext gymsydb) {
+            
             this.authView = authView;
             this.gymsydb = gymsydb;
 
@@ -29,7 +28,7 @@ namespace gymsy.App.Presenters
             this.authView.Show();
         }
 
-        async private void Signin(object? sender, EventArgs e)
+       async private void Signin(object? sender, EventArgs e)
         {
             try
             {
@@ -37,19 +36,12 @@ namespace gymsy.App.Presenters
                 var peopleFound = this.gymsydb.People
                                               .Where(people => people.Nickname == this.authView.Nickname)
                                               .First();
-
-                //this.authView.IsSuccessful = true;
-                //this.authView.Message = "Hola, " + peopleFound.FirstName + " :)";
-                //this.authView.HandleResponseDBMessage();
-                //this.authView.Refresh();
-                //return;
-
+   
                 // validar existencia del usuario
-                if (peopleFound != null)
-                {
+                if (peopleFound != null) {
 
                     //- Validar password
-                    if (!Bcrypt.ComparePassowrd(this.authView.Password, peopleFound.Password))
+                    if(!Bcrypt.ComparePassowrd(this.authView.Password, peopleFound.Password))
                     {
                         this.authView.IsSuccessful = false;
                         this.authView.Message = "Nickname o Contraseña Incorrecto";
@@ -57,16 +49,22 @@ namespace gymsy.App.Presenters
                     }
                     else
                     {
+
+
+
                         this.authView.IsSuccessful = true;
-                        this.authView.Message = "Hola, " + peopleFound.FirstName + " :)";
+                        this.authView.Message = "Hola, "+peopleFound.FirstName+" :)";
                         this.authView.HandleResponseDBMessage();
                         this.authView.Refresh();
-
-
+      
                         // Delay
                         Thread.Sleep(2000);
 
-                        //this.authView.Close();
+                        AppState.person = peopleFound;
+                        //AppState.clients = clients;
+                        //AppState.planes = planes;
+
+                        this.authView.Hide();
 
                         // Open form
                         IMainView view = new MainView(peopleFound);
@@ -76,11 +74,10 @@ namespace gymsy.App.Presenters
                     }
                 }
             }
-            catch
-            {
-                this.authView.IsSuccessful = false;
-                this.authView.Message = "Error inesperdado";
-                this.authView.HandleResponseDBMessage();
+            catch {
+               this.authView.IsSuccessful = false;
+               this.authView.Message = "Error inesperdado";
+               this.authView.HandleResponseDBMessage();
             }
             finally
             {

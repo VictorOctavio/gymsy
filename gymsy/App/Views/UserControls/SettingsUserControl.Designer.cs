@@ -48,20 +48,20 @@
             btnSaveChanges = new Button();
             btnEditAvatar = new Button();
             panel2 = new Panel();
-            tbName = new TextBox();
+            TbFirstName = new TextBox();
             label1 = new Label();
             textErrorName = new Label();
             textBox2 = new TextBox();
             panel3 = new Panel();
-            tbEmail = new TextBox();
+            TbPhone = new TextBox();
             label5 = new Label();
             textErrorEmail = new Label();
             panel1 = new Panel();
-            tbNickname = new TextBox();
+            TbCBU = new TextBox();
             label2 = new Label();
             textErrorNickname = new Label();
             panel4 = new Panel();
-            tbSurname = new TextBox();
+            TbLastName = new TextBox();
             label7 = new Label();
             textErrorSurname = new Label();
             settingsWrapper.SuspendLayout();
@@ -81,7 +81,7 @@
             a.AutoSize = true;
             a.Font = new Font("Segoe UI", 29F, FontStyle.Regular, GraphicsUnit.Point);
             a.ForeColor = Color.White;
-            a.Location = new Point(535, 25);
+            a.Location = new Point(371, 25);
             a.Name = "a";
             a.Size = new Size(263, 52);
             a.TabIndex = 0;
@@ -92,7 +92,7 @@
             settingsWrapper.AutoScroll = true;
             settingsWrapper.AutoScrollMinSize = new Size(800, 700);
             settingsWrapper.AutoSize = true;
-            settingsWrapper.BackColor = Color.FromArgb(16, 8, 30);
+            settingsWrapper.BackColor = Color.FromArgb(16, 8, 23);
             settingsWrapper.Controls.Add(comboBoxAvatar);
             settingsWrapper.Controls.Add(gorilla_avatar);
             settingsWrapper.Controls.Add(panelError);
@@ -112,7 +112,7 @@
             settingsWrapper.Location = new Point(0, 0);
             settingsWrapper.Margin = new Padding(0);
             settingsWrapper.Name = "settingsWrapper";
-            settingsWrapper.Size = new Size(1366, 768);
+            settingsWrapper.Size = new Size(1038, 703);
             settingsWrapper.TabIndex = 1;
             settingsWrapper.Paint += SettingsWrapper_Paint;
             // 
@@ -121,7 +121,7 @@
             comboBoxAvatar.Anchor = AnchorStyles.Top;
             comboBoxAvatar.FormattingEnabled = true;
             comboBoxAvatar.Items.AddRange(new object[] { "gorilla_avatar", "duck_avatar", "dog_avatar", "cat_avatar", "panda_avatar", "chicken_avatar", "raccoon_avatar", "penguin_avatar" });
-            comboBoxAvatar.Location = new Point(590, 182);
+            comboBoxAvatar.Location = new Point(426, 182);
             comboBoxAvatar.Name = "comboBoxAvatar";
             comboBoxAvatar.Size = new Size(121, 23);
             comboBoxAvatar.TabIndex = 50;
@@ -130,7 +130,7 @@
             // 
             gorilla_avatar.Anchor = AnchorStyles.Top;
             gorilla_avatar.Image = Properties.Resources.gorilla_avatar;
-            gorilla_avatar.Location = new Point(623, 108);
+            gorilla_avatar.Location = new Point(459, 108);
             gorilla_avatar.Name = "gorilla_avatar";
             gorilla_avatar.Size = new Size(69, 68);
             gorilla_avatar.TabIndex = 45;
@@ -138,13 +138,13 @@
             // 
             // panelError
             // 
-            panelError.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            panelError.Anchor = AnchorStyles.Right;
             panelError.BackColor = Color.Crimson;
             panelError.Controls.Add(panelErrorBtnClose);
             panelError.Controls.Add(panelErrorText);
             panelError.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             panelError.ForeColor = Color.White;
-            panelError.Location = new Point(1086, 718);
+            panelError.Location = new Point(755, 653);
             panelError.Margin = new Padding(0);
             panelError.Name = "panelError";
             panelError.Size = new Size(280, 50);
@@ -171,7 +171,7 @@
             // 
             panelErrorText.AutoSize = true;
             panelErrorText.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            panelErrorText.Location = new Point(63, 19);
+            panelErrorText.Location = new Point(69, 17);
             panelErrorText.Name = "panelErrorText";
             panelErrorText.Size = new Size(145, 18);
             panelErrorText.TabIndex = 0;
@@ -186,7 +186,7 @@
             btnChangePassword.FlatStyle = FlatStyle.Flat;
             btnChangePassword.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             btnChangePassword.ForeColor = Color.White;
-            btnChangePassword.Location = new Point(919, 472);
+            btnChangePassword.Location = new Point(755, 472);
             btnChangePassword.Name = "btnChangePassword";
             btnChangePassword.Size = new Size(87, 34);
             btnChangePassword.TabIndex = 39;
@@ -200,7 +200,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 19F, FontStyle.Regular, GraphicsUnit.Point);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(320, 473);
+            label13.Location = new Point(156, 473);
             label13.Name = "label13";
             label13.Size = new Size(145, 36);
             label13.TabIndex = 38;
@@ -212,7 +212,7 @@
             panel5.Controls.Add(tbCurrentPassword);
             panel5.Controls.Add(label9);
             panel5.Controls.Add(textErrorCurrPass);
-            panel5.Location = new Point(666, 512);
+            panel5.Location = new Point(502, 512);
             panel5.Name = "panel5";
             panel5.Size = new Size(340, 88);
             panel5.TabIndex = 37;
@@ -262,7 +262,7 @@
             panel6.Controls.Add(tbNewPassword);
             panel6.Controls.Add(label11);
             panel6.Controls.Add(textErrorNewPass);
-            panel6.Location = new Point(320, 512);
+            panel6.Location = new Point(156, 512);
             panel6.Name = "panel6";
             panel6.Size = new Size(340, 88);
             panel6.TabIndex = 36;
@@ -315,7 +315,7 @@
             btnSaveChanges.FlatStyle = FlatStyle.Flat;
             btnSaveChanges.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             btnSaveChanges.ForeColor = Color.White;
-            btnSaveChanges.Location = new Point(561, 636);
+            btnSaveChanges.Location = new Point(397, 636);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Padding = new Padding(10);
             btnSaveChanges.Size = new Size(225, 55);
@@ -333,7 +333,7 @@
             btnEditAvatar.FlatStyle = FlatStyle.Flat;
             btnEditAvatar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             btnEditAvatar.ForeColor = Color.White;
-            btnEditAvatar.Location = new Point(717, 183);
+            btnEditAvatar.Location = new Point(553, 183);
             btnEditAvatar.Name = "btnEditAvatar";
             btnEditAvatar.Size = new Size(28, 23);
             btnEditAvatar.TabIndex = 3;
@@ -344,26 +344,26 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top;
-            panel2.Controls.Add(tbName);
+            panel2.Controls.Add(TbFirstName);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(textErrorName);
-            panel2.Location = new Point(321, 263);
+            panel2.Location = new Point(157, 263);
             panel2.Name = "panel2";
             panel2.Size = new Size(340, 88);
             panel2.TabIndex = 30;
             // 
-            // tbName
+            // TbFirstName
             // 
-            tbName.Anchor = AnchorStyles.None;
-            tbName.Cursor = Cursors.Hand;
-            tbName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            tbName.ForeColor = Color.FromArgb(9, 0, 20);
-            tbName.Location = new Point(5, 46);
-            tbName.Margin = new Padding(5);
-            tbName.Multiline = true;
-            tbName.Name = "tbName";
-            tbName.Size = new Size(335, 37);
-            tbName.TabIndex = 11;
+            TbFirstName.Anchor = AnchorStyles.None;
+            TbFirstName.Cursor = Cursors.Hand;
+            TbFirstName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            TbFirstName.ForeColor = Color.FromArgb(9, 0, 20);
+            TbFirstName.Location = new Point(5, 46);
+            TbFirstName.Margin = new Padding(5);
+            TbFirstName.Multiline = true;
+            TbFirstName.Name = "TbFirstName";
+            TbFirstName.Size = new Size(335, 37);
+            TbFirstName.TabIndex = 11;
             // 
             // label1
             // 
@@ -396,7 +396,7 @@
             textBox2.Anchor = AnchorStyles.Top;
             textBox2.Cursor = Cursors.Hand;
             textBox2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(692, 531);
+            textBox2.Location = new Point(528, 531);
             textBox2.Margin = new Padding(5);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(0, 31);
@@ -405,26 +405,26 @@
             // panel3
             // 
             panel3.Anchor = AnchorStyles.Top;
-            panel3.Controls.Add(tbEmail);
+            panel3.Controls.Add(TbPhone);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(textErrorEmail);
-            panel3.Location = new Point(666, 357);
+            panel3.Location = new Point(502, 357);
             panel3.Name = "panel3";
             panel3.Size = new Size(340, 88);
             panel3.TabIndex = 33;
             // 
-            // tbEmail
+            // TbPhone
             // 
-            tbEmail.Anchor = AnchorStyles.None;
-            tbEmail.Cursor = Cursors.Hand;
-            tbEmail.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            tbEmail.ForeColor = Color.FromArgb(9, 0, 20);
-            tbEmail.Location = new Point(0, 43);
-            tbEmail.Margin = new Padding(5);
-            tbEmail.Multiline = true;
-            tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(335, 40);
-            tbEmail.TabIndex = 11;
+            TbPhone.Anchor = AnchorStyles.None;
+            TbPhone.Cursor = Cursors.Hand;
+            TbPhone.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            TbPhone.ForeColor = Color.FromArgb(9, 0, 20);
+            TbPhone.Location = new Point(0, 43);
+            TbPhone.Margin = new Padding(5);
+            TbPhone.Multiline = true;
+            TbPhone.Name = "TbPhone";
+            TbPhone.Size = new Size(335, 40);
+            TbPhone.TabIndex = 11;
             // 
             // label5
             // 
@@ -434,9 +434,9 @@
             label5.ForeColor = Color.White;
             label5.Location = new Point(3, 18);
             label5.Name = "label5";
-            label5.Size = new Size(54, 25);
+            label5.Size = new Size(79, 25);
             label5.TabIndex = 1;
-            label5.Text = "Email";
+            label5.Text = "Telefono";
             // 
             // textErrorEmail
             // 
@@ -455,26 +455,26 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
-            panel1.Controls.Add(tbNickname);
+            panel1.Controls.Add(TbCBU);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(textErrorNickname);
-            panel1.Location = new Point(321, 357);
+            panel1.Location = new Point(157, 357);
             panel1.Name = "panel1";
             panel1.Size = new Size(340, 88);
             panel1.TabIndex = 31;
             // 
-            // tbNickname
+            // TbCBU
             // 
-            tbNickname.Anchor = AnchorStyles.None;
-            tbNickname.Cursor = Cursors.Hand;
-            tbNickname.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            tbNickname.ForeColor = Color.FromArgb(9, 0, 20);
-            tbNickname.Location = new Point(0, 43);
-            tbNickname.Margin = new Padding(5);
-            tbNickname.Multiline = true;
-            tbNickname.Name = "tbNickname";
-            tbNickname.Size = new Size(335, 40);
-            tbNickname.TabIndex = 11;
+            TbCBU.Anchor = AnchorStyles.None;
+            TbCBU.Cursor = Cursors.Hand;
+            TbCBU.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            TbCBU.ForeColor = Color.FromArgb(9, 0, 20);
+            TbCBU.Location = new Point(0, 43);
+            TbCBU.Margin = new Padding(5);
+            TbCBU.Multiline = true;
+            TbCBU.Name = "TbCBU";
+            TbCBU.Size = new Size(335, 40);
+            TbCBU.TabIndex = 11;
             // 
             // label2
             // 
@@ -484,9 +484,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(3, 18);
             label2.Name = "label2";
-            label2.Size = new Size(90, 25);
+            label2.Size = new Size(45, 25);
             label2.TabIndex = 1;
-            label2.Text = "Nickname";
+            label2.Text = "CBU";
             // 
             // textErrorNickname
             // 
@@ -505,26 +505,26 @@
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top;
-            panel4.Controls.Add(tbSurname);
+            panel4.Controls.Add(TbLastName);
             panel4.Controls.Add(label7);
             panel4.Controls.Add(textErrorSurname);
-            panel4.Location = new Point(666, 263);
+            panel4.Location = new Point(502, 263);
             panel4.Name = "panel4";
             panel4.Size = new Size(340, 88);
             panel4.TabIndex = 32;
             // 
-            // tbSurname
+            // TbLastName
             // 
-            tbSurname.Anchor = AnchorStyles.None;
-            tbSurname.Cursor = Cursors.Hand;
-            tbSurname.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            tbSurname.ForeColor = Color.FromArgb(9, 0, 20);
-            tbSurname.Location = new Point(0, 46);
-            tbSurname.Margin = new Padding(5);
-            tbSurname.Multiline = true;
-            tbSurname.Name = "tbSurname";
-            tbSurname.Size = new Size(335, 37);
-            tbSurname.TabIndex = 11;
+            TbLastName.Anchor = AnchorStyles.None;
+            TbLastName.Cursor = Cursors.Hand;
+            TbLastName.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            TbLastName.ForeColor = Color.FromArgb(9, 0, 20);
+            TbLastName.Location = new Point(0, 46);
+            TbLastName.Margin = new Padding(5);
+            TbLastName.Multiline = true;
+            TbLastName.Name = "TbLastName";
+            TbLastName.Size = new Size(335, 37);
+            TbLastName.TabIndex = 11;
             // 
             // label7
             // 
@@ -560,7 +560,7 @@
             Controls.Add(settingsWrapper);
             Margin = new Padding(100);
             Name = "SettingsUserControl";
-            Size = new Size(1366, 768);
+            Size = new Size(1038, 703);
             settingsWrapper.ResumeLayout(false);
             settingsWrapper.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gorilla_avatar).EndInit();
@@ -596,20 +596,20 @@
         private Button btnSaveChanges;
         private Button btnEditAvatar;
         private Panel panel2;
-        private TextBox tbName;
+        private TextBox TbFirstName;
         private Label label1;
         private Label textErrorName;
         private TextBox textBox2;
         private Panel panel3;
-        private TextBox tbEmail;
+        private TextBox TbPhone;
         private Label label5;
         private Label textErrorEmail;
         private Panel panel1;
-        private TextBox tbNickname;
+        private TextBox TbCBU;
         private Label label2;
         private Label textErrorNickname;
         private Panel panel4;
-        private TextBox tbSurname;
+        private TextBox TbLastName;
         private Label label7;
         private Label textErrorSurname;
         private Button btnChangePassword;

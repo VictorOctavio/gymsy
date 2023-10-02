@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace gymsy.App.Views.Interfaces
 {
-    public interface IMainView
+    internal interface ISettingView
     {
+
         Person person { get; set; }
         bool IsSuccessful { get; set; }
         string Message { get; set; }
 
         // Methods
         void Show();
+        void Refresh();
 
-        // Navigation
-        event EventHandler SettingView;
     }
 }

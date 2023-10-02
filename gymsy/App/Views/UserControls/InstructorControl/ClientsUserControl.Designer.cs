@@ -31,45 +31,40 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DGUsers = new DataGridView();
+            driedUsers = new DataGridView();
             nickname = new DataGridViewTextBoxColumn();
+            rol = new DataGridViewTextBoxColumn();
             name = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
-            plan = new DataGridViewTextBoxColumn();
+            data_fisic = new DataGridViewTextBoxColumn();
             last_expiration = new DataGridViewTextBoxColumn();
+            plan = new DataGridViewTextBoxColumn();
+            wallet = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel2 = new Panel();
-            label2 = new Label();
-            label1 = new Label();
             rjButton2 = new ClassCustom.RJButton();
+            rjTextBox1 = new CustomControls.RJControls.RJTextBox();
+            rjButton4 = new ClassCustom.RJButton();
+            rjButton3 = new ClassCustom.RJButton();
             rjButton1 = new ClassCustom.RJButton();
-            BCancelarBusqueda = new ClassCustom.RJButton();
-            LModoBusqueda = new Label();
-            BBuscar = new ClassCustom.RJButton();
-            TBBusqueda = new CustomControls.RJControls.RJTextBox();
-            BEditarCliente = new ClassCustom.RJButton();
-            BEliminarCliente = new ClassCustom.RJButton();
-            BAgregarCliente = new ClassCustom.RJButton();
-            ((System.ComponentModel.ISupportInitialize)DGUsers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)driedUsers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // DGUsers
+            // driedUsers
             // 
-            DGUsers.AllowUserToAddRows = false;
-            DGUsers.AllowUserToDeleteRows = false;
-            DGUsers.AllowUserToResizeColumns = false;
-            DGUsers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(16, 8, 23);
+            driedUsers.AllowUserToAddRows = false;
+            driedUsers.AllowUserToDeleteRows = false;
+            driedUsers.AllowUserToResizeColumns = false;
+            driedUsers.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(69, 34, 99);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(69, 34, 99);
-            DGUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            DGUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            DGUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DGUsers.BackgroundColor = Color.FromArgb(16, 8, 23);
-            DGUsers.BorderStyle = BorderStyle.None;
-            DGUsers.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            driedUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            driedUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            driedUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            driedUsers.BackgroundColor = Color.FromArgb(16, 8, 23);
+            driedUsers.BorderStyle = BorderStyle.None;
+            driedUsers.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -77,51 +72,61 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DGUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            DGUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGUsers.Columns.AddRange(new DataGridViewColumn[] { nickname, name, Telefono, plan, last_expiration });
-            DGUsers.EditMode = DataGridViewEditMode.EditProgrammatically;
-            DGUsers.Location = new Point(3, 151);
-            DGUsers.Name = "DGUsers";
-            DGUsers.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            DGUsers.RowHeadersVisible = false;
+            driedUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            driedUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            driedUsers.Columns.AddRange(new DataGridViewColumn[] { nickname, rol, name, data_fisic, last_expiration, plan, wallet });
+            driedUsers.EditMode = DataGridViewEditMode.EditProgrammatically;
+            driedUsers.Location = new Point(3, 120);
+            driedUsers.Name = "driedUsers";
+            driedUsers.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            driedUsers.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            DGUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            DGUsers.RowTemplate.Height = 25;
-            DGUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGUsers.ShowCellErrors = false;
-            DGUsers.Size = new Size(994, 369);
-            DGUsers.TabIndex = 1;
+            driedUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            driedUsers.RowTemplate.Height = 25;
+            driedUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            driedUsers.ShowCellErrors = false;
+            driedUsers.Size = new Size(994, 410);
+            driedUsers.TabIndex = 1;
             // 
             // nickname
             // 
             nickname.HeaderText = "Apodo";
             nickname.Name = "nickname";
             // 
+            // rol
+            // 
+            rol.HeaderText = "Rol";
+            rol.Name = "rol";
+            // 
             // name
             // 
             name.HeaderText = "Nombre";
             name.Name = "name";
             // 
-            // Telefono
+            // data_fisic
             // 
-            Telefono.HeaderText = "Telefono";
-            Telefono.Name = "Telefono";
+            data_fisic.HeaderText = "Datos Fisicos";
+            data_fisic.Name = "data_fisic";
+            // 
+            // last_expiration
+            // 
+            last_expiration.HeaderText = "Ultimo Vencimiento";
+            last_expiration.Name = "last_expiration";
             // 
             // plan
             // 
             plan.HeaderText = "Plan";
             plan.Name = "plan";
             // 
-            // last_expiration
+            // wallet
             // 
-            last_expiration.HeaderText = "Ultimo Vencimiento";
-            last_expiration.Name = "last_expiration";
+            wallet.HeaderText = "Billetera";
+            wallet.Name = "wallet";
             // 
             // panel1
             // 
@@ -138,76 +143,115 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(16, 8, 23);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
             panel2.Controls.Add(rjButton2);
+            panel2.Controls.Add(rjTextBox1);
+            panel2.Controls.Add(rjButton4);
+            panel2.Controls.Add(rjButton3);
             panel2.Controls.Add(rjButton1);
-            panel2.Controls.Add(BCancelarBusqueda);
-            panel2.Controls.Add(LModoBusqueda);
-            panel2.Controls.Add(BBuscar);
-            panel2.Controls.Add(TBBusqueda);
-            panel2.Controls.Add(BEditarCliente);
-            panel2.Controls.Add(BEliminarCliente);
-            panel2.Controls.Add(BAgregarCliente);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1000, 151);
+            panel2.Size = new Size(1000, 114);
             panel2.TabIndex = 4;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(230, 237, 243);
-            label2.Location = new Point(810, 6);
-            label2.Name = "label2";
-            label2.Size = new Size(128, 25);
-            label2.TabIndex = 87;
-            label2.Text = "Listar clientes";
-            label2.Visible = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(230, 237, 243);
-            label1.Location = new Point(472, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(185, 25);
-            label1.TabIndex = 86;
-            label1.Text = "Controles de Cliente";
-            label1.Visible = false;
             // 
             // rjButton2
             // 
-            rjButton2.BackColor = Color.FromArgb(41, 147, 45);
-            rjButton2.BackgroundColor = Color.FromArgb(41, 147, 45);
+            rjButton2.BackColor = Color.DarkOrange;
+            rjButton2.BackgroundColor = Color.DarkOrange;
             rjButton2.BorderColor = Color.PaleVioletRed;
-            rjButton2.BorderRadius = 15;
+            rjButton2.BorderRadius = 25;
             rjButton2.BorderSize = 0;
             rjButton2.FlatAppearance.BorderSize = 0;
             rjButton2.FlatStyle = FlatStyle.Flat;
-            rjButton2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             rjButton2.ForeColor = Color.White;
-            rjButton2.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
-            rjButton2.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            rjButton2.IconColor = Color.White;
             rjButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            rjButton2.IconSize = 45;
-            rjButton2.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton2.Location = new Point(744, 38);
+            rjButton2.IconSize = 30;
+            rjButton2.Location = new Point(287, 36);
             rjButton2.Name = "rjButton2";
-            rjButton2.Padding = new Padding(10, 0, 0, 0);
-            rjButton2.Size = new Size(228, 40);
-            rjButton2.TabIndex = 85;
-            rjButton2.Text = "Ver Clientes";
-            rjButton2.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton2.Size = new Size(50, 50);
+            rjButton2.TabIndex = 81;
             rjButton2.TextColor = Color.White;
             rjButton2.UseVisualStyleBackColor = false;
             // 
+            // rjTextBox1
+            // 
+            rjTextBox1.BackColor = Color.FromArgb(69, 34, 99);
+            rjTextBox1.BorderColor = Color.Transparent;
+            rjTextBox1.BorderFocusColor = Color.HotPink;
+            rjTextBox1.BorderRadius = 15;
+            rjTextBox1.BorderSize = 2;
+            rjTextBox1.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            rjTextBox1.ForeColor = Color.FromArgb(230, 237, 243);
+            rjTextBox1.Location = new Point(57, 46);
+            rjTextBox1.Margin = new Padding(4);
+            rjTextBox1.Multiline = false;
+            rjTextBox1.Name = "rjTextBox1";
+            rjTextBox1.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox1.PasswordChar = false;
+            rjTextBox1.PlaceholderColor = Color.DarkGray;
+            rjTextBox1.PlaceholderText = "Ingrese un nombre...";
+            rjTextBox1.Size = new Size(208, 31);
+            rjTextBox1.TabIndex = 80;
+            rjTextBox1.Texts = "";
+            rjTextBox1.UnderlinedStyle = false;
+            // 
+            // rjButton4
+            // 
+            rjButton4.BackColor = Color.FromArgb(0, 0, 192);
+            rjButton4.BackgroundColor = Color.FromArgb(0, 0, 192);
+            rjButton4.BorderColor = Color.PaleVioletRed;
+            rjButton4.BorderRadius = 15;
+            rjButton4.BorderSize = 0;
+            rjButton4.FlatAppearance.BorderSize = 0;
+            rjButton4.FlatStyle = FlatStyle.Flat;
+            rjButton4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton4.ForeColor = Color.White;
+            rjButton4.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            rjButton4.IconColor = Color.White;
+            rjButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton4.IconSize = 45;
+            rjButton4.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton4.Location = new Point(572, 36);
+            rjButton4.Name = "rjButton4";
+            rjButton4.Padding = new Padding(10, 0, 0, 0);
+            rjButton4.Size = new Size(188, 53);
+            rjButton4.TabIndex = 79;
+            rjButton4.Text = "Agregar Plan";
+            rjButton4.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton4.TextColor = Color.White;
+            rjButton4.UseVisualStyleBackColor = false;
+            // 
+            // rjButton3
+            // 
+            rjButton3.BackColor = Color.FromArgb(192, 0, 0);
+            rjButton3.BackgroundColor = Color.FromArgb(192, 0, 0);
+            rjButton3.BorderColor = Color.PaleVioletRed;
+            rjButton3.BorderRadius = 15;
+            rjButton3.BorderSize = 0;
+            rjButton3.FlatAppearance.BorderSize = 0;
+            rjButton3.FlatStyle = FlatStyle.Flat;
+            rjButton3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton3.ForeColor = Color.White;
+            rjButton3.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            rjButton3.IconColor = Color.White;
+            rjButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton3.IconSize = 45;
+            rjButton3.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton3.Location = new Point(775, 36);
+            rjButton3.Name = "rjButton3";
+            rjButton3.Padding = new Padding(10, 0, 0, 0);
+            rjButton3.Size = new Size(188, 53);
+            rjButton3.TabIndex = 78;
+            rjButton3.Text = "Agregar Plan";
+            rjButton3.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton3.TextColor = Color.White;
+            rjButton3.UseVisualStyleBackColor = false;
+            // 
             // rjButton1
             // 
-            rjButton1.BackColor = Color.FromArgb(192, 0, 0);
-            rjButton1.BackgroundColor = Color.FromArgb(192, 0, 0);
+            rjButton1.BackColor = Color.FromArgb(41, 147, 45);
+            rjButton1.BackgroundColor = Color.FromArgb(41, 147, 45);
             rjButton1.BorderColor = Color.PaleVioletRed;
             rjButton1.BorderRadius = 15;
             rjButton1.BorderSize = 0;
@@ -215,222 +259,51 @@
             rjButton1.FlatStyle = FlatStyle.Flat;
             rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             rjButton1.ForeColor = Color.White;
-            rjButton1.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
-            rjButton1.IconColor = Color.White;
+            rjButton1.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            rjButton1.IconColor = Color.FromArgb(230, 237, 243);
             rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            rjButton1.IconSize = 45;
             rjButton1.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton1.Location = new Point(744, 84);
+            rjButton1.Location = new Point(368, 36);
             rjButton1.Name = "rjButton1";
-            rjButton1.Padding = new Padding(8, 0, 0, 0);
-            rjButton1.Size = new Size(228, 40);
-            rjButton1.TabIndex = 84;
-            rjButton1.Text = "Ver Clientes Eliminados";
+            rjButton1.Padding = new Padding(10, 0, 0, 0);
+            rjButton1.Size = new Size(188, 53);
+            rjButton1.TabIndex = 65;
+            rjButton1.Text = "Agregar Cliente";
             rjButton1.TextAlign = ContentAlignment.MiddleLeft;
             rjButton1.TextColor = Color.White;
             rjButton1.UseVisualStyleBackColor = false;
-            // 
-            // BCancelarBusqueda
-            // 
-            BCancelarBusqueda.BackColor = Color.FromArgb(192, 0, 0);
-            BCancelarBusqueda.BackgroundColor = Color.FromArgb(192, 0, 0);
-            BCancelarBusqueda.BorderColor = Color.PaleVioletRed;
-            BCancelarBusqueda.BorderRadius = 12;
-            BCancelarBusqueda.BorderSize = 0;
-            BCancelarBusqueda.FlatAppearance.BorderSize = 0;
-            BCancelarBusqueda.FlatStyle = FlatStyle.Flat;
-            BCancelarBusqueda.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BCancelarBusqueda.ForeColor = Color.White;
-            BCancelarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            BCancelarBusqueda.IconColor = Color.White;
-            BCancelarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BCancelarBusqueda.IconSize = 35;
-            BCancelarBusqueda.ImageAlign = ContentAlignment.MiddleRight;
-            BCancelarBusqueda.Location = new Point(62, 85);
-            BCancelarBusqueda.Name = "BCancelarBusqueda";
-            BCancelarBusqueda.Padding = new Padding(10, 0, 0, 0);
-            BCancelarBusqueda.Size = new Size(204, 39);
-            BCancelarBusqueda.TabIndex = 82;
-            BCancelarBusqueda.Text = "Cancelar Busqueda";
-            BCancelarBusqueda.TextAlign = ContentAlignment.MiddleLeft;
-            BCancelarBusqueda.TextColor = Color.White;
-            BCancelarBusqueda.UseVisualStyleBackColor = false;
-            BCancelarBusqueda.Visible = false;
-            BCancelarBusqueda.Click += BCancelarBusqueda_Click;
-            // 
-            // LModoBusqueda
-            // 
-            LModoBusqueda.AutoSize = true;
-            LModoBusqueda.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LModoBusqueda.ForeColor = Color.FromArgb(230, 237, 243);
-            LModoBusqueda.Location = new Point(79, 6);
-            LModoBusqueda.Name = "LModoBusqueda";
-            LModoBusqueda.Size = new Size(151, 25);
-            LModoBusqueda.TabIndex = 83;
-            LModoBusqueda.Text = "Modo Busqueda";
-            LModoBusqueda.Visible = false;
-            // 
-            // BBuscar
-            // 
-            BBuscar.BackColor = Color.DarkOrange;
-            BBuscar.BackgroundColor = Color.DarkOrange;
-            BBuscar.BorderColor = Color.PaleVioletRed;
-            BBuscar.BorderRadius = 25;
-            BBuscar.BorderSize = 0;
-            BBuscar.FlatAppearance.BorderSize = 0;
-            BBuscar.FlatStyle = FlatStyle.Flat;
-            BBuscar.ForeColor = Color.White;
-            BBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            BBuscar.IconColor = Color.White;
-            BBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BBuscar.IconSize = 30;
-            BBuscar.Location = new Point(289, 41);
-            BBuscar.Name = "BBuscar";
-            BBuscar.Size = new Size(50, 50);
-            BBuscar.TabIndex = 81;
-            BBuscar.TextColor = Color.White;
-            BBuscar.UseVisualStyleBackColor = false;
-            BBuscar.Click += BBuscar_Click;
-            // 
-            // TBBusqueda
-            // 
-            TBBusqueda.BackColor = Color.FromArgb(69, 34, 99);
-            TBBusqueda.BorderColor = Color.Transparent;
-            TBBusqueda.BorderFocusColor = Color.HotPink;
-            TBBusqueda.BorderRadius = 15;
-            TBBusqueda.BorderSize = 2;
-            TBBusqueda.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            TBBusqueda.ForeColor = Color.FromArgb(230, 237, 243);
-            TBBusqueda.Location = new Point(37, 47);
-            TBBusqueda.Margin = new Padding(4);
-            TBBusqueda.Multiline = false;
-            TBBusqueda.Name = "TBBusqueda";
-            TBBusqueda.Padding = new Padding(10, 7, 10, 7);
-            TBBusqueda.PasswordChar = false;
-            TBBusqueda.PlaceholderColor = Color.DarkGray;
-            TBBusqueda.PlaceholderText = "Ingrese un nombre...";
-            TBBusqueda.Size = new Size(245, 31);
-            TBBusqueda.TabIndex = 80;
-            TBBusqueda.Text = "";
-            TBBusqueda.UnderlinedStyle = false;
-            // 
-            // BEditarCliente
-            // 
-            BEditarCliente.BackColor = Color.FromArgb(0, 0, 192);
-            BEditarCliente.BackgroundColor = Color.FromArgb(0, 0, 192);
-            BEditarCliente.BorderColor = Color.PaleVioletRed;
-            BEditarCliente.BorderRadius = 15;
-            BEditarCliente.BorderSize = 0;
-            BEditarCliente.FlatAppearance.BorderSize = 0;
-            BEditarCliente.FlatStyle = FlatStyle.Flat;
-            BEditarCliente.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BEditarCliente.ForeColor = Color.White;
-            BEditarCliente.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            BEditarCliente.IconColor = Color.White;
-            BEditarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BEditarCliente.IconSize = 40;
-            BEditarCliente.ImageAlign = ContentAlignment.MiddleRight;
-            BEditarCliente.Location = new Point(366, 84);
-            BEditarCliente.Name = "BEditarCliente";
-            BEditarCliente.Padding = new Padding(10, 0, 0, 0);
-            BEditarCliente.Size = new Size(188, 40);
-            BEditarCliente.TabIndex = 79;
-            BEditarCliente.Text = "Editar Cliente";
-            BEditarCliente.TextAlign = ContentAlignment.MiddleLeft;
-            BEditarCliente.TextColor = Color.White;
-            BEditarCliente.UseVisualStyleBackColor = false;
-            BEditarCliente.Click += BEditarCliente_Click;
-            // 
-            // BEliminarCliente
-            // 
-            BEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
-            BEliminarCliente.BackgroundColor = Color.FromArgb(192, 0, 0);
-            BEliminarCliente.BorderColor = Color.PaleVioletRed;
-            BEliminarCliente.BorderRadius = 15;
-            BEliminarCliente.BorderSize = 0;
-            BEliminarCliente.FlatAppearance.BorderSize = 0;
-            BEliminarCliente.FlatStyle = FlatStyle.Flat;
-            BEliminarCliente.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BEliminarCliente.ForeColor = Color.White;
-            BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            BEliminarCliente.IconColor = Color.White;
-            BEliminarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BEliminarCliente.IconSize = 35;
-            BEliminarCliente.ImageAlign = ContentAlignment.MiddleRight;
-            BEliminarCliente.Location = new Point(560, 38);
-            BEliminarCliente.Name = "BEliminarCliente";
-            BEliminarCliente.Padding = new Padding(10, 0, 0, 0);
-            BEliminarCliente.Size = new Size(178, 40);
-            BEliminarCliente.TabIndex = 78;
-            BEliminarCliente.Text = "Eliminar Cliente";
-            BEliminarCliente.TextAlign = ContentAlignment.MiddleLeft;
-            BEliminarCliente.TextColor = Color.White;
-            BEliminarCliente.UseVisualStyleBackColor = false;
-            BEliminarCliente.Click += BEliminarCliente_Click;
-            // 
-            // BAgregarCliente
-            // 
-            BAgregarCliente.BackColor = Color.FromArgb(41, 147, 45);
-            BAgregarCliente.BackgroundColor = Color.FromArgb(41, 147, 45);
-            BAgregarCliente.BorderColor = Color.PaleVioletRed;
-            BAgregarCliente.BorderRadius = 15;
-            BAgregarCliente.BorderSize = 0;
-            BAgregarCliente.FlatAppearance.BorderSize = 0;
-            BAgregarCliente.FlatStyle = FlatStyle.Flat;
-            BAgregarCliente.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BAgregarCliente.ForeColor = Color.White;
-            BAgregarCliente.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            BAgregarCliente.IconColor = Color.FromArgb(230, 237, 243);
-            BAgregarCliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BAgregarCliente.IconSize = 45;
-            BAgregarCliente.ImageAlign = ContentAlignment.MiddleRight;
-            BAgregarCliente.Location = new Point(366, 38);
-            BAgregarCliente.Name = "BAgregarCliente";
-            BAgregarCliente.Padding = new Padding(10, 0, 0, 0);
-            BAgregarCliente.Size = new Size(188, 40);
-            BAgregarCliente.TabIndex = 65;
-            BAgregarCliente.Text = "Agregar Cliente";
-            BAgregarCliente.TextAlign = ContentAlignment.MiddleLeft;
-            BAgregarCliente.TextColor = Color.White;
-            BAgregarCliente.UseVisualStyleBackColor = false;
-            BAgregarCliente.Click += BAgregarCliente_Click;
             // 
             // ClientsUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(DGUsers);
+            Controls.Add(driedUsers);
             Controls.Add(panel1);
             Margin = new Padding(0);
             Name = "ClientsUserControl";
             Size = new Size(1000, 530);
-            ((System.ComponentModel.ISupportInitialize)DGUsers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)driedUsers).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private DataGridView DGUsers;
+        private DataGridView driedUsers;
         private Panel panel1;
-        private Panel panel2;
-        private ClassCustom.RJButton BAgregarCliente;
-        private ClassCustom.RJButton BEditarCliente;
-        private ClassCustom.RJButton BEliminarCliente;
-        private CustomControls.RJControls.RJTextBox TBBusqueda;
-        private ClassCustom.RJButton BBuscar;
-        private ClassCustom.RJButton BCancelarBusqueda;
-        private Label LModoBusqueda;
-        private Label label2;
-        private Label label1;
-        private ClassCustom.RJButton rjButton2;
-        private ClassCustom.RJButton rjButton1;
         private DataGridViewTextBoxColumn nickname;
+        private DataGridViewTextBoxColumn rol;
         private DataGridViewTextBoxColumn name;
-        private DataGridViewTextBoxColumn Telefono;
-        private DataGridViewTextBoxColumn plan;
+        private DataGridViewTextBoxColumn data_fisic;
         private DataGridViewTextBoxColumn last_expiration;
+        private DataGridViewTextBoxColumn plan;
+        private DataGridViewTextBoxColumn wallet;
+        private Panel panel2;
+        private ClassCustom.RJButton rjButton1;
+        private ClassCustom.RJButton rjButton4;
+        private ClassCustom.RJButton rjButton3;
+        private CustomControls.RJControls.RJTextBox rjTextBox1;
+        private ClassCustom.RJButton rjButton2;
     }
 }
