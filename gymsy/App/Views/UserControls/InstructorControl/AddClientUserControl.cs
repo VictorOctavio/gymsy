@@ -303,6 +303,7 @@ namespace gymsy.UserControls
                     {
 
                         MessageBox.Show("Se Guardaron correcctamente los datos");
+
                     }
                     else //La vista esta en modo edicion se deven editar los datos
                     {
