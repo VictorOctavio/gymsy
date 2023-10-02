@@ -169,3 +169,6 @@ C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-window
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.App.Views.UserControls.ClientControls.HistoryClientControl.resources
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.App.Views.UserControls.ClientControls.AddProgressClientControl.resources
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\gymsy.dll.config
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.App.Views.UserControls.ClientControls.HistoryClientControl.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.App.Views.UserControls.ClientControls.AddProgressClientControl.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\CustomControls.RJControls.RJComboBox.resources

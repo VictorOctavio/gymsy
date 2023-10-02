@@ -66,8 +66,8 @@
             mainWrapper = new Panel();
             navbar = new Panel();
             panelNavRight = new Panel();
-            panel2 = new Panel();
             btnWalletNav = new Button();
+            panel2 = new Panel();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -765,6 +765,7 @@
             // 
             panelNavRight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelNavRight.BackColor = Color.DarkCyan;
+            panelNavRight.Controls.Add(btnWalletNav);
             panelNavRight.Controls.Add(panel2);
             panelNavRight.Controls.Add(btnNotifications);
             panelNavRight.ForeColor = Color.White;
@@ -773,20 +774,6 @@
             panelNavRight.Name = "panelNavRight";
             panelNavRight.Size = new Size(348, 71);
             panelNavRight.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(btnWalletNav);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            panel2.ForeColor = Color.White;
-            panel2.Location = new Point(3, 2);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(283, 69);
-            panel2.TabIndex = 1;
             // 
             // btnWalletNav
             // 
@@ -798,12 +785,25 @@
             btnWalletNav.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnWalletNav.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnWalletNav.FlatStyle = FlatStyle.Flat;
-            btnWalletNav.Location = new Point(241, 5);
+            btnWalletNav.Location = new Point(299, 18);
             btnWalletNav.Name = "btnWalletNav";
             btnWalletNav.Size = new Size(37, 33);
             btnWalletNav.TabIndex = 4;
             btnWalletNav.UseVisualStyleBackColor = false;
             btnWalletNav.Click += btnWalletNav_Click;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label2);
+            panel2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            panel2.ForeColor = Color.White;
+            panel2.Location = new Point(3, 2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(283, 69);
+            panel2.TabIndex = 1;
             // 
             // label5
             // 
@@ -853,6 +853,7 @@
             // 
             btnNotifications.BackColor = Color.DarkOrange;
             btnNotifications.Cursor = Cursors.Hand;
+            btnNotifications.Enabled = false;
             btnNotifications.FlatAppearance.BorderSize = 0;
             btnNotifications.FlatStyle = FlatStyle.Flat;
             btnNotifications.Location = new Point(287, 1);

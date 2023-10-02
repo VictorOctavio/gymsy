@@ -95,7 +95,7 @@
             DGUsers.RowTemplate.Height = 25;
             DGUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGUsers.ShowCellErrors = false;
-            DGUsers.Size = new Size(994, 369);
+            DGUsers.Size = new Size(994, 376);
             DGUsers.TabIndex = 1;
             // 
             // nickname
@@ -309,9 +309,9 @@
             TBBusqueda.PasswordChar = false;
             TBBusqueda.PlaceholderColor = Color.DarkGray;
             TBBusqueda.PlaceholderText = "Ingrese un nombre...";
+            TBBusqueda.ReadOnly = false;
             TBBusqueda.Size = new Size(245, 31);
             TBBusqueda.TabIndex = 80;
-            TBBusqueda.Text = "";
             TBBusqueda.UnderlinedStyle = false;
             // 
             // BEditarCliente

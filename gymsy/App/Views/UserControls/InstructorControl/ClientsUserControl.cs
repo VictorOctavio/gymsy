@@ -92,7 +92,7 @@ namespace gymsy.UserControls
             if (resultado == DialogResult.Yes)
             {
 
-                
+
 
                 MessageBox.Show("El usuario ha sido eliminado correctamente.", "Eliminación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

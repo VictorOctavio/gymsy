@@ -30,6 +30,7 @@
         {
             a = new Label();
             settingsWrapper = new Panel();
+            LbErrorChangePass = new Label();
             comboBoxAvatar = new ComboBox();
             gorilla_avatar = new PictureBox();
             panelError = new Panel();
@@ -93,6 +94,7 @@
             settingsWrapper.AutoScrollMinSize = new Size(800, 700);
             settingsWrapper.AutoSize = true;
             settingsWrapper.BackColor = Color.FromArgb(16, 8, 23);
+            settingsWrapper.Controls.Add(LbErrorChangePass);
             settingsWrapper.Controls.Add(comboBoxAvatar);
             settingsWrapper.Controls.Add(gorilla_avatar);
             settingsWrapper.Controls.Add(panelError);
@@ -114,7 +116,21 @@
             settingsWrapper.Name = "settingsWrapper";
             settingsWrapper.Size = new Size(1038, 703);
             settingsWrapper.TabIndex = 1;
-            settingsWrapper.Paint += SettingsWrapper_Paint;
+            // 
+            // LbErrorChangePass
+            // 
+            LbErrorChangePass.Anchor = AnchorStyles.Top;
+            LbErrorChangePass.AutoSize = true;
+            LbErrorChangePass.BackColor = Color.Transparent;
+            LbErrorChangePass.FlatStyle = FlatStyle.Flat;
+            LbErrorChangePass.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            LbErrorChangePass.ForeColor = Color.Crimson;
+            LbErrorChangePass.Location = new Point(307, 487);
+            LbErrorChangePass.Name = "LbErrorChangePass";
+            LbErrorChangePass.Size = new Size(82, 19);
+            LbErrorChangePass.TabIndex = 30;
+            LbErrorChangePass.Text = "*requerido";
+            LbErrorChangePass.Visible = false;
             // 
             // comboBoxAvatar
             // 
@@ -227,6 +243,7 @@
             tbCurrentPassword.Margin = new Padding(5);
             tbCurrentPassword.Multiline = true;
             tbCurrentPassword.Name = "tbCurrentPassword";
+            tbCurrentPassword.PasswordChar = '*';
             tbCurrentPassword.Size = new Size(335, 40);
             tbCurrentPassword.TabIndex = 11;
             // 
@@ -277,6 +294,7 @@
             tbNewPassword.Margin = new Padding(5);
             tbNewPassword.Multiline = true;
             tbNewPassword.Name = "tbNewPassword";
+            tbNewPassword.PasswordChar = '*';
             tbNewPassword.Size = new Size(335, 40);
             tbNewPassword.TabIndex = 11;
             // 
@@ -619,5 +637,6 @@
         private Button panelErrorBtnClose;
         private PictureBox gorilla_avatar;
         private ComboBox comboBoxAvatar;
+        private Label LbErrorChangePass;
     }
 }

@@ -247,8 +247,8 @@ namespace gymsy.UserControls
 
 
             //Cargar los planes desde la base de datos
-             
-            
+
+
             /*/Cargar la descripción de los planes desde la base de datos
             var planes = GymsyContext.Plan.ToList();
 
@@ -268,8 +268,8 @@ namespace gymsy.UserControls
                 MostrarInformacionSeleccionada(0); // Mostrar información relacionada al elemento predeterminado
             }
             */
-             
-             
+
+
 
         }
 

@@ -1,4 +1,5 @@
 ﻿using CustomControls.RJControls;
+using gymsy.Context;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,8 @@ namespace gymsy.UserControls
         public AddPlanUserControl()
         {
             InitializeComponent();
+
+            TBBusqueda.Text = AppState.planes[0].Description ;
         }
 
         private void TBPrecio_KeyPress(object sender, KeyPressEventArgs e)

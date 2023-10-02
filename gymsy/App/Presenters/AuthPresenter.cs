@@ -29,7 +29,7 @@ namespace gymsy.App.Presenters
             this.authView.Show();
         }
 
-       async private void Signin(object? sender, EventArgs e)
+       private void Signin(object? sender, EventArgs e)
         {
             try
             {
@@ -52,8 +52,6 @@ namespace gymsy.App.Presenters
                     else
                     {
 
-
-
                         this.authView.IsSuccessful = true;
                         this.authView.Message = "Hola, "+peopleFound.FirstName+" :)";
                         this.authView.HandleResponseDBMessage();
@@ -62,26 +60,19 @@ namespace gymsy.App.Presenters
                         // Delay
                         Thread.Sleep(2000);
 
+                        // Update global state
                         AppState.person = peopleFound;
-                        //AppState.clients = clients;
 
-                        //Lo mismo deveria ser para clientes
-
-                        var planes = this.gymsydb.TrainingPlans
-                                .Where(plan => plan.IdInstructor == peopleFound.IdPerson)
-                                .ToList();
-
-                      
-
-
-                        AppState.planes = planes;
-
-                        this.authView.Hide();
+                        this.asignMethods(peopleFound);
+                        
+                        //this.authView.Hide();
 
                         // Open form
-                        IMainView view = new MainView(peopleFound);
+                        IMainView view = new MainView();
                         new MainPresenter(view, gymsydb);
 
+                       
+                        view.FormClosed += (s, args) => this.authView.Show();
                         view.Show();
                     }
                 }
@@ -99,5 +90,51 @@ namespace gymsy.App.Presenters
                 this.authView.Loading = false;
             }
         }
+
+
+        private void asignMethods(Person personFound)
+        {
+            try
+            {
+                switch (personFound.RolId)
+                {
+                    // this person is admin
+                    case 1:
+                       
+                        var instructorsFound = this.gymsydb.People
+                                                .Where(person => person.RolId == 2)
+                                                .ToList();
+
+                        AppState.instructors = instructorsFound;
+                        break;
+
+                    // this person is instructor
+                    case 2:
+
+                        var instructorFound = this.gymsydb.Instructors
+                                                .Where(instructor => instructor.IdPerson == personFound.IdPerson)
+                                                .First();
+
+                        var planesFound = this.gymsydb.TrainingPlans
+                                                 .Where(plan => plan.IdInstructor == instructorFound.IdInstructor)
+                                                 .ToList();
+
+                        AppState.planes = planesFound;
+
+                        break;
+
+                    // this person is client
+                    case 3:
+                        // Code to execute if expression matches value1
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Algo ha salido mal :(");
+            }
+           
+        }
+
     }
 }

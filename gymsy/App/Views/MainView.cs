@@ -3,6 +3,7 @@ using gymsy.App.Presenters;
 using gymsy.App.Views;
 using gymsy.App.Views.Interfaces;
 using gymsy.App.Views.UserControls.ClientControls;
+using gymsy.Context;
 using gymsy.UserControls;
 using gymsy.UserControls.AdminControls;
 using gymsy.UserControls.ClientControls;
@@ -33,15 +34,17 @@ namespace gymsy
         private Person person;
         private string Message;
 
-        public MainView(Person person)
+        public MainView()
         {
-            this.person = person;
+            this.person = AppState.person;
             InitializeComponent();
             InitializeUser();
             InitializeNavigationControl(this.rols[person.RolId]);
             InitializeNavigationButtons(this.rols[person.RolId]);
             InitializeUserRol(this.rols[person.RolId]);
         }
+
+        public event EventHandler FormClosed;
 
         // Getters and Setters
         Person IMainView.person
@@ -73,20 +76,19 @@ namespace gymsy
         {
 
             List<UserControl> userControlsList = new List<UserControl>();
-            //new SettingPresenter(new SettingsUserControl(this.person), gymsyDb);
 
             List<UserControl> userControls = new List<UserControl>()
-            { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(this.person),
+            { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(),
               new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(), new AddProgressClientControl()
             };
 
             List<UserControl> adminControls = new List<UserControl>()
-            { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(this.person),
+            { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(),
             new AddInstructorControl(), new DashboardAdminControl(), new WalletUserControl()
             };
 
             List<UserControl> clientControls = new List<UserControl>()
-            { new AboutClientControl(), new ProgressClientControl(), new PaymentsUserControl(), new SettingsUserControl(this.person),
+            { new AboutClientControl(), new ProgressClientControl(), new PaymentsUserControl(), new SettingsUserControl(),
             };
 
             if (rol == "admin") userControlsList = adminControls;
@@ -356,7 +358,6 @@ namespace gymsy
         {
             this.Close();
         }
-
 
     }
 }
