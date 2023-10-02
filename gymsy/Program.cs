@@ -9,6 +9,7 @@ namespace gymsy
 {
     internal static class Program
     {
+        [STAThread]
         static void Main()
         {
             //Config & Conect to database

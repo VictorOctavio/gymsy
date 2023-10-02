@@ -203,6 +203,7 @@
             rjButton2.TextAlign = ContentAlignment.MiddleLeft;
             rjButton2.TextColor = Color.White;
             rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Click += rjButton2_Click;
             // 
             // rjButton1
             // 
@@ -229,6 +230,7 @@
             rjButton1.TextAlign = ContentAlignment.MiddleLeft;
             rjButton1.TextColor = Color.White;
             rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
             // 
             // BCancelarBusqueda
             // 
@@ -309,9 +311,9 @@
             TBBusqueda.PasswordChar = false;
             TBBusqueda.PlaceholderColor = Color.DarkGray;
             TBBusqueda.PlaceholderText = "Ingrese un nombre...";
+            TBBusqueda.ReadOnly = false;
             TBBusqueda.Size = new Size(245, 31);
             TBBusqueda.TabIndex = 80;
-            TBBusqueda.Text = "";
             TBBusqueda.UnderlinedStyle = false;
             // 
             // BEditarCliente

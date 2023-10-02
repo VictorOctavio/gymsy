@@ -16,5 +16,10 @@ namespace gymsy.UserControls.AdminControls
         {
             InitializeComponent();
         }
+
+        private void BGuardarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
