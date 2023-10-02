@@ -18,7 +18,7 @@ namespace gymsy.UserControls
     public partial class AddClientUserControl : UserControl
     {
         private bool isEditMode = false; // Variable para saber si se esta editando o agregando un nuevo cliente
-
+        private int indexRowSelect = 0;
 
         public AddClientUserControl()
         {
@@ -29,6 +29,12 @@ namespace gymsy.UserControls
 
             //Carga el comboBox con los planes
             CargarElementosComboBox();
+
+            
+
+
+
+
         }
 
         private void TBNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -369,6 +375,10 @@ namespace gymsy.UserControls
             TBDescripcion.Text = "Complemento++";
             TBNombreInstructor.Text = "Juansito Perez";
         }
+
+
+       
+
     }
 
 

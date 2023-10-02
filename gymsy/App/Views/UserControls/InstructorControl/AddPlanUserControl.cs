@@ -15,7 +15,7 @@ namespace gymsy.UserControls
     {
         private int idPlan = 0;
         private bool isEditMode = false;
-        private int indexRowSelect = 0;
+        
 
         //private DataGridViewRow selectedRow; // Declara una variable para mantener la fila seleccionada.
         public AddPlanUserControl()
