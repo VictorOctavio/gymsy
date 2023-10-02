@@ -438,6 +438,25 @@
           }
         }
       },
+      "Syncfusion.Licensing/23.1.38": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "23.1.38.0",
+            "fileVersion": "23.1.38.0"
+          }
+        }
+      },
+      "Syncfusion.SfChart.WPF/23.1.38": {
+        "dependencies": {
+          "Syncfusion.Licensing": "23.1.38"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Syncfusion.SfChart.WPF.dll": {
+            "assemblyVersion": "23.1.38.0",
+            "fileVersion": "23.1.38.0"
+          }
+        }
+      },
       "System.CodeDom/4.4.0": {
         "runtime": {
           "lib/netstandard2.0/System.CodeDom.dll": {
@@ -991,6 +1010,20 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/23.1.38": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KmKdB4XhI2ahtOTYTJKg/Brjoof8OCncleI6Y5N9n/ycrkj2M7q3l3Ykcja9tVxWV9Pz4M4zqLjYGd25FLnWeg==",
+      "path": "syncfusion.licensing/23.1.38",
+      "hashPath": "syncfusion.licensing.23.1.38.nupkg.sha512"
+    },
+    "Syncfusion.SfChart.WPF/23.1.38": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ytztn+xi8vt5rq/GpuRV+1WJAqEVgmZW+e2vCzdEzleIrhb2x1/vXiKj/BHyaFxwDXkYHrQ5vRaf4/djpLi2+A==",
+      "path": "syncfusion.sfchart.wpf/23.1.38",
+      "hashPath": "syncfusion.sfchart.wpf.23.1.38.nupkg.sha512"
     },
     "System.CodeDom/4.4.0": {
       "type": "package",

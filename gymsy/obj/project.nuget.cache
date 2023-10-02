@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ea3O3lzAewmhBkjDii/cTGnod2snNHHtfczKD9SmEHYIIDkahwXoTVeuuplqZkESTSPAJhEEHAd2awt6jtzLWw==",
+  "dgSpecHash": "OpkneUd5OpElpb4MJbD1tnUpgaSGU4rpLA4l6zg+1snPQ/xWu/YztviJMCQZbII9rIjqJam/04yWp1bZ7kvn4w==",
   "success": true,
   "projectFilePath": "C:\\Users\\byOCT1\\Desktop\\gymsy\\gymsy\\gymsy.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,8 @@
     "C:\\Users\\byOCT1\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\byOCT1\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\byOCT1\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\byOCT1\\.nuget\\packages\\syncfusion.licensing\\23.1.38\\syncfusion.licensing.23.1.38.nupkg.sha512",
+    "C:\\Users\\byOCT1\\.nuget\\packages\\syncfusion.sfchart.wpf\\23.1.38\\syncfusion.sfchart.wpf.23.1.38.nupkg.sha512",
     "C:\\Users\\byOCT1\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\byOCT1\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\byOCT1\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

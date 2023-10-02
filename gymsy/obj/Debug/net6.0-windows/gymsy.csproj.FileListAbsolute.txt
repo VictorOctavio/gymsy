@@ -115,3 +115,9 @@ C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\runtimes\win\lib\ne
 C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.AuthView.resources
 C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.MainView.resources
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.App.Views.UserControls.ClientControls.HistoryClientControl.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.ProgressUserControl.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.App.Views.UserControls.ClientControls.ProgressUserControl.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.App.Views.UserControls.ClientControls.AddProgressClientControl.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Syncfusion.Licensing.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Syncfusion.SfChart.WPF.dll

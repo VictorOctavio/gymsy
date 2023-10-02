@@ -11,7 +11,7 @@ namespace gymsy
     {
         static void Main()
         {
-             //Config & Conect to database
+            //Config & Conect to database
             string stringConnection = Resources.stringConnection;
             DbContextOptionsBuilder<GymsyDbContext> optionsBuilder = new();
 
@@ -28,4 +28,4 @@ namespace gymsy
             Application.Run((Form)view);
         }
     }
-}
+} 

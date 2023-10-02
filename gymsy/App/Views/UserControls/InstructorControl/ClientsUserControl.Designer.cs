@@ -90,7 +90,7 @@
             driedUsers.RowTemplate.Height = 25;
             driedUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             driedUsers.ShowCellErrors = false;
-            driedUsers.Size = new Size(994, 400);
+            driedUsers.Size = new Size(994, 410);
             driedUsers.TabIndex = 1;
             // 
             // nickname

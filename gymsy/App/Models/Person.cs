@@ -19,6 +19,8 @@ public partial class Person
 
     public string LastName { get; set; } = null!;
 
+    public string CBU { get; set; } = null!;
+
     public string NumberPhone { get; set; } = null!;
 
     public DateTime Birthday { get; set; }

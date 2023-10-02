@@ -36,7 +36,7 @@ namespace gymsy.App.Presenters
                 var peopleFound = this.gymsydb.People
                                               .Where(people => people.Nickname == this.authView.Nickname)
                                               .First();
-
+   
                 // validar existencia del usuario
                 if (peopleFound != null) {
 
@@ -49,22 +49,28 @@ namespace gymsy.App.Presenters
                     }
                     else
                     {
+
+
+
                         this.authView.IsSuccessful = true;
                         this.authView.Message = "Hola, "+peopleFound.FirstName+" :)";
                         this.authView.HandleResponseDBMessage();
                         this.authView.Refresh();
-
-                        
+      
                         // Delay
                         Thread.Sleep(2000);
 
-                        //this.authView.Close();
+                        AppState.person = peopleFound;
+                        //AppState.clients = clients;
+                        //AppState.planes = planes;
+
+                        this.authView.Hide();
 
                         // Open form
                         IMainView view = new MainView(peopleFound);
                         new MainPresenter(view, gymsydb);
 
-                         view.Show();
+                        view.Show();
                     }
                 }
             }

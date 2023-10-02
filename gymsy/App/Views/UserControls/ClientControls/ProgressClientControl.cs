@@ -15,6 +15,20 @@ namespace gymsy.UserControls.ClientControls
         public ProgressClientControl()
         {
             InitializeComponent();
+            InitializeGridProgress();
+        }
+
+        private void InitializeGridProgress()
+        {
+            dataGridProgress.Rows.Add(0, "01/07/22", null, 82.5, "Construcion de volumen");
+            dataGridProgress.Rows.Add(1, "01/09/22", null, 80.5, "Etapa definicion");
+            dataGridProgress.Rows.Add(2, "01/11/23", null, 80.5, "Etapa definicion");
+            dataGridProgress.Rows.Add(3, "01/01/23", null, 80.5, "Etapa definicion");
+        }
+
+        private void btnAddProgress_Click(object sender, EventArgs e)
+        {
+            MainView.navigationControl.Display(8);
         }
     }
 }

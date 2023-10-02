@@ -30,17 +30,6 @@
         {
             label1 = new Label();
             panel1 = new Panel();
-            panel3 = new Panel();
-            rjTextBox7 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox6 = new CustomControls.RJControls.RJTextBox();
-            rjTextBox5 = new CustomControls.RJControls.RJTextBox();
-            rjComboBox1 = new CustomControls.RJControls.RJComboBox();
-            rjButton1 = new ClassCustom.RJButton();
-            label19 = new Label();
-            label20 = new Label();
-            label18 = new Label();
-            label16 = new Label();
-            label14 = new Label();
             label12 = new Label();
             a = new Label();
             panel2 = new Panel();
@@ -61,10 +50,21 @@
             label7 = new Label();
             label5 = new Label();
             label4 = new Label();
+            label14 = new Label();
+            label16 = new Label();
+            label18 = new Label();
+            label20 = new Label();
+            label19 = new Label();
+            rjButton1 = new ClassCustom.RJButton();
+            rjComboBox1 = new CustomControls.RJControls.RJComboBox();
+            rjTextBox5 = new CustomControls.RJControls.RJTextBox();
+            rjTextBox6 = new CustomControls.RJControls.RJTextBox();
+            rjTextBox7 = new CustomControls.RJControls.RJTextBox();
+            panel3 = new Panel();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -91,187 +91,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1000, 530);
             panel1.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel3.Controls.Add(rjTextBox7);
-            panel3.Controls.Add(rjTextBox6);
-            panel3.Controls.Add(rjTextBox5);
-            panel3.Controls.Add(rjComboBox1);
-            panel3.Controls.Add(rjButton1);
-            panel3.Controls.Add(label19);
-            panel3.Controls.Add(label20);
-            panel3.Controls.Add(label18);
-            panel3.Controls.Add(label16);
-            panel3.Controls.Add(label14);
-            panel3.Location = new Point(539, 76);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(412, 439);
-            panel3.TabIndex = 52;
-            // 
-            // rjTextBox7
-            // 
-            rjTextBox7.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox7.BorderColor = Color.Transparent;
-            rjTextBox7.BorderFocusColor = Color.HotPink;
-            rjTextBox7.BorderRadius = 15;
-            rjTextBox7.BorderSize = 2;
-            rjTextBox7.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox7.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox7.Location = new Point(34, 255);
-            rjTextBox7.Margin = new Padding(4);
-            rjTextBox7.Multiline = false;
-            rjTextBox7.Name = "rjTextBox7";
-            rjTextBox7.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox7.PasswordChar = false;
-            rjTextBox7.PlaceholderColor = Color.DarkGray;
-            rjTextBox7.PlaceholderText = "Ingrese un nombre...";
-            rjTextBox7.Size = new Size(204, 31);
-            rjTextBox7.TabIndex = 70;
-            rjTextBox7.Texts = "";
-            rjTextBox7.UnderlinedStyle = false;
-            // 
-            // rjTextBox6
-            // 
-            rjTextBox6.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox6.BorderColor = Color.Transparent;
-            rjTextBox6.BorderFocusColor = Color.HotPink;
-            rjTextBox6.BorderRadius = 15;
-            rjTextBox6.BorderSize = 2;
-            rjTextBox6.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox6.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox6.Location = new Point(34, 178);
-            rjTextBox6.Margin = new Padding(4);
-            rjTextBox6.Multiline = false;
-            rjTextBox6.Name = "rjTextBox6";
-            rjTextBox6.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox6.PasswordChar = false;
-            rjTextBox6.PlaceholderColor = Color.DarkGray;
-            rjTextBox6.PlaceholderText = "Ingrese un nombre...";
-            rjTextBox6.Size = new Size(204, 31);
-            rjTextBox6.TabIndex = 69;
-            rjTextBox6.Texts = "";
-            rjTextBox6.UnderlinedStyle = false;
-            // 
-            // rjTextBox5
-            // 
-            rjTextBox5.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox5.BorderColor = Color.Transparent;
-            rjTextBox5.BorderFocusColor = Color.HotPink;
-            rjTextBox5.BorderRadius = 15;
-            rjTextBox5.BorderSize = 2;
-            rjTextBox5.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox5.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox5.Location = new Point(34, 119);
-            rjTextBox5.Margin = new Padding(4);
-            rjTextBox5.Multiline = false;
-            rjTextBox5.Name = "rjTextBox5";
-            rjTextBox5.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox5.PasswordChar = false;
-            rjTextBox5.PlaceholderColor = Color.DarkGray;
-            rjTextBox5.PlaceholderText = "Ingrese un nombre...";
-            rjTextBox5.Size = new Size(204, 31);
-            rjTextBox5.TabIndex = 68;
-            rjTextBox5.Texts = "";
-            rjTextBox5.UnderlinedStyle = false;
-            // 
-            // rjComboBox1
-            // 
-            rjComboBox1.BackColor = Color.WhiteSmoke;
-            rjComboBox1.BorderColor = Color.MediumSlateBlue;
-            rjComboBox1.BorderSize = 1;
-            rjComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-            rjComboBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            rjComboBox1.ForeColor = Color.DimGray;
-            rjComboBox1.IconColor = Color.MediumSlateBlue;
-            rjComboBox1.ListBackColor = Color.FromArgb(230, 228, 245);
-            rjComboBox1.ListTextColor = Color.DimGray;
-            rjComboBox1.Location = new Point(45, 50);
-            rjComboBox1.MinimumSize = new Size(200, 30);
-            rjComboBox1.Name = "rjComboBox1";
-            rjComboBox1.Padding = new Padding(1);
-            rjComboBox1.Size = new Size(219, 30);
-            rjComboBox1.TabIndex = 65;
-            rjComboBox1.Texts = "";
-            // 
-            // rjButton1
-            // 
-            rjButton1.BackColor = Color.FromArgb(41, 147, 45);
-            rjButton1.BackgroundColor = Color.FromArgb(41, 147, 45);
-            rjButton1.BorderColor = Color.PaleVioletRed;
-            rjButton1.BorderRadius = 15;
-            rjButton1.BorderSize = 0;
-            rjButton1.FlatAppearance.BorderSize = 0;
-            rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            rjButton1.ForeColor = Color.White;
-            rjButton1.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            rjButton1.IconColor = Color.FromArgb(230, 237, 243);
-            rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            rjButton1.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton1.Location = new Point(211, 369);
-            rjButton1.Name = "rjButton1";
-            rjButton1.Padding = new Padding(10, 0, 0, 0);
-            rjButton1.Size = new Size(188, 53);
-            rjButton1.TabIndex = 64;
-            rjButton1.Text = "Guardar Cliente";
-            rjButton1.TextAlign = ContentAlignment.MiddleLeft;
-            rjButton1.TextColor = Color.White;
-            rjButton1.UseVisualStyleBackColor = false;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.ForeColor = Color.Red;
-            label19.Location = new Point(45, 85);
-            label19.Name = "label19";
-            label19.Size = new Size(105, 15);
-            label19.TabIndex = 60;
-            label19.Text = "*Campo requerido";
-            label19.Visible = false;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.ForeColor = Color.FromArgb(230, 237, 243);
-            label20.Location = new Point(34, 229);
-            label20.Name = "label20";
-            label20.Size = new Size(58, 15);
-            label20.TabIndex = 61;
-            label20.Text = "Instructor";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.ForeColor = Color.FromArgb(230, 237, 243);
-            label18.Location = new Point(34, 155);
-            label18.Name = "label18";
-            label18.Size = new Size(69, 15);
-            label18.TabIndex = 58;
-            label18.Text = "Descripcion";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.ForeColor = Color.FromArgb(230, 237, 243);
-            label16.Location = new Point(34, 100);
-            label16.Name = "label16";
-            label16.Size = new Size(40, 15);
-            label16.TabIndex = 55;
-            label16.Text = "Precio";
-            // 
-            // label14
-            // 
-            label14.Anchor = AnchorStyles.Top;
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.ForeColor = Color.FromArgb(230, 237, 243);
-            label14.Location = new Point(115, 12);
-            label14.Name = "label14";
-            label14.Size = new Size(118, 25);
-            label14.TabIndex = 53;
-            label14.Text = "Asignar plan";
             // 
             // label12
             // 
@@ -570,6 +389,187 @@
             label4.TabIndex = 41;
             label4.Text = "Apellido";
             // 
+            // label14
+            // 
+            label14.Anchor = AnchorStyles.Top;
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.ForeColor = Color.FromArgb(230, 237, 243);
+            label14.Location = new Point(115, 12);
+            label14.Name = "label14";
+            label14.Size = new Size(118, 25);
+            label14.TabIndex = 53;
+            label14.Text = "Asignar plan";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.ForeColor = Color.FromArgb(230, 237, 243);
+            label16.Location = new Point(34, 100);
+            label16.Name = "label16";
+            label16.Size = new Size(40, 15);
+            label16.TabIndex = 55;
+            label16.Text = "Precio";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.ForeColor = Color.FromArgb(230, 237, 243);
+            label18.Location = new Point(34, 155);
+            label18.Name = "label18";
+            label18.Size = new Size(69, 15);
+            label18.TabIndex = 58;
+            label18.Text = "Descripcion";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.ForeColor = Color.FromArgb(230, 237, 243);
+            label20.Location = new Point(34, 229);
+            label20.Name = "label20";
+            label20.Size = new Size(58, 15);
+            label20.TabIndex = 61;
+            label20.Text = "Instructor";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.ForeColor = Color.Red;
+            label19.Location = new Point(45, 85);
+            label19.Name = "label19";
+            label19.Size = new Size(105, 15);
+            label19.TabIndex = 60;
+            label19.Text = "*Campo requerido";
+            label19.Visible = false;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.FromArgb(41, 147, 45);
+            rjButton1.BackgroundColor = Color.FromArgb(41, 147, 45);
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 15;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.ForeColor = Color.White;
+            rjButton1.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            rjButton1.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton1.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton1.Location = new Point(211, 369);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Padding = new Padding(10, 0, 0, 0);
+            rjButton1.Size = new Size(188, 53);
+            rjButton1.TabIndex = 64;
+            rjButton1.Text = "Guardar Cliente";
+            rjButton1.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
+            // 
+            // rjComboBox1
+            // 
+            rjComboBox1.BackColor = Color.WhiteSmoke;
+            rjComboBox1.BorderColor = Color.MediumSlateBlue;
+            rjComboBox1.BorderSize = 1;
+            rjComboBox1.DropDownStyle = ComboBoxStyle.DropDown;
+            rjComboBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            rjComboBox1.ForeColor = Color.DimGray;
+            rjComboBox1.IconColor = Color.MediumSlateBlue;
+            rjComboBox1.ListBackColor = Color.FromArgb(230, 228, 245);
+            rjComboBox1.ListTextColor = Color.DimGray;
+            rjComboBox1.Location = new Point(45, 50);
+            rjComboBox1.MinimumSize = new Size(200, 30);
+            rjComboBox1.Name = "rjComboBox1";
+            rjComboBox1.Padding = new Padding(1);
+            rjComboBox1.Size = new Size(219, 30);
+            rjComboBox1.TabIndex = 65;
+            rjComboBox1.Texts = "";
+            // 
+            // rjTextBox5
+            // 
+            rjTextBox5.BackColor = Color.FromArgb(69, 34, 99);
+            rjTextBox5.BorderColor = Color.Transparent;
+            rjTextBox5.BorderFocusColor = Color.HotPink;
+            rjTextBox5.BorderRadius = 15;
+            rjTextBox5.BorderSize = 2;
+            rjTextBox5.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            rjTextBox5.ForeColor = Color.FromArgb(230, 237, 243);
+            rjTextBox5.Location = new Point(34, 119);
+            rjTextBox5.Margin = new Padding(4);
+            rjTextBox5.Multiline = false;
+            rjTextBox5.Name = "rjTextBox5";
+            rjTextBox5.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox5.PasswordChar = false;
+            rjTextBox5.PlaceholderColor = Color.DarkGray;
+            rjTextBox5.PlaceholderText = "Ingrese un nombre...";
+            rjTextBox5.Size = new Size(204, 31);
+            rjTextBox5.TabIndex = 68;
+            rjTextBox5.Texts = "";
+            rjTextBox5.UnderlinedStyle = false;
+            // 
+            // rjTextBox6
+            // 
+            rjTextBox6.BackColor = Color.FromArgb(69, 34, 99);
+            rjTextBox6.BorderColor = Color.Transparent;
+            rjTextBox6.BorderFocusColor = Color.HotPink;
+            rjTextBox6.BorderRadius = 15;
+            rjTextBox6.BorderSize = 2;
+            rjTextBox6.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            rjTextBox6.ForeColor = Color.FromArgb(230, 237, 243);
+            rjTextBox6.Location = new Point(34, 178);
+            rjTextBox6.Margin = new Padding(4);
+            rjTextBox6.Multiline = false;
+            rjTextBox6.Name = "rjTextBox6";
+            rjTextBox6.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox6.PasswordChar = false;
+            rjTextBox6.PlaceholderColor = Color.DarkGray;
+            rjTextBox6.PlaceholderText = "Ingrese un nombre...";
+            rjTextBox6.Size = new Size(204, 31);
+            rjTextBox6.TabIndex = 69;
+            rjTextBox6.Texts = "";
+            rjTextBox6.UnderlinedStyle = false;
+            // 
+            // rjTextBox7
+            // 
+            rjTextBox7.BackColor = Color.FromArgb(69, 34, 99);
+            rjTextBox7.BorderColor = Color.Transparent;
+            rjTextBox7.BorderFocusColor = Color.HotPink;
+            rjTextBox7.BorderRadius = 15;
+            rjTextBox7.BorderSize = 2;
+            rjTextBox7.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            rjTextBox7.ForeColor = Color.FromArgb(230, 237, 243);
+            rjTextBox7.Location = new Point(34, 255);
+            rjTextBox7.Margin = new Padding(4);
+            rjTextBox7.Multiline = false;
+            rjTextBox7.Name = "rjTextBox7";
+            rjTextBox7.Padding = new Padding(10, 7, 10, 7);
+            rjTextBox7.PasswordChar = false;
+            rjTextBox7.PlaceholderColor = Color.DarkGray;
+            rjTextBox7.PlaceholderText = "Ingrese un nombre...";
+            rjTextBox7.Size = new Size(204, 31);
+            rjTextBox7.TabIndex = 70;
+            rjTextBox7.Texts = "";
+            rjTextBox7.UnderlinedStyle = false;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel3.Controls.Add(rjTextBox7);
+            panel3.Controls.Add(rjTextBox6);
+            panel3.Controls.Add(rjTextBox5);
+            panel3.Controls.Add(rjComboBox1);
+            panel3.Controls.Add(rjButton1);
+            panel3.Controls.Add(label19);
+            panel3.Controls.Add(label20);
+            panel3.Controls.Add(label18);
+            panel3.Controls.Add(label16);
+            panel3.Controls.Add(label14);
+            panel3.Location = new Point(539, 76);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(412, 439);
+            panel3.TabIndex = 52;
+            // 
             // AddClientUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -582,11 +582,11 @@
             Size = new Size(1000, 530);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -610,21 +610,21 @@
         private Label label7;
         private Panel panel2;
         private Label label13;
-        private Panel panel3;
-        private Label label14;
-        private Label label19;
-        private Label label20;
-        private Label label18;
-        private Label label16;
-        private ClassCustom.RJButton rjButton1;
         private ClassCustom.RJButton rjButton4;
         private CustomControls.RJControls.RJTextBox rjTextBox4;
         private CustomControls.RJControls.RJTextBox rjTextBox3;
         private CustomControls.RJControls.RJTextBox rjTextBox2;
         private CustomControls.RJControls.RJTextBox rjTextBox1;
-        private CustomControls.RJControls.RJComboBox rjComboBox1;
+        private Panel panel3;
         private CustomControls.RJControls.RJTextBox rjTextBox7;
         private CustomControls.RJControls.RJTextBox rjTextBox6;
         private CustomControls.RJControls.RJTextBox rjTextBox5;
+        private CustomControls.RJControls.RJComboBox rjComboBox1;
+        private ClassCustom.RJButton rjButton1;
+        private Label label19;
+        private Label label20;
+        private Label label18;
+        private Label label16;
+        private Label label14;
     }
 }
