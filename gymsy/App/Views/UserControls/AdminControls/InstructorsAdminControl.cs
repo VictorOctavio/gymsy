@@ -21,7 +21,7 @@ namespace gymsy.UserControls.AdminControls
         private void initializeDataGrid()
         {
             dataGridInstructors.Rows.Add("Mac Milla", "34321423", 14, "12/06/2019");
-            dataGridInstructors.Rows.Add("Robert William", "34436423",13, "12/06/2016");
+            dataGridInstructors.Rows.Add("Robert William", "34436423", 13, "12/06/2016");
             dataGridInstructors.Rows.Add("Alex", "34342312", 12, "12/06/2017");
         }
     }
