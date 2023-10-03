@@ -15,8 +15,7 @@ namespace gymsy.App.Views.Interfaces
 
         // Methods
         void Show();
-        event EventHandler FormClosed;
-       
+   
         // Navigation
         event EventHandler SettingView;
     }

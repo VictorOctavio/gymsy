@@ -18,12 +18,11 @@ namespace gymsy.UserControls
         private bool isEditMode = false;
         private int indexRowSelect = 0;
 
+
         //private DataGridViewRow selectedRow; // Declara una variable para mantener la fila seleccionada.
         public AddPlanUserControl()
         {
             InitializeComponent();
-
-            TBBusqueda.Text = AppState.planes[0].Description ;
         }
 
         private void TBPrecio_KeyPress(object sender, KeyPressEventArgs e)

@@ -9,8 +9,12 @@ namespace gymsy
 {
     internal static class Program
     {
+        [STAThread]
         static void Main()
         {
+
+            SimularBD.cargarListas();
+
             //Config & Conect to database
             string stringConnection = Resources.stringConnection;
             DbContextOptionsBuilder<GymsyDbContext> optionsBuilder = new();

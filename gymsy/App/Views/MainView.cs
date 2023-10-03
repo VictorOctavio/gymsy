@@ -44,8 +44,6 @@ namespace gymsy
             InitializeUserRol(this.rols[person.RolId]);
         }
 
-        public event EventHandler FormClosed;
-
         // Getters and Setters
         Person IMainView.person
         {

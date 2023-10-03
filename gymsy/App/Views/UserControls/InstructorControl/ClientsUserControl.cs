@@ -1,4 +1,6 @@
-﻿using gymsy.App.Views;
+﻿using gymsy.App.Models;
+using gymsy.App.Views;
+using gymsy.Context;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +16,14 @@ namespace gymsy.UserControls
 {
     public partial class ClientsUserControl : UserControl
     {
+
+        private int indexRowSelect = 0;
         public ClientsUserControl()
         {
             InitializeComponent();
+
+            //Cargar DataGrid
+            cargarPersonas(SimularBD.persons, false);
         }
 
         private void BAgregarCliente_Click(object sender, EventArgs e)
@@ -102,6 +109,49 @@ namespace gymsy.UserControls
 
                 MessageBox.Show("La eliminación del usuario ha sido cancelada.", "Eliminación Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void cargarPersonas(List<Person> personas, bool ActivosONo)
+        {
+            foreach (Person persona in personas)
+            {
+                if (persona.Inactive == ActivosONo && persona.RolId == 3)
+                {
+                    foreach (Client cliente in SimularBD.clients)
+                    {
+                        if (cliente.IdPerson == persona.IdPerson)
+                        {
+                            foreach (TrainingPlan planEntrenamiento in SimularBD.trainingPlans)
+                            {
+                                if (cliente.IdTrainingPlan == planEntrenamiento.IdTrainingPlan)
+                                {
+                                    DGUsers.Rows.Add(persona.Nickname, persona.FirstName + " " + persona.LastName,
+                                    persona.NumberPhone, planEntrenamiento.Description, cliente.LastExpiration.ToString("dd/MM/yyyy")
+                                    );
+                                }
+
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            // Actualiza la vista del DataGridView.
+            DGUsers.Refresh();
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            //Cargar DataGrid
+            //cargarPersonas(SimularBD.persons, false);
+            MainView.navigationControl.Display(7);
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            //Cargar DataGrid
+            cargarPersonas(SimularBD.persons, true);
         }
     }
 }

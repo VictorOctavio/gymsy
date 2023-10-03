@@ -426,7 +426,7 @@ namespace gymsy.UserControls
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = Color.FromArgb(230, 237, 243);
-            label14.Location = new Point(824, 37);
+            label14.Location = new Point(724, 38);
             label14.Name = "label14";
             label14.Size = new Size(118, 25);
             label14.TabIndex = 71;
