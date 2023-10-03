@@ -49,9 +49,6 @@
     <Compile Update="App\Views\UserControls\InstructorControl\PaymentsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="App\Views\UserControls\InvoiceUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="App\Views\UserControls\SettingsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            PictureBox menuButton;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             button1 = new Button();
             sidebar = new Panel();
@@ -37,10 +36,6 @@
             btnAddAdmin = new Button();
             button3 = new Button();
             btnAddInstructor = new Button();
-            tableLayoutClient = new TableLayoutPanel();
-            btnNavPaysClient = new Button();
-            btnNavProgress = new Button();
-            btnNavAboutme = new Button();
             tableLayoutAdmin = new TableLayoutPanel();
             btnNavPaysAdmin = new Button();
             btnNavInstructorAdmin = new Button();
@@ -49,9 +44,12 @@
             btnNavPayments = new Button();
             btnNavClients = new Button();
             btnNavDashboard = new Button();
+            tableLayoutClient = new TableLayoutPanel();
+            btnNavPaysClient = new Button();
+            btnNavProgress = new Button();
+            btnNavAboutme = new Button();
             panel3 = new Panel();
             label1 = new Label();
-            gorilla_avatar = new PictureBox();
             panelNavUser = new Panel();
             btnNavSignout = new Button();
             LabelNavRol = new Label();
@@ -79,15 +77,12 @@
             timerNavbarNotifications = new System.Windows.Forms.Timer(components);
             button2 = new Button();
             timerAddAdmin = new System.Windows.Forms.Timer(components);
-            menuButton = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)menuButton).BeginInit();
             sidebar.SuspendLayout();
             panelAddAdmin.SuspendLayout();
-            tableLayoutClient.SuspendLayout();
             tableLayoutAdmin.SuspendLayout();
             tableLayout.SuspendLayout();
+            tableLayoutClient.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).BeginInit();
             panelNavUser.SuspendLayout();
             panelBtnAdd.SuspendLayout();
             mainWrapper.SuspendLayout();
@@ -96,19 +91,6 @@
             panel2.SuspendLayout();
             panelNotifications.SuspendLayout();
             SuspendLayout();
-            // 
-            // menuButton
-            // 
-            menuButton.Cursor = Cursors.Hand;
-            menuButton.Image = (Image)resources.GetObject("menuButton.Image");
-            menuButton.Location = new Point(217, 19);
-            menuButton.Name = "menuButton";
-            menuButton.Size = new Size(30, 33);
-            menuButton.SizeMode = PictureBoxSizeMode.StretchImage;
-            menuButton.TabIndex = 0;
-            menuButton.TabStop = false;
-            menuButton.Visible = false;
-            menuButton.Click += menuButton_Click;
             // 
             // button1
             // 
@@ -138,9 +120,9 @@
             // 
             sidebar.BackColor = Color.FromArgb(9, 0, 20);
             sidebar.Controls.Add(panelAddAdmin);
-            sidebar.Controls.Add(tableLayoutClient);
             sidebar.Controls.Add(tableLayoutAdmin);
             sidebar.Controls.Add(tableLayout);
+            sidebar.Controls.Add(tableLayoutClient);
             sidebar.Controls.Add(panel3);
             sidebar.Controls.Add(panelNavUser);
             sidebar.Controls.Add(panelBtnAdd);
@@ -159,7 +141,7 @@
             panelAddAdmin.Controls.Add(btnAddAdmin);
             panelAddAdmin.Controls.Add(button3);
             panelAddAdmin.Controls.Add(btnAddInstructor);
-            panelAddAdmin.Location = new Point(0, 329);
+            panelAddAdmin.Location = new Point(0, 331);
             panelAddAdmin.MaximumSize = new Size(260, 154);
             panelAddAdmin.MinimumSize = new Size(260, 60);
             panelAddAdmin.Name = "panelAddAdmin";
@@ -201,7 +183,6 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
             button3.ImageAlign = ContentAlignment.MiddleLeft;
             button3.Location = new Point(2, 106);
             button3.Margin = new Padding(0);
@@ -238,99 +219,6 @@
             btnAddInstructor.UseVisualStyleBackColor = false;
             btnAddInstructor.Click += btnAddInstructor_Click;
             // 
-            // tableLayoutClient
-            // 
-            tableLayoutClient.BackColor = Color.Transparent;
-            tableLayoutClient.ColumnCount = 1;
-            tableLayoutClient.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutClient.Controls.Add(btnNavPaysClient, 0, 2);
-            tableLayoutClient.Controls.Add(btnNavProgress, 0, 1);
-            tableLayoutClient.Controls.Add(btnNavAboutme, 0, 0);
-            tableLayoutClient.Location = new Point(1, 134);
-            tableLayoutClient.Name = "tableLayoutClient";
-            tableLayoutClient.RowCount = 3;
-            tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutClient.Size = new Size(257, 192);
-            tableLayoutClient.TabIndex = 4;
-            tableLayoutClient.Visible = false;
-            // 
-            // btnNavPaysClient
-            // 
-            btnNavPaysClient.BackColor = Color.Transparent;
-            btnNavPaysClient.Cursor = Cursors.Hand;
-            btnNavPaysClient.Dock = DockStyle.Fill;
-            btnNavPaysClient.FlatAppearance.BorderSize = 0;
-            btnNavPaysClient.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 0, 40);
-            btnNavPaysClient.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 0, 40);
-            btnNavPaysClient.FlatStyle = FlatStyle.Flat;
-            btnNavPaysClient.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNavPaysClient.ForeColor = Color.White;
-            btnNavPaysClient.Image = Properties.Resources.payments_item;
-            btnNavPaysClient.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavPaysClient.Location = new Point(0, 128);
-            btnNavPaysClient.Margin = new Padding(0);
-            btnNavPaysClient.Name = "btnNavPaysClient";
-            btnNavPaysClient.Padding = new Padding(10, 0, 0, 0);
-            btnNavPaysClient.RightToLeft = RightToLeft.No;
-            btnNavPaysClient.Size = new Size(257, 64);
-            btnNavPaysClient.TabIndex = 3;
-            btnNavPaysClient.Text = "  Pays";
-            btnNavPaysClient.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnNavPaysClient.UseVisualStyleBackColor = false;
-            btnNavPaysClient.Click += btnNavPaysClient_Click;
-            // 
-            // btnNavProgress
-            // 
-            btnNavProgress.BackColor = Color.Transparent;
-            btnNavProgress.Cursor = Cursors.Hand;
-            btnNavProgress.Dock = DockStyle.Fill;
-            btnNavProgress.FlatAppearance.BorderSize = 0;
-            btnNavProgress.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 0, 40);
-            btnNavProgress.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 0, 40);
-            btnNavProgress.FlatStyle = FlatStyle.Flat;
-            btnNavProgress.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNavProgress.ForeColor = Color.White;
-            btnNavProgress.Image = Properties.Resources.people_item;
-            btnNavProgress.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavProgress.Location = new Point(0, 64);
-            btnNavProgress.Margin = new Padding(0);
-            btnNavProgress.Name = "btnNavProgress";
-            btnNavProgress.Padding = new Padding(20, 0, 0, 0);
-            btnNavProgress.RightToLeft = RightToLeft.No;
-            btnNavProgress.Size = new Size(257, 64);
-            btnNavProgress.TabIndex = 2;
-            btnNavProgress.Text = "    Progress";
-            btnNavProgress.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnNavProgress.UseVisualStyleBackColor = false;
-            btnNavProgress.Click += btnNavProgress_Click;
-            // 
-            // btnNavAboutme
-            // 
-            btnNavAboutme.BackColor = Color.Transparent;
-            btnNavAboutme.Cursor = Cursors.Hand;
-            btnNavAboutme.Dock = DockStyle.Fill;
-            btnNavAboutme.FlatAppearance.BorderSize = 0;
-            btnNavAboutme.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 0, 40);
-            btnNavAboutme.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 0, 40);
-            btnNavAboutme.FlatStyle = FlatStyle.Flat;
-            btnNavAboutme.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            btnNavAboutme.ForeColor = Color.White;
-            btnNavAboutme.Image = Properties.Resources.dashboard_item;
-            btnNavAboutme.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavAboutme.Location = new Point(0, 0);
-            btnNavAboutme.Margin = new Padding(0);
-            btnNavAboutme.Name = "btnNavAboutme";
-            btnNavAboutme.Padding = new Padding(10, 0, 0, 0);
-            btnNavAboutme.RightToLeft = RightToLeft.No;
-            btnNavAboutme.Size = new Size(257, 64);
-            btnNavAboutme.TabIndex = 1;
-            btnNavAboutme.Text = " About me";
-            btnNavAboutme.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnNavAboutme.UseVisualStyleBackColor = false;
-            btnNavAboutme.Click += btnNavAboutme_Click;
-            // 
             // tableLayoutAdmin
             // 
             tableLayoutAdmin.BackColor = Color.Transparent;
@@ -339,7 +227,7 @@
             tableLayoutAdmin.Controls.Add(btnNavPaysAdmin, 0, 2);
             tableLayoutAdmin.Controls.Add(btnNavInstructorAdmin, 0, 1);
             tableLayoutAdmin.Controls.Add(btnNavDashAdmin, 0, 0);
-            tableLayoutAdmin.Location = new Point(1, 136);
+            tableLayoutAdmin.Location = new Point(0, 131);
             tableLayoutAdmin.Name = "tableLayoutAdmin";
             tableLayoutAdmin.RowCount = 3;
             tableLayoutAdmin.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -479,7 +367,7 @@
             btnNavClients.FlatStyle = FlatStyle.Flat;
             btnNavClients.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             btnNavClients.ForeColor = Color.White;
-            btnNavClients.Image = (Image)resources.GetObject("btnNavClients.Image");
+            btnNavClients.Image = Properties.Resources.people_item;
             btnNavClients.ImageAlign = ContentAlignment.MiddleLeft;
             btnNavClients.Location = new Point(0, 64);
             btnNavClients.Margin = new Padding(0);
@@ -518,12 +406,103 @@
             btnNavDashboard.UseVisualStyleBackColor = false;
             btnNavDashboard.Click += btnNavDashboard_Click;
             // 
+            // tableLayoutClient
+            // 
+            tableLayoutClient.BackColor = Color.Transparent;
+            tableLayoutClient.ColumnCount = 1;
+            tableLayoutClient.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutClient.Controls.Add(btnNavPaysClient, 0, 2);
+            tableLayoutClient.Controls.Add(btnNavProgress, 0, 1);
+            tableLayoutClient.Controls.Add(btnNavAboutme, 0, 0);
+            tableLayoutClient.Location = new Point(0, 132);
+            tableLayoutClient.Name = "tableLayoutClient";
+            tableLayoutClient.RowCount = 3;
+            tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutClient.Size = new Size(257, 192);
+            tableLayoutClient.TabIndex = 4;
+            tableLayoutClient.Visible = false;
+            // 
+            // btnNavPaysClient
+            // 
+            btnNavPaysClient.BackColor = Color.Transparent;
+            btnNavPaysClient.Cursor = Cursors.Hand;
+            btnNavPaysClient.Dock = DockStyle.Fill;
+            btnNavPaysClient.FlatAppearance.BorderSize = 0;
+            btnNavPaysClient.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 0, 40);
+            btnNavPaysClient.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 0, 40);
+            btnNavPaysClient.FlatStyle = FlatStyle.Flat;
+            btnNavPaysClient.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNavPaysClient.ForeColor = Color.White;
+            btnNavPaysClient.Image = Properties.Resources.payments_item;
+            btnNavPaysClient.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNavPaysClient.Location = new Point(0, 128);
+            btnNavPaysClient.Margin = new Padding(0);
+            btnNavPaysClient.Name = "btnNavPaysClient";
+            btnNavPaysClient.Padding = new Padding(10, 0, 0, 0);
+            btnNavPaysClient.RightToLeft = RightToLeft.No;
+            btnNavPaysClient.Size = new Size(257, 64);
+            btnNavPaysClient.TabIndex = 3;
+            btnNavPaysClient.Text = "  Pays";
+            btnNavPaysClient.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNavPaysClient.UseVisualStyleBackColor = false;
+            btnNavPaysClient.Click += btnNavPaysClient_Click;
+            // 
+            // btnNavProgress
+            // 
+            btnNavProgress.BackColor = Color.Transparent;
+            btnNavProgress.Cursor = Cursors.Hand;
+            btnNavProgress.Dock = DockStyle.Fill;
+            btnNavProgress.FlatAppearance.BorderSize = 0;
+            btnNavProgress.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 0, 40);
+            btnNavProgress.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 0, 40);
+            btnNavProgress.FlatStyle = FlatStyle.Flat;
+            btnNavProgress.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNavProgress.ForeColor = Color.White;
+            btnNavProgress.Image = Properties.Resources.people_item;
+            btnNavProgress.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNavProgress.Location = new Point(0, 64);
+            btnNavProgress.Margin = new Padding(0);
+            btnNavProgress.Name = "btnNavProgress";
+            btnNavProgress.Padding = new Padding(20, 0, 0, 0);
+            btnNavProgress.RightToLeft = RightToLeft.No;
+            btnNavProgress.Size = new Size(257, 64);
+            btnNavProgress.TabIndex = 2;
+            btnNavProgress.Text = "    Progress";
+            btnNavProgress.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNavProgress.UseVisualStyleBackColor = false;
+            btnNavProgress.Click += btnNavProgress_Click;
+            // 
+            // btnNavAboutme
+            // 
+            btnNavAboutme.BackColor = Color.Transparent;
+            btnNavAboutme.Cursor = Cursors.Hand;
+            btnNavAboutme.Dock = DockStyle.Fill;
+            btnNavAboutme.FlatAppearance.BorderSize = 0;
+            btnNavAboutme.FlatAppearance.MouseDownBackColor = Color.FromArgb(30, 0, 40);
+            btnNavAboutme.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, 0, 40);
+            btnNavAboutme.FlatStyle = FlatStyle.Flat;
+            btnNavAboutme.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNavAboutme.ForeColor = Color.White;
+            btnNavAboutme.Image = Properties.Resources.dashboard_item;
+            btnNavAboutme.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNavAboutme.Location = new Point(0, 0);
+            btnNavAboutme.Margin = new Padding(0);
+            btnNavAboutme.Name = "btnNavAboutme";
+            btnNavAboutme.Padding = new Padding(10, 0, 0, 0);
+            btnNavAboutme.RightToLeft = RightToLeft.No;
+            btnNavAboutme.Size = new Size(257, 64);
+            btnNavAboutme.TabIndex = 1;
+            btnNavAboutme.Text = " About me";
+            btnNavAboutme.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNavAboutme.UseVisualStyleBackColor = false;
+            btnNavAboutme.Click += btnNavAboutme_Click;
+            // 
             // panel3
             // 
             panel3.BackgroundImageLayout = ImageLayout.None;
             panel3.Controls.Add(label1);
-            panel3.Controls.Add(gorilla_avatar);
-            panel3.Controls.Add(menuButton);
             panel3.ForeColor = SystemColors.ActiveCaption;
             panel3.Location = new Point(0, 1);
             panel3.Name = "panel3";
@@ -534,24 +513,13 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(80, 19);
+            label1.Location = new Point(20, 14);
             label1.Name = "label1";
-            label1.Size = new Size(109, 37);
+            label1.Size = new Size(138, 46);
             label1.TabIndex = 1;
             label1.Text = "GYMSY";
-            // 
-            // gorilla_avatar
-            // 
-            gorilla_avatar.Anchor = AnchorStyles.Top;
-            gorilla_avatar.Image = (Image)resources.GetObject("gorilla_avatar.Image");
-            gorilla_avatar.Location = new Point(10, 4);
-            gorilla_avatar.Name = "gorilla_avatar";
-            gorilla_avatar.Size = new Size(68, 68);
-            gorilla_avatar.SizeMode = PictureBoxSizeMode.Zoom;
-            gorilla_avatar.TabIndex = 46;
-            gorilla_avatar.TabStop = false;
             // 
             // panelNavUser
             // 
@@ -660,7 +628,6 @@
             btnNavAddPlan.FlatStyle = FlatStyle.Flat;
             btnNavAddPlan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnNavAddPlan.ForeColor = Color.White;
-            btnNavAddPlan.Image = (Image)resources.GetObject("btnNavAddPlan.Image");
             btnNavAddPlan.ImageAlign = ContentAlignment.MiddleLeft;
             btnNavAddPlan.Location = new Point(2, 106);
             btnNavAddPlan.Margin = new Padding(0);
@@ -684,7 +651,7 @@
             btnNavAddClient.FlatStyle = FlatStyle.Flat;
             btnNavAddClient.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnNavAddClient.ForeColor = Color.White;
-            btnNavAddClient.Image = (Image)resources.GetObject("btnNavAddClient.Image");
+            btnNavAddClient.Image = Properties.Resources.people_item;
             btnNavAddClient.ImageAlign = ContentAlignment.MiddleLeft;
             btnNavAddClient.Location = new Point(2, 65);
             btnNavAddClient.Margin = new Padding(0);
@@ -778,16 +745,16 @@
             // btnWalletNav
             // 
             btnWalletNav.BackColor = Color.Transparent;
-            btnWalletNav.BackgroundImage = (Image)resources.GetObject("btnWalletNav.BackgroundImage");
             btnWalletNav.BackgroundImageLayout = ImageLayout.Stretch;
             btnWalletNav.Cursor = Cursors.Hand;
             btnWalletNav.FlatAppearance.BorderSize = 0;
             btnWalletNav.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnWalletNav.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnWalletNav.FlatStyle = FlatStyle.Flat;
-            btnWalletNav.Location = new Point(299, 18);
+            btnWalletNav.Image = Properties.Resources.wallet__2_;
+            btnWalletNav.Location = new Point(292, 12);
             btnWalletNav.Name = "btnWalletNav";
-            btnWalletNav.Size = new Size(37, 33);
+            btnWalletNav.Size = new Size(50, 50);
             btnWalletNav.TabIndex = 4;
             btnWalletNav.UseVisualStyleBackColor = false;
             btnWalletNav.Click += btnWalletNav_Click;
@@ -944,15 +911,13 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gymsy";
             WindowState = FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)menuButton).EndInit();
             sidebar.ResumeLayout(false);
             panelAddAdmin.ResumeLayout(false);
-            tableLayoutClient.ResumeLayout(false);
             tableLayoutAdmin.ResumeLayout(false);
             tableLayout.ResumeLayout(false);
+            tableLayoutClient.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).EndInit();
             panelNavUser.ResumeLayout(false);
             panelNavUser.PerformLayout();
             panelBtnAdd.ResumeLayout(false);
@@ -970,7 +935,6 @@
 
         private Panel sidebar;
         private Panel panel3;
-        private PictureBox menuButton;
         private Label label1;
         private System.Windows.Forms.Timer sidebarTimer;
         private Panel panelBtnAdd;
@@ -1016,6 +980,5 @@
         private Button btnAddAdmin;
         private System.Windows.Forms.Timer timerAddAdmin;
         private Button btnWalletNav;
-        private PictureBox gorilla_avatar;
     }
 }
