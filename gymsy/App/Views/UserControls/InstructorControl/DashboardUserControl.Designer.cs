@@ -38,6 +38,7 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -54,6 +55,8 @@
             dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel4.SuspendLayout();
@@ -87,11 +90,23 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(16, 8, 30);
+            panel1.Controls.Add(pictureBox2);
             panel1.Location = new Point(0, 78);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 243);
             panel1.TabIndex = 8;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Dock = DockStyle.Fill;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(900, 243);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 12;
+            pictureBox2.TabStop = false;
             // 
             // panel3
             // 
@@ -312,6 +327,8 @@
             Name = "DashboardUserControl";
             Size = new Size(900, 550);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -343,5 +360,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private PictureBox pictureBox2;
     }
 }

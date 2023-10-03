@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProgressClientControl));
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
             panel6 = new Panel();
             panelWalletWrapper = new Panel();
             panel2 = new Panel();
@@ -46,8 +46,9 @@
             panelGallery = new Panel();
             PhotoActive = new PictureBox();
             panel3 = new Panel();
-            textBox2 = new TextBox();
             label3 = new Label();
+            pictureBox1 = new PictureBox();
+            textBox2 = new TextBox();
             panel7 = new Panel();
             btnAddProgress = new ClassCustom.RJButton();
             label4 = new Label();
@@ -57,7 +58,6 @@
             ShowData = new DataGridViewButtonColumn();
             Peso = new DataGridViewTextBoxColumn();
             gridDescription = new DataGridViewTextBoxColumn();
-            pictureBox1 = new PictureBox();
             panel6.SuspendLayout();
             panelWalletWrapper.SuspendLayout();
             panel2.SuspendLayout();
@@ -65,9 +65,9 @@
             panelGallery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PhotoActive).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridProgress).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel6
@@ -175,6 +175,28 @@
             panel3.Size = new Size(990, 576);
             panel3.TabIndex = 0;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.ImageAlign = ContentAlignment.MiddleLeft;
+            label3.Location = new Point(70, 20);
+            label3.Name = "label3";
+            label3.Size = new Size(136, 41);
+            label3.TabIndex = 3;
+            label3.Text = "Pregreso";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-14, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 58);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -190,18 +212,6 @@
             textBox2.Size = new Size(633, 60);
             textBox2.TabIndex = 8;
             textBox2.Text = "Cristiano Ronaldo, 37 años comenzo a enrenarse 23/08/2007 (17 años), cuenta con 14 registros guardados ";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(70, 20);
-            label3.Name = "label3";
-            label3.Size = new Size(136, 41);
-            label3.TabIndex = 3;
-            label3.Text = "Pregreso";
             // 
             // panel7
             // 
@@ -263,57 +273,57 @@
             dataGridProgress.AllowUserToDeleteRows = false;
             dataGridProgress.AllowUserToResizeColumns = false;
             dataGridProgress.AllowUserToResizeRows = false;
-            dataGridViewCellStyle17.BackColor = Color.Transparent;
-            dataGridViewCellStyle17.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle17.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle17.SelectionForeColor = Color.White;
-            dataGridProgress.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle9.BackColor = Color.Transparent;
+            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle9.SelectionForeColor = Color.White;
+            dataGridProgress.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             dataGridProgress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridProgress.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridProgress.BackgroundColor = Color.FromArgb(16, 8, 30);
             dataGridProgress.CausesValidation = false;
             dataGridProgress.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = Color.Transparent;
-            dataGridViewCellStyle18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle18.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = Color.White;
-            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
-            dataGridProgress.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.Transparent;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dataGridProgress.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             dataGridProgress.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridProgress.Columns.AddRange(new DataGridViewColumn[] { ID, gridDate, ShowData, Peso, gridDescription });
-            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle22.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle22.ForeColor = Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle22.SelectionForeColor = Color.White;
-            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.False;
-            dataGridProgress.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle14.SelectionForeColor = Color.White;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            dataGridProgress.DefaultCellStyle = dataGridViewCellStyle14;
             dataGridProgress.GridColor = Color.Black;
             dataGridProgress.Location = new Point(0, 67);
             dataGridProgress.Margin = new Padding(0);
             dataGridProgress.MultiSelect = false;
             dataGridProgress.Name = "dataGridProgress";
             dataGridProgress.ReadOnly = true;
-            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = Color.IndianRed;
-            dataGridViewCellStyle23.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle23.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = SystemColors.GrayText;
-            dataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.True;
-            dataGridProgress.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = Color.IndianRed;
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = SystemColors.GrayText;
+            dataGridViewCellStyle15.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            dataGridProgress.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             dataGridProgress.RowHeadersVisible = false;
             dataGridProgress.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle24.BackColor = Color.White;
-            dataGridViewCellStyle24.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle24.ForeColor = Color.White;
-            dataGridViewCellStyle24.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle24.SelectionBackColor = Color.White;
-            dataGridViewCellStyle24.SelectionForeColor = Color.White;
-            dataGridProgress.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle16.BackColor = Color.White;
+            dataGridViewCellStyle16.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = Color.White;
+            dataGridViewCellStyle16.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle16.SelectionBackColor = Color.White;
+            dataGridViewCellStyle16.SelectionForeColor = Color.White;
+            dataGridProgress.RowsDefaultCellStyle = dataGridViewCellStyle16;
             dataGridProgress.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
             dataGridProgress.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
             dataGridProgress.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
@@ -335,12 +345,12 @@
             // gridDate
             // 
             gridDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle19.BackColor = Color.Transparent;
-            dataGridViewCellStyle19.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle19.ForeColor = Color.White;
-            dataGridViewCellStyle19.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle19.SelectionForeColor = Color.Transparent;
-            gridDate.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle11.BackColor = Color.Transparent;
+            dataGridViewCellStyle11.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle11.SelectionForeColor = Color.Transparent;
+            gridDate.DefaultCellStyle = dataGridViewCellStyle11;
             gridDate.HeaderText = "Fecha";
             gridDate.Name = "gridDate";
             gridDate.ReadOnly = true;
@@ -348,12 +358,12 @@
             // ShowData
             // 
             ShowData.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = Color.Cyan;
-            dataGridViewCellStyle20.ForeColor = Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = Color.Cyan;
-            dataGridViewCellStyle20.SelectionForeColor = Color.Cyan;
-            ShowData.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = Color.Cyan;
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.Cyan;
+            dataGridViewCellStyle12.SelectionForeColor = Color.Cyan;
+            ShowData.DefaultCellStyle = dataGridViewCellStyle12;
             ShowData.HeaderText = "Ver";
             ShowData.Name = "ShowData";
             ShowData.ReadOnly = true;
@@ -372,25 +382,15 @@
             // gridDescription
             // 
             gridDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle21.BackColor = Color.Transparent;
-            dataGridViewCellStyle21.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle21.ForeColor = Color.White;
-            dataGridViewCellStyle21.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle21.SelectionForeColor = Color.Transparent;
-            gridDescription.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle13.BackColor = Color.Transparent;
+            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle13.SelectionForeColor = Color.Transparent;
+            gridDescription.DefaultCellStyle = dataGridViewCellStyle13;
             gridDescription.HeaderText = "Descripcion";
             gridDescription.Name = "gridDescription";
             gridDescription.ReadOnly = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-14, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 58);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
             // 
             // ProgressClientControl
             // 
@@ -408,10 +408,10 @@
             ((System.ComponentModel.ISupportInitialize)PhotoActive).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridProgress).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

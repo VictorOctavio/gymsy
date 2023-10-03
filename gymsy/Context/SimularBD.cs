@@ -11,6 +11,7 @@ namespace gymsy.Context
 {
     public static class SimularBD
     {
+        
         public static int idInstructor = 3; //la funcion cargar ya carga 2
         public static int idClient = 4; //la funcion cargar ya carga 3 
         public static int idAdmin = 1; //solo hay un admin
@@ -33,7 +34,6 @@ namespace gymsy.Context
         {
             // Creamos cinco instancias de la clase Person con todos los atributos cargados
             
-
             Person person1 = new Person
             {
                 IdPerson = 1,
@@ -57,16 +57,11 @@ namespace gymsy.Context
                 Inactive = false,
                 IdPerson = 1,
                 IdTrainingPlan = 1,
-                IdPersonNavigation = person1,
-                IdTrainingPlanNavigation = trainingPlans[0]
             };
-
-
 
             persons.Add(person1);
             clients.Add(cliente1);
             
-
             Person person2 = new Person
             {
                 IdPerson = 2,
@@ -91,8 +86,6 @@ namespace gymsy.Context
                 Inactive = false,
                 IdPerson = 2,
                 IdTrainingPlan = 1,
-                IdPersonNavigation = person1,
-                IdTrainingPlanNavigation = trainingPlans[0]
             };
 
             persons.Add(person2);
@@ -120,9 +113,7 @@ namespace gymsy.Context
                 LastExpiration = DateTime.Now.AddMonths(1),//Se le añade un mes mas a la fecha actual
                 Inactive = false,
                 IdPerson = person1.IdPerson,
-                IdTrainingPlan = 3,
-                IdPersonNavigation = person1,
-                IdTrainingPlanNavigation = trainingPlans[0]
+                IdTrainingPlan = 3
             };
 
             persons.Add(person3);
@@ -174,8 +165,7 @@ namespace gymsy.Context
             Instructor instructor2 = new Instructor
             {
                 IdInstructor = 2,
-                IdPerson = 5,
-                IdPersonNavigation = person4
+                IdPerson = 5
             };
 
             persons.Add(person5);
@@ -188,15 +178,12 @@ namespace gymsy.Context
                 Price = 299,
                 Description = "Plan de entrenamiento 1",
                 Inactive = false,
-                IdInstructor = 1,
-                IdInstructorNavigation = instructor1,
+                IdInstructor = 1
 
             };
 
             trainingPlans.Add(plan1);
             
-
-
         }
 
     }

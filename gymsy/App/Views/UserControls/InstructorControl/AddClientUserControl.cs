@@ -30,7 +30,7 @@ namespace gymsy.UserControls
             //Carga el comboBox con los planes
             CargarElementosComboBox();
 
-            
+
 
 
 
@@ -254,8 +254,8 @@ namespace gymsy.UserControls
 
 
             //Cargar los planes desde la base de datos
-             
-            
+
+
             /*/Cargar la descripción de los planes desde la base de datos
             var planes = GymsyContext.Plan.ToList();
 
@@ -275,8 +275,8 @@ namespace gymsy.UserControls
                 MostrarInformacionSeleccionada(0); // Mostrar información relacionada al elemento predeterminado
             }
             */
-             
-             
+
+
 
         }
 
@@ -314,18 +314,19 @@ namespace gymsy.UserControls
                         string usuario = TBUsuario.Text;
                         string contraseña = TBContraseña.Text;
                         string rutaImagen = TBRutaImagen.Text;
-                       
+
                         string sexo = "";
 
-                        if(RBMasculino.Checked)
+                        if (RBMasculino.Checked)
                         {
                             sexo = "M";
-                        } else
+                        }
+                        else
                         {
                             sexo = "F";
                         }
 
-                        
+
 
 
 
@@ -377,7 +378,7 @@ namespace gymsy.UserControls
         }
 
 
-       
+
 
     }
 

@@ -15,7 +15,7 @@ namespace gymsy.App.Views.Interfaces
 
         // Methods
         void Show();
-
+   
         // Navigation
         event EventHandler SettingView;
     }

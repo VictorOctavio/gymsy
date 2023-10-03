@@ -22,9 +22,6 @@ namespace gymsy.UserControls
         {
             InitializeComponent();
 
-            //Cargar los planes desde la simulacion de la base de datos
-            SimularBD.cargarListas();
-
             //Cargar DataGrid
             cargarPersonas(SimularBD.persons, false);
         }
@@ -138,10 +135,6 @@ namespace gymsy.UserControls
 
                     }
 
-
-
-
-
                 }
             }
             // Actualiza la vista del DataGridView.
@@ -151,7 +144,8 @@ namespace gymsy.UserControls
         private void rjButton2_Click(object sender, EventArgs e)
         {
             //Cargar DataGrid
-            cargarPersonas(SimularBD.persons, false);
+            //cargarPersonas(SimularBD.persons, false);
+            MainView.navigationControl.Display(7);
         }
 
         private void rjButton1_Click(object sender, EventArgs e)

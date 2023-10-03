@@ -29,62 +29,56 @@ namespace gymsy.App.Presenters
             this.authView.Show();
         }
 
-       async private void Signin(object? sender, EventArgs e)
+       private void Signin(object? sender, EventArgs e)
         {
             try
             {
-                
+
                 // Signin to database
                 var peopleFound = this.gymsydb.People
-                                              .Where(people => people.Nickname == this.authView.Nickname)
+                                              .Where(p => p.Nickname == this.authView.Nickname)
                                               .First();
-                
+
                 // validar existencia del usuario
-                if (peopleFound != null) {
+                if (peopleFound != null)
+                {
 
                     //- Validar password
-                    if(!Bcrypt.ComparePassowrd(this.authView.Password, peopleFound.Password))
+                    if (!Bcrypt.ComparePassowrd(this.authView.Password, peopleFound.Password))
                     {
                         this.authView.IsSuccessful = false;
                         this.authView.Message = "Nickname o Contraseña Incorrecto";
                         this.authView.HandleResponseDBMessage();
+                        return;
                     }
                     else
                     {
 
-
-
                         this.authView.IsSuccessful = true;
-                        this.authView.Message = "Hola, "+peopleFound.FirstName+" :)";
+                        this.authView.Message = "Hola, " + peopleFound.FirstName + " :)";
                         this.authView.HandleResponseDBMessage();
                         this.authView.Refresh();
-      
+
                         // Delay
                         Thread.Sleep(2000);
 
+                        // Update global state
                         AppState.person = peopleFound;
-                        //AppState.clients = clients;
 
-                        //Lo mismo deveria ser para clientes
+                        this.asignMethods(peopleFound);
 
-                        var planes = this.gymsydb.TrainingPlans
-                                .Where(plan => plan.IdInstructor == peopleFound.IdPerson)
-                                .ToList();
-
-                      
-
-
-                        AppState.planes = planes;
-
-                        this.authView.Hide();
+                        //this.authView.Hide();
 
                         // Open form
-                        IMainView view = new MainView(peopleFound);
-                        new MainPresenter(view, gymsydb);
+                        IMainView view = new MainView();
+                        new MainPresenter(view, this.gymsydb);
 
                         view.Show();
+
+                        return;
                     }
                 }
+                else return;
             }
             catch (Exception ex)
             {
@@ -92,12 +86,58 @@ namespace gymsy.App.Presenters
                this.authView.Message = "Error inesperdado";
                this.authView.HandleResponseDBMessage();
                 // Muestra un MessageBox con el mensaje de error
-                MessageBox.Show("Ocurrió un error: " + Resources.stringConnection, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 this.authView.Loading = false;
             }
         }
+
+
+        private void asignMethods(Person personFound)
+        {
+            try
+            {
+                switch (personFound.RolId)
+                {
+                    // this person is admin
+                    case 1:
+                       
+                        var instructorsFound = this.gymsydb.People
+                                                .Where(person => person.RolId == 2)
+                                                .ToList();
+
+                        AppState.instructors = instructorsFound;
+                        break;
+
+                    // this person is instructor
+                    case 2:
+
+                        var instructorFound = this.gymsydb.Instructors
+                                                .Where(instructor => instructor.IdPerson == personFound.IdPerson)
+                                                .First();
+
+                        var planesFound = this.gymsydb.TrainingPlans
+                                                 .Where(plan => plan.IdInstructor == instructorFound.IdInstructor)
+                                                 .ToList();
+
+                        AppState.planes = planesFound;
+
+                        break;
+
+                    // this person is client
+                    case 3:
+                        // Code to execute if expression matches value1
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Algo ha salido mal :(");
+            }
+           
+        }
+
     }
 }

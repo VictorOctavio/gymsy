@@ -95,7 +95,7 @@
             DGUsers.RowTemplate.Height = 25;
             DGUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGUsers.ShowCellErrors = false;
-            DGUsers.Size = new Size(994, 369);
+            DGUsers.Size = new Size(994, 376);
             DGUsers.TabIndex = 1;
             // 
             // nickname
@@ -199,7 +199,7 @@
             rjButton2.Padding = new Padding(10, 0, 0, 0);
             rjButton2.Size = new Size(228, 40);
             rjButton2.TabIndex = 85;
-            rjButton2.Text = "Ver Clientes";
+            rjButton2.Text = "Añadir Progreso";
             rjButton2.TextAlign = ContentAlignment.MiddleLeft;
             rjButton2.TextColor = Color.White;
             rjButton2.UseVisualStyleBackColor = false;

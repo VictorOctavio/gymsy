@@ -174,7 +174,7 @@ namespace gymsy.UserControls
             panel2.Controls.Add(label4);
             panel2.Location = new Point(3, 73);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1330, 533);
+            panel2.Size = new Size(1215, 533);
             panel2.TabIndex = 51;
             // 
             // LRuraImagen
@@ -426,7 +426,7 @@ namespace gymsy.UserControls
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = Color.FromArgb(230, 237, 243);
-            label14.Location = new Point(882, 37);
+            label14.Location = new Point(724, 38);
             label14.Name = "label14";
             label14.Size = new Size(118, 25);
             label14.TabIndex = 71;
@@ -501,7 +501,7 @@ namespace gymsy.UserControls
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label15.ForeColor = Color.FromArgb(230, 237, 243);
-            label15.Location = new Point(511, 9);
+            label15.Location = new Point(453, 9);
             label15.Name = "label15";
             label15.Size = new Size(155, 25);
             label15.TabIndex = 72;
@@ -606,7 +606,7 @@ namespace gymsy.UserControls
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.ActiveCaptionText;
-            label10.Location = new Point(-399, 40);
+            label10.Location = new Point(-457, 40);
             label10.Name = "label10";
             label10.Size = new Size(155, 25);
             label10.TabIndex = 48;

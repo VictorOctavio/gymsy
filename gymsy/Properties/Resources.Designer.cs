@@ -93,6 +93,16 @@ namespace gymsy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap disc__2_ {
+            get {
+                object obj = ResourceManager.GetObject("disc (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fitness_man {
             get {
                 object obj = ResourceManager.GetObject("fitness_man", resourceCulture);
@@ -106,6 +116,16 @@ namespace gymsy.Properties {
         internal static System.Drawing.Bitmap gorilla_avatar {
             get {
                 object obj = ResourceManager.GetObject("gorilla_avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gymman {
+            get {
+                object obj = ResourceManager.GetObject("gymman", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -191,7 +211,7 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Server=DESKTOP-R1CB0VV\SQLEXPRESS01;Database=gymsy;Integrated Security=True;TrustServerCertificate=True.
+        ///   Busca una cadena traducida similar a Server=localhost;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;.
         /// </summary>
         internal static string stringConnection {
             get {
@@ -215,6 +235,16 @@ namespace gymsy.Properties {
         internal static System.Drawing.Bitmap vector_fitness_couple_doing_exercise1 {
             get {
                 object obj = ResourceManager.GetObject("vector-fitness-couple-doing-exercise1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallet__2_ {
+            get {
+                object obj = ResourceManager.GetObject("wallet (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
