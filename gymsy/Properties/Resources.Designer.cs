@@ -123,6 +123,16 @@ namespace gymsy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap graficoTorta {
+            get {
+                object obj = ResourceManager.GetObject("graficoTorta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gymman {
             get {
                 object obj = ResourceManager.GetObject("gymman", resourceCulture);
@@ -176,6 +186,16 @@ namespace gymsy.Properties {
         internal static System.Drawing.Bitmap logout_item {
             get {
                 object obj = ResourceManager.GetObject("logout_item", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojiva {
+            get {
+                object obj = ResourceManager.GetObject("ojiva", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

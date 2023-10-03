@@ -56,7 +56,7 @@ namespace gymsy.Context
                 LastExpiration = DateTime.Now.AddMonths(1),//Se le añade un mes mas a la fecha actual
                 Inactive = false,
                 IdPerson = 1,
-                IdTrainingPlan = 1,
+                IdTrainingPlan = 1
             };
 
             persons.Add(person1);
