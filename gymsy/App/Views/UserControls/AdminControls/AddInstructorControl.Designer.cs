@@ -34,7 +34,7 @@
             panel2 = new Panel();
             TBRutaImagen = new TextBox();
             label5 = new Label();
-            pictureBox1 = new PictureBox();
+            IPImagenInstructor = new PictureBox();
             TBNombre = new CustomControls.RJControls.RJTextBox();
             LFechaNacimiento = new Label();
             label2 = new Label();
@@ -61,9 +61,10 @@
             LUsurioRequerido = new Label();
             LApellidoRequerido = new Label();
             label4 = new Label();
+            openFileDialog1 = new OpenFileDialog();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)IPImagenInstructor).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -102,7 +103,7 @@
             // 
             panel2.Controls.Add(TBRutaImagen);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(IPImagenInstructor);
             panel2.Controls.Add(TBNombre);
             panel2.Controls.Add(LFechaNacimiento);
             panel2.Controls.Add(label2);
@@ -159,15 +160,15 @@
             label5.TabIndex = 86;
             label5.Text = "Imagen del Instructor";
             // 
-            // pictureBox1
+            // IPImagenInstructor
             // 
-            pictureBox1.Image = Properties.Resources.instructor1;
-            pictureBox1.Location = new Point(525, 41);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(240, 183);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 85;
-            pictureBox1.TabStop = false;
+            IPImagenInstructor.Image = Properties.Resources.instructor1;
+            IPImagenInstructor.Location = new Point(525, 41);
+            IPImagenInstructor.Name = "IPImagenInstructor";
+            IPImagenInstructor.Size = new Size(240, 183);
+            IPImagenInstructor.SizeMode = PictureBoxSizeMode.Zoom;
+            IPImagenInstructor.TabIndex = 85;
+            IPImagenInstructor.TabStop = false;
             // 
             // TBNombre
             // 
@@ -435,6 +436,7 @@
             BTAgregarImagen.TextAlign = ContentAlignment.MiddleLeft;
             BTAgregarImagen.TextColor = Color.White;
             BTAgregarImagen.UseVisualStyleBackColor = false;
+            BTAgregarImagen.Click += BTAgregarImagen_Click;
             // 
             // LRuraImagen
             // 
@@ -531,6 +533,10 @@
             label4.TabIndex = 41;
             label4.Text = "Apellido";
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // AddInstructorControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -543,7 +549,7 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)IPImagenInstructor).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -579,9 +585,10 @@
         private Label LUsurioRequerido;
         private Label LApellidoRequerido;
         private Label label4;
-        private PictureBox pictureBox1;
+        private PictureBox IPImagenInstructor;
         private Label label5;
         private Label label15;
         private TextBox TBRutaImagen;
+        private OpenFileDialog openFileDialog1;
     }
 }

@@ -123,6 +123,16 @@ namespace gymsy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap graficoTorta {
+            get {
+                object obj = ResourceManager.GetObject("graficoTorta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gymman {
             get {
                 object obj = ResourceManager.GetObject("gymman", resourceCulture);
@@ -136,6 +146,16 @@ namespace gymsy.Properties {
         internal static System.Drawing.Bitmap gymsy1 {
             get {
                 object obj = ResourceManager.GetObject("gymsy1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap instr {
+            get {
+                object obj = ResourceManager.GetObject("instr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +203,16 @@ namespace gymsy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ojiva {
+            get {
+                object obj = ResourceManager.GetObject("ojiva", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap payments_item {
             get {
                 object obj = ResourceManager.GetObject("payments_item", resourceCulture);
@@ -211,7 +241,7 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Server=localhost;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;.
+        ///   Busca una cadena traducida similar a Server=DESKTOP-R1CB0VV\SQLEXPRESS01;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;.
         /// </summary>
         internal static string stringConnection {
             get {

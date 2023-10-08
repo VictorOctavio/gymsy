@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             button1 = new Button();
             sidebar = new Panel();
             panelAddAdmin = new Panel();
@@ -205,7 +204,6 @@
             btnAddInstructor.FlatStyle = FlatStyle.Flat;
             btnAddInstructor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnAddInstructor.ForeColor = Color.White;
-            btnAddInstructor.Image = (Image)resources.GetObject("btnAddInstructor.Image");
             btnAddInstructor.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddInstructor.Location = new Point(2, 65);
             btnAddInstructor.Margin = new Padding(0);
@@ -906,7 +904,7 @@
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
-            MinimumSize = new Size(1200, 700);
+            MinimumSize = new Size(1364, 700);
             Name = "MainView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gymsy";
