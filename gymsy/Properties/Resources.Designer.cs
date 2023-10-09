@@ -153,6 +153,16 @@ namespace gymsy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_deadlift__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-deadlift (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap instr {
             get {
                 object obj = ResourceManager.GetObject("instr", resourceCulture);
@@ -203,6 +213,26 @@ namespace gymsy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap output_onlinegiftools {
+            get {
+                object obj = ResourceManager.GetObject("output-onlinegiftools", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap output_onlinegiftoolsw {
+            get {
+                object obj = ResourceManager.GetObject("output-onlinegiftoolsw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pagoshans {
             get {
                 object obj = ResourceManager.GetObject("pagoshans", resourceCulture);
@@ -226,6 +256,16 @@ namespace gymsy.Properties {
         internal static System.Drawing.Bitmap people_item {
             get {
                 object obj = ResourceManager.GetObject("people_item", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plan {
+            get {
+                object obj = ResourceManager.GetObject("plan", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -285,6 +325,16 @@ namespace gymsy.Properties {
         internal static System.Drawing.Bitmap wallet__2_ {
             get {
                 object obj = ResourceManager.GetObject("wallet (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wallet_free {
+            get {
+                object obj = ResourceManager.GetObject("wallet_free", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

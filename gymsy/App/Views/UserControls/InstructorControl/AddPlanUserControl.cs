@@ -1,4 +1,5 @@
 ﻿using CustomControls.RJControls;
+using gymsy.App.Models;
 using gymsy.Context;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,16 @@ namespace gymsy.UserControls
         public AddPlanUserControl()
         {
             InitializeComponent();
+            InitializeGridPlanes();
+        }
+
+        private void InitializeGridPlanes()
+        {/*
+            foreach (TrainingPlan plan in Context.AppState.planes)
+            {
+                DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description);
+            }
+            */
         }
 
         private void TBPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -87,6 +98,19 @@ namespace gymsy.UserControls
 
 
                         this.idPlan++;
+
+                        
+                        GymsyDbContext context = Context.GymsyContext.GymsyContextDB;
+
+                        TrainingPlan plan = new TrainingPlan();
+                        plan.Description = TBDescripcion.Text;
+                        plan.Price = float.Parse(TBPrecio.Text);
+                        plan.IdInstructor = 1;
+
+                        context.TrainingPlans.Add(plan);
+                        context.SaveChanges();
+                        
+
                         DGPlan.Rows.Add(this.idPlan, TBPrecio.Text, TBDescripcion.Text);
 
                         //MessageBox.Show("Se Ingreso correcetamente el plan con un precio de: $" + numeroIngresado.ToString() + "\nDescripcion: " + TBDescripcion.Text);

@@ -42,7 +42,14 @@
             labelErrorNickname = new Label();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             BtnMessageDB = new ClassCustom.RJButton();
+            loading_gif = new PictureBox();
+            panelWelcome = new Panel();
+            label6 = new Label();
+            label5 = new Label();
+            TBNameUser = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)loading_gif).BeginInit();
+            panelWelcome.SuspendLayout();
             SuspendLayout();
             // 
             // textBoxPasswordUser
@@ -236,12 +243,82 @@
             BtnMessageDB.UseVisualStyleBackColor = false;
             BtnMessageDB.Visible = false;
             // 
+            // loading_gif
+            // 
+            loading_gif.Anchor = AnchorStyles.Top;
+            loading_gif.BackColor = Color.Transparent;
+            loading_gif.BorderStyle = BorderStyle.FixedSingle;
+            loading_gif.ErrorImage = Properties.Resources.output_onlinegiftoolsw;
+            loading_gif.Image = Properties.Resources.output_onlinegiftoolsw;
+            loading_gif.InitialImage = Properties.Resources.output_onlinegiftoolsw;
+            loading_gif.Location = new Point(119, 176);
+            loading_gif.Name = "loading_gif";
+            loading_gif.Size = new Size(60, 64);
+            loading_gif.SizeMode = PictureBoxSizeMode.Zoom;
+            loading_gif.TabIndex = 48;
+            loading_gif.TabStop = false;
+            // 
+            // panelWelcome
+            // 
+            panelWelcome.Anchor = AnchorStyles.Right;
+            panelWelcome.BackColor = Color.FromArgb(9, 0, 15);
+            panelWelcome.Controls.Add(label6);
+            panelWelcome.Controls.Add(label5);
+            panelWelcome.Controls.Add(TBNameUser);
+            panelWelcome.Controls.Add(loading_gif);
+            panelWelcome.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            panelWelcome.ForeColor = Color.White;
+            panelWelcome.Location = new Point(3, 49);
+            panelWelcome.Margin = new Padding(0);
+            panelWelcome.Name = "panelWelcome";
+            panelWelcome.Size = new Size(297, 352);
+            panelWelcome.TabIndex = 49;
+            panelWelcome.Visible = false;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.FlatStyle = FlatStyle.Flat;
+            label6.Font = new Font("Yu Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.DarkOrange;
+            label6.Location = new Point(16, 140);
+            label6.Margin = new Padding(0);
+            label6.Name = "label6";
+            label6.Size = new Size(267, 16);
+            label6.TabIndex = 52;
+            label6.Text = "\"Entrena duro, trabaja fuerte, logra tus sueños\"";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(53, 328);
+            label5.Margin = new Padding(0);
+            label5.Name = "label5";
+            label5.Size = new Size(191, 19);
+            label5.TabIndex = 51;
+            label5.Text = "Estamos preparando la App ...";
+            // 
+            // TBNameUser
+            // 
+            TBNameUser.AutoSize = true;
+            TBNameUser.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            TBNameUser.ForeColor = Color.DarkCyan;
+            TBNameUser.Location = new Point(58, 90);
+            TBNameUser.Margin = new Padding(0);
+            TBNameUser.Name = "TBNameUser";
+            TBNameUser.Size = new Size(186, 32);
+            TBNameUser.TabIndex = 50;
+            TBNameUser.Text = "Hola, BRIC     :)";
+            // 
             // AuthView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(9, 0, 15);
             ClientSize = new Size(600, 420);
+            Controls.Add(panelWelcome);
             Controls.Add(BtnMessageDB);
             Controls.Add(labelErrorNickname);
             Controls.Add(button2);
@@ -261,6 +338,9 @@
             Text = "LoginDesing";
             TransparencyKey = Color.FromArgb(192, 0, 192);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)loading_gif).EndInit();
+            panelWelcome.ResumeLayout(false);
+            panelWelcome.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -280,5 +360,10 @@
         private Label labelErrorNickname;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private ClassCustom.RJButton BtnMessageDB;
+        private PictureBox loading_gif;
+        private Label label5;
+        private Label TBNameUser;
+        private Label label6;
+        public Panel panelWelcome;
     }
 }

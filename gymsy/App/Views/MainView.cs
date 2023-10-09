@@ -354,7 +354,7 @@ namespace gymsy
         // SIGNOUT SESSION BTN
         private void btnNavSignout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.OpenForms[0].Close();
         }
 
     }

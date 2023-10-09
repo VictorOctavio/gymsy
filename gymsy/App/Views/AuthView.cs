@@ -70,11 +70,9 @@ namespace gymsy
             ButtonSignIn.Click += delegate
             {
 
-  
-
+                ButtonSignIn.Enabled = false;
                 ButtonSignIn.Text = "...";
                 this.Refresh();
-                ButtonSignIn.Enabled = false;
 
                 // Reset errors
                 labelErrorNickname.Visible = false;
@@ -96,9 +94,9 @@ namespace gymsy
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-
-                    ButtonSignIn.Text = "...";
                     ButtonSignIn.Enabled = false;
+                    ButtonSignIn.Text = "...";
+
                     this.Refresh();
 
                     // Reset errors
@@ -130,21 +128,18 @@ namespace gymsy
         {
             if (this.IsSuccessful)
             {
-                ButtonSignIn.Visible = false;
-                BtnMessageDB.ForeColor = Color.Green;
-                BtnMessageDB.BorderColor = Color.Green;
-                BtnMessageDB.Text = this.Message;
-                Point point = new Point(BtnMessageDB.Location.X, BtnMessageDB.Location.Y - 60);
-                BtnMessageDB.Location = point;
+                TBNameUser.Text = this.Message;
+                panelWelcome.Visible = true;
             }
             else
             {
                 BtnMessageDB.ForeColor = Color.Red;
                 BtnMessageDB.BorderColor = Color.Red;
                 BtnMessageDB.Text = this.Message;
+                BtnMessageDB.Visible = true;
             }
 
-            BtnMessageDB.Visible = true;
+            this.Refresh();
         }
     }
 }

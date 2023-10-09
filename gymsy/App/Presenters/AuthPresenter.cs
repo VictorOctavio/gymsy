@@ -55,24 +55,22 @@ namespace gymsy.App.Presenters
                     {
 
                         this.authView.IsSuccessful = true;
-                        this.authView.Message = "Hola, " + peopleFound.FirstName + " :)";
-                        this.authView.HandleResponseDBMessage();
-                        this.authView.Refresh();
+                        this.authView.Message = "Hola, " + peopleFound.FirstName + "    ;)";
 
                         // Delay
-                        Thread.Sleep(2000);
+                        this.authView.HandleResponseDBMessage();
+                        Thread.Sleep(3000);
 
                         // Update global state
                         AppState.person = peopleFound;
 
                         this.asignMethods(peopleFound);
 
-                        //this.authView.Hide();
+                        this.authView.Hide();
 
                         // Open form
                         IMainView view = new MainView();
                         new MainPresenter(view, this.gymsydb);
-                        view.Show();
 
                         return;
                     }
