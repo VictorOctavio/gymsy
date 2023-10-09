@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructorsAdminControl));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dataGridInstructors = new DataGridView();
             name = new DataGridViewTextBoxColumn();
             Telefono = new DataGridViewTextBoxColumn();
@@ -50,22 +49,22 @@
             dataGridInstructors.AllowUserToDeleteRows = false;
             dataGridInstructors.AllowUserToResizeColumns = false;
             dataGridInstructors.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(16, 8, 23);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(230, 237, 243);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(69, 34, 99);
-            dataGridInstructors.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(16, 8, 23);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(69, 34, 99);
+            dataGridInstructors.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridInstructors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridInstructors.BackgroundColor = Color.FromArgb(16, 8, 23);
             dataGridInstructors.BorderStyle = BorderStyle.None;
             dataGridInstructors.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridInstructors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridInstructors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridInstructors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridInstructors.Columns.AddRange(new DataGridViewColumn[] { name, Telefono, Clientes, last_expiration, Eliminar });
             dataGridInstructors.Dock = DockStyle.Bottom;
@@ -74,13 +73,13 @@
             dataGridInstructors.Name = "dataGridInstructors";
             dataGridInstructors.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridInstructors.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridInstructors.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridInstructors.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridInstructors.RowTemplate.Height = 25;
             dataGridInstructors.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridInstructors.ShowCellErrors = false;
@@ -126,7 +125,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.instr;
             pictureBox1.Location = new Point(-19, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(124, 87);

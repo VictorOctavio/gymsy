@@ -72,7 +72,6 @@ namespace gymsy.App.Presenters
                         // Open form
                         IMainView view = new MainView();
                         new MainPresenter(view, this.gymsydb);
-
                         view.Show();
 
                         return;

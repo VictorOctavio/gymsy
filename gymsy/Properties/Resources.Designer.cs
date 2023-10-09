@@ -123,6 +123,16 @@ namespace gymsy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grafico {
+            get {
+                object obj = ResourceManager.GetObject("grafico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gymman {
             get {
                 object obj = ResourceManager.GetObject("gymman", resourceCulture);
@@ -136,6 +146,16 @@ namespace gymsy.Properties {
         internal static System.Drawing.Bitmap gymsy1 {
             get {
                 object obj = ResourceManager.GetObject("gymsy1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap instr {
+            get {
+                object obj = ResourceManager.GetObject("instr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +203,16 @@ namespace gymsy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pagoshans {
+            get {
+                object obj = ResourceManager.GetObject("pagoshans", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap payments_item {
             get {
                 object obj = ResourceManager.GetObject("payments_item", resourceCulture);
@@ -216,6 +246,16 @@ namespace gymsy.Properties {
         internal static string stringConnection {
             get {
                 return ResourceManager.GetString("stringConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled {
+            get {
+                object obj = ResourceManager.GetObject("Untitled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
