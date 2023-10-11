@@ -4,6 +4,7 @@ using gymsy.Context;
 using gymsy.Properties;
 using gymsy.utilities;
 using gymsy.Utilities;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -100,7 +101,7 @@ namespace gymsy.App.Presenters
                 {
                     // this person is admin
                     case 1:
-                       
+
                         var instructorsFound = this.gymsydb.People
                                                 .Where(person => person.RolId == 2)
                                                 .ToList();
@@ -115,11 +116,17 @@ namespace gymsy.App.Presenters
                                                 .Where(instructor => instructor.IdPerson == personFound.IdPerson)
                                                 .First();
 
-                        var planesFound = this.gymsydb.TrainingPlans
-                                                 .Where(plan => plan.IdInstructor == instructorFound.IdInstructor)
-                                                 .ToList();
+           
+                        
+                        var clientes = this.gymsydb.Clients
+                                           // .Where(cl => instructorFound.TrainingPlans.ToList()
+                                           // .Any(us => us.IdTrainingPlan == cl.IdTrainingPlan))
+                                            .ToList();
+  
+                        //
 
-                        AppState.planes = planesFound;
+                        AppState.clients = clientes;
+                        AppState.instructor = instructorFound;
 
                         break;
 
@@ -131,7 +138,7 @@ namespace gymsy.App.Presenters
             }
             catch(Exception ex)
             {
-                throw new Exception("Algo ha salido mal :(");
+                throw new Exception(ex.Message);
             }
            
         }

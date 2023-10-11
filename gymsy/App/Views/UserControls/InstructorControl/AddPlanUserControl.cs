@@ -1,6 +1,7 @@
 ﻿using CustomControls.RJControls;
 using gymsy.App.Models;
 using gymsy.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,12 +29,14 @@ namespace gymsy.UserControls
         }
 
         private void InitializeGridPlanes()
-        {/*
-            foreach (TrainingPlan plan in Context.AppState.planes)
+        {
+            
+            foreach (TrainingPlan plan in AppState.instructor.TrainingPlans )
             {
                 DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description);
             }
-            */
+            
+            
         }
 
         private void TBPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -105,7 +108,7 @@ namespace gymsy.UserControls
                         TrainingPlan plan = new TrainingPlan();
                         plan.Description = TBDescripcion.Text;
                         plan.Price = float.Parse(TBPrecio.Text);
-                        plan.IdInstructor = 1;
+                        plan.IdInstructor = AppState.instructor.IdInstructor;
 
                         context.TrainingPlans.Add(plan);
                         context.SaveChanges();

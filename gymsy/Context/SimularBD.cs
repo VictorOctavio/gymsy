@@ -54,7 +54,7 @@ namespace gymsy.Context
             Client cliente1 = new Client { 
                 IdClient = 1,
                 LastExpiration = DateTime.Now.AddMonths(1),//Se le añade un mes mas a la fecha actual
-                Inactive = false,
+                //Inactive = false,
                 IdPerson = 1,
                 IdTrainingPlan = 1
             };
@@ -83,7 +83,7 @@ namespace gymsy.Context
             {
                 IdClient = 2,
                 LastExpiration = DateTime.Now.AddMonths(1),//Se le añade un mes mas a la fecha actual
-                Inactive = false,
+               // Inactive = false,
                 IdPerson = 2,
                 IdTrainingPlan = 1,
             };
@@ -111,7 +111,7 @@ namespace gymsy.Context
             {
                 IdClient = 3,
                 LastExpiration = DateTime.Now.AddMonths(1),//Se le añade un mes mas a la fecha actual
-                Inactive = false,
+                //Inactive = false,
                 IdPerson = person1.IdPerson,
                 IdTrainingPlan = 3
             };

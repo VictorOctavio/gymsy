@@ -23,7 +23,27 @@ namespace gymsy.UserControls
             InitializeComponent();
 
             //Cargar DataGrid
-            cargarPersonas(SimularBD.persons, false);
+            InitializeGridPlanes();
+        }
+
+        private void InitializeGridPlanes()
+        {
+            
+            foreach (TrainingPlan plan in AppState.instructor.TrainingPlans.ToList())
+            {
+                foreach (Client cliente in plan.Clients.ToList())
+                {
+                    DGUsers.Rows.Add(plan.Description, cliente.LastExpiration);
+                }
+            }
+
+            
+            foreach (Client cliente in AppState.clients)
+            {
+                DGUsers.Rows.Add("test");
+            }
+            
+
         }
 
         private void BAgregarCliente_Click(object sender, EventArgs e)

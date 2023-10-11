@@ -69,7 +69,7 @@ public partial class GymsyDbContext : DbContext
             entity.Property(e => e.IdClient).HasColumnName("id_client");
             entity.Property(e => e.IdPerson).HasColumnName("id_person");
             entity.Property(e => e.IdTrainingPlan).HasColumnName("id_trainingPlan");
-            entity.Property(e => e.Inactive).HasColumnName("inactive");
+            //entity.Property(e => e.Inactive).HasColumnName("inactive");
             entity.Property(e => e.LastExpiration)
                 .HasColumnType("date")
                 .HasColumnName("lastExpiration");
