@@ -122,11 +122,19 @@ namespace gymsy.App.Presenters
                                            // .Where(cl => instructorFound.TrainingPlans.ToList()
                                            // .Any(us => us.IdTrainingPlan == cl.IdTrainingPlan))
                                             .ToList();
+
+                        //Trae los planes
+                        var trainingPlans = this.gymsydb.TrainingPlans
+                                                .Where(tp => tp.IdInstructor == instructorFound.IdInstructor)
+                                                .ToList();
   
                         //
-
+                       
                         AppState.clients = clientes;
                         AppState.instructor = instructorFound;
+                        //Se cargan manualmente los planes ya que 
+                        AppState.instructor.TrainingPlans = trainingPlans;
+
 
                         break;
 
