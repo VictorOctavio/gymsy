@@ -29,7 +29,7 @@ namespace gymsy.UserControls
         private void InitializeGridPlanes()
         {
             
-            foreach (TrainingPlan plan in AppState.instructor.TrainingPlans.ToList())
+            foreach (TrainingPlan plan in AppState.instructor.TrainingPlans)
             {
                 foreach (Client cliente in plan.Clients.ToList())
                 {

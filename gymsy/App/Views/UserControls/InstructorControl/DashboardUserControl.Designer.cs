@@ -1,4 +1,6 @@
-﻿namespace gymsy.UserControls
+﻿using System.Windows.Forms.DataVisualization.Charting;
+
+namespace gymsy.UserControls
 {
     partial class DashboardUserControl
     {
@@ -29,6 +31,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardUserControl));
+            ChartArea chartArea1 = new ChartArea();
+            Legend legend1 = new Legend();
+            Series series1 = new Series();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -38,7 +43,7 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             panel1 = new Panel();
-            pictureBox2 = new PictureBox();
+            chart2 = new Chart();
             panel3 = new Panel();
             dataGridView1 = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -56,7 +61,7 @@
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel4.SuspendLayout();
@@ -90,23 +95,28 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(16, 8, 30);
-            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(chart2);
             panel1.Location = new Point(0, 78);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 243);
             panel1.TabIndex = 8;
             // 
-            // pictureBox2
+            // chart2
             // 
-            pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(900, 243);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 12;
-            pictureBox2.TabStop = false;
+            chartArea1.Name = "ChartArea1";
+            chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart2.Legends.Add(legend1);
+            chart2.Location = new Point(206, 3);
+            chart2.Name = "chart2";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart2.Series.Add(series1);
+            chart2.Size = new Size(270, 221);
+            chart2.TabIndex = 13;
+            chart2.Text = "chart2";
             // 
             // panel3
             // 
@@ -328,7 +338,7 @@
             Size = new Size(900, 550);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -360,6 +370,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private PictureBox pictureBox2;
+        private System.CodeDom.CodeTypeReference chart1;
+        private Chart chart2;
     }
 }

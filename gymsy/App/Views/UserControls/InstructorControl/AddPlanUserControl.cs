@@ -31,7 +31,7 @@ namespace gymsy.UserControls
         private void InitializeGridPlanes()
         {
             
-            foreach (TrainingPlan plan in AppState.instructor.TrainingPlans )
+            foreach (TrainingPlan plan in AppState.instructor.TrainingPlans)
             {
                 DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description);
             }
