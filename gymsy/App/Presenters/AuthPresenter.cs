@@ -110,17 +110,16 @@ namespace gymsy.App.Presenters
 
                     // this person is instructor
                     case 2:
-
                         var instructorFound = this.gymsydb.Instructors
                                                 .Where(instructor => instructor.IdPerson == personFound.IdPerson)
                                                 .First();
+                   
+                        var planesFound = this.gymsydb.TrainingPlans.ToList();
+                        var clientsFound = this.gymsydb.Clients.ToList();
+                        var persons = this.gymsydb.People.ToList();
 
-                        var planesFound = this.gymsydb.TrainingPlans
-                                                 .Where(plan => plan.IdInstructor == instructorFound.IdInstructor)
-                                                 .ToList();
-
-                        AppState.planes = planesFound;
-
+                        AppState.Instructor = instructorFound;
+                       
                         break;
 
                     // this person is client

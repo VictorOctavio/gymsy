@@ -788,9 +788,9 @@
             BtnNavWallet.FlatStyle = FlatStyle.Flat;
             BtnNavWallet.ForeColor = Color.Transparent;
             BtnNavWallet.Image = Properties.Resources.wallet_free;
-            BtnNavWallet.Location = new Point(270, -1);
+            BtnNavWallet.Location = new Point(270, 0);
             BtnNavWallet.Name = "BtnNavWallet";
-            BtnNavWallet.Size = new Size(78, 71);
+            BtnNavWallet.Size = new Size(78, 72);
             BtnNavWallet.TabIndex = 0;
             BtnNavWallet.UseVisualStyleBackColor = false;
             BtnNavWallet.Click += BtnNavWallet_Click;

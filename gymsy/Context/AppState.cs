@@ -11,9 +11,12 @@ namespace gymsy.Context
     {
         public static Person person { get; set; }
         public static List<TrainingPlan> planes { get; set; }
+        public static Array planess { get; set; }
         public static List<Person> clients { get; set; }
         public static Person userActive { get; set; }
         public static List<Person> instructors { get; set; }
+
+        public static Instructor Instructor { get; set; }
 
     }
 }
