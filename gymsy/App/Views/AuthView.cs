@@ -126,6 +126,8 @@ namespace gymsy
 
         void IAuthView.HandleResponseDBMessage()
         {
+            BtnMessageDB.Visible = false;
+
             if (this.IsSuccessful)
             {
                 TBNameUser.Text = this.Message;
