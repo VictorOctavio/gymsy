@@ -179,6 +179,12 @@ namespace gymsy
             navigationControl.Display(4);
             navigationButtons.Highlight(btnNavAddClient);
         }
+        private void BtnNavWallet_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(6);
+            navigationButtons.Highlight(new Button());
+        }
+
 
 
         // ------------------------------------------------------------------
@@ -226,11 +232,7 @@ namespace gymsy
         }
 
 
-        private void btnWalletNav_Click(object sender, EventArgs e)
-        {
-            navigationControl.Display(6);
-            navigationButtons.Highlight(new Button());
-        }
+
 
         // START TIMERS
         private void menuButton_Click(object sender, EventArgs e) // Timer despligue panel 
@@ -358,6 +360,7 @@ namespace gymsy
          
 
         }
+
 
     }
 }

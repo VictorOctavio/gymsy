@@ -23,28 +23,24 @@ namespace gymsy.UserControls
             InitializeComponent();
 
             //Cargar DataGrid
-            InitializeGridPlanes();
+            cargarPersonas();
         }
 
-        private void InitializeGridPlanes()
+        private void cargarPersonas()
         {
-            
-            foreach (TrainingPlan plan in AppState.instructor.TrainingPlans)
+
+            foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans.ToArray())
             {
-                foreach (Client cliente in plan.Clients.ToList())
+                foreach (Client client in plan.Clients.ToArray())
                 {
-                    DGUsers.Rows.Add(plan.Description, cliente.LastExpiration);
+                    DGUsers.Rows.Add(client.LastExpiration, client.IdTrainingPlan, client.IdClient, client.IdPersonNavigation.FirstName);
                 }
             }
 
-            
-            foreach (Client cliente in AppState.clients)
-            {
-                DGUsers.Rows.Add("test");
-            }
-            
-
+            // Actualiza la vista del DataGridView.
+            DGUsers.Refresh();
         }
+
 
         private void BAgregarCliente_Click(object sender, EventArgs e)
         {
@@ -131,35 +127,7 @@ namespace gymsy.UserControls
             }
         }
 
-        private void cargarPersonas(List<Person> personas, bool ActivosONo)
-        {
-            foreach (Person persona in personas)
-            {
-                if (persona.Inactive == ActivosONo && persona.RolId == 3)
-                {
-                    foreach (Client cliente in SimularBD.clients)
-                    {
-                        if (cliente.IdPerson == persona.IdPerson)
-                        {
-                            foreach (TrainingPlan planEntrenamiento in SimularBD.trainingPlans)
-                            {
-                                if (cliente.IdTrainingPlan == planEntrenamiento.IdTrainingPlan)
-                                {
-                                    DGUsers.Rows.Add(persona.Nickname, persona.FirstName + " " + persona.LastName,
-                                    persona.NumberPhone, planEntrenamiento.Description, cliente.LastExpiration.ToString("dd/MM/yyyy")
-                                    );
-                                }
-
-                            }
-                        }
-
-                    }
-
-                }
-            }
-            // Actualiza la vista del DataGridView.
-            DGUsers.Refresh();
-        }
+       
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
@@ -171,7 +139,7 @@ namespace gymsy.UserControls
         private void rjButton1_Click(object sender, EventArgs e)
         {
             //Cargar DataGrid
-            cargarPersonas(SimularBD.persons, true);
+            cargarPersonas();
         }
     }
 }

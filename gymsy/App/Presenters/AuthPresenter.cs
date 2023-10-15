@@ -4,7 +4,6 @@ using gymsy.Context;
 using gymsy.Properties;
 using gymsy.utilities;
 using gymsy.Utilities;
-using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -101,7 +100,7 @@ namespace gymsy.App.Presenters
                 {
                     // this person is admin
                     case 1:
-
+                       
                         var instructorsFound = this.gymsydb.People
                                                 .Where(person => person.RolId == 2)
                                                 .ToList();
@@ -111,31 +110,16 @@ namespace gymsy.App.Presenters
 
                     // this person is instructor
                     case 2:
-
                         var instructorFound = this.gymsydb.Instructors
                                                 .Where(instructor => instructor.IdPerson == personFound.IdPerson)
                                                 .First();
+                   
+                        var planesFound = this.gymsydb.TrainingPlans.ToList();
+                        var clientsFound = this.gymsydb.Clients.ToList();
+                        var persons = this.gymsydb.People.ToList();
 
-           
-                        
-                        var clientes = this.gymsydb.Clients
-                                           // .Where(cl => instructorFound.TrainingPlans.ToList()
-                                           // .Any(us => us.IdTrainingPlan == cl.IdTrainingPlan))
-                                            .ToList();
-
-                        //Trae los planes
-                        var trainingPlans = this.gymsydb.TrainingPlans
-                                                .Where(tp => tp.IdInstructor == instructorFound.IdInstructor)
-                                                .ToList();
-  
-                        //
+                        AppState.Instructor = instructorFound;
                        
-                        AppState.clients = clientes;
-                        AppState.instructor = instructorFound;
-                        //Se cargan manualmente los planes ya que 
-                        AppState.instructor.TrainingPlans = trainingPlans;
-
-
                         break;
 
                     // this person is client
@@ -146,7 +130,7 @@ namespace gymsy.App.Presenters
             }
             catch(Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new Exception("Algo ha salido mal :(");
             }
            
         }
