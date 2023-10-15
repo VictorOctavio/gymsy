@@ -29,11 +29,12 @@ namespace gymsy.UserControls
 
         private void InitializeGridPlanes()
         {
+            /*
             foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans)
             {
                 DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description);
             }
-            
+            */
         }
 
         private void TBPrecio_KeyPress(object sender, KeyPressEventArgs e)

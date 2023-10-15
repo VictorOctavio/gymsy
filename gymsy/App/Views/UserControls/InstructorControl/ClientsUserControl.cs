@@ -27,9 +27,9 @@ namespace gymsy.UserControls
         }
 
         private void cargarPersonas()
-        {
+        {/*
 
-            foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans.ToArray())
+            foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans)
             {
                 foreach (Client client in plan.Clients.ToArray())
                 {
@@ -39,6 +39,8 @@ namespace gymsy.UserControls
 
             // Actualiza la vista del DataGridView.
             DGUsers.Refresh();
+
+            */
         }
 
 
