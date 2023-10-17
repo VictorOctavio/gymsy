@@ -28,21 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DGUsers = new DataGridView();
-            nickname = new DataGridViewTextBoxColumn();
-            name = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
-            plan = new DataGridViewTextBoxColumn();
-            last_expiration = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel2 = new Panel();
+            BVerClients = new ClassCustom.RJButton();
             label2 = new Label();
             label1 = new Label();
             rjButton2 = new ClassCustom.RJButton();
-            rjButton1 = new ClassCustom.RJButton();
+            BVerClientDelete = new ClassCustom.RJButton();
             BCancelarBusqueda = new ClassCustom.RJButton();
             LModoBusqueda = new Label();
             BBuscar = new ClassCustom.RJButton();
@@ -50,6 +46,12 @@
             BEditarCliente = new ClassCustom.RJButton();
             BEliminarCliente = new ClassCustom.RJButton();
             BAgregarCliente = new ClassCustom.RJButton();
+            nickname = new DataGridViewTextBoxColumn();
+            name = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            plan = new DataGridViewTextBoxColumn();
+            last_expiration = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)DGUsers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -61,67 +63,42 @@
             DGUsers.AllowUserToDeleteRows = false;
             DGUsers.AllowUserToResizeColumns = false;
             DGUsers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(16, 8, 23);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(69, 34, 99);
-            DGUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(16, 8, 23);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(230, 237, 243);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(69, 34, 99);
+            DGUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             DGUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DGUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DGUsers.BackgroundColor = Color.FromArgb(16, 8, 23);
             DGUsers.BorderStyle = BorderStyle.None;
             DGUsers.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DGUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            DGUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             DGUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGUsers.Columns.AddRange(new DataGridViewColumn[] { nickname, name, Telefono, plan, last_expiration });
+            DGUsers.Columns.AddRange(new DataGridViewColumn[] { nickname, name, Telefono, plan, last_expiration, delete });
             DGUsers.EditMode = DataGridViewEditMode.EditProgrammatically;
             DGUsers.Location = new Point(3, 151);
             DGUsers.Name = "DGUsers";
             DGUsers.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             DGUsers.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            DGUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            DGUsers.RowsDefaultCellStyle = dataGridViewCellStyle6;
             DGUsers.RowTemplate.Height = 25;
             DGUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGUsers.ShowCellErrors = false;
             DGUsers.Size = new Size(994, 376);
             DGUsers.TabIndex = 1;
-            // 
-            // nickname
-            // 
-            nickname.HeaderText = "Apodo";
-            nickname.Name = "nickname";
-            // 
-            // name
-            // 
-            name.HeaderText = "Nombre";
-            name.Name = "name";
-            // 
-            // Telefono
-            // 
-            Telefono.HeaderText = "Telefono";
-            Telefono.Name = "Telefono";
-            // 
-            // plan
-            // 
-            plan.HeaderText = "Plan";
-            plan.Name = "plan";
-            // 
-            // last_expiration
-            // 
-            last_expiration.HeaderText = "Ultimo Vencimiento";
-            last_expiration.Name = "last_expiration";
             // 
             // panel1
             // 
@@ -138,10 +115,11 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(16, 8, 23);
+            panel2.Controls.Add(BVerClients);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(rjButton2);
-            panel2.Controls.Add(rjButton1);
+            panel2.Controls.Add(BVerClientDelete);
             panel2.Controls.Add(BCancelarBusqueda);
             panel2.Controls.Add(LModoBusqueda);
             panel2.Controls.Add(BBuscar);
@@ -153,6 +131,33 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1000, 151);
             panel2.TabIndex = 4;
+            // 
+            // BVerClients
+            // 
+            BVerClients.BackColor = Color.FromArgb(41, 147, 45);
+            BVerClients.BackgroundColor = Color.FromArgb(41, 147, 45);
+            BVerClients.BorderColor = Color.PaleVioletRed;
+            BVerClients.BorderRadius = 15;
+            BVerClients.BorderSize = 0;
+            BVerClients.FlatAppearance.BorderSize = 0;
+            BVerClients.FlatStyle = FlatStyle.Flat;
+            BVerClients.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BVerClients.ForeColor = Color.White;
+            BVerClients.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
+            BVerClients.IconColor = Color.FromArgb(230, 237, 243);
+            BVerClients.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BVerClients.IconSize = 45;
+            BVerClients.ImageAlign = ContentAlignment.MiddleRight;
+            BVerClients.Location = new Point(744, 38);
+            BVerClients.Name = "BVerClients";
+            BVerClients.Padding = new Padding(10, 0, 0, 0);
+            BVerClients.Size = new Size(228, 40);
+            BVerClients.TabIndex = 88;
+            BVerClients.Text = "Ver Clientes";
+            BVerClients.TextAlign = ContentAlignment.MiddleLeft;
+            BVerClients.TextColor = Color.White;
+            BVerClients.UseVisualStyleBackColor = false;
+            BVerClients.Click += rjButton3_Click;
             // 
             // label2
             // 
@@ -194,10 +199,10 @@
             rjButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             rjButton2.IconSize = 45;
             rjButton2.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton2.Location = new Point(744, 38);
+            rjButton2.Location = new Point(560, 84);
             rjButton2.Name = "rjButton2";
             rjButton2.Padding = new Padding(10, 0, 0, 0);
-            rjButton2.Size = new Size(228, 40);
+            rjButton2.Size = new Size(178, 40);
             rjButton2.TabIndex = 85;
             rjButton2.Text = "Añadir Progreso";
             rjButton2.TextAlign = ContentAlignment.MiddleLeft;
@@ -205,32 +210,32 @@
             rjButton2.UseVisualStyleBackColor = false;
             rjButton2.Click += rjButton2_Click;
             // 
-            // rjButton1
+            // BVerClientDelete
             // 
-            rjButton1.BackColor = Color.FromArgb(192, 0, 0);
-            rjButton1.BackgroundColor = Color.FromArgb(192, 0, 0);
-            rjButton1.BorderColor = Color.PaleVioletRed;
-            rjButton1.BorderRadius = 15;
-            rjButton1.BorderSize = 0;
-            rjButton1.FlatAppearance.BorderSize = 0;
-            rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            rjButton1.ForeColor = Color.White;
-            rjButton1.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
-            rjButton1.IconColor = Color.White;
-            rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            rjButton1.IconSize = 45;
-            rjButton1.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton1.Location = new Point(744, 84);
-            rjButton1.Name = "rjButton1";
-            rjButton1.Padding = new Padding(8, 0, 0, 0);
-            rjButton1.Size = new Size(228, 40);
-            rjButton1.TabIndex = 84;
-            rjButton1.Text = "Ver Clientes Eliminados";
-            rjButton1.TextAlign = ContentAlignment.MiddleLeft;
-            rjButton1.TextColor = Color.White;
-            rjButton1.UseVisualStyleBackColor = false;
-            rjButton1.Click += rjButton1_Click;
+            BVerClientDelete.BackColor = Color.FromArgb(192, 0, 0);
+            BVerClientDelete.BackgroundColor = Color.FromArgb(192, 0, 0);
+            BVerClientDelete.BorderColor = Color.PaleVioletRed;
+            BVerClientDelete.BorderRadius = 15;
+            BVerClientDelete.BorderSize = 0;
+            BVerClientDelete.FlatAppearance.BorderSize = 0;
+            BVerClientDelete.FlatStyle = FlatStyle.Flat;
+            BVerClientDelete.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BVerClientDelete.ForeColor = Color.White;
+            BVerClientDelete.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
+            BVerClientDelete.IconColor = Color.White;
+            BVerClientDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BVerClientDelete.IconSize = 45;
+            BVerClientDelete.ImageAlign = ContentAlignment.MiddleRight;
+            BVerClientDelete.Location = new Point(744, 84);
+            BVerClientDelete.Name = "BVerClientDelete";
+            BVerClientDelete.Padding = new Padding(8, 0, 0, 0);
+            BVerClientDelete.Size = new Size(228, 40);
+            BVerClientDelete.TabIndex = 84;
+            BVerClientDelete.Text = "Ver Clientes Eliminados";
+            BVerClientDelete.TextAlign = ContentAlignment.MiddleLeft;
+            BVerClientDelete.TextColor = Color.White;
+            BVerClientDelete.UseVisualStyleBackColor = false;
+            BVerClientDelete.Click += rjButton1_Click;
             // 
             // BCancelarBusqueda
             // 
@@ -397,6 +402,36 @@
             BAgregarCliente.UseVisualStyleBackColor = false;
             BAgregarCliente.Click += BAgregarCliente_Click;
             // 
+            // nickname
+            // 
+            nickname.HeaderText = "Apodo";
+            nickname.Name = "nickname";
+            // 
+            // name
+            // 
+            name.HeaderText = "Nombre";
+            name.Name = "name";
+            // 
+            // Telefono
+            // 
+            Telefono.HeaderText = "Telefono";
+            Telefono.Name = "Telefono";
+            // 
+            // plan
+            // 
+            plan.HeaderText = "Plan";
+            plan.Name = "plan";
+            // 
+            // last_expiration
+            // 
+            last_expiration.HeaderText = "Ultimo Vencimiento";
+            last_expiration.Name = "last_expiration";
+            // 
+            // delete
+            // 
+            delete.HeaderText = "Eliminado";
+            delete.Name = "delete";
+            // 
             // ClientsUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -429,10 +464,13 @@
         private Label label1;
         private ClassCustom.RJButton rjButton2;
         private ClassCustom.RJButton rjButton1;
+        private ClassCustom.RJButton BVerClients;
+        private ClassCustom.RJButton BVerClientDelete;
         private DataGridViewTextBoxColumn nickname;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn plan;
         private DataGridViewTextBoxColumn last_expiration;
+        private DataGridViewTextBoxColumn delete;
     }
 }

@@ -22,25 +22,41 @@ namespace gymsy.UserControls
         {
             InitializeComponent();
 
+
+            this.cargarPersonas();
             //Cargar DataGrid
-            cargarPersonas();
+            bool isnotDelete = true;
+            this.mostrar(isnotDelete);
         }
 
         private void cargarPersonas()
-        {/*
+        {
+            // Limpia cualquier ordenación previa en el DataGridView
+            DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
 
             foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans)
             {
                 foreach (Client client in plan.Clients.ToArray())
                 {
-                    DGUsers.Rows.Add(client.LastExpiration, client.IdTrainingPlan, client.IdClient, client.IdPersonNavigation.FirstName);
+                    if (!client.IdPersonNavigation.Inactive)
+                    {
+                        DGUsers.Rows.Add(client.IdPersonNavigation.Nickname, client.IdPersonNavigation.FirstName, client.IdPersonNavigation.NumberPhone, client.IdTrainingPlanNavigation.Description, client.LastExpiration, "NO");
+                    
+                    } else
+                    {
+                        DGUsers.Rows.Add(client.IdPersonNavigation.Nickname, client.IdPersonNavigation.FirstName, client.IdPersonNavigation.NumberPhone, client.IdTrainingPlanNavigation.Description, client.LastExpiration, "SI");
+                    }
+
+                    
+
+
                 }
             }
 
             // Actualiza la vista del DataGridView.
             DGUsers.Refresh();
 
-            */
+
         }
 
 
@@ -129,7 +145,7 @@ namespace gymsy.UserControls
             }
         }
 
-       
+
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
@@ -141,7 +157,48 @@ namespace gymsy.UserControls
         private void rjButton1_Click(object sender, EventArgs e)
         {
             //Cargar DataGrid
-            cargarPersonas();
+            mostrar(false);
+        }
+
+
+        /***
+         * Esta funcion recibe como parametro a isnotDelete que se trata de que si se recibe
+         * como true se entiende que se quieren mostrar solo los usuarios que no han sido eliminados
+         * de lo contrario se mostraran todos los usuarios que han sido eliminados
+         * **/
+        private void mostrar(bool isnotDelete)
+        {
+            // Limpia cualquier ordenación previa en el DataGridView
+            DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
+
+            foreach (DataGridViewRow row in DGUsers.Rows)
+            {
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (row.Cells["Eliminado"].Value != null && row.Cells["Eliminado"].Value.ToString() == "SI")
+                    {
+                        // Si la columna "Eliminado" contiene "SI", muestra la fila.
+                        row.Visible = isnotDelete;
+                    }
+                    else
+                    {
+                        // Si no contiene "SI", oculta la fila.
+                        row.Visible = !isnotDelete;
+                    }
+                }
+                
+            }
+
+            // Actualiza la vista del DataGridView.
+            DGUsers.Refresh();
+
+
+        }
+
+        private void rjButton3_Click(object sender, EventArgs e)
+        {
+            this.mostrar(true);
         }
     }
 }

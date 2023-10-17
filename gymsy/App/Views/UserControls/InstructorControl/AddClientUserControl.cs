@@ -231,6 +231,9 @@ namespace gymsy.UserControls
         }
         private void CargarElementosComboBox()
         {
+
+
+
             // Puedes agregar elementos al ComboBox de diferentes maneras.
             // En este ejemplo, los agregaremos manualmente:
 
@@ -352,12 +355,17 @@ namespace gymsy.UserControls
 
 
                         MessageBox.Show("Se Guardaron correcctamente los datos");
+                        this.restablecerTextBoxes();
 
                     }
                     else //La vista esta en modo edicion se deven editar los datos
                     {
 
+
+
                         MessageBox.Show("Se Editaron correcctamente los datos");
+                        this.restablecerTextBoxes();
+                        MainView.navigationControl.Display(1);
                     }
 
                 }
@@ -377,7 +385,18 @@ namespace gymsy.UserControls
             TBNombreInstructor.Text = "Juansito Perez";
         }
 
+        private void restablecerTextBoxes()
+        {
+            TBNombre.Text = "";
+            TBApellido.Text = "";
+            TBTelefono.Text = "";
+            TBUsuario.Text = "";
+            TBContraseña.Text = "";
+            TBRutaImagen.Text = "";
+            RBMasculino.Checked = true;
 
+
+        }
 
 
     }
