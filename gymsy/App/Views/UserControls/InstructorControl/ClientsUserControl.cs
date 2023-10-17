@@ -38,7 +38,7 @@ namespace gymsy.UserControls
             {
                 foreach (Client client in plan.Clients.ToArray())
                 {
-                    if (!client.IdPersonNavigation.Inactive)
+                    if (client.IdPersonNavigation.Inactive)
                     {
                         DGUsers.Rows.Add(client.IdPersonNavigation.Nickname, client.IdPersonNavigation.FirstName, client.IdPersonNavigation.NumberPhone, client.IdTrainingPlanNavigation.Description, client.LastExpiration, "NO");
                     
@@ -176,7 +176,7 @@ namespace gymsy.UserControls
 
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (row.Cells["Eliminado"].Value != null && row.Cells["Eliminado"].Value.ToString() == "SI")
+                    if (row.Cells["delete"].Value != null && row.Cells["delete"].Value.ToString() == "SI")
                     {
                         // Si la columna "Eliminado" contiene "SI", muestra la fila.
                         row.Visible = isnotDelete;
