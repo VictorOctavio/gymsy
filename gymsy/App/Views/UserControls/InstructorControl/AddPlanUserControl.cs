@@ -15,26 +15,30 @@ namespace gymsy.UserControls
 {
     public partial class AddPlanUserControl : UserControl
     {
-        private int idPlan = 0;
+        //private int idPlan = 0;
         private bool isEditMode = false;
         private int indexRowSelect = 0;
+        private GymsyDbContext dbContext;
 
 
         //private DataGridViewRow selectedRow; // Declara una variable para mantener la fila seleccionada.
         public AddPlanUserControl()
         {
+            //Se trae el contexto de la base de datos
+            this.dbContext = GymsyContext.GymsyContextDB;
+
             InitializeComponent();
             InitializeGridPlanes();
         }
 
         private void InitializeGridPlanes()
         {
-            
+
             foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans)
             {
                 DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description);
             }
-            
+
         }
 
         private void TBPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -78,6 +82,10 @@ namespace gymsy.UserControls
                         selectedRow.Cells["Precio"].Value = TBPrecio.Text;
                         selectedRow.Cells["Descripcion"].Value = TBDescripcion.Text;
 
+
+                        //Se actualiza el plan en la base de datos
+
+
                         // Actualiza la vista del DataGridView.
                         DGPlan.Refresh();
 
@@ -98,21 +106,22 @@ namespace gymsy.UserControls
                         // Agregar una nueva fila al DataGridView con los valores
 
 
-                        this.idPlan++;
+                        //this.idPlan++;
 
-                        
-                        GymsyDbContext context = Context.GymsyContext.GymsyContextDB;
+
+                        //GymsyDbContext dbcontext = Context.GymsyContext.GymsyContextDB;
 
                         TrainingPlan plan = new TrainingPlan();
                         plan.Description = TBDescripcion.Text;
                         plan.Price = float.Parse(TBPrecio.Text);
-                        plan.IdInstructor = 1;
+                        plan.IdInstructor = AppState.Instructor.IdInstructor;
 
-                        context.TrainingPlans.Add(plan);
-                        context.SaveChanges();
-                        
+                        this.dbContext.TrainingPlans.Add(plan);
+                        this.dbContext.SaveChanges();
 
-                        DGPlan.Rows.Add(this.idPlan, TBPrecio.Text, TBDescripcion.Text);
+                        this.dbContext.Entry(plan).GetDatabaseValues();
+
+                        DGPlan.Rows.Add(plan.IdTrainingPlan, TBPrecio.Text, TBDescripcion.Text);
 
                         //MessageBox.Show("Se Ingreso correcetamente el plan con un precio de: $" + numeroIngresado.ToString() + "\nDescripcion: " + TBDescripcion.Text);
 
@@ -291,6 +300,6 @@ namespace gymsy.UserControls
 
         }
 
-    
+
     }
 }

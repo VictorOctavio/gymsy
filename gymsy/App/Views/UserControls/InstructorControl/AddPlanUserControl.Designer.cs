@@ -28,34 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            LModoEditOrAdd = new Label();
-            BEditarPlan = new ClassCustom.RJButton();
-            BEliminarPlan = new ClassCustom.RJButton();
-            LDescripcionRequerido = new Label();
-            TBDescripcion = new CustomControls.RJControls.RJTextBox();
+            panel2 = new Panel();
             TBPrecio = new CustomControls.RJControls.RJTextBox();
-            LPrecioRequerido = new Label();
-            label18 = new Label();
+            LModoEditOrAdd = new Label();
+            BAgregarPlan = new ClassCustom.RJButton();
+            BEditarPlan = new ClassCustom.RJButton();
             label16 = new Label();
+            BEliminarPlan = new ClassCustom.RJButton();
+            label18 = new Label();
+            LDescripcionRequerido = new Label();
+            LPrecioRequerido = new Label();
+            TBDescripcion = new CustomControls.RJControls.RJTextBox();
             DGPlan = new DataGridView();
             id_plan = new DataGridViewTextBoxColumn();
             precio = new DataGridViewTextBoxColumn();
             descripcion = new DataGridViewTextBoxColumn();
             nav = new Panel();
+            rjButton2 = new ClassCustom.RJButton();
+            label1 = new Label();
+            rjButton1 = new ClassCustom.RJButton();
             BCancelarBusqueda = new ClassCustom.RJButton();
             LModoBusqueda = new Label();
             TBBusqueda = new CustomControls.RJControls.RJTextBox();
             BBuscar = new ClassCustom.RJButton();
-            BAgregarPlan = new ClassCustom.RJButton();
-            panel2 = new Panel();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGPlan).BeginInit();
             nav.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -71,6 +74,46 @@
             panel1.Size = new Size(1000, 530);
             panel1.TabIndex = 1;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(TBPrecio);
+            panel2.Controls.Add(LModoEditOrAdd);
+            panel2.Controls.Add(BAgregarPlan);
+            panel2.Controls.Add(BEditarPlan);
+            panel2.Controls.Add(label16);
+            panel2.Controls.Add(BEliminarPlan);
+            panel2.Controls.Add(label18);
+            panel2.Controls.Add(LDescripcionRequerido);
+            panel2.Controls.Add(LPrecioRequerido);
+            panel2.Controls.Add(TBDescripcion);
+            panel2.Location = new Point(765, 130);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(238, 400);
+            panel2.TabIndex = 79;
+            // 
+            // TBPrecio
+            // 
+            TBPrecio.BackColor = Color.FromArgb(69, 34, 99);
+            TBPrecio.BorderColor = Color.Transparent;
+            TBPrecio.BorderFocusColor = Color.HotPink;
+            TBPrecio.BorderRadius = 15;
+            TBPrecio.BorderSize = 2;
+            TBPrecio.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBPrecio.ForeColor = Color.FromArgb(230, 237, 243);
+            TBPrecio.Location = new Point(18, 70);
+            TBPrecio.Margin = new Padding(4);
+            TBPrecio.Multiline = false;
+            TBPrecio.Name = "TBPrecio";
+            TBPrecio.Padding = new Padding(10, 7, 10, 7);
+            TBPrecio.PasswordChar = false;
+            TBPrecio.PlaceholderColor = Color.DarkGray;
+            TBPrecio.PlaceholderText = "Ingrese un nombre...";
+            TBPrecio.ReadOnly = false;
+            TBPrecio.Size = new Size(204, 31);
+            TBPrecio.TabIndex = 73;
+            TBPrecio.UnderlinedStyle = false;
+            TBPrecio.KeyPress += TBPrecio_KeyPress;
+            // 
             // LModoEditOrAdd
             // 
             LModoEditOrAdd.AutoSize = true;
@@ -81,6 +124,32 @@
             LModoEditOrAdd.Size = new Size(137, 25);
             LModoEditOrAdd.TabIndex = 78;
             LModoEditOrAdd.Text = "Modo Agregar";
+            // 
+            // BAgregarPlan
+            // 
+            BAgregarPlan.BackColor = Color.FromArgb(0, 192, 0);
+            BAgregarPlan.BackgroundColor = Color.FromArgb(0, 192, 0);
+            BAgregarPlan.BorderColor = Color.PaleVioletRed;
+            BAgregarPlan.BorderRadius = 15;
+            BAgregarPlan.BorderSize = 0;
+            BAgregarPlan.FlatAppearance.BorderSize = 0;
+            BAgregarPlan.FlatStyle = FlatStyle.Flat;
+            BAgregarPlan.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BAgregarPlan.ForeColor = Color.White;
+            BAgregarPlan.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            BAgregarPlan.IconColor = Color.White;
+            BAgregarPlan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BAgregarPlan.ImageAlign = ContentAlignment.MiddleRight;
+            BAgregarPlan.Location = new Point(34, 225);
+            BAgregarPlan.Name = "BAgregarPlan";
+            BAgregarPlan.Padding = new Padding(10, 0, 0, 0);
+            BAgregarPlan.Size = new Size(172, 49);
+            BAgregarPlan.TabIndex = 5;
+            BAgregarPlan.Text = "Guardar Plan";
+            BAgregarPlan.TextAlign = ContentAlignment.MiddleLeft;
+            BAgregarPlan.TextColor = Color.White;
+            BAgregarPlan.UseVisualStyleBackColor = false;
+            BAgregarPlan.Click += BAgregarPlan_Click;
             // 
             // BEditarPlan
             // 
@@ -109,6 +178,16 @@
             BEditarPlan.UseVisualStyleBackColor = false;
             BEditarPlan.Click += BEditarPlan_Click;
             // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.ForeColor = Color.FromArgb(230, 237, 243);
+            label16.Location = new Point(100, 51);
+            label16.Name = "label16";
+            label16.Size = new Size(40, 15);
+            label16.TabIndex = 70;
+            label16.Text = "Precio";
+            // 
             // BEliminarPlan
             // 
             BEliminarPlan.BackColor = Color.FromArgb(192, 0, 0);
@@ -136,6 +215,16 @@
             BEliminarPlan.UseVisualStyleBackColor = false;
             BEliminarPlan.Click += BEliminarPlan_Click;
             // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.ForeColor = Color.FromArgb(230, 237, 243);
+            label18.Location = new Point(86, 130);
+            label18.Name = "label18";
+            label18.Size = new Size(69, 15);
+            label18.TabIndex = 71;
+            label18.Text = "Descripcion";
+            // 
             // LDescripcionRequerido
             // 
             LDescripcionRequerido.AutoSize = true;
@@ -146,6 +235,17 @@
             LDescripcionRequerido.TabIndex = 75;
             LDescripcionRequerido.Text = "*Error en el campo";
             LDescripcionRequerido.Visible = false;
+            // 
+            // LPrecioRequerido
+            // 
+            LPrecioRequerido.AutoSize = true;
+            LPrecioRequerido.ForeColor = Color.Red;
+            LPrecioRequerido.Location = new Point(68, 105);
+            LPrecioRequerido.Name = "LPrecioRequerido";
+            LPrecioRequerido.Size = new Size(105, 15);
+            LPrecioRequerido.TabIndex = 72;
+            LPrecioRequerido.Text = "*Error en el campo";
+            LPrecioRequerido.Visible = false;
             // 
             // TBDescripcion
             // 
@@ -164,64 +264,10 @@
             TBDescripcion.PasswordChar = false;
             TBDescripcion.PlaceholderColor = Color.DarkGray;
             TBDescripcion.PlaceholderText = "Ingrese un nombre...";
+            TBDescripcion.ReadOnly = false;
             TBDescripcion.Size = new Size(204, 31);
             TBDescripcion.TabIndex = 74;
-            TBDescripcion.Text = "";
             TBDescripcion.UnderlinedStyle = false;
-            // 
-            // TBPrecio
-            // 
-            TBPrecio.BackColor = Color.FromArgb(69, 34, 99);
-            TBPrecio.BorderColor = Color.Transparent;
-            TBPrecio.BorderFocusColor = Color.HotPink;
-            TBPrecio.BorderRadius = 15;
-            TBPrecio.BorderSize = 2;
-            TBPrecio.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            TBPrecio.ForeColor = Color.FromArgb(230, 237, 243);
-            TBPrecio.Location = new Point(18, 70);
-            TBPrecio.Margin = new Padding(4);
-            TBPrecio.Multiline = false;
-            TBPrecio.Name = "TBPrecio";
-            TBPrecio.Padding = new Padding(10, 7, 10, 7);
-            TBPrecio.PasswordChar = false;
-            TBPrecio.PlaceholderColor = Color.DarkGray;
-            TBPrecio.PlaceholderText = "Ingrese un nombre...";
-            TBPrecio.Size = new Size(204, 31);
-            TBPrecio.TabIndex = 73;
-            TBPrecio.Text = "";
-            TBPrecio.UnderlinedStyle = false;
-            TBPrecio.KeyPress += TBPrecio_KeyPress;
-            // 
-            // LPrecioRequerido
-            // 
-            LPrecioRequerido.AutoSize = true;
-            LPrecioRequerido.ForeColor = Color.Red;
-            LPrecioRequerido.Location = new Point(68, 105);
-            LPrecioRequerido.Name = "LPrecioRequerido";
-            LPrecioRequerido.Size = new Size(105, 15);
-            LPrecioRequerido.TabIndex = 72;
-            LPrecioRequerido.Text = "*Error en el campo";
-            LPrecioRequerido.Visible = false;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.ForeColor = Color.FromArgb(230, 237, 243);
-            label18.Location = new Point(86, 130);
-            label18.Name = "label18";
-            label18.Size = new Size(69, 15);
-            label18.TabIndex = 71;
-            label18.Text = "Descripcion";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.ForeColor = Color.FromArgb(230, 237, 243);
-            label16.Location = new Point(100, 51);
-            label16.Name = "label16";
-            label16.Size = new Size(40, 15);
-            label16.TabIndex = 70;
-            label16.Text = "Precio";
             // 
             // DGPlan
             // 
@@ -229,22 +275,22 @@
             DGPlan.AllowUserToDeleteRows = false;
             DGPlan.AllowUserToResizeColumns = false;
             DGPlan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(69, 34, 99);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(230, 237, 243);
-            DGPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(69, 34, 99);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
+            DGPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DGPlan.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DGPlan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DGPlan.BackgroundColor = Color.FromArgb(16, 8, 23);
             DGPlan.BorderStyle = BorderStyle.None;
             DGPlan.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            DGPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGPlan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGPlan.Columns.AddRange(new DataGridViewColumn[] { id_plan, precio, descripcion });
             DGPlan.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -253,13 +299,13 @@
             DGPlan.Name = "DGPlan";
             DGPlan.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             DGPlan.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            DGPlan.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            DGPlan.RowsDefaultCellStyle = dataGridViewCellStyle3;
             DGPlan.RowTemplate.Height = 25;
             DGPlan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGPlan.ShowCellErrors = false;
@@ -286,6 +332,9 @@
             // 
             nav.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             nav.BackColor = Color.FromArgb(16, 8, 23);
+            nav.Controls.Add(rjButton2);
+            nav.Controls.Add(label1);
+            nav.Controls.Add(rjButton1);
             nav.Controls.Add(BCancelarBusqueda);
             nav.Controls.Add(LModoBusqueda);
             nav.Controls.Add(TBBusqueda);
@@ -295,6 +344,71 @@
             nav.Name = "nav";
             nav.Size = new Size(1000, 124);
             nav.TabIndex = 6;
+            // 
+            // rjButton2
+            // 
+            rjButton2.BackColor = Color.FromArgb(192, 0, 0);
+            rjButton2.BackgroundColor = Color.FromArgb(192, 0, 0);
+            rjButton2.BorderColor = Color.PaleVioletRed;
+            rjButton2.BorderRadius = 15;
+            rjButton2.BorderSize = 0;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton2.ForeColor = Color.White;
+            rjButton2.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            rjButton2.IconColor = Color.White;
+            rjButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton2.IconSize = 40;
+            rjButton2.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton2.Location = new Point(655, 44);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Padding = new Padding(10, 0, 0, 0);
+            rjButton2.Size = new Size(159, 49);
+            rjButton2.TabIndex = 82;
+            rjButton2.Text = "Cancelar Busqueda";
+            rjButton2.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton2.TextColor = Color.White;
+            rjButton2.UseVisualStyleBackColor = false;
+            rjButton2.Visible = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(230, 237, 243);
+            label1.Location = new Point(769, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(118, 25);
+            label1.TabIndex = 81;
+            label1.Text = "Listar planes";
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.FromArgb(192, 0, 0);
+            rjButton1.BackgroundColor = Color.FromArgb(192, 0, 0);
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 15;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.ForeColor = Color.White;
+            rjButton1.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            rjButton1.IconColor = Color.White;
+            rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton1.IconSize = 40;
+            rjButton1.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton1.Location = new Point(820, 44);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Padding = new Padding(10, 0, 0, 0);
+            rjButton1.Size = new Size(165, 49);
+            rjButton1.TabIndex = 80;
+            rjButton1.Text = "Ver Eliminados";
+            rjButton1.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Visible = false;
             // 
             // BCancelarBusqueda
             // 
@@ -312,10 +426,10 @@
             BCancelarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BCancelarBusqueda.IconSize = 40;
             BCancelarBusqueda.ImageAlign = ContentAlignment.MiddleRight;
-            BCancelarBusqueda.Location = new Point(671, 60);
+            BCancelarBusqueda.Location = new Point(484, 40);
             BCancelarBusqueda.Name = "BCancelarBusqueda";
             BCancelarBusqueda.Padding = new Padding(10, 0, 0, 0);
-            BCancelarBusqueda.Size = new Size(202, 49);
+            BCancelarBusqueda.Size = new Size(143, 50);
             BCancelarBusqueda.TabIndex = 79;
             BCancelarBusqueda.Text = "Cancelar Busqueda";
             BCancelarBusqueda.TextAlign = ContentAlignment.MiddleLeft;
@@ -329,7 +443,7 @@
             LModoBusqueda.AutoSize = true;
             LModoBusqueda.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             LModoBusqueda.ForeColor = Color.FromArgb(230, 237, 243);
-            LModoBusqueda.Location = new Point(148, 26);
+            LModoBusqueda.Location = new Point(105, 16);
             LModoBusqueda.Name = "LModoBusqueda";
             LModoBusqueda.Size = new Size(151, 25);
             LModoBusqueda.TabIndex = 79;
@@ -345,7 +459,7 @@
             TBBusqueda.BorderSize = 2;
             TBBusqueda.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             TBBusqueda.ForeColor = Color.FromArgb(230, 237, 243);
-            TBBusqueda.Location = new Point(26, 71);
+            TBBusqueda.Location = new Point(26, 49);
             TBBusqueda.Margin = new Padding(4);
             TBBusqueda.Multiline = false;
             TBBusqueda.Name = "TBBusqueda";
@@ -353,11 +467,10 @@
             TBBusqueda.PasswordChar = false;
             TBBusqueda.PlaceholderColor = Color.DarkGray;
             TBBusqueda.PlaceholderText = "Ingrese una busqueda...";
-            TBBusqueda.Size = new Size(582, 31);
+            TBBusqueda.ReadOnly = false;
+            TBBusqueda.Size = new Size(385, 31);
             TBBusqueda.TabIndex = 69;
-            TBBusqueda.Text = "";
             TBBusqueda.UnderlinedStyle = false;
-           
             // 
             // BBuscar
             // 
@@ -373,56 +486,13 @@
             BBuscar.IconColor = Color.White;
             BBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BBuscar.IconSize = 30;
-            BBuscar.Location = new Point(615, 61);
+            BBuscar.Location = new Point(428, 40);
             BBuscar.Name = "BBuscar";
             BBuscar.Size = new Size(50, 50);
             BBuscar.TabIndex = 6;
             BBuscar.TextColor = Color.White;
             BBuscar.UseVisualStyleBackColor = false;
             BBuscar.Click += BBuscar_Click;
-            // 
-            // BAgregarPlan
-            // 
-            BAgregarPlan.BackColor = Color.FromArgb(0, 192, 0);
-            BAgregarPlan.BackgroundColor = Color.FromArgb(0, 192, 0);
-            BAgregarPlan.BorderColor = Color.PaleVioletRed;
-            BAgregarPlan.BorderRadius = 15;
-            BAgregarPlan.BorderSize = 0;
-            BAgregarPlan.FlatAppearance.BorderSize = 0;
-            BAgregarPlan.FlatStyle = FlatStyle.Flat;
-            BAgregarPlan.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BAgregarPlan.ForeColor = Color.White;
-            BAgregarPlan.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            BAgregarPlan.IconColor = Color.White;
-            BAgregarPlan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BAgregarPlan.ImageAlign = ContentAlignment.MiddleRight;
-            BAgregarPlan.Location = new Point(34, 225);
-            BAgregarPlan.Name = "BAgregarPlan";
-            BAgregarPlan.Padding = new Padding(10, 0, 0, 0);
-            BAgregarPlan.Size = new Size(172, 49);
-            BAgregarPlan.TabIndex = 5;
-            BAgregarPlan.Text = "Guardar Plan";
-            BAgregarPlan.TextAlign = ContentAlignment.MiddleLeft;
-            BAgregarPlan.TextColor = Color.White;
-            BAgregarPlan.UseVisualStyleBackColor = false;
-            BAgregarPlan.Click += BAgregarPlan_Click;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(TBPrecio);
-            panel2.Controls.Add(LModoEditOrAdd);
-            panel2.Controls.Add(BAgregarPlan);
-            panel2.Controls.Add(BEditarPlan);
-            panel2.Controls.Add(label16);
-            panel2.Controls.Add(BEliminarPlan);
-            panel2.Controls.Add(label18);
-            panel2.Controls.Add(LDescripcionRequerido);
-            panel2.Controls.Add(LPrecioRequerido);
-            panel2.Controls.Add(TBDescripcion);
-            panel2.Location = new Point(765, 130);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(238, 400);
-            panel2.TabIndex = 79;
             // 
             // AddPlanUserControl
             // 
@@ -434,11 +504,11 @@
             Name = "AddPlanUserControl";
             Size = new Size(1000, 530);
             panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DGPlan).EndInit();
             nav.ResumeLayout(false);
             nav.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -464,5 +534,8 @@
         private ClassCustom.RJButton BCancelarBusqueda;
         private Label LModoBusqueda;
         private Panel panel2;
+        private ClassCustom.RJButton rjButton2;
+        private Label label1;
+        private ClassCustom.RJButton rjButton1;
     }
 }

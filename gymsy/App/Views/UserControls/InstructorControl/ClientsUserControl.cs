@@ -278,7 +278,7 @@ namespace gymsy.UserControls
             this.isModeVerDelete = true;
             BEliminarCliente.Text = "Eliminar Cliente";
             BEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
-            BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.Trash;
 
             this.mostrar(true);
         }
