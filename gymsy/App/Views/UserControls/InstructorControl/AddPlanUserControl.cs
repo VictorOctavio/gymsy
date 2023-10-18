@@ -15,6 +15,7 @@ namespace gymsy.UserControls
 {
     public partial class AddPlanUserControl : UserControl
     {
+        private bool isModeVerNoDelete = true;
         //private int idPlan = 0;
         private bool isEditMode = false;
         private int indexRowSelect = 0;
@@ -29,6 +30,10 @@ namespace gymsy.UserControls
 
             InitializeComponent();
             InitializeGridPlanes();
+
+            //Muestra lo que no estan eliminados
+            bool isnotDelete = true;
+            this.mostrar(isnotDelete);
         }
 
         private void InitializeGridPlanes()
@@ -36,7 +41,14 @@ namespace gymsy.UserControls
 
             foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans)
             {
-                DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description);
+                if(plan.Inactive)
+                {
+                    DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description, "SI");
+                } else
+                {
+                    DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description, "NO");
+                }
+                
             }
 
         }
@@ -186,7 +198,8 @@ namespace gymsy.UserControls
 
         private void BEliminarPlan_Click(object sender, EventArgs e)
         {
-            if (this.isEditMode)
+
+            if (this.isEditMode) //SE CANCELA LA EDICION
             {
 
                 LModoEditOrAdd.Text = "Modo Agregar";
@@ -206,40 +219,69 @@ namespace gymsy.UserControls
             }
             else
             {
-                //Se pregunta si desea eliminar el plan
-                // Crear un cuadro de diálogo personalizado con los botones que desees
-                MessageBoxButtons botones = MessageBoxButtons.YesNo;
-                MessageBoxDefaultButton botonPredeterminadoNo = MessageBoxDefaultButton.Button2; // Button2 se refiere al botón "No"
-
-
-                DialogResult v_dialogResult = MessageBox.Show("¿Esta seguro que desea eliminar el plan?", "Eliminar Plan", botones, MessageBoxIcon.Question, botonPredeterminadoNo);
-
-                if (v_dialogResult == DialogResult.Yes)
+                // Verifica si hay al menos una fila seleccionada en el DataGridView.
+                if (DGPlan.SelectedRows.Count > 0)
                 {
-                    // Verifica si hay al menos una fila seleccionada en el DataGridView.
-                    if (DGPlan.SelectedRows.Count > 0)
+                    //Se crearan las variables
+                    string pregunta = "";
+                    string celdaSIoNO = "";
+                    //Se procede a cetear tanto los mensajes como las busquedas que se haran
+                    if (this.isModeVerNoDelete)
                     {
+                        pregunta = "¿Desea eliminar este Plan?";
+                        celdaSIoNO = "NO"; //Si se va a eleminar a alguien, primero debe estar no eleiminado
 
-                        //se guarda su indice
-                        this.indexRowSelect = DGPlan.SelectedRows[0].Index;
-
-                        //Se elimina la fila
-                        DGPlan.Rows.RemoveAt(this.indexRowSelect);
-
-                        //Se limpia el indice
-                        this.indexRowSelect = 0;
-
-                        //MessageBox.Show("Se elimino correctamente el plan.");
                     }
                     else
                     {
-                        MessageBox.Show("Por favor, seleccione una fila para eliminar.");
+                        pregunta = "¿Desea activar este Plan?";
+                        celdaSIoNO = "SI";
+                    }
+
+                    DialogResult resultado = MessageBox.Show(pregunta, "Por favor confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+
+                        if (this.isModeVerNoDelete)
+                        {
+
+                            //Se pregunta si desea eliminar el plan
+                            // Crear un cuadro de diálogo personalizado con los botones que desees
+                            MessageBoxButtons botones = MessageBoxButtons.YesNo;
+                            MessageBoxDefaultButton botonPredeterminadoNo = MessageBoxDefaultButton.Button2; // Button2 se refiere al botón "No"
+
+
+                            DialogResult v_dialogResult = MessageBox.Show("¿Esta seguro que desea eliminar el plan?", "Eliminar Plan", botones, MessageBoxIcon.Question, botonPredeterminadoNo);
+
+
+
+                            //se guarda su indice
+                            this.indexRowSelect = DGPlan.SelectedRows[0].Index;
+
+
+
+                            //Se elimina la fila
+                            DGPlan.Rows.RemoveAt(this.indexRowSelect);
+
+                            //Se limpia el indice
+                            this.indexRowSelect = 0;
+
+                            //MessageBox.Show("Se elimino correctamente el plan.");
+
+                        }  
+                        else //Se procede a Activar el plan
+                        {
+                            
+                        }
                     }
                 }
-
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione una fila para eliminar.");
+                }
 
             }
-
 
         }
 
@@ -300,6 +342,68 @@ namespace gymsy.UserControls
 
         }
 
+        private void BVerPlanes_Click(object sender, EventArgs e)
+        {
+            if (this.isEditMode)
+            {
+                MessageBox.Show("Por favor, termine de editar.");
+            }
+            else
+            {
+                this.isModeVerNoDelete = true;
+                BEliminarPlan.Text = "Eliminar Plan";
+                BEliminarPlan.BackColor = Color.FromArgb(192, 0, 0);
+                BEliminarPlan.IconChar = FontAwesome.Sharp.IconChar.Trash;
 
+                this.mostrar(true);
+            }
+        }
+
+        private void mostrar(bool isnotDelete)
+        {
+            // Limpia cualquier ordenación previa en el DataGridView
+            DGPlan.Sort(DGPlan.Columns[0], ListSortDirection.Ascending);
+
+            foreach (DataGridViewRow row in DGPlan.Rows)
+            {
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (row.Cells["delete"].Value != null && row.Cells["delete"].Value.ToString() == "SI")
+                    {
+                        // Si la columna "Eliminado" contiene "SI", muestra la fila.
+                        row.Visible = isnotDelete;
+                    }
+                    else
+                    {
+                        // Si no contiene "SI", oculta la fila.
+                        row.Visible = !isnotDelete;
+                    }
+                }
+
+            }
+
+            // Actualiza la vista del DataGridView.
+            DGPlan.Refresh();
+        }
+
+        private void BVerPlanesEliminados_Click(object sender, EventArgs e)
+        { 
+            if(this.isEditMode)
+            {
+                MessageBox.Show("Por favor, termine de editar.");
+            } else
+            {
+                this.isModeVerNoDelete = false;
+                BEliminarPlan.Text = "Activar Cliente";
+                BEliminarPlan.BackColor = Color.FromArgb(255, 140, 0);
+                BEliminarPlan.IconChar = FontAwesome.Sharp.IconChar.Dumbbell;
+
+
+                //Cargar DataGrid
+                mostrar(false);
+            }
+            
+        }
     }
 }

@@ -47,10 +47,11 @@
             id_plan = new DataGridViewTextBoxColumn();
             precio = new DataGridViewTextBoxColumn();
             descripcion = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewTextBoxColumn();
             nav = new Panel();
-            rjButton2 = new ClassCustom.RJButton();
+            BVerPlanes = new ClassCustom.RJButton();
             label1 = new Label();
-            rjButton1 = new ClassCustom.RJButton();
+            BVerPlanesEliminados = new ClassCustom.RJButton();
             BCancelarBusqueda = new ClassCustom.RJButton();
             LModoBusqueda = new Label();
             TBBusqueda = new CustomControls.RJControls.RJTextBox();
@@ -127,8 +128,8 @@
             // 
             // BAgregarPlan
             // 
-            BAgregarPlan.BackColor = Color.FromArgb(0, 192, 0);
-            BAgregarPlan.BackgroundColor = Color.FromArgb(0, 192, 0);
+            BAgregarPlan.BackColor = Color.FromArgb(41, 147, 45);
+            BAgregarPlan.BackgroundColor = Color.FromArgb(41, 147, 45);
             BAgregarPlan.BorderColor = Color.PaleVioletRed;
             BAgregarPlan.BorderRadius = 15;
             BAgregarPlan.BorderSize = 0;
@@ -292,7 +293,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             DGPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGPlan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGPlan.Columns.AddRange(new DataGridViewColumn[] { id_plan, precio, descripcion });
+            DGPlan.Columns.AddRange(new DataGridViewColumn[] { id_plan, precio, descripcion, delete });
             DGPlan.EditMode = DataGridViewEditMode.EditProgrammatically;
             DGPlan.Location = new Point(0, 130);
             DGPlan.MultiSelect = false;
@@ -328,13 +329,18 @@
             descripcion.HeaderText = "Descripcion";
             descripcion.Name = "descripcion";
             // 
+            // delete
+            // 
+            delete.HeaderText = "Eliminado";
+            delete.Name = "delete";
+            // 
             // nav
             // 
             nav.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             nav.BackColor = Color.FromArgb(16, 8, 23);
-            nav.Controls.Add(rjButton2);
+            nav.Controls.Add(BVerPlanes);
             nav.Controls.Add(label1);
-            nav.Controls.Add(rjButton1);
+            nav.Controls.Add(BVerPlanesEliminados);
             nav.Controls.Add(BCancelarBusqueda);
             nav.Controls.Add(LModoBusqueda);
             nav.Controls.Add(TBBusqueda);
@@ -345,70 +351,72 @@
             nav.Size = new Size(1000, 124);
             nav.TabIndex = 6;
             // 
-            // rjButton2
+            // BVerPlanes
             // 
-            rjButton2.BackColor = Color.FromArgb(192, 0, 0);
-            rjButton2.BackgroundColor = Color.FromArgb(192, 0, 0);
-            rjButton2.BorderColor = Color.PaleVioletRed;
-            rjButton2.BorderRadius = 15;
-            rjButton2.BorderSize = 0;
-            rjButton2.FlatAppearance.BorderSize = 0;
-            rjButton2.FlatStyle = FlatStyle.Flat;
-            rjButton2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            rjButton2.ForeColor = Color.White;
-            rjButton2.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            rjButton2.IconColor = Color.White;
-            rjButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            rjButton2.IconSize = 40;
-            rjButton2.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton2.Location = new Point(655, 44);
-            rjButton2.Name = "rjButton2";
-            rjButton2.Padding = new Padding(10, 0, 0, 0);
-            rjButton2.Size = new Size(159, 49);
-            rjButton2.TabIndex = 82;
-            rjButton2.Text = "Cancelar Busqueda";
-            rjButton2.TextAlign = ContentAlignment.MiddleLeft;
-            rjButton2.TextColor = Color.White;
-            rjButton2.UseVisualStyleBackColor = false;
-            rjButton2.Visible = false;
+            BVerPlanes.BackColor = Color.FromArgb(41, 147, 45);
+            BVerPlanes.BackgroundColor = Color.FromArgb(41, 147, 45);
+            BVerPlanes.BorderColor = Color.PaleVioletRed;
+            BVerPlanes.BorderRadius = 15;
+            BVerPlanes.BorderSize = 0;
+            BVerPlanes.FlatAppearance.BorderSize = 0;
+            BVerPlanes.FlatStyle = FlatStyle.Flat;
+            BVerPlanes.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BVerPlanes.ForeColor = Color.White;
+            BVerPlanes.IconChar = FontAwesome.Sharp.IconChar.Dumbbell;
+            BVerPlanes.IconColor = Color.White;
+            BVerPlanes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BVerPlanes.IconSize = 55;
+            BVerPlanes.ImageAlign = ContentAlignment.MiddleRight;
+            BVerPlanes.Location = new Point(648, 40);
+            BVerPlanes.Name = "BVerPlanes";
+            BVerPlanes.Padding = new Padding(10, 0, 0, 0);
+            BVerPlanes.Size = new Size(166, 60);
+            BVerPlanes.TabIndex = 82;
+            BVerPlanes.Text = "Ver planes";
+            BVerPlanes.TextAlign = ContentAlignment.MiddleLeft;
+            BVerPlanes.TextColor = Color.White;
+            BVerPlanes.UseVisualStyleBackColor = false;
+            BVerPlanes.Visible = false;
+            BVerPlanes.Click += BVerPlanes_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(230, 237, 243);
-            label1.Location = new Point(769, 16);
+            label1.Location = new Point(753, 12);
             label1.Name = "label1";
             label1.Size = new Size(118, 25);
             label1.TabIndex = 81;
             label1.Text = "Listar planes";
             // 
-            // rjButton1
+            // BVerPlanesEliminados
             // 
-            rjButton1.BackColor = Color.FromArgb(192, 0, 0);
-            rjButton1.BackgroundColor = Color.FromArgb(192, 0, 0);
-            rjButton1.BorderColor = Color.PaleVioletRed;
-            rjButton1.BorderRadius = 15;
-            rjButton1.BorderSize = 0;
-            rjButton1.FlatAppearance.BorderSize = 0;
-            rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            rjButton1.ForeColor = Color.White;
-            rjButton1.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            rjButton1.IconColor = Color.White;
-            rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            rjButton1.IconSize = 40;
-            rjButton1.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton1.Location = new Point(820, 44);
-            rjButton1.Name = "rjButton1";
-            rjButton1.Padding = new Padding(10, 0, 0, 0);
-            rjButton1.Size = new Size(165, 49);
-            rjButton1.TabIndex = 80;
-            rjButton1.Text = "Ver Eliminados";
-            rjButton1.TextAlign = ContentAlignment.MiddleLeft;
-            rjButton1.TextColor = Color.White;
-            rjButton1.UseVisualStyleBackColor = false;
-            rjButton1.Visible = false;
+            BVerPlanesEliminados.BackColor = Color.FromArgb(192, 0, 0);
+            BVerPlanesEliminados.BackgroundColor = Color.FromArgb(192, 0, 0);
+            BVerPlanesEliminados.BorderColor = Color.PaleVioletRed;
+            BVerPlanesEliminados.BorderRadius = 15;
+            BVerPlanesEliminados.BorderSize = 0;
+            BVerPlanesEliminados.FlatAppearance.BorderSize = 0;
+            BVerPlanesEliminados.FlatStyle = FlatStyle.Flat;
+            BVerPlanesEliminados.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BVerPlanesEliminados.ForeColor = Color.White;
+            BVerPlanesEliminados.IconChar = FontAwesome.Sharp.IconChar.Dumbbell;
+            BVerPlanesEliminados.IconColor = Color.White;
+            BVerPlanesEliminados.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BVerPlanesEliminados.IconSize = 40;
+            BVerPlanesEliminados.ImageAlign = ContentAlignment.MiddleRight;
+            BVerPlanesEliminados.Location = new Point(820, 40);
+            BVerPlanesEliminados.Name = "BVerPlanesEliminados";
+            BVerPlanesEliminados.Padding = new Padding(10, 0, 0, 0);
+            BVerPlanesEliminados.Size = new Size(154, 60);
+            BVerPlanesEliminados.TabIndex = 80;
+            BVerPlanesEliminados.Text = "Ver planes eliminados";
+            BVerPlanesEliminados.TextAlign = ContentAlignment.MiddleLeft;
+            BVerPlanesEliminados.TextColor = Color.White;
+            BVerPlanesEliminados.UseVisualStyleBackColor = false;
+            BVerPlanesEliminados.Visible = false;
+            BVerPlanesEliminados.Click += BVerPlanesEliminados_Click;
             // 
             // BCancelarBusqueda
             // 
@@ -516,9 +524,6 @@
         private Panel panel1;
         private Panel nav;
         private DataGridView DGPlan;
-        private DataGridViewTextBoxColumn id_plan;
-        private DataGridViewTextBoxColumn precio;
-        private DataGridViewTextBoxColumn descripcion;
         private ClassCustom.RJButton BAgregarPlan;
         private ClassCustom.RJButton BBuscar;
         private CustomControls.RJControls.RJTextBox TBBusqueda;
@@ -534,8 +539,12 @@
         private ClassCustom.RJButton BCancelarBusqueda;
         private Label LModoBusqueda;
         private Panel panel2;
-        private ClassCustom.RJButton rjButton2;
+        private ClassCustom.RJButton BVerPlanes;
         private Label label1;
-        private ClassCustom.RJButton rjButton1;
+        private ClassCustom.RJButton BVerPlanesEliminados;
+        private DataGridViewTextBoxColumn id_plan;
+        private DataGridViewTextBoxColumn precio;
+        private DataGridViewTextBoxColumn descripcion;
+        private DataGridViewTextBoxColumn delete;
     }
 }

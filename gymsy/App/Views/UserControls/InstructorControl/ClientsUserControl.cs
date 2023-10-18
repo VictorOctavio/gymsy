@@ -24,7 +24,7 @@ namespace gymsy.UserControls
          * lo que para los usuarios es inactivo. Es por ello que usara true y para inactivar un usuario
          * lo contrario al modo delete es decir false
          */
-        private bool isModeVerDelete = true;
+        private bool isModeVerNoDelete = true;
         public ClientsUserControl()
         {
             //Se trae el contexto de la base de datos
@@ -148,7 +148,7 @@ namespace gymsy.UserControls
                 string pregunta = "";
                 string celdaSIoNO = "";
                 //Se procede a cetear tanto los mensajes como las busquedas que se haran
-                if (this.isModeVerDelete)
+                if (this.isModeVerNoDelete)
                 {
                     pregunta = "¿Desea eliminar este usuario?";
                     celdaSIoNO = "NO"; //Si se va a eleminar a alguien, primero debe estar no eleiminado
@@ -182,7 +182,7 @@ namespace gymsy.UserControls
 
                             if (cliente.IdPersonNavigation.Nickname == DGUsers.Rows[this.indexRowSelect].Cells["nickname"].Value.ToString())
                             {                                    //Se inactiva el cliente de forma en memoria ram
-                                cliente.IdPersonNavigation.Inactive = !this.isModeVerDelete;//Si esta en modo delete se desactiva, caso contrario se activa
+                                cliente.IdPersonNavigation.Inactive = !this.isModeVerNoDelete;//Si esta en modo delete se desactiva, caso contrario se activa
 
                                 //Se busca en la base de datos a la persona
                                 var personUpdated = this.dbContext.People
@@ -210,7 +210,7 @@ namespace gymsy.UserControls
 
 
                     //Se actualiza el datagrid con el 
-                    this.mostrar(this.isModeVerDelete);
+                    this.mostrar(this.isModeVerNoDelete);
 
                     //MessageBox.Show("Se elimino correctamente el Cliente.");
 
@@ -275,7 +275,7 @@ namespace gymsy.UserControls
 
         private void BVerClients_Click(object sender, EventArgs e)
         {
-            this.isModeVerDelete = true;
+            this.isModeVerNoDelete = true;
             BEliminarCliente.Text = "Eliminar Cliente";
             BEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
             BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.Trash;
@@ -285,7 +285,7 @@ namespace gymsy.UserControls
 
         private void BVerClientDelete_Click(object sender, EventArgs e)
         {
-            this.isModeVerDelete = false;
+            this.isModeVerNoDelete = false;
             BEliminarCliente.Text = "Activar Cliente";
             BEliminarCliente.BackColor = Color.FromArgb(255, 140, 0);
             BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.User;
