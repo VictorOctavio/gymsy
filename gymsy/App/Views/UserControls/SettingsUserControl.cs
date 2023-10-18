@@ -79,6 +79,7 @@ namespace gymsy.UserControls
             catch (Exception ex)
             {
                 panelError.Visible = true;
+
             }
 
 

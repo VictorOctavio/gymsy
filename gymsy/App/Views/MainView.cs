@@ -355,6 +355,8 @@ namespace gymsy
         private void btnNavSignout_Click(object sender, EventArgs e)
         {
             Application.OpenForms[0].Close();
+         
+
         }
 
 

@@ -284,14 +284,14 @@ namespace gymsy.UserControls
             // 
             // CBPlanes
             // 
-            CBPlanes.BackColor = Color.WhiteSmoke;
+            CBPlanes.BackColor = Color.FromArgb(69, 34, 99);
             CBPlanes.BorderColor = Color.MediumSlateBlue;
             CBPlanes.BorderSize = 1;
             CBPlanes.DropDownStyle = ComboBoxStyle.DropDownList;
             CBPlanes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            CBPlanes.ForeColor = Color.DimGray;
+            CBPlanes.ForeColor = Color.FromArgb(230, 237, 243);
             CBPlanes.IconColor = Color.MediumSlateBlue;
-            CBPlanes.ListBackColor = Color.FromArgb(230, 228, 245);
+            CBPlanes.ListBackColor = Color.FromArgb(69, 34, 99);
             CBPlanes.ListTextColor = Color.DimGray;
             CBPlanes.Location = new Point(724, 71);
             CBPlanes.MinimumSize = new Size(200, 30);
@@ -434,11 +434,19 @@ namespace gymsy.UserControls
             // 
             // DPFechaNacimiento
             // 
+            DPFechaNacimiento.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DPFechaNacimiento.CalendarForeColor = Color.FromArgb(230, 237, 243);
+            DPFechaNacimiento.CalendarMonthBackground = Color.FromArgb(16, 8, 23);
+            DPFechaNacimiento.CalendarTitleBackColor = Color.DarkOrange;
+            DPFechaNacimiento.CalendarTitleForeColor = Color.FromArgb(9, 0, 20);
             DPFechaNacimiento.Format = DateTimePickerFormat.Short;
             DPFechaNacimiento.Location = new Point(306, 68);
+            DPFechaNacimiento.MaxDate = new DateTime(2023, 10, 17, 0, 0, 0, 0);
+            DPFechaNacimiento.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             DPFechaNacimiento.Name = "DPFechaNacimiento";
             DPFechaNacimiento.Size = new Size(117, 23);
             DPFechaNacimiento.TabIndex = 77;
+            DPFechaNacimiento.Value = new DateTime(2023, 10, 17, 0, 0, 0, 0);
             // 
             // RBMasculino
             // 
