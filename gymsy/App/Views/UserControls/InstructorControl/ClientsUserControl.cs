@@ -1,6 +1,8 @@
 ﻿using gymsy.App.Models;
 using gymsy.App.Views;
 using gymsy.Context;
+using gymsy.Properties;
+using gymsy.UserControls.ClientControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +20,9 @@ namespace gymsy.UserControls
     {
 
         private int indexRowSelect = 0;
+        private List<Client> clients = new List<Client>();
+        private List<TrainingPlan> planes = new List<TrainingPlan>();
+
         public ClientsUserControl()
         {
             InitializeComponent();
@@ -31,9 +36,32 @@ namespace gymsy.UserControls
 
             foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans.ToArray())
             {
+                planes.Add(plan);
+
                 foreach (Client client in plan.Clients.ToArray())
                 {
-                    DGUsers.Rows.Add(client.LastExpiration, client.IdTrainingPlan, client.IdClient, client.IdPersonNavigation.FirstName);
+                    clients.Add(client);
+
+                    // Expiration 
+                    TimeSpan diferencia = client.LastExpiration - DateTime.Now;
+
+                    string ColumnExpirationMsg = diferencia.Days > 0 ?
+                        ("En " + diferencia.Days + " días") : ("Hace " + diferencia.Days * -1 + " días");
+
+                    if (client.IdPersonNavigation.Avatar.Length > 0)
+                    {
+                        Avatar.Image = Resources.wallet_free;
+                    }
+
+                    DGUsers.Rows.Add(
+                        client.IdClient,
+                        null,
+                        string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
+                        client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                        client.IdPersonNavigation.NumberPhone,
+                        client.IdTrainingPlanNavigation.Description,
+                        ColumnExpirationMsg
+                        );
                 }
             }
 
@@ -127,19 +155,52 @@ namespace gymsy.UserControls
             }
         }
 
-       
+
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
             //Cargar DataGrid
             //cargarPersonas(SimularBD.persons, false);
-            MainView.navigationControl.Display(7);
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
             //Cargar DataGrid
             cargarPersonas();
+        }
+
+        private void DGUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 3)
+            {
+                // Se ha hecho clic en una celda válida
+                int rowIndex = e.RowIndex;
+                int columnIndex = e.ColumnIndex;
+
+                object IdClientSelected = DGUsers.Rows[rowIndex].Cells[0].Value;
+
+                Client clientSelected = this.clients.Find(cl => IdClientSelected.Equals(cl.IdClient));
+
+                // Navigate to training history
+                if (clientSelected != null)
+                {
+                    AppState.ClientActive = clientSelected;
+                    MainView.navigationControl.Display(7, true);
+                }
+
+            }
+        }
+
+        private void DataGridViewCellEventArgs(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 3)
+            {
+                DGUsers.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                DGUsers.Cursor = Cursors.Default;
+            }
         }
     }
 }

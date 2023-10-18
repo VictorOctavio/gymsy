@@ -117,6 +117,8 @@ namespace gymsy.App.Presenters
                         var planesFound = this.gymsydb.TrainingPlans.ToList();
                         var clientsFound = this.gymsydb.Clients.ToList();
                         var persons = this.gymsydb.People.ToList();
+                        var dataFisico = this.gymsydb.DataFisics.ToList();
+                        var Images = this.gymsydb.Images.ToList();
 
                         AppState.Instructor = instructorFound;
                        
