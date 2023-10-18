@@ -1,4 +1,7 @@
-﻿using System;
+﻿using gymsy.App.Models;
+using gymsy.App.Views.Interfaces;
+using gymsy.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +15,29 @@ namespace gymsy.UserControls.ClientControls
 {
     public partial class ProgressClientControl : UserControl
     {
+
         public ProgressClientControl()
         {
             InitializeComponent();
             InitializeGridProgress();
+        }
+
+        public void UpdateComponent()
+        {
+            if (AppState.ClientActive != null)
+            {
+                int edad = AppState.ClientActive.IdPersonNavigation.Birthday.Year - new DateTime().Year;
+                TimeSpan TimeTraning = AppState.ClientActive.IdPersonNavigation.CreatedAt - DateTime.Now;
+
+                TBDescripcionClient.Text = $"{AppState.ClientActive.IdPersonNavigation.FirstName + " " + AppState.ClientActive.IdPersonNavigation.LastName}, " +
+               $"{edad} años comenzo a enrenarse hace {TimeTraning.Days} días, " +
+               $"cuenta con {AppState.ClientActive.DataFisics.Count()} registros guardados ";
+            }
+        }
+
+        public override void Refresh()
+        {
+            this.UpdateComponent();
         }
 
         private void InitializeGridProgress()

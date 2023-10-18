@@ -75,7 +75,7 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            btnNotifications = new Button();
+
             panelNotifications = new Panel();
             label6 = new Label();
             timerNavbarNotifications = new System.Windows.Forms.Timer(components);
@@ -885,17 +885,7 @@
             // 
             // btnNotifications
             // 
-            btnNotifications.BackColor = Color.DarkOrange;
-            btnNotifications.Cursor = Cursors.Hand;
-            btnNotifications.Enabled = false;
-            btnNotifications.FlatAppearance.BorderSize = 0;
-            btnNotifications.FlatStyle = FlatStyle.Flat;
-            btnNotifications.Location = new Point(287, 0);
-            btnNotifications.Name = "btnNotifications";
-            btnNotifications.Size = new Size(61, 72);
-            btnNotifications.TabIndex = 0;
-            btnNotifications.UseVisualStyleBackColor = false;
-            btnNotifications.Click += btnNotifications_Click;
+ 
             // 
             // panelNotifications
             // 

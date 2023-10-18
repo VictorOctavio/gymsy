@@ -14,6 +14,7 @@ namespace gymsy
 {
     public partial class MainView : Form, IMainView
     {
+
         // Roles de usuario 
         List<string> rols = new List<string>() { "", "admin", "instructor", "client" };
 
@@ -72,6 +73,7 @@ namespace gymsy
         // Inicializamos el controlador con la navegacion, pasando los controles y en panel mainWrapper en donde se renderizará
         private void InitializeNavigationControl(string rol = "instructor")
         {
+
 
             List<UserControl> userControlsList = new List<UserControl>();
 
@@ -244,11 +246,7 @@ namespace gymsy
         {
             btnAddTimer.Start();
         }
-        private void btnNotifications_Click(object sender, EventArgs e)
-        {
-            navigationControl.Display(7);
-            //timerNavbarNotifications.Start();
-        }
+ 
         private void btnAddAdmin_Click(object sender, EventArgs e)
         {
             timerAddAdmin.Start();

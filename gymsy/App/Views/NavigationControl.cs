@@ -31,12 +31,19 @@ namespace gymsy.App.Views
             }
         }
 
-        public void Display(int index)
+        public void Display(int index, bool refresh = false)
         {
             if (index < userControlList.Count())
-            {
+
+                if (refresh)
+                {
+                    userControlList[index].Refresh();
+                }
+
                 userControlList[index].BringToFront(); // render the selected UserControl
+
+                return;
             }
         }
     }
-}
+
