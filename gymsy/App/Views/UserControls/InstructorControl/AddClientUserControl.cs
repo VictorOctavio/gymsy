@@ -380,6 +380,7 @@ namespace gymsy.UserControls
 
         private void CBPlanes_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+
             TBPrecio.Text = "299.99";
             TBDescripcion.Text = "Complemento++";
             TBNombreInstructor.Text = "Juansito Perez";
@@ -398,7 +399,7 @@ namespace gymsy.UserControls
 
         }
 
-
+   
     }
 
 

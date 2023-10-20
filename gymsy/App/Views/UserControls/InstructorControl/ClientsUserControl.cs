@@ -1,6 +1,8 @@
 ﻿using gymsy.App.Models;
 using gymsy.App.Views;
 using gymsy.Context;
+using gymsy.Properties;
+using gymsy.UserControls.ClientControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,8 +27,12 @@ namespace gymsy.UserControls
          * lo contrario al modo delete es decir false
          */
         private bool isModeVerNoDelete = true;
+
+        private List<Client> clients = new List<Client>();
+      
+
         public ClientsUserControl()
-        {
+        { 
             //Se trae el contexto de la base de datos
             this.dbContext = GymsyContext.GymsyContextDB;
 
@@ -39,6 +45,50 @@ namespace gymsy.UserControls
             this.mostrar(isnotDelete);
         }
 
+
+        private void DGUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 2)
+            {
+                // Se ha hecho clic en una celda válida
+                int rowIndex = e.RowIndex;
+                int columnIndex = e.ColumnIndex;
+
+
+                int IdClientSelected = int.Parse(DGUsers.Rows[rowIndex].Cells["IdClient"].Value.ToString());
+                
+                var clientSelected = this.dbContext.Clients
+                                .Where(client => client.IdClient == IdClientSelected)
+                                .First();
+                
+
+         
+
+                // Navigate to training history
+                if (clientSelected != null)
+                {
+                    AppState.ClientActive = clientSelected;
+                    MainView.navigationControl.Display(7, true);
+                }
+
+            }
+            
+        }
+
+        private void DataGridViewCellEventArgs(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 2)
+            {
+                DGUsers.Cursor = Cursors.Hand;
+            }
+            else
+            {
+                DGUsers.Cursor = Cursors.Default;
+            }
+        }
+
+
+
         private void cargarPersonas()
         {
             // Limpia cualquier ordenación previa en el DataGridView
@@ -48,19 +98,25 @@ namespace gymsy.UserControls
             {
                 foreach (Client client in plan.Clients.ToArray())
                 {
-                    if (client.IdPersonNavigation.Inactive)
+
+                    // Expiration 
+                    TimeSpan diferencia = client.LastExpiration - DateTime.Now;
+
+                    string ColumnExpirationMsg = diferencia.Days > 0 ?
+                        ("En " + diferencia.Days + " días") : ("Hace " + diferencia.Days * -1 + " días");
+
+                    if (client.IdPersonNavigation.Avatar.Length > 0)
                     {
-                        DGUsers.Rows.Add(client.IdPersonNavigation.Nickname, client.IdPersonNavigation.FirstName, client.IdPersonNavigation.NumberPhone, client.IdTrainingPlanNavigation.Description, client.LastExpiration, "NO");
-
+                        //Avatar.Image = Resources.wallet_free;
                     }
-                    else
-                    {
-                        DGUsers.Rows.Add(client.IdPersonNavigation.Nickname, client.IdPersonNavigation.FirstName, client.IdPersonNavigation.NumberPhone, client.IdTrainingPlanNavigation.Description, client.LastExpiration, "SI");
-                    }
-
-
-
-
+                    DGUsers.Rows.Add(null,//imagen?
+                        string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
+                        client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                        client.IdPersonNavigation.NumberPhone,
+                        client.IdTrainingPlanNavigation.Description,
+                        ColumnExpirationMsg,
+                        client.IdClient,
+                        client.IdPersonNavigation.Inactive);
                 }
             }
 
@@ -78,6 +134,7 @@ namespace gymsy.UserControls
 
         private void BEditarCliente_Click(object sender, EventArgs e)
         {
+            //validar que se seleccino un cliente
             MainView.navigationControl.Display(4);
         }
 
@@ -146,18 +203,18 @@ namespace gymsy.UserControls
             {
                 //Se crearan las variables
                 string pregunta = "";
-                string celdaSIoNO = "";
+                bool celdaSIoNO;
                 //Se procede a cetear tanto los mensajes como las busquedas que se haran
                 if (this.isModeVerNoDelete)
                 {
                     pregunta = "¿Desea eliminar este usuario?";
-                    celdaSIoNO = "NO"; //Si se va a eleminar a alguien, primero debe estar no eleiminado
+                    celdaSIoNO = false; //Si se va a eleminar a alguien, primero debe estar no eleiminado
 
                 }
                 else
                 {
                     pregunta = "¿Desea activar este usuario?";
-                    celdaSIoNO = "SI";
+                    celdaSIoNO = true;
                 }
 
                 DialogResult resultado = MessageBox.Show(pregunta, "Por favor confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -180,7 +237,8 @@ namespace gymsy.UserControls
                         foreach (Client cliente in plan.Clients.ToArray())
                         {
 
-                            if (cliente.IdPersonNavigation.Nickname == DGUsers.Rows[this.indexRowSelect].Cells["nickname"].Value.ToString())
+                            if (cliente.IdPersonNavigation.IdPerson == int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString())
+)
                             {                                    //Se inactiva el cliente de forma en memoria ram
                                 cliente.IdPersonNavigation.Inactive = !this.isModeVerNoDelete;//Si esta en modo delete se desactiva, caso contrario se activa
 
@@ -252,7 +310,7 @@ namespace gymsy.UserControls
 
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if (row.Cells["delete"].Value != null && row.Cells["delete"].Value.ToString() == "SI")
+                    if (row.Cells["delete"].Value != null && bool.Parse(row.Cells["delete"].Value.ToString()) == true)
                     {
                         // Si la columna "Eliminado" contiene "SI", muestra la fila.
                         row.Visible = isnotDelete;

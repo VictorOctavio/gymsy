@@ -376,7 +376,6 @@
             BVerPlanes.TextAlign = ContentAlignment.MiddleLeft;
             BVerPlanes.TextColor = Color.White;
             BVerPlanes.UseVisualStyleBackColor = false;
-            BVerPlanes.Visible = false;
             BVerPlanes.Click += BVerPlanes_Click;
             // 
             // label1
@@ -415,7 +414,6 @@
             BVerPlanesEliminados.TextAlign = ContentAlignment.MiddleLeft;
             BVerPlanesEliminados.TextColor = Color.White;
             BVerPlanesEliminados.UseVisualStyleBackColor = false;
-            BVerPlanesEliminados.Visible = false;
             BVerPlanesEliminados.Click += BVerPlanesEliminados_Click;
             // 
             // BCancelarBusqueda

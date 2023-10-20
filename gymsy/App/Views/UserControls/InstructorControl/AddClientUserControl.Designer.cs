@@ -128,6 +128,7 @@ namespace gymsy.UserControls
             newClientOrEditClient.Size = new Size(263, 52);
             newClientOrEditClient.TabIndex = 33;
             newClientOrEditClient.Text = "Nuevo Cliente";
+           
             // 
             // panel2
             // 
