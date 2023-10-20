@@ -41,14 +41,15 @@ namespace gymsy.UserControls
 
             foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans)
             {
-                if(plan.Inactive)
+                if (plan.Inactive)
                 {
                     DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description, "SI");
-                } else
+                }
+                else
                 {
                     DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description, "NO");
                 }
-                
+
             }
 
         }
@@ -269,10 +270,10 @@ namespace gymsy.UserControls
 
                             //MessageBox.Show("Se elimino correctamente el plan.");
 
-                        }  
+                        }
                         else //Se procede a Activar el plan
                         {
-                            
+
                         }
                     }
                 }
@@ -388,11 +389,12 @@ namespace gymsy.UserControls
         }
 
         private void BVerPlanesEliminados_Click(object sender, EventArgs e)
-        { 
-            if(this.isEditMode)
+        {
+            if (this.isEditMode)
             {
                 MessageBox.Show("Por favor, termine de editar.");
-            } else
+            }
+            else
             {
                 this.isModeVerNoDelete = false;
                 BEliminarPlan.Text = "Activar Cliente";
@@ -403,7 +405,7 @@ namespace gymsy.UserControls
                 //Cargar DataGrid
                 mostrar(false);
             }
-            
+
         }
     }
 }
