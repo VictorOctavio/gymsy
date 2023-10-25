@@ -79,7 +79,8 @@ namespace gymsy
 
             List<UserControl> userControls = new List<UserControl>()
             { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(),
-              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(), new AddProgressClientControl()
+              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(), 
+                new AddProgressClientControl(), new EditClient()
             };
 
             List<UserControl> adminControls = new List<UserControl>()

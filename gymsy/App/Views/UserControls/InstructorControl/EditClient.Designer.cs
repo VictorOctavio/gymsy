@@ -2,7 +2,7 @@
 
 namespace gymsy.UserControls
 {
-    partial class AddClientUserControl
+    partial class EditClient
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -87,9 +87,9 @@ namespace gymsy.UserControls
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(2075, 572);
             label1.Name = "label1";
-            label1.Size = new Size(277, 37);
+            label1.Size = new Size(132, 37);
             label1.TabIndex = 0;
-            label1.Text = "AddClientUserControl";
+            label1.Text = "EditClient";
             // 
             // panel1
             // 
@@ -123,11 +123,11 @@ namespace gymsy.UserControls
             newClientOrEditClient.AutoSize = true;
             newClientOrEditClient.Font = new Font("Segoe UI", 29F, FontStyle.Regular, GraphicsUnit.Point);
             newClientOrEditClient.ForeColor = Color.FromArgb(230, 237, 243);
-            newClientOrEditClient.Location = new Point(402, 18);
+            newClientOrEditClient.Location = new Point(350, 18);
             newClientOrEditClient.Name = "newClientOrEditClient";
-            newClientOrEditClient.Size = new Size(263, 52);
+            newClientOrEditClient.Size = new Size(249, 52);
             newClientOrEditClient.TabIndex = 33;
-            newClientOrEditClient.Text = "Nuevo Cliente";
+            newClientOrEditClient.Text = "Editar Cliente";
             // 
             // panel2
             // 
@@ -708,7 +708,7 @@ namespace gymsy.UserControls
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // AddClientUserControl
+            // EditClient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -716,7 +716,7 @@ namespace gymsy.UserControls
             Controls.Add(panel1);
             Controls.Add(label1);
             Margin = new Padding(0);
-            Name = "AddClientUserControl";
+            Name = "EditClient";
             Size = new Size(1218, 609);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

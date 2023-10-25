@@ -15,26 +15,45 @@ using gymsy.App.Models;
 
 namespace gymsy.UserControls
 {
-    public partial class AddClientUserControl : UserControl
+    public partial class EditClient : UserControl
     {
-        private bool isEditMode = false; // Variable para saber si se esta editando o agregando un nuevo cliente
         private int indexRowSelect = 0;
 
-        public AddClientUserControl()
+        public EditClient()
         {
             InitializeComponent();
 
-            // Inicializar el contexto de la base de datos
-            //GymsyContext dbContext = new GymsyContext();
-
+            //Se carga el cliente
+            this.CargarCliente();
             //Carga el comboBox con los planes
-            CargarElementosComboBox();
+            this.CargarElementosComboBox();
+
+        }
+
+        private void CargarCliente()
+        {
+            if(AppState.ClientActive != null)
+            {
+                TBNombre.Text = AppState.ClientActive.IdPersonNavigation.FirstName;
+                TBApellido.Text = AppState.ClientActive.IdPersonNavigation.LastName;
+                TBTelefono.Text = AppState.ClientActive.IdPersonNavigation.NumberPhone;
+                TBUsuario.Text = AppState.ClientActive.IdPersonNavigation.Nickname;
+                //Que hacer con la contraseña?
+                //TBContraseña.Text = AppState.ClientActive.IdPersonNavigation.;
+                TBRutaImagen.Text = AppState.ClientActive.IdPersonNavigation.Avatar;
+                if(AppState.ClientActive.IdPersonNavigation.Gender == "M" || AppState.ClientActive.IdPersonNavigation.Gender == "m")
+                {
+                    RBMasculino.Checked = true;
+                } else
+                {
+                    RBFemenino.Checked = true;
+                }
+                DPFechaNacimiento.Value = AppState.ClientActive.IdPersonNavigation.Birthday;
 
 
 
-
-
-
+            }
+            
         }
 
         private void TBNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -98,47 +117,7 @@ namespace gymsy.UserControls
 
         }
 
-        /*
-          /// <summary>
-        /// Se verifica que todos los textbox esten llenos
-        /// </summary>
-        /// <param name="textBoxes"></param>
-        /// <returns></returns>
-      private bool IsValidTextBoxes(List<TextBox> textBoxes, List<Label> labels)
-      {
 
-          bool isValid = true; // Suponemos que todos los TextBox son válidos hasta que encontremos uno inválido
-
-          foreach (TextBox textBox in textBoxes)
-          {
-
-              if (string.IsNullOrWhiteSpace(textBox.Text))
-              {
-                  isValid = false; // Si al menos uno es inválido, cambiamos el estado a falso
-                  textBox.Tag = "Requerido"; // Usamos la propiedad "Tag" para marcar el TextBox como requerido
-              }
-              else
-              {
-                  textBox.Tag = null; // Si es válido, eliminamos la marca
-              }
-          }
-
-          // Mostrar las etiquetas de error
-          foreach (Label label in labels)
-          {
-              if (label.Tag != null && control.Tag.ToString() == "Requerido" && control is Label)
-              {
-                      label.Visible = true;
-              }
-              else if (label is Label)
-              {
-                      label.Visible = false;
-              }
-          }
-
-          return isValid;
-      }
-        */
 
         private bool isValidTextsBoxesMostrarError()
         {
@@ -255,32 +234,6 @@ namespace gymsy.UserControls
             TBDescripcion.Text = "Complemento";
             TBNombreInstructor.Text = "Juan Perez";
 
-
-            //Cargar los planes desde la base de datos
-
-
-            /*/Cargar la descripción de los planes desde la base de datos
-            var planes = GymsyContext.Plan.ToList();
-
-            // Limpiar el ComboBox antes de agregar elementos
-            comboBox1.Items.Clear();
-
-            foreach (var plan in planes)
-            {
-                // Agregar la descripción del plan al ComboBox
-                comboBox1.Items.Add(plan.Descripcion);
-            }
-
-            // Establecer un elemento predeterminado seleccionado (opcional)
-            if (comboBox1.Items.Count > 0)
-            {
-                comboBox1.SelectedIndex = 0;
-                MostrarInformacionSeleccionada(0); // Mostrar información relacionada al elemento predeterminado
-            }
-            */
-
-
-
         }
 
         private void TBPrecio_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -309,64 +262,12 @@ namespace gymsy.UserControls
                 if (isValidTextBoxes)
                 {
 
-                    if (!this.isEditMode) //Si no se usa la vista para editar se deben guardar los datos
-                    {
-                        string nombre = TBNombre.Text;
-                        string apellido = TBApellido.Text;
-                        string telefono = TBTelefono.Text;
-                        string usuario = TBUsuario.Text;
-                        string contraseña = TBContraseña.Text;
-                        string rutaImagen = TBRutaImagen.Text;
-
-                        string sexo = "";
-
-                        if (RBMasculino.Checked)
-                        {
-                            sexo = "M";
-                        }
-                        else
-                        {
-                            sexo = "F";
-                        }
 
 
-
-
-
-                        Person persona = new Person
-                        {
-                            IdPerson = SimularBD.idPerson,
-                            Nickname = usuario,
-                            FirstName = nombre,
-                            Avatar = rutaImagen,
-                            Password = contraseña,
-                            CreatedAt = DateTime.Now,
-                            LastName = apellido,
-                            CBU = "CBU5",
-                            NumberPhone = telefono,
-                            Birthday = DateTime.Now.AddMonths(1),
-                            Gender = sexo,
-                            RolId = 3,
-                            Inactive = false
-                        };
-
-                        SimularBD.persons.Add(persona);
-                        SimularBD.idPerson++;
-
-
-                        MessageBox.Show("Se Guardaron correcctamente los datos");
-                        this.restablecerTextBoxes();
-
-                    }
-                    else //La vista esta en modo edicion se deven editar los datos
-                    {
-
-
-
-                        MessageBox.Show("Se Editaron correcctamente los datos");
-                        this.restablecerTextBoxes();
-                        MainView.navigationControl.Display(1);
-                    }
+                    MessageBox.Show("Se Editaron correcctamente los datos");
+                    this.restablecerTextBoxes();
+                    MainView.navigationControl.Display(1);
+                                
 
                 }
 
@@ -395,8 +296,6 @@ namespace gymsy.UserControls
             TBContraseña.Text = "";
             TBRutaImagen.Text = "";
             RBMasculino.Checked = true;
-
-
         }
 
 

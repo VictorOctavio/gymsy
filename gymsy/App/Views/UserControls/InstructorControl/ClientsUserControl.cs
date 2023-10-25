@@ -134,8 +134,29 @@ namespace gymsy.UserControls
 
         private void BEditarCliente_Click(object sender, EventArgs e)
         {
-            //validar que se seleccino un cliente
-            MainView.navigationControl.Display(4);
+            // Verifica si hay al menos una fila seleccionada en el DataGridView.
+            if (DGUsers.SelectedRows.Count > 0)
+            {
+                //se guarda su indice
+                this.indexRowSelect = DGUsers.SelectedRows[0].Index;
+
+                // Accede a la celda "id" del cliente
+           
+                int IdClientSelected = int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
+                
+                this.dbContext = GymsyContext.GymsyContextDB;
+
+                var clientSelected = this.dbContext.Clients
+                                .Where(client => client.IdClient == IdClientSelected)
+                                .First();
+                AppState.ClientActive = clientSelected;
+
+                MainView.navigationControl.Display(9, true);
+                
+            } else
+            {
+                MessageBox.Show("Por favor, seleccione un cliente para editarlo.");
+            }
         }
 
         private void BBuscar_Click(object sender, EventArgs e)

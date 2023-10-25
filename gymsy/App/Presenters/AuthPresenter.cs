@@ -130,6 +130,10 @@ namespace gymsy.App.Presenters
                     case 3:
                         // Code to execute if expression matches value1
                         break;
+                    case 4:
+
+
+                        break;
                 }
             }
             catch(Exception ex)
