@@ -122,6 +122,8 @@ namespace gymsy.App.Presenters
                         var dataFisico = this.gymsydb.DataFisics.ToList();
                         var Images = this.gymsydb.Images.ToList();
 
+                        AppState.clients = persons;
+
                         AppState.Instructor = instructorFound;
                        
                         break;

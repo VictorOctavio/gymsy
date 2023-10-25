@@ -156,6 +156,7 @@ namespace CustomControls.RJControls
             }
         }
 
+
         [Category("RJ Code Advance")]
         public override string Text
         {

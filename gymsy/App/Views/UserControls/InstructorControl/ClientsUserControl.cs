@@ -143,12 +143,26 @@ namespace gymsy.UserControls
                 // Accede a la celda "id" del cliente
            
                 int IdClientSelected = int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
-                
-                this.dbContext = GymsyContext.GymsyContextDB;
+                Client clientSelected = null;
+                //this.dbContext = GymsyContext.GymsyContextDB;
 
+                foreach (Person person in AppState.clients)
+                {
+                    foreach (Client client in person.Clients)
+                    {
+                        if (client.IdClient == IdClientSelected)
+                        {
+                            clientSelected = client;
+                            break;
+                        }
+                    }
+                    
+                }
+                /*
                 var clientSelected = this.dbContext.Clients
                                 .Where(client => client.IdClient == IdClientSelected)
                                 .First();
+                */
                 AppState.ClientActive = clientSelected;
 
                 MainView.navigationControl.Display(9, true);

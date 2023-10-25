@@ -32,6 +32,8 @@ namespace gymsy.UserControls
         {
             label1 = new Label();
             panel1 = new Panel();
+            back = new ClassCustom.RJButton();
+            rjButton1 = new ClassCustom.RJButton();
             label12 = new Label();
             newClientOrEditClient = new Label();
             panel2 = new Panel();
@@ -42,7 +44,6 @@ namespace gymsy.UserControls
             TBRutaImagen = new TextBox();
             label5 = new Label();
             IPImagenUsuario = new PictureBox();
-            TBNombre = new CustomControls.RJControls.RJTextBox();
             CBPlanes = new CustomControls.RJControls.RJComboBox();
             LFechaNacimiento = new Label();
             BGuardarCliente = new ClassCustom.RJButton();
@@ -75,6 +76,7 @@ namespace gymsy.UserControls
             LApellidoRequerido = new Label();
             label4 = new Label();
             openFileDialog1 = new OpenFileDialog();
+            TBNombre = new CustomControls.RJControls.RJTextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IPImagenUsuario).BeginInit();
@@ -96,6 +98,8 @@ namespace gymsy.UserControls
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSize = true;
             panel1.BackColor = Color.FromArgb(16, 8, 23);
+            panel1.Controls.Add(back);
+            panel1.Controls.Add(rjButton1);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(newClientOrEditClient);
             panel1.Controls.Add(panel2);
@@ -104,6 +108,57 @@ namespace gymsy.UserControls
             panel1.Name = "panel1";
             panel1.Size = new Size(2436, 674);
             panel1.TabIndex = 1;
+            // 
+            // back
+            // 
+            back.BackColor = Color.DarkOrange;
+            back.BackgroundColor = Color.DarkOrange;
+            back.BorderColor = Color.PaleVioletRed;
+            back.BorderRadius = 15;
+            back.BorderSize = 0;
+            back.FlatAppearance.BorderSize = 0;
+            back.FlatStyle = FlatStyle.Flat;
+            back.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            back.ForeColor = Color.White;
+            back.IconChar = IconChar.ArrowLeftLong;
+            back.IconColor = Color.FromArgb(230, 237, 243);
+            back.IconFont = IconFont.Auto;
+            back.IconSize = 90;
+            back.ImageAlign = ContentAlignment.MiddleRight;
+            back.Location = new Point(0, 3);
+            back.Name = "back";
+            back.Padding = new Padding(10, 0, 0, 0);
+            back.Size = new Size(103, 64);
+            back.TabIndex = 92;
+            back.TextAlign = ContentAlignment.MiddleLeft;
+            back.TextColor = Color.White;
+            back.UseVisualStyleBackColor = false;
+            back.Click += back_Click;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.DarkOrange;
+            rjButton1.BackgroundColor = Color.DarkOrange;
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 15;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.ForeColor = Color.White;
+            rjButton1.IconChar = IconChar.FileImage;
+            rjButton1.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton1.IconFont = IconFont.Auto;
+            rjButton1.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton1.Location = new Point(1125, 311);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Padding = new Padding(10, 0, 0, 0);
+            rjButton1.Size = new Size(186, 53);
+            rjButton1.TabIndex = 67;
+            rjButton1.Text = "Agregar Imagen";
+            rjButton1.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
             // 
             // label12
             // 
@@ -133,6 +188,7 @@ namespace gymsy.UserControls
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.AutoSize = true;
+            panel2.Controls.Add(TBNombre);
             panel2.Controls.Add(LRuraImagen);
             panel2.Controls.Add(TBNombreInstructor);
             panel2.Controls.Add(TBDescripcion);
@@ -140,7 +196,6 @@ namespace gymsy.UserControls
             panel2.Controls.Add(TBRutaImagen);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(IPImagenUsuario);
-            panel2.Controls.Add(TBNombre);
             panel2.Controls.Add(CBPlanes);
             panel2.Controls.Add(LFechaNacimiento);
             panel2.Controls.Add(BGuardarCliente);
@@ -259,28 +314,6 @@ namespace gymsy.UserControls
             IPImagenUsuario.SizeMode = PictureBoxSizeMode.Zoom;
             IPImagenUsuario.TabIndex = 85;
             IPImagenUsuario.TabStop = false;
-            // 
-            // TBNombre
-            // 
-            TBNombre.BackColor = Color.FromArgb(69, 34, 99);
-            TBNombre.BorderColor = Color.Transparent;
-            TBNombre.BorderFocusColor = Color.HotPink;
-            TBNombre.BorderRadius = 15;
-            TBNombre.BorderSize = 2;
-            TBNombre.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            TBNombre.ForeColor = Color.FromArgb(230, 237, 243);
-            TBNombre.Location = new Point(23, 70);
-            TBNombre.Margin = new Padding(4);
-            TBNombre.Multiline = false;
-            TBNombre.Name = "TBNombre";
-            TBNombre.Padding = new Padding(10, 7, 10, 7);
-            TBNombre.PasswordChar = false;
-            TBNombre.PlaceholderColor = Color.DarkGray;
-            TBNombre.PlaceholderText = "Ingrese un nombre...";
-            TBNombre.ReadOnly = false;
-            TBNombre.Size = new Size(204, 31);
-            TBNombre.TabIndex = 84;
-            TBNombre.UnderlinedStyle = false;
             // 
             // CBPlanes
             // 
@@ -708,6 +741,28 @@ namespace gymsy.UserControls
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // TBNombre
+            // 
+            TBNombre.BackColor = Color.FromArgb(69, 34, 99);
+            TBNombre.BorderColor = Color.Transparent;
+            TBNombre.BorderFocusColor = Color.HotPink;
+            TBNombre.BorderRadius = 15;
+            TBNombre.BorderSize = 2;
+            TBNombre.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBNombre.ForeColor = Color.FromArgb(230, 237, 243);
+            TBNombre.Location = new Point(23, 68);
+            TBNombre.Margin = new Padding(4);
+            TBNombre.Multiline = false;
+            TBNombre.Name = "TBNombre";
+            TBNombre.Padding = new Padding(10, 7, 10, 7);
+            TBNombre.PasswordChar = false;
+            TBNombre.PlaceholderColor = Color.DarkGray;
+            TBNombre.PlaceholderText = "Ingrese un nombre...";
+            TBNombre.ReadOnly = false;
+            TBNombre.Size = new Size(204, 31);
+            TBNombre.TabIndex = 92;
+            TBNombre.UnderlinedStyle = false;
+            // 
             // EditClient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -760,7 +815,6 @@ namespace gymsy.UserControls
         private OpenFileDialog openFileDialog1;
         private Label label2;
         private Label LFechaNacimiento;
-        private CustomControls.RJControls.RJTextBox TBNombre;
         private PictureBox IPImagenUsuario;
         private Label label5;
         private CustomControls.RJControls.RJComboBox CBPlanes;
@@ -775,5 +829,8 @@ namespace gymsy.UserControls
         private TextBox TBDescripcion;
         private TextBox TBPrecio;
         private Label label7;
+        private ClassCustom.RJButton back;
+        private ClassCustom.RJButton rjButton1;
+        private CustomControls.RJControls.RJTextBox TBNombre;
     }
 }

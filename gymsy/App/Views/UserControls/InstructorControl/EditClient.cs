@@ -18,33 +18,47 @@ namespace gymsy.UserControls
     public partial class EditClient : UserControl
     {
         private int indexRowSelect = 0;
+        private GymsyDbContext dbContext;
 
         public EditClient()
         {
+            //Se trae el contexto de la base de datos
+            this.dbContext = GymsyContext.GymsyContextDB;
+
             InitializeComponent();
 
+
+        }
+
+        public override void Refresh()
+        {
             //Se carga el cliente
             this.CargarCliente();
             //Carga el comboBox con los planes
             this.CargarElementosComboBox();
-
         }
-
         private void CargarCliente()
         {
-            if(AppState.ClientActive != null)
+            if (AppState.ClientActive != null)
             {
-                TBNombre.Text = AppState.ClientActive.IdPersonNavigation.FirstName;
-                TBApellido.Text = AppState.ClientActive.IdPersonNavigation.LastName;
-                TBTelefono.Text = AppState.ClientActive.IdPersonNavigation.NumberPhone;
-                TBUsuario.Text = AppState.ClientActive.IdPersonNavigation.Nickname;
+                string name = AppState.ClientActive.IdPersonNavigation.FirstName.ToString();
+                string lastName =AppState.ClientActive.IdPersonNavigation.LastName.ToString();
+                string numberPhone = AppState.ClientActive.IdPersonNavigation.NumberPhone.ToString();
+                string nickname  = AppState.ClientActive.IdPersonNavigation.Nickname.ToString();
+
+
+                TBNombre.Text = name;
+                TBApellido.Text = lastName;
+                TBTelefono.Text = numberPhone;
+                TBUsuario.Text = nickname;
                 //Que hacer con la contraseña?
                 //TBContraseña.Text = AppState.ClientActive.IdPersonNavigation.;
-                TBRutaImagen.Text = AppState.ClientActive.IdPersonNavigation.Avatar;
-                if(AppState.ClientActive.IdPersonNavigation.Gender == "M" || AppState.ClientActive.IdPersonNavigation.Gender == "m")
+                TBRutaImagen.Text = AppState.ClientActive.IdPersonNavigation.Avatar.ToString();
+                if (AppState.ClientActive.IdPersonNavigation.Gender.ToString() == "M" || AppState.ClientActive.IdPersonNavigation.Gender.ToString() == "m")
                 {
                     RBMasculino.Checked = true;
-                } else
+                }
+                else
                 {
                     RBFemenino.Checked = true;
                 }
@@ -53,7 +67,7 @@ namespace gymsy.UserControls
 
 
             }
-            
+
         }
 
         private void TBNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -210,30 +224,31 @@ namespace gymsy.UserControls
         }
         private void CargarElementosComboBox()
         {
+            if (AppState.ClientActive != null)
+            {
 
 
+                var trainingPlan = this.dbContext.TrainingPlans
+                    .Where(trainingPlan => trainingPlan.IdTrainingPlan == AppState.ClientActive.IdTrainingPlan)
+                    .First();
 
-            // Puedes agregar elementos al ComboBox de diferentes maneras.
-            // En este ejemplo, los agregaremos manualmente:
+                TBPrecio.Text = trainingPlan.Price.ToString();
+                TBDescripcion.Text = trainingPlan.Description;
+                TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
 
-            // Método 1: Agregar elementos uno por uno
-            CBPlanes.Items.Add("Complemento");
-            CBPlanes.Items.Add("Complemento+KickBoxing");
-            CBPlanes.Items.Add("Complemento+PersonalTraining");
+                CBPlanes.Items.Add(trainingPlan.Description);
 
-            // Método 2: Agregar una matriz de elementos
-            string[] elementos = { "Elemento 4", "Elemento 5", "Elemento 6" };
-            CBPlanes.Items.AddRange(elementos);
+                //Ahora se cargan los demas elementos
 
-            // También puedes cargar elementos desde una lista o cualquier otra fuente de datos.
+                var trainingPlans = this.dbContext.TrainingPlans
+                    .Where(trainingPlan => trainingPlan.IdTrainingPlan != AppState.ClientActive.IdTrainingPlan)
+                    .ToList();
 
-            // Establece un elemento predeterminado seleccionado (opcional)
-            CBPlanes.SelectedIndex = 0;
-
-            TBPrecio.Text = "260.99";
-            TBDescripcion.Text = "Complemento";
-            TBNombreInstructor.Text = "Juan Perez";
-
+                foreach (TrainingPlan plan in trainingPlans)
+                {
+                    CBPlanes.Items.Add(plan.Description);
+                }
+            }
         }
 
         private void TBPrecio_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -261,13 +276,9 @@ namespace gymsy.UserControls
                 bool isValidTextBoxes = isValidTextsBoxesMostrarError();
                 if (isValidTextBoxes)
                 {
-
-
-
-                    MessageBox.Show("Se Editaron correcctamente los datos");
+                    this.actualizarCliente();
                     this.restablecerTextBoxes();
                     MainView.navigationControl.Display(1);
-                                
 
                 }
 
@@ -277,6 +288,32 @@ namespace gymsy.UserControls
                 MessageBox.Show("Exepcion inesperada!");
                 throw;
             }
+        }
+
+        private void actualizarCliente()
+        {
+            try
+            {
+                var personUpdated = this.dbContext.People
+                                .Where(people => people.IdPerson == AppState.ClientActive.IdPersonNavigation.IdPerson)
+                                .First();
+                personUpdated = AppState.ClientActive.IdPersonNavigation;
+
+                var clientUpdated = this.dbContext.Clients
+                                .Where(client => client.IdClient == AppState.ClientActive.IdClient)
+                                .First();
+
+                clientUpdated = AppState.ClientActive;
+
+                this.dbContext.SaveChanges();
+
+                MessageBox.Show("Se Editaron correcctamente los datos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+
         }
 
         private void CBPlanes_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -298,7 +335,10 @@ namespace gymsy.UserControls
             RBMasculino.Checked = true;
         }
 
-
+        private void back_Click(object sender, EventArgs e)
+        {
+            MainView.navigationControl.Display(1);
+        }
     }
 
 
