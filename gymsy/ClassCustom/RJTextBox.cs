@@ -255,8 +255,8 @@ namespace CustomControls.RJControls
 
                 using (GraphicsPath pathBorderSmooth = GetFigurePath(rectBorderSmooth, borderRadius))
                 using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
-                using (Pen penBorderSmooth = new Pen(this.Parent.BackColor, smoothSize))
-                using (Pen penBorder = new Pen(borderColor, borderSize))
+                using (Pen penBorderSmooth = new(this.Parent!.BackColor, smoothSize))
+                using (Pen penBorder = new(borderColor, borderSize))
                 {
                     //-Drawing
                     this.Region = new Region(pathBorderSmooth);//Set the rounded region of UserControl
