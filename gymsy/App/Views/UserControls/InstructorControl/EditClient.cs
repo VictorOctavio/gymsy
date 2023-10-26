@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using gymsy.Context;
 using gymsy.App.Models;
+using System.Collections;
 
 namespace gymsy.UserControls
 {
@@ -19,6 +20,8 @@ namespace gymsy.UserControls
     {
         private int indexRowSelect = 0;
         private GymsyDbContext dbContext;
+
+        private Dictionary<int, string> descripcionPorValor = new Dictionary<int, string>();
 
         public EditClient()
         {
@@ -246,7 +249,11 @@ namespace gymsy.UserControls
 
                 foreach (TrainingPlan plan in trainingPlans)
                 {
-                    CBPlanes.Items.Add(plan.Description);
+                    if(!plan.Inactive)
+                    {
+                        CBPlanes.Items.Add(plan.IdTrainingPlan + "-" + plan.Description);
+                    }
+                    
                 }
             }
         }
@@ -297,11 +304,13 @@ namespace gymsy.UserControls
                 var personUpdated = this.dbContext.People
                                 .Where(people => people.IdPerson == AppState.ClientActive.IdPersonNavigation.IdPerson)
                                 .First();
-                personUpdated = AppState.ClientActive.IdPersonNavigation;
+                
 
                 var clientUpdated = this.dbContext.Clients
                                 .Where(client => client.IdClient == AppState.ClientActive.IdClient)
                                 .First();
+
+                personUpdated = AppState.ClientActive.IdPersonNavigation;
 
                 clientUpdated = AppState.ClientActive;
 
@@ -318,10 +327,28 @@ namespace gymsy.UserControls
 
         private void CBPlanes_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+            // Obtén la descripción seleccionada del ComboBox
+            string selectedDescription = CBPlanes.SelectedItem.ToString();
 
-            TBPrecio.Text = "299.99";
-            TBDescripcion.Text = "Complemento++";
-            TBNombreInstructor.Text = "Juansito Perez";
+            // Divide la descripción en ID y descripción por medio del -
+            string[] parts = selectedDescription.Split('-');
+
+            if (parts.Length == 2)
+            {
+                // Obtén el ID y realiza las consultas en la base de datos
+                int selectedPlanId = int.Parse(parts[0]);
+                string selectedPlanDescription = parts[1];
+
+                var trainingPlan = this.dbContext.TrainingPlans
+                    .Where(trainingPlan => trainingPlan.IdTrainingPlan == selectedPlanId)
+                    .First();
+
+                TBPrecio.Text = trainingPlan.Price.ToString();
+                TBDescripcion.Text = trainingPlan.Description;
+                TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
+
+
+            }
         }
 
         private void restablecerTextBoxes()
