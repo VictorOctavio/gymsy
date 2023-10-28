@@ -263,16 +263,14 @@ namespace gymsy.UserControls
 
                 if (resultado == DialogResult.Yes)
                 {
+
                     //se guarda su indice
                     this.indexRowSelect = DGUsers.SelectedRows[0].Index;
 
                     // Accede a la celda "Eliminado" de la fila seleccionada y actualiza su valor
                     DGUsers.Rows[this.indexRowSelect].Cells["delete"].Value = celdaSIoNO;
 
-
-                    //Se limpia el indice
-                    this.indexRowSelect = 0;
-
+                    /*
                     //Se inactiva desde la base de datosa
                     foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans)
                     {
@@ -306,7 +304,22 @@ namespace gymsy.UserControls
 
 
                     }
+                    */
+                    int idClient = int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
 
+                    var clientUpdated = this.dbContext.Clients
+                    .Where(client => client.IdClient == idClient)
+                    .First();
+
+                    if (clientUpdated != null)
+                    {
+                        // Actualiza el campo 'Inactive' en la entidad 'Person'
+                        //inactiva o activa a la persona dependiendo si se la esta viendo en Modo Ver elinados o no
+                        clientUpdated.IdPersonNavigation.Inactive = !this.isModeVerNoDelete;
+
+                        this.dbContext.SaveChanges();
+                    }
+                    
 
 
                     //Se actualiza el datagrid con el 

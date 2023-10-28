@@ -245,9 +245,9 @@ namespace gymsy.UserControls
                 if (isValidTextBoxes)
                 {
 
-             
+
                     string usuario = TBUsuario.Text;
-                    
+
                     int idPlan = int.Parse(LidPlan.Text);
                     string sexo = "";
 
@@ -284,7 +284,7 @@ namespace gymsy.UserControls
 
                         Client cliente = new Client
                         {
-                            LastExpiration = DateTime.Now.AddMonths(1),//Se le añade un mes mas a la fecha actual
+                            LastExpiration = DPVencimiento.Value,//Se le añade un mes mas a la fecha actual
                             IdPerson = persona.IdPerson,
                             IdTrainingPlan = idPlan,
                         };

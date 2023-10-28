@@ -83,6 +83,8 @@ namespace gymsy.UserControls
             LApellidoRequerido = new Label();
             label4 = new Label();
             openFileDialog1 = new OpenFileDialog();
+            label9 = new Label();
+            DPVencimiento = new DateTimePicker();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IPImagenUsuario).BeginInit();
@@ -323,6 +325,8 @@ namespace gymsy.UserControls
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.AutoSize = true;
+            panel2.Controls.Add(label9);
+            panel2.Controls.Add(DPVencimiento);
             panel2.Controls.Add(LidPlan);
             panel2.Controls.Add(LRuraImagen);
             panel2.Controls.Add(TBNombreInstructor);
@@ -909,6 +913,32 @@ namespace gymsy.UserControls
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.ForeColor = Color.FromArgb(230, 237, 243);
+            label9.Location = new Point(766, 311);
+            label9.Name = "label9";
+            label9.Size = new Size(123, 15);
+            label9.TabIndex = 97;
+            label9.Text = "Fecha de vencimiento";
+            // 
+            // DPVencimiento
+            // 
+            DPVencimiento.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DPVencimiento.CalendarForeColor = Color.FromArgb(230, 237, 243);
+            DPVencimiento.CalendarMonthBackground = Color.FromArgb(16, 8, 23);
+            DPVencimiento.CalendarTitleBackColor = Color.DarkOrange;
+            DPVencimiento.CalendarTitleForeColor = Color.FromArgb(9, 0, 20);
+            DPVencimiento.Format = DateTimePickerFormat.Short;
+            DPVencimiento.Location = new Point(769, 338);
+            DPVencimiento.MaxDate = new DateTime(5023, 10, 17, 0, 0, 0, 0);
+            DPVencimiento.MinDate = new DateTime(2023, 10, 28, 0, 0, 0, 0);
+            DPVencimiento.Name = "DPVencimiento";
+            DPVencimiento.Size = new Size(117, 23);
+            DPVencimiento.TabIndex = 96;
+            DPVencimiento.Value = new DateTime(2023, 10, 28, 0, 0, 0, 0);
+            // 
             // AddClientUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -984,5 +1014,7 @@ namespace gymsy.UserControls
         private ClassCustom.RJButton rjButton4;
         private ClassCustom.RJButton rjButton6;
         private ClassCustom.RJButton rjButton5;
+        private Label label9;
+        private DateTimePicker DPVencimiento;
     }
 }
