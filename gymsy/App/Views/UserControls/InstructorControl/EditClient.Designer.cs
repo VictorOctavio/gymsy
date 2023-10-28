@@ -37,6 +37,8 @@ namespace gymsy.UserControls
             label12 = new Label();
             newClientOrEditClient = new Label();
             panel2 = new Panel();
+            LidPlan = new Label();
+            TBNombre = new CustomControls.RJControls.RJTextBox();
             LRuraImagen = new Label();
             TBNombreInstructor = new TextBox();
             TBDescripcion = new TextBox();
@@ -76,7 +78,8 @@ namespace gymsy.UserControls
             LApellidoRequerido = new Label();
             label4 = new Label();
             openFileDialog1 = new OpenFileDialog();
-            TBNombre = new CustomControls.RJControls.RJTextBox();
+            label9 = new Label();
+            DPVencimiento = new DateTimePicker();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IPImagenUsuario).BeginInit();
@@ -106,7 +109,7 @@ namespace gymsy.UserControls
             panel1.ForeColor = Color.FromArgb(230, 237, 243);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(2436, 674);
+            panel1.Size = new Size(2658, 674);
             panel1.TabIndex = 1;
             // 
             // back
@@ -166,7 +169,7 @@ namespace gymsy.UserControls
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = SystemColors.ActiveCaptionText;
-            label12.Location = new Point(1425, 112);
+            label12.Location = new Point(1041, 112);
             label12.Name = "label12";
             label12.Size = new Size(153, 25);
             label12.TabIndex = 50;
@@ -178,7 +181,7 @@ namespace gymsy.UserControls
             newClientOrEditClient.AutoSize = true;
             newClientOrEditClient.Font = new Font("Segoe UI", 29F, FontStyle.Regular, GraphicsUnit.Point);
             newClientOrEditClient.ForeColor = Color.FromArgb(230, 237, 243);
-            newClientOrEditClient.Location = new Point(350, 18);
+            newClientOrEditClient.Location = new Point(-34, 18);
             newClientOrEditClient.Name = "newClientOrEditClient";
             newClientOrEditClient.Size = new Size(249, 52);
             newClientOrEditClient.TabIndex = 33;
@@ -188,6 +191,9 @@ namespace gymsy.UserControls
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.AutoSize = true;
+            panel2.Controls.Add(label9);
+            panel2.Controls.Add(DPVencimiento);
+            panel2.Controls.Add(LidPlan);
             panel2.Controls.Add(TBNombre);
             panel2.Controls.Add(LRuraImagen);
             panel2.Controls.Add(TBNombreInstructor);
@@ -229,8 +235,40 @@ namespace gymsy.UserControls
             panel2.Controls.Add(label4);
             panel2.Location = new Point(3, 73);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1215, 533);
+            panel2.Size = new Size(1326, 533);
             panel2.TabIndex = 51;
+            // 
+            // LidPlan
+            // 
+            LidPlan.AutoSize = true;
+            LidPlan.Location = new Point(862, 19);
+            LidPlan.Name = "LidPlan";
+            LidPlan.Size = new Size(120, 15);
+            LidPlan.TabIndex = 93;
+            LidPlan.Text = "aux_id_plan(invisible)";
+            LidPlan.Visible = false;
+            // 
+            // TBNombre
+            // 
+            TBNombre.BackColor = Color.FromArgb(69, 34, 99);
+            TBNombre.BorderColor = Color.Transparent;
+            TBNombre.BorderFocusColor = Color.HotPink;
+            TBNombre.BorderRadius = 15;
+            TBNombre.BorderSize = 2;
+            TBNombre.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TBNombre.ForeColor = Color.FromArgb(230, 237, 243);
+            TBNombre.Location = new Point(23, 68);
+            TBNombre.Margin = new Padding(4);
+            TBNombre.Multiline = false;
+            TBNombre.Name = "TBNombre";
+            TBNombre.Padding = new Padding(10, 7, 10, 7);
+            TBNombre.PasswordChar = false;
+            TBNombre.PlaceholderColor = Color.DarkGray;
+            TBNombre.PlaceholderText = "Ingrese un nombre...";
+            TBNombre.ReadOnly = false;
+            TBNombre.Size = new Size(204, 31);
+            TBNombre.TabIndex = 92;
+            TBNombre.UnderlinedStyle = false;
             // 
             // LRuraImagen
             // 
@@ -249,7 +287,7 @@ namespace gymsy.UserControls
             TBNombreInstructor.BorderStyle = BorderStyle.None;
             TBNombreInstructor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TBNombreInstructor.ForeColor = Color.FromArgb(230, 237, 243);
-            TBNombreInstructor.Location = new Point(740, 268);
+            TBNombreInstructor.Location = new Point(748, 268);
             TBNombreInstructor.Name = "TBNombreInstructor";
             TBNombreInstructor.PlaceholderText = "...";
             TBNombreInstructor.ReadOnly = true;
@@ -262,7 +300,7 @@ namespace gymsy.UserControls
             TBDescripcion.BorderStyle = BorderStyle.None;
             TBDescripcion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TBDescripcion.ForeColor = Color.FromArgb(230, 237, 243);
-            TBDescripcion.Location = new Point(740, 213);
+            TBDescripcion.Location = new Point(748, 213);
             TBDescripcion.Name = "TBDescripcion";
             TBDescripcion.PlaceholderText = "...";
             TBDescripcion.ReadOnly = true;
@@ -275,7 +313,7 @@ namespace gymsy.UserControls
             TBPrecio.BorderStyle = BorderStyle.None;
             TBPrecio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TBPrecio.ForeColor = Color.FromArgb(230, 237, 243);
-            TBPrecio.Location = new Point(740, 158);
+            TBPrecio.Location = new Point(748, 158);
             TBPrecio.Name = "TBPrecio";
             TBPrecio.PlaceholderText = "...";
             TBPrecio.ReadOnly = true;
@@ -326,7 +364,7 @@ namespace gymsy.UserControls
             CBPlanes.IconColor = Color.MediumSlateBlue;
             CBPlanes.ListBackColor = Color.FromArgb(69, 34, 99);
             CBPlanes.ListTextColor = Color.DimGray;
-            CBPlanes.Location = new Point(724, 71);
+            CBPlanes.Location = new Point(732, 71);
             CBPlanes.MinimumSize = new Size(200, 30);
             CBPlanes.Name = "CBPlanes";
             CBPlanes.Padding = new Padding(1);
@@ -386,7 +424,7 @@ namespace gymsy.UserControls
             // 
             LPlanRequerido.AutoSize = true;
             LPlanRequerido.ForeColor = Color.Red;
-            LPlanRequerido.Location = new Point(781, 110);
+            LPlanRequerido.Location = new Point(789, 110);
             LPlanRequerido.Name = "LPlanRequerido";
             LPlanRequerido.Size = new Size(105, 15);
             LPlanRequerido.TabIndex = 74;
@@ -397,7 +435,7 @@ namespace gymsy.UserControls
             // 
             label20.AutoSize = true;
             label20.ForeColor = Color.FromArgb(230, 237, 243);
-            label20.Location = new Point(773, 244);
+            label20.Location = new Point(781, 244);
             label20.Name = "label20";
             label20.Size = new Size(121, 15);
             label20.TabIndex = 75;
@@ -417,7 +455,7 @@ namespace gymsy.UserControls
             // 
             label18.AutoSize = true;
             label18.ForeColor = Color.FromArgb(230, 237, 243);
-            label18.Location = new Point(799, 189);
+            label18.Location = new Point(807, 189);
             label18.Name = "label18";
             label18.Size = new Size(69, 15);
             label18.TabIndex = 73;
@@ -437,7 +475,7 @@ namespace gymsy.UserControls
             // 
             label16.AutoSize = true;
             label16.ForeColor = Color.FromArgb(230, 237, 243);
-            label16.Location = new Point(813, 134);
+            label16.Location = new Point(821, 134);
             label16.Name = "label16";
             label16.Size = new Size(40, 15);
             label16.TabIndex = 72;
@@ -459,7 +497,7 @@ namespace gymsy.UserControls
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = Color.FromArgb(230, 237, 243);
-            label14.Location = new Point(724, 38);
+            label14.Location = new Point(782, 38);
             label14.Name = "label14";
             label14.Size = new Size(118, 25);
             label14.TabIndex = 71;
@@ -474,7 +512,7 @@ namespace gymsy.UserControls
             DPFechaNacimiento.CalendarTitleForeColor = Color.FromArgb(9, 0, 20);
             DPFechaNacimiento.Format = DateTimePickerFormat.Short;
             DPFechaNacimiento.Location = new Point(306, 68);
-            DPFechaNacimiento.MaxDate = new DateTime(2023, 10, 17, 0, 0, 0, 0);
+            DPFechaNacimiento.MaxDate = new DateTime(5023, 10, 17, 0, 0, 0, 0);
             DPFechaNacimiento.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             DPFechaNacimiento.Name = "DPFechaNacimiento";
             DPFechaNacimiento.Size = new Size(117, 23);
@@ -741,27 +779,31 @@ namespace gymsy.UserControls
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // TBNombre
+            // label9
             // 
-            TBNombre.BackColor = Color.FromArgb(69, 34, 99);
-            TBNombre.BorderColor = Color.Transparent;
-            TBNombre.BorderFocusColor = Color.HotPink;
-            TBNombre.BorderRadius = 15;
-            TBNombre.BorderSize = 2;
-            TBNombre.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            TBNombre.ForeColor = Color.FromArgb(230, 237, 243);
-            TBNombre.Location = new Point(23, 68);
-            TBNombre.Margin = new Padding(4);
-            TBNombre.Multiline = false;
-            TBNombre.Name = "TBNombre";
-            TBNombre.Padding = new Padding(10, 7, 10, 7);
-            TBNombre.PasswordChar = false;
-            TBNombre.PlaceholderColor = Color.DarkGray;
-            TBNombre.PlaceholderText = "Ingrese un nombre...";
-            TBNombre.ReadOnly = false;
-            TBNombre.Size = new Size(204, 31);
-            TBNombre.TabIndex = 92;
-            TBNombre.UnderlinedStyle = false;
+            label9.AutoSize = true;
+            label9.ForeColor = Color.FromArgb(230, 237, 243);
+            label9.Location = new Point(780, 309);
+            label9.Name = "label9";
+            label9.Size = new Size(123, 15);
+            label9.TabIndex = 95;
+            label9.Text = "Fecha de vencimiento";
+            // 
+            // DPVencimiento
+            // 
+            DPVencimiento.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DPVencimiento.CalendarForeColor = Color.FromArgb(230, 237, 243);
+            DPVencimiento.CalendarMonthBackground = Color.FromArgb(16, 8, 23);
+            DPVencimiento.CalendarTitleBackColor = Color.DarkOrange;
+            DPVencimiento.CalendarTitleForeColor = Color.FromArgb(9, 0, 20);
+            DPVencimiento.Format = DateTimePickerFormat.Short;
+            DPVencimiento.Location = new Point(783, 336);
+            DPVencimiento.MaxDate = new DateTime(5023, 10, 17, 0, 0, 0, 0);
+            DPVencimiento.MinDate = new DateTime(2023, 10, 28, 0, 0, 0, 0);
+            DPVencimiento.Name = "DPVencimiento";
+            DPVencimiento.Size = new Size(117, 23);
+            DPVencimiento.TabIndex = 94;
+            DPVencimiento.Value = new DateTime(2023, 10, 28, 0, 0, 0, 0);
             // 
             // EditClient
             // 
@@ -832,5 +874,9 @@ namespace gymsy.UserControls
         private ClassCustom.RJButton back;
         private ClassCustom.RJButton rjButton1;
         private CustomControls.RJControls.RJTextBox TBNombre;
+        private Label LidPlan;
+        private Label label9;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker DPVencimiento;
     }
 }

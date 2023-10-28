@@ -28,7 +28,7 @@ namespace gymsy.UserControls
          */
         private bool isModeVerNoDelete = true;
 
-        private List<Client> clients = new List<Client>();
+        //private List<Client> clients = new List<Client>();
       
 
         public ClientsUserControl()
@@ -91,6 +91,13 @@ namespace gymsy.UserControls
 
         private void cargarPersonas()
         {
+            if (DGUsers.IsHandleCreated)
+            {
+                DGUsers.Rows.Clear();
+               
+            }
+            //Se limpia la lista de personas
+            
             // Limpia cualquier ordenación previa en el DataGridView
             DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
 
@@ -391,6 +398,12 @@ namespace gymsy.UserControls
         private void rjButton2_Click_1(object sender, EventArgs e)
         {
             MainView.navigationControl.Display(7);
+        }
+
+        public override void Refresh()
+        {
+            //Carga el comboBox con los planes
+            this.cargarPersonas();
         }
     }
 }

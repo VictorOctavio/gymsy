@@ -155,13 +155,13 @@ namespace gymsy
 
         private void btnNavClients_Click(object sender, EventArgs e)
         {
-            navigationControl.Display(1);
+            navigationControl.Display(1, true);
             navigationButtons.Highlight(btnNavClients);
         }
 
         private void btnNavPayments_Click(object sender, EventArgs e)
         {
-            navigationControl.Display(2);
+            navigationControl.Display(2, true);
             navigationButtons.Highlight(btnNavPayments);
         }
 
@@ -200,7 +200,7 @@ namespace gymsy
 
         private void btnNavInstructorAdmin_Click(object sender, EventArgs e)
         {
-            navigationControl.Display(1);
+            navigationControl.Display(1, true);
             navigationButtons.Highlight(btnNavInstructorAdmin);
         }
 

@@ -32,9 +32,17 @@ namespace gymsy.UserControls
         {
             label1 = new Label();
             panel1 = new Panel();
+            rjButton6 = new ClassCustom.RJButton();
+            rjButton5 = new ClassCustom.RJButton();
+            rjButton4 = new ClassCustom.RJButton();
+            rjButton3 = new ClassCustom.RJButton();
+            rjButton2 = new ClassCustom.RJButton();
+            rjButton1 = new ClassCustom.RJButton();
+            back = new ClassCustom.RJButton();
             label12 = new Label();
             newClientOrEditClient = new Label();
             panel2 = new Panel();
+            LidPlan = new Label();
             LRuraImagen = new Label();
             TBNombreInstructor = new TextBox();
             TBDescripcion = new TextBox();
@@ -96,6 +104,13 @@ namespace gymsy.UserControls
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSize = true;
             panel1.BackColor = Color.FromArgb(16, 8, 23);
+            panel1.Controls.Add(rjButton6);
+            panel1.Controls.Add(rjButton5);
+            panel1.Controls.Add(rjButton4);
+            panel1.Controls.Add(rjButton3);
+            panel1.Controls.Add(rjButton2);
+            panel1.Controls.Add(rjButton1);
+            panel1.Controls.Add(back);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(newClientOrEditClient);
             panel1.Controls.Add(panel2);
@@ -104,6 +119,181 @@ namespace gymsy.UserControls
             panel1.Name = "panel1";
             panel1.Size = new Size(2436, 674);
             panel1.TabIndex = 1;
+            // 
+            // rjButton6
+            // 
+            rjButton6.BackColor = Color.DarkOrange;
+            rjButton6.BackgroundColor = Color.DarkOrange;
+            rjButton6.BorderColor = Color.PaleVioletRed;
+            rjButton6.BorderRadius = 15;
+            rjButton6.BorderSize = 0;
+            rjButton6.FlatAppearance.BorderSize = 0;
+            rjButton6.FlatStyle = FlatStyle.Flat;
+            rjButton6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton6.ForeColor = Color.White;
+            rjButton6.IconChar = IconChar.FileImage;
+            rjButton6.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton6.IconFont = IconFont.Auto;
+            rjButton6.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton6.Location = new Point(1125, 311);
+            rjButton6.Name = "rjButton6";
+            rjButton6.Padding = new Padding(10, 0, 0, 0);
+            rjButton6.Size = new Size(186, 53);
+            rjButton6.TabIndex = 99;
+            rjButton6.Text = "Agregar Imagen";
+            rjButton6.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton6.TextColor = Color.White;
+            rjButton6.UseVisualStyleBackColor = false;
+            // 
+            // rjButton5
+            // 
+            rjButton5.BackColor = Color.DarkOrange;
+            rjButton5.BackgroundColor = Color.DarkOrange;
+            rjButton5.BorderColor = Color.PaleVioletRed;
+            rjButton5.BorderRadius = 15;
+            rjButton5.BorderSize = 0;
+            rjButton5.FlatAppearance.BorderSize = 0;
+            rjButton5.FlatStyle = FlatStyle.Flat;
+            rjButton5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton5.ForeColor = Color.White;
+            rjButton5.IconChar = IconChar.ArrowLeftLong;
+            rjButton5.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton5.IconFont = IconFont.Auto;
+            rjButton5.IconSize = 90;
+            rjButton5.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton5.Location = new Point(1207, 345);
+            rjButton5.Name = "rjButton5";
+            rjButton5.Padding = new Padding(10, 0, 0, 0);
+            rjButton5.Size = new Size(103, 64);
+            rjButton5.TabIndex = 98;
+            rjButton5.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton5.TextColor = Color.White;
+            rjButton5.UseVisualStyleBackColor = false;
+            // 
+            // rjButton4
+            // 
+            rjButton4.BackColor = Color.DarkOrange;
+            rjButton4.BackgroundColor = Color.DarkOrange;
+            rjButton4.BorderColor = Color.PaleVioletRed;
+            rjButton4.BorderRadius = 15;
+            rjButton4.BorderSize = 0;
+            rjButton4.FlatAppearance.BorderSize = 0;
+            rjButton4.FlatStyle = FlatStyle.Flat;
+            rjButton4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton4.ForeColor = Color.White;
+            rjButton4.IconChar = IconChar.ArrowLeftLong;
+            rjButton4.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton4.IconFont = IconFont.Auto;
+            rjButton4.IconSize = 90;
+            rjButton4.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton4.Location = new Point(1199, 337);
+            rjButton4.Name = "rjButton4";
+            rjButton4.Padding = new Padding(10, 0, 0, 0);
+            rjButton4.Size = new Size(103, 64);
+            rjButton4.TabIndex = 97;
+            rjButton4.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton4.TextColor = Color.White;
+            rjButton4.UseVisualStyleBackColor = false;
+            // 
+            // rjButton3
+            // 
+            rjButton3.BackColor = Color.DarkOrange;
+            rjButton3.BackgroundColor = Color.DarkOrange;
+            rjButton3.BorderColor = Color.PaleVioletRed;
+            rjButton3.BorderRadius = 15;
+            rjButton3.BorderSize = 0;
+            rjButton3.FlatAppearance.BorderSize = 0;
+            rjButton3.FlatStyle = FlatStyle.Flat;
+            rjButton3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton3.ForeColor = Color.White;
+            rjButton3.IconChar = IconChar.ArrowLeftLong;
+            rjButton3.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton3.IconFont = IconFont.Auto;
+            rjButton3.IconSize = 90;
+            rjButton3.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton3.Location = new Point(1191, 329);
+            rjButton3.Name = "rjButton3";
+            rjButton3.Padding = new Padding(10, 0, 0, 0);
+            rjButton3.Size = new Size(103, 64);
+            rjButton3.TabIndex = 96;
+            rjButton3.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton3.TextColor = Color.White;
+            rjButton3.UseVisualStyleBackColor = false;
+            // 
+            // rjButton2
+            // 
+            rjButton2.BackColor = Color.DarkOrange;
+            rjButton2.BackgroundColor = Color.DarkOrange;
+            rjButton2.BorderColor = Color.PaleVioletRed;
+            rjButton2.BorderRadius = 15;
+            rjButton2.BorderSize = 0;
+            rjButton2.FlatAppearance.BorderSize = 0;
+            rjButton2.FlatStyle = FlatStyle.Flat;
+            rjButton2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton2.ForeColor = Color.White;
+            rjButton2.IconChar = IconChar.ArrowLeftLong;
+            rjButton2.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton2.IconFont = IconFont.Auto;
+            rjButton2.IconSize = 90;
+            rjButton2.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton2.Location = new Point(1183, 321);
+            rjButton2.Name = "rjButton2";
+            rjButton2.Padding = new Padding(10, 0, 0, 0);
+            rjButton2.Size = new Size(103, 64);
+            rjButton2.TabIndex = 95;
+            rjButton2.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton2.TextColor = Color.White;
+            rjButton2.UseVisualStyleBackColor = false;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.DarkOrange;
+            rjButton1.BackgroundColor = Color.DarkOrange;
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 15;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.ForeColor = Color.White;
+            rjButton1.IconChar = IconChar.ArrowLeftLong;
+            rjButton1.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton1.IconFont = IconFont.Auto;
+            rjButton1.IconSize = 90;
+            rjButton1.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton1.Location = new Point(1175, 313);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Padding = new Padding(10, 0, 0, 0);
+            rjButton1.Size = new Size(103, 64);
+            rjButton1.TabIndex = 94;
+            rjButton1.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
+            // 
+            // back
+            // 
+            back.BackColor = Color.DarkOrange;
+            back.BackgroundColor = Color.DarkOrange;
+            back.BorderColor = Color.PaleVioletRed;
+            back.BorderRadius = 15;
+            back.BorderSize = 0;
+            back.FlatAppearance.BorderSize = 0;
+            back.FlatStyle = FlatStyle.Flat;
+            back.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            back.ForeColor = Color.White;
+            back.IconChar = IconChar.ArrowLeftLong;
+            back.IconColor = Color.FromArgb(230, 237, 243);
+            back.IconFont = IconFont.Auto;
+            back.IconSize = 90;
+            back.ImageAlign = ContentAlignment.MiddleRight;
+            back.Location = new Point(1167, 305);
+            back.Name = "back";
+            back.Padding = new Padding(10, 0, 0, 0);
+            back.Size = new Size(103, 64);
+            back.TabIndex = 93;
+            back.TextAlign = ContentAlignment.MiddleLeft;
+            back.TextColor = Color.White;
+            back.UseVisualStyleBackColor = false;
             // 
             // label12
             // 
@@ -133,6 +323,7 @@ namespace gymsy.UserControls
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.AutoSize = true;
+            panel2.Controls.Add(LidPlan);
             panel2.Controls.Add(LRuraImagen);
             panel2.Controls.Add(TBNombreInstructor);
             panel2.Controls.Add(TBDescripcion);
@@ -176,6 +367,16 @@ namespace gymsy.UserControls
             panel2.Name = "panel2";
             panel2.Size = new Size(1215, 533);
             panel2.TabIndex = 51;
+            // 
+            // LidPlan
+            // 
+            LidPlan.AutoSize = true;
+            LidPlan.Location = new Point(862, 46);
+            LidPlan.Name = "LidPlan";
+            LidPlan.Size = new Size(120, 15);
+            LidPlan.TabIndex = 92;
+            LidPlan.Text = "aux_id_plan(invisible)";
+            LidPlan.Visible = false;
             // 
             // LRuraImagen
             // 
@@ -353,11 +554,11 @@ namespace gymsy.UserControls
             // 
             LPlanRequerido.AutoSize = true;
             LPlanRequerido.ForeColor = Color.Red;
-            LPlanRequerido.Location = new Point(781, 110);
+            LPlanRequerido.Location = new Point(769, 106);
             LPlanRequerido.Name = "LPlanRequerido";
-            LPlanRequerido.Size = new Size(105, 15);
+            LPlanRequerido.Size = new Size(125, 15);
             LPlanRequerido.TabIndex = 74;
-            LPlanRequerido.Text = "*Campo requerido";
+            LPlanRequerido.Text = "*Debe agregar un plan";
             LPlanRequerido.Visible = false;
             // 
             // label20
@@ -441,12 +642,12 @@ namespace gymsy.UserControls
             DPFechaNacimiento.CalendarTitleForeColor = Color.FromArgb(9, 0, 20);
             DPFechaNacimiento.Format = DateTimePickerFormat.Short;
             DPFechaNacimiento.Location = new Point(306, 68);
-            DPFechaNacimiento.MaxDate = new DateTime(2023, 10, 17, 0, 0, 0, 0);
+            DPFechaNacimiento.MaxDate = new DateTime(5023, 10, 28, 0, 0, 0, 0);
             DPFechaNacimiento.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             DPFechaNacimiento.Name = "DPFechaNacimiento";
             DPFechaNacimiento.Size = new Size(117, 23);
             DPFechaNacimiento.TabIndex = 77;
-            DPFechaNacimiento.Value = new DateTime(2023, 10, 17, 0, 0, 0, 0);
+            DPFechaNacimiento.Value = new DateTime(2023, 10, 28, 0, 0, 0, 0);
             // 
             // RBMasculino
             // 
@@ -775,5 +976,13 @@ namespace gymsy.UserControls
         private TextBox TBDescripcion;
         private TextBox TBPrecio;
         private Label label7;
+        private Label LidPlan;
+        private ClassCustom.RJButton rjButton1;
+        private ClassCustom.RJButton back;
+        private ClassCustom.RJButton rjButton2;
+        private ClassCustom.RJButton rjButton3;
+        private ClassCustom.RJButton rjButton4;
+        private ClassCustom.RJButton rjButton6;
+        private ClassCustom.RJButton rjButton5;
     }
 }

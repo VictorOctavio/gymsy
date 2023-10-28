@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using gymsy.Context;
 using gymsy.App.Models;
+using System.Numerics;
 
 namespace gymsy.UserControls
 {
@@ -19,9 +20,12 @@ namespace gymsy.UserControls
     {
         private bool isEditMode = false; // Variable para saber si se esta editando o agregando un nuevo cliente
         private int indexRowSelect = 0;
+        private GymsyDbContext dbContext;
 
         public AddClientUserControl()
         {
+            this.dbContext = GymsyContext.GymsyContextDB;
+
             InitializeComponent();
 
             // Inicializar el contexto de la base de datos
@@ -29,11 +33,6 @@ namespace gymsy.UserControls
 
             //Carga el comboBox con los planes
             CargarElementosComboBox();
-
-
-
-
-
 
         }
 
@@ -98,47 +97,6 @@ namespace gymsy.UserControls
 
         }
 
-        /*
-          /// <summary>
-        /// Se verifica que todos los textbox esten llenos
-        /// </summary>
-        /// <param name="textBoxes"></param>
-        /// <returns></returns>
-      private bool IsValidTextBoxes(List<TextBox> textBoxes, List<Label> labels)
-      {
-
-          bool isValid = true; // Suponemos que todos los TextBox son válidos hasta que encontremos uno inválido
-
-          foreach (TextBox textBox in textBoxes)
-          {
-
-              if (string.IsNullOrWhiteSpace(textBox.Text))
-              {
-                  isValid = false; // Si al menos uno es inválido, cambiamos el estado a falso
-                  textBox.Tag = "Requerido"; // Usamos la propiedad "Tag" para marcar el TextBox como requerido
-              }
-              else
-              {
-                  textBox.Tag = null; // Si es válido, eliminamos la marca
-              }
-          }
-
-          // Mostrar las etiquetas de error
-          foreach (Label label in labels)
-          {
-              if (label.Tag != null && control.Tag.ToString() == "Requerido" && control is Label)
-              {
-                      label.Visible = true;
-              }
-              else if (label is Label)
-              {
-                      label.Visible = false;
-              }
-          }
-
-          return isValid;
-      }
-        */
 
         private bool isValidTextsBoxesMostrarError()
         {
@@ -214,8 +172,8 @@ namespace gymsy.UserControls
                 //MessageBox.Show("Debe seleccionar una imagen");
             }
 
-            /*
-            if (string.IsNullOrWhiteSpace(TBPrecio.Text.Trim()) || string.IsNullOrWhiteSpace(TBDescripcion.Text.Trim()) || string.IsNullOrWhiteSpace(TBNombreInstructor.Text.Trim()))
+
+            if (!string.IsNullOrWhiteSpace(TBPrecio.Text) || !string.IsNullOrWhiteSpace(TBDescripcion.Text) || !string.IsNullOrWhiteSpace(TBNombreInstructor.Text))
             {
                 LPlanRequerido.Visible = false;
 
@@ -225,59 +183,37 @@ namespace gymsy.UserControls
                 isValid = false;
                 LPlanRequerido.Visible = true;
             }
-            */
+
 
             return isValid;
         }
         private void CargarElementosComboBox()
         {
+            //Ahora se cargan los demas elementos
 
+            var trainingPlans = this.dbContext.TrainingPlans.ToList();
 
+            var trainingPlan = trainingPlans.FirstOrDefault();
 
-            // Puedes agregar elementos al ComboBox de diferentes maneras.
-            // En este ejemplo, los agregaremos manualmente:
-
-            // Método 1: Agregar elementos uno por uno
-            CBPlanes.Items.Add("Complemento");
-            CBPlanes.Items.Add("Complemento+KickBoxing");
-            CBPlanes.Items.Add("Complemento+PersonalTraining");
-
-            // Método 2: Agregar una matriz de elementos
-            string[] elementos = { "Elemento 4", "Elemento 5", "Elemento 6" };
-            CBPlanes.Items.AddRange(elementos);
-
-            // También puedes cargar elementos desde una lista o cualquier otra fuente de datos.
-
-            // Establece un elemento predeterminado seleccionado (opcional)
-            CBPlanes.SelectedIndex = 0;
-
-            TBPrecio.Text = "260.99";
-            TBDescripcion.Text = "Complemento";
-            TBNombreInstructor.Text = "Juan Perez";
-
-
-            //Cargar los planes desde la base de datos
-
-
-            /*/Cargar la descripción de los planes desde la base de datos
-            var planes = GymsyContext.Plan.ToList();
-
-            // Limpiar el ComboBox antes de agregar elementos
-            comboBox1.Items.Clear();
-
-            foreach (var plan in planes)
+            if (trainingPlan != null)
             {
-                // Agregar la descripción del plan al ComboBox
-                comboBox1.Items.Add(plan.Descripcion);
+                LidPlan.Text = trainingPlan.IdTrainingPlan.ToString();
+                TBPrecio.Text = trainingPlan.Price.ToString();
+                TBDescripcion.Text = trainingPlan.Description;
+                TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
+
+                CBPlanes.Items.Add(trainingPlan.Description);
             }
 
-            // Establecer un elemento predeterminado seleccionado (opcional)
-            if (comboBox1.Items.Count > 0)
+            foreach (TrainingPlan plan in trainingPlans)
             {
-                comboBox1.SelectedIndex = 0;
-                MostrarInformacionSeleccionada(0); // Mostrar información relacionada al elemento predeterminado
+                if (!plan.Inactive && trainingPlan.IdTrainingPlan != plan.IdTrainingPlan)
+                {
+                    CBPlanes.Items.Add(plan.IdTrainingPlan + "-" + plan.Description);
+                }
+
             }
-            */
+
 
 
 
@@ -309,81 +245,102 @@ namespace gymsy.UserControls
                 if (isValidTextBoxes)
                 {
 
-                    if (!this.isEditMode) //Si no se usa la vista para editar se deben guardar los datos
+             
+                    string usuario = TBUsuario.Text;
+                    
+                    int idPlan = int.Parse(LidPlan.Text);
+                    string sexo = "";
+
+                    if (RBMasculino.Checked)
                     {
-                        string nombre = TBNombre.Text;
-                        string apellido = TBApellido.Text;
-                        string telefono = TBTelefono.Text;
-                        string usuario = TBUsuario.Text;
-                        string contraseña = TBContraseña.Text;
-                        string rutaImagen = TBRutaImagen.Text;
+                        sexo = "M";
+                    }
+                    else
+                    {
+                        sexo = "F";
+                    }
 
-                        string sexo = "";
-
-                        if (RBMasculino.Checked)
-                        {
-                            sexo = "M";
-                        }
-                        else
-                        {
-                            sexo = "F";
-                        }
-
-
-
-
-
+                    if (IsNicknameUnique(usuario))
+                    {
                         Person persona = new Person
                         {
-                            IdPerson = SimularBD.idPerson,
                             Nickname = usuario,
-                            FirstName = nombre,
-                            Avatar = rutaImagen,
-                            Password = contraseña,
+                            FirstName = TBNombre.Text,
+                            Avatar = TBRutaImagen.Text,
+                            Password = TBContraseña.Text,
                             CreatedAt = DateTime.Now,
-                            LastName = apellido,
-                            CBU = "CBU5",
-                            NumberPhone = telefono,
+                            LastName = TBApellido.Text,
+                            CBU = usuario,
+                            NumberPhone = TBTelefono.Text,
                             Birthday = DateTime.Now.AddMonths(1),
                             Gender = sexo,
-                            RolId = 3,
+                            RolId = 3,//3 es el rol de cliente
                             Inactive = false
                         };
 
-                        SimularBD.persons.Add(persona);
-                        SimularBD.idPerson++;
+                        //se guarda en la base de datos, primero la persona por la relacion de la llave foranea
+                        this.dbContext.People.Add(persona);
+                        this.dbContext.SaveChanges();
+
+                        Client cliente = new Client
+                        {
+                            LastExpiration = DateTime.Now.AddMonths(1),//Se le añade un mes mas a la fecha actual
+                            IdPerson = persona.IdPerson,
+                            IdTrainingPlan = idPlan,
+                        };
+
+                        //Se guarda en AppState
+                        AppState.clients.Add(persona);
+
+                        this.dbContext.Clients.Add(cliente);
+                        this.dbContext.SaveChanges();
 
 
                         MessageBox.Show("Se Guardaron correcctamente los datos");
                         this.restablecerTextBoxes();
-
                     }
-                    else //La vista esta en modo edicion se deven editar los datos
+                    else
                     {
-
-
-
-                        MessageBox.Show("Se Editaron correcctamente los datos");
-                        this.restablecerTextBoxes();
-                        MainView.navigationControl.Display(1);
+                        MessageBox.Show("El nombre de usuario ya existe");
                     }
+
+
 
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Exepcion inesperada!");
+                MessageBox.Show("Exepcion inesperada!" + ex.Message);
                 throw;
             }
         }
 
         private void CBPlanes_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+            // Obtén la descripción seleccionada del ComboBox
+            string selectedDescription = CBPlanes.SelectedItem.ToString();
 
-            TBPrecio.Text = "299.99";
-            TBDescripcion.Text = "Complemento++";
-            TBNombreInstructor.Text = "Juansito Perez";
+            // Divide la descripción en ID y descripción por medio del -
+            string[] parts = selectedDescription.Split('-');
+
+            if (parts.Length == 2)
+            {
+                // Obtén el ID y realiza las consultas en la base de datos
+                int selectedPlanId = int.Parse(parts[0]);
+                string selectedPlanDescription = parts[1];
+
+                var trainingPlan = this.dbContext.TrainingPlans
+                    .Where(trainingPlan => trainingPlan.IdTrainingPlan == selectedPlanId)
+                    .First();
+
+                LidPlan.Text = trainingPlan.IdTrainingPlan.ToString();
+                TBPrecio.Text = trainingPlan.Price.ToString();
+                TBDescripcion.Text = trainingPlan.Description;
+                TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
+
+
+            }
         }
 
         private void restablecerTextBoxes()
@@ -397,6 +354,22 @@ namespace gymsy.UserControls
             RBMasculino.Checked = true;
 
 
+        }
+
+        // Función para verificar si el 'nickname' es único
+        private bool IsNicknameUnique(string nickname)
+        {
+            // Consulta la base de datos para verificar si ya existe un registro con el mismo 'nickname'
+            var existingPerson = this.dbContext.People.FirstOrDefault(p => p.Nickname == nickname);
+
+            // Si 'existingPerson' no es nulo, significa que ya existe un registro con el mismo 'nickname'
+            return existingPerson == null;
+        }
+
+        public override void Refresh()
+        {
+            //Carga el comboBox con los planes
+            this.CargarElementosComboBox();
         }
 
 

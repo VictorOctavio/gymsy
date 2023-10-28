@@ -21,7 +21,7 @@ namespace gymsy.UserControls
         private int indexRowSelect = 0;
         private GymsyDbContext dbContext;
 
-        private Dictionary<int, string> descripcionPorValor = new Dictionary<int, string>();
+        //private Dictionary<int, string> descripcionPorValor = new Dictionary<int, string>();
 
         public EditClient()
         {
@@ -45,9 +45,9 @@ namespace gymsy.UserControls
             if (AppState.ClientActive != null)
             {
                 string name = AppState.ClientActive.IdPersonNavigation.FirstName.ToString();
-                string lastName =AppState.ClientActive.IdPersonNavigation.LastName.ToString();
+                string lastName = AppState.ClientActive.IdPersonNavigation.LastName.ToString();
                 string numberPhone = AppState.ClientActive.IdPersonNavigation.NumberPhone.ToString();
-                string nickname  = AppState.ClientActive.IdPersonNavigation.Nickname.ToString();
+                string nickname = AppState.ClientActive.IdPersonNavigation.Nickname.ToString();
 
 
                 TBNombre.Text = name;
@@ -66,6 +66,7 @@ namespace gymsy.UserControls
                     RBFemenino.Checked = true;
                 }
                 DPFechaNacimiento.Value = AppState.ClientActive.IdPersonNavigation.Birthday;
+                DPVencimiento.Value = AppState.ClientActive.LastExpiration;
 
 
 
@@ -235,6 +236,7 @@ namespace gymsy.UserControls
                     .Where(trainingPlan => trainingPlan.IdTrainingPlan == AppState.ClientActive.IdTrainingPlan)
                     .First();
 
+                LidPlan.Text = trainingPlan.IdTrainingPlan.ToString();
                 TBPrecio.Text = trainingPlan.Price.ToString();
                 TBDescripcion.Text = trainingPlan.Description;
                 TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
@@ -249,11 +251,11 @@ namespace gymsy.UserControls
 
                 foreach (TrainingPlan plan in trainingPlans)
                 {
-                    if(!plan.Inactive)
+                    if (!plan.Inactive)
                     {
                         CBPlanes.Items.Add(plan.IdTrainingPlan + "-" + plan.Description);
                     }
-                    
+
                 }
             }
         }
@@ -285,7 +287,7 @@ namespace gymsy.UserControls
                 {
                     this.actualizarCliente();
                     this.restablecerTextBoxes();
-                    MainView.navigationControl.Display(1);
+                    MainView.navigationControl.Display(1, true);
 
                 }
 
@@ -304,17 +306,46 @@ namespace gymsy.UserControls
                 var personUpdated = this.dbContext.People
                                 .Where(people => people.IdPerson == AppState.ClientActive.IdPersonNavigation.IdPerson)
                                 .First();
-                
+
 
                 var clientUpdated = this.dbContext.Clients
                                 .Where(client => client.IdClient == AppState.ClientActive.IdClient)
                                 .First();
 
-                personUpdated = AppState.ClientActive.IdPersonNavigation;
+                string usuario = TBUsuario.Text;
 
-                clientUpdated = AppState.ClientActive;
+                int idPlan = int.Parse(LidPlan.Text);
+                string sexo = "";
 
-                this.dbContext.SaveChanges();
+                if (RBMasculino.Checked)
+                {
+                    sexo = "M";
+                }
+                else
+                {
+                    sexo = "F";
+                }
+
+                if (personUpdated != null && clientUpdated != null)
+                {
+                    // Actualiza las propiedades de la tabla person
+                    personUpdated.Nickname = usuario;
+                    personUpdated.FirstName = TBNombre.Text;
+                    personUpdated.Avatar = TBRutaImagen.Text;
+                    personUpdated.Password = TBContraseña.Text;
+                    personUpdated.LastName = TBApellido.Text;
+                    personUpdated.CBU = usuario;
+                    personUpdated.NumberPhone = TBTelefono.Text;
+                    personUpdated.Gender = sexo;
+                    personUpdated.Birthday = DPFechaNacimiento.Value;
+
+                    // Actualiza las propiedades de la tabla client
+                    clientUpdated.LastExpiration = DPVencimiento.Value;
+                    clientUpdated.IdTrainingPlan = idPlan;
+
+                    this.dbContext.SaveChanges();
+                }
+
 
                 MessageBox.Show("Se Editaron correcctamente los datos");
             }
@@ -343,6 +374,7 @@ namespace gymsy.UserControls
                     .Where(trainingPlan => trainingPlan.IdTrainingPlan == selectedPlanId)
                     .First();
 
+                LidPlan.Text = trainingPlan.IdTrainingPlan.ToString();
                 TBPrecio.Text = trainingPlan.Price.ToString();
                 TBDescripcion.Text = trainingPlan.Description;
                 TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
@@ -364,7 +396,7 @@ namespace gymsy.UserControls
 
         private void back_Click(object sender, EventArgs e)
         {
-            MainView.navigationControl.Display(1);
+            MainView.navigationControl.Display(1, true);
         }
     }
 
