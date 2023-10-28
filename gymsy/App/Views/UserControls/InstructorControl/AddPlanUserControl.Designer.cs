@@ -32,6 +32,12 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            panel4 = new Panel();
+            DGPlan = new DataGridView();
+            id_plan = new DataGridViewTextBoxColumn();
+            precio = new DataGridViewTextBoxColumn();
+            descripcion = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
             TBPrecio = new CustomControls.RJControls.RJTextBox();
             LModoEditOrAdd = new Label();
@@ -43,12 +49,8 @@
             LDescripcionRequerido = new Label();
             LPrecioRequerido = new Label();
             TBDescripcion = new CustomControls.RJControls.RJTextBox();
-            DGPlan = new DataGridView();
-            id_plan = new DataGridViewTextBoxColumn();
-            precio = new DataGridViewTextBoxColumn();
-            descripcion = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewTextBoxColumn();
             nav = new Panel();
+            panel3 = new Panel();
             BVerPlanes = new ClassCustom.RJButton();
             label1 = new Label();
             BVerPlanesEliminados = new ClassCustom.RJButton();
@@ -57,16 +59,17 @@
             TBBusqueda = new CustomControls.RJControls.RJTextBox();
             BBuscar = new ClassCustom.RJButton();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGPlan).BeginInit();
+            panel2.SuspendLayout();
             nav.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(16, 8, 23);
+            panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(DGPlan);
             panel1.Controls.Add(nav);
             panel1.Dock = DockStyle.Fill;
             panel1.ForeColor = SystemColors.ControlText;
@@ -75,8 +78,82 @@
             panel1.Size = new Size(1000, 530);
             panel1.TabIndex = 1;
             // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel4.Controls.Add(DGPlan);
+            panel4.Location = new Point(0, 130);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(759, 400);
+            panel4.TabIndex = 80;
+            // 
+            // DGPlan
+            // 
+            DGPlan.AllowUserToAddRows = false;
+            DGPlan.AllowUserToDeleteRows = false;
+            DGPlan.AllowUserToResizeColumns = false;
+            DGPlan.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(69, 34, 99);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
+            DGPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DGPlan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGPlan.BackgroundColor = Color.FromArgb(16, 8, 23);
+            DGPlan.BorderStyle = BorderStyle.None;
+            DGPlan.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DGPlan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGPlan.Columns.AddRange(new DataGridViewColumn[] { id_plan, precio, descripcion, delete });
+            DGPlan.Dock = DockStyle.Fill;
+            DGPlan.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DGPlan.Location = new Point(0, 0);
+            DGPlan.MultiSelect = false;
+            DGPlan.Name = "DGPlan";
+            DGPlan.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DGPlan.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            DGPlan.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            DGPlan.RowTemplate.Height = 25;
+            DGPlan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGPlan.ShowCellErrors = false;
+            DGPlan.Size = new Size(759, 400);
+            DGPlan.TabIndex = 5;
+            DGPlan.VisibleChanged += DGPlan_VisibleChanged;
+            // 
+            // id_plan
+            // 
+            id_plan.HeaderText = "Identificador";
+            id_plan.Name = "id_plan";
+            // 
+            // precio
+            // 
+            precio.HeaderText = "Precio";
+            precio.Name = "precio";
+            // 
+            // descripcion
+            // 
+            descripcion.HeaderText = "Descripcion";
+            descripcion.Name = "descripcion";
+            // 
+            // delete
+            // 
+            delete.HeaderText = "Eliminado";
+            delete.Name = "delete";
+            // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.Controls.Add(TBPrecio);
             panel2.Controls.Add(LModoEditOrAdd);
             panel2.Controls.Add(BAgregarPlan);
@@ -270,74 +347,11 @@
             TBDescripcion.TabIndex = 74;
             TBDescripcion.UnderlinedStyle = false;
             // 
-            // DGPlan
-            // 
-            DGPlan.AllowUserToAddRows = false;
-            DGPlan.AllowUserToDeleteRows = false;
-            DGPlan.AllowUserToResizeColumns = false;
-            DGPlan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(69, 34, 99);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
-            DGPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            DGPlan.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            DGPlan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DGPlan.BackgroundColor = Color.FromArgb(16, 8, 23);
-            DGPlan.BorderStyle = BorderStyle.None;
-            DGPlan.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DGPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            DGPlan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGPlan.Columns.AddRange(new DataGridViewColumn[] { id_plan, precio, descripcion, delete });
-            DGPlan.EditMode = DataGridViewEditMode.EditProgrammatically;
-            DGPlan.Location = new Point(0, 130);
-            DGPlan.MultiSelect = false;
-            DGPlan.Name = "DGPlan";
-            DGPlan.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            DGPlan.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            DGPlan.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            DGPlan.RowTemplate.Height = 25;
-            DGPlan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGPlan.ShowCellErrors = false;
-            DGPlan.Size = new Size(759, 400);
-            DGPlan.TabIndex = 5;
-            DGPlan.VisibleChanged += DGPlan_VisibleChanged;
-            // 
-            // id_plan
-            // 
-            id_plan.HeaderText = "Identificador";
-            id_plan.Name = "id_plan";
-            // 
-            // precio
-            // 
-            precio.HeaderText = "Precio";
-            precio.Name = "precio";
-            // 
-            // descripcion
-            // 
-            descripcion.HeaderText = "Descripcion";
-            descripcion.Name = "descripcion";
-            // 
-            // delete
-            // 
-            delete.HeaderText = "Eliminado";
-            delete.Name = "delete";
-            // 
             // nav
             // 
             nav.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             nav.BackColor = Color.FromArgb(16, 8, 23);
+            nav.Controls.Add(panel3);
             nav.Controls.Add(BVerPlanes);
             nav.Controls.Add(label1);
             nav.Controls.Add(BVerPlanesEliminados);
@@ -350,6 +364,13 @@
             nav.Name = "nav";
             nav.Size = new Size(1000, 124);
             nav.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            panel3.Location = new Point(3, 130);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(612, 397);
+            panel3.TabIndex = 80;
             // 
             // BVerPlanes
             // 
@@ -510,9 +531,10 @@
             Name = "AddPlanUserControl";
             Size = new Size(1000, 530);
             panel1.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DGPlan).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DGPlan).EndInit();
             nav.ResumeLayout(false);
             nav.PerformLayout();
             ResumeLayout(false);
@@ -544,5 +566,7 @@
         private DataGridViewTextBoxColumn precio;
         private DataGridViewTextBoxColumn descripcion;
         private DataGridViewTextBoxColumn delete;
+        private Panel panel3;
+        private Panel panel4;
     }
 }

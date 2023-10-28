@@ -33,6 +33,14 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DGUsers = new DataGridView();
+            Avatar = new DataGridViewTextBoxColumn();
+            created = new DataGridViewTextBoxColumn();
+            FullNameColumn = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            plan = new DataGridViewTextBoxColumn();
+            last_expiration = new DataGridViewTextBoxColumn();
+            IdClient = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel2 = new Panel();
             BVerClients = new ClassCustom.RJButton();
@@ -47,14 +55,6 @@
             BEditarCliente = new ClassCustom.RJButton();
             BEliminarCliente = new ClassCustom.RJButton();
             BAgregarCliente = new ClassCustom.RJButton();
-            Avatar = new DataGridViewTextBoxColumn();
-            created = new DataGridViewTextBoxColumn();
-            FullNameColumn = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
-            plan = new DataGridViewTextBoxColumn();
-            last_expiration = new DataGridViewTextBoxColumn();
-            IdClient = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)DGUsers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -89,7 +89,9 @@
             DGUsers.Columns.AddRange(new DataGridViewColumn[] { Avatar, created, FullNameColumn, Telefono, plan, last_expiration, IdClient, delete });
             DGUsers.EditMode = DataGridViewEditMode.EditProgrammatically;
             DGUsers.Location = new Point(3, 151);
+            DGUsers.MultiSelect = false;
             DGUsers.Name = "DGUsers";
+            DGUsers.ReadOnly = true;
             DGUsers.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             DGUsers.RowHeadersVisible = false;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -112,6 +114,73 @@
             DGUsers.TabIndex = 1;
             DGUsers.CellContentClick += DGUsers_CellContentClick;
             DGUsers.CellMouseEnter += DataGridViewCellEventArgs;
+            // 
+            // Avatar
+            // 
+            Avatar.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Avatar.HeaderText = "#";
+            Avatar.MinimumWidth = 100;
+            Avatar.Name = "Avatar";
+            Avatar.ReadOnly = true;
+            // 
+            // created
+            // 
+            created.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            created.HeaderText = "Ingreso";
+            created.Name = "created";
+            created.ReadOnly = true;
+            created.Width = 130;
+            // 
+            // FullNameColumn
+            // 
+            FullNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            FullNameColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            FullNameColumn.HeaderText = "Nombre";
+            FullNameColumn.Name = "FullNameColumn";
+            FullNameColumn.ReadOnly = true;
+            FullNameColumn.Width = 212;
+            // 
+            // Telefono
+            // 
+            Telefono.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Telefono.HeaderText = "Telefono";
+            Telefono.Name = "Telefono";
+            Telefono.ReadOnly = true;
+            Telefono.Width = 170;
+            // 
+            // plan
+            // 
+            plan.HeaderText = "Plan";
+            plan.Name = "plan";
+            plan.ReadOnly = true;
+            // 
+            // last_expiration
+            // 
+            last_expiration.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            last_expiration.HeaderText = "Vencimiento";
+            last_expiration.Name = "last_expiration";
+            last_expiration.ReadOnly = true;
+            last_expiration.Width = 170;
+            // 
+            // IdClient
+            // 
+            IdClient.HeaderText = "id_cliente";
+            IdClient.Name = "IdClient";
+            IdClient.ReadOnly = true;
+            IdClient.Visible = false;
+            // 
+            // delete
+            // 
+            delete.HeaderText = "Eliminado";
+            delete.Name = "delete";
+            delete.ReadOnly = true;
+            delete.Visible = false;
             // 
             // panel1
             // 
@@ -412,66 +481,6 @@
             BAgregarCliente.TextColor = Color.White;
             BAgregarCliente.UseVisualStyleBackColor = false;
             BAgregarCliente.Click += BAgregarCliente_Click;
-            // 
-            // Avatar
-            // 
-            Avatar.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Avatar.HeaderText = "#";
-            Avatar.MinimumWidth = 100;
-            Avatar.Name = "Avatar";
-            Avatar.ReadOnly = true;
-            // 
-            // created
-            // 
-            created.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            created.HeaderText = "Ingreso";
-            created.Name = "created";
-            created.Width = 130;
-            // 
-            // FullNameColumn
-            // 
-            FullNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            FullNameColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            FullNameColumn.HeaderText = "Nombre";
-            FullNameColumn.Name = "FullNameColumn";
-            FullNameColumn.Width = 212;
-            // 
-            // Telefono
-            // 
-            Telefono.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Telefono.HeaderText = "Telefono";
-            Telefono.Name = "Telefono";
-            Telefono.Width = 170;
-            // 
-            // plan
-            // 
-            plan.HeaderText = "Plan";
-            plan.Name = "plan";
-            // 
-            // last_expiration
-            // 
-            last_expiration.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            last_expiration.HeaderText = "Vencimiento";
-            last_expiration.Name = "last_expiration";
-            last_expiration.Width = 170;
-            // 
-            // IdClient
-            // 
-            IdClient.HeaderText = "id_cliente";
-            IdClient.Name = "IdClient";
-            IdClient.Visible = false;
-            // 
-            // delete
-            // 
-            delete.HeaderText = "Eliminado";
-            delete.Name = "delete";
-            delete.Visible = false;
             // 
             // ClientsUserControl
             // 
