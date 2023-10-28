@@ -363,12 +363,7 @@ namespace gymsy.UserControls
             foreach (DataGridViewRow row in DGUsers.Rows)
             {
 
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-
-                    row.Visible = bool.Parse(row.Cells["delete"].Value.ToString()) == verEliminados;
-
-                }
+                row.Visible = bool.Parse(row.Cells["delete"].Value.ToString()) == verEliminados;
 
             }
 

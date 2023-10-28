@@ -32,8 +32,8 @@ namespace gymsy.UserControls
             InitializeGridPlanes();
 
             //Muestra lo que no estan eliminados
-            bool isnotDelete = true;
-            this.mostrar(isnotDelete);
+
+            this.mostrar(false);
         }
 
         private void InitializeGridPlanes()
@@ -44,14 +44,7 @@ namespace gymsy.UserControls
             {
                 foreach (TrainingPlan plan in trainingPlans)
                 {
-                    if (plan.Inactive)
-                    {
-                        DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description, "SI");
-                    }
-                    else
-                    {
-                        DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description, "NO");
-                    }
+                    DGPlan.Rows.Add(plan.IdTrainingPlan, plan.Price, plan.Description, plan.Inactive);
 
                 }
             }
@@ -233,18 +226,18 @@ namespace gymsy.UserControls
                 {
                     //Se crearan las variables
                     string pregunta = "";
-                    string celdaSIoNO = "";
+                    bool deleteOrAcitive = false;
                     //Se procede a cetear tanto los mensajes como las busquedas que se haran
                     if (this.isModeVerNoDelete)
                     {
                         pregunta = "¿Desea eliminar este Plan?";
-                        celdaSIoNO = "NO"; //Si se va a eleminar a alguien, primero debe estar no eleiminado
+                        deleteOrAcitive = true; //Si se va a eleminar a alguien, primero debe estar no eleiminado
 
                     }
                     else
                     {
                         pregunta = "¿Desea activar este Plan?";
-                        celdaSIoNO = "SI";
+                        deleteOrAcitive = false;
                     }
 
                     DialogResult resultado = MessageBox.Show(pregunta, "Por favor confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -268,13 +261,14 @@ namespace gymsy.UserControls
                             //se guarda su indice
                             this.indexRowSelect = DGPlan.SelectedRows[0].Index;
 
+                            DGPlan.SelectedRows[0].Cells["delete"].Value = deleteOrAcitive;
 
                             var idPlan = int.Parse(DGPlan.SelectedRows[0].Cells["id_plan"].Value.ToString());
 
                             var plan = this.dbContext.TrainingPlans.Where(p => p.IdTrainingPlan == idPlan).FirstOrDefault();
                             if (plan != null)
                             {
-                                plan.Inactive = true;
+                                plan.Inactive = deleteOrAcitive;
                             }
 
 
@@ -326,16 +320,17 @@ namespace gymsy.UserControls
                             break;
                         }
                     }
-                    row.Visible = coincide;
+                    // Ahora, verifica si la columna "delete" es false y this.isModoVerNoDelete es true antes de mostrar la fila
+                    bool deleteValue = Convert.ToBoolean(row.Cells["delete"].Value);
+
+                    //row.Visible = (this.isModeVerNoDelete && !deleteValue) || (!this.isModeVerNoDelete && deleteValue);
+                    row.Visible = coincide && !this.isModeVerNoDelete == deleteValue;
                 }
             }
             else
             {
                 // Si el TextBox está vacío, muestra todas las filas
-                foreach (DataGridViewRow row in DGPlan.Rows)
-                {
-                    row.Visible = true;
-                }
+                this.mostrar(!this.isModeVerNoDelete);
             }
         }
 
@@ -345,14 +340,8 @@ namespace gymsy.UserControls
             BCancelarBusqueda.Visible = false;
             TBBusqueda.Clear();
 
-            // Limpia cualquier ordenación previa en el DataGridView
-            DGPlan.Sort(DGPlan.Columns[0], ListSortDirection.Ascending);
-
             // Si el TextBox está vacío, muestra todas las filas
-            foreach (DataGridViewRow row in DGPlan.Rows)
-            {
-                row.Visible = true;
-            }
+            this.mostrar(!this.isModeVerNoDelete);
 
         }
 
@@ -369,11 +358,11 @@ namespace gymsy.UserControls
                 BEliminarPlan.BackColor = Color.FromArgb(192, 0, 0);
                 BEliminarPlan.IconChar = FontAwesome.Sharp.IconChar.Trash;
 
-                this.mostrar(true);
+                this.mostrar(false);
             }
         }
 
-        private void mostrar(bool isnotDelete)
+        private void mostrar(bool verEliminados)
         {
             // Limpia cualquier ordenación previa en el DataGridView
             DGPlan.Sort(DGPlan.Columns[0], ListSortDirection.Ascending);
@@ -381,25 +370,15 @@ namespace gymsy.UserControls
             foreach (DataGridViewRow row in DGPlan.Rows)
             {
 
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    if (row.Cells["delete"].Value != null && row.Cells["delete"].Value.ToString() == "SI")
-                    {
-                        // Si la columna "Eliminado" contiene "SI", muestra la fila.
-                        row.Visible = isnotDelete;
-                    }
-                    else
-                    {
-                        // Si no contiene "SI", oculta la fila.
-                        row.Visible = !isnotDelete;
-                    }
-                }
+                row.Visible = bool.Parse(row.Cells["delete"].Value.ToString()) == verEliminados;
 
             }
 
             // Actualiza la vista del DataGridView.
             DGPlan.Refresh();
+
         }
+
 
         private void BVerPlanesEliminados_Click(object sender, EventArgs e)
         {
@@ -416,7 +395,7 @@ namespace gymsy.UserControls
 
 
                 //Cargar DataGrid
-                mostrar(false);
+                mostrar(true);
             }
 
         }

@@ -96,6 +96,7 @@
             dataGridViewCellStyle1.BackColor = Color.FromArgb(69, 34, 99);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
             DGPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DGPlan.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DGPlan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DGPlan.BackgroundColor = Color.FromArgb(16, 8, 23);
             DGPlan.BorderStyle = BorderStyle.None;
@@ -110,11 +111,11 @@
             DGPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGPlan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGPlan.Columns.AddRange(new DataGridViewColumn[] { id_plan, precio, descripcion, delete });
-            DGPlan.Dock = DockStyle.Fill;
             DGPlan.EditMode = DataGridViewEditMode.EditProgrammatically;
             DGPlan.Location = new Point(0, 0);
             DGPlan.MultiSelect = false;
             DGPlan.Name = "DGPlan";
+            DGPlan.ReadOnly = true;
             DGPlan.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             DGPlan.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -135,21 +136,26 @@
             // 
             id_plan.HeaderText = "Identificador";
             id_plan.Name = "id_plan";
+            id_plan.ReadOnly = true;
             // 
             // precio
             // 
             precio.HeaderText = "Precio";
             precio.Name = "precio";
+            precio.ReadOnly = true;
             // 
             // descripcion
             // 
             descripcion.HeaderText = "Descripcion";
             descripcion.Name = "descripcion";
+            descripcion.ReadOnly = true;
             // 
             // delete
             // 
             delete.HeaderText = "Eliminado";
             delete.Name = "delete";
+            delete.ReadOnly = true;
+            delete.Visible = false;
             // 
             // panel2
             // 
@@ -562,11 +568,11 @@
         private ClassCustom.RJButton BVerPlanes;
         private Label label1;
         private ClassCustom.RJButton BVerPlanesEliminados;
+        private Panel panel3;
+        private Panel panel4;
         private DataGridViewTextBoxColumn id_plan;
         private DataGridViewTextBoxColumn precio;
         private DataGridViewTextBoxColumn descripcion;
         private DataGridViewTextBoxColumn delete;
-        private Panel panel3;
-        private Panel panel4;
     }
 }
