@@ -28,11 +28,11 @@ namespace gymsy.UserControls
          */
         private bool isModeVerNoDelete = true;
 
-        private List<Client> clients = new List<Client>();
-      
+        //private List<Client> clients = new List<Client>();
+
 
         public ClientsUserControl()
-        { 
+        {
             //Se trae el contexto de la base de datos
             this.dbContext = GymsyContext.GymsyContextDB;
 
@@ -40,9 +40,9 @@ namespace gymsy.UserControls
 
 
             this.cargarPersonas();
-            //Cargar DataGrid
-            bool isnotDelete = true;
-            this.mostrar(isnotDelete);
+
+            //se muestran los activos
+            this.mostrar(false);
         }
 
 
@@ -56,13 +56,13 @@ namespace gymsy.UserControls
 
 
                 int IdClientSelected = int.Parse(DGUsers.Rows[rowIndex].Cells["IdClient"].Value.ToString());
-                
+
                 var clientSelected = this.dbContext.Clients
                                 .Where(client => client.IdClient == IdClientSelected)
                                 .First();
-                
 
-         
+
+
 
                 // Navigate to training history
                 if (clientSelected != null)
@@ -72,7 +72,7 @@ namespace gymsy.UserControls
                 }
 
             }
-            
+
         }
 
         private void DataGridViewCellEventArgs(object sender, DataGridViewCellEventArgs e)
@@ -91,6 +91,13 @@ namespace gymsy.UserControls
 
         private void cargarPersonas()
         {
+            if (DGUsers.IsHandleCreated)
+            {
+                DGUsers.Rows.Clear();
+
+            }
+            //Se limpia la lista de personas
+
             // Limpia cualquier ordenación previa en el DataGridView
             DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
 
@@ -134,8 +141,44 @@ namespace gymsy.UserControls
 
         private void BEditarCliente_Click(object sender, EventArgs e)
         {
-            //validar que se seleccino un cliente
-            MainView.navigationControl.Display(4);
+            // Verifica si hay al menos una fila seleccionada en el DataGridView.
+            if (DGUsers.SelectedRows.Count > 0)
+            {
+                //se guarda su indice
+                this.indexRowSelect = DGUsers.SelectedRows[0].Index;
+
+                // Accede a la celda "id" del cliente
+
+                int IdClientSelected = int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
+                Client clientSelected = null;
+                //this.dbContext = GymsyContext.GymsyContextDB;
+
+                foreach (Person person in AppState.clients)
+                {
+                    foreach (Client client in person.Clients)
+                    {
+                        if (client.IdClient == IdClientSelected)
+                        {
+                            clientSelected = client;
+                            break;
+                        }
+                    }
+
+                }
+                /*
+                var clientSelected = this.dbContext.Clients
+                                .Where(client => client.IdClient == IdClientSelected)
+                                .First();
+                */
+                AppState.ClientActive = clientSelected;
+
+                MainView.navigationControl.Display(9, true);
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un cliente para editarlo.");
+            }
         }
 
         private void BBuscar_Click(object sender, EventArgs e)
@@ -156,6 +199,7 @@ namespace gymsy.UserControls
                 // Recorre todas las filas del DataGridView y oculta aquellas que no coincidan con el texto buscado
                 foreach (DataGridViewRow row in DGUsers.Rows)
                 {
+
                     bool coincide = false;
                     foreach (DataGridViewCell cell in row.Cells)
                     {
@@ -165,16 +209,19 @@ namespace gymsy.UserControls
                             break;
                         }
                     }
-                    row.Visible = coincide;
+                    // Ahora, verifica si la columna "delete" es false y this.isModoVerNoDelete es true antes de mostrar la fila
+                    bool deleteValue = Convert.ToBoolean(row.Cells["delete"].Value);
+                    
+                    //row.Visible = (this.isModeVerNoDelete && !deleteValue) || (!this.isModeVerNoDelete && deleteValue);
+                    row.Visible = coincide && !this.isModeVerNoDelete == deleteValue;
+                    
+
                 }
             }
             else
             {
                 // Si el TextBox está vacío, muestra todas las filas
-                foreach (DataGridViewRow row in DGUsers.Rows)
-                {
-                    row.Visible = true;
-                }
+                this.mostrar(!this.isModeVerNoDelete);
             }
         }
 
@@ -187,11 +234,8 @@ namespace gymsy.UserControls
             // Limpia cualquier ordenación previa en el DataGridView
             DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
 
-            // Si el TextBox está vacío, muestra todas las filas
-            foreach (DataGridViewRow row in DGUsers.Rows)
-            {
-                row.Visible = true;
-            }
+            mostrar(!this.isModeVerNoDelete);
+
         }
         /***
          * Si se activa el modo delete se entiende que se eliminara un usuario
@@ -203,34 +247,32 @@ namespace gymsy.UserControls
             {
                 //Se crearan las variables
                 string pregunta = "";
-                bool celdaSIoNO;
+                bool deleteOrActive;
                 //Se procede a cetear tanto los mensajes como las busquedas que se haran
                 if (this.isModeVerNoDelete)
                 {
                     pregunta = "¿Desea eliminar este usuario?";
-                    celdaSIoNO = false; //Si se va a eleminar a alguien, primero debe estar no eleiminado
+                    deleteOrActive = true; // true is inactive
 
                 }
                 else
                 {
                     pregunta = "¿Desea activar este usuario?";
-                    celdaSIoNO = true;
+                    deleteOrActive = false;//of inactive false
                 }
 
                 DialogResult resultado = MessageBox.Show(pregunta, "Por favor confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
                 {
+
                     //se guarda su indice
                     this.indexRowSelect = DGUsers.SelectedRows[0].Index;
 
                     // Accede a la celda "Eliminado" de la fila seleccionada y actualiza su valor
-                    DGUsers.Rows[this.indexRowSelect].Cells["delete"].Value = celdaSIoNO;
+                    DGUsers.Rows[this.indexRowSelect].Cells["delete"].Value = deleteOrActive;
 
-
-                    //Se limpia el indice
-                    this.indexRowSelect = 0;
-
+                    /*
                     //Se inactiva desde la base de datosa
                     foreach (TrainingPlan plan in AppState.Instructor.TrainingPlans)
                     {
@@ -264,11 +306,24 @@ namespace gymsy.UserControls
 
 
                     }
+                    */
+                    int idClient = int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
+
+                    var clientUpdated = this.dbContext.Clients
+                    .Where(client => client.IdClient == idClient)
+                    .First();
+
+                    if (clientUpdated != null)
+                    {
+                        clientUpdated.IdPersonNavigation.Inactive = deleteOrActive;
+
+                        this.dbContext.SaveChanges();
+                    }
 
 
 
                     //Se actualiza el datagrid con el 
-                    this.mostrar(this.isModeVerNoDelete);
+                    this.mostrar(!this.isModeVerNoDelete);
 
                     //MessageBox.Show("Se elimino correctamente el Cliente.");
 
@@ -300,7 +355,7 @@ namespace gymsy.UserControls
          * como true se entiende que se quieren mostrar solo los usuarios que no han sido eliminados
          * de lo contrario se mostraran todos los usuarios que han sido eliminados
          * **/
-        private void mostrar(bool isnotDelete)
+        private void mostrar(bool verEliminados)
         {
             // Limpia cualquier ordenación previa en el DataGridView
             DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
@@ -308,19 +363,7 @@ namespace gymsy.UserControls
             foreach (DataGridViewRow row in DGUsers.Rows)
             {
 
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    if (row.Cells["delete"].Value != null && bool.Parse(row.Cells["delete"].Value.ToString()) == true)
-                    {
-                        // Si la columna "Eliminado" contiene "SI", muestra la fila.
-                        row.Visible = isnotDelete;
-                    }
-                    else
-                    {
-                        // Si no contiene "SI", oculta la fila.
-                        row.Visible = !isnotDelete;
-                    }
-                }
+                row.Visible = bool.Parse(row.Cells["delete"].Value.ToString()) == verEliminados;
 
             }
 
@@ -337,8 +380,8 @@ namespace gymsy.UserControls
             BEliminarCliente.Text = "Eliminar Cliente";
             BEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
             BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.Trash;
-
-            this.mostrar(true);
+            //Se mostraran los no inactivos
+            this.mostrar(false);
         }
 
         private void BVerClientDelete_Click(object sender, EventArgs e)
@@ -349,13 +392,26 @@ namespace gymsy.UserControls
             BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.User;
 
 
-            //Cargar DataGrid
-            mostrar(false);
+            //se cargan los inactivos
+            mostrar(true);
         }
 
         private void rjButton2_Click_1(object sender, EventArgs e)
         {
             MainView.navigationControl.Display(7);
+        }
+
+        public override void Refresh()
+        {
+            this.cargarPersonas();
+            this.isModeVerNoDelete = true;
+            BEliminarCliente.Text = "Eliminar Cliente";
+            BEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
+            BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            //Se mostraran los no inactivos
+            this.mostrar(false);
+
+
         }
     }
 }

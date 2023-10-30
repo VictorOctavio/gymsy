@@ -12,27 +12,65 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using gymsy.Context;
 using gymsy.App.Models;
-using System.Numerics;
+using System.Collections;
 
 namespace gymsy.UserControls
 {
-    public partial class AddClientUserControl : UserControl
+    public partial class EditClient : UserControl
     {
-        private bool isEditMode = false; // Variable para saber si se esta editando o agregando un nuevo cliente
         private int indexRowSelect = 0;
         private GymsyDbContext dbContext;
 
-        public AddClientUserControl()
+        //private Dictionary<int, string> descripcionPorValor = new Dictionary<int, string>();
+
+        public EditClient()
         {
+            //Se trae el contexto de la base de datos
             this.dbContext = GymsyContext.GymsyContextDB;
 
             InitializeComponent();
 
-            // Inicializar el contexto de la base de datos
-            //GymsyContext dbContext = new GymsyContext();
 
+        }
+
+        public override void Refresh()
+        {
+            //Se carga el cliente
+            this.CargarCliente();
             //Carga el comboBox con los planes
-            CargarElementosComboBox();
+            this.CargarElementosComboBox();
+        }
+        private void CargarCliente()
+        {
+            if (AppState.ClientActive != null)
+            {
+                string name = AppState.ClientActive.IdPersonNavigation.FirstName.ToString();
+                string lastName = AppState.ClientActive.IdPersonNavigation.LastName.ToString();
+                string numberPhone = AppState.ClientActive.IdPersonNavigation.NumberPhone.ToString();
+                string nickname = AppState.ClientActive.IdPersonNavigation.Nickname.ToString();
+
+
+                TBNombre.Text = name;
+                TBApellido.Text = lastName;
+                TBTelefono.Text = numberPhone;
+                TBUsuario.Text = nickname;
+                //Que hacer con la contraseña?
+                //TBContraseña.Text = AppState.ClientActive.IdPersonNavigation.;
+                TBRutaImagen.Text = AppState.ClientActive.IdPersonNavigation.Avatar.ToString();
+                if (AppState.ClientActive.IdPersonNavigation.Gender.ToString() == "M" || AppState.ClientActive.IdPersonNavigation.Gender.ToString() == "m")
+                {
+                    RBMasculino.Checked = true;
+                }
+                else
+                {
+                    RBFemenino.Checked = true;
+                }
+                DPFechaNacimiento.Value = AppState.ClientActive.IdPersonNavigation.Birthday;
+                DPVencimiento.Value = AppState.ClientActive.LastExpiration;
+
+
+
+            }
 
         }
 
@@ -96,6 +134,7 @@ namespace gymsy.UserControls
             }
 
         }
+
 
 
         private bool isValidTextsBoxesMostrarError()
@@ -172,8 +211,8 @@ namespace gymsy.UserControls
                 //MessageBox.Show("Debe seleccionar una imagen");
             }
 
-
-            if (!string.IsNullOrWhiteSpace(TBPrecio.Text) || !string.IsNullOrWhiteSpace(TBDescripcion.Text) || !string.IsNullOrWhiteSpace(TBNombreInstructor.Text))
+            /*
+            if (string.IsNullOrWhiteSpace(TBPrecio.Text.Trim()) || string.IsNullOrWhiteSpace(TBDescripcion.Text.Trim()) || string.IsNullOrWhiteSpace(TBNombreInstructor.Text.Trim()))
             {
                 LPlanRequerido.Visible = false;
 
@@ -183,40 +222,42 @@ namespace gymsy.UserControls
                 isValid = false;
                 LPlanRequerido.Visible = true;
             }
-
+            */
 
             return isValid;
         }
         private void CargarElementosComboBox()
         {
-            //Ahora se cargan los demas elementos
-
-            var trainingPlans = this.dbContext.TrainingPlans.ToList();
-
-            var trainingPlan = trainingPlans.FirstOrDefault();
-
-            if (trainingPlan != null)
+            if (AppState.ClientActive != null)
             {
+
+
+                var trainingPlan = this.dbContext.TrainingPlans
+                    .Where(trainingPlan => trainingPlan.IdTrainingPlan == AppState.ClientActive.IdTrainingPlan)
+                    .First();
+
                 LidPlan.Text = trainingPlan.IdTrainingPlan.ToString();
                 TBPrecio.Text = trainingPlan.Price.ToString();
                 TBDescripcion.Text = trainingPlan.Description;
                 TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
 
                 CBPlanes.Items.Add(trainingPlan.Description);
-            }
 
-            foreach (TrainingPlan plan in trainingPlans)
-            {
-                if (!plan.Inactive && trainingPlan.IdTrainingPlan != plan.IdTrainingPlan)
+                //Ahora se cargan los demas elementos
+
+                var trainingPlans = this.dbContext.TrainingPlans
+                    .Where(trainingPlan => trainingPlan.IdTrainingPlan != AppState.ClientActive.IdTrainingPlan)
+                    .ToList();
+
+                foreach (TrainingPlan plan in trainingPlans)
                 {
-                    CBPlanes.Items.Add(plan.IdTrainingPlan + "-" + plan.Description);
+                    if (!plan.Inactive)
+                    {
+                        CBPlanes.Items.Add(plan.IdTrainingPlan + "-" + plan.Description);
+                    }
+
                 }
-
             }
-
-
-
-
         }
 
         private void TBPrecio_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -244,76 +285,75 @@ namespace gymsy.UserControls
                 bool isValidTextBoxes = isValidTextsBoxesMostrarError();
                 if (isValidTextBoxes)
                 {
-
-
-                    string usuario = TBUsuario.Text;
-
-                    int idPlan = int.Parse(LidPlan.Text);
-                    string sexo = "";
-
-                    if (RBMasculino.Checked)
-                    {
-                        sexo = "M";
-                    }
-                    else
-                    {
-                        sexo = "F";
-                    }
-
-                    if (IsNicknameUnique(usuario))
-                    {
-                        Person persona = new Person
-                        {
-                            Nickname = usuario,
-                            FirstName = TBNombre.Text,
-                            Avatar = TBRutaImagen.Text,
-                            Password = TBContraseña.Text,
-                            CreatedAt = DateTime.Now,
-                            LastName = TBApellido.Text,
-                            CBU = usuario,
-                            NumberPhone = TBTelefono.Text,
-                            Birthday = DateTime.Now.AddMonths(1),
-                            Gender = sexo,
-                            RolId = 3,//3 es el rol de cliente
-                            Inactive = false
-                        };
-
-                        //se guarda en la base de datos, primero la persona por la relacion de la llave foranea
-                        this.dbContext.People.Add(persona);
-                        this.dbContext.SaveChanges();
-
-                        Client cliente = new Client
-                        {
-                            LastExpiration = DPVencimiento.Value,//Se le añade un mes mas a la fecha actual
-                            IdPerson = persona.IdPerson,
-                            IdTrainingPlan = idPlan,
-                        };
-
-                        //Se guarda en AppState
-                        AppState.clients.Add(persona);
-
-                        this.dbContext.Clients.Add(cliente);
-                        this.dbContext.SaveChanges();
-
-
-                        MessageBox.Show("Se Guardaron correcctamente los datos");
-                        this.restablecerTextBoxes();
-                    }
-                    else
-                    {
-                        MessageBox.Show("El nombre de usuario ya existe");
-                    }
-
-
+                    this.actualizarCliente();
+                    this.restablecerTextBoxes();
+                    MainView.navigationControl.Display(1, true);
 
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Exepcion inesperada!" + ex.Message);
+                MessageBox.Show("Exepcion inesperada!");
                 throw;
             }
+        }
+
+        private void actualizarCliente()
+        {
+            try
+            {
+                var personUpdated = this.dbContext.People
+                                .Where(people => people.IdPerson == AppState.ClientActive.IdPersonNavigation.IdPerson)
+                                .First();
+
+
+                var clientUpdated = this.dbContext.Clients
+                                .Where(client => client.IdClient == AppState.ClientActive.IdClient)
+                                .First();
+
+                string usuario = TBUsuario.Text;
+
+                int idPlan = int.Parse(LidPlan.Text);
+                string sexo = "";
+
+                if (RBMasculino.Checked)
+                {
+                    sexo = "M";
+                }
+                else
+                {
+                    sexo = "F";
+                }
+
+                if (personUpdated != null && clientUpdated != null)
+                {
+                    // Actualiza las propiedades de la tabla person
+                    personUpdated.Nickname = usuario;
+                    personUpdated.FirstName = TBNombre.Text;
+                    personUpdated.Avatar = TBRutaImagen.Text;
+                    personUpdated.Password = TBContraseña.Text;
+                    personUpdated.LastName = TBApellido.Text;
+                    personUpdated.CBU = usuario;
+                    personUpdated.NumberPhone = TBTelefono.Text;
+                    personUpdated.Gender = sexo;
+                    personUpdated.Birthday = DPFechaNacimiento.Value;
+
+                    // Actualiza las propiedades de la tabla client
+                    clientUpdated.LastExpiration = DPVencimiento.Value;
+                    clientUpdated.IdTrainingPlan = idPlan;
+
+                    this.dbContext.SaveChanges();
+                }
+
+
+                MessageBox.Show("Se Editaron correcctamente los datos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+
         }
 
         private void CBPlanes_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -352,27 +392,12 @@ namespace gymsy.UserControls
             TBContraseña.Text = "";
             TBRutaImagen.Text = "";
             RBMasculino.Checked = true;
-
-
         }
 
-        // Función para verificar si el 'nickname' es único
-        private bool IsNicknameUnique(string nickname)
+        private void back_Click(object sender, EventArgs e)
         {
-            // Consulta la base de datos para verificar si ya existe un registro con el mismo 'nickname'
-            var existingPerson = this.dbContext.People.FirstOrDefault(p => p.Nickname == nickname);
-
-            // Si 'existingPerson' no es nulo, significa que ya existe un registro con el mismo 'nickname'
-            return existingPerson == null;
+            MainView.navigationControl.Display(1, true);
         }
-
-        public override void Refresh()
-        {
-            //Carga el comboBox con los planes
-            this.CargarElementosComboBox();
-        }
-
-
     }
 
 

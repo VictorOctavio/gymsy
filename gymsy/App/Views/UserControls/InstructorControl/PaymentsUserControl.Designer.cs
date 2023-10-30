@@ -36,52 +36,31 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             PanelPaymentsWrapper = new Panel();
-            pictureBox1 = new PictureBox();
-            label3 = new Label();
             dataGridPayments = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             gridDate = new DataGridViewTextBoxColumn();
             Peso = new DataGridViewTextBoxColumn();
             Amount = new DataGridViewTextBoxColumn();
             gridDescription = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            label3 = new Label();
+            pictureBox1 = new PictureBox();
             PanelPaymentsWrapper.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridPayments).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // PanelPaymentsWrapper
             // 
             PanelPaymentsWrapper.BackColor = Color.FromArgb(16, 8, 23);
-            PanelPaymentsWrapper.Controls.Add(pictureBox1);
-            PanelPaymentsWrapper.Controls.Add(label3);
             PanelPaymentsWrapper.Controls.Add(dataGridPayments);
+            PanelPaymentsWrapper.Controls.Add(panel1);
             PanelPaymentsWrapper.Dock = DockStyle.Fill;
             PanelPaymentsWrapper.Location = new Point(0, 0);
             PanelPaymentsWrapper.Name = "PanelPaymentsWrapper";
             PanelPaymentsWrapper.Size = new Size(800, 627);
             PanelPaymentsWrapper.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.pagoshans;
-            pictureBox1.Location = new Point(-11, 16);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(106, 92);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(93, 42);
-            label3.Name = "label3";
-            label3.Size = new Size(256, 41);
-            label3.TabIndex = 4;
-            label3.Text = "Historial de Pagos";
             // 
             // dataGridPayments
             // 
@@ -132,6 +111,7 @@
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
             dataGridPayments.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridPayments.RowHeadersVisible = false;
+            dataGridPayments.RowHeadersWidth = 62;
             dataGridPayments.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle7.BackColor = Color.White;
             dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -153,10 +133,12 @@
             // ID
             // 
             ID.HeaderText = "ID";
+            ID.MinimumWidth = 8;
             ID.Name = "ID";
             ID.ReadOnly = true;
             ID.Resizable = DataGridViewTriState.True;
             ID.Visible = false;
+            ID.Width = 150;
             // 
             // gridDate
             // 
@@ -168,13 +150,16 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.Transparent;
             gridDate.DefaultCellStyle = dataGridViewCellStyle3;
             gridDate.HeaderText = "Fecha";
+            gridDate.MinimumWidth = 8;
             gridDate.Name = "gridDate";
             gridDate.ReadOnly = true;
+            gridDate.Width = 150;
             // 
             // Peso
             // 
             Peso.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             Peso.HeaderText = "Tipo";
+            Peso.MinimumWidth = 8;
             Peso.Name = "Peso";
             Peso.ReadOnly = true;
             Peso.Width = 120;
@@ -182,6 +167,7 @@
             // Amount
             // 
             Amount.HeaderText = "Monto";
+            Amount.MinimumWidth = 8;
             Amount.Name = "Amount";
             Amount.ReadOnly = true;
             Amount.Width = 150;
@@ -196,8 +182,43 @@
             dataGridViewCellStyle4.SelectionForeColor = Color.Transparent;
             gridDescription.DefaultCellStyle = dataGridViewCellStyle4;
             gridDescription.HeaderText = "Descripcion";
+            gridDescription.MinimumWidth = 8;
             gridDescription.Name = "gridDescription";
             gridDescription.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 90);
+            panel1.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.ImageAlign = ContentAlignment.MiddleLeft;
+            label3.Location = new Point(98, 32);
+            label3.Name = "label3";
+            label3.Size = new Size(256, 41);
+            label3.TabIndex = 4;
+            label3.Text = "Historial de Pagos";
+            
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.pagoshans;
+            pictureBox1.Location = new Point(-7, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(106, 92);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // PaymentsUserControl
             // 
@@ -208,9 +229,10 @@
             Name = "PaymentsUserControl";
             Size = new Size(800, 627);
             PanelPaymentsWrapper.ResumeLayout(false);
-            PanelPaymentsWrapper.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridPayments).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -225,5 +247,6 @@
         private DataGridViewTextBoxColumn Amount;
         private DataGridViewTextBoxColumn gridDescription;
         private Label label3;
+        private Panel panel1;
     }
 }

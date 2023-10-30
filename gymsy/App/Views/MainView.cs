@@ -79,7 +79,8 @@ namespace gymsy
 
             List<UserControl> userControls = new List<UserControl>()
             { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(),
-              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(), new AddProgressClientControl()
+              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(), 
+                new AddProgressClientControl(), new EditClient()
             };
 
             List<UserControl> adminControls = new List<UserControl>()
@@ -154,13 +155,13 @@ namespace gymsy
 
         private void btnNavClients_Click(object sender, EventArgs e)
         {
-            navigationControl.Display(1);
+            navigationControl.Display(1, true);
             navigationButtons.Highlight(btnNavClients);
         }
 
         private void btnNavPayments_Click(object sender, EventArgs e)
         {
-            navigationControl.Display(2);
+            navigationControl.Display(2, true);
             navigationButtons.Highlight(btnNavPayments);
         }
 
@@ -199,7 +200,7 @@ namespace gymsy
 
         private void btnNavInstructorAdmin_Click(object sender, EventArgs e)
         {
-            navigationControl.Display(1);
+            navigationControl.Display(1, true);
             navigationButtons.Highlight(btnNavInstructorAdmin);
         }
 

@@ -106,6 +106,8 @@ namespace gymsy.App.Presenters
                                                 .ToList();
 
                         AppState.instructors = instructorsFound;
+                        //Se crea un instructor vacio
+                        AppState.Instructor = new Instructor();
                         break;
 
                     // this person is instructor
@@ -120,6 +122,8 @@ namespace gymsy.App.Presenters
                         var dataFisico = this.gymsydb.DataFisics.ToList();
                         var Images = this.gymsydb.Images.ToList();
 
+                        AppState.clients = persons;
+
                         AppState.Instructor = instructorFound;
                        
                         break;
@@ -127,6 +131,10 @@ namespace gymsy.App.Presenters
                     // this person is client
                     case 3:
                         // Code to execute if expression matches value1
+                        break;
+                    case 4:
+
+
                         break;
                 }
             }

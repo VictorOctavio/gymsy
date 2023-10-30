@@ -26,6 +26,6 @@ namespace gymsy.UserControls
             dataGridPayments.Rows.Add(3, "01/06/23", "pago cuota", "$7500", "Fernando Gago Pago Cuota (1 mes)");
         }
 
-
+       
     }
 }

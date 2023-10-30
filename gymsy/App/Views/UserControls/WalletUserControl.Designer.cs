@@ -92,8 +92,9 @@
             panelWalletWrapper.Controls.Add(panel1);
             panelWalletWrapper.Dock = DockStyle.Fill;
             panelWalletWrapper.Location = new Point(0, 0);
+            panelWalletWrapper.Margin = new Padding(4, 5, 4, 5);
             panelWalletWrapper.Name = "panelWalletWrapper";
-            panelWalletWrapper.Size = new Size(1085, 632);
+            panelWalletWrapper.Size = new Size(1550, 1053);
             panelWalletWrapper.TabIndex = 0;
             // 
             // panel2
@@ -102,9 +103,10 @@
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel6);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(737, 0);
+            panel2.Location = new Point(1053, 0);
+            panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(348, 632);
+            panel2.Size = new Size(497, 1053);
             panel2.TabIndex = 1;
             // 
             // panel5
@@ -120,8 +122,9 @@
             panel5.Controls.Add(label9);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
+            panel5.Margin = new Padding(4, 5, 4, 5);
             panel5.Name = "panel5";
-            panel5.Size = new Size(348, 366);
+            panel5.Size = new Size(497, 610);
             panel5.TabIndex = 38;
             // 
             // labelTransactionError
@@ -141,10 +144,10 @@
             labelTransactionError.IconFont = FontAwesome.Sharp.IconFont.Auto;
             labelTransactionError.IconSize = 1;
             labelTransactionError.ImageAlign = ContentAlignment.MiddleLeft;
-            labelTransactionError.Location = new Point(57, 245);
+            labelTransactionError.Location = new Point(81, 408);
             labelTransactionError.Margin = new Padding(0);
             labelTransactionError.Name = "labelTransactionError";
-            labelTransactionError.Size = new Size(271, 26);
+            labelTransactionError.Size = new Size(387, 43);
             labelTransactionError.TabIndex = 46;
             labelTransactionError.Text = "Retirar";
             labelTransactionError.TextColor = Color.Red;
@@ -157,9 +160,10 @@
             comboBoxInstructors.FormattingEnabled = true;
             comboBoxInstructors.IntegralHeight = false;
             comboBoxInstructors.Items.AddRange(new object[] { "Instructor1,", "Instructor2,", "Instructor3" });
-            comboBoxInstructors.Location = new Point(57, 209);
+            comboBoxInstructors.Location = new Point(81, 348);
+            comboBoxInstructors.Margin = new Padding(4, 5, 4, 5);
             comboBoxInstructors.Name = "comboBoxInstructors";
-            comboBoxInstructors.Size = new Size(271, 29);
+            comboBoxInstructors.Size = new Size(385, 40);
             comboBoxInstructors.TabIndex = 32;
             // 
             // btnNewTransaction
@@ -180,11 +184,11 @@
             btnNewTransaction.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNewTransaction.IconSize = 30;
             btnNewTransaction.ImageAlign = ContentAlignment.MiddleRight;
-            btnNewTransaction.Location = new Point(110, 276);
+            btnNewTransaction.Location = new Point(157, 460);
             btnNewTransaction.Margin = new Padding(0);
             btnNewTransaction.Name = "btnNewTransaction";
-            btnNewTransaction.Padding = new Padding(10, 0, 10, 0);
-            btnNewTransaction.Size = new Size(159, 49);
+            btnNewTransaction.Padding = new Padding(14, 0, 14, 0);
+            btnNewTransaction.Size = new Size(227, 82);
             btnNewTransaction.TabIndex = 44;
             btnNewTransaction.Text = "Transferir";
             btnNewTransaction.TextAlign = ContentAlignment.MiddleLeft;
@@ -207,10 +211,10 @@
             rjButton2.IconColor = Color.Green;
             rjButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             rjButton2.IconSize = 40;
-            rjButton2.Location = new Point(10, 201);
+            rjButton2.Location = new Point(14, 335);
             rjButton2.Margin = new Padding(0);
             rjButton2.Name = "rjButton2";
-            rjButton2.Size = new Size(50, 47);
+            rjButton2.Size = new Size(71, 78);
             rjButton2.TabIndex = 43;
             rjButton2.TextColor = Color.DimGray;
             rjButton2.UseVisualStyleBackColor = false;
@@ -230,10 +234,10 @@
             rjButton1.IconColor = Color.Green;
             rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             rjButton1.IconSize = 35;
-            rjButton1.Location = new Point(5, 127);
+            rjButton1.Location = new Point(7, 212);
             rjButton1.Margin = new Padding(0);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(50, 47);
+            rjButton1.Size = new Size(71, 78);
             rjButton1.TabIndex = 42;
             rjButton1.TextColor = Color.DimGray;
             rjButton1.UseVisualStyleBackColor = false;
@@ -245,9 +249,10 @@
             label6.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = SystemColors.ActiveCaptionText;
             label6.ImageAlign = ContentAlignment.MiddleLeft;
-            label6.Location = new Point(55, 42);
+            label6.Location = new Point(79, 70);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(254, 37);
+            label6.Size = new Size(379, 54);
             label6.TabIndex = 4;
             label6.Text = "Nueva Transferencia";
             label6.TextAlign = ContentAlignment.TopCenter;
@@ -258,9 +263,10 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = SystemColors.ActiveCaptionText;
-            label11.Location = new Point(53, 181);
+            label11.Location = new Point(76, 302);
+            label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
-            label11.Size = new Size(77, 25);
+            label11.Size = new Size(109, 36);
             label11.TabIndex = 39;
             label11.Text = "Destino:";
             // 
@@ -271,11 +277,11 @@
             textBoxAmount.Cursor = Cursors.Hand;
             textBoxAmount.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxAmount.ForeColor = Color.FromArgb(9, 0, 20);
-            textBoxAmount.Location = new Point(55, 131);
-            textBoxAmount.Margin = new Padding(5);
+            textBoxAmount.Location = new Point(79, 218);
+            textBoxAmount.Margin = new Padding(7, 8, 7, 8);
             textBoxAmount.Multiline = true;
             textBoxAmount.Name = "textBoxAmount";
-            textBoxAmount.Size = new Size(271, 36);
+            textBoxAmount.Size = new Size(386, 59);
             textBoxAmount.TabIndex = 11;
             textBoxAmount.KeyPress += TextBoxAmount_KeyPress;
             // 
@@ -285,9 +291,10 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.ActiveCaptionText;
-            label9.Location = new Point(53, 104);
+            label9.Location = new Point(76, 173);
+            label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new Size(69, 25);
+            label9.Size = new Size(98, 36);
             label9.TabIndex = 1;
             label9.Text = "Monto";
             // 
@@ -300,9 +307,10 @@
             panel6.Controls.Add(rjButton3);
             panel6.Controls.Add(label7);
             panel6.Dock = DockStyle.Bottom;
-            panel6.Location = new Point(0, 363);
+            panel6.Location = new Point(0, 605);
+            panel6.Margin = new Padding(4, 5, 4, 5);
             panel6.Name = "panel6";
-            panel6.Size = new Size(348, 269);
+            panel6.Size = new Size(497, 448);
             panel6.TabIndex = 43;
             // 
             // labelErrorWithdraw
@@ -322,11 +330,11 @@
             labelErrorWithdraw.IconFont = FontAwesome.Sharp.IconFont.Auto;
             labelErrorWithdraw.IconSize = 1;
             labelErrorWithdraw.ImageAlign = ContentAlignment.MiddleLeft;
-            labelErrorWithdraw.Location = new Point(55, 169);
+            labelErrorWithdraw.Location = new Point(79, 282);
             labelErrorWithdraw.Margin = new Padding(0);
             labelErrorWithdraw.Name = "labelErrorWithdraw";
-            labelErrorWithdraw.Padding = new Padding(5, 0, 0, 0);
-            labelErrorWithdraw.Size = new Size(271, 26);
+            labelErrorWithdraw.Padding = new Padding(7, 0, 0, 0);
+            labelErrorWithdraw.Size = new Size(387, 43);
             labelErrorWithdraw.TabIndex = 47;
             labelErrorWithdraw.Text = "Retirar";
             labelErrorWithdraw.TextColor = Color.Red;
@@ -351,11 +359,11 @@
             btnNewWithdraw.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNewWithdraw.IconSize = 30;
             btnNewWithdraw.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNewWithdraw.Location = new Point(110, 199);
+            btnNewWithdraw.Location = new Point(157, 332);
             btnNewWithdraw.Margin = new Padding(0);
             btnNewWithdraw.Name = "btnNewWithdraw";
-            btnNewWithdraw.Padding = new Padding(10, 0, 20, 0);
-            btnNewWithdraw.Size = new Size(159, 49);
+            btnNewWithdraw.Padding = new Padding(14, 0, 29, 0);
+            btnNewWithdraw.Size = new Size(227, 82);
             btnNewWithdraw.TabIndex = 45;
             btnNewWithdraw.Text = "Retirar";
             btnNewWithdraw.TextAlign = ContentAlignment.MiddleRight;
@@ -369,9 +377,10 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = SystemColors.ActiveCaptionText;
-            label8.Location = new Point(55, 98);
+            label8.Location = new Point(79, 163);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(69, 25);
+            label8.Size = new Size(98, 36);
             label8.TabIndex = 44;
             label8.Text = "Monto";
             // 
@@ -382,11 +391,11 @@
             textBoxWithdraw.Cursor = Cursors.Hand;
             textBoxWithdraw.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxWithdraw.ForeColor = Color.FromArgb(9, 0, 20);
-            textBoxWithdraw.Location = new Point(55, 126);
-            textBoxWithdraw.Margin = new Padding(5);
+            textBoxWithdraw.Location = new Point(79, 210);
+            textBoxWithdraw.Margin = new Padding(7, 8, 7, 8);
             textBoxWithdraw.Multiline = true;
             textBoxWithdraw.Name = "textBoxWithdraw";
-            textBoxWithdraw.Size = new Size(271, 36);
+            textBoxWithdraw.Size = new Size(386, 59);
             textBoxWithdraw.TabIndex = 44;
             textBoxWithdraw.KeyPress += TextBoxAmount_KeyPress;
             // 
@@ -405,10 +414,10 @@
             rjButton3.IconColor = Color.Green;
             rjButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             rjButton3.IconSize = 35;
-            rjButton3.Location = new Point(7, 123);
+            rjButton3.Location = new Point(10, 205);
             rjButton3.Margin = new Padding(0);
             rjButton3.Name = "rjButton3";
-            rjButton3.Size = new Size(50, 47);
+            rjButton3.Size = new Size(71, 78);
             rjButton3.TabIndex = 43;
             rjButton3.TextColor = Color.DimGray;
             rjButton3.UseVisualStyleBackColor = false;
@@ -420,9 +429,10 @@
             label7.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = SystemColors.ActiveCaptionText;
             label7.ImageAlign = ContentAlignment.MiddleLeft;
-            label7.Location = new Point(87, 47);
+            label7.Location = new Point(124, 78);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(172, 37);
+            label7.Size = new Size(255, 54);
             label7.TabIndex = 5;
             label7.Text = "Nuevo Retiro";
             // 
@@ -437,7 +447,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1085, 632);
+            panel1.Size = new Size(1550, 1053);
             panel1.TabIndex = 0;
             // 
             // PanelInvoiceWallet
@@ -450,13 +460,14 @@
             PanelInvoiceWallet.Controls.Add(label12);
             PanelInvoiceWallet.Controls.Add(rjButton4);
             PanelInvoiceWallet.Controls.Add(label10);
-            PanelInvoiceWallet.Location = new Point(176, 93);
+            PanelInvoiceWallet.Location = new Point(251, 155);
             PanelInvoiceWallet.Margin = new Padding(0);
-            PanelInvoiceWallet.MaximumSize = new Size(353, 169);
+            PanelInvoiceWallet.MaximumSize = new Size(503, 280);
             PanelInvoiceWallet.Name = "PanelInvoiceWallet";
-            PanelInvoiceWallet.Size = new Size(353, 169);
+            PanelInvoiceWallet.Size = new Size(503, 280);
             PanelInvoiceWallet.TabIndex = 5;
             PanelInvoiceWallet.Visible = false;
+         
             // 
             // BtnCloseInvoice
             // 
@@ -476,10 +487,10 @@
             BtnCloseInvoice.IconColor = Color.White;
             BtnCloseInvoice.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnCloseInvoice.IconSize = 20;
-            BtnCloseInvoice.Location = new Point(316, 4);
+            BtnCloseInvoice.Location = new Point(451, 7);
             BtnCloseInvoice.Margin = new Padding(0);
             BtnCloseInvoice.Name = "BtnCloseInvoice";
-            BtnCloseInvoice.Size = new Size(31, 25);
+            BtnCloseInvoice.Size = new Size(44, 42);
             BtnCloseInvoice.TabIndex = 49;
             BtnCloseInvoice.TextAlign = ContentAlignment.MiddleLeft;
             BtnCloseInvoice.TextColor = Color.White;
@@ -492,9 +503,10 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = Color.DarkOrange;
-            label12.Location = new Point(77, 78);
+            label12.Location = new Point(110, 130);
+            label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
-            label12.Size = new Size(201, 21);
+            label12.Size = new Size(310, 32);
             label12.TabIndex = 48;
             label12.Text = "Descripcion de la operacion";
             label12.TextAlign = ContentAlignment.MiddleLeft;
@@ -518,11 +530,11 @@
             rjButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             rjButton4.IconSize = 30;
             rjButton4.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton4.Location = new Point(54, 109);
+            rjButton4.Location = new Point(77, 182);
             rjButton4.Margin = new Padding(0);
             rjButton4.Name = "rjButton4";
-            rjButton4.Padding = new Padding(10, 0, 10, 0);
-            rjButton4.Size = new Size(254, 42);
+            rjButton4.Padding = new Padding(14, 0, 14, 0);
+            rjButton4.Size = new Size(363, 70);
             rjButton4.TabIndex = 47;
             rjButton4.Text = "Descargar Comprobante";
             rjButton4.TextAlign = ContentAlignment.MiddleLeft;
@@ -537,9 +549,10 @@
             label10.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.ActiveCaptionText;
             label10.ImageAlign = ContentAlignment.MiddleLeft;
-            label10.Location = new Point(69, 31);
+            label10.Location = new Point(99, 52);
+            label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
-            label10.Size = new Size(230, 37);
+            label10.Size = new Size(339, 54);
             label10.TabIndex = 47;
             label10.Text = "Operacion Exitosa";
             label10.TextAlign = ContentAlignment.TopCenter;
@@ -552,9 +565,10 @@
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(label1);
-            panel4.Location = new Point(2, 114);
+            panel4.Location = new Point(3, 190);
+            panel4.Margin = new Padding(4, 5, 4, 5);
             panel4.Name = "panel4";
-            panel4.Size = new Size(319, 174);
+            panel4.Size = new Size(454, 287);
             panel4.TabIndex = 4;
             // 
             // label5
@@ -563,9 +577,10 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.DarkCyan;
-            label5.Location = new Point(32, 18);
+            label5.Location = new Point(46, 30);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(106, 28);
+            label5.Size = new Size(160, 41);
             label5.TabIndex = 2;
             label5.Text = "Disponible";
             label5.TextAlign = ContentAlignment.MiddleLeft;
@@ -576,9 +591,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.DarkCyan;
-            label2.Location = new Point(32, 118);
+            label2.Location = new Point(46, 197);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(66, 28);
+            label2.Size = new Size(98, 41);
             label2.TabIndex = 1;
             label2.Text = "ahora";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -587,11 +603,12 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("DejaVu Sans Condensed", 39.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(24, 55);
+            label1.Location = new Point(34, 92);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(252, 61);
+            label1.Size = new Size(368, 91);
             label1.TabIndex = 0;
             label1.Text = "$ 128984";
             label1.TextAlign = ContentAlignment.MiddleLeft;
@@ -602,9 +619,10 @@
             label3.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
             label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(3, 23);
+            label3.Location = new Point(4, 38);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(223, 54);
+            label3.Size = new Size(333, 81);
             label3.TabIndex = 3;
             label3.Text = "Mi Billetera";
             // 
@@ -614,10 +632,11 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(dataGridTransactions);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 312);
-            panel3.MinimumSize = new Size(0, 320);
+            panel3.Location = new Point(0, 520);
+            panel3.Margin = new Padding(4, 5, 4, 5);
+            panel3.MinimumSize = new Size(0, 533);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1085, 320);
+            panel3.Size = new Size(1550, 533);
             panel3.TabIndex = 2;
             // 
             // label4
@@ -625,9 +644,10 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(3, 17);
+            label4.Location = new Point(4, 28);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(276, 37);
+            label4.Size = new Size(408, 54);
             label4.TabIndex = 4;
             label4.Text = "Ultimas Transacciones";
             label4.TextAlign = ContentAlignment.MiddleLeft;
@@ -667,7 +687,7 @@
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
             dataGridTransactions.DefaultCellStyle = dataGridViewCellStyle7;
             dataGridTransactions.GridColor = Color.Black;
-            dataGridTransactions.Location = new Point(0, 67);
+            dataGridTransactions.Location = new Point(0, 112);
             dataGridTransactions.Margin = new Padding(0);
             dataGridTransactions.MultiSelect = false;
             dataGridTransactions.Name = "dataGridTransactions";
@@ -681,6 +701,7 @@
             dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
             dataGridTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dataGridTransactions.RowHeadersVisible = false;
+            dataGridTransactions.RowHeadersWidth = 62;
             dataGridTransactions.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle9.BackColor = Color.White;
             dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -696,16 +717,18 @@
             dataGridTransactions.RowTemplate.Height = 30;
             dataGridTransactions.ScrollBars = ScrollBars.None;
             dataGridTransactions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridTransactions.Size = new Size(1085, 253);
+            dataGridTransactions.Size = new Size(1550, 422);
             dataGridTransactions.TabIndex = 2;
             // 
             // ID
             // 
             ID.HeaderText = "ID";
+            ID.MinimumWidth = 8;
             ID.Name = "ID";
             ID.ReadOnly = true;
             ID.Resizable = DataGridViewTriState.True;
             ID.Visible = false;
+            ID.Width = 150;
             // 
             // gridDate
             // 
@@ -717,8 +740,10 @@
             dataGridViewCellStyle3.SelectionForeColor = Color.Transparent;
             gridDate.DefaultCellStyle = dataGridViewCellStyle3;
             gridDate.HeaderText = "Fecha";
+            gridDate.MinimumWidth = 8;
             gridDate.Name = "gridDate";
             gridDate.ReadOnly = true;
+            gridDate.Width = 150;
             // 
             // gridType
             // 
@@ -729,8 +754,10 @@
             dataGridViewCellStyle4.SelectionForeColor = Color.White;
             gridType.DefaultCellStyle = dataGridViewCellStyle4;
             gridType.HeaderText = "Tipo";
+            gridType.MinimumWidth = 8;
             gridType.Name = "gridType";
             gridType.ReadOnly = true;
+            gridType.Width = 150;
             // 
             // gridAmount
             // 
@@ -741,8 +768,10 @@
             dataGridViewCellStyle5.SelectionForeColor = Color.Transparent;
             gridAmount.DefaultCellStyle = dataGridViewCellStyle5;
             gridAmount.HeaderText = "Monto";
+            gridAmount.MinimumWidth = 8;
             gridAmount.Name = "gridAmount";
             gridAmount.ReadOnly = true;
+            gridAmount.Width = 150;
             // 
             // gridDescription
             // 
@@ -754,16 +783,18 @@
             dataGridViewCellStyle6.SelectionForeColor = Color.Transparent;
             gridDescription.DefaultCellStyle = dataGridViewCellStyle6;
             gridDescription.HeaderText = "Descripcion";
+            gridDescription.MinimumWidth = 8;
             gridDescription.Name = "gridDescription";
             gridDescription.ReadOnly = true;
             // 
             // WalletUserControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelWalletWrapper);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "WalletUserControl";
-            Size = new Size(1085, 632);
+            Size = new Size(1550, 1053);
             panelWalletWrapper.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
