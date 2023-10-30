@@ -47,7 +47,7 @@
             rjButton1 = new ClassCustom.RJButton();
             label6 = new Label();
             label11 = new Label();
-            textBoxAmount = new TextBox();
+            TbAmountTransaction = new TextBox();
             label9 = new Label();
             panel6 = new Panel();
             labelErrorWithdraw = new ClassCustom.RJButton();
@@ -63,11 +63,17 @@
             rjButton4 = new ClassCustom.RJButton();
             label10 = new Label();
             panel4 = new Panel();
+            label14 = new Label();
+            label15 = new Label();
+            TbTotalAmount = new Label();
             label5 = new Label();
             label2 = new Label();
-            label1 = new Label();
+            TbAmount = new Label();
             label3 = new Label();
             panel3 = new Panel();
+            PanelMsg = new Panel();
+            pictureBox1 = new PictureBox();
+            label13 = new Label();
             label4 = new Label();
             dataGridTransactions = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
@@ -83,6 +89,8 @@
             PanelInvoiceWallet.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
+            PanelMsg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridTransactions).BeginInit();
             SuspendLayout();
             // 
@@ -116,7 +124,7 @@
             panel5.Controls.Add(rjButton1);
             panel5.Controls.Add(label6);
             panel5.Controls.Add(label11);
-            panel5.Controls.Add(textBoxAmount);
+            panel5.Controls.Add(TbAmountTransaction);
             panel5.Controls.Add(label9);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
@@ -264,20 +272,20 @@
             label11.TabIndex = 39;
             label11.Text = "Destino:";
             // 
-            // textBoxAmount
+            // TbAmountTransaction
             // 
-            textBoxAmount.Anchor = AnchorStyles.None;
-            textBoxAmount.BorderStyle = BorderStyle.FixedSingle;
-            textBoxAmount.Cursor = Cursors.Hand;
-            textBoxAmount.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxAmount.ForeColor = Color.FromArgb(9, 0, 20);
-            textBoxAmount.Location = new Point(55, 131);
-            textBoxAmount.Margin = new Padding(5);
-            textBoxAmount.Multiline = true;
-            textBoxAmount.Name = "textBoxAmount";
-            textBoxAmount.Size = new Size(271, 36);
-            textBoxAmount.TabIndex = 11;
-            textBoxAmount.KeyPress += TextBoxAmount_KeyPress;
+            TbAmountTransaction.Anchor = AnchorStyles.None;
+            TbAmountTransaction.BorderStyle = BorderStyle.FixedSingle;
+            TbAmountTransaction.Cursor = Cursors.Hand;
+            TbAmountTransaction.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            TbAmountTransaction.ForeColor = Color.FromArgb(9, 0, 20);
+            TbAmountTransaction.Location = new Point(55, 131);
+            TbAmountTransaction.Margin = new Padding(5);
+            TbAmountTransaction.Multiline = true;
+            TbAmountTransaction.Name = "TbAmountTransaction";
+            TbAmountTransaction.Size = new Size(271, 36);
+            TbAmountTransaction.TabIndex = 11;
+            TbAmountTransaction.KeyPress += TextBoxAmount_KeyPress;
             // 
             // label9
             // 
@@ -450,7 +458,7 @@
             PanelInvoiceWallet.Controls.Add(label12);
             PanelInvoiceWallet.Controls.Add(rjButton4);
             PanelInvoiceWallet.Controls.Add(label10);
-            PanelInvoiceWallet.Location = new Point(176, 93);
+            PanelInvoiceWallet.Location = new Point(202, 93);
             PanelInvoiceWallet.Margin = new Padding(0);
             PanelInvoiceWallet.MaximumSize = new Size(353, 169);
             PanelInvoiceWallet.Name = "PanelInvoiceWallet";
@@ -549,13 +557,55 @@
             panel4.Anchor = AnchorStyles.Left;
             panel4.BackColor = Color.Transparent;
             panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(label14);
+            panel4.Controls.Add(label15);
+            panel4.Controls.Add(TbTotalAmount);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label2);
-            panel4.Controls.Add(label1);
+            panel4.Controls.Add(TbAmount);
             panel4.Location = new Point(2, 114);
             panel4.Name = "panel4";
-            panel4.Size = new Size(319, 174);
+            panel4.Size = new Size(460, 174);
             panel4.TabIndex = 4;
+            // 
+            // label14
+            // 
+            label14.Anchor = AnchorStyles.Top;
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.ForeColor = Color.DarkOrange;
+            label14.Location = new Point(282, 25);
+            label14.Name = "label14";
+            label14.Size = new Size(42, 21);
+            label14.TabIndex = 5;
+            label14.Text = "Total";
+            label14.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            label15.Anchor = AnchorStyles.Top;
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.ForeColor = Color.Orange;
+            label15.Location = new Point(282, 125);
+            label15.Name = "label15";
+            label15.Size = new Size(75, 21);
+            label15.TabIndex = 4;
+            label15.Text = "Proximo";
+            label15.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // TbTotalAmount
+            // 
+            TbTotalAmount.Anchor = AnchorStyles.Top;
+            TbTotalAmount.AutoSize = true;
+            TbTotalAmount.Font = new Font("Microsoft Sans Serif", 24.75F, FontStyle.Regular, GraphicsUnit.Point);
+            TbTotalAmount.ForeColor = Color.White;
+            TbTotalAmount.Location = new Point(282, 65);
+            TbTotalAmount.Name = "TbTotalAmount";
+            TbTotalAmount.Size = new Size(152, 38);
+            TbTotalAmount.TabIndex = 3;
+            TbTotalAmount.Text = "$ 128984";
+            TbTotalAmount.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -563,7 +613,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.DarkCyan;
-            label5.Location = new Point(32, 18);
+            label5.Location = new Point(26, 18);
             label5.Name = "label5";
             label5.Size = new Size(106, 28);
             label5.TabIndex = 2;
@@ -576,25 +626,25 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.DarkCyan;
-            label2.Location = new Point(32, 118);
+            label2.Location = new Point(29, 118);
             label2.Name = "label2";
             label2.Size = new Size(66, 28);
             label2.TabIndex = 1;
             label2.Text = "ahora";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // TbAmount
             // 
-            label1.Anchor = AnchorStyles.Top;
-            label1.AutoSize = true;
-            label1.Font = new Font("DejaVu Sans Condensed", 39.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(24, 55);
-            label1.Name = "label1";
-            label1.Size = new Size(252, 61);
-            label1.TabIndex = 0;
-            label1.Text = "$ 128984";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
+            TbAmount.Anchor = AnchorStyles.Top;
+            TbAmount.AutoSize = true;
+            TbAmount.Font = new Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point);
+            TbAmount.ForeColor = Color.White;
+            TbAmount.Location = new Point(15, 55);
+            TbAmount.Name = "TbAmount";
+            TbAmount.Size = new Size(244, 61);
+            TbAmount.TabIndex = 0;
+            TbAmount.Text = "$ 128984";
+            TbAmount.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -611,6 +661,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(16, 8, 35);
+            panel3.Controls.Add(PanelMsg);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(dataGridTransactions);
             panel3.Dock = DockStyle.Bottom;
@@ -619,6 +670,36 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1085, 320);
             panel3.TabIndex = 2;
+            // 
+            // PanelMsg
+            // 
+            PanelMsg.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PanelMsg.Controls.Add(pictureBox1);
+            PanelMsg.Controls.Add(label13);
+            PanelMsg.Location = new Point(188, 149);
+            PanelMsg.Name = "PanelMsg";
+            PanelMsg.Size = new Size(341, 79);
+            PanelMsg.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.wallet_free;
+            pictureBox1.Location = new Point(14, 14);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(57, 50);
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.ForeColor = SystemColors.ButtonHighlight;
+            label13.Location = new Point(78, 25);
+            label13.Name = "label13";
+            label13.Size = new Size(260, 25);
+            label13.TabIndex = 0;
+            label13.Text = "No se registraron transacciones";
             // 
             // label4
             // 
@@ -698,6 +779,7 @@
             dataGridTransactions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridTransactions.Size = new Size(1085, 253);
             dataGridTransactions.TabIndex = 2;
+            dataGridTransactions.Visible = false;
             // 
             // ID
             // 
@@ -778,6 +860,9 @@
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            PanelMsg.ResumeLayout(false);
+            PanelMsg.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridTransactions).EndInit();
             ResumeLayout(false);
         }
@@ -799,7 +884,7 @@
         private Label label6;
         private Panel panel5;
         private Label label8;
-        private TextBox textBoxAmount;
+        private TextBox TbAmountTransaction;
         private Label label9;
         private Label label11;
         private ComboBox comboBoxInstructors;
@@ -822,5 +907,12 @@
         private ClassCustom.RJButton rjButton4;
         private ClassCustom.RJButton btnNewTransaction;
         private ClassCustom.RJButton BtnCloseInvoice;
+        private Panel PanelMsg;
+        private PictureBox pictureBox1;
+        private Label label13;
+        private Label TbAmount;
+        private Label label14;
+        private Label label15;
+        private Label TbTotalAmount;
     }
 }

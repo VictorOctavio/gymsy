@@ -119,6 +119,8 @@ namespace gymsy.App.Presenters
                         var persons = this.gymsydb.People.ToList();
                         var dataFisico = this.gymsydb.DataFisics.ToList();
                         var Images = this.gymsydb.Images.ToList();
+                        this.gymsydb.Pays.ToList();
+                        this.gymsydb.Wallets.ToList();
 
                         AppState.Instructor = instructorFound;
                        
@@ -132,7 +134,7 @@ namespace gymsy.App.Presenters
             }
             catch(Exception ex)
             {
-                throw new Exception("Algo ha salido mal :(");
+                throw new Exception(ex.Message);
             }
            
         }
