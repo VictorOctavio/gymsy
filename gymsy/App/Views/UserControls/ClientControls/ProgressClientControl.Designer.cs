@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProgressClientControl));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
             panel6 = new Panel();
             panelWalletWrapper = new Panel();
             panel2 = new Panel();
@@ -62,6 +62,7 @@
             ShowData = new DataGridViewButtonColumn();
             Peso = new DataGridViewTextBoxColumn();
             gridTitle = new DataGridViewTextBoxColumn();
+            BtnInactiveReg = new ClassCustom.RJButton();
             panel6.SuspendLayout();
             panelWalletWrapper.SuspendLayout();
             panel2.SuspendLayout();
@@ -109,12 +110,13 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
+            panel5.Controls.Add(BtnInactiveReg);
             panel5.Controls.Add(TBRegDescription);
             panel5.Controls.Add(TBRegFecha);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(348, 187);
+            panel5.Size = new Size(348, 189);
             panel5.TabIndex = 38;
             // 
             // TBRegDescription
@@ -128,12 +130,13 @@
             TBRegDescription.Multiline = true;
             TBRegDescription.Name = "TBRegDescription";
             TBRegDescription.ReadOnly = true;
-            TBRegDescription.Size = new Size(338, 104);
+            TBRegDescription.Size = new Size(338, 79);
             TBRegDescription.TabIndex = 7;
             TBRegDescription.Text = "Descripcion de cuando se tomo estos datos asfasdfasdfasdfsdsfsfdf, do se tomo estos datos asfasdfasdfasdfsdsfsfdf";
             // 
             // TBRegFecha
             // 
+            TBRegFecha.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             TBRegFecha.AutoSize = true;
             TBRegFecha.BackColor = Color.Transparent;
             TBRegFecha.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
@@ -342,57 +345,57 @@
             dataGridProgress.AllowUserToDeleteRows = false;
             dataGridProgress.AllowUserToResizeColumns = false;
             dataGridProgress.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.Transparent;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridProgress.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.BackColor = Color.Transparent;
+            dataGridViewCellStyle17.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle17.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle17.SelectionForeColor = Color.White;
+            dataGridProgress.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             dataGridProgress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridProgress.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridProgress.BackgroundColor = Color.FromArgb(16, 8, 30);
             dataGridProgress.CausesValidation = false;
             dataGridProgress.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.Transparent;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridProgress.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = Color.Transparent;
+            dataGridViewCellStyle18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle18.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            dataGridProgress.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             dataGridProgress.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridProgress.Columns.AddRange(new DataGridViewColumn[] { ID, gridDate, ShowData, Peso, gridTitle });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridProgress.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle22.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle22.ForeColor = Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle22.SelectionForeColor = Color.White;
+            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.False;
+            dataGridProgress.DefaultCellStyle = dataGridViewCellStyle22;
             dataGridProgress.GridColor = Color.Black;
             dataGridProgress.Location = new Point(-2, 66);
             dataGridProgress.Margin = new Padding(0);
             dataGridProgress.MultiSelect = false;
             dataGridProgress.Name = "dataGridProgress";
             dataGridProgress.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.IndianRed;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.GrayText;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridProgress.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = Color.IndianRed;
+            dataGridViewCellStyle23.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle23.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = SystemColors.GrayText;
+            dataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.True;
+            dataGridProgress.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
             dataGridProgress.RowHeadersVisible = false;
             dataGridProgress.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle8.SelectionBackColor = Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = Color.White;
-            dataGridProgress.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle24.BackColor = Color.White;
+            dataGridViewCellStyle24.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle24.ForeColor = Color.White;
+            dataGridViewCellStyle24.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle24.SelectionBackColor = Color.White;
+            dataGridViewCellStyle24.SelectionForeColor = Color.White;
+            dataGridProgress.RowsDefaultCellStyle = dataGridViewCellStyle24;
             dataGridProgress.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
             dataGridProgress.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
             dataGridProgress.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
@@ -415,12 +418,12 @@
             // gridDate
             // 
             gridDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.BackColor = Color.Transparent;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Transparent;
-            gridDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.BackColor = Color.Transparent;
+            dataGridViewCellStyle19.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle19.ForeColor = Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle19.SelectionForeColor = Color.Transparent;
+            gridDate.DefaultCellStyle = dataGridViewCellStyle19;
             gridDate.HeaderText = "Fecha";
             gridDate.Name = "gridDate";
             gridDate.ReadOnly = true;
@@ -429,12 +432,12 @@
             // ShowData
             // 
             ShowData.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.Cyan;
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Cyan;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Cyan;
-            ShowData.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = Color.Cyan;
+            dataGridViewCellStyle20.ForeColor = Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = Color.Cyan;
+            dataGridViewCellStyle20.SelectionForeColor = Color.Cyan;
+            ShowData.DefaultCellStyle = dataGridViewCellStyle20;
             ShowData.HeaderText = "Ver";
             ShowData.Name = "ShowData";
             ShowData.ReadOnly = true;
@@ -453,15 +456,41 @@
             // gridTitle
             // 
             gridTitle.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.BackColor = Color.Transparent;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Transparent;
-            gridTitle.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle21.BackColor = Color.Transparent;
+            dataGridViewCellStyle21.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle21.ForeColor = Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle21.SelectionForeColor = Color.Transparent;
+            gridTitle.DefaultCellStyle = dataGridViewCellStyle21;
             gridTitle.HeaderText = "Titulo";
             gridTitle.Name = "gridTitle";
             gridTitle.ReadOnly = true;
+            // 
+            // BtnInactiveReg
+            // 
+            BtnInactiveReg.BackColor = Color.Crimson;
+            BtnInactiveReg.BackgroundColor = Color.Crimson;
+            BtnInactiveReg.BorderColor = Color.PaleVioletRed;
+            BtnInactiveReg.BorderRadius = 12;
+            BtnInactiveReg.BorderSize = 0;
+            BtnInactiveReg.Cursor = Cursors.Hand;
+            BtnInactiveReg.FlatAppearance.BorderSize = 0;
+            BtnInactiveReg.FlatStyle = FlatStyle.Flat;
+            BtnInactiveReg.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnInactiveReg.ForeColor = Color.White;
+            BtnInactiveReg.IconChar = FontAwesome.Sharp.IconChar.TrashRestoreAlt;
+            BtnInactiveReg.IconColor = Color.White;
+            BtnInactiveReg.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnInactiveReg.IconSize = 25;
+            BtnInactiveReg.Location = new Point(304, 156);
+            BtnInactiveReg.Margin = new Padding(0);
+            BtnInactiveReg.Name = "BtnInactiveReg";
+            BtnInactiveReg.Padding = new Padding(4, 0, 0, 0);
+            BtnInactiveReg.Size = new Size(39, 30);
+            BtnInactiveReg.TabIndex = 46;
+            BtnInactiveReg.TextColor = Color.White;
+            BtnInactiveReg.UseVisualStyleBackColor = false;
+            BtnInactiveReg.Click += BtnInactiveReg_Click;
             // 
             // ProgressClientControl
             // 
@@ -516,5 +545,6 @@
         private DataGridViewButtonColumn ShowData;
         private DataGridViewTextBoxColumn Peso;
         private DataGridViewTextBoxColumn gridTitle;
+        private ClassCustom.RJButton BtnInactiveReg;
     }
 }

@@ -296,6 +296,7 @@
             TbPeso.Size = new Size(281, 31);
             TbPeso.TabIndex = 68;
             TbPeso.UnderlinedStyle = false;
+            TbPeso.KeyPress += JustNumber_KeyPress;
             // 
             // label10
             // 
@@ -331,6 +332,7 @@
             TbAltura.Size = new Size(281, 31);
             TbAltura.TabIndex = 69;
             TbAltura.UnderlinedStyle = false;
+            TbAltura.KeyPress += JustNumber_KeyPress;
             // 
             // LbErrAltura
             // 

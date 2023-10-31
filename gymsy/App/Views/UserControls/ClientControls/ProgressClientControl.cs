@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,15 +17,39 @@ namespace gymsy.UserControls.ClientControls
     public partial class ProgressClientControl : UserControl
     {
 
+        private GymsyDbContext gymsydb = GymsyContext.GymsyContextDB;
+  
         public ProgressClientControl()
         {
             InitializeComponent();
+            PhotoActive.InitialImage = PhotoActive.Image;
         }
 
         public void updateProgressActive(DataFisic DataFisicActive)
         {
             TBRegDescription.Text = DataFisicActive.Notes;
-            TBRegFecha.Text = DataFisicActive.CreatedAt.ToString("dd/MM/yyyy");
+            TBRegFecha.Text = "Datos " + DataFisicActive.CreatedAt.ToString("dd/MM/yyyy");
+            if (DataFisicActive.Images.Count > 0)
+            {
+                string directory = AppDomain.CurrentDomain.BaseDirectory;
+                string rutaImagen = Path.GetFullPath(Path.Combine(directory, @"..\..\..\App\Public\" + DataFisicActive.Images.First().ImageUrl));
+                System.Drawing.Image imagen = System.Drawing.Image.FromFile(rutaImagen);
+
+                PhotoActive.Image = imagen;
+            }
+            else
+            {
+                PhotoActive.Image = PhotoActive.InitialImage;
+            }
+
+            if (DataFisicActive.Inactive)
+            {
+                BtnInactiveReg.BackColor = Color.Green;
+            }
+            else
+            {
+                BtnInactiveReg.BackColor = Color.Crimson;
+            }
         }
 
         public void UpdateComponent()
@@ -34,7 +59,7 @@ namespace gymsy.UserControls.ClientControls
             TimeSpan TimeTraning = AppState.ClientActive.IdPersonNavigation.CreatedAt - DateTime.Now;
 
             TBDescripcionClient.Text = $"{AppState.ClientActive.IdPersonNavigation.FirstName + " " + AppState.ClientActive.IdPersonNavigation.LastName}, " +
-            $"{edad} años comenzo a enrenarse hace {TimeTraning.Days} días, " +
+            $"{edad} años comenzo a enrenarse hace {TimeTraning.Days * -1} días, " +
             $"cuenta con {AppState.ClientActive.DataFisics.Count()} registros guardados";
 
 
@@ -91,6 +116,11 @@ namespace gymsy.UserControls.ClientControls
                     updateProgressActive(DataFisicSelected);
                 }
             }
+        }
+
+        private void BtnInactiveReg_Click(object sender, EventArgs e)
+        {
+           // UPDATE
         }
     }
 }
