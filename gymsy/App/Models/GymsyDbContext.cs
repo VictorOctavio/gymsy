@@ -69,7 +69,7 @@ public partial class GymsyDbContext : DbContext
             entity.Property(e => e.IdClient).HasColumnName("id_client");
             entity.Property(e => e.IdPerson).HasColumnName("id_person");
             entity.Property(e => e.IdTrainingPlan).HasColumnName("id_trainingPlan");
-            // entity.Property(e => e.Inactive).HasColumnName("inactive");
+            //entity.Property(e => e.Inactive).HasColumnName("inactive");
             entity.Property(e => e.LastExpiration)
                 .HasColumnType("date")
                 .HasColumnName("lastExpiration");
@@ -151,6 +151,14 @@ public partial class GymsyDbContext : DbContext
                 .HasForeignKey(d => d.IdPerson)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Instructor_id_person");
+            /*
+            // Agregar la propiedad de navegación para representar la relación con los planes
+            entity.HasMany(i => i.TrainingPlans) // "TrainingPlans" es una propiedad de navegación en la entidad "Instructor" que representa los planes asociados.
+                .WithOne() // Indica que cada plan puede tener solo un instructor.
+                .HasForeignKey(tp => tp.IdInstructor) // Clave foránea en la entidad "TrainingPlan".
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Instructor_id_person");
+            */
         });
 
         modelBuilder.Entity<Pay>(entity =>

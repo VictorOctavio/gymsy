@@ -7,6 +7,9 @@
     <Compile Update="App\Views\UserControls\InstructorControl\AddProgressClientControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="App\Views\UserControls\InstructorControl\ClientsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ClassCustom\Class1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -40,9 +43,6 @@
     <Compile Update="App\Views\UserControls\ClientControls\ProgressClientControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="App\Views\UserControls\InstructorControl\ClientsUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="App\Views\UserControls\InstructorControl\DashboardUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="App\Views\UserControls\InstructorControl\AddClientUserControl.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="App\Views\UserControls\InstructorControl\DashboardUserControl.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">

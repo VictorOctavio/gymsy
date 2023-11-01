@@ -1,4 +1,6 @@
-﻿namespace gymsy.UserControls.AdminControls
+﻿using System.Windows.Forms.DataVisualization.Charting;
+
+namespace gymsy.UserControls.AdminControls
 {
     partial class DashboardAdminControl
     {
@@ -37,6 +39,13 @@
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            chartGanancia = new Chart();
+            ChartArea chartArea1 = new ChartArea();
+            Legend legend1 = new Legend();
+            Series series1 = new Series();
+            ChartArea chartArea2 = new ChartArea();
+            Legend legend2 = new Legend();
+            Series series2 = new Series();
             label1 = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -63,11 +72,11 @@
             label3 = new Label();
             panel3 = new Panel();
             panel8 = new Panel();
-            pictureBox2 = new PictureBox();
             label6 = new Label();
             panel4 = new Panel();
-            pictureBox1 = new PictureBox();
+            chartInstructorXClientes = new Chart();
             label5 = new Label();
+            chartGanancia = new Chart();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel7.SuspendLayout();
@@ -78,9 +87,9 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
             panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartGanancia).BeginInit();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartInstructorXClientes).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -420,7 +429,7 @@
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(16, 8, 23);
-            panel8.Controls.Add(pictureBox2);
+            panel8.Controls.Add(chartGanancia);
             panel8.Controls.Add(label6);
             panel8.Dock = DockStyle.Left;
             panel8.Location = new Point(0, 0);
@@ -429,18 +438,64 @@
             panel8.Size = new Size(699, 298);
             panel8.TabIndex = 14;
             // 
-            // pictureBox2
+            // chartGanancia
             // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox2.Image = Properties.Resources.grafico;
-            pictureBox2.Location = new Point(3, 58);
-            pictureBox2.Margin = new Padding(0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(696, 237);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 10;
-            pictureBox2.TabStop = false;
-            pictureBox2.WaitOnLoad = true;
+            chartGanancia.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            chartGanancia.BackColor = Color.FromArgb(16, 8, 23);
+            chartGanancia.BackgroundImageLayout = ImageLayout.None;
+            chartGanancia.BorderlineColor = Color.Transparent;
+            chartArea1.AxisX.InterlacedColor = Color.Transparent;
+            chartArea1.AxisX.LineColor = Color.Transparent;
+            chartArea1.AxisX.LineDashStyle = ChartDashStyle.NotSet;
+            chartArea1.AxisX.Title = "Fecha";
+            chartArea1.AxisX.TitleFont = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            chartArea1.AxisX.TitleForeColor = Color.FromArgb(230, 237, 243);
+            chartArea1.AxisX2.InterlacedColor = Color.Transparent;
+            chartArea1.AxisX2.LineColor = Color.Transparent;
+            chartArea1.AxisX2.TitleForeColor = Color.WhiteSmoke;
+            chartArea1.AxisY.InterlacedColor = Color.Transparent;
+            chartArea1.AxisY.LineColor = Color.FromArgb(230, 237, 243);
+            chartArea1.AxisY.LineDashStyle = ChartDashStyle.NotSet;
+            chartArea1.AxisY.Title = "Clientes";
+            chartArea1.AxisY.TitleFont = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            chartArea1.AxisY.TitleForeColor = Color.FromArgb(230, 237, 243);
+            chartArea1.AxisY2.InterlacedColor = Color.Transparent;
+            chartArea1.AxisY2.LineColor = Color.Transparent;
+            chartArea1.BackColor = Color.FromArgb(16, 8, 23);
+            chartArea1.BackSecondaryColor = Color.White;
+            chartArea1.BorderColor = Color.White;
+            chartArea1.Name = "ChartArea1";
+            chartGanancia.ChartAreas.Add(chartArea1);
+            legend1.BackColor = Color.Transparent;
+            legend1.BorderColor = Color.Transparent;
+            legend1.BorderDashStyle = ChartDashStyle.NotSet;
+            legend1.DockedToChartArea = "ChartArea1";
+            legend1.ForeColor = Color.FromArgb(230, 237, 243);
+            legend1.InterlacedRowsColor = Color.White;
+            legend1.Name = "Legend1";
+            legend1.ShadowColor = Color.Silver;
+            chartGanancia.Legends.Add(legend1);
+            chartGanancia.Location = new Point(17, 48);
+            chartGanancia.Name = "chartGanancia";
+            chartGanancia.RightToLeft = RightToLeft.No;
+            series1.BackImageTransparentColor = Color.Transparent;
+            series1.BorderColor = Color.Transparent;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = SeriesChartType.SplineArea;
+            series1.Color = Color.DarkOrange;
+            series1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            series1.IsXValueIndexed = true;
+            series1.LabelBackColor = Color.White;
+            series1.Legend = "Legend1";
+            series1.MarkerBorderColor = Color.White;
+            series1.Name = "Ganancia";
+            series1.SmartLabelStyle.AllowOutsidePlotArea = LabelOutsidePlotAreaStyle.No;
+            series1.SmartLabelStyle.CalloutLineAnchorCapStyle = LineAnchorCapStyle.None;
+            series1.YValuesPerPoint = 2;
+            chartGanancia.Series.Add(series1);
+            chartGanancia.Size = new Size(678, 234);
+            chartGanancia.TabIndex = 14;
+            chartGanancia.Text = "chart2";
             // 
             // label6
             // 
@@ -457,7 +512,7 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(16, 8, 23);
-            panel4.Controls.Add(pictureBox1);
+            panel4.Controls.Add(chartInstructorXClientes);
             panel4.Controls.Add(label5);
             panel4.Dock = DockStyle.Right;
             panel4.Location = new Point(698, 0);
@@ -466,16 +521,31 @@
             panel4.Size = new Size(302, 298);
             panel4.TabIndex = 13;
             // 
-            // pictureBox1
+            // chartInstructorXClientes
             // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.Untitled;
-            pictureBox1.Location = new Point(3, 58);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(296, 237);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
+            chartInstructorXClientes.BackColor = Color.Transparent;
+            chartArea2.BackColor = Color.Transparent;
+            chartArea2.BorderColor = Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            chartInstructorXClientes.ChartAreas.Add(chartArea2);
+            legend2.BackColor = Color.Transparent;
+            legend2.ForeColor = Color.FromArgb(230, 237, 243);
+            legend2.Name = "Legend1";
+            chartInstructorXClientes.Legends.Add(legend2);
+            chartInstructorXClientes.Location = new Point(3, 48);
+            chartInstructorXClientes.Name = "chartInstructorXClientes";
+            series2.BorderColor = Color.Transparent;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = SeriesChartType.Doughnut;
+            series2.Color = Color.Transparent;
+            series2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.Palette = ChartColorPalette.BrightPastel;
+            chartInstructorXClientes.Series.Add(series2);
+            chartInstructorXClientes.Size = new Size(296, 247);
+            chartInstructorXClientes.TabIndex = 9;
+            chartInstructorXClientes.Text = "chart1";
             // 
             // label5
             // 
@@ -511,10 +581,10 @@
             panel3.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartGanancia).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartInstructorXClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -550,7 +620,7 @@
         private Label label6;
         private Panel panel4;
         private Label label5;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
+        private Chart chartInstructorXClientes;
+        private Chart chartGanancia;
     }
 }

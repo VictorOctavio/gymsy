@@ -51,29 +51,6 @@ namespace gymsy.UserControls.AdminControls
 
 
 
-
-
-                        Person persona = new Person
-                        {
-                            IdPerson = SimularBD.idPerson,
-                            Nickname = usuario,
-                            FirstName = nombre,
-                            Avatar = rutaImagen,
-                            Password = contraseña,
-                            CreatedAt = DateTime.Now,
-                            LastName = apellido,
-                            CBU = "CBU5",
-                            NumberPhone = telefono,
-                            Birthday = DateTime.Now.AddMonths(1),
-                            Gender = sexo,
-                            RolId = 3,
-                            Inactive = false
-                        };
-
-                        SimularBD.persons.Add(persona);
-                        SimularBD.idPerson++;
-
-
                         MessageBox.Show("Se Guardaron correcctamente los datos");
 
                     }
