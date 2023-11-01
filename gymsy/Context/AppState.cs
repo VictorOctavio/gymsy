@@ -21,5 +21,17 @@ namespace gymsy.Context
         public static Instructor Instructor { get; set; }
         public static Client ClientActive { get; set; }
 
+        public static bool isModeAdd { get; set; } = false;
+
+       
+        public static string pathDestinationFolder { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+        public static string nameCarpetImageClient { get; set; } = "\\Gymsy\\ClientImage";
+        public static string nameCarpetImageInstructor { get; set; } = "\\Gymsy\\InstructorImage";
+
+        public static bool needRefreshClientsUserControl { get; set; } = false;
+
+
+
     }
 }

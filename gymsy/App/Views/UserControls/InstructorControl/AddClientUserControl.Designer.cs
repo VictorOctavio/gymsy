@@ -32,6 +32,8 @@ namespace gymsy.UserControls
         {
             label1 = new Label();
             panel1 = new Panel();
+            BBack = new ClassCustom.RJButton();
+            rjButton7 = new ClassCustom.RJButton();
             rjButton6 = new ClassCustom.RJButton();
             rjButton5 = new ClassCustom.RJButton();
             rjButton4 = new ClassCustom.RJButton();
@@ -42,6 +44,8 @@ namespace gymsy.UserControls
             label12 = new Label();
             newClientOrEditClient = new Label();
             panel2 = new Panel();
+            label9 = new Label();
+            DPVencimiento = new DateTimePicker();
             LidPlan = new Label();
             LRuraImagen = new Label();
             TBNombreInstructor = new TextBox();
@@ -83,8 +87,6 @@ namespace gymsy.UserControls
             LApellidoRequerido = new Label();
             label4 = new Label();
             openFileDialog1 = new OpenFileDialog();
-            label9 = new Label();
-            DPVencimiento = new DateTimePicker();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IPImagenUsuario).BeginInit();
@@ -106,6 +108,8 @@ namespace gymsy.UserControls
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSize = true;
             panel1.BackColor = Color.FromArgb(16, 8, 23);
+            panel1.Controls.Add(BBack);
+            panel1.Controls.Add(rjButton7);
             panel1.Controls.Add(rjButton6);
             panel1.Controls.Add(rjButton5);
             panel1.Controls.Add(rjButton4);
@@ -121,6 +125,58 @@ namespace gymsy.UserControls
             panel1.Name = "panel1";
             panel1.Size = new Size(2436, 674);
             panel1.TabIndex = 1;
+            // 
+            // BBack
+            // 
+            BBack.BackColor = Color.DarkOrange;
+            BBack.BackgroundColor = Color.DarkOrange;
+            BBack.BorderColor = Color.PaleVioletRed;
+            BBack.BorderRadius = 15;
+            BBack.BorderSize = 0;
+            BBack.FlatAppearance.BorderSize = 0;
+            BBack.FlatStyle = FlatStyle.Flat;
+            BBack.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BBack.ForeColor = Color.White;
+            BBack.IconChar = IconChar.ArrowLeftLong;
+            BBack.IconColor = Color.FromArgb(230, 237, 243);
+            BBack.IconFont = IconFont.Auto;
+            BBack.IconSize = 90;
+            BBack.ImageAlign = ContentAlignment.MiddleRight;
+            BBack.Location = new Point(0, 0);
+            BBack.Name = "BBack";
+            BBack.Padding = new Padding(10, 0, 0, 0);
+            BBack.Size = new Size(103, 64);
+            BBack.TabIndex = 98;
+            BBack.TextAlign = ContentAlignment.MiddleLeft;
+            BBack.TextColor = Color.White;
+            BBack.UseVisualStyleBackColor = false;
+            BBack.Visible = false;
+            BBack.Click += BBack_Click;
+            // 
+            // rjButton7
+            // 
+            rjButton7.BackColor = Color.DarkOrange;
+            rjButton7.BackgroundColor = Color.DarkOrange;
+            rjButton7.BorderColor = Color.PaleVioletRed;
+            rjButton7.BorderRadius = 15;
+            rjButton7.BorderSize = 0;
+            rjButton7.FlatAppearance.BorderSize = 0;
+            rjButton7.FlatStyle = FlatStyle.Flat;
+            rjButton7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton7.ForeColor = Color.White;
+            rjButton7.IconChar = IconChar.ArrowLeftLong;
+            rjButton7.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton7.IconFont = IconFont.Auto;
+            rjButton7.IconSize = 90;
+            rjButton7.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton7.Location = new Point(1215, 353);
+            rjButton7.Name = "rjButton7";
+            rjButton7.Padding = new Padding(10, 0, 0, 0);
+            rjButton7.Size = new Size(103, 64);
+            rjButton7.TabIndex = 100;
+            rjButton7.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton7.TextColor = Color.White;
+            rjButton7.UseVisualStyleBackColor = false;
             // 
             // rjButton6
             // 
@@ -372,10 +428,36 @@ namespace gymsy.UserControls
             panel2.Size = new Size(1215, 533);
             panel2.TabIndex = 51;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.ForeColor = Color.FromArgb(230, 237, 243);
+            label9.Location = new Point(766, 311);
+            label9.Name = "label9";
+            label9.Size = new Size(123, 15);
+            label9.TabIndex = 97;
+            label9.Text = "Fecha de vencimiento";
+            // 
+            // DPVencimiento
+            // 
+            DPVencimiento.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DPVencimiento.CalendarForeColor = Color.FromArgb(230, 237, 243);
+            DPVencimiento.CalendarMonthBackground = Color.FromArgb(16, 8, 23);
+            DPVencimiento.CalendarTitleBackColor = Color.DarkOrange;
+            DPVencimiento.CalendarTitleForeColor = Color.FromArgb(9, 0, 20);
+            DPVencimiento.Format = DateTimePickerFormat.Short;
+            DPVencimiento.Location = new Point(769, 338);
+            DPVencimiento.MaxDate = new DateTime(5023, 10, 17, 0, 0, 0, 0);
+            DPVencimiento.MinDate = new DateTime(2023, 10, 28, 0, 0, 0, 0);
+            DPVencimiento.Name = "DPVencimiento";
+            DPVencimiento.Size = new Size(117, 23);
+            DPVencimiento.TabIndex = 96;
+            DPVencimiento.Value = new DateTime(2023, 10, 28, 0, 0, 0, 0);
+            // 
             // LidPlan
             // 
             LidPlan.AutoSize = true;
-            LidPlan.Location = new Point(862, 46);
+            LidPlan.Location = new Point(897, 50);
             LidPlan.Name = "LidPlan";
             LidPlan.Size = new Size(120, 15);
             LidPlan.TabIndex = 92;
@@ -631,7 +713,7 @@ namespace gymsy.UserControls
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = Color.FromArgb(230, 237, 243);
-            label14.Location = new Point(724, 38);
+            label14.Location = new Point(773, 36);
             label14.Name = "label14";
             label14.Size = new Size(118, 25);
             label14.TabIndex = 71;
@@ -714,7 +796,7 @@ namespace gymsy.UserControls
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label15.ForeColor = Color.FromArgb(230, 237, 243);
-            label15.Location = new Point(453, 9);
+            label15.Location = new Point(311, 10);
             label15.Name = "label15";
             label15.Size = new Size(155, 25);
             label15.TabIndex = 72;
@@ -913,32 +995,6 @@ namespace gymsy.UserControls
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.ForeColor = Color.FromArgb(230, 237, 243);
-            label9.Location = new Point(766, 311);
-            label9.Name = "label9";
-            label9.Size = new Size(123, 15);
-            label9.TabIndex = 97;
-            label9.Text = "Fecha de vencimiento";
-            // 
-            // DPVencimiento
-            // 
-            DPVencimiento.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DPVencimiento.CalendarForeColor = Color.FromArgb(230, 237, 243);
-            DPVencimiento.CalendarMonthBackground = Color.FromArgb(16, 8, 23);
-            DPVencimiento.CalendarTitleBackColor = Color.DarkOrange;
-            DPVencimiento.CalendarTitleForeColor = Color.FromArgb(9, 0, 20);
-            DPVencimiento.Format = DateTimePickerFormat.Short;
-            DPVencimiento.Location = new Point(769, 338);
-            DPVencimiento.MaxDate = new DateTime(5023, 10, 17, 0, 0, 0, 0);
-            DPVencimiento.MinDate = new DateTime(2023, 10, 28, 0, 0, 0, 0);
-            DPVencimiento.Name = "DPVencimiento";
-            DPVencimiento.Size = new Size(117, 23);
-            DPVencimiento.TabIndex = 96;
-            DPVencimiento.Value = new DateTime(2023, 10, 28, 0, 0, 0, 0);
-            // 
             // AddClientUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1016,5 +1072,7 @@ namespace gymsy.UserControls
         private ClassCustom.RJButton rjButton5;
         private Label label9;
         private DateTimePicker DPVencimiento;
+        private ClassCustom.RJButton rjButton7;
+        private ClassCustom.RJButton BBack;
     }
 }

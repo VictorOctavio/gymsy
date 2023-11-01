@@ -31,6 +31,7 @@ namespace gymsy.UserControls
             InitializeComponent();
 
 
+
         }
 
         public override void Refresh()
@@ -67,6 +68,18 @@ namespace gymsy.UserControls
                 }
                 DPFechaNacimiento.Value = AppState.ClientActive.IdPersonNavigation.Birthday;
                 DPVencimiento.Value = AppState.ClientActive.LastExpiration;
+
+                try
+                {
+                    string ruta = Path.Combine( AppState.pathDestinationFolder, AppState.nameCarpetImageClient, AppState.ClientActive.IdPersonNavigation.Avatar);
+
+                    IPImagenUsuario.Image = System.Drawing.Image.FromFile(ruta);
+                } catch
+                {
+                    IPImagenUsuario.Image = gymsy.Properties.Resources.vector_fitness_couple_doing_exercise;
+                }
+                
+
 
 
 
@@ -287,6 +300,7 @@ namespace gymsy.UserControls
                 {
                     this.actualizarCliente();
                     this.restablecerTextBoxes();
+                    AppState.needRefreshClientsUserControl = true;
                     MainView.navigationControl.Display(1, true);
 
                 }

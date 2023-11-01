@@ -37,6 +37,8 @@ namespace gymsy.UserControls
             label12 = new Label();
             newClientOrEditClient = new Label();
             panel2 = new Panel();
+            label9 = new Label();
+            DPVencimiento = new DateTimePicker();
             LidPlan = new Label();
             TBNombre = new CustomControls.RJControls.RJTextBox();
             LRuraImagen = new Label();
@@ -78,8 +80,6 @@ namespace gymsy.UserControls
             LApellidoRequerido = new Label();
             label4 = new Label();
             openFileDialog1 = new OpenFileDialog();
-            label9 = new Label();
-            DPVencimiento = new DateTimePicker();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IPImagenUsuario).BeginInit();
@@ -90,7 +90,7 @@ namespace gymsy.UserControls
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(2075, 572);
+            label1.Location = new Point(2186, 572);
             label1.Name = "label1";
             label1.Size = new Size(132, 37);
             label1.TabIndex = 0;
@@ -109,7 +109,7 @@ namespace gymsy.UserControls
             panel1.ForeColor = Color.FromArgb(230, 237, 243);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(2658, 674);
+            panel1.Size = new Size(2880, 674);
             panel1.TabIndex = 1;
             // 
             // back
@@ -169,7 +169,7 @@ namespace gymsy.UserControls
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = SystemColors.ActiveCaptionText;
-            label12.Location = new Point(1041, 112);
+            label12.Location = new Point(1152, 112);
             label12.Name = "label12";
             label12.Size = new Size(153, 25);
             label12.TabIndex = 50;
@@ -181,7 +181,7 @@ namespace gymsy.UserControls
             newClientOrEditClient.AutoSize = true;
             newClientOrEditClient.Font = new Font("Segoe UI", 29F, FontStyle.Regular, GraphicsUnit.Point);
             newClientOrEditClient.ForeColor = Color.FromArgb(230, 237, 243);
-            newClientOrEditClient.Location = new Point(-34, 18);
+            newClientOrEditClient.Location = new Point(377, 3);
             newClientOrEditClient.Name = "newClientOrEditClient";
             newClientOrEditClient.Size = new Size(249, 52);
             newClientOrEditClient.TabIndex = 33;
@@ -235,8 +235,34 @@ namespace gymsy.UserControls
             panel2.Controls.Add(label4);
             panel2.Location = new Point(3, 73);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1326, 533);
+            panel2.Size = new Size(1548, 533);
             panel2.TabIndex = 51;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.ForeColor = Color.FromArgb(230, 237, 243);
+            label9.Location = new Point(780, 309);
+            label9.Name = "label9";
+            label9.Size = new Size(123, 15);
+            label9.TabIndex = 95;
+            label9.Text = "Fecha de vencimiento";
+            // 
+            // DPVencimiento
+            // 
+            DPVencimiento.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DPVencimiento.CalendarForeColor = Color.FromArgb(230, 237, 243);
+            DPVencimiento.CalendarMonthBackground = Color.FromArgb(16, 8, 23);
+            DPVencimiento.CalendarTitleBackColor = Color.DarkOrange;
+            DPVencimiento.CalendarTitleForeColor = Color.FromArgb(9, 0, 20);
+            DPVencimiento.Format = DateTimePickerFormat.Short;
+            DPVencimiento.Location = new Point(783, 336);
+            DPVencimiento.MaxDate = new DateTime(5023, 10, 17, 0, 0, 0, 0);
+            DPVencimiento.MinDate = new DateTime(1900, 10, 28, 0, 0, 0, 0);
+            DPVencimiento.Name = "DPVencimiento";
+            DPVencimiento.Size = new Size(117, 23);
+            DPVencimiento.TabIndex = 94;
+            DPVencimiento.Value = new DateTime(2023, 10, 28, 0, 0, 0, 0);
             // 
             // LidPlan
             // 
@@ -497,7 +523,7 @@ namespace gymsy.UserControls
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = Color.FromArgb(230, 237, 243);
-            label14.Location = new Point(782, 38);
+            label14.Location = new Point(785, 34);
             label14.Name = "label14";
             label14.Size = new Size(118, 25);
             label14.TabIndex = 71;
@@ -580,7 +606,7 @@ namespace gymsy.UserControls
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label15.ForeColor = Color.FromArgb(230, 237, 243);
-            label15.Location = new Point(453, 9);
+            label15.Location = new Point(331, 11);
             label15.Name = "label15";
             label15.Size = new Size(155, 25);
             label15.TabIndex = 72;
@@ -685,7 +711,7 @@ namespace gymsy.UserControls
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.ActiveCaptionText;
-            label10.Location = new Point(-457, 40);
+            label10.Location = new Point(-346, 40);
             label10.Name = "label10";
             label10.Size = new Size(155, 25);
             label10.TabIndex = 48;
@@ -779,32 +805,6 @@ namespace gymsy.UserControls
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.ForeColor = Color.FromArgb(230, 237, 243);
-            label9.Location = new Point(780, 309);
-            label9.Name = "label9";
-            label9.Size = new Size(123, 15);
-            label9.TabIndex = 95;
-            label9.Text = "Fecha de vencimiento";
-            // 
-            // DPVencimiento
-            // 
-            DPVencimiento.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            DPVencimiento.CalendarForeColor = Color.FromArgb(230, 237, 243);
-            DPVencimiento.CalendarMonthBackground = Color.FromArgb(16, 8, 23);
-            DPVencimiento.CalendarTitleBackColor = Color.DarkOrange;
-            DPVencimiento.CalendarTitleForeColor = Color.FromArgb(9, 0, 20);
-            DPVencimiento.Format = DateTimePickerFormat.Short;
-            DPVencimiento.Location = new Point(783, 336);
-            DPVencimiento.MaxDate = new DateTime(5023, 10, 17, 0, 0, 0, 0);
-            DPVencimiento.MinDate = new DateTime(2023, 10, 28, 0, 0, 0, 0);
-            DPVencimiento.Name = "DPVencimiento";
-            DPVencimiento.Size = new Size(117, 23);
-            DPVencimiento.TabIndex = 94;
-            DPVencimiento.Value = new DateTime(2023, 10, 28, 0, 0, 0, 0);
-            // 
             // EditClient
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -814,7 +814,7 @@ namespace gymsy.UserControls
             Controls.Add(label1);
             Margin = new Padding(0);
             Name = "EditClient";
-            Size = new Size(1218, 609);
+            Size = new Size(1440, 609);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

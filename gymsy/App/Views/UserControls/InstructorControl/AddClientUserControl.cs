@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using gymsy.Context;
 using gymsy.App.Models;
 using System.Numerics;
+using System.Reflection;
 
 namespace gymsy.UserControls
 {
@@ -137,7 +138,7 @@ namespace gymsy.UserControls
             }
 
             //Se verifica que se hay ingresado un correo
-            if (!string.IsNullOrWhiteSpace(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
+            if (!string.IsNullOrWhiteSpace(TBUsuario.Text) && IsNicknameUnique(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
             {
                 LUsurioRequerido.Visible = false;
             }
@@ -260,50 +261,45 @@ namespace gymsy.UserControls
                         sexo = "F";
                     }
 
-                    if (IsNicknameUnique(usuario))
+
+                    Person persona = new Person
                     {
-                        Person persona = new Person
-                        {
-                            Nickname = usuario,
-                            FirstName = TBNombre.Text,
-                            Avatar = TBRutaImagen.Text,
-                            Password = TBContraseña.Text,
-                            CreatedAt = DateTime.Now,
-                            LastName = TBApellido.Text,
-                            CBU = usuario,
-                            NumberPhone = TBTelefono.Text,
-                            Birthday = DateTime.Now.AddMonths(1),
-                            Gender = sexo,
-                            RolId = 3,//3 es el rol de cliente
-                            Inactive = false
-                        };
+                        Nickname = usuario,
+                        FirstName = TBNombre.Text,
+                        Avatar = SaveImage(TBRutaImagen.Text),
+                        Password = TBContraseña.Text,
+                        CreatedAt = DateTime.Now,
+                        LastName = TBApellido.Text,
+                        CBU = usuario,
+                        NumberPhone = TBTelefono.Text,
+                        Birthday = DateTime.Now.AddMonths(1),
+                        Gender = sexo,
+                        RolId = 3,//3 es el rol de cliente
+                        Inactive = false
+                    };
 
-                        //se guarda en la base de datos, primero la persona por la relacion de la llave foranea
-                        this.dbContext.People.Add(persona);
-                        this.dbContext.SaveChanges();
+                    //se guarda en la base de datos, primero la persona por la relacion de la llave foranea
+                    this.dbContext.People.Add(persona);
+                    this.dbContext.SaveChanges();
 
-                        Client cliente = new Client
-                        {
-                            LastExpiration = DPVencimiento.Value,//Se le añade un mes mas a la fecha actual
-                            IdPerson = persona.IdPerson,
-                            IdTrainingPlan = idPlan,
-                        };
-
-                        //Se guarda en AppState
-                        AppState.clients.Add(persona);
-
-                        this.dbContext.Clients.Add(cliente);
-                        this.dbContext.SaveChanges();
-
-
-                        MessageBox.Show("Se Guardaron correcctamente los datos");
-                        this.restablecerTextBoxes();
-                    }
-                    else
+                    Client cliente = new Client
                     {
-                        MessageBox.Show("El nombre de usuario ya existe");
-                    }
+                        LastExpiration = DPVencimiento.Value,//Se le añade un mes mas a la fecha actual
+                        IdPerson = persona.IdPerson,
+                        IdTrainingPlan = idPlan,
+                    };
 
+                    //Se guarda en AppState
+                    AppState.clients.Add(persona);
+
+
+
+                    this.dbContext.Clients.Add(cliente);
+                    this.dbContext.SaveChanges();
+
+                    AppState.needRefreshClientsUserControl = true;
+                    MessageBox.Show("Se Guardaron correcctamente los datos");
+                    this.restablecerTextBoxes();
 
 
                 }
@@ -315,6 +311,38 @@ namespace gymsy.UserControls
                 throw;
             }
         }
+
+
+        /**
+         * Guarda en Mis domumentos la imagen seleccionada
+         */
+        private string SaveImage(string imagePath)
+        {
+            //Ruta completa para guardar la imagen en la carpeta
+            string pathDestinationFolder = Path.Combine(AppState.pathDestinationFolder, AppState.nameCarpetImageClient);
+
+
+            // Asegúrate de que la carpeta exista, y si no, créala
+            if (!Directory.Exists(pathDestinationFolder))
+            {
+                Directory.CreateDirectory(AppState.pathDestinationFolder);
+            }
+
+            // Obtén la extensión de archivo de la imagen original
+            string extension = Path.GetExtension(imagePath);
+
+            // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
+            string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension; 
+
+            // Ruta completa para guardar la imagen en la carpeta
+            string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
+
+            // Copia la imagen desde la ubicación original a la carpeta de destino
+            File.Copy(imagePath, destinationPath, true);
+
+            return uniqueFileName;//nombre del archivo 
+        }
+
 
         private void CBPlanes_OnSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -359,20 +387,43 @@ namespace gymsy.UserControls
         // Función para verificar si el 'nickname' es único
         private bool IsNicknameUnique(string nickname)
         {
-            // Consulta la base de datos para verificar si ya existe un registro con el mismo 'nickname'
-            var existingPerson = this.dbContext.People.FirstOrDefault(p => p.Nickname == nickname);
+            try
+            {
+                // Consulta la base de datos para verificar si ya existe un registro con el mismo 'nickname'
+                var existingPerson = this.dbContext.People.FirstOrDefault(p => p.Nickname == nickname);
 
-            // Si 'existingPerson' no es nulo, significa que ya existe un registro con el mismo 'nickname'
-            return existingPerson == null;
+                // Si 'existingPerson' no es nulo, significa que ya existe un registro con el mismo 'nickname'
+                if (existingPerson == null)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("El nombre de usuario ya existe");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al verificar el nombre de usuario: " + ex.Message);
+                return false;
+            }
+
+
         }
 
         public override void Refresh()
         {
             //Carga el comboBox con los planes
             this.CargarElementosComboBox();
+            BBack.Visible = AppState.isModeAdd;
         }
 
-
+        private void BBack_Click(object sender, EventArgs e)
+        {
+            MainView.navigationControl.Display(1, true);
+            AppState.isModeAdd = false;
+        }
     }
 
 
