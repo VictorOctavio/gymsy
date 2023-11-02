@@ -106,6 +106,7 @@ namespace gymsy.App.Presenters
                                                 .ToList();
 
                         AppState.instructors = instructorsFound;
+
                         //Se crea un instructor vacio
                         AppState.Instructor = new Instructor();
                         break;

@@ -21,6 +21,8 @@ namespace gymsy.Context
         public static Instructor Instructor { get; set; }
         public static Client ClientActive { get; set; }
 
+        public static Instructor InstructorActive { get; set; }
+
         public static bool isModeAdd { get; set; } = false;
 
        

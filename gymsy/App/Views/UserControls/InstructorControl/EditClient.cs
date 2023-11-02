@@ -241,35 +241,42 @@ namespace gymsy.UserControls
         }
         private void CargarElementosComboBox()
         {
-            if (AppState.ClientActive != null)
+            try
             {
-
-
-                var trainingPlan = this.dbContext.TrainingPlans
-                    .Where(trainingPlan => trainingPlan.IdTrainingPlan == AppState.ClientActive.IdTrainingPlan)
-                    .First();
-
-                LidPlan.Text = trainingPlan.IdTrainingPlan.ToString();
-                TBPrecio.Text = trainingPlan.Price.ToString();
-                TBDescripcion.Text = trainingPlan.Description;
-                TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
-
-                CBPlanes.Items.Add(trainingPlan.Description);
-
-                //Ahora se cargan los demas elementos
-
-                var trainingPlans = this.dbContext.TrainingPlans
-                    .Where(trainingPlan => trainingPlan.IdTrainingPlan != AppState.ClientActive.IdTrainingPlan)
-                    .ToList();
-
-                foreach (TrainingPlan plan in trainingPlans)
+                if (AppState.ClientActive != null)
                 {
-                    if (!plan.Inactive)
-                    {
-                        CBPlanes.Items.Add(plan.IdTrainingPlan + "-" + plan.Description);
-                    }
 
+
+                    var trainingPlan = this.dbContext.TrainingPlans
+                        .Where(trainingPlan => trainingPlan.IdTrainingPlan == AppState.ClientActive.IdTrainingPlan)
+                        .First();
+
+                    LidPlan.Text = trainingPlan.IdTrainingPlan.ToString();
+                    TBPrecio.Text = trainingPlan.Price.ToString();
+                    TBDescripcion.Text = trainingPlan.Description;
+                    TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
+
+                    CBPlanes.Items.Add(trainingPlan.Description);
+
+                    //Ahora se cargan los demas elementos
+
+                    var trainingPlans = this.dbContext.TrainingPlans
+                        .Where(trainingPlan => trainingPlan.IdTrainingPlan != AppState.ClientActive.IdTrainingPlan)
+                        .ToList();
+
+                    foreach (TrainingPlan plan in trainingPlans)
+                    {
+                        if (!plan.Inactive)
+                        {
+                            CBPlanes.Items.Add(plan.IdTrainingPlan + "-" + plan.Description);
+                        }
+
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
             }
         }
 

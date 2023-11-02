@@ -138,7 +138,7 @@ namespace gymsy.UserControls
             }
 
             //Se verifica que se hay ingresado un correo
-            if (!string.IsNullOrWhiteSpace(TBUsuario.Text) && IsNicknameUnique(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
+            if (!string.IsNullOrWhiteSpace(TBUsuario.Text) && this.IsNicknameUnique(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
             {
                 LUsurioRequerido.Visible = false;
             }
@@ -190,32 +190,44 @@ namespace gymsy.UserControls
         }
         private void CargarElementosComboBox()
         {
-            //Ahora se cargan los demas elementos
-
-            var trainingPlans = this.dbContext.TrainingPlans.ToList();
-
-            var trainingPlan = trainingPlans.FirstOrDefault();
-
-            if (trainingPlan != null)
+            try
             {
-                LidPlan.Text = trainingPlan.IdTrainingPlan.ToString();
-                TBPrecio.Text = trainingPlan.Price.ToString();
-                TBDescripcion.Text = trainingPlan.Description;
-                TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
+                //Ahora se cargan los demas elementos
 
-                CBPlanes.Items.Add(trainingPlan.Description);
-            }
+                var trainingPlans = this.dbContext.TrainingPlans.ToList();
 
-            foreach (TrainingPlan plan in trainingPlans)
-            {
-                if (!plan.Inactive && trainingPlan.IdTrainingPlan != plan.IdTrainingPlan)
+                var trainingPlan = trainingPlans.FirstOrDefault();
+
+                if (trainingPlan != null)
                 {
-                    CBPlanes.Items.Add(plan.IdTrainingPlan + "-" + plan.Description);
+                    if(trainingPlan.IdInstructorNavigation != null)
+                    {
+                        LidPlan.Text = trainingPlan.IdTrainingPlan.ToString();
+                        TBPrecio.Text = trainingPlan.Price.ToString();
+                        TBDescripcion.Text = trainingPlan.Description;
+                        TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
+
+                        CBPlanes.Items.Add(trainingPlan.Description);
+                    }
+                    
                 }
 
+                foreach (TrainingPlan plan in trainingPlans)
+                {
+                    if (!plan.Inactive && trainingPlan.IdTrainingPlan != plan.IdTrainingPlan)
+                    {
+                        CBPlanes.Items.Add(plan.IdTrainingPlan + "-" + plan.Description);
+                    }
+
+                }
+
+
+
+
+            } catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
             }
-
-
 
 
         }
@@ -272,7 +284,7 @@ namespace gymsy.UserControls
                         LastName = TBApellido.Text,
                         CBU = usuario,
                         NumberPhone = TBTelefono.Text,
-                        Birthday = DateTime.Now.AddMonths(1),
+                        Birthday = DPFechaNacimiento.Value,
                         Gender = sexo,
                         RolId = 3,//3 es el rol de cliente
                         Inactive = false
@@ -332,7 +344,7 @@ namespace gymsy.UserControls
             string extension = Path.GetExtension(imagePath);
 
             // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
-            string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension; 
+            string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension;
 
             // Ruta completa para guardar la imagen en la carpeta
             string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
@@ -424,6 +436,8 @@ namespace gymsy.UserControls
             MainView.navigationControl.Display(1, true);
             AppState.isModeAdd = false;
         }
+
+    
     }
 
 

@@ -122,29 +122,29 @@ namespace gymsy.UserControls
 
 
 
-                       DGUsers.Rows.Add(
-                       System.Drawing.Image.FromFile(ruta),
-                       string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
-                       client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
-                       client.IdPersonNavigation.NumberPhone,
-                       client.IdTrainingPlanNavigation.Description,
-                       ColumnExpirationMsg,
-                       client.IdClient,
-                       client.IdPersonNavigation.Inactive);
+                        DGUsers.Rows.Add(
+                        System.Drawing.Image.FromFile(ruta),
+                        string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
+                        client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                        client.IdPersonNavigation.NumberPhone,
+                        client.IdTrainingPlanNavigation.Description,
+                        ColumnExpirationMsg,
+                        client.IdClient,
+                        client.IdPersonNavigation.Inactive);
                     }
                     catch (Exception e)
                     {
 
 
-                       DGUsers.Rows.Add(
-                       Resources.vector_fitness_couple_doing_exercise,
-                       string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
-                       client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
-                       client.IdPersonNavigation.NumberPhone,
-                       client.IdTrainingPlanNavigation.Description,
-                       ColumnExpirationMsg,
-                       client.IdClient,
-                       client.IdPersonNavigation.Inactive);
+                        DGUsers.Rows.Add(
+                        Resources.vector_fitness_couple_doing_exercise,
+                        string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
+                        client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                        client.IdPersonNavigation.NumberPhone,
+                        client.IdTrainingPlanNavigation.Description,
+                        ColumnExpirationMsg,
+                        client.IdClient,
+                        client.IdPersonNavigation.Inactive);
                     }
 
                 }
@@ -402,7 +402,7 @@ namespace gymsy.UserControls
         private void BVerClients_Click(object sender, EventArgs e)
         {
             this.isModeVerNoDelete = true;
-            BEliminarCliente.Text = "Eliminar Cliente";
+            BEliminarCliente.Text = "Eliminar";
             BEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
             BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.Trash;
             //Se mostraran los no inactivos
@@ -412,7 +412,7 @@ namespace gymsy.UserControls
         private void BVerClientDelete_Click(object sender, EventArgs e)
         {
             this.isModeVerNoDelete = false;
-            BEliminarCliente.Text = "Activar Cliente";
+            BEliminarCliente.Text = "Activar";
             BEliminarCliente.BackColor = Color.FromArgb(255, 140, 0);
             BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.User;
 
@@ -428,11 +428,11 @@ namespace gymsy.UserControls
 
         public override void Refresh()
         {
-            if(AppState.needRefreshClientsUserControl)
+            if (AppState.needRefreshClientsUserControl)
             {
                 this.cargarPersonas();
                 this.isModeVerNoDelete = true;
-                BEliminarCliente.Text = "Eliminar Cliente";
+                BEliminarCliente.Text = "Eliminar";
                 BEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
                 BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.Trash;
                 //Se mostraran los no inactivos

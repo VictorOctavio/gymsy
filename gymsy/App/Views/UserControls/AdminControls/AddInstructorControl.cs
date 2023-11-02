@@ -16,8 +16,11 @@ namespace gymsy.UserControls.AdminControls
     public partial class AddInstructorControl : UserControl
     {
         private bool isEditMode = false; // Variable para saber si se esta editando o agregando 
+
+        private GymsyDbContext dbContext;
         public AddInstructorControl()
         {
+            this.dbContext = GymsyContext.GymsyContextDB;
             InitializeComponent();
         }
 
@@ -29,59 +32,62 @@ namespace gymsy.UserControls.AdminControls
                 if (isValidTextBoxes)
                 {
 
-                    if (!this.isEditMode) //Si no se usa la vista para editar se deben guardar los datos
+                    string nombre = TBNombre.Text;
+                    string apellido = TBApellido.Text;
+                    string telefono = TBTelefono.Text;
+                    string usuario = TBUsuario.Text;
+                    string contraseña = TBContraseña.Text;
+                    string rutaImagen = TBRutaImagen.Text;
+
+                    string sexo = "";
+
+                    if (RBMasculino.Checked)
                     {
-                        string nombre = TBNombre.Text;
-                        string apellido = TBApellido.Text;
-                        string telefono = TBTelefono.Text;
-                        string usuario = TBUsuario.Text;
-                        string contraseña = TBContraseña.Text;
-                        string rutaImagen = TBRutaImagen.Text;
-
-                        string sexo = "";
-
-                        if (RBMasculino.Checked)
-                        {
-                            sexo = "M";
-                        }
-                        else
-                        {
-                            sexo = "F";
-                        }
-
-
-
-
-
-                        Person persona = new Person
-                        {
-                            IdPerson = SimularBD.idPerson,
-                            Nickname = usuario,
-                            FirstName = nombre,
-                            Avatar = rutaImagen,
-                            Password = contraseña,
-                            CreatedAt = DateTime.Now,
-                            LastName = apellido,
-                            CBU = "CBU5",
-                            NumberPhone = telefono,
-                            Birthday = DateTime.Now.AddMonths(1),
-                            Gender = sexo,
-                            RolId = 3,
-                            Inactive = false
-                        };
-
-                        SimularBD.persons.Add(persona);
-                        SimularBD.idPerson++;
-
-
-                        MessageBox.Show("Se Guardaron correcctamente los datos");
-
+                        sexo = "M";
                     }
-                    else //La vista esta en modo edicion se deven editar los datos
+                    else
                     {
-
-                        MessageBox.Show("Se Editaron correcctamente los datos");
+                        sexo = "F";
                     }
+
+                    Person persona = new Person
+                    {
+                        Nickname = usuario,
+                        FirstName = TBNombre.Text,
+                        Avatar = SaveImage(TBRutaImagen.Text),
+                        Password = TBContraseña.Text,
+                        CreatedAt = DateTime.Now,
+                        LastName = TBApellido.Text,
+                        CBU = usuario,
+                        NumberPhone = TBTelefono.Text,
+                        Birthday = DPFechaNacimiento.Value,
+                        Gender = sexo,
+                        RolId = 2,//2 es el rol de Instructor
+                        Inactive = false
+                    };
+                    //se guarda en la base de datos, primero la persona por la relacion de la llave foranea
+                    this.dbContext.People.Add(persona);
+                    this.dbContext.SaveChanges();
+
+                    Instructor newInstructor = new Instructor
+                    {
+                        IdPerson = persona.IdPerson
+                    };
+
+                    //Se guarda en AppState
+                    //AppState.clients.Add(persona);
+
+
+
+                    this.dbContext.Instructors.Add(newInstructor);
+                    this.dbContext.SaveChanges();
+
+                    AppState.needRefreshClientsUserControl = true;
+                    MessageBox.Show("Se Guardaron correcctamente los datos");
+                    this.restablecerTextBoxes();
+
+
+                    MessageBox.Show("Se Guardaron correcctamente los datos");
 
                 }
 
@@ -164,7 +170,7 @@ namespace gymsy.UserControls.AdminControls
             }
 
             //Se verifica que se hay ingresado un correo
-            if (!string.IsNullOrWhiteSpace(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
+            if (!string.IsNullOrWhiteSpace(TBUsuario.Text) && this.IsNicknameUnique(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
             {
                 LUsurioRequerido.Visible = false;
             }
@@ -199,20 +205,82 @@ namespace gymsy.UserControls.AdminControls
                 //MessageBox.Show("Debe seleccionar una imagen");
             }
 
-            /*
-            if (string.IsNullOrWhiteSpace(TBPrecio.Text.Trim()) || string.IsNullOrWhiteSpace(TBDescripcion.Text.Trim()) || string.IsNullOrWhiteSpace(TBNombreInstructor.Text.Trim()))
-            {
-                LPlanRequerido.Visible = false;
-
-            }
-            else
-            {
-                isValid = false;
-                LPlanRequerido.Visible = true;
-            }
-            */
 
             return isValid;
+        }
+
+        private string SaveImage(string imagePath)
+        {
+            //Ruta completa para guardar la imagen en la carpeta
+            string pathDestinationFolder = Path.Combine(AppState.pathDestinationFolder, AppState.nameCarpetImageInstructor);
+
+
+            // Asegúrate de que la carpeta exista, y si no, créala
+            if (!Directory.Exists(pathDestinationFolder))
+            {
+                Directory.CreateDirectory(AppState.pathDestinationFolder);
+            }
+
+            // Obtén la extensión de archivo de la imagen original
+            string extension = Path.GetExtension(imagePath);
+
+            // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
+            string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension;
+
+            // Ruta completa para guardar la imagen en la carpeta
+            string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
+
+            // Copia la imagen desde la ubicación original a la carpeta de destino
+            File.Copy(imagePath, destinationPath, true);
+
+            return uniqueFileName;//nombre del archivo 
+        }
+        private void restablecerTextBoxes()
+        {
+            TBNombre.Text = "";
+            TBApellido.Text = "";
+            TBTelefono.Text = "";
+            TBUsuario.Text = "";
+            TBContraseña.Text = "";
+            TBRutaImagen.Text = "";
+            RBMasculino.Checked = true;
+        }
+        private bool IsNicknameUnique(string nickname)
+        {
+            try
+            {
+                // Consulta la base de datos para verificar si ya existe un registro con el mismo 'nickname'
+                var existingPerson = this.dbContext.People.FirstOrDefault(p => p.Nickname == nickname);
+
+                // Si 'existingPerson' no es nulo, significa que ya existe un registro con el mismo 'nickname'
+                if (existingPerson == null)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("El nombre de usuario ya existe");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al verificar el nombre de usuario: " + ex.Message);
+                return false;
+            }
+
+
+        }
+        public override void Refresh()
+        {
+            BBack.Visible = AppState.isModeAdd;
+        }
+
+        private void BBack_Click(object sender, EventArgs e)
+        {
+
+            //MainView.navigationControl.Display(1, true);
+            AppState.isModeAdd = false;
         }
     }
 }

@@ -197,3 +197,5 @@ C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-window
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\WinForms.DataVisualization.Utilities.dll
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\WinForms.DataVisualization.dll
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.EditClient.resources
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.AdminControls.EditInstructor.resources
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.EditInstructor.resources
