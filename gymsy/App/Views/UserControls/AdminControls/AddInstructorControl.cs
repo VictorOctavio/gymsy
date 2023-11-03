@@ -1,5 +1,6 @@
 ﻿using gymsy.App.Models;
 using gymsy.Context;
+using gymsy.Utilities;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -36,8 +37,8 @@ namespace gymsy.UserControls.AdminControls
                     string apellido = TBApellido.Text;
                     string telefono = TBTelefono.Text;
                     string usuario = TBUsuario.Text;
-                    string contraseña = TBContraseña.Text;
-                    string rutaImagen = TBRutaImagen.Text;
+                    string contraseña = Bcrypt.HashPassoword(TBContraseña.Text);
+                    string nameImagen = SaveImage(TBRutaImagen.Text);
 
                     string sexo = "";
 
@@ -53,13 +54,13 @@ namespace gymsy.UserControls.AdminControls
                     Person persona = new Person
                     {
                         Nickname = usuario,
-                        FirstName = TBNombre.Text,
-                        Avatar = SaveImage(TBRutaImagen.Text),
-                        Password = TBContraseña.Text,
+                        FirstName = nombre,
+                        Avatar = nameImagen,
+                        Password = contraseña,
                         CreatedAt = DateTime.Now,
-                        LastName = TBApellido.Text,
+                        LastName = apellido,
                         CBU = usuario,
-                        NumberPhone = TBTelefono.Text,
+                        NumberPhone = telefono,
                         Birthday = DPFechaNacimiento.Value,
                         Gender = sexo,
                         RolId = 2,//2 es el rol de Instructor
@@ -211,29 +212,38 @@ namespace gymsy.UserControls.AdminControls
 
         private string SaveImage(string imagePath)
         {
-            //Ruta completa para guardar la imagen en la carpeta
-            string pathDestinationFolder = Path.Combine(AppState.pathDestinationFolder, AppState.nameCarpetImageInstructor);
-
-
-            // Asegúrate de que la carpeta exista, y si no, créala
-            if (!Directory.Exists(pathDestinationFolder))
+            try
             {
-                Directory.CreateDirectory(AppState.pathDestinationFolder);
+
+                //Ruta completa para guardar la imagen en la carpeta
+                string pathDestinationFolder = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor;
+
+
+                // Asegúrate de que la carpeta exista, y si no, créala
+                if (!Directory.Exists(pathDestinationFolder))
+                {
+                    Directory.CreateDirectory(pathDestinationFolder);
+                }
+
+                // Obtén la extensión de archivo de la imagen original
+                string extension = Path.GetExtension(imagePath);
+
+                // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
+                string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension;
+
+                // Ruta completa para guardar la imagen en la carpeta
+                string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
+
+                // Copia la imagen desde la ubicación original a la carpeta de destino
+                File.Copy(imagePath, destinationPath, true);
+
+                return uniqueFileName;//nombre del archivo 
             }
-
-            // Obtén la extensión de archivo de la imagen original
-            string extension = Path.GetExtension(imagePath);
-
-            // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
-            string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension;
-
-            // Ruta completa para guardar la imagen en la carpeta
-            string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
-
-            // Copia la imagen desde la ubicación original a la carpeta de destino
-            File.Copy(imagePath, destinationPath, true);
-
-            return uniqueFileName;//nombre del archivo 
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return "";
+            }
         }
         private void restablecerTextBoxes()
         {
@@ -244,6 +254,7 @@ namespace gymsy.UserControls.AdminControls
             TBContraseña.Text = "";
             TBRutaImagen.Text = "";
             RBMasculino.Checked = true;
+            IPImagenInstructor.Image = gymsy.Properties.Resources.instructor;
         }
         private bool IsNicknameUnique(string nickname)
         {
@@ -279,7 +290,7 @@ namespace gymsy.UserControls.AdminControls
         private void BBack_Click(object sender, EventArgs e)
         {
 
-            //MainView.navigationControl.Display(1, true);
+            MainView.navigationControl.Display(1, true);
             AppState.isModeAdd = false;
         }
     }

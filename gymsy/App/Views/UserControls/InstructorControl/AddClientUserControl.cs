@@ -14,6 +14,7 @@ using gymsy.Context;
 using gymsy.App.Models;
 using System.Numerics;
 using System.Reflection;
+using gymsy.Utilities;
 
 namespace gymsy.UserControls
 {
@@ -279,7 +280,7 @@ namespace gymsy.UserControls
                         Nickname = usuario,
                         FirstName = TBNombre.Text,
                         Avatar = SaveImage(TBRutaImagen.Text),
-                        Password = TBContraseña.Text,
+                        Password = Bcrypt.HashPassoword(TBContraseña.Text),
                         CreatedAt = DateTime.Now,
                         LastName = TBApellido.Text,
                         CBU = usuario,
@@ -330,29 +331,38 @@ namespace gymsy.UserControls
          */
         private string SaveImage(string imagePath)
         {
-            //Ruta completa para guardar la imagen en la carpeta
-            string pathDestinationFolder = Path.Combine(AppState.pathDestinationFolder, AppState.nameCarpetImageClient);
-
-
-            // Asegúrate de que la carpeta exista, y si no, créala
-            if (!Directory.Exists(pathDestinationFolder))
+            try
             {
-                Directory.CreateDirectory(AppState.pathDestinationFolder);
+
+                //Ruta completa para guardar la imagen en la carpeta
+                string pathDestinationFolder = AppState.pathDestinationFolder + AppState.nameCarpetImageClient;
+
+
+                // Asegúrate de que la carpeta exista, y si no, créala
+                if (!Directory.Exists(pathDestinationFolder))
+                {
+                    Directory.CreateDirectory(pathDestinationFolder);
+                }
+
+                // Obtén la extensión de archivo de la imagen original
+                string extension = Path.GetExtension(imagePath);
+
+                // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
+                string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension;
+
+                // Ruta completa para guardar la imagen en la carpeta
+                string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
+
+                // Copia la imagen desde la ubicación original a la carpeta de destino
+                File.Copy(imagePath, destinationPath, true);
+
+                return uniqueFileName;//nombre del archivo 
             }
-
-            // Obtén la extensión de archivo de la imagen original
-            string extension = Path.GetExtension(imagePath);
-
-            // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
-            string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension;
-
-            // Ruta completa para guardar la imagen en la carpeta
-            string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
-
-            // Copia la imagen desde la ubicación original a la carpeta de destino
-            File.Copy(imagePath, destinationPath, true);
-
-            return uniqueFileName;//nombre del archivo 
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return "";
+            }
         }
 
 
@@ -399,29 +409,28 @@ namespace gymsy.UserControls
         // Función para verificar si el 'nickname' es único
         private bool IsNicknameUnique(string nickname)
         {
-            try
-            {
-                // Consulta la base de datos para verificar si ya existe un registro con el mismo 'nickname'
-                var existingPerson = this.dbContext.People.FirstOrDefault(p => p.Nickname == nickname);
+                try
+                {
+                    // Consulta la base de datos para verificar si ya existe un registro con el mismo 'nickname'
+                    var existingPerson = this.dbContext.People.FirstOrDefault(p => p.Nickname == nickname);
 
-                // Si 'existingPerson' no es nulo, significa que ya existe un registro con el mismo 'nickname'
-                if (existingPerson == null)
-                {
-                    return true;
+                    // Si 'existingPerson' no es nulo, significa que ya existe un registro con el mismo 'nickname'
+                    if (existingPerson == null)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nombre de usuario ya existe");
+                        return false;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("El nombre de usuario ya existe");
+                    MessageBox.Show("Error al verificar el nombre de usuario: " + ex.Message);
                     return false;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al verificar el nombre de usuario: " + ex.Message);
-                return false;
-            }
-
-
+            
         }
 
         public override void Refresh()

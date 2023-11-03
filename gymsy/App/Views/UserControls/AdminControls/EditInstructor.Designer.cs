@@ -30,9 +30,9 @@
         {
             label1 = new Label();
             panel1 = new Panel();
-            BBack = new ClassCustom.RJButton();
             newClientOrEditClient = new Label();
             panel2 = new Panel();
+            BBack = new ClassCustom.RJButton();
             TBRutaImagen = new TextBox();
             label5 = new Label();
             IPImagenInstructor = new PictureBox();
@@ -73,7 +73,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(278, 161);
             label1.Name = "label1";
-            label1.Size = new Size(120, 15);
+            label1.Size = new Size(78, 15);
             label1.TabIndex = 1;
             label1.Text = "EditInstructor";
             // 
@@ -88,33 +88,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1000, 530);
             panel1.TabIndex = 2;
-            // 
-            // BBack
-            // 
-            BBack.BackColor = Color.DarkOrange;
-            BBack.BackgroundColor = Color.DarkOrange;
-            BBack.BorderColor = Color.PaleVioletRed;
-            BBack.BorderRadius = 15;
-            BBack.BorderSize = 0;
-            BBack.FlatAppearance.BorderSize = 0;
-            BBack.FlatStyle = FlatStyle.Flat;
-            BBack.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BBack.ForeColor = Color.White;
-            BBack.IconChar = FontAwesome.Sharp.IconChar.ArrowLeftLong;
-            BBack.IconColor = Color.FromArgb(230, 237, 243);
-            BBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BBack.IconSize = 90;
-            BBack.ImageAlign = ContentAlignment.MiddleRight;
-            BBack.Location = new Point(3, 3);
-            BBack.Name = "BBack";
-            BBack.Padding = new Padding(10, 0, 0, 0);
-            BBack.Size = new Size(103, 64);
-            BBack.TabIndex = 99;
-            BBack.TextAlign = ContentAlignment.MiddleLeft;
-            BBack.TextColor = Color.White;
-            BBack.UseVisualStyleBackColor = false;
-            BBack.Visible = false;
-            BBack.Click += BBack_Click;
             // 
             // newClientOrEditClient
             // 
@@ -163,6 +136,32 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(934, 439);
             panel2.TabIndex = 54;
+            // 
+            // BBack
+            // 
+            BBack.BackColor = Color.DarkOrange;
+            BBack.BackgroundColor = Color.DarkOrange;
+            BBack.BorderColor = Color.PaleVioletRed;
+            BBack.BorderRadius = 15;
+            BBack.BorderSize = 0;
+            BBack.FlatAppearance.BorderSize = 0;
+            BBack.FlatStyle = FlatStyle.Flat;
+            BBack.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BBack.ForeColor = Color.White;
+            BBack.IconChar = FontAwesome.Sharp.IconChar.ArrowLeftLong;
+            BBack.IconColor = Color.FromArgb(230, 237, 243);
+            BBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BBack.IconSize = 90;
+            BBack.ImageAlign = ContentAlignment.MiddleRight;
+            BBack.Location = new Point(0, 0);
+            BBack.Name = "BBack";
+            BBack.Padding = new Padding(10, 0, 0, 0);
+            BBack.Size = new Size(103, 64);
+            BBack.TabIndex = 99;
+            BBack.TextAlign = ContentAlignment.MiddleLeft;
+            BBack.TextColor = Color.White;
+            BBack.UseVisualStyleBackColor = false;
+            BBack.Click += BBack_Click;
             // 
             // TBRutaImagen
             // 

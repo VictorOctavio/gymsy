@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using gymsy.Context;
 using gymsy.App.Models;
 using System.Collections;
+using gymsy.Utilities;
 
 namespace gymsy.UserControls
 {
@@ -43,20 +44,22 @@ namespace gymsy.UserControls
         }
         private void CargarCliente()
         {
-            if (AppState.ClientActive != null)
+            if (AppState.ClientActive != null && AppState.ClientActive.IdPersonNavigation != null)
             {
                 string name = AppState.ClientActive.IdPersonNavigation.FirstName.ToString();
                 string lastName = AppState.ClientActive.IdPersonNavigation.LastName.ToString();
                 string numberPhone = AppState.ClientActive.IdPersonNavigation.NumberPhone.ToString();
                 string nickname = AppState.ClientActive.IdPersonNavigation.Nickname.ToString();
 
+                TBContraseña.Text = AppState.ClientActive.IdPersonNavigation.Password.ToString();
 
                 TBNombre.Text = name;
                 TBApellido.Text = lastName;
                 TBTelefono.Text = numberPhone;
                 TBUsuario.Text = nickname;
                 //Que hacer con la contraseña?
-                //TBContraseña.Text = AppState.ClientActive.IdPersonNavigation.;
+                TBContraseña.Text = AppState.ClientActive.IdPersonNavigation.Password;
+
                 TBRutaImagen.Text = AppState.ClientActive.IdPersonNavigation.Avatar.ToString();
                 if (AppState.ClientActive.IdPersonNavigation.Gender.ToString() == "M" || AppState.ClientActive.IdPersonNavigation.Gender.ToString() == "m")
                 {
@@ -352,8 +355,12 @@ namespace gymsy.UserControls
                     // Actualiza las propiedades de la tabla person
                     personUpdated.Nickname = usuario;
                     personUpdated.FirstName = TBNombre.Text;
-                    personUpdated.Avatar = TBRutaImagen.Text;
-                    personUpdated.Password = TBContraseña.Text;
+                    personUpdated.Avatar = SaveImage(TBRutaImagen.Text);
+                    //Si se cambio la contraseña se actualizara
+                    if (personUpdated.Password != TBContraseña.Text)
+                    {
+                        personUpdated.Password = Bcrypt.HashPassoword( TBContraseña.Text);
+                    }
                     personUpdated.LastName = TBApellido.Text;
                     personUpdated.CBU = usuario;
                     personUpdated.NumberPhone = TBTelefono.Text;
@@ -376,7 +383,41 @@ namespace gymsy.UserControls
             }
 
         }
+        private string SaveImage(string imagePath)
+        {
+            try
+            {
 
+                //Ruta completa para guardar la imagen en la carpeta
+                string pathDestinationFolder = AppState.pathDestinationFolder + AppState.nameCarpetImageClient;
+
+
+                // Asegúrate de que la carpeta exista, y si no, créala
+                if (!Directory.Exists(pathDestinationFolder))
+                {
+                    Directory.CreateDirectory(pathDestinationFolder);
+                }
+
+                // Obtén la extensión de archivo de la imagen original
+                string extension = Path.GetExtension(imagePath);
+
+                // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
+                string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension;
+
+                // Ruta completa para guardar la imagen en la carpeta
+                string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
+
+                // Copia la imagen desde la ubicación original a la carpeta de destino
+                File.Copy(imagePath, destinationPath, true);
+
+                return uniqueFileName;//nombre del archivo 
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return "";
+            }
+        }
         private void CBPlanes_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             // Obtén la descripción seleccionada del ComboBox

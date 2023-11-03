@@ -33,13 +33,6 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructorsAdminControl));
             DGInstructors = new DataGridView();
-            avatar = new DataGridViewImageColumn();
-            name = new DataGridViewTextBoxColumn();
-            Telefono = new DataGridViewTextBoxColumn();
-            Clientes = new DataGridViewTextBoxColumn();
-            last_expiration = new DataGridViewTextBoxColumn();
-            id_instructor = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewTextBoxColumn();
             label3 = new Label();
             BVerClients = new ClassCustom.RJButton();
             label2 = new Label();
@@ -54,6 +47,13 @@
             BAgregarCliente = new ClassCustom.RJButton();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            avatar = new DataGridViewImageColumn();
+            name = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            Clientes = new DataGridViewTextBoxColumn();
+            last_expiration = new DataGridViewTextBoxColumn();
+            id_instructor = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)DGInstructors).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -103,50 +103,6 @@
             DGInstructors.ShowCellErrors = false;
             DGInstructors.Size = new Size(1000, 401);
             DGInstructors.TabIndex = 2;
-            // 
-            // avatar
-            // 
-            avatar.HeaderText = "Avatar";
-            avatar.Name = "avatar";
-            avatar.ReadOnly = true;
-            // 
-            // name
-            // 
-            name.HeaderText = "Nombre";
-            name.Name = "name";
-            name.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            Telefono.HeaderText = "Telefono";
-            Telefono.Name = "Telefono";
-            Telefono.ReadOnly = true;
-            // 
-            // Clientes
-            // 
-            Clientes.HeaderText = "Cantidad Clientes";
-            Clientes.Name = "Clientes";
-            Clientes.ReadOnly = true;
-            // 
-            // last_expiration
-            // 
-            last_expiration.HeaderText = "Ingreso como Instructor";
-            last_expiration.Name = "last_expiration";
-            last_expiration.ReadOnly = true;
-            // 
-            // id_instructor
-            // 
-            id_instructor.HeaderText = "id_instructor";
-            id_instructor.Name = "id_instructor";
-            id_instructor.ReadOnly = true;
-            id_instructor.Visible = false;
-            // 
-            // delete
-            // 
-            delete.HeaderText = "delete";
-            delete.Name = "delete";
-            delete.ReadOnly = true;
-            delete.Visible = false;
             // 
             // label3
             // 
@@ -425,6 +381,51 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(997, 122);
             panel1.TabIndex = 102;
+            // 
+            // avatar
+            // 
+            avatar.HeaderText = "Avatar";
+            avatar.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            avatar.Name = "avatar";
+            avatar.ReadOnly = true;
+            // 
+            // name
+            // 
+            name.HeaderText = "Nombre";
+            name.Name = "name";
+            name.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            Telefono.HeaderText = "Telefono";
+            Telefono.Name = "Telefono";
+            Telefono.ReadOnly = true;
+            // 
+            // Clientes
+            // 
+            Clientes.HeaderText = "Cantidad Clientes";
+            Clientes.Name = "Clientes";
+            Clientes.ReadOnly = true;
+            // 
+            // last_expiration
+            // 
+            last_expiration.HeaderText = "Ingreso como Instructor";
+            last_expiration.Name = "last_expiration";
+            last_expiration.ReadOnly = true;
+            // 
+            // id_instructor
+            // 
+            id_instructor.HeaderText = "id_instructor";
+            id_instructor.Name = "id_instructor";
+            id_instructor.ReadOnly = true;
+            id_instructor.Visible = false;
+            // 
+            // delete
+            // 
+            delete.HeaderText = "delete";
+            delete.Name = "delete";
+            delete.ReadOnly = true;
+            delete.Visible = false;
             // 
             // InstructorsAdminControl
             // 

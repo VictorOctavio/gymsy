@@ -56,7 +56,7 @@ namespace gymsy.UserControls.AdminControls
 
                 try
                 {
-                    string ruta = Path.Combine(AppState.pathDestinationFolder, AppState.nameCarpetImageInstructor, instructor.IdPersonNavigation.Avatar);
+                    string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor + "\\" + instructor.IdPersonNavigation.Avatar;
 
 
                     DGInstructors.Rows.Add(
@@ -179,13 +179,14 @@ namespace gymsy.UserControls.AdminControls
 
                 // Accede a la celda "id" del cliente
 
-                int idInstructorSelected = int.Parse(DGInstructors.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
+                int idInstructorSelected = int.Parse(DGInstructors.Rows[this.indexRowSelect].Cells["id_instructor"].Value.ToString());
 
                 var instructorSelected = this.dbContext.Instructors.Where(i => i.IdInstructor == idInstructorSelected).FirstOrDefault();
 
                 AppState.InstructorActive = instructorSelected;
+                AppState.isModeEdit = true;
 
-                MainView.navigationControl.Display(9, true);
+                MainView.navigationControl.Display(7, true);
 
             }
             else

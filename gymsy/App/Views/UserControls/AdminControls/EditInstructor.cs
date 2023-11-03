@@ -1,5 +1,6 @@
 ﻿using gymsy.App.Models;
 using gymsy.Context;
+using gymsy.Utilities;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace gymsy.UserControls.AdminControls
 {
@@ -28,13 +30,13 @@ namespace gymsy.UserControls.AdminControls
             //Se carga el cliente
             this.CargarInstructor();
 
-            BBack.Visible = AppState.isModeAdd;
+            //BBack.Visible = AppState.isModeAdd;
 
         }
 
         private void CargarInstructor()
         {
-            if (AppState.InstructorActive != null)
+            if (AppState.InstructorActive != null && AppState.InstructorActive.IdPersonNavigation != null)
             {
                 string name = AppState.InstructorActive.IdPersonNavigation.FirstName.ToString();
                 string lastName = AppState.InstructorActive.IdPersonNavigation.LastName.ToString();
@@ -45,9 +47,10 @@ namespace gymsy.UserControls.AdminControls
                 TBApellido.Text = lastName;
                 TBTelefono.Text = numberPhone;
                 TBUsuario.Text = nickname;
+                TBContraseña.Text = AppState.InstructorActive.IdPersonNavigation.Password.ToString();
                 //Que hacer con la contraseña?
                 //TBContraseña.Text = AppState.InstructorActive.IdPersonNavigation.;
-                
+
                 if (AppState.InstructorActive.IdPersonNavigation.Gender.ToString() == "M" || AppState.InstructorActive.IdPersonNavigation.Gender.ToString() == "m")
                 {
                     RBMasculino.Checked = true;
@@ -57,11 +60,11 @@ namespace gymsy.UserControls.AdminControls
                     RBFemenino.Checked = true;
                 }
 
-                DPFechaNacimiento.Value = AppState.InstructorActive.IdPersonNavigation.Birthday;          
+                DPFechaNacimiento.Value = AppState.InstructorActive.IdPersonNavigation.Birthday;
 
                 try
                 {
-                    string ruta = Path.Combine(AppState.pathDestinationFolder, AppState.nameCarpetImageInstructor, AppState.InstructorActive.IdPersonNavigation.Avatar);
+                    string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor + AppState.InstructorActive.IdPersonNavigation.Avatar;
                     TBRutaImagen.Text = ruta;
 
                     IPImagenInstructor.Image = System.Drawing.Image.FromFile(ruta);
@@ -85,7 +88,7 @@ namespace gymsy.UserControls.AdminControls
                     this.actualizarInstructor();
                     this.restablecerTextBoxes();
                     AppState.needRefreshClientsUserControl = true;
-                    //MainView.navigationControl.Display(1, true);
+                    MainView.navigationControl.Display(1, true);
 
                     MessageBox.Show("Se Guardaron correcctamente los datos");
 
@@ -102,6 +105,10 @@ namespace gymsy.UserControls.AdminControls
         {
             try
             {
+                var personUpdated = this.dbContext.People
+                                .Where(people => people.IdPerson == AppState.InstructorActive.IdPersonNavigation.IdPerson)
+                                .First();
+
                 string nombre = TBNombre.Text;
                 string apellido = TBApellido.Text;
                 string telefono = TBTelefono.Text;
@@ -120,38 +127,26 @@ namespace gymsy.UserControls.AdminControls
                     sexo = "F";
                 }
 
-                Person persona = new Person
+                if (personUpdated != null)
                 {
-                    Nickname = usuario,
-                    FirstName = TBNombre.Text,
-                    Avatar = SaveImage(TBRutaImagen.Text),
-                    Password = TBContraseña.Text,
-                    CreatedAt = DateTime.Now,
-                    LastName = TBApellido.Text,
-                    CBU = usuario,
-                    NumberPhone = TBTelefono.Text,
-                    Birthday = DPFechaNacimiento.Value,
-                    Gender = sexo,
-                    RolId = 2,//2 es el rol de Instructor
-                    Inactive = false
-                };
-                //se guarda en la base de datos, primero la persona por la relacion de la llave foranea
-                this.dbContext.People.Add(persona);
-                this.dbContext.SaveChanges();
+                    // Actualiza las propiedades de la tabla person
+                    personUpdated.Nickname = usuario;
+                    personUpdated.FirstName = TBNombre.Text;
+                    personUpdated.Avatar = SaveImage(TBRutaImagen.Text);
+                    //Si se cambio la contraseña se actualizara
+                    if (personUpdated.Password != TBContraseña.Text)
+                    {
+                        personUpdated.Password = Bcrypt.HashPassoword(TBContraseña.Text);
+                    }
+                    personUpdated.LastName = TBApellido.Text;
+                    personUpdated.CBU = usuario;
+                    personUpdated.NumberPhone = TBTelefono.Text;
+                    personUpdated.Gender = sexo;
+                    personUpdated.Birthday = DPFechaNacimiento.Value;
 
-                Instructor newInstructor = new Instructor
-                {
-                    IdPerson = persona.IdPerson
-                };
-
-                //Se guarda en AppState
-                //AppState.clients.Add(persona);
-
-
-
-                this.dbContext.Instructors.Add(newInstructor);
-                this.dbContext.SaveChanges();
-
+                    this.dbContext.SaveChanges();
+                }
+                AppState.isModeEdit = false;
 
                 MessageBox.Show("Se Editaron correcctamente los datos");
             }
@@ -274,29 +269,37 @@ namespace gymsy.UserControls.AdminControls
 
         private string SaveImage(string imagePath)
         {
-            //Ruta completa para guardar la imagen en la carpeta
-            string pathDestinationFolder = Path.Combine(AppState.pathDestinationFolder, AppState.nameCarpetImageInstructor);
-
-
-            // Asegúrate de que la carpeta exista, y si no, créala
-            if (!Directory.Exists(pathDestinationFolder))
+            try
             {
-                Directory.CreateDirectory(AppState.pathDestinationFolder);
+
+                //Ruta completa para guardar la imagen en la carpeta
+                string pathDestinationFolder = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor;
+
+
+                // Asegúrate de que la carpeta exista, y si no, créala
+                if (!Directory.Exists(pathDestinationFolder))
+                {
+                    Directory.CreateDirectory(pathDestinationFolder);
+                }
+
+                // Obtén la extensión de archivo de la imagen original
+                string extension = Path.GetExtension(imagePath);
+
+                // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
+                string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension;
+
+                // Ruta completa para guardar la imagen en la carpeta
+                string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
+
+                // Copia la imagen desde la ubicación original a la carpeta de destino
+                File.Copy(imagePath, destinationPath, true);
+
+                return uniqueFileName;//nombre del archivo 
+            } catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return "";
             }
-
-            // Obtén la extensión de archivo de la imagen original
-            string extension = Path.GetExtension(imagePath);
-
-            // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
-            string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension;
-
-            // Ruta completa para guardar la imagen en la carpeta
-            string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
-
-            // Copia la imagen desde la ubicación original a la carpeta de destino
-            File.Copy(imagePath, destinationPath, true);
-
-            return uniqueFileName;//nombre del archivo 
         }
         private void restablecerTextBoxes()
         {
@@ -310,37 +313,44 @@ namespace gymsy.UserControls.AdminControls
         }
         private bool IsNicknameUnique(string nickname)
         {
-            try
+            if (!AppState.isModeEdit)
             {
-                // Consulta la base de datos para verificar si ya existe un registro con el mismo 'nickname'
-                var existingPerson = this.dbContext.People.FirstOrDefault(p => p.Nickname == nickname);
+                try
+                {
+                    // Consulta la base de datos para verificar si ya existe un registro con el mismo 'nickname'
+                    var existingPerson = this.dbContext.People.FirstOrDefault(p => p.Nickname == nickname);
 
-                // Si 'existingPerson' no es nulo, significa que ya existe un registro con el mismo 'nickname'
-                if (existingPerson == null)
-                {
-                    return true;
+                    // Si 'existingPerson' no es nulo, significa que ya existe un registro con el mismo 'nickname'
+                    if (existingPerson == null)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nombre de usuario ya existe");
+                        return false;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("El nombre de usuario ya existe");
+                    MessageBox.Show("Error al verificar el nombre de usuario: " + ex.Message);
                     return false;
                 }
+
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error al verificar el nombre de usuario: " + ex.Message);
-                return false;
+                return true;
             }
-
-
         }
 
 
         private void BBack_Click(object sender, EventArgs e)
         {
-
-            //MainView.navigationControl.Display(1, true);
+            AppState.isModeEdit = false;
             AppState.isModeAdd = false;
+            MainView.navigationControl.Display(1, true);
+            
         }
     }
 }

@@ -33,6 +33,8 @@ namespace gymsy.Context
 
         public static bool needRefreshClientsUserControl { get; set; } = false;
 
+        public static bool isModeEdit { get; set; } = false;
+
 
 
     }
