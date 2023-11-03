@@ -118,7 +118,7 @@ namespace gymsy.UserControls
                     }
                     try
                     {
-                        string ruta = Path.Combine(AppState.pathDestinationFolder, AppState.nameCarpetImageClient, client.IdPersonNavigation.Avatar);
+                        string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient + "\\" + client.IdPersonNavigation.Avatar;
 
 
 
