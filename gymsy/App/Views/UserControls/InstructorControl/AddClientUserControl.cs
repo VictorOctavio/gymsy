@@ -200,7 +200,7 @@ namespace gymsy.UserControls
                 LidPlan.Text = trainingPlan.IdTrainingPlan.ToString();
                 TBPrecio.Text = trainingPlan.Price.ToString();
                 TBDescripcion.Text = trainingPlan.Description;
-                TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
+                //TBNombreInstructor.Text = trainingPlan.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + trainingPlan.IdInstructorNavigation.IdPersonNavigation.LastName;
 
                 CBPlanes.Items.Add(trainingPlan.Description);
             }

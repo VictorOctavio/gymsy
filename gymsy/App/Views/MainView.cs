@@ -8,6 +8,9 @@ using gymsy.UserControls;
 using gymsy.UserControls.AdminControls;
 using gymsy.UserControls.ClientControls;
 
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
 
 
 namespace gymsy
@@ -79,7 +82,7 @@ namespace gymsy
 
             List<UserControl> userControls = new List<UserControl>()
             { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(),
-              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(), 
+              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(),
                 new AddProgressClientControl(), new EditClient()
             };
 
@@ -247,7 +250,7 @@ namespace gymsy
         {
             btnAddTimer.Start();
         }
- 
+
         private void btnAddAdmin_Click(object sender, EventArgs e)
         {
             timerAddAdmin.Start();
@@ -356,10 +359,8 @@ namespace gymsy
         private void btnNavSignout_Click(object sender, EventArgs e)
         {
             Application.OpenForms[0].Close();
-         
+
 
         }
-
-
     }
 }

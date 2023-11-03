@@ -10,6 +10,9 @@
     <Compile Update="App\Views\UserControls\InstructorControl\ClientsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="App\Views\UserControls\WalletUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ClassCustom\Class1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -50,9 +53,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="App\Views\UserControls\SettingsUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="App\Views\UserControls\WalletUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

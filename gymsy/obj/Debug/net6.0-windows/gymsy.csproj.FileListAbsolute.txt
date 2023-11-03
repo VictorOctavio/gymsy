@@ -229,3 +229,8 @@ C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-window
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.EditClient.resources
 >>>>>>> 3e1703374de2ff9c6fc25532dab0ad9332139a6a
 C:\Programming\NET\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.EditClient.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\WinForms.DataVisualization.Utilities.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\WinForms.DataVisualization.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.EditClient.resources
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Twilio.dll

@@ -1,5 +1,4 @@
-﻿using gymsy.App.Models;
-using gymsy.Context;
+﻿using gymsy.Context;
 using gymsy.utilities;
 using System;
 using System.Collections.Generic;
@@ -10,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Twilio.TwiML.Voice;
+using gymsy.App.Models;
+using Pay = gymsy.App.Models.Pay;
 
 namespace gymsy.UserControls
 {
@@ -17,12 +19,13 @@ namespace gymsy.UserControls
     {
 
         private GymsyDbContext gymsydb = GymsyContext.GymsyContextDB;
+        private IEnumerable<Pay> PaysList;
 
         public WalletUserControl()
         {
             InitializeComponent();
-            InitializeGridTransactions();
             InitializeData();
+            InitializeGridTransactions();
         }
 
         private void InitializeData()
@@ -32,26 +35,65 @@ namespace gymsy.UserControls
                 TbAmount.Text = $"$ {AppState.person.Wallets.First().Retirable}";
                 TbTotalAmount.Text = $"$ {AppState.person.Wallets.First().Total}";
             }
+            this.PaysList = AppState.person.PayDestinatarios.ToArray()
+                    .Concat(AppState.person.PayRemitentes.ToArray());
+
+            AppState.persons.ForEach(per =>
+            {
+                if (per.RolId != 3 && per.IdPerson != AppState.person.IdPerson)
+                {
+                    comboBoxInstructors.Items.Add(new { Text = per.FirstName, Value = per.IdPerson });
+                }
+            });
+
         }
 
         private void InitializeGridTransactions()
         {
-            if (!AppState.person.Equals(null))
+            // Concatenar pagos realizados y entrantes
+            if (PaysList.Count() > 0)
             {
 
-                var Pays = AppState.person.PayDestinatarios
-                    .Concat(AppState.person.PayRemitentes).ToArray();
+                dataGridTransactions.Visible = true;
+                PanelMsg.Visible = false;
 
-                if (Pays.Length > 0)
+                foreach (Pay pay in PaysList)
                 {
-                    dataGridTransactions.Rows.Add(0, "01/07/23", "Tranferencia", "$ 27000", "Destino: Luka Romero [Instructor]");
-                    dataGridTransactions.Rows.Add(1, "01/06/23", "Retiro", "$ 17500", "Destino: Tú");
+                    TimeSpan diferencia = (DateTime.Now - pay.CreatedAt);
+                    String formart = $"Hace {diferencia.Days} dias";
+                    int destinoId = pay.RemitenteId == AppState.person.IdPerson ? pay.DestinatarioId : pay.RemitenteId;
+
+                    dataGridTransactions.Rows.Add(
+                        pay.IdPay,
+                        formart,
+                        pay.IdPayTypeNavigation.Name,
+                        $"$ {pay.Amount}",
+                        $"Destino: {destinoId}"
+                    );
                 }
-                else
-                {
-                    PanelMsg.Visible = true;
-                }
+
+                dataGridTransactions.Refresh();
             }
+            else
+            {
+                PanelMsg.Visible = true;
+            }
+
+        }
+
+        private void AddTransaction(Pay pay)
+        {
+            TimeSpan diferencia = (DateTime.Now - pay.CreatedAt);
+            String formart = $"Hace {diferencia.Days} dias";
+            int destinoId = pay.RemitenteId == AppState.person.IdPerson ? pay.DestinatarioId : pay.RemitenteId;
+
+            dataGridTransactions.Rows.Add(
+                pay.IdPay,
+                formart,
+                pay.IdPayTypeNavigation.Name,
+                $"$ {pay.Amount}",
+                $"Destino: {destinoId}"
+            );
         }
 
         private void TextBoxAmount_KeyPress(object sender, KeyPressEventArgs e)
@@ -67,7 +109,9 @@ namespace gymsy.UserControls
                 labelTransactionError.Visible = false;
 
                 // Validamos dinero disponible en su billetera
-                if (!CheckAvailableMoney(float.Parse(TbAmountTransaction.Text)))
+                if ((Double.Parse(TbAmountTran.Text) > 0) &&
+                    AppState.person.Wallets.First().Retirable <= Double.Parse(TbAmountTran.Text)
+                    )
                 {
                     labelTransactionError.Text = "Fondos insuficientes";
                     labelTransactionError.Visible = true;
@@ -84,17 +128,29 @@ namespace gymsy.UserControls
                 // se hace la transaccion
                 Pay ModelPay = new Pay();
                 ModelPay.CreatedAt = DateTime.Now;
-                ModelPay.Amount = float.Parse(TbAmount.Text);
+                ModelPay.Amount = double.Parse(TbAmountTran.Text);
                 ModelPay.RemitenteId = AppState.person.IdPerson;
-                ModelPay.DestinatarioId = 1;
+                ModelPay.DestinatarioId = 13;
                 ModelPay.IdPayType = 1;
                 ModelPay.Inactive = false;
 
-                this.gymsydb.Pays.Add(ModelPay);
+                // Resta monto de billetera
+                Wallet WalletModel = AppState.person.Wallets.First();
+                WalletModel.Retirable -= double.Parse(TbAmountTran.Text);
+
+                var Pays = this.gymsydb.Pays.Add(ModelPay);
+                this.gymsydb.Wallets.Update(WalletModel);
+
+                // Update state
+                this.PaysList.ToList().Add(ModelPay);
+
+                TbAmount.Text = $"$ {WalletModel.Retirable}";
+                AddTransaction(ModelPay);
+
+                // Save
                 this.gymsydb.SaveChanges();
 
                 PanelInvoiceWallet.Visible = true;
-
             }
             catch (Exception ex)
             {
@@ -140,6 +196,6 @@ namespace gymsy.UserControls
             PanelInvoiceWallet.Visible = false;
         }
 
-        
+
     }
 }

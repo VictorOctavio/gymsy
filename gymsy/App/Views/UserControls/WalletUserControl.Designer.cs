@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             panelWalletWrapper = new Panel();
             panel2 = new Panel();
             panel5 = new Panel();
+            TbAmountTran = new TextBox();
             labelTransactionError = new ClassCustom.RJButton();
             comboBoxInstructors = new ComboBox();
             btnNewTransaction = new ClassCustom.RJButton();
@@ -47,7 +48,6 @@
             rjButton1 = new ClassCustom.RJButton();
             label6 = new Label();
             label11 = new Label();
-            TbAmountTransaction = new TextBox();
             label9 = new Label();
             panel6 = new Panel();
             labelErrorWithdraw = new ClassCustom.RJButton();
@@ -100,9 +100,8 @@
             panelWalletWrapper.Controls.Add(panel1);
             panelWalletWrapper.Dock = DockStyle.Fill;
             panelWalletWrapper.Location = new Point(0, 0);
-            panelWalletWrapper.Margin = new Padding(4, 5, 4, 5);
             panelWalletWrapper.Name = "panelWalletWrapper";
-            panelWalletWrapper.Size = new Size(1550, 1053);
+            panelWalletWrapper.Size = new Size(1085, 632);
             panelWalletWrapper.TabIndex = 0;
             // 
             // panel2
@@ -111,14 +110,14 @@
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel6);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(1053, 0);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(737, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(497, 1053);
+            panel2.Size = new Size(348, 632);
             panel2.TabIndex = 1;
             // 
             // panel5
             // 
+            panel5.Controls.Add(TbAmountTran);
             panel5.Controls.Add(labelTransactionError);
             panel5.Controls.Add(comboBoxInstructors);
             panel5.Controls.Add(btnNewTransaction);
@@ -126,14 +125,27 @@
             panel5.Controls.Add(rjButton1);
             panel5.Controls.Add(label6);
             panel5.Controls.Add(label11);
-            panel5.Controls.Add(TbAmountTransaction);
             panel5.Controls.Add(label9);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
-            panel5.Margin = new Padding(4, 5, 4, 5);
             panel5.Name = "panel5";
-            panel5.Size = new Size(497, 610);
+            panel5.Size = new Size(348, 366);
             panel5.TabIndex = 38;
+            // 
+            // TbAmountTran
+            // 
+            TbAmountTran.Anchor = AnchorStyles.None;
+            TbAmountTran.BorderStyle = BorderStyle.FixedSingle;
+            TbAmountTran.Cursor = Cursors.Hand;
+            TbAmountTran.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            TbAmountTran.ForeColor = Color.FromArgb(9, 0, 20);
+            TbAmountTran.Location = new Point(53, 130);
+            TbAmountTran.Margin = new Padding(5, 4, 5, 4);
+            TbAmountTran.Multiline = true;
+            TbAmountTran.Name = "TbAmountTran";
+            TbAmountTran.Size = new Size(271, 36);
+            TbAmountTran.TabIndex = 47;
+            TbAmountTran.KeyPress += TextBoxAmount_KeyPress;
             // 
             // labelTransactionError
             // 
@@ -152,10 +164,10 @@
             labelTransactionError.IconFont = FontAwesome.Sharp.IconFont.Auto;
             labelTransactionError.IconSize = 1;
             labelTransactionError.ImageAlign = ContentAlignment.MiddleLeft;
-            labelTransactionError.Location = new Point(81, 408);
+            labelTransactionError.Location = new Point(57, 244);
             labelTransactionError.Margin = new Padding(0);
             labelTransactionError.Name = "labelTransactionError";
-            labelTransactionError.Size = new Size(387, 43);
+            labelTransactionError.Size = new Size(271, 26);
             labelTransactionError.TabIndex = 46;
             labelTransactionError.Text = "Retirar";
             labelTransactionError.TextColor = Color.Red;
@@ -167,11 +179,9 @@
             comboBoxInstructors.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxInstructors.FormattingEnabled = true;
             comboBoxInstructors.IntegralHeight = false;
-            comboBoxInstructors.Items.AddRange(new object[] { "Instructor1,", "Instructor2,", "Instructor3" });
-            comboBoxInstructors.Location = new Point(81, 348);
-            comboBoxInstructors.Margin = new Padding(4, 5, 4, 5);
+            comboBoxInstructors.Location = new Point(57, 208);
             comboBoxInstructors.Name = "comboBoxInstructors";
-            comboBoxInstructors.Size = new Size(385, 40);
+            comboBoxInstructors.Size = new Size(271, 29);
             comboBoxInstructors.TabIndex = 32;
             // 
             // btnNewTransaction
@@ -192,11 +202,11 @@
             btnNewTransaction.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNewTransaction.IconSize = 30;
             btnNewTransaction.ImageAlign = ContentAlignment.MiddleRight;
-            btnNewTransaction.Location = new Point(157, 460);
+            btnNewTransaction.Location = new Point(110, 276);
             btnNewTransaction.Margin = new Padding(0);
             btnNewTransaction.Name = "btnNewTransaction";
-            btnNewTransaction.Padding = new Padding(14, 0, 14, 0);
-            btnNewTransaction.Size = new Size(227, 82);
+            btnNewTransaction.Padding = new Padding(10, 0, 10, 0);
+            btnNewTransaction.Size = new Size(159, 50);
             btnNewTransaction.TabIndex = 44;
             btnNewTransaction.Text = "Transferir";
             btnNewTransaction.TextAlign = ContentAlignment.MiddleLeft;
@@ -219,10 +229,10 @@
             rjButton2.IconColor = Color.Green;
             rjButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             rjButton2.IconSize = 40;
-            rjButton2.Location = new Point(14, 335);
+            rjButton2.Location = new Point(10, 201);
             rjButton2.Margin = new Padding(0);
             rjButton2.Name = "rjButton2";
-            rjButton2.Size = new Size(71, 78);
+            rjButton2.Size = new Size(50, 46);
             rjButton2.TabIndex = 43;
             rjButton2.TextColor = Color.DimGray;
             rjButton2.UseVisualStyleBackColor = false;
@@ -242,10 +252,10 @@
             rjButton1.IconColor = Color.Green;
             rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             rjButton1.IconSize = 35;
-            rjButton1.Location = new Point(7, 212);
+            rjButton1.Location = new Point(5, 128);
             rjButton1.Margin = new Padding(0);
             rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(71, 78);
+            rjButton1.Size = new Size(50, 46);
             rjButton1.TabIndex = 42;
             rjButton1.TextColor = Color.DimGray;
             rjButton1.UseVisualStyleBackColor = false;
@@ -257,10 +267,9 @@
             label6.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = SystemColors.ActiveCaptionText;
             label6.ImageAlign = ContentAlignment.MiddleLeft;
-            label6.Location = new Point(79, 70);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(55, 42);
             label6.Name = "label6";
-            label6.Size = new Size(379, 54);
+            label6.Size = new Size(254, 37);
             label6.TabIndex = 4;
             label6.Text = "Nueva Transferencia";
             label6.TextAlign = ContentAlignment.TopCenter;
@@ -271,27 +280,11 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label11.ForeColor = SystemColors.ActiveCaptionText;
-            label11.Location = new Point(76, 302);
-            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Location = new Point(53, 182);
             label11.Name = "label11";
-            label11.Size = new Size(109, 36);
+            label11.Size = new Size(77, 25);
             label11.TabIndex = 39;
             label11.Text = "Destino:";
-            // 
-            // TbAmountTransaction
-            // 
-            TbAmountTransaction.Anchor = AnchorStyles.None;
-            TbAmountTransaction.BorderStyle = BorderStyle.FixedSingle;
-            TbAmountTransaction.Cursor = Cursors.Hand;
-            TbAmountTransaction.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            TbAmountTransaction.ForeColor = Color.FromArgb(9, 0, 20);
-            TbAmountTransaction.Location = new Point(55, 131);
-            TbAmountTransaction.Margin = new Padding(5);
-            TbAmountTransaction.Multiline = true;
-            TbAmountTransaction.Name = "TbAmountTransaction";
-            TbAmountTransaction.Size = new Size(271, 36);
-            TbAmountTransaction.TabIndex = 11;
-            TbAmountTransaction.KeyPress += TextBoxAmount_KeyPress;
             // 
             // label9
             // 
@@ -299,10 +292,9 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.ActiveCaptionText;
-            label9.Location = new Point(76, 173);
-            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Location = new Point(53, 104);
             label9.Name = "label9";
-            label9.Size = new Size(98, 36);
+            label9.Size = new Size(69, 25);
             label9.TabIndex = 1;
             label9.Text = "Monto";
             // 
@@ -315,10 +307,9 @@
             panel6.Controls.Add(rjButton3);
             panel6.Controls.Add(label7);
             panel6.Dock = DockStyle.Bottom;
-            panel6.Location = new Point(0, 605);
-            panel6.Margin = new Padding(4, 5, 4, 5);
+            panel6.Location = new Point(0, 364);
             panel6.Name = "panel6";
-            panel6.Size = new Size(497, 448);
+            panel6.Size = new Size(348, 268);
             panel6.TabIndex = 43;
             // 
             // labelErrorWithdraw
@@ -338,11 +329,11 @@
             labelErrorWithdraw.IconFont = FontAwesome.Sharp.IconFont.Auto;
             labelErrorWithdraw.IconSize = 1;
             labelErrorWithdraw.ImageAlign = ContentAlignment.MiddleLeft;
-            labelErrorWithdraw.Location = new Point(79, 282);
+            labelErrorWithdraw.Location = new Point(55, 170);
             labelErrorWithdraw.Margin = new Padding(0);
             labelErrorWithdraw.Name = "labelErrorWithdraw";
-            labelErrorWithdraw.Padding = new Padding(7, 0, 0, 0);
-            labelErrorWithdraw.Size = new Size(387, 43);
+            labelErrorWithdraw.Padding = new Padding(5, 0, 0, 0);
+            labelErrorWithdraw.Size = new Size(271, 26);
             labelErrorWithdraw.TabIndex = 47;
             labelErrorWithdraw.Text = "Retirar";
             labelErrorWithdraw.TextColor = Color.Red;
@@ -367,11 +358,11 @@
             btnNewWithdraw.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNewWithdraw.IconSize = 30;
             btnNewWithdraw.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNewWithdraw.Location = new Point(157, 332);
+            btnNewWithdraw.Location = new Point(110, 200);
             btnNewWithdraw.Margin = new Padding(0);
             btnNewWithdraw.Name = "btnNewWithdraw";
-            btnNewWithdraw.Padding = new Padding(14, 0, 29, 0);
-            btnNewWithdraw.Size = new Size(227, 82);
+            btnNewWithdraw.Padding = new Padding(10, 0, 20, 0);
+            btnNewWithdraw.Size = new Size(159, 50);
             btnNewWithdraw.TabIndex = 45;
             btnNewWithdraw.Text = "Retirar";
             btnNewWithdraw.TextAlign = ContentAlignment.MiddleRight;
@@ -385,10 +376,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = SystemColors.ActiveCaptionText;
-            label8.Location = new Point(79, 163);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(55, 98);
             label8.Name = "label8";
-            label8.Size = new Size(98, 36);
+            label8.Size = new Size(69, 25);
             label8.TabIndex = 44;
             label8.Text = "Monto";
             // 
@@ -399,11 +389,11 @@
             textBoxWithdraw.Cursor = Cursors.Hand;
             textBoxWithdraw.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxWithdraw.ForeColor = Color.FromArgb(9, 0, 20);
-            textBoxWithdraw.Location = new Point(79, 210);
-            textBoxWithdraw.Margin = new Padding(7, 8, 7, 8);
+            textBoxWithdraw.Location = new Point(55, 126);
+            textBoxWithdraw.Margin = new Padding(5, 4, 5, 4);
             textBoxWithdraw.Multiline = true;
             textBoxWithdraw.Name = "textBoxWithdraw";
-            textBoxWithdraw.Size = new Size(386, 59);
+            textBoxWithdraw.Size = new Size(271, 36);
             textBoxWithdraw.TabIndex = 44;
             textBoxWithdraw.KeyPress += TextBoxAmount_KeyPress;
             // 
@@ -422,10 +412,10 @@
             rjButton3.IconColor = Color.Green;
             rjButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             rjButton3.IconSize = 35;
-            rjButton3.Location = new Point(10, 205);
+            rjButton3.Location = new Point(7, 123);
             rjButton3.Margin = new Padding(0);
             rjButton3.Name = "rjButton3";
-            rjButton3.Size = new Size(71, 78);
+            rjButton3.Size = new Size(50, 46);
             rjButton3.TabIndex = 43;
             rjButton3.TextColor = Color.DimGray;
             rjButton3.UseVisualStyleBackColor = false;
@@ -437,10 +427,9 @@
             label7.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = SystemColors.ActiveCaptionText;
             label7.ImageAlign = ContentAlignment.MiddleLeft;
-            label7.Location = new Point(124, 78);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Location = new Point(87, 46);
             label7.Name = "label7";
-            label7.Size = new Size(255, 54);
+            label7.Size = new Size(172, 37);
             label7.TabIndex = 5;
             label7.Text = "Nuevo Retiro";
             // 
@@ -455,7 +444,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1550, 1053);
+            panel1.Size = new Size(1085, 632);
             panel1.TabIndex = 0;
             // 
             // PanelInvoiceWallet
@@ -468,14 +457,13 @@
             PanelInvoiceWallet.Controls.Add(label12);
             PanelInvoiceWallet.Controls.Add(rjButton4);
             PanelInvoiceWallet.Controls.Add(label10);
-            PanelInvoiceWallet.Location = new Point(176, 93);
+            PanelInvoiceWallet.Location = new Point(191, 91);
             PanelInvoiceWallet.Margin = new Padding(0);
-            PanelInvoiceWallet.MaximumSize = new Size(503, 280);
+            PanelInvoiceWallet.MaximumSize = new Size(353, 168);
             PanelInvoiceWallet.Name = "PanelInvoiceWallet";
-            PanelInvoiceWallet.Size = new Size(503, 280);
+            PanelInvoiceWallet.Size = new Size(353, 168);
             PanelInvoiceWallet.TabIndex = 5;
             PanelInvoiceWallet.Visible = false;
-         
             // 
             // BtnCloseInvoice
             // 
@@ -495,10 +483,10 @@
             BtnCloseInvoice.IconColor = Color.White;
             BtnCloseInvoice.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnCloseInvoice.IconSize = 20;
-            BtnCloseInvoice.Location = new Point(451, 7);
+            BtnCloseInvoice.Location = new Point(316, 4);
             BtnCloseInvoice.Margin = new Padding(0);
             BtnCloseInvoice.Name = "BtnCloseInvoice";
-            BtnCloseInvoice.Size = new Size(44, 42);
+            BtnCloseInvoice.Size = new Size(31, 26);
             BtnCloseInvoice.TabIndex = 49;
             BtnCloseInvoice.TextAlign = ContentAlignment.MiddleLeft;
             BtnCloseInvoice.TextColor = Color.White;
@@ -511,10 +499,9 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = Color.DarkOrange;
-            label12.Location = new Point(110, 130);
-            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Location = new Point(77, 78);
             label12.Name = "label12";
-            label12.Size = new Size(310, 32);
+            label12.Size = new Size(201, 21);
             label12.TabIndex = 48;
             label12.Text = "Descripcion de la operacion";
             label12.TextAlign = ContentAlignment.MiddleLeft;
@@ -538,11 +525,11 @@
             rjButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             rjButton4.IconSize = 30;
             rjButton4.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton4.Location = new Point(77, 182);
+            rjButton4.Location = new Point(54, 110);
             rjButton4.Margin = new Padding(0);
             rjButton4.Name = "rjButton4";
-            rjButton4.Padding = new Padding(14, 0, 14, 0);
-            rjButton4.Size = new Size(363, 70);
+            rjButton4.Padding = new Padding(10, 0, 10, 0);
+            rjButton4.Size = new Size(254, 42);
             rjButton4.TabIndex = 47;
             rjButton4.Text = "Descargar Comprobante";
             rjButton4.TextAlign = ContentAlignment.MiddleLeft;
@@ -557,10 +544,9 @@
             label10.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.ActiveCaptionText;
             label10.ImageAlign = ContentAlignment.MiddleLeft;
-            label10.Location = new Point(99, 52);
-            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Location = new Point(69, 32);
             label10.Name = "label10";
-            label10.Size = new Size(339, 54);
+            label10.Size = new Size(230, 37);
             label10.TabIndex = 47;
             label10.Text = "Operacion Exitosa";
             label10.TextAlign = ContentAlignment.TopCenter;
@@ -576,9 +562,10 @@
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(TbAmount);
-            panel4.Location = new Point(2, 114);
+            panel4.Location = new Point(2, 103);
+            panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(460, 174);
+            panel4.Size = new Size(524, 168);
             panel4.TabIndex = 4;
             // 
             // label14
@@ -587,7 +574,8 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = Color.DarkOrange;
-            label14.Location = new Point(282, 25);
+            label14.Location = new Point(338, 36);
+            label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
             label14.Size = new Size(42, 21);
             label14.TabIndex = 5;
@@ -600,7 +588,8 @@
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label15.ForeColor = Color.Orange;
-            label15.Location = new Point(282, 125);
+            label15.Location = new Point(338, 100);
+            label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
             label15.Size = new Size(75, 21);
             label15.TabIndex = 4;
@@ -613,7 +602,8 @@
             TbTotalAmount.AutoSize = true;
             TbTotalAmount.Font = new Font("Microsoft Sans Serif", 24.75F, FontStyle.Regular, GraphicsUnit.Point);
             TbTotalAmount.ForeColor = Color.White;
-            TbTotalAmount.Location = new Point(282, 65);
+            TbTotalAmount.Location = new Point(329, 64);
+            TbTotalAmount.Margin = new Padding(2, 0, 2, 0);
             TbTotalAmount.Name = "TbTotalAmount";
             TbTotalAmount.Size = new Size(152, 38);
             TbTotalAmount.TabIndex = 3;
@@ -626,9 +616,10 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.DarkCyan;
-            label5.Location = new Point(32, 18);
+            label5.Location = new Point(32, 23);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(160, 41);
+            label5.Size = new Size(106, 28);
             label5.TabIndex = 2;
             label5.Text = "Disponible";
             label5.TextAlign = ContentAlignment.MiddleLeft;
@@ -639,9 +630,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.DarkCyan;
-            label2.Location = new Point(29, 118);
+            label2.Location = new Point(32, 119);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(98, 41);
+            label2.Size = new Size(66, 28);
             label2.TabIndex = 1;
             label2.Text = "ahora";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -652,7 +644,8 @@
             TbAmount.AutoSize = true;
             TbAmount.Font = new Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point);
             TbAmount.ForeColor = Color.White;
-            TbAmount.Location = new Point(15, 55);
+            TbAmount.Location = new Point(23, 50);
+            TbAmount.Margin = new Padding(2, 0, 2, 0);
             TbAmount.Name = "TbAmount";
             TbAmount.Size = new Size(244, 61);
             TbAmount.TabIndex = 0;
@@ -665,10 +658,9 @@
             label3.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
             label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(4, 38);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(3, 22);
             label3.Name = "label3";
-            label3.Size = new Size(333, 81);
+            label3.Size = new Size(223, 54);
             label3.TabIndex = 3;
             label3.Text = "Mi Billetera";
             // 
@@ -679,11 +671,10 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(dataGridTransactions);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 520);
-            panel3.Margin = new Padding(4, 5, 4, 5);
-            panel3.MinimumSize = new Size(0, 533);
+            panel3.Location = new Point(0, 312);
+            panel3.MinimumSize = new Size(0, 320);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1550, 533);
+            panel3.Size = new Size(1085, 320);
             panel3.TabIndex = 2;
             // 
             // PanelMsg
@@ -691,17 +682,19 @@
             PanelMsg.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             PanelMsg.Controls.Add(pictureBox1);
             PanelMsg.Controls.Add(label13);
-            PanelMsg.Location = new Point(188, 149);
+            PanelMsg.Location = new Point(148, 166);
+            PanelMsg.Margin = new Padding(2);
             PanelMsg.Name = "PanelMsg";
-            PanelMsg.Size = new Size(341, 79);
+            PanelMsg.Size = new Size(343, 65);
             PanelMsg.TabIndex = 5;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.wallet_free;
-            pictureBox1.Location = new Point(14, 14);
+            pictureBox1.Location = new Point(10, 8);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(57, 50);
+            pictureBox1.Size = new Size(51, 47);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -710,7 +703,8 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label13.ForeColor = SystemColors.ButtonHighlight;
-            label13.Location = new Point(78, 25);
+            label13.Location = new Point(75, 19);
+            label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
             label13.Size = new Size(260, 25);
             label13.TabIndex = 0;
@@ -721,10 +715,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(4, 28);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(3, 16);
             label4.Name = "label4";
-            label4.Size = new Size(408, 54);
+            label4.Size = new Size(276, 37);
             label4.TabIndex = 4;
             label4.Text = "Ultimas Transacciones";
             label4.TextAlign = ContentAlignment.MiddleLeft;
@@ -735,58 +728,57 @@
             dataGridTransactions.AllowUserToDeleteRows = false;
             dataGridTransactions.AllowUserToResizeColumns = false;
             dataGridTransactions.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.Transparent;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridTransactions.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewCellStyle10.BackColor = Color.Transparent;
+            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle10.SelectionForeColor = Color.White;
+            dataGridTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             dataGridTransactions.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridTransactions.BackgroundColor = Color.FromArgb(16, 8, 30);
             dataGridTransactions.CausesValidation = false;
             dataGridTransactions.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.Transparent;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.Transparent;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dataGridTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             dataGridTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridTransactions.Columns.AddRange(new DataGridViewColumn[] { ID, gridDate, gridType, gridAmount, gridDescription });
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dataGridTransactions.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle16.SelectionForeColor = Color.White;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.False;
+            dataGridTransactions.DefaultCellStyle = dataGridViewCellStyle16;
             dataGridTransactions.GridColor = Color.Black;
-            dataGridTransactions.Location = new Point(0, 112);
+            dataGridTransactions.Location = new Point(0, 68);
             dataGridTransactions.Margin = new Padding(0);
             dataGridTransactions.MultiSelect = false;
             dataGridTransactions.Name = "dataGridTransactions";
             dataGridTransactions.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.IndianRed;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.GrayText;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dataGridTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = Color.IndianRed;
+            dataGridViewCellStyle17.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = SystemColors.GrayText;
+            dataGridViewCellStyle17.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            dataGridTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             dataGridTransactions.RowHeadersVisible = false;
             dataGridTransactions.RowHeadersWidth = 62;
             dataGridTransactions.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle9.BackColor = Color.White;
-            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle9.SelectionBackColor = Color.White;
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridTransactions.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.BackColor = Color.White;
+            dataGridViewCellStyle18.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle18.ForeColor = Color.White;
+            dataGridViewCellStyle18.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle18.SelectionBackColor = Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = Color.White;
+            dataGridTransactions.RowsDefaultCellStyle = dataGridViewCellStyle18;
             dataGridTransactions.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
             dataGridTransactions.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
             dataGridTransactions.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
@@ -794,7 +786,7 @@
             dataGridTransactions.RowTemplate.Height = 30;
             dataGridTransactions.ScrollBars = ScrollBars.None;
             dataGridTransactions.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridTransactions.Size = new Size(1550, 422);
+            dataGridTransactions.Size = new Size(1085, 254);
             dataGridTransactions.TabIndex = 2;
             dataGridTransactions.Visible = false;
             // 
@@ -811,12 +803,12 @@
             // gridDate
             // 
             gridDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.BackColor = Color.Transparent;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Transparent;
-            gridDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.BackColor = Color.Transparent;
+            dataGridViewCellStyle12.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle12.SelectionForeColor = Color.Transparent;
+            gridDate.DefaultCellStyle = dataGridViewCellStyle12;
             gridDate.HeaderText = "Fecha";
             gridDate.MinimumWidth = 8;
             gridDate.Name = "gridDate";
@@ -825,12 +817,12 @@
             // 
             // gridType
             // 
-            dataGridViewCellStyle4.BackColor = Color.Transparent;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            gridType.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.BackColor = Color.Transparent;
+            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle13.SelectionForeColor = Color.White;
+            gridType.DefaultCellStyle = dataGridViewCellStyle13;
             gridType.HeaderText = "Tipo";
             gridType.MinimumWidth = 8;
             gridType.Name = "gridType";
@@ -839,12 +831,12 @@
             // 
             // gridAmount
             // 
-            dataGridViewCellStyle5.BackColor = Color.Transparent;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Transparent;
-            gridAmount.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.BackColor = Color.Transparent;
+            dataGridViewCellStyle14.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle14.SelectionForeColor = Color.Transparent;
+            gridAmount.DefaultCellStyle = dataGridViewCellStyle14;
             gridAmount.HeaderText = "Monto";
             gridAmount.MinimumWidth = 8;
             gridAmount.Name = "gridAmount";
@@ -854,12 +846,12 @@
             // gridDescription
             // 
             gridDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.BackColor = Color.Transparent;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Transparent;
-            gridDescription.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.BackColor = Color.Transparent;
+            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle15.SelectionForeColor = Color.Transparent;
+            gridDescription.DefaultCellStyle = dataGridViewCellStyle15;
             gridDescription.HeaderText = "Descripcion";
             gridDescription.MinimumWidth = 8;
             gridDescription.Name = "gridDescription";
@@ -867,12 +859,11 @@
             // 
             // WalletUserControl
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelWalletWrapper);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "WalletUserControl";
-            Size = new Size(1550, 1053);
+            Size = new Size(1085, 632);
             panelWalletWrapper.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -911,7 +902,6 @@
         private Label label6;
         private Panel panel5;
         private Label label8;
-        private TextBox TbAmountTransaction;
         private Label label9;
         private Label label11;
         private ComboBox comboBoxInstructors;
@@ -941,5 +931,6 @@
         private Label label14;
         private Label label15;
         private Label TbTotalAmount;
+        private TextBox TbAmountTran;
     }
 }
