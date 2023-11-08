@@ -9,6 +9,9 @@ using gymsy.UserControls;
 using gymsy.UserControls.AdminControls;
 using gymsy.UserControls.ClientControls;
 
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
 
 
 namespace gymsy
@@ -83,6 +86,11 @@ namespace gymsy
               new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(),
                 new AddProgressClientControl(), new EditClient()
             };
+
+
+            IWalletView Walletview = new WalletUserControl();
+            new WalletPresenter(Walletview);
+
 
             List<UserControl> adminControls = new List<UserControl>()
             { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(),

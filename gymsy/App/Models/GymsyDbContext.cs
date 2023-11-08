@@ -102,6 +102,10 @@ public partial class GymsyDbContext : DbContext
                 .HasMaxLength(500)
                 .IsUnicode(false)
                 .HasColumnName("notes");
+            entity.Property(e => e.Title)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("title");
             entity.Property(e => e.Weight).HasColumnName("weight");
 
             entity.HasOne(d => d.IdClientNavigation).WithMany(p => p.DataFisics)

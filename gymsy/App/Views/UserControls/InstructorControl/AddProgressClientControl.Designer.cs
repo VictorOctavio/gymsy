@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProgressClientControl));
             PanelAddProgress = new Panel();
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            PictureBoxImg = new PictureBox();
             BtnAddImgProgress = new ClassCustom.RJButton();
             label13 = new Label();
             LbErrImage = new Label();
@@ -40,7 +40,7 @@
             label6 = new Label();
             TbTitle = new CustomControls.RJControls.RJTextBox();
             label4 = new Label();
-            rjTextBox4 = new CustomControls.RJControls.RJTextBox();
+            TbNotes = new CustomControls.RJControls.RJTextBox();
             label3 = new Label();
             label1 = new Label();
             TbPeso = new CustomControls.RJControls.RJTextBox();
@@ -52,7 +52,7 @@
             label5 = new Label();
             PanelAddProgress.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBoxImg).BeginInit();
             LbErrPeso.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,7 +70,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.None;
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(PictureBoxImg);
             panel1.Controls.Add(BtnAddImgProgress);
             panel1.Controls.Add(label13);
             panel1.Controls.Add(LbErrImage);
@@ -79,17 +79,17 @@
             panel1.Size = new Size(413, 544);
             panel1.TabIndex = 72;
             // 
-            // pictureBox1
+            // PictureBoxImg
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(81, 113);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(220, 279);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 67;
-            pictureBox1.TabStop = false;
+            PictureBoxImg.BorderStyle = BorderStyle.FixedSingle;
+            PictureBoxImg.Image = (Image)resources.GetObject("PictureBoxImg.Image");
+            PictureBoxImg.InitialImage = (Image)resources.GetObject("PictureBoxImg.InitialImage");
+            PictureBoxImg.Location = new Point(81, 113);
+            PictureBoxImg.Name = "PictureBoxImg";
+            PictureBoxImg.Size = new Size(220, 279);
+            PictureBoxImg.SizeMode = PictureBoxSizeMode.Zoom;
+            PictureBoxImg.TabIndex = 67;
+            PictureBoxImg.TabStop = false;
             // 
             // BtnAddImgProgress
             // 
@@ -152,7 +152,7 @@
             LbErrPeso.Controls.Add(label6);
             LbErrPeso.Controls.Add(TbTitle);
             LbErrPeso.Controls.Add(label4);
-            LbErrPeso.Controls.Add(rjTextBox4);
+            LbErrPeso.Controls.Add(TbNotes);
             LbErrPeso.Controls.Add(label3);
             LbErrPeso.Controls.Add(label1);
             LbErrPeso.Controls.Add(TbPeso);
@@ -210,9 +210,9 @@
             TbTitle.PasswordChar = false;
             TbTitle.PlaceholderColor = Color.DarkGray;
             TbTitle.PlaceholderText = "Ingrese un titulo...";
+            TbTitle.ReadOnly = false;
             TbTitle.Size = new Size(281, 31);
             TbTitle.TabIndex = 67;
-            TbTitle.Text = "";
             TbTitle.UnderlinedStyle = false;
             // 
             // label4
@@ -227,28 +227,28 @@
             label4.TabIndex = 74;
             label4.Text = "Altura Actual";
             // 
-            // rjTextBox4
+            // TbNotes
             // 
-            rjTextBox4.Anchor = AnchorStyles.None;
-            rjTextBox4.BackColor = Color.FromArgb(69, 34, 99);
-            rjTextBox4.BorderColor = Color.Transparent;
-            rjTextBox4.BorderFocusColor = Color.HotPink;
-            rjTextBox4.BorderRadius = 15;
-            rjTextBox4.BorderSize = 2;
-            rjTextBox4.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
-            rjTextBox4.ForeColor = Color.FromArgb(230, 237, 243);
-            rjTextBox4.Location = new Point(142, 342);
-            rjTextBox4.Margin = new Padding(4);
-            rjTextBox4.Multiline = true;
-            rjTextBox4.Name = "rjTextBox4";
-            rjTextBox4.Padding = new Padding(10, 7, 10, 7);
-            rjTextBox4.PasswordChar = false;
-            rjTextBox4.PlaceholderColor = Color.DarkGray;
-            rjTextBox4.PlaceholderText = "Ingrese notas...";
-            rjTextBox4.Size = new Size(281, 82);
-            rjTextBox4.TabIndex = 70;
-            rjTextBox4.Text = "";
-            rjTextBox4.UnderlinedStyle = false;
+            TbNotes.Anchor = AnchorStyles.None;
+            TbNotes.BackColor = Color.FromArgb(69, 34, 99);
+            TbNotes.BorderColor = Color.Transparent;
+            TbNotes.BorderFocusColor = Color.HotPink;
+            TbNotes.BorderRadius = 15;
+            TbNotes.BorderSize = 2;
+            TbNotes.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
+            TbNotes.ForeColor = Color.FromArgb(230, 237, 243);
+            TbNotes.Location = new Point(142, 342);
+            TbNotes.Margin = new Padding(4);
+            TbNotes.Multiline = true;
+            TbNotes.Name = "TbNotes";
+            TbNotes.Padding = new Padding(10, 7, 10, 7);
+            TbNotes.PasswordChar = false;
+            TbNotes.PlaceholderColor = Color.DarkGray;
+            TbNotes.PlaceholderText = "Ingrese notas...";
+            TbNotes.ReadOnly = false;
+            TbNotes.Size = new Size(281, 82);
+            TbNotes.TabIndex = 70;
+            TbNotes.UnderlinedStyle = false;
             // 
             // label3
             // 
@@ -292,10 +292,11 @@
             TbPeso.PasswordChar = false;
             TbPeso.PlaceholderColor = Color.DarkGray;
             TbPeso.PlaceholderText = "Ingrese un peso...";
+            TbPeso.ReadOnly = false;
             TbPeso.Size = new Size(281, 31);
             TbPeso.TabIndex = 68;
-            TbPeso.Text = "";
             TbPeso.UnderlinedStyle = false;
+            TbPeso.KeyPress += JustNumber_KeyPress;
             // 
             // label10
             // 
@@ -327,10 +328,11 @@
             TbAltura.PasswordChar = false;
             TbAltura.PlaceholderColor = Color.DarkGray;
             TbAltura.PlaceholderText = "Ingrese altura...";
+            TbAltura.ReadOnly = false;
             TbAltura.Size = new Size(281, 31);
             TbAltura.TabIndex = 69;
-            TbAltura.Text = "";
             TbAltura.UnderlinedStyle = false;
+            TbAltura.KeyPress += JustNumber_KeyPress;
             // 
             // LbErrAltura
             // 
@@ -406,7 +408,7 @@
             PanelAddProgress.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBoxImg).EndInit();
             LbErrPeso.ResumeLayout(false);
             LbErrPeso.PerformLayout();
             ResumeLayout(false);
@@ -415,7 +417,7 @@
         #endregion
 
         private Panel PanelAddProgress;
-        private CustomControls.RJControls.RJTextBox rjTextBox4;
+        private CustomControls.RJControls.RJTextBox TbNotes;
         private CustomControls.RJControls.RJTextBox TbAltura;
         private CustomControls.RJControls.RJTextBox TbPeso;
         private CustomControls.RJControls.RJTextBox TbTitle;
@@ -433,7 +435,7 @@
         private Label label4;
         private Label label3;
         private Label label1;
-        private PictureBox pictureBox1;
+        private PictureBox PictureBoxImg;
         private Label labelError;
     }
 }

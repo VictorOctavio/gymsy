@@ -60,10 +60,11 @@ namespace gymsy.utilities
             }
 
             // Allow only one decimal point
+            /*
             if (e.KeyChar == '.' && (sender as TextBox).Text.Contains("."))
             {
                 e.Handled = true; // Ignore the keypress
-            }
+            }*/
         }
 
     }

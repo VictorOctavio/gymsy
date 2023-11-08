@@ -9,7 +9,8 @@ public partial class Client
 
     public DateTime LastExpiration { get; set; }
 
-    //public bool Inactive { get; set; }
+
+    // public bool Inactive { get; set; }
 
     public int IdPerson { get; set; }
 

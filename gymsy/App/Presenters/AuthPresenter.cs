@@ -114,10 +114,17 @@ namespace gymsy.App.Presenters
                                                 .Where(person => person.RolId == 2)
                                                 .ToList();
 
-                        AppState.instructors = instructorsFound;
+                        var personss = this.gymsydb.People.ToList();
+                        this.gymsydb.Pays.ToList();
+                        this.gymsydb.PayTypes.ToList();
+                        this.gymsydb.Wallets.ToList();
+                        this.gymsydb.TrainingPlans.ToList();
 
-                        //Se crea un instructor vacio
+
+                        AppState.instructors = instructorsFound;
+                        AppState.persons = personss;
                         AppState.Instructor = new Instructor();
+
                         break;
 
                     // this person is instructor
@@ -131,9 +138,13 @@ namespace gymsy.App.Presenters
                         var persons = this.gymsydb.People.ToList();
                         var dataFisico = this.gymsydb.DataFisics.ToList();
                         var Images = this.gymsydb.Images.ToList();
+                        this.gymsydb.Pays.ToList();
+                        this.gymsydb.PayTypes.ToList();
+                        this.gymsydb.Wallets.ToList();
+                        
 
                         AppState.clients = persons;
-
+                        AppState.persons = persons;
                         AppState.Instructor = instructorFound;
                        
                         break;
@@ -150,7 +161,7 @@ namespace gymsy.App.Presenters
             }
             catch(Exception ex)
             {
-                throw new Exception("Algo ha salido mal :(");
+                throw new Exception(ex.Message);
             }
            
         }

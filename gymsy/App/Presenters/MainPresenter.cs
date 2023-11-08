@@ -11,7 +11,6 @@ namespace gymsy.App.Presenters
 {
     public class MainPresenter
     {
-
         private IMainView mainView;
         private GymsyDbContext gymsydb;
 
@@ -24,13 +23,6 @@ namespace gymsy.App.Presenters
 
             // Show view
             this.mainView.Show();
-        }
-
-
-        // implements
-        void SettingView ()
-        {
-            
         }
 
     }

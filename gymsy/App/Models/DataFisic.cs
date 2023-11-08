@@ -7,6 +7,8 @@ public partial class DataFisic
 {
     public int IdDataFisic { get; set; }
 
+    public string? Title { get; set; }
+
     public double Weight { get; set; }
 
     public double Height { get; set; }
