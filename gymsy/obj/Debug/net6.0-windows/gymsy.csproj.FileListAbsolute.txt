@@ -230,3 +230,4 @@ C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-window
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.AdminControls.EditInstructor.resources
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.UserControls.EditInstructor.resources
 C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.App.Views.UserControls.AdminControls.adminControl.resources
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\Twilio.dll

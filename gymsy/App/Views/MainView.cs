@@ -81,30 +81,29 @@ namespace gymsy
 
             List<UserControl> userControlsList = new List<UserControl>();
 
-            List<UserControl> userControls = new List<UserControl>()
-            { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(),
-              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(),
-                new AddProgressClientControl(), new EditClient()
-            };
+            if (rol == "admin")
+            {
+                userControlsList = new List<UserControl>()
+                { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(),
+                new AddInstructorControl(), new DashboardAdminControl(), new WalletUserControl(), new EditInstructor(),
+                    new adminControl()
+                };
+            }
+            else if (rol == "client")
+            {
+                userControlsList = new List<UserControl>()
+                 { new AboutClientControl(), new ProgressClientControl(), new PaymentsUserControl(), new SettingsUserControl(),
+                  };
+            }
+            else
+            {
+                userControlsList = new List<UserControl>()
+                { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(),
+                  new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(),
+                    new AddProgressClientControl(), new EditClient()
+                };
 
-
-            IWalletView Walletview = new WalletUserControl();
-            new WalletPresenter(Walletview);
-
-
-            List<UserControl> adminControls = new List<UserControl>()
-            { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(),
-            new AddInstructorControl(), new DashboardAdminControl(), new WalletUserControl(), new EditInstructor(),
-                new adminControl()
-            };
-
-            List<UserControl> clientControls = new List<UserControl>()
-            { new AboutClientControl(), new ProgressClientControl(), new PaymentsUserControl(), new SettingsUserControl(),
-            };
-
-            if (rol == "admin") userControlsList = adminControls;
-            else if (rol == "client") userControlsList = clientControls;
-            else userControlsList = userControls;
+            }
 
             navigationControl = new NavigationControl(userControlsList, mainWrapper);
             navigationControl.Display(0);
