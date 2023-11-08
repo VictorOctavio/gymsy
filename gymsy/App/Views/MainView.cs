@@ -86,6 +86,11 @@ namespace gymsy
                 new AddProgressClientControl(), new EditClient()
             };
 
+
+            IWalletView Walletview = new WalletUserControl();
+            new WalletPresenter(Walletview);
+
+
             List<UserControl> adminControls = new List<UserControl>()
             { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(),
             new AddInstructorControl(), new DashboardAdminControl(), new WalletUserControl()

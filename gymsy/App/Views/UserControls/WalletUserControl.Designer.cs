@@ -53,7 +53,7 @@
             labelErrorWithdraw = new ClassCustom.RJButton();
             btnNewWithdraw = new ClassCustom.RJButton();
             label8 = new Label();
-            textBoxWithdraw = new TextBox();
+            TBWithdraw = new TextBox();
             rjButton3 = new ClassCustom.RJButton();
             label7 = new Label();
             panel1 = new Panel();
@@ -303,7 +303,7 @@
             panel6.Controls.Add(labelErrorWithdraw);
             panel6.Controls.Add(btnNewWithdraw);
             panel6.Controls.Add(label8);
-            panel6.Controls.Add(textBoxWithdraw);
+            panel6.Controls.Add(TBWithdraw);
             panel6.Controls.Add(rjButton3);
             panel6.Controls.Add(label7);
             panel6.Dock = DockStyle.Bottom;
@@ -382,20 +382,20 @@
             label8.TabIndex = 44;
             label8.Text = "Monto";
             // 
-            // textBoxWithdraw
+            // TBWithdraw
             // 
-            textBoxWithdraw.Anchor = AnchorStyles.None;
-            textBoxWithdraw.BorderStyle = BorderStyle.FixedSingle;
-            textBoxWithdraw.Cursor = Cursors.Hand;
-            textBoxWithdraw.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxWithdraw.ForeColor = Color.FromArgb(9, 0, 20);
-            textBoxWithdraw.Location = new Point(55, 126);
-            textBoxWithdraw.Margin = new Padding(5, 4, 5, 4);
-            textBoxWithdraw.Multiline = true;
-            textBoxWithdraw.Name = "textBoxWithdraw";
-            textBoxWithdraw.Size = new Size(271, 36);
-            textBoxWithdraw.TabIndex = 44;
-            textBoxWithdraw.KeyPress += TextBoxAmount_KeyPress;
+            TBWithdraw.Anchor = AnchorStyles.None;
+            TBWithdraw.BorderStyle = BorderStyle.FixedSingle;
+            TBWithdraw.Cursor = Cursors.Hand;
+            TBWithdraw.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            TBWithdraw.ForeColor = Color.FromArgb(9, 0, 20);
+            TBWithdraw.Location = new Point(55, 126);
+            TBWithdraw.Margin = new Padding(5, 4, 5, 4);
+            TBWithdraw.Multiline = true;
+            TBWithdraw.Name = "TBWithdraw";
+            TBWithdraw.Size = new Size(271, 36);
+            TBWithdraw.TabIndex = 44;
+            TBWithdraw.KeyPress += TextBoxAmount_KeyPress;
             // 
             // rjButton3
             // 
@@ -908,7 +908,7 @@
         private Panel panel6;
         private ClassCustom.RJButton rjButton1;
         private ClassCustom.RJButton rjButton2;
-        private TextBox textBoxWithdraw;
+        private TextBox TBWithdraw;
         private ClassCustom.RJButton rjButton3;
         private ClassCustom.RJButton btnNewWithdraw;
         private DataGridViewTextBoxColumn ID;

@@ -1,6 +1,5 @@
 ﻿using gymsy.App.Models;
 using gymsy.App.Views.Interfaces;
-using gymsy.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +8,25 @@ using System.Threading.Tasks;
 
 namespace gymsy.App.Presenters
 {
-    public class MainPresenter
+    public class WalletPresenter
     {
-        private IMainView mainView;
-        private GymsyDbContext gymsydb;
 
-        public MainPresenter(IMainView mainView, GymsyDbContext gymsyDb){
-            
-            this.mainView = mainView;
-            this.gymsydb = gymsyDb;
+        private IWalletView walletView;
+        private GymsyDbContext gymsydb;
+        //GymsyDbContext gymsyDb
+        public WalletPresenter(IWalletView walletView)
+        {
+
+            this.walletView = walletView;
+ //           this.gymsydb = gymsyDb;
 
             // subscribe
 
             // Show view
-            this.mainView.Show();
+            this.walletView.Show();
         }
+
+
 
     }
 }

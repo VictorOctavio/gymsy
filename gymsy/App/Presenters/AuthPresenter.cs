@@ -105,9 +105,17 @@ namespace gymsy.App.Presenters
                                                 .Where(person => person.RolId == 2)
                                                 .ToList();
 
+                        var personss = this.gymsydb.People.ToList();
+                        this.gymsydb.Pays.ToList();
+                        this.gymsydb.PayTypes.ToList();
+                        this.gymsydb.Wallets.ToList();
+                        this.gymsydb.TrainingPlans.ToList();
+
+
                         AppState.instructors = instructorsFound;
-                        //Se crea un instructor vacio
+                        AppState.persons = personss;
                         AppState.Instructor = new Instructor();
+
                         break;
 
                     // this person is instructor
