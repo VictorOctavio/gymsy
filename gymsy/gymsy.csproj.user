@@ -13,6 +13,9 @@
     <Compile Update="App\Views\UserControls\InstructorControl\ClientsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="App\Views\UserControls\receptionist\addPay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="App\Views\UserControls\WalletUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

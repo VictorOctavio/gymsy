@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panelWalletWrapper = new Panel();
             panel2 = new Panel();
             panel5 = new Panel();
@@ -446,6 +446,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1085, 632);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // PanelInvoiceWallet
             // 
@@ -728,57 +729,57 @@
             dataGridTransactions.AllowUserToDeleteRows = false;
             dataGridTransactions.AllowUserToResizeColumns = false;
             dataGridTransactions.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = Color.Transparent;
-            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle10.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle10.SelectionForeColor = Color.White;
-            dataGridTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = Color.Transparent;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridTransactions.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridTransactions.BackgroundColor = Color.FromArgb(16, 8, 30);
             dataGridTransactions.CausesValidation = false;
             dataGridTransactions.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = Color.Transparent;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            dataGridTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Transparent;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridTransactions.Columns.AddRange(new DataGridViewColumn[] { ID, gridDate, gridType, gridAmount, gridDescription });
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle16.ForeColor = Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle16.SelectionForeColor = Color.White;
-            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.False;
-            dataGridTransactions.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dataGridTransactions.DefaultCellStyle = dataGridViewCellStyle7;
             dataGridTransactions.GridColor = Color.Black;
             dataGridTransactions.Location = new Point(0, 68);
             dataGridTransactions.Margin = new Padding(0);
             dataGridTransactions.MultiSelect = false;
             dataGridTransactions.Name = "dataGridTransactions";
             dataGridTransactions.ReadOnly = true;
-            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = Color.IndianRed;
-            dataGridViewCellStyle17.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle17.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = SystemColors.GrayText;
-            dataGridViewCellStyle17.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
-            dataGridTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.IndianRed;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.GrayText;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dataGridTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dataGridTransactions.RowHeadersVisible = false;
             dataGridTransactions.RowHeadersWidth = 62;
             dataGridTransactions.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle18.BackColor = Color.White;
-            dataGridViewCellStyle18.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle18.ForeColor = Color.White;
-            dataGridViewCellStyle18.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle18.SelectionBackColor = Color.White;
-            dataGridViewCellStyle18.SelectionForeColor = Color.White;
-            dataGridTransactions.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle9.SelectionBackColor = Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = Color.White;
+            dataGridTransactions.RowsDefaultCellStyle = dataGridViewCellStyle9;
             dataGridTransactions.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
             dataGridTransactions.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
             dataGridTransactions.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
@@ -803,12 +804,12 @@
             // gridDate
             // 
             gridDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle12.BackColor = Color.Transparent;
-            dataGridViewCellStyle12.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle12.SelectionForeColor = Color.Transparent;
-            gridDate.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.BackColor = Color.Transparent;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Transparent;
+            gridDate.DefaultCellStyle = dataGridViewCellStyle3;
             gridDate.HeaderText = "Fecha";
             gridDate.MinimumWidth = 8;
             gridDate.Name = "gridDate";
@@ -817,12 +818,12 @@
             // 
             // gridType
             // 
-            dataGridViewCellStyle13.BackColor = Color.Transparent;
-            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle13.SelectionForeColor = Color.White;
-            gridType.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.BackColor = Color.Transparent;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            gridType.DefaultCellStyle = dataGridViewCellStyle4;
             gridType.HeaderText = "Tipo";
             gridType.MinimumWidth = 8;
             gridType.Name = "gridType";
@@ -831,12 +832,12 @@
             // 
             // gridAmount
             // 
-            dataGridViewCellStyle14.BackColor = Color.Transparent;
-            dataGridViewCellStyle14.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle14.SelectionForeColor = Color.Transparent;
-            gridAmount.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.BackColor = Color.Transparent;
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = Color.Transparent;
+            gridAmount.DefaultCellStyle = dataGridViewCellStyle5;
             gridAmount.HeaderText = "Monto";
             gridAmount.MinimumWidth = 8;
             gridAmount.Name = "gridAmount";
@@ -846,12 +847,12 @@
             // gridDescription
             // 
             gridDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle15.BackColor = Color.Transparent;
-            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle15.ForeColor = Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle15.SelectionForeColor = Color.Transparent;
-            gridDescription.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.BackColor = Color.Transparent;
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Transparent;
+            gridDescription.DefaultCellStyle = dataGridViewCellStyle6;
             gridDescription.HeaderText = "Descripcion";
             gridDescription.MinimumWidth = 8;
             gridDescription.Name = "gridDescription";

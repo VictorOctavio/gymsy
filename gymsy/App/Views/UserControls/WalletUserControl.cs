@@ -40,7 +40,7 @@ namespace gymsy.UserControls
             this.PaysList = AppState.person.PayDestinatarios.ToArray()
                     .Concat(AppState.person.PayRemitentes.ToArray());
 
-          
+
             Dictionary<string, string> diccionario = new Dictionary<string, string>();
 
             AppState.persons.ForEach(per =>
@@ -206,7 +206,8 @@ namespace gymsy.UserControls
                 this.gymsydb.Wallets.Update(WalletUpdate);
                 var WalletResponse = this.gymsydb.SaveChanges();
 
-                if(WalletUpdate.Retirable != 0) {
+                if (WalletUpdate.Retirable != 0)
+                {
                     TbAmount.Text = $"$ {WalletUpdate.Retirable}";
                     PanelInvoiceWallet.Visible = true;
                 }
@@ -228,6 +229,11 @@ namespace gymsy.UserControls
         private void BtnCloseInvoice_Click(object sender, EventArgs e)
         {
             PanelInvoiceWallet.Visible = false;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

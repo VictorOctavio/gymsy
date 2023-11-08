@@ -29,7 +29,7 @@ namespace gymsy.App.Views.UserControls.AdminControls
         {
             try
             {
-                string rutaDeCopiaDeSeguridad = AppState.pathDestinationFolder + AppState.nameCarpetBackUp;
+                string rutaDeCopiaDeSeguridad = "C:\\backup";
 
                 if (!Directory.Exists(rutaDeCopiaDeSeguridad))
                 {

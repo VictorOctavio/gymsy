@@ -4,7 +4,9 @@ using gymsy.App.Views;
 using gymsy.App.Views.Interfaces;
 using gymsy.App.Views.UserControls.AdminControls;
 using gymsy.App.Views.UserControls.ClientControls;
+using gymsy.App.Views.UserControls.receptionist;
 using gymsy.Context;
+using gymsy.Properties;
 using gymsy.UserControls;
 using gymsy.UserControls.AdminControls;
 using gymsy.UserControls.ClientControls;
@@ -20,7 +22,7 @@ namespace gymsy
     {
 
         // Roles de usuario 
-        List<string> rols = new List<string>() { "", "admin", "instructor", "client" };
+        List<string> rols = new List<string>() { "", "admin", "instructor", "client", "receptionist" };
 
         public static NavigationControl navigationControl;
         NavigationButtons navigationButtons;
@@ -47,6 +49,30 @@ namespace gymsy
             InitializeNavigationControl(this.rols[person.RolId]);
             InitializeNavigationButtons(this.rols[person.RolId]);
             InitializeUserRol(this.rols[person.RolId]);
+
+            try
+            {
+                string ruta = "";
+                if (person.RolId == 2)
+                {
+                    ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor;
+                }
+                else if (person.RolId == 3)
+                {
+                    ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient;
+                }
+                else
+                {
+                    ruta = AppState.pathDestinationFolder;
+                }
+                ruta += person.Avatar;
+                BtnUserAvatar.Image = System.Drawing.Image.FromFile(ruta);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                BtnUserAvatar.Image = Resources.gorilla_avatar;
+            }
         }
 
         // Getters and Setters
@@ -94,6 +120,12 @@ namespace gymsy
                 userControlsList = new List<UserControl>()
                  { new AboutClientControl(), new ProgressClientControl(), new PaymentsUserControl(), new SettingsUserControl(),
                   };
+            } else if (rol == "receptionist")
+            {
+                userControlsList = new List<UserControl>()
+                {
+                    new addPay(), new PaymentsUserControl(), new SettingsUserControl(),
+                };
             }
             else
             {

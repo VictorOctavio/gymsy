@@ -115,10 +115,10 @@ namespace gymsy.App.Presenters
                                                 .ToList();
 
                         var personss = this.gymsydb.People.ToList();
-                        this.gymsydb.Pays.ToList();
-                        this.gymsydb.PayTypes.ToList();
-                        this.gymsydb.Wallets.ToList();
-                        this.gymsydb.TrainingPlans.ToList();
+                        //this.gymsydb.Pays.ToList();
+                        //this.gymsydb.PayTypes.ToList();
+                        //this.gymsydb.Wallets.ToList();
+                        //this.gymsydb.TrainingPlans.ToList();
 
 
                         AppState.instructors = instructorsFound;
@@ -153,6 +153,8 @@ namespace gymsy.App.Presenters
                     case 3:
                         // Code to execute if expression matches value1
                         break;
+
+                    // this person is a receptionist
                     case 4:
 
 
