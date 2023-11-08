@@ -75,7 +75,6 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-
             panelNotifications = new Panel();
             label6 = new Label();
             timerNavbarNotifications = new System.Windows.Forms.Timer(components);
@@ -172,10 +171,11 @@
             button3.Padding = new Padding(20, 0, 0, 0);
             button3.Size = new Size(258, 39);
             button3.TabIndex = 2;
-            button3.Text = "       ...";
+            button3.Text = "       Gestion";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.TextImageRelation = TextImageRelation.ImageBeforeText;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // btnAddInstructor
             // 
@@ -801,7 +801,6 @@
             panelNavRight.BackColor = Color.DarkCyan;
             panelNavRight.Controls.Add(btnWalletNav);
             panelNavRight.Controls.Add(panel2);
-            panelNavRight.Controls.Add(btnNotifications);
             panelNavRight.ForeColor = Color.White;
             panelNavRight.Location = new Point(1838, 0);
             panelNavRight.Margin = new Padding(0);
@@ -882,10 +881,6 @@
             label2.Size = new Size(86, 32);
             label2.TabIndex = 0;
             label2.Text = "$ 4.5K";
-            // 
-            // btnNotifications
-            // 
- 
             // 
             // panelNotifications
             // 

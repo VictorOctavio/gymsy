@@ -64,7 +64,7 @@ namespace gymsy.UserControls.AdminControls
 
                 try
                 {
-                    string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor + AppState.InstructorActive.IdPersonNavigation.Avatar;
+                    string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor + "\\" + AppState.InstructorActive.IdPersonNavigation.Avatar;
                     TBRutaImagen.Text = ruta;
 
                     IPImagenInstructor.Image = System.Drawing.Image.FromFile(ruta);

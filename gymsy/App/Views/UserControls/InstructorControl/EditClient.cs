@@ -74,7 +74,7 @@ namespace gymsy.UserControls
 
                 try
                 {
-                    string ruta = Path.Combine( AppState.pathDestinationFolder, AppState.nameCarpetImageClient, AppState.ClientActive.IdPersonNavigation.Avatar);
+                    string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient + "\\" + AppState.ClientActive.IdPersonNavigation.Avatar;
 
                     IPImagenUsuario.Image = System.Drawing.Image.FromFile(ruta);
                 } catch

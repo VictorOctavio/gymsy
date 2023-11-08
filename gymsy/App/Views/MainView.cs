@@ -2,6 +2,7 @@ using gymsy.App.Models;
 using gymsy.App.Presenters;
 using gymsy.App.Views;
 using gymsy.App.Views.Interfaces;
+using gymsy.App.Views.UserControls.AdminControls;
 using gymsy.App.Views.UserControls.ClientControls;
 using gymsy.Context;
 using gymsy.UserControls;
@@ -79,13 +80,14 @@ namespace gymsy
 
             List<UserControl> userControls = new List<UserControl>()
             { new DashboardUserControl(), new ClientsUserControl(), new PaymentsUserControl(), new SettingsUserControl(),
-              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(), 
+              new AddClientUserControl(), new AddPlanUserControl(), new WalletUserControl(), new ProgressClientControl(),
                 new AddProgressClientControl(), new EditClient()
             };
 
             List<UserControl> adminControls = new List<UserControl>()
             { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(),
-            new AddInstructorControl(), new DashboardAdminControl(), new WalletUserControl(), new EditInstructor()
+            new AddInstructorControl(), new DashboardAdminControl(), new WalletUserControl(), new EditInstructor(),
+                new adminControl()
             };
 
             List<UserControl> clientControls = new List<UserControl>()
@@ -247,7 +249,7 @@ namespace gymsy
         {
             btnAddTimer.Start();
         }
- 
+
         private void btnAddAdmin_Click(object sender, EventArgs e)
         {
             timerAddAdmin.Start();
@@ -356,10 +358,14 @@ namespace gymsy
         private void btnNavSignout_Click(object sender, EventArgs e)
         {
             Application.OpenForms[0].Close();
-         
+
 
         }
 
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(8);
+            navigationButtons.Highlight(button3);
+        }
     }
 }

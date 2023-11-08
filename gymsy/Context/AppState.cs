@@ -31,6 +31,7 @@ namespace gymsy.Context
         public static string nameCarpetImageClient { get; set; } = "\\Gymsy\\ClientImage";
         public static string nameCarpetImageInstructor { get; set; } = "\\Gymsy\\InstructorImage";
 
+        public static string nameCarpetBackUp { get; set; } = "\\Gymsy\\BackUp";
         public static bool needRefreshClientsUserControl { get; set; } = false;
 
         public static bool isModeEdit { get; set; } = false;
