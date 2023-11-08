@@ -53,26 +53,35 @@ namespace gymsy.App.Presenters
                     }
                     else
                     {
+                        if(!peopleFound.Inactive)
+                        {
+                            this.authView.IsSuccessful = true;
+                            this.authView.Message = "Hola, " + peopleFound.FirstName + "    ;)";
 
-                        this.authView.IsSuccessful = true;
-                        this.authView.Message = "Hola, " + peopleFound.FirstName + "    ;)";
+                            // Delay
+                            this.authView.HandleResponseDBMessage();
+                            Thread.Sleep(3000);
 
-                        // Delay
-                        this.authView.HandleResponseDBMessage();
-                        Thread.Sleep(3000);
+                            // Update global state
+                            AppState.person = peopleFound;
 
-                        // Update global state
-                        AppState.person = peopleFound;
+                            this.asignMethods(peopleFound);
 
-                        this.asignMethods(peopleFound);
+                            this.authView.Hide();
 
-                        this.authView.Hide();
+                            // Open form
+                            IMainView view = new MainView();
+                            new MainPresenter(view, this.gymsydb);
 
-                        // Open form
-                        IMainView view = new MainView();
-                        new MainPresenter(view, this.gymsydb);
-
-                        return;
+                            return;
+                        } else
+                        {
+                            this.authView.IsSuccessful = false;
+                            this.authView.Message = "Usuario inactivo!";
+                            this.authView.HandleResponseDBMessage();
+                            return;
+                        }
+                       
                     }
                 }
                 else return;

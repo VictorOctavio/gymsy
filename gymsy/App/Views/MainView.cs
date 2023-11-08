@@ -2,6 +2,7 @@ using gymsy.App.Models;
 using gymsy.App.Presenters;
 using gymsy.App.Views;
 using gymsy.App.Views.Interfaces;
+using gymsy.App.Views.UserControls.AdminControls;
 using gymsy.App.Views.UserControls.ClientControls;
 using gymsy.Context;
 using gymsy.UserControls;
@@ -93,7 +94,8 @@ namespace gymsy
 
             List<UserControl> adminControls = new List<UserControl>()
             { new DashboardAdminControl(), new InstructorsAdminControl(), new PaymentsUserControl(), new SettingsUserControl(),
-            new AddInstructorControl(), new DashboardAdminControl(), new WalletUserControl()
+            new AddInstructorControl(), new DashboardAdminControl(), new WalletUserControl(), new EditInstructor(),
+                new adminControl()
             };
 
             List<UserControl> clientControls = new List<UserControl>()
@@ -366,6 +368,12 @@ namespace gymsy
             Application.OpenForms[0].Close();
 
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(8);
+            navigationButtons.Highlight(button3);
         }
     }
 }

@@ -45,6 +45,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="App\Views\UserControls\AdminControls\EditInstructor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="App\Views\UserControls\InstructorControl\EditClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -78,7 +81,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="App\Public\" />
+    <Folder Include="App\ClientImage\" />
   </ItemGroup>
 
 </Project>

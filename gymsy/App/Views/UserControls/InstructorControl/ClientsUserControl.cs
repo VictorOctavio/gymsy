@@ -116,7 +116,14 @@ namespace gymsy.UserControls
                     {
                         //Avatar.Image = Resources.wallet_free;
                     }
-                    DGUsers.Rows.Add(null,//imagen?
+                    try
+                    {
+                        string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient + "\\" + client.IdPersonNavigation.Avatar;
+
+
+
+                        DGUsers.Rows.Add(
+                        System.Drawing.Image.FromFile(ruta),
                         string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
                         client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
                         client.IdPersonNavigation.NumberPhone,
@@ -124,6 +131,22 @@ namespace gymsy.UserControls
                         ColumnExpirationMsg,
                         client.IdClient,
                         client.IdPersonNavigation.Inactive);
+                    }
+                    catch (Exception e)
+                    {
+
+
+                        DGUsers.Rows.Add(
+                        Resources.vector_fitness_couple_doing_exercise,
+                        string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
+                        client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                        client.IdPersonNavigation.NumberPhone,
+                        client.IdTrainingPlanNavigation.Description,
+                        ColumnExpirationMsg,
+                        client.IdClient,
+                        client.IdPersonNavigation.Inactive);
+                    }
+
                 }
             }
 
@@ -136,7 +159,9 @@ namespace gymsy.UserControls
 
         private void BAgregarCliente_Click(object sender, EventArgs e)
         {
-            MainView.navigationControl.Display(4);
+            AppState.isModeAdd = true;
+            MainView.navigationControl.Display(4, true);
+
         }
 
         private void BEditarCliente_Click(object sender, EventArgs e)
@@ -211,10 +236,10 @@ namespace gymsy.UserControls
                     }
                     // Ahora, verifica si la columna "delete" es false y this.isModoVerNoDelete es true antes de mostrar la fila
                     bool deleteValue = Convert.ToBoolean(row.Cells["delete"].Value);
-                    
+
                     //row.Visible = (this.isModeVerNoDelete && !deleteValue) || (!this.isModeVerNoDelete && deleteValue);
                     row.Visible = coincide && !this.isModeVerNoDelete == deleteValue;
-                    
+
 
                 }
             }
@@ -377,7 +402,7 @@ namespace gymsy.UserControls
         private void BVerClients_Click(object sender, EventArgs e)
         {
             this.isModeVerNoDelete = true;
-            BEliminarCliente.Text = "Eliminar Cliente";
+            BEliminarCliente.Text = "Eliminar";
             BEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
             BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.Trash;
             //Se mostraran los no inactivos
@@ -387,7 +412,7 @@ namespace gymsy.UserControls
         private void BVerClientDelete_Click(object sender, EventArgs e)
         {
             this.isModeVerNoDelete = false;
-            BEliminarCliente.Text = "Activar Cliente";
+            BEliminarCliente.Text = "Activar";
             BEliminarCliente.BackColor = Color.FromArgb(255, 140, 0);
             BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.User;
 
@@ -403,15 +428,17 @@ namespace gymsy.UserControls
 
         public override void Refresh()
         {
-            this.cargarPersonas();
-            this.isModeVerNoDelete = true;
-            BEliminarCliente.Text = "Eliminar Cliente";
-            BEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
-            BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            //Se mostraran los no inactivos
-            this.mostrar(false);
-
-
+            if (AppState.needRefreshClientsUserControl)
+            {
+                this.cargarPersonas();
+                this.isModeVerNoDelete = true;
+                BEliminarCliente.Text = "Eliminar";
+                BEliminarCliente.BackColor = Color.FromArgb(192, 0, 0);
+                BEliminarCliente.IconChar = FontAwesome.Sharp.IconChar.Trash;
+                //Se mostraran los no inactivos
+                this.mostrar(false);
+                AppState.needRefreshClientsUserControl = false;
+            }
         }
     }
 }
