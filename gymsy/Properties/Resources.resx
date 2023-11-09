@@ -191,7 +191,7 @@
     <value>..\Resources\instr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stringConnection" xml:space="preserve">
-    <value>Server=DESKTOP-R1CB0VV\SQLEXPRESS01;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;</value>
+    <value>Server=localhost;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;</value>
   </data>
   <data name="gymsy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gymsy1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,7 +208,19 @@
   <data name="output-onlinegiftoolsw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\output-onlinegiftoolsw.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PublicDirectory" xml:space="preserve">
-    <value />
+  <data name="accountSidTwiio" xml:space="preserve">
+    <value>ACd5798e53aef58ca10bb84d28ad380a42</value>
+  </data>
+  <data name="accountNameCloudinary" xml:space="preserve">
+    <value>dyntggmrp</value>
+  </data>
+  <data name="authTokenTwilio" xml:space="preserve">
+    <value>bc76b4b8bd47a98aedbbdd04150b4448</value>
+  </data>
+  <data name="idCloudinary" xml:space="preserve">
+    <value>999282986128982</value>
+  </data>
+  <data name="tokenCloudinary" xml:space="preserve">
+    <value>o-c9TamwnryYncxC8AYYQcDmgT8</value>
   </data>
 </root>
