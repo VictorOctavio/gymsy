@@ -61,12 +61,39 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a dyntggmrp.
+        /// </summary>
+        internal static string accountNameCloudinary {
+            get {
+                return ResourceManager.GetString("accountNameCloudinary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ACd5798e53aef58ca10bb84d28ad380a42.
+        /// </summary>
+        internal static string accountSidTwiio {
+            get {
+                return ResourceManager.GetString("accountSidTwiio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap add_item {
             get {
                 object obj = ResourceManager.GetObject("add_item", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 02ea6b7023ba008dd18270bf0cd726c6.
+        /// </summary>
+        internal static string authTokenTwilio {
+            get {
+                return ResourceManager.GetString("authTokenTwilio", resourceCulture);
             }
         }
         
@@ -157,6 +184,15 @@ namespace gymsy.Properties {
             get {
                 object obj = ResourceManager.GetObject("icons8-deadlift (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 999282986128982.
+        /// </summary>
+        internal static string idCloudinary {
+            get {
+                return ResourceManager.GetString("idCloudinary", resourceCulture);
             }
         }
         
@@ -271,15 +307,6 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string PublicDirectory {
-            get {
-                return ResourceManager.GetString("PublicDirectory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap setting_item {
@@ -290,11 +317,20 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Server=DESKTOP-R1CB0VV\SQLEXPRESS01;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;.
+        ///   Busca una cadena traducida similar a Server=localhost;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;.
         /// </summary>
         internal static string stringConnection {
             get {
                 return ResourceManager.GetString("stringConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a o-c9TamwnryYncxC8AYYQcDmgT8.
+        /// </summary>
+        internal static string tokenCloudinary {
+            get {
+                return ResourceManager.GetString("tokenCloudinary", resourceCulture);
             }
         }
         

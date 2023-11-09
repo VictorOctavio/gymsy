@@ -118,6 +118,7 @@
             DGPlan.ReadOnly = true;
             DGPlan.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             DGPlan.RowHeadersVisible = false;
+            DGPlan.RowHeadersWidth = 60;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -125,6 +126,10 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             DGPlan.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            DGPlan.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
+            DGPlan.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
+            DGPlan.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
+            DGPlan.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.White;
             DGPlan.RowTemplate.Height = 25;
             DGPlan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGPlan.ShowCellErrors = false;
