@@ -22,6 +22,9 @@
     <Compile Update="ClassCustom\Class1.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="ClassCustom\RJCircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="ClassCustom\RJComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

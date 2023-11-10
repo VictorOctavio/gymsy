@@ -1,4 +1,7 @@
-﻿using System;
+﻿using gymsy.App.Models;
+using gymsy.Context;
+using gymsy.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +15,262 @@ namespace gymsy.App.Views.UserControls.receptionist
 {
     public partial class addPay : UserControl
     {
+
+        private GymsyDbContext dbContext;
+        private int indexRowSelect = 0;
+
+        private bool isModeVerNoDelete = true;
+
         public addPay()
         {
+            //Se trae el contexto de la base de datos
+            this.dbContext = GymsyContext.GymsyContextDB;
+
             InitializeComponent();
+
+
+            this.cargarPersonas();
+
+            this.mostrar(false);
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PanelInvoiceWallet_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BBuscar_Click(object sender, EventArgs e)
+        {
+            // Obtén el texto actual del TextBox sin espacios al principio ni al final
+            string textoBuscado = TBBusqueda.Text.Trim();
+
+
+
+            // Comprueba si el TextBox está vacío
+            if (!string.IsNullOrEmpty(textoBuscado))
+            {
+                LModoBusqueda.Visible = true;
+                BCancelarBusqueda.Visible = true;
+
+                // Limpia cualquier ordenación previa en el DataGridView
+                DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
+                // Recorre todas las filas del DataGridView y oculta aquellas que no coincidan con el texto buscado
+                foreach (DataGridViewRow row in DGUsers.Rows)
+                {
+
+                    bool coincide = false;
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.Value != null && cell.Value.ToString().Contains(textoBuscado, StringComparison.OrdinalIgnoreCase))
+                        {
+                            coincide = true;
+                            break;
+                        }
+                    }
+                    // Ahora, verifica si la columna "delete" es false y this.isModoVerNoDelete es true antes de mostrar la fila
+                    bool deleteValue = Convert.ToBoolean(row.Cells["delete"].Value);
+
+                    //row.Visible = (this.isModeVerNoDelete && !deleteValue) || (!this.isModeVerNoDelete && deleteValue);
+                    row.Visible = coincide && !this.isModeVerNoDelete == deleteValue;
+
+
+                }
+            }
+            else
+            {
+                // Si el TextBox está vacío, muestra todas las filas
+                this.mostrar(!this.isModeVerNoDelete);
+            }
+        }
+
+        private void BCancelarBusqueda_Click(object sender, EventArgs e)
+        {
+            LModoBusqueda.Visible = false;
+            BCancelarBusqueda.Visible = false;
+            TBBusqueda.Clear();
+
+            // Limpia cualquier ordenación previa en el DataGridView
+            DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
+
+            mostrar(!this.isModeVerNoDelete);
+        }
+
+        private void cargarPersonas()
+        {
+            if (DGUsers.IsHandleCreated)
+            {
+                DGUsers.Rows.Clear();
+
+            }
+            //Se limpia la lista de personas
+
+            // Limpia cualquier ordenación previa en el DataGridView
+            DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
+
+            foreach (TrainingPlan plan in AppState.planes)
+            {
+                foreach (Client client in plan.Clients.ToArray())
+                {
+
+                    // Expiration 
+                    TimeSpan diferencia = client.LastExpiration - DateTime.Now;
+
+                    string ColumnExpirationMsg = diferencia.Days > 0 ?
+                        ("En " + diferencia.Days + " días") : ("Hace " + diferencia.Days * -1 + " días");
+
+
+                    try
+                    {
+                        string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient + "\\" + client.IdPersonNavigation.Avatar;
+
+
+
+                        DGUsers.Rows.Add(
+                        System.Drawing.Image.FromFile(ruta),
+                        string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
+                        client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                        client.IdPersonNavigation.NumberPhone,
+                        client.IdTrainingPlanNavigation.Description,
+                        ColumnExpirationMsg,
+                        client.IdClient,
+                        client.IdPersonNavigation.Inactive);
+                    }
+                    catch (Exception e)
+                    {
+
+
+                        DGUsers.Rows.Add(
+                        Resources.vector_fitness_couple_doing_exercise,
+                        string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
+                        client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                        client.IdPersonNavigation.NumberPhone,
+                        client.IdTrainingPlanNavigation.Description,
+                        ColumnExpirationMsg,
+                        client.IdClient,
+                        client.IdPersonNavigation.Inactive);
+                    }
+
+                }
+            }
+
+            // Actualiza la vista del DataGridView.
+            DGUsers.Refresh();
+
+
+        }
+
+
+        private void mostrar(bool verEliminados)
+        {
+            // Limpia cualquier ordenación previa en el DataGridView
+            DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
+
+            foreach (DataGridViewRow row in DGUsers.Rows)
+            {
+
+                row.Visible = bool.Parse(row.Cells["delete"].Value.ToString()) == verEliminados;
+
+            }
+
+            // Actualiza la vista del DataGridView.
+            DGUsers.Refresh();
+
+
+        }
+
+        private void BEditarCliente_Click(object sender, EventArgs e)
+        {
+            // Verifica si hay al menos una fila seleccionada en el DataGridView.
+            if (DGUsers.SelectedRows.Count > 0)
+            {
+                //se guarda su indice
+                this.indexRowSelect = DGUsers.SelectedRows[0].Index;
+
+                int idClient = int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
+
+                var clientSelected = this.dbContext.Clients
+                .Where(client => client.IdClient == idClient)
+                .First();
+
+
+                if (clientSelected != null && clientSelected.IdTrainingPlanNavigation != null && AppState.Instructor.IdPersonNavigation != null)
+                {
+                    LClientFullName.Text = clientSelected.IdPersonNavigation.FirstName + " " + clientSelected.IdPersonNavigation.LastName;
+                    LPlan.Text = clientSelected.IdTrainingPlanNavigation.Description;
+                    LInstructorFullName.Text = AppState.Instructor.IdPersonNavigation.FirstName + " " + AppState.Instructor.IdPersonNavigation.LastName;
+
+                    TbAmount.Text = clientSelected.IdTrainingPlanNavigation.Price.ToString();
+                    try
+                    {
+                        string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient + "\\" + clientSelected.IdPersonNavigation.Avatar;
+                        PimagenPerson.BackgroundImage = System.Drawing.Image.FromFile(ruta);
+                    }
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show(ex.Message);
+                        PimagenPerson.BackgroundImage = Resources.gorilla_avatar;
+                    }
+                    //this.dbContext.SaveChanges();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila.");
+            }
+        }
+
+        private void BAgregarCliente_Click(object sender, EventArgs e)
+        {
+            if (Lid_client.Text != "")
+            {
+                DialogResult resultado = MessageBox.Show("¿Está seguro de que desea agregar un nuevo pago?", "Por favor confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    generarPagos(int.Parse(Lid_client.Text));
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un cliente.");
+            }
+
+        }
+
+        private void generarPagos(int idClient)
+        {
+            var admin = this.dbContext.Admins.FirstOrDefault();
+            var walletAdmin = this.dbContext.Wallets.FirstOrDefault(wallet => wallet.IdPerson == admin.IdPerson);
+            var resepcionist = this.dbContext.People.FirstOrDefault(person => person.Rol.IdRol == 4);//rol de secretaria
+            var client = this.dbContext.Clients.FirstOrDefault(c => c.IdPersonNavigation.IdPerson == idClient);
+            if (admin != null && walletAdmin != null)
+            {
+                float monto = float.Parse(TbAmount.Text);
+                var newPay = new Pay
+                {
+                    CreatedAt = DateTime.Now,
+                    Amount = monto,  // Aquí debes proporcionar el monto deseado
+                    Inactive = false,
+                    DestinatarioId = admin.IdPersonNavigation.IdPerson,
+                    RemitenteId = resepcionist.IdPerson,
+                    IdPayType = 1
+                };
+
+
+                this.dbContext.Pays.Add(newPay);
+                //admin.Recaudacion += monto;
+                walletAdmin.Total += monto;
+                client.IdPersonNavigation.Inactive = false;
+                this.dbContext.SaveChanges();
+
+            }
         }
     }
 }

@@ -65,13 +65,13 @@ namespace gymsy
                 {
                     ruta = AppState.pathDestinationFolder;
                 }
-                ruta += person.Avatar;
-                BtnUserAvatar.Image = System.Drawing.Image.FromFile(ruta);
+                ruta += "\\" + person.Avatar;
+                PimagenPerson.BackgroundImage = System.Drawing.Image.FromFile(ruta);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                BtnUserAvatar.Image = Resources.gorilla_avatar;
+                //MessageBox.Show(ex.Message);
+                PimagenPerson.BackgroundImage = Resources.gorilla_avatar;
             }
         }
 
@@ -120,11 +120,12 @@ namespace gymsy
                 userControlsList = new List<UserControl>()
                  { new AboutClientControl(), new ProgressClientControl(), new PaymentsUserControl(), new SettingsUserControl(),
                   };
-            } else if (rol == "receptionist")
+            }
+            else if (rol == "receptionist")
             {
                 userControlsList = new List<UserControl>()
                 {
-                    new addPay(), new PaymentsUserControl(), new SettingsUserControl(),
+                    new addPay(), new SettingsUserControl(),
                 };
             }
             else

@@ -127,8 +127,8 @@
   <data name="gymman" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gymman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="grafico" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grafico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fitness_man" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fitness_man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="people_item" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\people_item.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +139,11 @@
   <data name="setting_item" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setting_item.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fitness_man" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fitness_man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="instructor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\instructor1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="instructor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\instructor.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,14 +151,17 @@
   <data name="logout_item" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout_item.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="output-onlinegiftoolsw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\output-onlinegiftoolsw.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="weightlifter-5246940_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\weightlifter-5246940_1280.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="x-mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x-mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Untitled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Untitled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="grafico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grafico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add_item" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_item.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,11 +184,14 @@
   <data name="pagoshans" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pagoshans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="instructor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\instructor1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Untitled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wallet (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wallet (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PublicDirectory" xml:space="preserve">
+    <value />
   </data>
   <data name="instr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\instr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,10 +211,7 @@
   <data name="vector-fitness-couple-doing-exercise1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vector-fitness-couple-doing-exercise1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="output-onlinegiftoolsw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\output-onlinegiftoolsw.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PublicDirectory" xml:space="preserve">
-    <value />
+  <data name="ogax344i" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ogax344i.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
