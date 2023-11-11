@@ -129,13 +129,11 @@ namespace gymsy.App.Views.UserControls.receptionist
                     {
                         string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient + "\\" + client.IdPersonNavigation.Avatar;
 
-
+                        using (var image = System.Drawing.Image.FromFile(ruta))
 
                         DGUsers.Rows.Add(
-                        System.Drawing.Image.FromFile(ruta),
-                        string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
+                        image,
                         client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
-                        client.IdPersonNavigation.NumberPhone,
                         client.IdTrainingPlanNavigation.Description,
                         ColumnExpirationMsg,
                         client.IdClient,
@@ -147,9 +145,7 @@ namespace gymsy.App.Views.UserControls.receptionist
 
                         DGUsers.Rows.Add(
                         Resources.vector_fitness_couple_doing_exercise,
-                        string.Format("{0:yyyy-MM-dd}", client.IdPersonNavigation.CreatedAt),
                         client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
-                        client.IdPersonNavigation.NumberPhone,
                         client.IdTrainingPlanNavigation.Description,
                         ColumnExpirationMsg,
                         client.IdClient,
@@ -183,6 +179,25 @@ namespace gymsy.App.Views.UserControls.receptionist
 
 
         }
+        private void eliminar(int idClient)
+        {
+
+            foreach (DataGridViewRow row in DGUsers.Rows)
+            {
+                if (int.TryParse(row.Cells["IdClient"].Value?.ToString(), out int clientValue))
+                {
+                    if (clientValue == idClient)
+                    {
+                        DGUsers.Rows.Remove(row);
+                        break;
+                    }
+                }
+            }
+
+            // Actualiza la vista del DataGridView.
+            DGUsers.Refresh();
+
+        }
 
         private void BEditarCliente_Click(object sender, EventArgs e)
         {
@@ -198,12 +213,13 @@ namespace gymsy.App.Views.UserControls.receptionist
                 .Where(client => client.IdClient == idClient)
                 .First();
 
-
-                if (clientSelected != null && clientSelected.IdTrainingPlanNavigation != null && AppState.Instructor.IdPersonNavigation != null)
+                //&& clientSelected.IdTrainingPlanNavigation != null && AppState.Instructor.IdPersonNavigation != null
+                if (clientSelected != null)
                 {
+                    Lid_client.Text = clientSelected.IdClient.ToString();
                     LClientFullName.Text = clientSelected.IdPersonNavigation.FirstName + " " + clientSelected.IdPersonNavigation.LastName;
                     LPlan.Text = clientSelected.IdTrainingPlanNavigation.Description;
-                    LInstructorFullName.Text = AppState.Instructor.IdPersonNavigation.FirstName + " " + AppState.Instructor.IdPersonNavigation.LastName;
+                    LInstructorFullName.Text = clientSelected.IdTrainingPlanNavigation.IdInstructorNavigation.IdPersonNavigation.FirstName + " " + clientSelected.IdTrainingPlanNavigation.IdInstructorNavigation.IdPersonNavigation.LastName;
 
                     TbAmount.Text = clientSelected.IdTrainingPlanNavigation.Price.ToString();
                     try
@@ -227,13 +243,15 @@ namespace gymsy.App.Views.UserControls.receptionist
 
         private void BAgregarCliente_Click(object sender, EventArgs e)
         {
-            if (Lid_client.Text != "")
+            if (int.TryParse(Lid_client.Text, out int clientId))
             {
                 DialogResult resultado = MessageBox.Show("¿Está seguro de que desea agregar un nuevo pago?", "Por favor confirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
                 {
-                    generarPagos(int.Parse(Lid_client.Text));
+                    generarPagos(clientId);
+                    vaciarLabels();
+
 
                 }
             }
@@ -244,32 +262,56 @@ namespace gymsy.App.Views.UserControls.receptionist
 
         }
 
+        private void vaciarLabels()
+        {
+            Lid_client.Text = "";
+            LClientFullName.Text = "nombre...";
+            LPlan.Text = "descripcion...";
+            LInstructorFullName.Text = "nombre...";
+        }
+
         private void generarPagos(int idClient)
         {
-            var admin = this.dbContext.Admins.FirstOrDefault();
-            var walletAdmin = this.dbContext.Wallets.FirstOrDefault(wallet => wallet.IdPerson == admin.IdPerson);
-            var resepcionist = this.dbContext.People.FirstOrDefault(person => person.Rol.IdRol == 4);//rol de secretaria
-            var client = this.dbContext.Clients.FirstOrDefault(c => c.IdPersonNavigation.IdPerson == idClient);
-            if (admin != null && walletAdmin != null)
+            try
             {
-                float monto = float.Parse(TbAmount.Text);
-                var newPay = new Pay
+
+
+                var admin = this.dbContext.Admins.FirstOrDefault();
+                var walletAdmin = this.dbContext.Wallets.FirstOrDefault(wallet => wallet.IdPerson == 1);
+                //var resepcionist = this.dbContext.People.FirstOrDefault(person => person.Rol.IdRol == 4);//rol de secretaria
+                var client = this.dbContext.Clients.First(c => c.IdClient == idClient);
+
+                if (admin != null && walletAdmin != null && client != null)
                 {
-                    CreatedAt = DateTime.Now,
-                    Amount = monto,  // Aquí debes proporcionar el monto deseado
-                    Inactive = false,
-                    DestinatarioId = admin.IdPersonNavigation.IdPerson,
-                    RemitenteId = resepcionist.IdPerson,
-                    IdPayType = 1
-                };
+                    float monto = float.Parse(TbAmount.Text);
+                    var newPay = new Pay
+                    {
+                        CreatedAt = DateTime.Now,
+                        Amount = monto,  // Aquí debes proporcionar el monto deseado
+                        Inactive = false,
+                        DestinatarioId = admin.IdPersonNavigation.IdPerson,
+                        RemitenteId = client.IdPerson,
+                        IdPayType = 1
+                    };
 
+                    client.LastExpiration = DateTime.Now.AddMonths(1);
 
-                this.dbContext.Pays.Add(newPay);
-                //admin.Recaudacion += monto;
-                walletAdmin.Total += monto;
-                client.IdPersonNavigation.Inactive = false;
-                this.dbContext.SaveChanges();
+                    this.dbContext.Pays.Add(newPay);
+                    this.dbContext.SaveChanges();
+                    //admin.Recaudacion += monto;
+                    walletAdmin.Total += monto;
+                    this.dbContext.SaveChanges();
+                    client.IdPersonNavigation.Inactive = false;
+                    this.dbContext.SaveChanges();
 
+                    //this.mostrar(false);
+                    eliminar(idClient);
+                    MessageBox.Show("Pago realizado con éxito.");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error al realizar el pago: " + e.Message);
             }
         }
     }

@@ -170,6 +170,15 @@ namespace gymsy.App.Presenters
                         var planes = this.gymsydb.TrainingPlans
                             .Where(plan => plan.Inactive == false)
                             .ToList();
+                        this.gymsydb.Clients.ToList();
+                        this.gymsydb.TrainingPlans.ToList();
+                        this.gymsydb.Instructors.ToList();
+                        this.gymsydb.Admins.ToList();
+                        this.gymsydb.PayTypes.ToList();
+                        this.gymsydb.Pays.ToList();
+                        this.gymsydb.Wallets.ToList();
+
+                        MessageBox.Show(planes.Count().ToString());
                         AppState.planes = planes;
                         AppState.clients = personsss;
                         AppState.persons = personsss;

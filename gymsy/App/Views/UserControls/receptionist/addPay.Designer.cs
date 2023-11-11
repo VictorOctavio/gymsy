@@ -53,6 +53,7 @@
             label4 = new Label();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
+            TbAmount = new Label();
             label8 = new Label();
             LInstructorFullName = new Label();
             LPlan = new Label();
@@ -63,7 +64,6 @@
             PimagenPerson = new ClassCustom.RJCircularPictureBox();
             label1 = new Label();
             label2 = new Label();
-            TbAmount = new Label();
             BAgregarCliente = new ClassCustom.RJButton();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
@@ -335,8 +335,9 @@
             Lid_client.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Lid_client.Location = new Point(89, 66);
             Lid_client.Name = "Lid_client";
-            Lid_client.Size = new Size(0, 21);
+            Lid_client.Size = new Size(67, 21);
             Lid_client.TabIndex = 108;
+            Lid_client.Text = "id_client";
             Lid_client.Visible = false;
             // 
             // BEditarCliente
@@ -392,6 +393,7 @@
             // 
             panel3.BackColor = Color.Transparent;
             panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.Controls.Add(TbAmount);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(LInstructorFullName);
             panel3.Controls.Add(LPlan);
@@ -402,13 +404,26 @@
             panel3.Controls.Add(PimagenPerson);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(label2);
-            panel3.Controls.Add(TbAmount);
             panel3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             panel3.Location = new Point(13, 89);
             panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
             panel3.Size = new Size(408, 179);
             panel3.TabIndex = 106;
+            // 
+            // TbAmount
+            // 
+            TbAmount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TbAmount.AutoSize = true;
+            TbAmount.Font = new Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point);
+            TbAmount.ForeColor = Color.White;
+            TbAmount.Location = new Point(158, 102);
+            TbAmount.Margin = new Padding(2, 0, 2, 0);
+            TbAmount.Name = "TbAmount";
+            TbAmount.Size = new Size(129, 61);
+            TbAmount.TabIndex = 0;
+            TbAmount.Text = "0.00";
+            TbAmount.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label8
             // 
@@ -533,20 +548,6 @@
             label2.Text = "ahora";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // TbAmount
-            // 
-            TbAmount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            TbAmount.AutoSize = true;
-            TbAmount.Font = new Font("Microsoft Sans Serif", 39.75F, FontStyle.Regular, GraphicsUnit.Point);
-            TbAmount.ForeColor = Color.White;
-            TbAmount.Location = new Point(123, 102);
-            TbAmount.Margin = new Padding(2, 0, 2, 0);
-            TbAmount.Name = "TbAmount";
-            TbAmount.Size = new Size(201, 61);
-            TbAmount.TabIndex = 0;
-            TbAmount.Text = "128984";
-            TbAmount.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // BAgregarCliente
             // 
             BAgregarCliente.BackColor = Color.FromArgb(41, 147, 45);
@@ -630,5 +631,6 @@
         private Label LPlan;
         private Label label8;
         private Label Lid_client;
+        private Label label9;
     }
 }

@@ -78,7 +78,16 @@ namespace gymsy.UserControls.AdminControls
                     //Se guarda en AppState
                     //AppState.clients.Add(persona);
 
+                    Wallet wallet = new Wallet
+                    {
+                        Total = 0.0,
+                        Retirable = 0.0,
+                        Inactive = false,
+                        IdPerson = persona.IdPerson
+                    };
 
+                    this.dbContext.Add(wallet);
+                    this.dbContext.SaveChanges();
 
                     this.dbContext.Instructors.Add(newInstructor);
                     this.dbContext.SaveChanges();
