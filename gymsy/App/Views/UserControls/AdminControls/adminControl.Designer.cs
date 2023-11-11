@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            rjButton1 = new ClassCustom.RJButton();
+            label2 = new Label();
+            BBuscarArchivo = new ClassCustom.RJButton();
             label20 = new Label();
             TBRutaArchivo = new TextBox();
             BGuardarBackUp = new ClassCustom.RJButton();
             label1 = new Label();
             openFileDialog1 = new OpenFileDialog();
-            BBuscarArchivo = new ClassCustom.RJButton();
-            label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(16, 8, 23);
+            panel1.Controls.Add(rjButton1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(BBuscarArchivo);
             panel1.Controls.Add(label20);
@@ -54,6 +56,65 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1000, 530);
             panel1.TabIndex = 0;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.FromArgb(0, 0, 192);
+            rjButton1.BackgroundColor = Color.FromArgb(0, 0, 192);
+            rjButton1.BorderColor = Color.PaleVioletRed;
+            rjButton1.BorderRadius = 15;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            rjButton1.ForeColor = Color.White;
+            rjButton1.IconChar = FontAwesome.Sharp.IconChar.RotateBackward;
+            rjButton1.IconColor = Color.FromArgb(230, 237, 243);
+            rjButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            rjButton1.IconSize = 45;
+            rjButton1.ImageAlign = ContentAlignment.MiddleRight;
+            rjButton1.Location = new Point(390, 200);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Padding = new Padding(10, 0, 0, 0);
+            rjButton1.Size = new Size(186, 61);
+            rjButton1.TabIndex = 95;
+            rjButton1.Text = "Restaurar";
+            rjButton1.TextAlign = ContentAlignment.MiddleLeft;
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += rjButton1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(378, 73);
+            label2.Name = "label2";
+            label2.Size = new Size(269, 30);
+            label2.TabIndex = 94;
+            label2.Text = "Buscar copia de seguridad";
+            // 
+            // BBuscarArchivo
+            // 
+            BBuscarArchivo.BackColor = Color.DarkOrange;
+            BBuscarArchivo.BackgroundColor = Color.DarkOrange;
+            BBuscarArchivo.BorderColor = Color.PaleVioletRed;
+            BBuscarArchivo.BorderRadius = 25;
+            BBuscarArchivo.BorderSize = 0;
+            BBuscarArchivo.FlatAppearance.BorderSize = 0;
+            BBuscarArchivo.FlatStyle = FlatStyle.Flat;
+            BBuscarArchivo.ForeColor = Color.White;
+            BBuscarArchivo.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            BBuscarArchivo.IconColor = Color.White;
+            BBuscarArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BBuscarArchivo.IconSize = 30;
+            BBuscarArchivo.Location = new Point(582, 143);
+            BBuscarArchivo.Name = "BBuscarArchivo";
+            BBuscarArchivo.Size = new Size(50, 50);
+            BBuscarArchivo.TabIndex = 93;
+            BBuscarArchivo.TextColor = Color.White;
+            BBuscarArchivo.UseVisualStyleBackColor = false;
+            BBuscarArchivo.Click += BBuscarArchivo_Click_1;
             // 
             // label20
             // 
@@ -95,7 +156,7 @@
             BGuardarBackUp.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BGuardarBackUp.IconSize = 45;
             BGuardarBackUp.ImageAlign = ContentAlignment.MiddleRight;
-            BGuardarBackUp.Location = new Point(139, 173);
+            BGuardarBackUp.Location = new Point(137, 184);
             BGuardarBackUp.Name = "BGuardarBackUp";
             BGuardarBackUp.Padding = new Padding(10, 0, 0, 0);
             BGuardarBackUp.Size = new Size(160, 65);
@@ -120,38 +181,6 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // BBuscarArchivo
-            // 
-            BBuscarArchivo.BackColor = Color.DarkOrange;
-            BBuscarArchivo.BackgroundColor = Color.DarkOrange;
-            BBuscarArchivo.BorderColor = Color.PaleVioletRed;
-            BBuscarArchivo.BorderRadius = 25;
-            BBuscarArchivo.BorderSize = 0;
-            BBuscarArchivo.FlatAppearance.BorderSize = 0;
-            BBuscarArchivo.FlatStyle = FlatStyle.Flat;
-            BBuscarArchivo.ForeColor = Color.White;
-            BBuscarArchivo.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            BBuscarArchivo.IconColor = Color.White;
-            BBuscarArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BBuscarArchivo.IconSize = 30;
-            BBuscarArchivo.Location = new Point(582, 143);
-            BBuscarArchivo.Name = "BBuscarArchivo";
-            BBuscarArchivo.Size = new Size(50, 50);
-            BBuscarArchivo.TabIndex = 93;
-            BBuscarArchivo.TextColor = Color.White;
-            BBuscarArchivo.UseVisualStyleBackColor = false;
-            BBuscarArchivo.Click += BBuscarArchivo_Click_1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(378, 73);
-            label2.Name = "label2";
-            label2.Size = new Size(269, 30);
-            label2.TabIndex = 94;
-            label2.Text = "Buscar copia de seguridad";
-            // 
             // adminControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -174,5 +203,6 @@
         private Label label20;
         private ClassCustom.RJButton BBuscarArchivo;
         private Label label2;
+        private ClassCustom.RJButton rjButton1;
     }
 }

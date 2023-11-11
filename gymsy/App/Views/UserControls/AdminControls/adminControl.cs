@@ -47,7 +47,7 @@ namespace gymsy.App.Views.UserControls.AdminControls
                     }
                 }
 
-                MessageBox.Show("Copia de seguridad creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Copia de seguridad creada exitosamente.\nLo puede encontrar en {rutaDeCopiaDeSeguridad}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -56,17 +56,6 @@ namespace gymsy.App.Views.UserControls.AdminControls
 
         }
 
-        private void BRestaurarDB_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(TBRutaArchivo.Text))
-            {
-                MessageBox.Show("Por favor, cargue la ruta del archivo.");
-            }
-            else
-            {
-                this.RealizarRestauracion(TBRutaArchivo.Text);
-            }
-        }
 
         public void RealizarRestauracion(string backupPath)
         {
@@ -135,6 +124,18 @@ namespace gymsy.App.Views.UserControls.AdminControls
                 {
                     MessageBox.Show("Ocurrió un error al cargar el archivo .bak: " + ex.Message);
                 }
+            }
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TBRutaArchivo.Text))
+            {
+                MessageBox.Show("Por favor, cargue la ruta del archivo.");
+            }
+            else
+            {
+                this.RealizarRestauracion(TBRutaArchivo.Text);
             }
         }
     }
