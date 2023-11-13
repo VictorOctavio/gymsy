@@ -275,12 +275,41 @@ namespace gymsy.UserControls
                             //Se limpia el indice
                             this.indexRowSelect = 0;
 
-                            //MessageBox.Show("Se elimino correctamente el plan.");
+                            MessageBox.Show("Se elimino correctamente el plan.");
+                            mostrar(!this.isModeVerNoDelete);
 
                         }
                         else //Se procede a Activar el plan
                         {
+                            //Se pregunta si desea eliminar el plan
+                            // Crear un cuadro de diálogo personalizado con los botones que desees
+                            MessageBoxButtons botones = MessageBoxButtons.YesNo;
+                            MessageBoxDefaultButton botonPredeterminadoNo = MessageBoxDefaultButton.Button2; // Button2 se refiere al botón "No"
 
+
+                            DialogResult v_dialogResult = MessageBox.Show("¿Esta seguro que desea activar el plan?", "Activar Plan", botones, MessageBoxIcon.Question, botonPredeterminadoNo);
+
+
+
+                            //se guarda su indice
+                            this.indexRowSelect = DGPlan.SelectedRows[0].Index;
+
+                            DGPlan.SelectedRows[0].Cells["delete"].Value = deleteOrAcitive;
+
+                            var idPlan = int.Parse(DGPlan.SelectedRows[0].Cells["id_plan"].Value.ToString());
+
+                            var plan = this.dbContext.TrainingPlans.Where(p => p.IdTrainingPlan == idPlan).FirstOrDefault();
+                            if (plan != null)
+                            {
+                                plan.Inactive = deleteOrAcitive;
+                            }
+
+
+                            //Se limpia el indice
+                            this.indexRowSelect = 0;
+
+                            MessageBox.Show("Se Activo correctamente el plan.");
+                            mostrar(!this.isModeVerNoDelete);
                         }
                     }
                 }

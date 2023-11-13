@@ -139,7 +139,7 @@ namespace gymsy.UserControls
             }
 
             //Se verifica que se hay ingresado un correo
-            if (!string.IsNullOrWhiteSpace(TBUsuario.Text) && this.IsNicknameUnique(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
+            if (!string.IsNullOrWhiteSpace(TBUsuario.Text) && TBUsuario.Text.Length < 7 && this.IsNicknameUnique(TBUsuario.Text) && TBUsuario.PlaceholderText != TBUsuario.Text)
             {
                 LUsurioRequerido.Visible = false;
             }
@@ -288,7 +288,7 @@ namespace gymsy.UserControls
                         Birthday = DPFechaNacimiento.Value,
                         Gender = sexo,
                         RolId = 3,//3 es el rol de cliente
-                        Inactive = false
+                        Inactive = true
                     };
 
                     //se guarda en la base de datos, primero la persona por la relacion de la llave foranea
@@ -304,6 +304,17 @@ namespace gymsy.UserControls
 
                     //Se guarda en AppState
                     AppState.clients.Add(persona);
+
+                    Wallet wallet = new Wallet
+                    {
+                        Total = 0.0,
+                        Retirable = 0.0,
+                        Inactive = false,
+                        IdPerson = persona.IdPerson
+                    };
+
+                    this.dbContext.Add(wallet);
+                    this.dbContext.SaveChanges();
 
 
 

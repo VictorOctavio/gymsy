@@ -269,6 +269,16 @@ namespace gymsy.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ogax344i {
+            get {
+                object obj = ResourceManager.GetObject("ogax344i", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap output_onlinegiftools {
             get {
                 object obj = ResourceManager.GetObject("output-onlinegiftools", resourceCulture);

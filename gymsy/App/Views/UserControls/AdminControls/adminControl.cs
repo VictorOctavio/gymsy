@@ -29,7 +29,7 @@ namespace gymsy.App.Views.UserControls.AdminControls
         {
             try
             {
-                string rutaDeCopiaDeSeguridad = AppState.pathDestinationFolder + AppState.nameCarpetBackUp;
+                string rutaDeCopiaDeSeguridad = "C:\\backup";
 
                 if (!Directory.Exists(rutaDeCopiaDeSeguridad))
                 {
@@ -47,13 +47,96 @@ namespace gymsy.App.Views.UserControls.AdminControls
                     }
                 }
 
-                MessageBox.Show("Copia de seguridad creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Copia de seguridad creada exitosamente.\nLo puede encontrar en {rutaDeCopiaDeSeguridad}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al crear la copia de seguridad: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+
+        public void RealizarRestauracion(string backupPath)
+        {
+            string databaseName;
+            string connectionString;
+
+            using (var context = this.dbContext)
+            {
+                connectionString = Resources.stringConnection;
+                databaseName = "gymsy";
+            }
+
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sqlsingleuser = $"ALTER DATABASE {databaseName} SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
+                    using (SqlCommand singleusercommand = new SqlCommand(sqlsingleuser, connection))
+                    {
+                        singleusercommand.ExecuteNonQuery();
+                    }
+                    string sqlUseMaster = "USE master;";
+                    using (SqlCommand useMasterCommand = new SqlCommand(sqlUseMaster, connection))
+                    {
+                        useMasterCommand.ExecuteNonQuery();
+                    }
+                    string sqlRestore = $"RESTORE DATABASE {databaseName} FROM DISK = '{backupPath}';";
+
+                    using (SqlCommand restoreCommand = new SqlCommand(sqlRestore, connection))
+                    {
+                        restoreCommand.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Restauración completada con éxito.");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error al restaurar la base de datos: " + ex.Message);
+            }
+        }
+
+        private void BBuscarArchivo_Click_1(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos .bak|*.bak";
+
+            // Muestra el cuadro de diálogo para seleccionar un archivo .bak
+            DialogResult result = openFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    string rutaArchivo = openFileDialog.FileName;
+
+
+                    // Muestra el contenido en el TextBox
+                    TBRutaArchivo.Text = rutaArchivo;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al cargar el archivo .bak: " + ex.Message);
+                }
+            }
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TBRutaArchivo.Text))
+            {
+                MessageBox.Show("Por favor, cargue la ruta del archivo.");
+            }
+            else
+            {
+                this.RealizarRestauracion(TBRutaArchivo.Text);
+            }
         }
     }
 }

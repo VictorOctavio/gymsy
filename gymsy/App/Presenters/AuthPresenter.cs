@@ -33,7 +33,7 @@ namespace gymsy.App.Presenters
         {
             try
             {
-
+                //SI DICE SECUENSE NO CONTAINS ES QUE NO HAY UNA PERSONA CON ESE NICKNAME
                 // Signin to database
                 var peopleFound = this.gymsydb.People
                                               .Where(p => p.Nickname == this.authView.Nickname)
@@ -60,7 +60,7 @@ namespace gymsy.App.Presenters
 
                             // Delay
                             this.authView.HandleResponseDBMessage();
-                            Thread.Sleep(3000);
+                            //Thread.Sleep(3000);
 
                             // Update global state
                             AppState.person = peopleFound;
@@ -132,16 +132,18 @@ namespace gymsy.App.Presenters
                         var instructorFound = this.gymsydb.Instructors
                                                 .Where(instructor => instructor.IdPerson == personFound.IdPerson)
                                                 .First();
-                   
+                        
                         var planesFound = this.gymsydb.TrainingPlans.ToList();
                         var clientsFound = this.gymsydb.Clients.ToList();
-                        var persons = this.gymsydb.People.ToList();
+                        
                         var dataFisico = this.gymsydb.DataFisics.ToList();
                         var Images = this.gymsydb.Images.ToList();
+
                         this.gymsydb.Pays.ToList();
                         this.gymsydb.PayTypes.ToList();
                         this.gymsydb.Wallets.ToList();
                         
+                        var persons = this.gymsydb.People.ToList();
 
                         AppState.clients = persons;
                         AppState.persons = persons;
@@ -164,8 +166,27 @@ namespace gymsy.App.Presenters
                         AppState.ClientActive = clientFound;
                        
                         break;
+
+                    // this person is a receptionist
                     case 4:
 
+                        var personsss = this.gymsydb.People.ToList();
+                        var planes = this.gymsydb.TrainingPlans
+                            .Where(plan => plan.Inactive == false)
+                            .ToList();
+                        this.gymsydb.Clients.ToList();
+                        this.gymsydb.TrainingPlans.ToList();
+                        this.gymsydb.Instructors.ToList();
+                        this.gymsydb.Admins.ToList();
+                        this.gymsydb.PayTypes.ToList();
+                        this.gymsydb.Pays.ToList();
+                        this.gymsydb.Wallets.ToList();
+
+                        MessageBox.Show(planes.Count().ToString());
+                        AppState.planes = planes;
+                        AppState.clients = personsss;
+                        AppState.persons = personsss;
+                        AppState.Instructor = new Instructor();
 
                         break;
                 }

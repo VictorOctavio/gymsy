@@ -58,6 +58,7 @@
             btnNavSignout = new Button();
             LabelNavRol = new Label();
             btnNavSettings = new Button();
+            PimagenPerson = new ClassCustom.RJCircularPictureBox();
             BtnUserAvatar = new Button();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             btnAddTimer = new System.Windows.Forms.Timer(components);
@@ -88,6 +89,7 @@
             tableLayoutClient.SuspendLayout();
             panel3.SuspendLayout();
             panelNavUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PimagenPerson).BeginInit();
             mainWrapper.SuspendLayout();
             navbar.SuspendLayout();
             panel5.SuspendLayout();
@@ -618,6 +620,7 @@
             panelNavUser.Controls.Add(btnNavSignout);
             panelNavUser.Controls.Add(LabelNavRol);
             panelNavUser.Controls.Add(btnNavSettings);
+            panelNavUser.Controls.Add(PimagenPerson);
             panelNavUser.Controls.Add(BtnUserAvatar);
             panelNavUser.Dock = DockStyle.Bottom;
             panelNavUser.Location = new Point(0, 561);
@@ -673,9 +676,28 @@
             btnNavSettings.UseVisualStyleBackColor = true;
             btnNavSettings.Click += btnNavSettings_Click;
             // 
+            // PimagenPerson
+            // 
+            PimagenPerson.BackgroundImage = Properties.Resources.gorilla_avatar;
+            PimagenPerson.BackgroundImageLayout = ImageLayout.Zoom;
+            PimagenPerson.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            PimagenPerson.BorderColor = Color.RoyalBlue;
+            PimagenPerson.BorderColor2 = Color.HotPink;
+            PimagenPerson.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            PimagenPerson.BorderSize = 2;
+            PimagenPerson.ErrorImage = Properties.Resources.gorilla_avatar;
+            PimagenPerson.GradientAngle = 50F;
+            PimagenPerson.Location = new Point(34, 37);
+            PimagenPerson.Name = "PimagenPerson";
+            PimagenPerson.Size = new Size(60, 60);
+            PimagenPerson.SizeMode = PictureBoxSizeMode.Zoom;
+            PimagenPerson.TabIndex = 1;
+            PimagenPerson.TabStop = false;
+            // 
             // BtnUserAvatar
             // 
             BtnUserAvatar.BackColor = Color.Transparent;
+            BtnUserAvatar.BackgroundImageLayout = ImageLayout.Zoom;
             BtnUserAvatar.FlatAppearance.BorderSize = 0;
             BtnUserAvatar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             BtnUserAvatar.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -694,6 +716,7 @@
             BtnUserAvatar.TextAlign = ContentAlignment.MiddleLeft;
             BtnUserAvatar.TextImageRelation = TextImageRelation.ImageBeforeText;
             BtnUserAvatar.UseVisualStyleBackColor = false;
+            BtnUserAvatar.Visible = false;
             // 
             // sidebarTimer
             // 
@@ -964,6 +987,7 @@
             panel3.PerformLayout();
             panelNavUser.ResumeLayout(false);
             panelNavUser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PimagenPerson).EndInit();
             mainWrapper.ResumeLayout(false);
             navbar.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -1030,5 +1054,6 @@
         private Button BtnNavWallet;
         private Label LabelAmuntWallet;
         private Label label8;
+        private ClassCustom.RJCircularPictureBox PimagenPerson;
     }
 }

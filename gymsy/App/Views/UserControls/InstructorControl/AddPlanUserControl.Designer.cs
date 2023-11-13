@@ -32,12 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            panel4 = new Panel();
-            DGPlan = new DataGridView();
-            id_plan = new DataGridViewTextBoxColumn();
-            precio = new DataGridViewTextBoxColumn();
-            descripcion = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
             TBPrecio = new CustomControls.RJControls.RJTextBox();
             LModoEditOrAdd = new Label();
@@ -58,11 +52,17 @@
             LModoBusqueda = new Label();
             TBBusqueda = new CustomControls.RJControls.RJTextBox();
             BBuscar = new ClassCustom.RJButton();
+            DGPlan = new DataGridView();
+            delete = new DataGridViewTextBoxColumn();
+            descripcion = new DataGridViewTextBoxColumn();
+            precio = new DataGridViewTextBoxColumn();
+            id_plan = new DataGridViewTextBoxColumn();
+            panel4 = new Panel();
             panel1.SuspendLayout();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DGPlan).BeginInit();
             panel2.SuspendLayout();
             nav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DGPlan).BeginInit();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -532,6 +532,85 @@
             BBuscar.UseVisualStyleBackColor = false;
             BBuscar.Click += BBuscar_Click;
             // 
+            // DGPlan
+            // 
+            DGPlan.AllowUserToAddRows = false;
+            DGPlan.AllowUserToDeleteRows = false;
+            DGPlan.AllowUserToResizeColumns = false;
+            DGPlan.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(69, 34, 99);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(230, 237, 243);
+            DGPlan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DGPlan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGPlan.BackgroundColor = Color.FromArgb(16, 8, 23);
+            DGPlan.BorderStyle = BorderStyle.None;
+            DGPlan.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGPlan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DGPlan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGPlan.Columns.AddRange(new DataGridViewColumn[] { id_plan, precio, descripcion, delete });
+            DGPlan.Dock = DockStyle.Fill;
+            DGPlan.EditMode = DataGridViewEditMode.EditProgrammatically;
+            DGPlan.Location = new Point(0, 0);
+            DGPlan.MultiSelect = false;
+            DGPlan.Name = "DGPlan";
+            DGPlan.ReadOnly = true;
+            DGPlan.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DGPlan.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            DGPlan.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            DGPlan.RowTemplate.Height = 25;
+            DGPlan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGPlan.ShowCellErrors = false;
+            DGPlan.Size = new Size(759, 400);
+            DGPlan.TabIndex = 5;
+            DGPlan.VisibleChanged += DGPlan_VisibleChanged;
+            // 
+            // delete
+            // 
+            delete.HeaderText = "Eliminado";
+            delete.Name = "delete";
+            delete.ReadOnly = true;
+            delete.Visible = false;
+            // 
+            // descripcion
+            // 
+            descripcion.HeaderText = "Descripcion";
+            descripcion.Name = "descripcion";
+            descripcion.ReadOnly = true;
+            // 
+            // precio
+            // 
+            precio.HeaderText = "Precio";
+            precio.Name = "precio";
+            precio.ReadOnly = true;
+            // 
+            // id_plan
+            // 
+            id_plan.HeaderText = "Identificador";
+            id_plan.Name = "id_plan";
+            id_plan.ReadOnly = true;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            panel4.Controls.Add(DGPlan);
+            panel4.Location = new Point(0, 130);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(759, 400);
+            panel4.TabIndex = 80;
+            // 
             // AddPlanUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -542,19 +621,18 @@
             Name = "AddPlanUserControl";
             Size = new Size(1000, 530);
             panel1.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)DGPlan).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             nav.ResumeLayout(false);
             nav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DGPlan).EndInit();
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
         private Panel panel1;
         private Panel nav;
-        private DataGridView DGPlan;
         private ClassCustom.RJButton BAgregarPlan;
         private ClassCustom.RJButton BBuscar;
         private CustomControls.RJControls.RJTextBox TBBusqueda;
@@ -575,6 +653,7 @@
         private ClassCustom.RJButton BVerPlanesEliminados;
         private Panel panel3;
         private Panel panel4;
+        private DataGridView DGPlan;
         private DataGridViewTextBoxColumn id_plan;
         private DataGridViewTextBoxColumn precio;
         private DataGridViewTextBoxColumn descripcion;
