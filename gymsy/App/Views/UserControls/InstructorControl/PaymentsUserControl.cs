@@ -1,4 +1,6 @@
-﻿using System;
+﻿using gymsy.App.Models;
+using gymsy.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,20 +14,60 @@ namespace gymsy.UserControls
 {
     public partial class PaymentsUserControl : UserControl
     {
+        private IEnumerable<Pay> PaysList;
+        private GymsyDbContext dbContext;
+
         public PaymentsUserControl()
         {
+            this.dbContext = GymsyContext.GymsyContextDB;
             InitializeComponent();
             InitializeGridProgress();
         }
 
         private void InitializeGridProgress()
         {
-            dataGridPayments.Rows.Add(0, "12/07/23", "pago cuota", "$8222", "Martin Zalazar Pago Cuota (1 mes)");
-            dataGridPayments.Rows.Add(1, "11/07/23", "pago cuota", "$8222", "Ramon Gutierrez Pago Cuota (1 mes)");
-            dataGridPayments.Rows.Add(2, "08/17/23", "pago cuota", "$7500", "Roman Martinez Pago Cuota (1 mes)");
-            dataGridPayments.Rows.Add(3, "01/06/23", "pago cuota", "$7500", "Fernando Gago Pago Cuota (1 mes)");
+            if (AppState.person != null)
+            {
+                this.PaysList = AppState.person.PayDestinatarios.ToArray()
+                   .Concat(AppState.person.PayRemitentes.ToArray());
+            }
+
+            if (this.PaysList.Count() > 0)
+            {
+                PanelMsg.Visible = false;
+                foreach (Pay pay in this.PaysList)
+                {
+                    TimeSpan diferencia = (DateTime.Now - pay.CreatedAt);
+                    String formart = $"Hace {diferencia.Days} dias";
+                    String descripcion = pay.DestinatarioId == AppState.person.IdPerson ? $"Recibiste" : $"Pagaste";
+                    dataGridPayments.Rows.Add(pay.IdPay, formart, pay.IdPayTypeNavigation.Name, pay.Amount, descripcion);
+                }
+            }
+
         }
 
-       
+        private void dataGridPayments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == 1)
+            {
+
+                int rowIndex = e.RowIndex;
+                int columnIndex = e.ColumnIndex;
+
+
+                int IdPaySelected = int.Parse(dataGridPayments.Rows[rowIndex].Cells["ID"].Value.ToString());
+
+                var PaySelected = this.dbContext.Pays
+                                .Where(pay => pay.IdPay == IdPaySelected)
+                                .First();
+
+                // Navigate to training history
+                if (PaySelected != null)
+                {
+                    string rutaArchivo = utilities.GenarateComprobante.GeneratePdfComprobante(PaySelected);
+                    MessageBox.Show("Archivo HTML generado exitosamente en: " + rutaArchivo);
+                }
+            }
+        }
     }
 }

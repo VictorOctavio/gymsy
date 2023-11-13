@@ -28,7 +28,7 @@ namespace gymsy.UserControls
          */
         private bool isModeVerNoDelete = true;
 
-        //private List<Client> clients = new List<Client>();
+        private List<Client> clients = new List<Client>();
 
 
         public ClientsUserControl()
@@ -105,6 +105,8 @@ namespace gymsy.UserControls
             {
                 foreach (Client client in plan.Clients.ToArray())
                 {
+
+                    this.clients.Add(client);
 
                     // Expiration 
                     TimeSpan diferencia = client.LastExpiration - DateTime.Now;
@@ -439,6 +441,20 @@ namespace gymsy.UserControls
                 this.mostrar(false);
                 AppState.needRefreshClientsUserControl = false;
             }
+        }
+
+        private void BtnNotify_Click(object sender, EventArgs e)
+        {
+            if (!utilities.Verify.IsConnectedToNetwork())
+            {
+                MessageBox.Show("Necesitas conexion a internet");
+                return;
+            }
+            //    viernes que viene            hoy            vie q vie               jueves que viene
+            List<Client> clientsFound = this.clients.Where(cl => cl.LastExpiration >= DateTime.Now.AddDays(-1) && cl.LastExpiration <= DateTime.Now.AddDays(7)).ToList();
+            utilities.TwilioMSG.SendAlertClients(clientsFound);
+            MessageBox.Show($"Se ha enviado a {clientsFound.Count().ToString()} clientes");
+
         }
     }
 }

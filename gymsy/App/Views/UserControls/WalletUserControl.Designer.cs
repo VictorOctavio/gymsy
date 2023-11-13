@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle28 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle29 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle34 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle35 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle36 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle30 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle31 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle32 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle33 = new DataGridViewCellStyle();
             panelWalletWrapper = new Panel();
             panel2 = new Panel();
             panel5 = new Panel();
@@ -60,7 +60,7 @@
             PanelInvoiceWallet = new Panel();
             BtnCloseInvoice = new ClassCustom.RJButton();
             label12 = new Label();
-            rjButton4 = new ClassCustom.RJButton();
+            BtnDownloadPDF = new ClassCustom.RJButton();
             label10 = new Label();
             panel4 = new Panel();
             label14 = new Label();
@@ -81,6 +81,7 @@
             gridType = new DataGridViewTextBoxColumn();
             gridAmount = new DataGridViewTextBoxColumn();
             gridDescription = new DataGridViewTextBoxColumn();
+            BtnSendWhatsapp = new ClassCustom.RJButton();
             panelWalletWrapper.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
@@ -454,9 +455,10 @@
             PanelInvoiceWallet.AutoSize = true;
             PanelInvoiceWallet.BackColor = Color.White;
             PanelInvoiceWallet.BorderStyle = BorderStyle.FixedSingle;
+            PanelInvoiceWallet.Controls.Add(BtnSendWhatsapp);
             PanelInvoiceWallet.Controls.Add(BtnCloseInvoice);
             PanelInvoiceWallet.Controls.Add(label12);
-            PanelInvoiceWallet.Controls.Add(rjButton4);
+            PanelInvoiceWallet.Controls.Add(BtnDownloadPDF);
             PanelInvoiceWallet.Controls.Add(label10);
             PanelInvoiceWallet.Location = new Point(191, 91);
             PanelInvoiceWallet.Margin = new Padding(0);
@@ -507,35 +509,36 @@
             label12.Text = "Descripcion de la operacion";
             label12.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // rjButton4
+            // BtnDownloadPDF
             // 
-            rjButton4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            rjButton4.BackColor = Color.DarkOrange;
-            rjButton4.BackgroundColor = Color.DarkOrange;
-            rjButton4.BorderColor = Color.PaleVioletRed;
-            rjButton4.BorderRadius = 12;
-            rjButton4.BorderSize = 0;
-            rjButton4.Cursor = Cursors.Hand;
-            rjButton4.FlatAppearance.BorderSize = 0;
-            rjButton4.FlatStyle = FlatStyle.Flat;
-            rjButton4.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            rjButton4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            rjButton4.ForeColor = Color.White;
-            rjButton4.IconChar = FontAwesome.Sharp.IconChar.Download;
-            rjButton4.IconColor = Color.White;
-            rjButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            rjButton4.IconSize = 30;
-            rjButton4.ImageAlign = ContentAlignment.MiddleRight;
-            rjButton4.Location = new Point(54, 110);
-            rjButton4.Margin = new Padding(0);
-            rjButton4.Name = "rjButton4";
-            rjButton4.Padding = new Padding(10, 0, 10, 0);
-            rjButton4.Size = new Size(254, 42);
-            rjButton4.TabIndex = 47;
-            rjButton4.Text = "Descargar Comprobante";
-            rjButton4.TextAlign = ContentAlignment.MiddleLeft;
-            rjButton4.TextColor = Color.White;
-            rjButton4.UseVisualStyleBackColor = false;
+            BtnDownloadPDF.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            BtnDownloadPDF.BackColor = Color.DarkOrange;
+            BtnDownloadPDF.BackgroundColor = Color.DarkOrange;
+            BtnDownloadPDF.BorderColor = Color.PaleVioletRed;
+            BtnDownloadPDF.BorderRadius = 12;
+            BtnDownloadPDF.BorderSize = 0;
+            BtnDownloadPDF.Cursor = Cursors.Hand;
+            BtnDownloadPDF.FlatAppearance.BorderSize = 0;
+            BtnDownloadPDF.FlatStyle = FlatStyle.Flat;
+            BtnDownloadPDF.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            BtnDownloadPDF.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnDownloadPDF.ForeColor = Color.White;
+            BtnDownloadPDF.IconChar = FontAwesome.Sharp.IconChar.Download;
+            BtnDownloadPDF.IconColor = Color.White;
+            BtnDownloadPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnDownloadPDF.IconSize = 30;
+            BtnDownloadPDF.ImageAlign = ContentAlignment.MiddleRight;
+            BtnDownloadPDF.Location = new Point(14, 111);
+            BtnDownloadPDF.Margin = new Padding(0);
+            BtnDownloadPDF.Name = "BtnDownloadPDF";
+            BtnDownloadPDF.Padding = new Padding(10, 0, 10, 0);
+            BtnDownloadPDF.Size = new Size(254, 42);
+            BtnDownloadPDF.TabIndex = 47;
+            BtnDownloadPDF.Text = "Descargar Comprobante";
+            BtnDownloadPDF.TextAlign = ContentAlignment.MiddleLeft;
+            BtnDownloadPDF.TextColor = Color.White;
+            BtnDownloadPDF.UseVisualStyleBackColor = false;
+            BtnDownloadPDF.Click += BtnDownloadPDF_Click;
             // 
             // label10
             // 
@@ -729,57 +732,57 @@
             dataGridTransactions.AllowUserToDeleteRows = false;
             dataGridTransactions.AllowUserToResizeColumns = false;
             dataGridTransactions.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.Transparent;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = Color.Transparent;
+            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle10.SelectionForeColor = Color.White;
+            dataGridTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             dataGridTransactions.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridTransactions.BackgroundColor = Color.FromArgb(16, 8, 30);
             dataGridTransactions.CausesValidation = false;
             dataGridTransactions.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.Transparent;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.Transparent;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = Color.White;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dataGridTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             dataGridTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridTransactions.Columns.AddRange(new DataGridViewColumn[] { ID, gridDate, gridType, gridAmount, gridDescription });
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dataGridTransactions.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle16.SelectionForeColor = Color.White;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.False;
+            dataGridTransactions.DefaultCellStyle = dataGridViewCellStyle16;
             dataGridTransactions.GridColor = Color.Black;
             dataGridTransactions.Location = new Point(0, 68);
             dataGridTransactions.Margin = new Padding(0);
             dataGridTransactions.MultiSelect = false;
             dataGridTransactions.Name = "dataGridTransactions";
             dataGridTransactions.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.IndianRed;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.GrayText;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dataGridTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = Color.IndianRed;
+            dataGridViewCellStyle17.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = SystemColors.GrayText;
+            dataGridViewCellStyle17.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.True;
+            dataGridTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             dataGridTransactions.RowHeadersVisible = false;
             dataGridTransactions.RowHeadersWidth = 62;
             dataGridTransactions.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle9.BackColor = Color.White;
-            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.Padding = new Padding(0, 10, 0, 10);
-            dataGridViewCellStyle9.SelectionBackColor = Color.White;
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            dataGridTransactions.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.BackColor = Color.White;
+            dataGridViewCellStyle18.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle18.ForeColor = Color.White;
+            dataGridViewCellStyle18.Padding = new Padding(0, 10, 0, 10);
+            dataGridViewCellStyle18.SelectionBackColor = Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = Color.White;
+            dataGridTransactions.RowsDefaultCellStyle = dataGridViewCellStyle18;
             dataGridTransactions.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
             dataGridTransactions.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
             dataGridTransactions.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
@@ -790,6 +793,7 @@
             dataGridTransactions.Size = new Size(1085, 254);
             dataGridTransactions.TabIndex = 2;
             dataGridTransactions.Visible = false;
+            dataGridTransactions.CellContentClick += dataGridTransactions_CellContentClick;
             // 
             // ID
             // 
@@ -804,12 +808,12 @@
             // gridDate
             // 
             gridDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.BackColor = Color.Transparent;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Transparent;
-            gridDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.BackColor = Color.Transparent;
+            dataGridViewCellStyle12.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle12.SelectionForeColor = Color.Transparent;
+            gridDate.DefaultCellStyle = dataGridViewCellStyle12;
             gridDate.HeaderText = "Fecha";
             gridDate.MinimumWidth = 8;
             gridDate.Name = "gridDate";
@@ -818,12 +822,12 @@
             // 
             // gridType
             // 
-            dataGridViewCellStyle4.BackColor = Color.Transparent;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            gridType.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.BackColor = Color.Transparent;
+            dataGridViewCellStyle13.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle13.SelectionForeColor = Color.White;
+            gridType.DefaultCellStyle = dataGridViewCellStyle13;
             gridType.HeaderText = "Tipo";
             gridType.MinimumWidth = 8;
             gridType.Name = "gridType";
@@ -832,12 +836,12 @@
             // 
             // gridAmount
             // 
-            dataGridViewCellStyle5.BackColor = Color.Transparent;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Transparent;
-            gridAmount.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.BackColor = Color.Transparent;
+            dataGridViewCellStyle14.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle14.SelectionForeColor = Color.Transparent;
+            gridAmount.DefaultCellStyle = dataGridViewCellStyle14;
             gridAmount.HeaderText = "Monto";
             gridAmount.MinimumWidth = 8;
             gridAmount.Name = "gridAmount";
@@ -847,16 +851,45 @@
             // gridDescription
             // 
             gridDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.BackColor = Color.Transparent;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Transparent;
-            gridDescription.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.BackColor = Color.Transparent;
+            dataGridViewCellStyle15.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle15.SelectionForeColor = Color.Transparent;
+            gridDescription.DefaultCellStyle = dataGridViewCellStyle15;
             gridDescription.HeaderText = "Descripcion";
             gridDescription.MinimumWidth = 8;
             gridDescription.Name = "gridDescription";
             gridDescription.ReadOnly = true;
+            // 
+            // BtnSendWhatsapp
+            // 
+            BtnSendWhatsapp.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            BtnSendWhatsapp.BackColor = Color.DarkGreen;
+            BtnSendWhatsapp.BackgroundColor = Color.DarkGreen;
+            BtnSendWhatsapp.BorderColor = Color.PaleVioletRed;
+            BtnSendWhatsapp.BorderRadius = 12;
+            BtnSendWhatsapp.BorderSize = 0;
+            BtnSendWhatsapp.Cursor = Cursors.Hand;
+            BtnSendWhatsapp.FlatAppearance.BorderSize = 0;
+            BtnSendWhatsapp.FlatStyle = FlatStyle.Flat;
+            BtnSendWhatsapp.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnSendWhatsapp.ForeColor = Color.White;
+            BtnSendWhatsapp.IconChar = FontAwesome.Sharp.IconChar.Whatsapp;
+            BtnSendWhatsapp.IconColor = Color.White;
+            BtnSendWhatsapp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnSendWhatsapp.IconSize = 30;
+            BtnSendWhatsapp.ImageAlign = ContentAlignment.MiddleRight;
+            BtnSendWhatsapp.Location = new Point(276, 111);
+            BtnSendWhatsapp.Margin = new Padding(0);
+            BtnSendWhatsapp.Name = "BtnSendWhatsapp";
+            BtnSendWhatsapp.Padding = new Padding(10, 5, 10, 0);
+            BtnSendWhatsapp.Size = new Size(58, 42);
+            BtnSendWhatsapp.TabIndex = 50;
+            BtnSendWhatsapp.TextAlign = ContentAlignment.MiddleLeft;
+            BtnSendWhatsapp.TextColor = Color.White;
+            BtnSendWhatsapp.UseVisualStyleBackColor = false;
+            BtnSendWhatsapp.Click += BtnSendWhatsapp_Click;
             // 
             // WalletUserControl
             // 
@@ -922,7 +955,7 @@
         private Panel PanelInvoiceWallet;
         private Label label10;
         private Label label12;
-        private ClassCustom.RJButton rjButton4;
+        private ClassCustom.RJButton BtnDownloadPDF;
         private ClassCustom.RJButton btnNewTransaction;
         private ClassCustom.RJButton BtnCloseInvoice;
         private Panel PanelMsg;
@@ -933,5 +966,6 @@
         private Label label15;
         private Label TbTotalAmount;
         private TextBox TbAmountTran;
+        private ClassCustom.RJButton BtnSendWhatsapp;
     }
 }

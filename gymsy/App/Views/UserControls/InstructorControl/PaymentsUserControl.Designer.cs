@@ -36,6 +36,9 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             PanelPaymentsWrapper = new Panel();
+            PanelMsg = new Panel();
+            pictureBox2 = new PictureBox();
+            label13 = new Label();
             dataGridPayments = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             gridDate = new DataGridViewTextBoxColumn();
@@ -46,6 +49,8 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             PanelPaymentsWrapper.SuspendLayout();
+            PanelMsg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridPayments).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -54,6 +59,7 @@
             // PanelPaymentsWrapper
             // 
             PanelPaymentsWrapper.BackColor = Color.FromArgb(16, 8, 23);
+            PanelPaymentsWrapper.Controls.Add(PanelMsg);
             PanelPaymentsWrapper.Controls.Add(dataGridPayments);
             PanelPaymentsWrapper.Controls.Add(panel1);
             PanelPaymentsWrapper.Dock = DockStyle.Fill;
@@ -61,6 +67,39 @@
             PanelPaymentsWrapper.Name = "PanelPaymentsWrapper";
             PanelPaymentsWrapper.Size = new Size(800, 627);
             PanelPaymentsWrapper.TabIndex = 0;
+            // 
+            // PanelMsg
+            // 
+            PanelMsg.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PanelMsg.Controls.Add(pictureBox2);
+            PanelMsg.Controls.Add(label13);
+            PanelMsg.Location = new Point(209, 342);
+            PanelMsg.Margin = new Padding(2);
+            PanelMsg.Name = "PanelMsg";
+            PanelMsg.Size = new Size(343, 65);
+            PanelMsg.TabIndex = 7;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.wallet_free;
+            pictureBox2.Location = new Point(10, 8);
+            pictureBox2.Margin = new Padding(2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(51, 47);
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.ForeColor = SystemColors.ButtonHighlight;
+            label13.Location = new Point(75, 19);
+            label13.Margin = new Padding(2, 0, 2, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(202, 25);
+            label13.TabIndex = 0;
+            label13.Text = "No se registraron Pagos";
             // 
             // dataGridPayments
             // 
@@ -129,6 +168,7 @@
             dataGridPayments.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridPayments.Size = new Size(800, 483);
             dataGridPayments.TabIndex = 3;
+            dataGridPayments.CellContentClick += dataGridPayments_CellContentClick;
             // 
             // ID
             // 
@@ -192,7 +232,7 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 90);
             panel1.TabIndex = 6;
@@ -208,7 +248,6 @@
             label3.Size = new Size(256, 41);
             label3.TabIndex = 4;
             label3.Text = "Historial de Pagos";
-            
             // 
             // pictureBox1
             // 
@@ -229,6 +268,9 @@
             Name = "PaymentsUserControl";
             Size = new Size(800, 627);
             PanelPaymentsWrapper.ResumeLayout(false);
+            PanelMsg.ResumeLayout(false);
+            PanelMsg.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridPayments).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -248,5 +290,8 @@
         private DataGridViewTextBoxColumn gridDescription;
         private Label label3;
         private Panel panel1;
+        private Panel PanelMsg;
+        private PictureBox pictureBox2;
+        private Label label13;
     }
 }

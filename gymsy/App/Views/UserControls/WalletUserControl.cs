@@ -13,6 +13,16 @@ using Twilio.TwiML.Voice;
 using gymsy.App.Models;
 using Pay = gymsy.App.Models.Pay;
 using gymsy.App.Views.Interfaces;
+using PdfSharp.Pdf;
+using PdfSharp;
+using TheArtOfDev.HtmlRenderer.PdfSharp;
+using Application = System.Windows.Forms.Application;
+using CloudinaryDotNet.Actions;
+using CloudinaryDotNet;
+using PdfSharp.Drawing;
+using System.Drawing.Imaging;
+using System.Net.NetworkInformation;
+using gymsy.Properties;
 
 namespace gymsy.UserControls
 {
@@ -21,12 +31,15 @@ namespace gymsy.UserControls
 
         private GymsyDbContext gymsydb = GymsyContext.GymsyContextDB;
         private IEnumerable<Pay> PaysList;
+        private Pay PayActive;
+        private GymsyDbContext dbContext;
 
         public WalletUserControl()
         {
             InitializeComponent();
             InitializeData();
             InitializeGridTransactions();
+            this.dbContext = GymsyContext.GymsyContextDB;
         }
 
         private void InitializeData()
@@ -115,7 +128,7 @@ namespace gymsy.UserControls
         {
             try
             {
-
+               
                 // Ocultar errores anteriores
                 labelTransactionError.Visible = false;
 
@@ -231,9 +244,126 @@ namespace gymsy.UserControls
             PanelInvoiceWallet.Visible = false;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void dataGridTransactions_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        { 
+            if (e.RowIndex >= 0 && e.ColumnIndex == 1)
+            {
+
+                int rowIndex = e.RowIndex;
+                int columnIndex = e.ColumnIndex;
+
+
+                int IdPaySelected = int.Parse(dataGridTransactions.Rows[rowIndex].Cells["ID"].Value.ToString());
+
+                var PaySelected = this.dbContext.Pays
+                                .Where(pay => pay.IdPay == IdPaySelected)
+                                .First();
+
+                // Navigate to training history
+                if (PaySelected != null)
+                {
+                    this.PayActive = PaySelected;
+                    PanelInvoiceWallet.Visible = true;
+                }
+            } 
+        }
+
+        private void BtnDownloadPDF_Click(object sender, EventArgs e)
+        {
+            string rutaArchivo  = utilities.GenarateComprobante.GeneratePdfComprobante(this.PayActive);
+            MessageBox.Show("Archivo HTML generado exitosamente en: " + rutaArchivo);
+            PanelInvoiceWallet.Visible = false;
+        }
+
+
+
+
+        private void BtnSendWhatsapp_Click(object sender, EventArgs e)
         {
 
+            if (!utilities.Verify.IsConnectedToNetwork())
+            {
+                MessageBox.Show("Necesitas conexion a internet");
+                return;
+            }
+
+            try
+            {
+                string rutaArchivo = utilities.GenarateComprobante.GeneratePdfComprobante(this.PayActive);
+                string htmlContent = File.ReadAllText(rutaArchivo);
+
+
+                // Crear un formulario y agregar un control WebBrowser
+                using (var form = new Form())
+                using (var browser = new WebBrowser())
+                {
+                    form.Controls.Add(browser);
+                    form.Size = new System.Drawing.Size(800, 600);
+
+                    // Navegar al contenido HTML
+                    browser.Navigate("about:blank");
+                    browser.Document.OpenNew(true);
+                    browser.Document.Write(htmlContent);
+                    browser.Refresh();
+
+            
+                    int captureWidth = 1000; 
+                    int captureHeight = 800; 
+
+                    // Capturar una captura de pantalla del control WebBrowser
+                    using (Bitmap bitmap = new Bitmap(captureWidth, captureHeight))
+                    {
+                        browser.DrawToBitmap(bitmap, new Rectangle(0, 0, captureWidth, captureHeight));
+
+                        // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
+                        string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".png";
+
+                        // Ruta completa para guardar la imagen en la carpeta
+                        string destinationPath = Path.Combine(AppState.pathDestinationFolder, uniqueFileName);
+
+                        // Guardar la imagen en un archivo (opcional)
+                        bitmap.Save(destinationPath, System.Drawing.Imaging.ImageFormat.Png);
+
+                        // Configura tu cuenta de Cloudinary
+                        Account account = new Account(
+                            Resources.accountNameCloudinary,
+                            Resources.idCloudinary,
+                            Resources.tokenCloudinary
+                        );
+
+                        Cloudinary cloudinary = new Cloudinary(account);
+
+                        // Sube una imagen
+                        var uploadParams = new ImageUploadParams()
+                        {
+                            File = new FileDescription(destinationPath),
+                        };
+
+                        var uploadResult = cloudinary.Upload(uploadParams);
+
+                        // El resultado contiene la URL de la imagen almacenada en Cloudinary
+                        string imageUrl = uploadResult.Uri.ToString();
+
+                        utilities.TwilioMSG.SendMessageComprobante(imageUrl);
+              
+                        File.Delete(destinationPath);
+                        File.Delete(rutaArchivo);
+                    }
+                }
+                    
+
+            }
+            catch
+            {
+                MessageBox.Show("Necesitas conexion a internet");
+            }
+            finally
+            {
+                PanelInvoiceWallet.Visible = false;
+            }
         }
+
+
+ 
     }
 }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle29 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle30 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle32 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle31 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DGUsers = new DataGridView();
             Avatar = new DataGridViewImageColumn();
             created = new DataGridViewTextBoxColumn();
@@ -43,6 +43,7 @@
             delete = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel2 = new Panel();
+            label3 = new Label();
             BVerClients = new ClassCustom.RJButton();
             label2 = new Label();
             label1 = new Label();
@@ -56,7 +57,7 @@
             BEliminarCliente = new ClassCustom.RJButton();
             BAgregarCliente = new ClassCustom.RJButton();
             pictureBox1 = new PictureBox();
-            label3 = new Label();
+            BtnNotify = new ClassCustom.RJButton();
             ((System.ComponentModel.ISupportInitialize)DGUsers).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -69,10 +70,10 @@
             DGUsers.AllowUserToDeleteRows = false;
             DGUsers.AllowUserToResizeColumns = false;
             DGUsers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle29.BackColor = Color.FromArgb(16, 8, 23);
-            dataGridViewCellStyle29.ForeColor = Color.FromArgb(230, 237, 243);
-            dataGridViewCellStyle29.SelectionBackColor = Color.FromArgb(69, 34, 99);
-            DGUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(16, 8, 23);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(230, 237, 243);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(69, 34, 99);
+            DGUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             DGUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DGUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DGUsers.BackgroundColor = Color.FromArgb(16, 8, 23);
@@ -80,14 +81,14 @@
             DGUsers.CausesValidation = false;
             DGUsers.CellBorderStyle = DataGridViewCellBorderStyle.None;
             DGUsers.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle30.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = SystemColors.Control;
-            dataGridViewCellStyle30.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle30.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = Color.White;
-            dataGridViewCellStyle30.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle30.WrapMode = DataGridViewTriState.True;
-            DGUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Control;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            DGUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             DGUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGUsers.Columns.AddRange(new DataGridViewColumn[] { Avatar, created, FullNameColumn, Telefono, plan, last_expiration, IdClient, delete });
             DGUsers.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -97,13 +98,13 @@
             DGUsers.ReadOnly = true;
             DGUsers.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             DGUsers.RowHeadersVisible = false;
-            dataGridViewCellStyle32.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = Color.White;
-            dataGridViewCellStyle32.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle32.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle32.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle32.SelectionForeColor = Color.White;
-            DGUsers.RowsDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            DGUsers.RowsDefaultCellStyle = dataGridViewCellStyle8;
             DGUsers.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 35);
             DGUsers.RowTemplate.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DGUsers.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
@@ -136,13 +137,13 @@
             // FullNameColumn
             // 
             FullNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle31.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.BackColor = Color.White;
-            dataGridViewCellStyle31.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
-            dataGridViewCellStyle31.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle31.SelectionForeColor = Color.White;
-            FullNameColumn.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            FullNameColumn.DefaultCellStyle = dataGridViewCellStyle7;
             FullNameColumn.HeaderText = "Nombre";
             FullNameColumn.Name = "FullNameColumn";
             FullNameColumn.ReadOnly = true;
@@ -199,6 +200,7 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(16, 8, 23);
+            panel2.Controls.Add(BtnNotify);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(BVerClients);
             panel2.Controls.Add(label2);
@@ -217,6 +219,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1000, 163);
             panel2.TabIndex = 4;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.ImageAlign = ContentAlignment.MiddleLeft;
+            label3.Location = new Point(145, 41);
+            label3.Name = "label3";
+            label3.Size = new Size(123, 41);
+            label3.TabIndex = 90;
+            label3.Text = "Clientes";
             // 
             // BVerClients
             // 
@@ -491,22 +505,37 @@
             pictureBox1.Image = Properties.Resources.instr;
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(136, 142);
+            pictureBox1.Size = new Size(136, 121);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 89;
             pictureBox1.TabStop = false;
             // 
-            // label3
+            // BtnNotify
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 22F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.ImageAlign = ContentAlignment.MiddleLeft;
-            label3.Location = new Point(130, 6);
-            label3.Name = "label3";
-            label3.Size = new Size(123, 41);
-            label3.TabIndex = 90;
-            label3.Text = "Clientes";
+            BtnNotify.BackColor = Color.DarkCyan;
+            BtnNotify.BackgroundColor = Color.DarkCyan;
+            BtnNotify.BorderColor = Color.PaleVioletRed;
+            BtnNotify.BorderRadius = 15;
+            BtnNotify.BorderSize = 0;
+            BtnNotify.FlatAppearance.BorderSize = 0;
+            BtnNotify.FlatStyle = FlatStyle.Flat;
+            BtnNotify.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnNotify.ForeColor = Color.White;
+            BtnNotify.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            BtnNotify.IconColor = Color.White;
+            BtnNotify.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnNotify.IconSize = 25;
+            BtnNotify.ImageAlign = ContentAlignment.MiddleRight;
+            BtnNotify.Location = new Point(152, 84);
+            BtnNotify.Name = "BtnNotify";
+            BtnNotify.Padding = new Padding(10, 0, 0, 0);
+            BtnNotify.Size = new Size(89, 32);
+            BtnNotify.TabIndex = 91;
+            BtnNotify.Text = "Alert";
+            BtnNotify.TextAlign = ContentAlignment.MiddleLeft;
+            BtnNotify.TextColor = Color.White;
+            BtnNotify.UseVisualStyleBackColor = false;
+            BtnNotify.Click += BtnNotify_Click;
             // 
             // ClientsUserControl
             // 
@@ -553,5 +582,6 @@
         private DataGridViewTextBoxColumn delete;
         private PictureBox pictureBox1;
         private Label label3;
+        private ClassCustom.RJButton BtnNotify;
     }
 }

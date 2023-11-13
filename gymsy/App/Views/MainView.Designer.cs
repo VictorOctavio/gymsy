@@ -65,9 +65,9 @@
             mainWrapper = new Panel();
             navbar = new Panel();
             panel5 = new Panel();
-            panel1 = new Panel();
+            Panel1 = new Panel();
             label8 = new Label();
-            label7 = new Label();
+            LabelAmuntWallet = new Label();
             BtnNavWallet = new Button();
             panelNavRight = new Panel();
             btnWalletNav = new Button();
@@ -93,7 +93,7 @@
             mainWrapper.SuspendLayout();
             navbar.SuspendLayout();
             panel5.SuspendLayout();
-            panel1.SuspendLayout();
+            Panel1.SuspendLayout();
             panelNavRight.SuspendLayout();
             panel2.SuspendLayout();
             panelNotifications.SuspendLayout();
@@ -139,7 +139,7 @@
             sidebar.MaximumSize = new Size(260, 0);
             sidebar.MinimumSize = new Size(70, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(260, 562);
+            sidebar.Size = new Size(260, 684);
             sidebar.TabIndex = 0;
             // 
             // panelAddAdmin
@@ -623,7 +623,7 @@
             panelNavUser.Controls.Add(PimagenPerson);
             panelNavUser.Controls.Add(BtnUserAvatar);
             panelNavUser.Dock = DockStyle.Bottom;
-            panelNavUser.Location = new Point(0, 439);
+            panelNavUser.Location = new Point(0, 561);
             panelNavUser.Margin = new Padding(0);
             panelNavUser.Name = "panelNavUser";
             panelNavUser.Size = new Size(260, 123);
@@ -653,7 +653,7 @@
             LabelNavRol.FlatStyle = FlatStyle.Flat;
             LabelNavRol.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LabelNavRol.ForeColor = Color.FromArgb(9, 0, 20);
-            LabelNavRol.Location = new Point(90, 87);
+            LabelNavRol.Location = new Point(76, 74);
             LabelNavRol.Name = "LabelNavRol";
             LabelNavRol.Size = new Size(82, 15);
             LabelNavRol.TabIndex = 2;
@@ -705,7 +705,8 @@
             BtnUserAvatar.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             BtnUserAvatar.ForeColor = Color.White;
             BtnUserAvatar.Image = Properties.Resources.gorilla_avatar;
-            BtnUserAvatar.Location = new Point(24, 27);
+            BtnUserAvatar.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnUserAvatar.Location = new Point(2, 22);
             BtnUserAvatar.Margin = new Padding(0);
             BtnUserAvatar.Name = "BtnUserAvatar";
             BtnUserAvatar.Size = new Size(162, 75);
@@ -738,7 +739,7 @@
             mainWrapper.Margin = new Padding(0);
             mainWrapper.Name = "mainWrapper";
             mainWrapper.Padding = new Padding(260, 0, 0, 0);
-            mainWrapper.Size = new Size(1199, 562);
+            mainWrapper.Size = new Size(1348, 684);
             mainWrapper.TabIndex = 0;
             // 
             // navbar
@@ -753,32 +754,32 @@
             navbar.MaximumSize = new Size(0, 133);
             navbar.MinimumSize = new Size(0, 70);
             navbar.Name = "navbar";
-            navbar.Size = new Size(939, 71);
+            navbar.Size = new Size(1088, 71);
             navbar.TabIndex = 0;
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(9, 0, 20);
-            panel5.Controls.Add(panel1);
+            panel5.Controls.Add(Panel1);
             panel5.Dock = DockStyle.Top;
             panel5.ForeColor = Color.Black;
             panel5.Location = new Point(0, 0);
             panel5.Margin = new Padding(0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(939, 71);
+            panel5.Size = new Size(1088, 71);
             panel5.TabIndex = 2;
             // 
-            // panel1
+            // Panel1
             // 
-            panel1.Anchor = AnchorStyles.Right;
-            panel1.BackColor = Color.DarkCyan;
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(BtnNavWallet);
-            panel1.Location = new Point(592, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(348, 68);
-            panel1.TabIndex = 0;
+            Panel1.Anchor = AnchorStyles.Right;
+            Panel1.BackColor = Color.DarkCyan;
+            Panel1.Controls.Add(label8);
+            Panel1.Controls.Add(LabelAmuntWallet);
+            Panel1.Controls.Add(BtnNavWallet);
+            Panel1.Location = new Point(741, 0);
+            Panel1.Name = "Panel1";
+            Panel1.Size = new Size(348, 68);
+            Panel1.TabIndex = 0;
             // 
             // label8
             // 
@@ -791,17 +792,17 @@
             label8.TabIndex = 3;
             label8.Text = "Total";
             // 
-            // label7
+            // LabelAmuntWallet
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Segoe UI", 22F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(73, 21);
-            label7.Name = "label7";
-            label7.Size = new Size(138, 41);
-            label7.TabIndex = 2;
-            label7.Text = "$ 250.4K";
+            LabelAmuntWallet.AutoSize = true;
+            LabelAmuntWallet.BackColor = Color.Transparent;
+            LabelAmuntWallet.Font = new Font("Segoe UI", 22F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelAmuntWallet.ForeColor = Color.White;
+            LabelAmuntWallet.Location = new Point(73, 21);
+            LabelAmuntWallet.Name = "LabelAmuntWallet";
+            LabelAmuntWallet.Size = new Size(138, 41);
+            LabelAmuntWallet.TabIndex = 2;
+            LabelAmuntWallet.Text = "$ 250.4K";
             // 
             // BtnNavWallet
             // 
@@ -824,7 +825,7 @@
             panelNavRight.Controls.Add(btnWalletNav);
             panelNavRight.Controls.Add(panel2);
             panelNavRight.ForeColor = Color.White;
-            panelNavRight.Location = new Point(3866, 0);
+            panelNavRight.Location = new Point(4015, 0);
             panelNavRight.Margin = new Padding(0);
             panelNavRight.Name = "panelNavRight";
             panelNavRight.Size = new Size(348, 71);
@@ -909,7 +910,7 @@
             panelNotifications.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelNotifications.BackColor = Color.White;
             panelNotifications.Controls.Add(label6);
-            panelNotifications.Location = new Point(3859, 70);
+            panelNotifications.Location = new Point(4008, 70);
             panelNotifications.MaximumSize = new Size(0, 62);
             panelNotifications.Name = "panelNotifications";
             panelNotifications.Size = new Size(0, 10);
@@ -965,13 +966,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1199, 562);
+            ClientSize = new Size(1348, 684);
             ControlBox = false;
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(1196, 548);
+            MinimumSize = new Size(1364, 698);
             Name = "MainView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GYMSY";
@@ -990,8 +991,8 @@
             mainWrapper.ResumeLayout(false);
             navbar.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Panel1.ResumeLayout(false);
+            Panel1.PerformLayout();
             panelNavRight.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -1049,9 +1050,9 @@
         private System.Windows.Forms.Timer timerAddAdmin;
         private Button btnWalletNav;
         private Panel panel5;
-        private Panel panel1;
+        private Panel Panel1;
         private Button BtnNavWallet;
-        private Label label7;
+        private Label LabelAmuntWallet;
         private Label label8;
         private ClassCustom.RJCircularPictureBox PimagenPerson;
     }

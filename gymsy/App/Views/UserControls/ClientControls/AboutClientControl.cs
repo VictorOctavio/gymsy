@@ -1,4 +1,6 @@
-﻿using System;
+﻿using gymsy.App.Models;
+using gymsy.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,49 @@ namespace gymsy.UserControls.ClientControls
 {
     public partial class AboutClientControl : UserControl
     {
+
+        Person person;
+        private GymsyDbContext dbContext;
+
         public AboutClientControl()
         {
+            this.dbContext = GymsyContext.GymsyContextDB;
+            this.person = AppState.person;
             InitializeComponent();
+            InitializeDataClient();
+        }
+
+        private void InitializeDataClient()
+        {
+
+            //this.dbContext.TrainingPlans.ToList();
+            var client = this.dbContext.Clients.Where(cl => cl.IdPerson == this.person.IdPerson).First();
+
+            LbName.Text = $"{this.person.LastName}, {this.person.FirstName}";
+
+
+            LbIngreso.Text = this.person.CreatedAt.ToString("dd/MM/yyyy");
+            BeforeIngreso.Text = this.person.CreatedAt.ToString("dd/MM/yyyy");
+
+            LbCuotaExp.Text = client.LastExpiration.ToString("dd/MM/yyyy");
+            LbPlanActual.Text = client.IdTrainingPlanNavigation.Description;
+            LbTimeActivo.Text = $"Hace {(this.person.CreatedAt - DateTime.Now).Days * -1} dias";
+            LbRegistros.Text = $"{client.DataFisics.Count()} registros";
+
+
+            if (client.DataFisics.Count() > 0)
+            {
+                BeforeAltura.Text = $"{client.DataFisics.First().Height}cm";
+                LbAltura.Text = $"{client.DataFisics.Last().Height}cm";
+
+                BeforePeso.Text = $"{client.DataFisics.First().Weight}kg";
+                BeforePeso.Text = $"{client.DataFisics.Last().Weight}kg";
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

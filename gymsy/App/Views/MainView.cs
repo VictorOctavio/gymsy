@@ -98,6 +98,14 @@ namespace gymsy
         {
             BtnUserAvatar.Text = this.person.Nickname;
             LabelNavRol.Text = this.rols[this.person.RolId].ToUpper();
+            if (this.person.Wallets.Count() > 0 && this.person.RolId != 3)
+            {
+                LabelAmuntWallet.Text = $"${this.person.Wallets.First().Retirable}K";
+            }
+            else
+            {
+                Panel1.Visible = false;
+            }
         }
 
         // Inicializamos el controlador con la navegacion, pasando los controles y en panel mainWrapper en donde se renderizará
@@ -266,7 +274,7 @@ namespace gymsy
 
         private void btnNavProgress_Click(object sender, EventArgs e)
         {
-            navigationControl.Display(1);
+            navigationControl.Display(1, true);
             navigationButtons.Highlight(btnNavProgress);
         }
 

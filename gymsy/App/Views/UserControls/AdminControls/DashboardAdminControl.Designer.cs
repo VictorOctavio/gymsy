@@ -30,6 +30,9 @@ namespace gymsy.UserControls.AdminControls
         /// </summary>
         private void InitializeComponent()
         {
+            ChartArea chartArea1 = new ChartArea();
+            Legend legend1 = new Legend();
+            Series series1 = new Series();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -37,12 +40,6 @@ namespace gymsy.UserControls.AdminControls
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            chartGanancia = new Chart();
-            ChartArea chartArea1 = new ChartArea();
-            Legend legend1 = new Legend();
-            Series series1 = new Series();
             ChartArea chartArea2 = new ChartArea();
             Legend legend2 = new Legend();
             Series series2 = new Series();
@@ -50,18 +47,13 @@ namespace gymsy.UserControls.AdminControls
             panel1 = new Panel();
             panel2 = new Panel();
             panel7 = new Panel();
-            dataGridView3 = new DataGridView();
-            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
-            dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
-            label4 = new Label();
+            chartInstructorXClientes = new Chart();
             panel5 = new Panel();
-            dataGridView2 = new DataGridView();
+            DataGridPays = new DataGridView();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
-            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+            dataGridViewButtonColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             label2 = new Label();
             panel6 = new Panel();
             dataGridView1 = new DataGridView();
@@ -71,25 +63,21 @@ namespace gymsy.UserControls.AdminControls
             ShowCliente = new DataGridViewButtonColumn();
             label3 = new Label();
             panel3 = new Panel();
-            panel8 = new Panel();
-            label6 = new Label();
-            panel4 = new Panel();
-            chartInstructorXClientes = new Chart();
-            label5 = new Label();
-            chartGanancia = new Chart();
+            label4 = new Label();
+            pictureBox1 = new PictureBox();
+            ChartAdmin = new Chart();
+            BtnDownload = new ClassCustom.RJButton();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartInstructorXClientes).BeginInit();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridPays).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
-            panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chartGanancia).BeginInit();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chartInstructorXClientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ChartAdmin).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -129,30 +117,68 @@ namespace gymsy.UserControls.AdminControls
             // 
             panel7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel7.BackColor = Color.FromArgb(16, 8, 23);
-            panel7.Controls.Add(dataGridView3);
-            panel7.Controls.Add(label4);
-            panel7.Location = new Point(506, 0);
+            panel7.Controls.Add(chartInstructorXClientes);
+            panel7.Location = new Point(561, 0);
             panel7.Margin = new Padding(0);
             panel7.Name = "panel7";
-            panel7.Size = new Size(494, 229);
+            panel7.Size = new Size(439, 229);
             panel7.TabIndex = 12;
             // 
-            // dataGridView3
+            // chartInstructorXClientes
             // 
-            dataGridView3.AllowUserToAddRows = false;
-            dataGridView3.AllowUserToDeleteRows = false;
-            dataGridView3.AllowUserToResizeColumns = false;
-            dataGridView3.AllowUserToResizeRows = false;
+            chartInstructorXClientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            chartInstructorXClientes.BackColor = Color.Transparent;
+            chartArea1.BackColor = Color.Transparent;
+            chartArea1.BorderColor = Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            chartInstructorXClientes.ChartAreas.Add(chartArea1);
+            legend1.BackColor = Color.Transparent;
+            legend1.ForeColor = Color.FromArgb(230, 237, 243);
+            legend1.Name = "Legend1";
+            chartInstructorXClientes.Legends.Add(legend1);
+            chartInstructorXClientes.Location = new Point(0, 3);
+            chartInstructorXClientes.Name = "chartInstructorXClientes";
+            series1.BorderColor = Color.Transparent;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = SeriesChartType.Doughnut;
+            series1.Color = Color.Transparent;
+            series1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.Palette = ChartColorPalette.BrightPastel;
+            chartInstructorXClientes.Series.Add(series1);
+            chartInstructorXClientes.Size = new Size(439, 226);
+            chartInstructorXClientes.TabIndex = 9;
+            chartInstructorXClientes.Text = "chart1";
+            // 
+            // panel5
+            // 
+            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel5.BackColor = Color.FromArgb(16, 8, 23);
+            panel5.Controls.Add(DataGridPays);
+            panel5.Controls.Add(label2);
+            panel5.Location = new Point(0, 3);
+            panel5.Margin = new Padding(0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(558, 226);
+            panel5.TabIndex = 11;
+            // 
+            // DataGridPays
+            // 
+            DataGridPays.AllowUserToAddRows = false;
+            DataGridPays.AllowUserToDeleteRows = false;
+            DataGridPays.AllowUserToResizeColumns = false;
+            DataGridPays.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = Color.DarkOrange;
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = Color.DarkOrange;
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView3.BackgroundColor = Color.FromArgb(16, 8, 23);
-            dataGridView3.BorderStyle = BorderStyle.None;
-            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            DataGridPays.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DataGridPays.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DataGridPays.BackgroundColor = Color.FromArgb(16, 8, 23);
+            DataGridPays.BorderStyle = BorderStyle.None;
+            DataGridPays.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            DataGridPays.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.DarkOrange;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -160,124 +186,35 @@ namespace gymsy.UserControls.AdminControls
             dataGridViewCellStyle2.SelectionBackColor = Color.DarkOrange;
             dataGridViewCellStyle2.SelectionForeColor = Color.Honeydew;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewButtonColumn2 });
-            dataGridView3.GridColor = SystemColors.ControlLight;
-            dataGridView3.Location = new Point(0, 61);
-            dataGridView3.Margin = new Padding(0);
-            dataGridView3.MultiSelect = false;
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.ReadOnly = true;
-            dataGridView3.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 192, 128);
-            dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView3.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
-            dataGridView3.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
-            dataGridView3.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
-            dataGridView3.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.White;
-            dataGridView3.RowTemplate.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            dataGridView3.RowTemplate.Height = 25;
-            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView3.Size = new Size(494, 168);
-            dataGridView3.TabIndex = 10;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewTextBoxColumn7.HeaderText = "ID";
-            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            dataGridViewTextBoxColumn7.ReadOnly = true;
-            dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            dataGridViewTextBoxColumn8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn8.HeaderText = "Nombre";
-            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            dataGridViewTextBoxColumn9.HeaderText = "Fecha";
-            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            dataGridViewButtonColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewButtonColumn2.HeaderText = "Ver";
-            dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            dataGridViewButtonColumn2.ReadOnly = true;
-            dataGridViewButtonColumn2.Width = 60;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.DarkOrange;
-            label4.ImageAlign = ContentAlignment.MiddleLeft;
-            label4.Location = new Point(17, 13);
-            label4.Name = "label4";
-            label4.Size = new Size(176, 32);
-            label4.TabIndex = 8;
-            label4.Text = "Top Instructors";
-            // 
-            // panel5
-            // 
-            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel5.BackColor = Color.FromArgb(16, 8, 23);
-            panel5.Controls.Add(dataGridView2);
-            panel5.Controls.Add(label2);
-            panel5.Location = new Point(0, 0);
-            panel5.Margin = new Padding(0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(506, 229);
-            panel5.TabIndex = 11;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AllowUserToDeleteRows = false;
-            dataGridView2.AllowUserToResizeColumns = false;
-            dataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.DarkOrange;
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView2.BackgroundColor = Color.FromArgb(16, 8, 23);
-            dataGridView2.BorderStyle = BorderStyle.None;
-            dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.DarkOrange;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.Honeydew;
-            dataGridViewCellStyle5.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Honeydew;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewButtonColumn1 });
-            dataGridView2.GridColor = SystemColors.ControlLight;
-            dataGridView2.Location = new Point(0, 61);
-            dataGridView2.Margin = new Padding(0);
-            dataGridView2.MultiSelect = false;
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 192, 128);
-            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView2.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
-            dataGridView2.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
-            dataGridView2.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
-            dataGridView2.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.White;
-            dataGridView2.RowTemplate.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(506, 168);
-            dataGridView2.TabIndex = 10;
+            DataGridPays.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DataGridPays.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataGridPays.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn6, dataGridViewButtonColumn1, dataGridViewTextBoxColumn5 });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DataGridPays.DefaultCellStyle = dataGridViewCellStyle3;
+            DataGridPays.GridColor = SystemColors.ControlLight;
+            DataGridPays.Location = new Point(0, 61);
+            DataGridPays.Margin = new Padding(0);
+            DataGridPays.MultiSelect = false;
+            DataGridPays.Name = "DataGridPays";
+            DataGridPays.ReadOnly = true;
+            DataGridPays.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(255, 192, 128);
+            DataGridPays.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            DataGridPays.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
+            DataGridPays.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
+            DataGridPays.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
+            DataGridPays.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.White;
+            DataGridPays.RowTemplate.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
+            DataGridPays.RowTemplate.Height = 25;
+            DataGridPays.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DataGridPays.Size = new Size(558, 165);
+            DataGridPays.TabIndex = 10;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -285,13 +222,6 @@ namespace gymsy.UserControls.AdminControls
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.ReadOnly = true;
             dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn5.HeaderText = "Nombre";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -302,10 +232,19 @@ namespace gymsy.UserControls.AdminControls
             // dataGridViewButtonColumn1
             // 
             dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewButtonColumn1.HeaderText = "Ver";
+            dataGridViewButtonColumn1.HeaderText = "Monto";
             dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
             dataGridViewButtonColumn1.ReadOnly = true;
-            dataGridViewButtonColumn1.Width = 60;
+            dataGridViewButtonColumn1.Resizable = DataGridViewTriState.True;
+            dataGridViewButtonColumn1.SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridViewButtonColumn1.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn5.HeaderText = "Nombre";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // label2
             // 
@@ -313,11 +252,11 @@ namespace gymsy.UserControls.AdminControls
             label2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.DarkOrange;
             label2.ImageAlign = ContentAlignment.MiddleLeft;
-            label2.Location = new Point(17, 13);
+            label2.Location = new Point(12, 17);
             label2.Name = "label2";
-            label2.Size = new Size(100, 32);
+            label2.Size = new Size(277, 32);
             label2.TabIndex = 8;
-            label2.Text = "Clientes";
+            label2.Text = "Ultimos Pagos Recibidos";
             // 
             // panel6
             // 
@@ -337,24 +276,24 @@ namespace gymsy.UserControls.AdminControls
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = Color.DarkOrange;
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.BackColor = Color.DarkOrange;
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.FromArgb(16, 8, 23);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.DarkOrange;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Honeydew;
-            dataGridViewCellStyle8.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Honeydew;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.DarkOrange;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Honeydew;
+            dataGridViewCellStyle6.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, ShowCliente });
             dataGridView1.GridColor = SystemColors.ControlLight;
@@ -364,8 +303,8 @@ namespace gymsy.UserControls.AdminControls
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(255, 192, 128);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(255, 192, 128);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView1.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(16, 8, 30);
             dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = Color.White;
             dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
@@ -418,146 +357,124 @@ namespace gymsy.UserControls.AdminControls
             // 
             // panel3
             // 
-            panel3.Controls.Add(panel8);
-            panel3.Controls.Add(panel4);
-            panel3.Dock = DockStyle.Top;
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(ChartAdmin);
+            panel3.Controls.Add(BtnDownload);
+            panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1000, 298);
+            panel3.Size = new Size(1000, 530);
             panel3.TabIndex = 1;
             // 
-            // panel8
+            // label4
             // 
-            panel8.BackColor = Color.FromArgb(16, 8, 23);
-            panel8.Controls.Add(chartGanancia);
-            panel8.Controls.Add(label6);
-            panel8.Dock = DockStyle.Left;
-            panel8.Location = new Point(0, 0);
-            panel8.Margin = new Padding(0);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(699, 298);
-            panel8.TabIndex = 14;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.ImageAlign = ContentAlignment.MiddleLeft;
+            label4.Location = new Point(84, 16);
+            label4.Name = "label4";
+            label4.Size = new Size(147, 37);
+            label4.TabIndex = 47;
+            label4.Text = "Dashboard";
             // 
-            // chartGanancia
+            // pictureBox1
             // 
-            chartGanancia.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            chartGanancia.BackColor = Color.FromArgb(16, 8, 23);
-            chartGanancia.BackgroundImageLayout = ImageLayout.None;
-            chartGanancia.BorderlineColor = Color.Transparent;
-            chartArea1.AxisX.InterlacedColor = Color.Transparent;
-            chartArea1.AxisX.LineColor = Color.Transparent;
-            chartArea1.AxisX.LineDashStyle = ChartDashStyle.NotSet;
-            chartArea1.AxisX.Title = "Fecha";
-            chartArea1.AxisX.TitleFont = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            chartArea1.AxisX.TitleForeColor = Color.FromArgb(230, 237, 243);
-            chartArea1.AxisX2.InterlacedColor = Color.Transparent;
-            chartArea1.AxisX2.LineColor = Color.Transparent;
-            chartArea1.AxisX2.TitleForeColor = Color.WhiteSmoke;
-            chartArea1.AxisY.InterlacedColor = Color.Transparent;
-            chartArea1.AxisY.LineColor = Color.FromArgb(230, 237, 243);
-            chartArea1.AxisY.LineDashStyle = ChartDashStyle.NotSet;
-            chartArea1.AxisY.Title = "Clientes";
-            chartArea1.AxisY.TitleFont = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            chartArea1.AxisY.TitleForeColor = Color.FromArgb(230, 237, 243);
-            chartArea1.AxisY2.InterlacedColor = Color.Transparent;
-            chartArea1.AxisY2.LineColor = Color.Transparent;
-            chartArea1.BackColor = Color.FromArgb(16, 8, 23);
-            chartArea1.BackSecondaryColor = Color.White;
-            chartArea1.BorderColor = Color.White;
-            chartArea1.Name = "ChartArea1";
-            chartGanancia.ChartAreas.Add(chartArea1);
-            legend1.BackColor = Color.Transparent;
-            legend1.BorderColor = Color.Transparent;
-            legend1.BorderDashStyle = ChartDashStyle.NotSet;
-            legend1.DockedToChartArea = "ChartArea1";
-            legend1.ForeColor = Color.FromArgb(230, 237, 243);
-            legend1.InterlacedRowsColor = Color.White;
-            legend1.Name = "Legend1";
-            legend1.ShadowColor = Color.Silver;
-            chartGanancia.Legends.Add(legend1);
-            chartGanancia.Location = new Point(17, 48);
-            chartGanancia.Name = "chartGanancia";
-            chartGanancia.RightToLeft = RightToLeft.No;
-            series1.BackImageTransparentColor = Color.Transparent;
-            series1.BorderColor = Color.Transparent;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = SeriesChartType.SplineArea;
-            series1.Color = Color.DarkOrange;
-            series1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            series1.IsXValueIndexed = true;
-            series1.LabelBackColor = Color.White;
-            series1.Legend = "Legend1";
-            series1.MarkerBorderColor = Color.White;
-            series1.Name = "Ganancia";
-            series1.SmartLabelStyle.AllowOutsidePlotArea = LabelOutsidePlotAreaStyle.No;
-            series1.SmartLabelStyle.CalloutLineAnchorCapStyle = LineAnchorCapStyle.None;
-            series1.YValuesPerPoint = 2;
-            chartGanancia.Series.Add(series1);
-            chartGanancia.Size = new Size(678, 234);
-            chartGanancia.TabIndex = 14;
-            chartGanancia.Text = "chart2";
+            pictureBox1.Image = Properties.Resources.admindash;
+            pictureBox1.Location = new Point(3, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 73);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 48;
+            pictureBox1.TabStop = false;
             // 
-            // label6
+            // ChartAdmin
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.DarkOrange;
-            label6.ImageAlign = ContentAlignment.MiddleLeft;
-            label6.Location = new Point(17, 13);
-            label6.Name = "label6";
-            label6.Size = new Size(152, 32);
-            label6.TabIndex = 8;
-            label6.Text = "Clientes Mes";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(16, 8, 23);
-            panel4.Controls.Add(chartInstructorXClientes);
-            panel4.Controls.Add(label5);
-            panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(698, 0);
-            panel4.Margin = new Padding(0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(302, 298);
-            panel4.TabIndex = 13;
-            // 
-            // chartInstructorXClientes
-            // 
-            chartInstructorXClientes.BackColor = Color.Transparent;
-            chartArea2.BackColor = Color.Transparent;
-            chartArea2.BorderColor = Color.Transparent;
+            ChartAdmin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ChartAdmin.BackColor = Color.FromArgb(16, 8, 30);
+            ChartAdmin.BackgroundImageLayout = ImageLayout.None;
+            ChartAdmin.BorderlineColor = Color.Transparent;
+            chartArea2.AxisX.InterlacedColor = Color.Transparent;
+            chartArea2.AxisX.LineColor = Color.Transparent;
+            chartArea2.AxisX.LineDashStyle = ChartDashStyle.NotSet;
+            chartArea2.AxisX.Title = "Meses";
+            chartArea2.AxisX.TitleFont = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            chartArea2.AxisX.TitleForeColor = Color.FromArgb(230, 237, 243);
+            chartArea2.AxisX2.InterlacedColor = Color.Transparent;
+            chartArea2.AxisX2.LineColor = Color.Transparent;
+            chartArea2.AxisX2.TitleForeColor = Color.WhiteSmoke;
+            chartArea2.AxisY.InterlacedColor = Color.Transparent;
+            chartArea2.AxisY.LineColor = Color.FromArgb(230, 237, 243);
+            chartArea2.AxisY.LineDashStyle = ChartDashStyle.NotSet;
+            chartArea2.AxisY.Title = "Monto";
+            chartArea2.AxisY.TitleFont = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            chartArea2.AxisY.TitleForeColor = Color.FromArgb(230, 237, 243);
+            chartArea2.AxisY2.InterlacedColor = Color.Transparent;
+            chartArea2.AxisY2.LineColor = Color.Transparent;
+            chartArea2.BackColor = Color.FromArgb(16, 8, 23);
+            chartArea2.BackSecondaryColor = Color.White;
+            chartArea2.BorderColor = Color.White;
             chartArea2.Name = "ChartArea1";
-            chartInstructorXClientes.ChartAreas.Add(chartArea2);
+            ChartAdmin.ChartAreas.Add(chartArea2);
             legend2.BackColor = Color.Transparent;
+            legend2.BorderColor = Color.Transparent;
+            legend2.BorderDashStyle = ChartDashStyle.NotSet;
+            legend2.DockedToChartArea = "ChartArea1";
             legend2.ForeColor = Color.FromArgb(230, 237, 243);
+            legend2.InterlacedRowsColor = Color.White;
             legend2.Name = "Legend1";
-            chartInstructorXClientes.Legends.Add(legend2);
-            chartInstructorXClientes.Location = new Point(3, 48);
-            chartInstructorXClientes.Name = "chartInstructorXClientes";
+            legend2.ShadowColor = Color.Silver;
+            ChartAdmin.Legends.Add(legend2);
+            ChartAdmin.Location = new Point(0, 76);
+            ChartAdmin.Margin = new Padding(0);
+            ChartAdmin.Name = "ChartAdmin";
+            series2.BackImageTransparentColor = Color.Transparent;
             series2.BorderColor = Color.Transparent;
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = SeriesChartType.Doughnut;
-            series2.Color = Color.Transparent;
-            series2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            series2.ChartType = SeriesChartType.SplineArea;
+            series2.Color = Color.DarkOrange;
+            series2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            series2.IsXValueIndexed = true;
+            series2.LabelBackColor = Color.White;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.Palette = ChartColorPalette.BrightPastel;
-            chartInstructorXClientes.Series.Add(series2);
-            chartInstructorXClientes.Size = new Size(296, 247);
-            chartInstructorXClientes.TabIndex = 9;
-            chartInstructorXClientes.Text = "chart1";
+            series2.MarkerBorderColor = Color.White;
+            series2.Name = "Ganancia";
+            series2.YValuesPerPoint = 2;
+            ChartAdmin.Series.Add(series2);
+            ChartAdmin.Size = new Size(1000, 225);
+            ChartAdmin.TabIndex = 14;
+            ChartAdmin.Text = "chart2";
             // 
-            // label5
+            // BtnDownload
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.DarkOrange;
-            label5.ImageAlign = ContentAlignment.MiddleLeft;
-            label5.Location = new Point(27, 13);
-            label5.Name = "label5";
-            label5.Size = new Size(235, 32);
-            label5.TabIndex = 8;
-            label5.Text = "Instructor X Clientes";
+            BtnDownload.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnDownload.BackColor = Color.Crimson;
+            BtnDownload.BackgroundColor = Color.Crimson;
+            BtnDownload.BorderColor = Color.PaleVioletRed;
+            BtnDownload.BorderRadius = 12;
+            BtnDownload.BorderSize = 0;
+            BtnDownload.Cursor = Cursors.Hand;
+            BtnDownload.FlatAppearance.BorderSize = 0;
+            BtnDownload.FlatStyle = FlatStyle.Flat;
+            BtnDownload.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnDownload.ForeColor = Color.White;
+            BtnDownload.IconChar = FontAwesome.Sharp.IconChar.Download;
+            BtnDownload.IconColor = Color.White;
+            BtnDownload.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnDownload.IconSize = 30;
+            BtnDownload.ImageAlign = ContentAlignment.MiddleRight;
+            BtnDownload.Location = new Point(838, 22);
+            BtnDownload.Margin = new Padding(0);
+            BtnDownload.Name = "BtnDownload";
+            BtnDownload.Padding = new Padding(10, 0, 10, 0);
+            BtnDownload.Size = new Size(150, 35);
+            BtnDownload.TabIndex = 46;
+            BtnDownload.Text = "Descargar";
+            BtnDownload.TextAlign = ContentAlignment.MiddleLeft;
+            BtnDownload.TextColor = Color.White;
+            BtnDownload.UseVisualStyleBackColor = false;
+            BtnDownload.Click += BtnDownload_Click;
             // 
             // DashboardAdminControl
             // 
@@ -570,21 +487,17 @@ namespace gymsy.UserControls.AdminControls
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartInstructorXClientes).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridPays).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chartGanancia).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chartInstructorXClientes).EndInit();
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ChartAdmin).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -596,18 +509,8 @@ namespace gymsy.UserControls.AdminControls
         private Panel panel3;
         private Panel panel2;
         private Panel panel7;
-        private DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private Label label4;
         private Panel panel5;
-        private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private DataGridView DataGridPays;
         private Label label2;
         private Panel panel6;
         private DataGridView dataGridView1;
@@ -616,11 +519,14 @@ namespace gymsy.UserControls.AdminControls
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewButtonColumn ShowCliente;
         private Label label3;
-        private Panel panel8;
-        private Label label6;
-        private Panel panel4;
-        private Label label5;
         private Chart chartInstructorXClientes;
-        private Chart chartGanancia;
+        private Chart ChartAdmin;
+        private ClassCustom.RJButton BtnDownload;
+        private Label label4;
+        private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewButtonColumn1;
     }
 }
