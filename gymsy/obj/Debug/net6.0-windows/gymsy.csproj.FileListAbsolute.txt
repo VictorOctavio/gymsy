@@ -251,3 +251,14 @@ C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.AspNetCor
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\PdfiumViewer.dll
 C:\Users\byOCT1\Desktop\gymsy\gymsy\bin\Debug\net6.0-windows\nl\PdfiumViewer.resources.dll
 >>>>>>> pruebas
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\obj\Debug\net6.0-windows\gymsy.App.Views.UserControls.receptionist.addPay.resources
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\CloudinaryDotNet.dll
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\HtmlRenderer.dll
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\HtmlRenderer.PdfSharp.dll
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\PdfSharp.Charting.dll
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\PdfSharp.dll
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\de\PdfSharp.Charting.resources.dll
+C:\Users\Jeremias\source\repos\VictorOctavio\gymsy\gymsy\bin\Debug\net6.0-windows\de\PdfSharp.resources.dll
