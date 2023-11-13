@@ -151,7 +151,18 @@ namespace gymsy.App.Presenters
 
                     // this person is client
                     case 3:
-                        // Code to execute if expression matches value1
+
+                        this.gymsydb.DataFisics.ToList();
+                        this.gymsydb.Images.ToList();
+                        this.gymsydb.Pays.ToList();
+                        this.gymsydb.PayTypes.ToList();
+                        this.gymsydb.TrainingPlans.ToList();
+                        var clientFound = this.gymsydb.Clients
+                                                .Where(cl => cl.IdPerson == personFound.IdPerson)
+                                                .First();
+
+                        AppState.ClientActive = clientFound;
+                       
                         break;
                     case 4:
 

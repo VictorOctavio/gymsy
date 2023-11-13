@@ -22,6 +22,13 @@ namespace gymsy.UserControls.ClientControls
         public ProgressClientControl()
         {
             InitializeComponent();
+
+            if (AppState.person.RolId == 3)
+            {
+                btnAddProgress.Visible = false;
+                rjButton1.Visible = false;
+            }
+             
             PhotoActive.InitialImage = PhotoActive.Image;
         }
 

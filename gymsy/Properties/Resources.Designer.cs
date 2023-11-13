@@ -61,6 +61,16 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6f76e01a03ae8f111c6fc392404f5d66 {
+            get {
+                object obj = ResourceManager.GetObject("6f76e01a03ae8f111c6fc392404f5d66", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a dyntggmrp.
         /// </summary>
         internal static string accountNameCloudinary {
