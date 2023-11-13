@@ -89,6 +89,16 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap admindash {
+            get {
+                object obj = ResourceManager.GetObject("admindash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a 02ea6b7023ba008dd18270bf0cd726c6.
         /// </summary>
         internal static string authTokenTwilio {
