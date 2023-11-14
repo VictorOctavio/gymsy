@@ -17,8 +17,9 @@ namespace gymsy.App.Presenters
         private IAuthView authView;
         private GymsyDbContext gymsydb;
 
-        public AuthPresenter(IAuthView authView, GymsyDbContext gymsydb) {
-            
+        public AuthPresenter(IAuthView authView, GymsyDbContext gymsydb)
+        {
+
             this.authView = authView;
             this.gymsydb = gymsydb;
 
@@ -29,7 +30,7 @@ namespace gymsy.App.Presenters
             this.authView.Show();
         }
 
-       private void Signin(object? sender, EventArgs e)
+        private void Signin(object? sender, EventArgs e)
         {
             try
             {
@@ -53,7 +54,7 @@ namespace gymsy.App.Presenters
                     }
                     else
                     {
-                        if(!peopleFound.Inactive)
+                        if (!peopleFound.Inactive)
                         {
                             this.authView.IsSuccessful = true;
                             this.authView.Message = "Hola, " + peopleFound.FirstName + "    ;)";
@@ -74,23 +75,24 @@ namespace gymsy.App.Presenters
                             new MainPresenter(view, this.gymsydb);
 
                             return;
-                        } else
+                        }
+                        else
                         {
                             this.authView.IsSuccessful = false;
                             this.authView.Message = "Usuario inactivo!";
                             this.authView.HandleResponseDBMessage();
                             return;
                         }
-                       
+
                     }
                 }
                 else return;
             }
             catch (Exception ex)
             {
-               this.authView.IsSuccessful = false;
-               this.authView.Message = "Error inesperdado";
-               this.authView.HandleResponseDBMessage();
+                this.authView.IsSuccessful = false;
+                this.authView.Message = "Error inesperdado";
+                this.authView.HandleResponseDBMessage();
                 // Muestra un MessageBox con el mensaje de error
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -109,7 +111,7 @@ namespace gymsy.App.Presenters
                 {
                     // this person is admin
                     case 1:
-                       
+
                         var instructorsFound = this.gymsydb.People
                                                 .Where(person => person.RolId == 2)
                                                 .ToList();
@@ -132,23 +134,23 @@ namespace gymsy.App.Presenters
                         var instructorFound = this.gymsydb.Instructors
                                                 .Where(instructor => instructor.IdPerson == personFound.IdPerson)
                                                 .First();
-                        
+
                         var planesFound = this.gymsydb.TrainingPlans.ToList();
                         var clientsFound = this.gymsydb.Clients.ToList();
-                        
+
                         var dataFisico = this.gymsydb.DataFisics.ToList();
                         var Images = this.gymsydb.Images.ToList();
 
                         this.gymsydb.Pays.ToList();
                         this.gymsydb.PayTypes.ToList();
                         this.gymsydb.Wallets.ToList();
-                        
+
                         var persons = this.gymsydb.People.ToList();
 
                         AppState.clients = persons;
                         AppState.persons = persons;
                         AppState.Instructor = instructorFound;
-                       
+
                         break;
 
                     // this person is client
@@ -164,7 +166,7 @@ namespace gymsy.App.Presenters
                                                 .First();
 
                         AppState.ClientActive = clientFound;
-                       
+
                         break;
 
                     // this person is a receptionist
@@ -191,11 +193,11 @@ namespace gymsy.App.Presenters
                         break;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-           
+
         }
 
     }

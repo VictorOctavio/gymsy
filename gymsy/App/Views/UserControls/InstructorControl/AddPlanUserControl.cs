@@ -27,13 +27,13 @@ namespace gymsy.UserControls
         {
             //Se trae el contexto de la base de datos
             this.dbContext = GymsyContext.GymsyContextDB;
-
+            
             InitializeComponent();
             InitializeGridPlanes();
 
             //Muestra lo que no estan eliminados
 
-            this.mostrar(false);
+            //this.mostrar(false);
         }
 
         private void InitializeGridPlanes()

@@ -177,6 +177,7 @@
             button1.TabIndex = 10;
             button1.Text = "DEMO";
             button1.UseVisualStyleBackColor = false;
+           
             // 
             // button2
             // 

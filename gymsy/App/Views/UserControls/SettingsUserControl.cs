@@ -1,6 +1,7 @@
 ﻿using gymsy.App.Models;
 using gymsy.App.Views.Interfaces;
 using gymsy.Context;
+using gymsy.Properties;
 using gymsy.utilities;
 using gymsy.Utilities;
 using System;
@@ -38,6 +39,29 @@ namespace gymsy.UserControls
             TbLastName.Text = person.LastName;
             TbCBU.Text = person.CBU;
             TbPhone.Text = person.NumberPhone;
+            try
+            {
+                string ruta = "";
+                if (person.RolId == 2)
+                {
+                    ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor;
+                }
+                else if (person.RolId == 3)
+                {
+                    ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient;
+                }
+                else
+                {
+                    ruta = AppState.pathDestinationFolder;
+                }
+                ruta += "\\" + person.Avatar;
+                gorilla_avatar.BackgroundImage = System.Drawing.Image.FromFile(ruta);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+                gorilla_avatar.BackgroundImage = Resources.gorilla_avatar;
+            }
         }
 
         Person ISettingView.person
