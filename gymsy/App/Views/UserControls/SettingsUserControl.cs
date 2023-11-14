@@ -1,6 +1,7 @@
 ﻿using gymsy.App.Models;
 using gymsy.App.Views.Interfaces;
 using gymsy.Context;
+using gymsy.Properties;
 using gymsy.utilities;
 using gymsy.Utilities;
 using System;
@@ -38,6 +39,29 @@ namespace gymsy.UserControls
             TbLastName.Text = person.LastName;
             TbCBU.Text = person.CBU;
             TbPhone.Text = person.NumberPhone;
+            try
+            {
+                string ruta = "";
+                if (person.RolId == 2)
+                {
+                    ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor;
+                }
+                else if (person.RolId == 3)
+                {
+                    ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient;
+                }
+                else
+                {
+                    ruta = AppState.pathDestinationFolder;
+                }
+                ruta += "\\" + person.Avatar;
+                gorilla_avatar.BackgroundImage = System.Drawing.Image.FromFile(ruta);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+                gorilla_avatar.BackgroundImage = Resources.gorilla_avatar;
+            }
         }
 
         Person ISettingView.person
@@ -63,6 +87,7 @@ namespace gymsy.UserControls
             this.person.LastName = TbLastName.Text;
             this.person.CBU = TbCBU.Text;
             this.person.NumberPhone = TbPhone.Text;
+            this.person.Avatar = SaveImage(TBRutaImagen.Text);
 
             try
             {
@@ -73,8 +98,9 @@ namespace gymsy.UserControls
                 if (confirmAction == DialogResult.Yes)
                 {
                     updatedDbDataUser();
+                    gorilla_avatar.Image = System.Drawing.Image.FromFile(TBRutaImagen.Text);
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -84,7 +110,41 @@ namespace gymsy.UserControls
 
 
         }
+        private string SaveImage(string imagePath)
+        {
+            try
+            {
 
+                //Ruta completa para guardar la imagen en la carpeta
+                string pathDestinationFolder = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor;
+
+
+                // Asegúrate de que la carpeta exista, y si no, créala
+                if (!Directory.Exists(pathDestinationFolder))
+                {
+                    Directory.CreateDirectory(pathDestinationFolder);
+                }
+
+                // Obtén la extensión de archivo de la imagen original
+                string extension = Path.GetExtension(imagePath);
+
+                // Genera un nombre de archivo único usando un GUID y la fecha/hora actual
+                string uniqueFileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("yyyyMMddHHmmssfff") + extension;
+
+                // Ruta completa para guardar la imagen en la carpeta
+                string destinationPath = Path.Combine(pathDestinationFolder, uniqueFileName);
+
+                // Copia la imagen desde la ubicación original a la carpeta de destino
+                File.Copy(imagePath, destinationPath, true);
+
+                return uniqueFileName;//nombre del archivo 
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return "";
+            }
+        }
         private void BtnChangePassword_Click(object sender, EventArgs e)
         {
             panelError.Visible = false;
@@ -107,7 +167,7 @@ namespace gymsy.UserControls
                 {
                     updateDbPasswordUser();
                 }
-              
+
             }
             catch (Exception ex)
             {
@@ -118,7 +178,7 @@ namespace gymsy.UserControls
         // Change avatar user
         private void BtnEditAvatar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(comboBoxAvatar.Text);
+            //MessageBox.Show(comboBoxAvatar.Text);
         }
 
         // Validate text box not null
@@ -152,12 +212,12 @@ namespace gymsy.UserControls
 
                 MessageBox.Show("Actualizo Correctamente");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 panelError.Visible = true;
                 panelErrorText.Text = ex.Message;
             }
-            
+
         }
 
         private void updateDbPasswordUser()
@@ -193,6 +253,44 @@ namespace gymsy.UserControls
                 panelErrorText.Text = ex.Message;
             }
 
+        }
+
+        private void comboBoxAvatar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTAgregarImagen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialog1.Title = "Seleccione la imagen";
+                // Configurar el filtro de archivos para mostrar solo imágenes
+                openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos los archivos|*.*";
+
+                // Mostrar el cuadro de diálogo
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Obtener la ruta del archivo seleccionado
+                        string rutaImagen = openFileDialog1.FileName;
+
+                        // Mostrar la imagen en el PictureBox
+                        gorilla_avatar.Image = System.Drawing.Image.FromFile(rutaImagen);
+                        //se escribe en textbox la ruta de la imagen
+                        TBRutaImagen.Text = rutaImagen;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al abrir la imagen: " + ex.Message);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Exepcion Inesperado");
+            }
         }
     }
 }

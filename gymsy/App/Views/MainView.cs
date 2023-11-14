@@ -108,7 +108,7 @@ namespace gymsy
             }
         }
 
-        // Inicializamos el controlador con la navegacion, pasando los controles y en panel mainWrapper en donde se renderizará
+        // Inicializamos el controlador con la navegacion, pasando los controles y en panel mainWrapper en donde se renderizar?
         private void InitializeNavigationControl(string rol = "instructor")
         {
 
@@ -191,7 +191,7 @@ namespace gymsy
                     tableLayoutClient.Visible = true;
                     break;
                 default:
-                    tableLayoutClient.Visible = true;
+                    tableLayoutClient.Visible = false;
                     break;
             }
         }

@@ -295,7 +295,8 @@ namespace gymsy.UserControls.AdminControls
                 File.Copy(imagePath, destinationPath, true);
 
                 return uniqueFileName;//nombre del archivo 
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
                 return "";
@@ -350,7 +351,20 @@ namespace gymsy.UserControls.AdminControls
             AppState.isModeEdit = false;
             AppState.isModeAdd = false;
             MainView.navigationControl.Display(1, true);
-            
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBRutaImagen_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void LRuraImagen_Click(object sender, EventArgs e)
+        {
         }
     }
 }

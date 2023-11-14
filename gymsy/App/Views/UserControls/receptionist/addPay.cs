@@ -131,13 +131,13 @@ namespace gymsy.App.Views.UserControls.receptionist
 
                         using (var image = System.Drawing.Image.FromFile(ruta))
 
-                        DGUsers.Rows.Add(
-                        image,
-                        client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
-                        client.IdTrainingPlanNavigation.Description,
-                        ColumnExpirationMsg,
-                        client.IdClient,
-                        client.IdPersonNavigation.Inactive);
+                            DGUsers.Rows.Add(
+                            image,
+                            client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                            client.IdTrainingPlanNavigation.Description,
+                            ColumnExpirationMsg,
+                            client.IdClient,
+                            client.IdPersonNavigation.Inactive);
                     }
                     catch (Exception e)
                     {
