@@ -10,7 +10,6 @@ Este proyecto se centra en el desarrollo de una aplicación de gestión de gimna
 
 - **Bases de Datos:**
 
-## Inicialización del Proyecto
 1. Importar Base de Datos
 
   Utiliza SQL Server para importar el archivo .bacpac ubicado en la raíz del proyecto. Asegúrate de que el nombre de la base de datos sea "gymsy". ¡La precisión en el nombre   es crucial para el correcto funcionamiento!
