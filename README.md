@@ -20,6 +20,7 @@ Este proyecto se centra en el desarrollo de una aplicación de gestión de gimna
   En el directorio "Properties", encontrarás un archivo llamado "Resources.resx". En este archivo, busca la variable `connectionString`, que enlaza con la base de datos. Por   defecto, el servidor está configurado como "localhost". Si estás utilizando un servidor diferente, modifica solo la parte `server=<own-server>`.
 
 3. Todo listo!
+   
    Es hora de entrenar!!!
    
 - **Informe de Requerimientos:** Accede al informe completo que detalla los requisitos del proyecto.
