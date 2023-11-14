@@ -31,8 +31,6 @@
             a = new Label();
             settingsWrapper = new Panel();
             LbErrorChangePass = new Label();
-            comboBoxAvatar = new ComboBox();
-            gorilla_avatar = new PictureBox();
             panelError = new Panel();
             panelErrorBtnClose = new Button();
             panelErrorText = new Label();
@@ -47,7 +45,6 @@
             label11 = new Label();
             textErrorNewPass = new Label();
             btnSaveChanges = new Button();
-            btnEditAvatar = new Button();
             panel2 = new Panel();
             TbFirstName = new TextBox();
             label1 = new Label();
@@ -65,8 +62,13 @@
             TbLastName = new TextBox();
             label7 = new Label();
             textErrorSurname = new Label();
+            TBRutaImagen = new TextBox();
+            label3 = new Label();
+            BTAgregarImagen = new ClassCustom.RJButton();
+            LRuraImagen = new Label();
+            gorilla_avatar = new ClassCustom.RJCircularPictureBox();
+            openFileDialog1 = new OpenFileDialog();
             settingsWrapper.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).BeginInit();
             panelError.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -74,6 +76,7 @@
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).BeginInit();
             SuspendLayout();
             // 
             // a
@@ -82,7 +85,7 @@
             a.AutoSize = true;
             a.Font = new Font("Segoe UI", 29F, FontStyle.Regular, GraphicsUnit.Point);
             a.ForeColor = Color.White;
-            a.Location = new Point(371, 25);
+            a.Location = new Point(372, 12);
             a.Name = "a";
             a.Size = new Size(263, 52);
             a.TabIndex = 0;
@@ -94,9 +97,12 @@
             settingsWrapper.AutoScrollMinSize = new Size(800, 700);
             settingsWrapper.AutoSize = true;
             settingsWrapper.BackColor = Color.FromArgb(16, 8, 23);
-            settingsWrapper.Controls.Add(LbErrorChangePass);
-            settingsWrapper.Controls.Add(comboBoxAvatar);
             settingsWrapper.Controls.Add(gorilla_avatar);
+            settingsWrapper.Controls.Add(TBRutaImagen);
+            settingsWrapper.Controls.Add(label3);
+            settingsWrapper.Controls.Add(BTAgregarImagen);
+            settingsWrapper.Controls.Add(LRuraImagen);
+            settingsWrapper.Controls.Add(LbErrorChangePass);
             settingsWrapper.Controls.Add(panelError);
             settingsWrapper.Controls.Add(btnChangePassword);
             settingsWrapper.Controls.Add(label13);
@@ -104,7 +110,6 @@
             settingsWrapper.Controls.Add(panel6);
             settingsWrapper.Controls.Add(btnSaveChanges);
             settingsWrapper.Controls.Add(a);
-            settingsWrapper.Controls.Add(btnEditAvatar);
             settingsWrapper.Controls.Add(panel2);
             settingsWrapper.Controls.Add(textBox2);
             settingsWrapper.Controls.Add(panel3);
@@ -131,26 +136,6 @@
             LbErrorChangePass.TabIndex = 30;
             LbErrorChangePass.Text = "*requerido";
             LbErrorChangePass.Visible = false;
-            // 
-            // comboBoxAvatar
-            // 
-            comboBoxAvatar.Anchor = AnchorStyles.Top;
-            comboBoxAvatar.FormattingEnabled = true;
-            comboBoxAvatar.Items.AddRange(new object[] { "gorilla_avatar", "duck_avatar", "dog_avatar", "cat_avatar", "panda_avatar", "chicken_avatar", "raccoon_avatar", "penguin_avatar" });
-            comboBoxAvatar.Location = new Point(426, 182);
-            comboBoxAvatar.Name = "comboBoxAvatar";
-            comboBoxAvatar.Size = new Size(121, 23);
-            comboBoxAvatar.TabIndex = 50;
-            // 
-            // gorilla_avatar
-            // 
-            gorilla_avatar.Anchor = AnchorStyles.Top;
-            gorilla_avatar.Image = Properties.Resources.gorilla_avatar;
-            gorilla_avatar.Location = new Point(459, 108);
-            gorilla_avatar.Name = "gorilla_avatar";
-            gorilla_avatar.Size = new Size(69, 68);
-            gorilla_avatar.TabIndex = 45;
-            gorilla_avatar.TabStop = false;
             // 
             // panelError
             // 
@@ -341,23 +326,6 @@
             btnSaveChanges.Text = "Guardar Cambios";
             btnSaveChanges.UseVisualStyleBackColor = false;
             btnSaveChanges.Click += BtnSaveChanges_Click;
-            // 
-            // btnEditAvatar
-            // 
-            btnEditAvatar.Anchor = AnchorStyles.Top;
-            btnEditAvatar.BackColor = Color.DarkCyan;
-            btnEditAvatar.Cursor = Cursors.Hand;
-            btnEditAvatar.FlatAppearance.BorderSize = 0;
-            btnEditAvatar.FlatStyle = FlatStyle.Flat;
-            btnEditAvatar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditAvatar.ForeColor = Color.White;
-            btnEditAvatar.Location = new Point(553, 183);
-            btnEditAvatar.Name = "btnEditAvatar";
-            btnEditAvatar.Size = new Size(28, 23);
-            btnEditAvatar.TabIndex = 3;
-            btnEditAvatar.Text = "Editar";
-            btnEditAvatar.UseVisualStyleBackColor = false;
-            btnEditAvatar.Click += BtnEditAvatar_Click;
             // 
             // panel2
             // 
@@ -570,6 +538,88 @@
             textErrorSurname.Text = "*requerido";
             textErrorSurname.Visible = false;
             // 
+            // TBRutaImagen
+            // 
+            TBRutaImagen.BackColor = Color.FromArgb(69, 34, 99);
+            TBRutaImagen.BorderStyle = BorderStyle.None;
+            TBRutaImagen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TBRutaImagen.ForeColor = Color.FromArgb(230, 237, 243);
+            TBRutaImagen.Location = new Point(412, 206);
+            TBRutaImagen.Name = "TBRutaImagen";
+            TBRutaImagen.PlaceholderText = "Ruta...";
+            TBRutaImagen.ReadOnly = true;
+            TBRutaImagen.Size = new Size(186, 22);
+            TBRutaImagen.TabIndex = 92;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.FromArgb(230, 237, 243);
+            label3.Location = new Point(442, 177);
+            label3.Name = "label3";
+            label3.Size = new Size(102, 15);
+            label3.TabIndex = 91;
+            label3.Text = "Ruta de la imagen";
+            // 
+            // BTAgregarImagen
+            // 
+            BTAgregarImagen.BackColor = Color.DarkOrange;
+            BTAgregarImagen.BackgroundColor = Color.DarkOrange;
+            BTAgregarImagen.BorderColor = Color.PaleVioletRed;
+            BTAgregarImagen.BorderRadius = 15;
+            BTAgregarImagen.BorderSize = 0;
+            BTAgregarImagen.FlatAppearance.BorderSize = 0;
+            BTAgregarImagen.FlatStyle = FlatStyle.Flat;
+            BTAgregarImagen.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BTAgregarImagen.ForeColor = Color.White;
+            BTAgregarImagen.IconChar = FontAwesome.Sharp.IconChar.FileImage;
+            BTAgregarImagen.IconColor = Color.FromArgb(230, 237, 243);
+            BTAgregarImagen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BTAgregarImagen.ImageAlign = ContentAlignment.MiddleRight;
+            BTAgregarImagen.Location = new Point(620, 190);
+            BTAgregarImagen.Name = "BTAgregarImagen";
+            BTAgregarImagen.Padding = new Padding(10, 0, 0, 0);
+            BTAgregarImagen.Size = new Size(186, 53);
+            BTAgregarImagen.TabIndex = 90;
+            BTAgregarImagen.Text = "Agregar Imagen";
+            BTAgregarImagen.TextAlign = ContentAlignment.MiddleLeft;
+            BTAgregarImagen.TextColor = Color.White;
+            BTAgregarImagen.UseVisualStyleBackColor = false;
+            BTAgregarImagen.Click += BTAgregarImagen_Click;
+            // 
+            // LRuraImagen
+            // 
+            LRuraImagen.AutoSize = true;
+            LRuraImagen.ForeColor = Color.Red;
+            LRuraImagen.Location = new Point(441, 231);
+            LRuraImagen.Name = "LRuraImagen";
+            LRuraImagen.Size = new Size(105, 15);
+            LRuraImagen.TabIndex = 89;
+            LRuraImagen.Text = "*Campo requerido";
+            LRuraImagen.Visible = false;
+            // 
+            // gorilla_avatar
+            // 
+            gorilla_avatar.BackgroundImage = Properties.Resources.gorilla_avatar;
+            gorilla_avatar.BackgroundImageLayout = ImageLayout.Zoom;
+            gorilla_avatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            gorilla_avatar.BorderColor = Color.RoyalBlue;
+            gorilla_avatar.BorderColor2 = Color.HotPink;
+            gorilla_avatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            gorilla_avatar.BorderSize = 2;
+            gorilla_avatar.ErrorImage = Properties.Resources.gorilla_avatar;
+            gorilla_avatar.GradientAngle = 50F;
+            gorilla_avatar.Location = new Point(447, 67);
+            gorilla_avatar.Name = "gorilla_avatar";
+            gorilla_avatar.Size = new Size(100, 100);
+            gorilla_avatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            gorilla_avatar.TabIndex = 93;
+            gorilla_avatar.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // SettingsUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -581,7 +631,6 @@
             Size = new Size(1038, 703);
             settingsWrapper.ResumeLayout(false);
             settingsWrapper.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).EndInit();
             panelError.ResumeLayout(false);
             panelError.PerformLayout();
             panel5.ResumeLayout(false);
@@ -596,6 +645,7 @@
             panel1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -612,7 +662,6 @@
         private Label label11;
         private Label textErrorNewPass;
         private Button btnSaveChanges;
-        private Button btnEditAvatar;
         private Panel panel2;
         private TextBox TbFirstName;
         private Label label1;
@@ -635,8 +684,12 @@
         private Panel panelError;
         private Label panelErrorText;
         private Button panelErrorBtnClose;
-        private PictureBox gorilla_avatar;
-        private ComboBox comboBoxAvatar;
         private Label LbErrorChangePass;
+        private ClassCustom.RJCircularPictureBox gorilla_avatar;
+        private TextBox TBRutaImagen;
+        private Label label3;
+        private ClassCustom.RJButton BTAgregarImagen;
+        private Label LRuraImagen;
+        private OpenFileDialog openFileDialog1;
     }
 }

@@ -337,6 +337,15 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string PublicDirectory {
+            get {
+                return ResourceManager.GetString("PublicDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap setting_item {
@@ -347,7 +356,7 @@ namespace gymsy.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Server=localhost;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;.
+        ///   Busca una cadena traducida similar a Server=DESKTOP-R1CB0VV\SQLEXPRESS01;Database=gymsy;Integrated Security=True;TrustServerCertificate=True;.
         /// </summary>
         internal static string stringConnection {
             get {

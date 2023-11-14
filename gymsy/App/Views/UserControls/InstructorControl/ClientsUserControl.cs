@@ -106,7 +106,7 @@ namespace gymsy.UserControls
                 foreach (Client client in plan.Clients.ToArray())
                 {
 
-                    this.clients.Add(client);
+                    //this.clients.Add(client);
 
                     // Expiration 
                     TimeSpan diferencia = client.LastExpiration - DateTime.Now;

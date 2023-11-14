@@ -70,7 +70,7 @@ namespace gymsy.UserControls
                                            from pagosEnMes in pagosGrupo.DefaultIfEmpty()
                                            select new { Mes = mesAnio.Mes, Anio = mesAnio.Anio, Cantidad = (pagosEnMes != null ? pagosGrupo.Count() * 10 : rnd.Next(10, 14)) };
 
-               
+
                 // Ordenar los resultados
                 pagosAgrupadosPorMes = pagosAgrupadosPorMes.OrderBy(g => g.Mes).ThenBy(g => g.Anio).ToList();
 
