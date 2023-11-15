@@ -40,12 +40,6 @@
             BCancelarBusqueda = new ClassCustom.RJButton();
             label3 = new Label();
             DGUsers = new DataGridView();
-            Avatar = new DataGridViewImageColumn();
-            FullNameColumn = new DataGridViewTextBoxColumn();
-            plan = new DataGridViewTextBoxColumn();
-            last_expiration = new DataGridViewTextBoxColumn();
-            IdClient = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewTextBoxColumn();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             Lid_client = new Label();
@@ -65,6 +59,11 @@
             label1 = new Label();
             label2 = new Label();
             BAgregarCliente = new ClassCustom.RJButton();
+            FullNameColumn = new DataGridViewTextBoxColumn();
+            plan = new DataGridViewTextBoxColumn();
+            last_expiration = new DataGridViewTextBoxColumn();
+            IdClient = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGUsers).BeginInit();
@@ -227,9 +226,9 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             DGUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGUsers.Columns.AddRange(new DataGridViewColumn[] { Avatar, FullNameColumn, plan, last_expiration, IdClient, delete });
+            DGUsers.Columns.AddRange(new DataGridViewColumn[] { FullNameColumn, plan, last_expiration, IdClient, delete });
             DGUsers.EditMode = DataGridViewEditMode.EditProgrammatically;
-            DGUsers.Location = new Point(-2, 162);
+            DGUsers.Location = new Point(-1, 154);
             DGUsers.MultiSelect = false;
             DGUsers.Name = "DGUsers";
             DGUsers.ReadOnly = true;
@@ -252,59 +251,8 @@
             DGUsers.ScrollBars = ScrollBars.None;
             DGUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGUsers.ShowCellErrors = false;
-            DGUsers.Size = new Size(556, 366);
+            DGUsers.Size = new Size(551, 368);
             DGUsers.TabIndex = 91;
-  
-            // 
-            // Avatar
-            // 
-            Avatar.HeaderText = "Avatar";
-            Avatar.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            Avatar.Name = "Avatar";
-            Avatar.ReadOnly = true;
-            // 
-            // FullNameColumn
-            // 
-            FullNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            FullNameColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            FullNameColumn.HeaderText = "Nombre";
-            FullNameColumn.Name = "FullNameColumn";
-            FullNameColumn.ReadOnly = true;
-            FullNameColumn.Width = 212;
-            // 
-            // plan
-            // 
-            plan.HeaderText = "Plan";
-            plan.Name = "plan";
-            plan.ReadOnly = true;
-            // 
-            // last_expiration
-            // 
-            last_expiration.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            last_expiration.HeaderText = "Vencimiento";
-            last_expiration.Name = "last_expiration";
-            last_expiration.ReadOnly = true;
-            last_expiration.Width = 170;
-            // 
-            // IdClient
-            // 
-            IdClient.HeaderText = "id_cliente";
-            IdClient.Name = "IdClient";
-            IdClient.ReadOnly = true;
-            IdClient.Visible = false;
-            // 
-            // delete
-            // 
-            delete.HeaderText = "Eliminado";
-            delete.Name = "delete";
-            delete.ReadOnly = true;
-            delete.Visible = false;
             // 
             // pictureBox1
             // 
@@ -576,6 +524,49 @@
             BAgregarCliente.UseVisualStyleBackColor = false;
             BAgregarCliente.Click += BAgregarCliente_Click;
             // 
+            // FullNameColumn
+            // 
+            FullNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            FullNameColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            FullNameColumn.HeaderText = "Nombre";
+            FullNameColumn.Name = "FullNameColumn";
+            FullNameColumn.ReadOnly = true;
+            FullNameColumn.Width = 212;
+            // 
+            // plan
+            // 
+            plan.HeaderText = "Plan";
+            plan.Name = "plan";
+            plan.ReadOnly = true;
+            // 
+            // last_expiration
+            // 
+            last_expiration.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            last_expiration.HeaderText = "Vencimiento";
+            last_expiration.Name = "last_expiration";
+            last_expiration.ReadOnly = true;
+            last_expiration.Width = 170;
+            // 
+            // IdClient
+            // 
+            IdClient.HeaderText = "id_cliente";
+            IdClient.Name = "IdClient";
+            IdClient.ReadOnly = true;
+            IdClient.Visible = false;
+            // 
+            // delete
+            // 
+            delete.HeaderText = "Eliminado";
+            delete.Name = "delete";
+            delete.ReadOnly = true;
+            delete.Visible = false;
+            // 
             // addPay
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -608,12 +599,6 @@
         private PictureBox pictureBox1;
         private DataGridView DGUsers;
         private ClassCustom.RJButton BAgregarCliente;
-        private DataGridViewImageColumn Avatar;
-        private DataGridViewTextBoxColumn FullNameColumn;
-        private DataGridViewTextBoxColumn plan;
-        private DataGridViewTextBoxColumn last_expiration;
-        private DataGridViewTextBoxColumn IdClient;
-        private DataGridViewTextBoxColumn delete;
         private Panel panel4;
         private Panel panel2;
         private Panel panel3;
@@ -633,5 +618,10 @@
         private Label label8;
         private Label Lid_client;
         private Label label9;
+        private DataGridViewTextBoxColumn FullNameColumn;
+        private DataGridViewTextBoxColumn plan;
+        private DataGridViewTextBoxColumn last_expiration;
+        private DataGridViewTextBoxColumn IdClient;
+        private DataGridViewTextBoxColumn delete;
     }
 }
