@@ -87,11 +87,11 @@ namespace gymsy.UserControls
             this.person.LastName = TbLastName.Text;
             this.person.CBU = TbCBU.Text;
             this.person.NumberPhone = TbPhone.Text;
-            if(this.person.Avatar != TBRutaImagen.Text)
+            if (this.person.Avatar != TBRutaImagen.Text)
             {
                 this.person.Avatar = SaveImage(TBRutaImagen.Text);
             }
-           
+
 
             try
             {
@@ -311,6 +311,11 @@ namespace gymsy.UserControls
             {
                 MessageBox.Show("Exepcion Inesperado");
             }
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            MainView.navigationControl.Display(0);
         }
     }
 }

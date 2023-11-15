@@ -133,7 +133,7 @@ namespace gymsy
             {
                 userControlsList = new List<UserControl>()
                 {
-                    new addPay(), new SettingsUserControl(),
+                    new addPay(), new addPay(), new addPay(), new SettingsUserControl(),
                 };
             }
             else

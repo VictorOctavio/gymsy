@@ -35,15 +35,6 @@ namespace gymsy.App.Views.UserControls.receptionist
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PanelInvoiceWallet_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void BBuscar_Click(object sender, EventArgs e)
         {

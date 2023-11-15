@@ -220,7 +220,7 @@
             DGUsers.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.WindowText;
@@ -252,8 +252,9 @@
             DGUsers.ScrollBars = ScrollBars.None;
             DGUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGUsers.ShowCellErrors = false;
-            DGUsers.Size = new Size(559, 366);
+            DGUsers.Size = new Size(556, 366);
             DGUsers.TabIndex = 91;
+  
             // 
             // Avatar
             // 
