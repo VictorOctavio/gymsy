@@ -126,8 +126,12 @@ namespace gymsy.UserControls.AdminControls
                 // Agrega los nuevos datos a la serie
                 foreach (var data in resultado)
                 {
-                    series.Points.AddXY($"{data.Instructor.IdPersonNavigation.FirstName} - {data.CantidadClientes} Clientes.", data.CantidadClientes);
-                    series.LegendToolTip = $"{data.Instructor.IdPersonNavigation.LastName}, {data.Instructor.IdPersonNavigation.FirstName} - {data.CantidadClientes} Clientes.";
+                    if(data.CantidadClientes > 0)
+                    {
+                        series.Points.AddXY($"{data.Instructor.IdPersonNavigation.FirstName} - {data.CantidadClientes} Clientes.", data.CantidadClientes);
+                        series.LegendToolTip = $"{data.Instructor.IdPersonNavigation.LastName}, {data.Instructor.IdPersonNavigation.FirstName} - {data.CantidadClientes} Clientes.";
+
+                    }
                 }
             }
 

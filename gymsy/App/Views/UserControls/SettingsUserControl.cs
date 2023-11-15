@@ -87,7 +87,11 @@ namespace gymsy.UserControls
             this.person.LastName = TbLastName.Text;
             this.person.CBU = TbCBU.Text;
             this.person.NumberPhone = TbPhone.Text;
-            this.person.Avatar = SaveImage(TBRutaImagen.Text);
+            if(this.person.Avatar != TBRutaImagen.Text)
+            {
+                this.person.Avatar = SaveImage(TBRutaImagen.Text);
+            }
+           
 
             try
             {
@@ -98,6 +102,7 @@ namespace gymsy.UserControls
                 if (confirmAction == DialogResult.Yes)
                 {
                     updatedDbDataUser();
+                    //PimagenPerson
                     gorilla_avatar.Image = System.Drawing.Image.FromFile(TBRutaImagen.Text);
                 }
 
@@ -116,7 +121,22 @@ namespace gymsy.UserControls
             {
 
                 //Ruta completa para guardar la imagen en la carpeta
-                string pathDestinationFolder = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor;
+                //string pathDestinationFolder = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor;
+
+                string pathDestinationFolder = "";
+                if (person.RolId == 2)
+                {
+                    pathDestinationFolder = AppState.pathDestinationFolder + AppState.nameCarpetImageInstructor;
+                }
+                else if (person.RolId == 3)
+                {
+                    pathDestinationFolder = AppState.pathDestinationFolder + AppState.nameCarpetImageClient;
+                }
+                else
+                {
+                    pathDestinationFolder = AppState.pathDestinationFolder;
+                }
+
 
 
                 // Asegúrate de que la carpeta exista, y si no, créala
