@@ -24,10 +24,26 @@ namespace gymsy.App.Presenters
             this.gymsydb = gymsydb;
 
             // Subscribe event handler methods to view events
-            this.authView.Signin += Signin;
 
+
+            this.authView.Signin += Signin;
+            inactivarClientes();
             // Show view
             this.authView.Show();
+        }
+
+        private void  inactivarClientes()
+        {
+            var clients = this.gymsydb.Clients.ToList();
+            var persons = this.gymsydb.People.ToList();
+
+            foreach(Client cliente in clients)
+            {
+                if(cliente.LastExpiration < DateTime.Now)
+                {
+                    cliente.IdPersonNavigation.Inactive = true;
+                }
+            }
         }
 
         private void Signin(object? sender, EventArgs e)
