@@ -105,40 +105,43 @@ namespace gymsy.App.Views.UserControls.receptionist
             {
                 foreach (Client client in plan.Clients.ToArray())
                 {
+                    if(client.IdPersonNavigation.Inactive)
+                    {
+                        // Expiration 
+                        TimeSpan diferencia = client.LastExpiration - DateTime.Now;
 
-                    // Expiration 
-                    TimeSpan diferencia = client.LastExpiration - DateTime.Now;
+                        string ColumnExpirationMsg = diferencia.Days > 0 ?
+                            ("En " + diferencia.Days + " días") : ("Hace " + diferencia.Days * -1 + " días");
 
-                    string ColumnExpirationMsg = diferencia.Days > 0 ?
-                        ("En " + diferencia.Days + " días") : ("Hace " + diferencia.Days * -1 + " días");
+                        /*
+                            try
+                            {
+                                string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient + "\\" + client.IdPersonNavigation.Avatar;
 
-                    /*
-                        try
-                        {
-                            string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient + "\\" + client.IdPersonNavigation.Avatar;
+                                using (var image = System.Drawing.Image.FromFile(ruta))
 
-                            using (var image = System.Drawing.Image.FromFile(ruta))
+                                    DGUsers.Rows.Add(
+                                    image,
+                                    client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                                    client.IdTrainingPlanNavigation.Description,
+                                    ColumnExpirationMsg,
+                                    client.IdClient,
+                                    client.IdPersonNavigation.Inactive);
+                            }
+                            catch (Exception e)
+                            {
 
-                                DGUsers.Rows.Add(
-                                image,
-                                client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
-                                client.IdTrainingPlanNavigation.Description,
-                                ColumnExpirationMsg,
-                                client.IdClient,
-                                client.IdPersonNavigation.Inactive);
-                        }
-                        catch (Exception e)
-                        {
+                        */
+                        DGUsers.Rows.Add(
+                        //Resources.vector_fitness_couple_doing_exercise,
+                        client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                        client.IdTrainingPlanNavigation.Description,
+                        ColumnExpirationMsg,
+                        client.IdClient,
+                        client.IdPersonNavigation.Inactive);
+                        //}
+                    }
 
-                    */
-                    DGUsers.Rows.Add(
-                    //Resources.vector_fitness_couple_doing_exercise,
-                    client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
-                    client.IdTrainingPlanNavigation.Description,
-                    ColumnExpirationMsg,
-                    client.IdClient,
-                    client.IdPersonNavigation.Inactive);
-                    //}
 
 
                 }
