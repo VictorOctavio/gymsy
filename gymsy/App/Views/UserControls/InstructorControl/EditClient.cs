@@ -249,6 +249,7 @@ namespace gymsy.UserControls
                 if (AppState.ClientActive != null)
                 {
 
+                    CBPlanes.Items.Clear();
 
                     var trainingPlan = this.dbContext.TrainingPlans
                         .Where(trainingPlan => trainingPlan.IdTrainingPlan == AppState.ClientActive.IdTrainingPlan)

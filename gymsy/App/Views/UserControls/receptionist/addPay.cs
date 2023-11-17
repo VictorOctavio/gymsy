@@ -19,8 +19,6 @@ namespace gymsy.App.Views.UserControls.receptionist
         private GymsyDbContext dbContext;
         private int indexRowSelect = 0;
 
-        private bool isModeVerNoDelete = true;
-
         public addPay()
         {
             //Se trae el contexto de la base de datos
@@ -66,9 +64,8 @@ namespace gymsy.App.Views.UserControls.receptionist
                     }
                     // Ahora, verifica si la columna "delete" es false y this.isModoVerNoDelete es true antes de mostrar la fila
                     bool deleteValue = Convert.ToBoolean(row.Cells["delete"].Value);
-
-                    //row.Visible = (this.isModeVerNoDelete && !deleteValue) || (!this.isModeVerNoDelete && deleteValue);
-                    row.Visible = coincide && !this.isModeVerNoDelete == deleteValue;
+                    
+                    row.Visible = coincide;
 
 
                 }
@@ -76,7 +73,7 @@ namespace gymsy.App.Views.UserControls.receptionist
             else
             {
                 // Si el TextBox está vacío, muestra todas las filas
-                this.mostrar(!this.isModeVerNoDelete);
+                this.mostrar(true);
             }
         }
 
@@ -89,7 +86,7 @@ namespace gymsy.App.Views.UserControls.receptionist
             // Limpia cualquier ordenación previa en el DataGridView
             DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
 
-            mostrar(!this.isModeVerNoDelete);
+            mostrar(true);
         }
 
         private void cargarPersonas()
@@ -260,6 +257,7 @@ namespace gymsy.App.Views.UserControls.receptionist
             LClientFullName.Text = "nombre...";
             LPlan.Text = "descripcion...";
             LInstructorFullName.Text = "nombre...";
+            TbAmount.Text = "";
             PimagenPerson.BackgroundImage = Resources.gorilla_avatar;
         }
 
@@ -293,7 +291,8 @@ namespace gymsy.App.Views.UserControls.receptionist
 
                     admin.Recaudacion += monto;
                     this.dbContext.SaveChanges();
-                    walletAdmin.Total += monto;
+                    //walletAdmin.Total += monto;
+                    walletAdmin.Retirable += monto;
                     this.dbContext.SaveChanges();
                     client.IdPersonNavigation.Inactive = false;
                     this.dbContext.SaveChanges();
