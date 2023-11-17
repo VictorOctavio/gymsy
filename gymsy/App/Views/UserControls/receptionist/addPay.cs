@@ -19,8 +19,6 @@ namespace gymsy.App.Views.UserControls.receptionist
         private GymsyDbContext dbContext;
         private int indexRowSelect = 0;
 
-        private bool isModeVerNoDelete = true;
-
         public addPay()
         {
             //Se trae el contexto de la base de datos
@@ -31,19 +29,10 @@ namespace gymsy.App.Views.UserControls.receptionist
 
             this.cargarPersonas();
 
-            this.mostrar(false);
+            //this.mostrar(false);
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PanelInvoiceWallet_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void BBuscar_Click(object sender, EventArgs e)
         {
@@ -75,9 +64,8 @@ namespace gymsy.App.Views.UserControls.receptionist
                     }
                     // Ahora, verifica si la columna "delete" es false y this.isModoVerNoDelete es true antes de mostrar la fila
                     bool deleteValue = Convert.ToBoolean(row.Cells["delete"].Value);
-
-                    //row.Visible = (this.isModeVerNoDelete && !deleteValue) || (!this.isModeVerNoDelete && deleteValue);
-                    row.Visible = coincide && !this.isModeVerNoDelete == deleteValue;
+                    
+                    row.Visible = coincide;
 
 
                 }
@@ -85,7 +73,7 @@ namespace gymsy.App.Views.UserControls.receptionist
             else
             {
                 // Si el TextBox está vacío, muestra todas las filas
-                this.mostrar(!this.isModeVerNoDelete);
+                this.mostrar(true);
             }
         }
 
@@ -98,7 +86,7 @@ namespace gymsy.App.Views.UserControls.receptionist
             // Limpia cualquier ordenación previa en el DataGridView
             DGUsers.Sort(DGUsers.Columns[0], ListSortDirection.Ascending);
 
-            mostrar(!this.isModeVerNoDelete);
+            mostrar(true);
         }
 
         private void cargarPersonas()
@@ -117,40 +105,44 @@ namespace gymsy.App.Views.UserControls.receptionist
             {
                 foreach (Client client in plan.Clients.ToArray())
                 {
-
-                    // Expiration 
-                    TimeSpan diferencia = client.LastExpiration - DateTime.Now;
-
-                    string ColumnExpirationMsg = diferencia.Days > 0 ?
-                        ("En " + diferencia.Days + " días") : ("Hace " + diferencia.Days * -1 + " días");
-
-
-                    try
+                    if(client.IdPersonNavigation.Inactive)
                     {
-                        string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient + "\\" + client.IdPersonNavigation.Avatar;
+                        // Expiration 
+                        TimeSpan diferencia = client.LastExpiration - DateTime.Now;
 
-                        using (var image = System.Drawing.Image.FromFile(ruta))
+                        string ColumnExpirationMsg = diferencia.Days > 0 ?
+                            ("En " + diferencia.Days + " días") : ("Hace " + diferencia.Days * -1 + " días");
 
-                            DGUsers.Rows.Add(
-                            image,
-                            client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
-                            client.IdTrainingPlanNavigation.Description,
-                            ColumnExpirationMsg,
-                            client.IdClient,
-                            client.IdPersonNavigation.Inactive);
-                    }
-                    catch (Exception e)
-                    {
+                        /*
+                            try
+                            {
+                                string ruta = AppState.pathDestinationFolder + AppState.nameCarpetImageClient + "\\" + client.IdPersonNavigation.Avatar;
 
+                                using (var image = System.Drawing.Image.FromFile(ruta))
 
+                                    DGUsers.Rows.Add(
+                                    image,
+                                    client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
+                                    client.IdTrainingPlanNavigation.Description,
+                                    ColumnExpirationMsg,
+                                    client.IdClient,
+                                    client.IdPersonNavigation.Inactive);
+                            }
+                            catch (Exception e)
+                            {
+
+                        */
                         DGUsers.Rows.Add(
-                        Resources.vector_fitness_couple_doing_exercise,
+                        //Resources.vector_fitness_couple_doing_exercise,
                         client.IdPersonNavigation.FirstName + " " + client.IdPersonNavigation.LastName,
                         client.IdTrainingPlanNavigation.Description,
                         ColumnExpirationMsg,
                         client.IdClient,
                         client.IdPersonNavigation.Inactive);
+                        //}
                     }
+
+
 
                 }
             }
@@ -268,13 +260,14 @@ namespace gymsy.App.Views.UserControls.receptionist
             LClientFullName.Text = "nombre...";
             LPlan.Text = "descripcion...";
             LInstructorFullName.Text = "nombre...";
+            TbAmount.Text = "";
+            PimagenPerson.BackgroundImage = Resources.gorilla_avatar;
         }
 
         private void generarPagos(int idClient)
         {
             try
             {
-
 
                 var admin = this.dbContext.Admins.FirstOrDefault();
                 var walletAdmin = this.dbContext.Wallets.FirstOrDefault(wallet => wallet.IdPerson == 1);
@@ -293,13 +286,16 @@ namespace gymsy.App.Views.UserControls.receptionist
                         RemitenteId = client.IdPerson,
                         IdPayType = 1
                     };
-
-                    client.LastExpiration = DateTime.Now.AddMonths(1);
-
                     this.dbContext.Pays.Add(newPay);
                     this.dbContext.SaveChanges();
-                    //admin.Recaudacion += monto;
-                    walletAdmin.Total += monto;
+
+                    client.LastExpiration = DateTime.Now.AddMonths(1);
+                    this.dbContext.SaveChanges();
+
+                    admin.Recaudacion += monto;
+                    this.dbContext.SaveChanges();
+                    //walletAdmin.Total += monto;
+                    walletAdmin.Retirable += monto;
                     this.dbContext.SaveChanges();
                     client.IdPersonNavigation.Inactive = false;
                     this.dbContext.SaveChanges();
@@ -314,5 +310,6 @@ namespace gymsy.App.Views.UserControls.receptionist
                 MessageBox.Show("Error al realizar el pago: " + e.Message);
             }
         }
+
     }
 }

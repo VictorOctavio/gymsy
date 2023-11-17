@@ -249,6 +249,7 @@ namespace gymsy.UserControls
                 if (AppState.ClientActive != null)
                 {
 
+                    CBPlanes.Items.Clear();
 
                     var trainingPlan = this.dbContext.TrainingPlans
                         .Where(trainingPlan => trainingPlan.IdTrainingPlan == AppState.ClientActive.IdTrainingPlan)
@@ -355,7 +356,10 @@ namespace gymsy.UserControls
                     // Actualiza las propiedades de la tabla person
                     personUpdated.Nickname = usuario;
                     personUpdated.FirstName = TBNombre.Text;
-                    personUpdated.Avatar = SaveImage(TBRutaImagen.Text);
+                    if(personUpdated.Avatar != TBRutaImagen.Text)
+                    {
+                        personUpdated.Avatar = SaveImage(TBRutaImagen.Text);
+                    }
                     //Si se cambio la contraseña se actualizara
                     if (personUpdated.Password != TBContraseña.Text)
                     {

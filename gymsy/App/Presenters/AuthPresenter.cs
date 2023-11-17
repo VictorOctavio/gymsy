@@ -24,10 +24,26 @@ namespace gymsy.App.Presenters
             this.gymsydb = gymsydb;
 
             // Subscribe event handler methods to view events
-            this.authView.Signin += Signin;
 
+
+            this.authView.Signin += Signin;
+            inactivarClientes();
             // Show view
             this.authView.Show();
+        }
+
+        private void  inactivarClientes()
+        {
+            var clients = this.gymsydb.Clients.ToList();
+            var persons = this.gymsydb.People.ToList();
+
+            foreach(Client cliente in clients)
+            {
+                if(cliente.LastExpiration < DateTime.Now)
+                {
+                    cliente.IdPersonNavigation.Inactive = true;
+                }
+            }
         }
 
         private void Signin(object? sender, EventArgs e)
@@ -171,7 +187,7 @@ namespace gymsy.App.Presenters
 
                     // this person is a receptionist
                     case 4:
-
+                        /*
                         var personsss = this.gymsydb.People.ToList();
                         var planes = this.gymsydb.TrainingPlans
                             .Where(plan => plan.Inactive == false)
@@ -189,7 +205,24 @@ namespace gymsy.App.Presenters
                         AppState.clients = personsss;
                         AppState.persons = personsss;
                         AppState.Instructor = new Instructor();
+                        */
+                        var personsss = this.gymsydb.People.ToList();
+                        var planes = this.gymsydb.TrainingPlans
+                            .Where(plan => plan.Inactive == false)
+                            .ToList();
+                        this.gymsydb.Clients.ToList();
+                        this.gymsydb.TrainingPlans.ToList();
+                        this.gymsydb.Instructors.ToList();
+                        this.gymsydb.Admins.ToList();
+                        this.gymsydb.PayTypes.ToList();
+                        this.gymsydb.Pays.ToList();
+                        this.gymsydb.Wallets.ToList();
 
+                        MessageBox.Show(planes.Count().ToString());
+                        AppState.planes = planes;
+                        AppState.clients = personsss;
+                        AppState.persons = personsss;
+                        AppState.Instructor = new Instructor();
                         break;
                 }
             }

@@ -768,6 +768,7 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(1088, 71);
             panel5.TabIndex = 2;
+            panel5.Paint += panel5_Paint;
             // 
             // Panel1
             // 
@@ -776,9 +777,9 @@
             Panel1.Controls.Add(label8);
             Panel1.Controls.Add(LabelAmuntWallet);
             Panel1.Controls.Add(BtnNavWallet);
-            Panel1.Location = new Point(741, 0);
+            Panel1.Location = new Point(740, 0);
             Panel1.Name = "Panel1";
-            Panel1.Size = new Size(348, 68);
+            Panel1.Size = new Size(348, 72);
             Panel1.TabIndex = 0;
             // 
             // label8

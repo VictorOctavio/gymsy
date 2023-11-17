@@ -133,7 +133,7 @@ namespace gymsy
             {
                 userControlsList = new List<UserControl>()
                 {
-                    new addPay(), new SettingsUserControl(),
+                    new addPay(), new addPay(), new addPay(), new SettingsUserControl(),
                 };
             }
             else
@@ -179,10 +179,14 @@ namespace gymsy
             switch (rol)
             {
                 case "admin":
+                    Panel1.Visible = true;
+                    panelNavRight.Visible = true;
                     tableLayoutAdmin.Visible = true;
                     panelAddAdmin.Visible = true;
                     break;
                 case "instructor":
+                    Panel1.Visible = true;
+                    panelNavRight.Visible = true;
                     tableLayout.Visible = true;
                     panelBtnAdd.Visible = true;
                     break;
@@ -414,6 +418,11 @@ namespace gymsy
         {
             navigationControl.Display(8);
             navigationButtons.Highlight(button3);
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

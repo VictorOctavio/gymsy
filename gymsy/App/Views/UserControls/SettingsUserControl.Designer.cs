@@ -30,6 +30,12 @@
         {
             a = new Label();
             settingsWrapper = new Panel();
+            back = new ClassCustom.RJButton();
+            gorilla_avatar = new ClassCustom.RJCircularPictureBox();
+            TBRutaImagen = new TextBox();
+            label3 = new Label();
+            BTAgregarImagen = new ClassCustom.RJButton();
+            LRuraImagen = new Label();
             LbErrorChangePass = new Label();
             panelError = new Panel();
             panelErrorBtnClose = new Button();
@@ -62,13 +68,9 @@
             TbLastName = new TextBox();
             label7 = new Label();
             textErrorSurname = new Label();
-            TBRutaImagen = new TextBox();
-            label3 = new Label();
-            BTAgregarImagen = new ClassCustom.RJButton();
-            LRuraImagen = new Label();
-            gorilla_avatar = new ClassCustom.RJCircularPictureBox();
             openFileDialog1 = new OpenFileDialog();
             settingsWrapper.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).BeginInit();
             panelError.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
@@ -76,7 +78,6 @@
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).BeginInit();
             SuspendLayout();
             // 
             // a
@@ -97,6 +98,7 @@
             settingsWrapper.AutoScrollMinSize = new Size(800, 700);
             settingsWrapper.AutoSize = true;
             settingsWrapper.BackColor = Color.FromArgb(16, 8, 23);
+            settingsWrapper.Controls.Add(back);
             settingsWrapper.Controls.Add(gorilla_avatar);
             settingsWrapper.Controls.Add(TBRutaImagen);
             settingsWrapper.Controls.Add(label3);
@@ -121,6 +123,110 @@
             settingsWrapper.Name = "settingsWrapper";
             settingsWrapper.Size = new Size(1038, 703);
             settingsWrapper.TabIndex = 1;
+            // 
+            // back
+            // 
+            back.BackColor = Color.DarkOrange;
+            back.BackgroundColor = Color.DarkOrange;
+            back.BorderColor = Color.PaleVioletRed;
+            back.BorderRadius = 15;
+            back.BorderSize = 0;
+            back.FlatAppearance.BorderSize = 0;
+            back.FlatStyle = FlatStyle.Flat;
+            back.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            back.ForeColor = Color.White;
+            back.IconChar = FontAwesome.Sharp.IconChar.ArrowLeftLong;
+            back.IconColor = Color.FromArgb(230, 237, 243);
+            back.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            back.IconSize = 90;
+            back.ImageAlign = ContentAlignment.MiddleRight;
+            back.Location = new Point(23, 12);
+            back.Name = "back";
+            back.Padding = new Padding(10, 0, 0, 0);
+            back.Size = new Size(103, 64);
+            back.TabIndex = 94;
+            back.TextAlign = ContentAlignment.MiddleLeft;
+            back.TextColor = Color.White;
+            back.UseVisualStyleBackColor = false;
+            back.Click += back_Click;
+            // 
+            // gorilla_avatar
+            // 
+            gorilla_avatar.BackgroundImage = Properties.Resources.gorilla_avatar;
+            gorilla_avatar.BackgroundImageLayout = ImageLayout.Zoom;
+            gorilla_avatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            gorilla_avatar.BorderColor = Color.RoyalBlue;
+            gorilla_avatar.BorderColor2 = Color.HotPink;
+            gorilla_avatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            gorilla_avatar.BorderSize = 2;
+            gorilla_avatar.ErrorImage = Properties.Resources.gorilla_avatar;
+            gorilla_avatar.GradientAngle = 50F;
+            gorilla_avatar.Location = new Point(447, 67);
+            gorilla_avatar.Name = "gorilla_avatar";
+            gorilla_avatar.Size = new Size(100, 100);
+            gorilla_avatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            gorilla_avatar.TabIndex = 93;
+            gorilla_avatar.TabStop = false;
+            // 
+            // TBRutaImagen
+            // 
+            TBRutaImagen.BackColor = Color.FromArgb(69, 34, 99);
+            TBRutaImagen.BorderStyle = BorderStyle.None;
+            TBRutaImagen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TBRutaImagen.ForeColor = Color.FromArgb(230, 237, 243);
+            TBRutaImagen.Location = new Point(412, 206);
+            TBRutaImagen.Name = "TBRutaImagen";
+            TBRutaImagen.PlaceholderText = "Ruta...";
+            TBRutaImagen.ReadOnly = true;
+            TBRutaImagen.Size = new Size(186, 22);
+            TBRutaImagen.TabIndex = 92;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.FromArgb(230, 237, 243);
+            label3.Location = new Point(442, 177);
+            label3.Name = "label3";
+            label3.Size = new Size(102, 15);
+            label3.TabIndex = 91;
+            label3.Text = "Ruta de la imagen";
+            // 
+            // BTAgregarImagen
+            // 
+            BTAgregarImagen.BackColor = Color.DarkOrange;
+            BTAgregarImagen.BackgroundColor = Color.DarkOrange;
+            BTAgregarImagen.BorderColor = Color.PaleVioletRed;
+            BTAgregarImagen.BorderRadius = 15;
+            BTAgregarImagen.BorderSize = 0;
+            BTAgregarImagen.FlatAppearance.BorderSize = 0;
+            BTAgregarImagen.FlatStyle = FlatStyle.Flat;
+            BTAgregarImagen.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            BTAgregarImagen.ForeColor = Color.White;
+            BTAgregarImagen.IconChar = FontAwesome.Sharp.IconChar.FileImage;
+            BTAgregarImagen.IconColor = Color.FromArgb(230, 237, 243);
+            BTAgregarImagen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BTAgregarImagen.ImageAlign = ContentAlignment.MiddleRight;
+            BTAgregarImagen.Location = new Point(620, 190);
+            BTAgregarImagen.Name = "BTAgregarImagen";
+            BTAgregarImagen.Padding = new Padding(10, 0, 0, 0);
+            BTAgregarImagen.Size = new Size(186, 53);
+            BTAgregarImagen.TabIndex = 90;
+            BTAgregarImagen.Text = "Agregar Imagen";
+            BTAgregarImagen.TextAlign = ContentAlignment.MiddleLeft;
+            BTAgregarImagen.TextColor = Color.White;
+            BTAgregarImagen.UseVisualStyleBackColor = false;
+            BTAgregarImagen.Click += BTAgregarImagen_Click;
+            // 
+            // LRuraImagen
+            // 
+            LRuraImagen.AutoSize = true;
+            LRuraImagen.ForeColor = Color.Red;
+            LRuraImagen.Location = new Point(441, 231);
+            LRuraImagen.Name = "LRuraImagen";
+            LRuraImagen.Size = new Size(105, 15);
+            LRuraImagen.TabIndex = 89;
+            LRuraImagen.Text = "*Campo requerido";
+            LRuraImagen.Visible = false;
             // 
             // LbErrorChangePass
             // 
@@ -538,84 +644,6 @@
             textErrorSurname.Text = "*requerido";
             textErrorSurname.Visible = false;
             // 
-            // TBRutaImagen
-            // 
-            TBRutaImagen.BackColor = Color.FromArgb(69, 34, 99);
-            TBRutaImagen.BorderStyle = BorderStyle.None;
-            TBRutaImagen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TBRutaImagen.ForeColor = Color.FromArgb(230, 237, 243);
-            TBRutaImagen.Location = new Point(412, 206);
-            TBRutaImagen.Name = "TBRutaImagen";
-            TBRutaImagen.PlaceholderText = "Ruta...";
-            TBRutaImagen.ReadOnly = true;
-            TBRutaImagen.Size = new Size(186, 22);
-            TBRutaImagen.TabIndex = 92;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = Color.FromArgb(230, 237, 243);
-            label3.Location = new Point(442, 177);
-            label3.Name = "label3";
-            label3.Size = new Size(102, 15);
-            label3.TabIndex = 91;
-            label3.Text = "Ruta de la imagen";
-            // 
-            // BTAgregarImagen
-            // 
-            BTAgregarImagen.BackColor = Color.DarkOrange;
-            BTAgregarImagen.BackgroundColor = Color.DarkOrange;
-            BTAgregarImagen.BorderColor = Color.PaleVioletRed;
-            BTAgregarImagen.BorderRadius = 15;
-            BTAgregarImagen.BorderSize = 0;
-            BTAgregarImagen.FlatAppearance.BorderSize = 0;
-            BTAgregarImagen.FlatStyle = FlatStyle.Flat;
-            BTAgregarImagen.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            BTAgregarImagen.ForeColor = Color.White;
-            BTAgregarImagen.IconChar = FontAwesome.Sharp.IconChar.FileImage;
-            BTAgregarImagen.IconColor = Color.FromArgb(230, 237, 243);
-            BTAgregarImagen.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            BTAgregarImagen.ImageAlign = ContentAlignment.MiddleRight;
-            BTAgregarImagen.Location = new Point(620, 190);
-            BTAgregarImagen.Name = "BTAgregarImagen";
-            BTAgregarImagen.Padding = new Padding(10, 0, 0, 0);
-            BTAgregarImagen.Size = new Size(186, 53);
-            BTAgregarImagen.TabIndex = 90;
-            BTAgregarImagen.Text = "Agregar Imagen";
-            BTAgregarImagen.TextAlign = ContentAlignment.MiddleLeft;
-            BTAgregarImagen.TextColor = Color.White;
-            BTAgregarImagen.UseVisualStyleBackColor = false;
-            BTAgregarImagen.Click += BTAgregarImagen_Click;
-            // 
-            // LRuraImagen
-            // 
-            LRuraImagen.AutoSize = true;
-            LRuraImagen.ForeColor = Color.Red;
-            LRuraImagen.Location = new Point(441, 231);
-            LRuraImagen.Name = "LRuraImagen";
-            LRuraImagen.Size = new Size(105, 15);
-            LRuraImagen.TabIndex = 89;
-            LRuraImagen.Text = "*Campo requerido";
-            LRuraImagen.Visible = false;
-            // 
-            // gorilla_avatar
-            // 
-            gorilla_avatar.BackgroundImage = Properties.Resources.gorilla_avatar;
-            gorilla_avatar.BackgroundImageLayout = ImageLayout.Zoom;
-            gorilla_avatar.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            gorilla_avatar.BorderColor = Color.RoyalBlue;
-            gorilla_avatar.BorderColor2 = Color.HotPink;
-            gorilla_avatar.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            gorilla_avatar.BorderSize = 2;
-            gorilla_avatar.ErrorImage = Properties.Resources.gorilla_avatar;
-            gorilla_avatar.GradientAngle = 50F;
-            gorilla_avatar.Location = new Point(447, 67);
-            gorilla_avatar.Name = "gorilla_avatar";
-            gorilla_avatar.Size = new Size(100, 100);
-            gorilla_avatar.SizeMode = PictureBoxSizeMode.StretchImage;
-            gorilla_avatar.TabIndex = 93;
-            gorilla_avatar.TabStop = false;
-            // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
@@ -631,6 +659,7 @@
             Size = new Size(1038, 703);
             settingsWrapper.ResumeLayout(false);
             settingsWrapper.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).EndInit();
             panelError.ResumeLayout(false);
             panelError.PerformLayout();
             panel5.ResumeLayout(false);
@@ -645,7 +674,6 @@
             panel1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)gorilla_avatar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -691,5 +719,6 @@
         private ClassCustom.RJButton BTAgregarImagen;
         private Label LRuraImagen;
         private OpenFileDialog openFileDialog1;
+        private ClassCustom.RJButton back;
     }
 }
