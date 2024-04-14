@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using gymsy.App.Models;
 
 namespace gymsy.UserControls.AdminControls
 {

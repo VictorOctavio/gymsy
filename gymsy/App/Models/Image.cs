@@ -16,4 +16,6 @@ public partial class Image
     public int IdDataFisic { get; set; }
 
     public virtual DataFisic IdDataFisicNavigation { get; set; } = null!;
+
+    public virtual ICollection<ImageAudit> ImageAudits { get; set; } = new List<ImageAudit>();
 }

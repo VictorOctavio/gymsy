@@ -16,4 +16,6 @@ public partial class Wallet
     public int IdPerson { get; set; }
 
     public virtual Person IdPersonNavigation { get; set; } = null!;
+
+    public virtual ICollection<WalletAudit> WalletAudits { get; set; } = new List<WalletAudit>();
 }

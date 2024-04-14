@@ -23,5 +23,7 @@ public partial class Pay
 
     public virtual PayType IdPayTypeNavigation { get; set; } = null!;
 
+    public virtual ICollection<PayAudit> PayAudits { get; set; } = new List<PayAudit>();
+
     public virtual Person Remitente { get; set; } = null!;
 }

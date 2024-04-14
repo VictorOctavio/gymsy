@@ -11,5 +11,9 @@ public partial class Instructor
 
     public virtual Person IdPersonNavigation { get; set; } = null!;
 
+    public virtual InstructorAudit? InstructorAudit { get; set; }
+
+    public virtual ICollection<TrainingPlanAudit> TrainingPlanAudits { get; set; } = new List<TrainingPlanAudit>();
+
     public virtual ICollection<TrainingPlan> TrainingPlans { get; set; } = new List<TrainingPlan>();
 }
