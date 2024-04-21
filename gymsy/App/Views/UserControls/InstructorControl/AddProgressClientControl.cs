@@ -143,7 +143,19 @@ namespace gymsy.App.Views.UserControls.ClientControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                // Accede a la InnerException para obtener más detalles sobre el error
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine("Inner Exception Message: " + ex.InnerException.Message);
+                    Console.WriteLine("Inner Exception Stack Trace: " + ex.InnerException.StackTrace);
+                    // O cualquier otra acción que desees tomar para manejar el error
+                }
+                else
+                {
+                    Console.WriteLine("Error Message: " + ex.Message);
+                    Console.WriteLine("Stack Trace: " + ex.StackTrace);
+                    // O cualquier otra acción que desees tomar para manejar el error
+                }
             }
 
         }

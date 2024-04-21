@@ -317,10 +317,21 @@ namespace gymsy.UserControls
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Exepcion inesperada!");
-                throw;
+                // Accede a la InnerException para obtener más detalles sobre el error
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine("Inner Exception Message: " + ex.InnerException.Message);
+                    Console.WriteLine("Inner Exception Stack Trace: " + ex.InnerException.StackTrace);
+                    // O cualquier otra acción que desees tomar para manejar el error
+                }
+                else
+                {
+                    Console.WriteLine("Error Message: " + ex.Message);
+                    Console.WriteLine("Stack Trace: " + ex.StackTrace);
+                    // O cualquier otra acción que desees tomar para manejar el error
+                }
             }
         }
 
@@ -383,7 +394,19 @@ namespace gymsy.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                // Accede a la InnerException para obtener más detalles sobre el error
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine("Inner Exception Message: " + ex.InnerException.Message);
+                    Console.WriteLine("Inner Exception Stack Trace: " + ex.InnerException.StackTrace);
+                    // O cualquier otra acción que desees tomar para manejar el error
+                }
+                else
+                {
+                    Console.WriteLine("Error Message: " + ex.Message);
+                    Console.WriteLine("Stack Trace: " + ex.StackTrace);
+                    // O cualquier otra acción que desees tomar para manejar el error
+                }
             }
 
         }
