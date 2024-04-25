@@ -99,12 +99,15 @@ namespace gymsy.UserControls.AdminControls
 
                     MessageBox.Show("Se Guardaron correcctamente los datos");
 
+                } else
+                {
+                    MessageBox.Show("Revise y complete correctamente los campos.");
                 }
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Exepcion inesperada!");
+                MessageBox.Show("Error al guardar el perfil instructor.");
                 throw;
             }
         }
