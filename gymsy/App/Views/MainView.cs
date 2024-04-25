@@ -127,7 +127,8 @@ namespace gymsy
             {
                 userControlsList = new List<UserControl>()
                  { new AboutClientControl(), new ProgressClientControl(), new PaymentsUserControl(), new SettingsUserControl(),
-                  };
+                  new AddProgressClientControl() 
+                };
             }
             else if (rol == "receptionist")
             {

@@ -425,6 +425,15 @@ namespace gymsy.UserControls
 
         private void rjButton2_Click_1(object sender, EventArgs e)
         {
+
+            //se guarda su indice
+            this.indexRowSelect = DGUsers.SelectedRows[0].Index;
+
+            // Accede a la celda "id" del cliente
+
+            int IdClientSelected = int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
+
+            AppState.auxIdClient = IdClientSelected;
             MainView.navigationControl.Display(7);
         }
 

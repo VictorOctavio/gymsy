@@ -63,8 +63,9 @@
             PanelAddProgress.Controls.Add(LbErrPeso);
             PanelAddProgress.Dock = DockStyle.Fill;
             PanelAddProgress.Location = new Point(0, 0);
+            PanelAddProgress.Margin = new Padding(3, 4, 3, 4);
             PanelAddProgress.Name = "PanelAddProgress";
-            PanelAddProgress.Size = new Size(900, 550);
+            PanelAddProgress.Size = new Size(1029, 733);
             PanelAddProgress.TabIndex = 52;
             // 
             // panel1
@@ -74,9 +75,10 @@
             panel1.Controls.Add(BtnAddImgProgress);
             panel1.Controls.Add(label13);
             panel1.Controls.Add(LbErrImage);
-            panel1.Location = new Point(484, 3);
+            panel1.Location = new Point(553, 4);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(413, 544);
+            panel1.Size = new Size(472, 725);
             panel1.TabIndex = 72;
             // 
             // PictureBoxImg
@@ -84,9 +86,10 @@
             PictureBoxImg.BorderStyle = BorderStyle.FixedSingle;
             PictureBoxImg.Image = (Image)resources.GetObject("PictureBoxImg.Image");
             PictureBoxImg.InitialImage = (Image)resources.GetObject("PictureBoxImg.InitialImage");
-            PictureBoxImg.Location = new Point(81, 113);
+            PictureBoxImg.Location = new Point(93, 151);
+            PictureBoxImg.Margin = new Padding(3, 4, 3, 4);
             PictureBoxImg.Name = "PictureBoxImg";
-            PictureBoxImg.Size = new Size(220, 279);
+            PictureBoxImg.Size = new Size(251, 371);
             PictureBoxImg.SizeMode = PictureBoxSizeMode.Zoom;
             PictureBoxImg.TabIndex = 67;
             PictureBoxImg.TabStop = false;
@@ -110,10 +113,11 @@
             BtnAddImgProgress.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnAddImgProgress.IconSize = 30;
             BtnAddImgProgress.ImageAlign = ContentAlignment.MiddleRight;
-            BtnAddImgProgress.Location = new Point(106, 406);
+            BtnAddImgProgress.Location = new Point(121, 541);
+            BtnAddImgProgress.Margin = new Padding(3, 4, 3, 4);
             BtnAddImgProgress.Name = "BtnAddImgProgress";
-            BtnAddImgProgress.Padding = new Padding(10, 0, 10, 0);
-            BtnAddImgProgress.Size = new Size(177, 38);
+            BtnAddImgProgress.Padding = new Padding(11, 0, 11, 0);
+            BtnAddImgProgress.Size = new Size(202, 51);
             BtnAddImgProgress.TabIndex = 66;
             BtnAddImgProgress.Text = "Agregar Imagen";
             BtnAddImgProgress.TextAlign = ContentAlignment.MiddleLeft;
@@ -127,9 +131,9 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(230, 237, 243);
-            label13.Location = new Point(152, 58);
+            label13.Location = new Point(174, 77);
             label13.Name = "label13";
-            label13.Size = new Size(93, 25);
+            label13.Size = new Size(117, 32);
             label13.TabIndex = 52;
             label13.Text = "Imagenes";
             // 
@@ -138,9 +142,9 @@
             LbErrImage.Anchor = AnchorStyles.None;
             LbErrImage.AutoSize = true;
             LbErrImage.ForeColor = Color.Red;
-            LbErrImage.Location = new Point(140, 452);
+            LbErrImage.Location = new Point(160, 603);
             LbErrImage.Name = "LbErrImage";
-            LbErrImage.Size = new Size(105, 15);
+            LbErrImage.Size = new Size(132, 20);
             LbErrImage.TabIndex = 49;
             LbErrImage.Text = "*Campo requerido";
             LbErrImage.Visible = false;
@@ -162,9 +166,10 @@
             LbErrPeso.Controls.Add(BtnSaveProgress);
             LbErrPeso.Controls.Add(LbErrTitle);
             LbErrPeso.Controls.Add(label5);
-            LbErrPeso.Location = new Point(3, 3);
+            LbErrPeso.Location = new Point(3, 4);
+            LbErrPeso.Margin = new Padding(3, 4, 3, 4);
             LbErrPeso.Name = "LbErrPeso";
-            LbErrPeso.Size = new Size(475, 544);
+            LbErrPeso.Size = new Size(543, 725);
             LbErrPeso.TabIndex = 73;
             // 
             // labelError
@@ -173,9 +178,9 @@
             labelError.AutoSize = true;
             labelError.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelError.ForeColor = Color.Red;
-            labelError.Location = new Point(155, 497);
+            labelError.Location = new Point(177, 663);
             labelError.Name = "labelError";
-            labelError.Size = new Size(139, 21);
+            labelError.Size = new Size(174, 28);
             labelError.TabIndex = 76;
             labelError.Text = "*Campo requerido";
             labelError.Visible = false;
@@ -186,9 +191,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(142, 317);
+            label6.Location = new Point(162, 423);
             label6.Name = "label6";
-            label6.Size = new Size(51, 21);
+            label6.Size = new Size(64, 28);
             label6.TabIndex = 75;
             label6.Text = "Notas";
             // 
@@ -202,16 +207,16 @@
             TbTitle.BorderSize = 2;
             TbTitle.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             TbTitle.ForeColor = Color.FromArgb(230, 237, 243);
-            TbTitle.Location = new Point(142, 129);
-            TbTitle.Margin = new Padding(4);
+            TbTitle.Location = new Point(162, 172);
+            TbTitle.Margin = new Padding(5, 5, 5, 5);
             TbTitle.Multiline = false;
             TbTitle.Name = "TbTitle";
-            TbTitle.Padding = new Padding(10, 7, 10, 7);
+            TbTitle.Padding = new Padding(11, 9, 11, 9);
             TbTitle.PasswordChar = false;
             TbTitle.PlaceholderColor = Color.DarkGray;
             TbTitle.PlaceholderText = "Ingrese un titulo...";
             TbTitle.ReadOnly = false;
-            TbTitle.Size = new Size(281, 31);
+            TbTitle.Size = new Size(321, 39);
             TbTitle.TabIndex = 67;
             TbTitle.UnderlinedStyle = false;
             // 
@@ -221,9 +226,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(142, 242);
+            label4.Location = new Point(162, 323);
             label4.Name = "label4";
-            label4.Size = new Size(99, 21);
+            label4.Size = new Size(125, 28);
             label4.TabIndex = 74;
             label4.Text = "Altura Actual";
             // 
@@ -237,16 +242,16 @@
             TbNotes.BorderSize = 2;
             TbNotes.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             TbNotes.ForeColor = Color.FromArgb(230, 237, 243);
-            TbNotes.Location = new Point(142, 342);
-            TbNotes.Margin = new Padding(4);
+            TbNotes.Location = new Point(162, 456);
+            TbNotes.Margin = new Padding(5, 5, 5, 5);
             TbNotes.Multiline = true;
             TbNotes.Name = "TbNotes";
-            TbNotes.Padding = new Padding(10, 7, 10, 7);
+            TbNotes.Padding = new Padding(11, 9, 11, 9);
             TbNotes.PasswordChar = false;
             TbNotes.PlaceholderColor = Color.DarkGray;
             TbNotes.PlaceholderText = "Ingrese notas...";
             TbNotes.ReadOnly = false;
-            TbNotes.Size = new Size(281, 82);
+            TbNotes.Size = new Size(321, 109);
             TbNotes.TabIndex = 70;
             TbNotes.UnderlinedStyle = false;
             // 
@@ -256,9 +261,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(142, 173);
+            label3.Location = new Point(162, 231);
             label3.Name = "label3";
-            label3.Size = new Size(89, 21);
+            label3.Size = new Size(112, 28);
             label3.TabIndex = 73;
             label3.Text = "Peso Actual";
             // 
@@ -268,9 +273,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(144, 105);
+            label1.Location = new Point(165, 140);
             label1.Name = "label1";
-            label1.Size = new Size(49, 21);
+            label1.Size = new Size(62, 28);
             label1.TabIndex = 72;
             label1.Text = "Titulo";
             // 
@@ -284,16 +289,16 @@
             TbPeso.BorderSize = 2;
             TbPeso.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             TbPeso.ForeColor = Color.FromArgb(230, 237, 243);
-            TbPeso.Location = new Point(142, 198);
-            TbPeso.Margin = new Padding(4);
+            TbPeso.Location = new Point(162, 264);
+            TbPeso.Margin = new Padding(5, 5, 5, 5);
             TbPeso.Multiline = false;
             TbPeso.Name = "TbPeso";
-            TbPeso.Padding = new Padding(10, 7, 10, 7);
+            TbPeso.Padding = new Padding(11, 9, 11, 9);
             TbPeso.PasswordChar = false;
             TbPeso.PlaceholderColor = Color.DarkGray;
             TbPeso.PlaceholderText = "Ingrese un peso...";
             TbPeso.ReadOnly = false;
-            TbPeso.Size = new Size(281, 31);
+            TbPeso.Size = new Size(321, 39);
             TbPeso.TabIndex = 68;
             TbPeso.UnderlinedStyle = false;
             TbPeso.KeyPress += JustNumber_KeyPress;
@@ -304,9 +309,9 @@
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(200, 48);
+            label10.Location = new Point(229, 64);
             label10.Name = "label10";
-            label10.Size = new Size(208, 37);
+            label10.Size = new Size(262, 46);
             label10.TabIndex = 48;
             label10.Text = "Nuevo Progreso";
             // 
@@ -320,16 +325,16 @@
             TbAltura.BorderSize = 2;
             TbAltura.Font = new Font("Microsoft Sans Serif", 9.5F, FontStyle.Regular, GraphicsUnit.Point);
             TbAltura.ForeColor = Color.FromArgb(230, 237, 243);
-            TbAltura.Location = new Point(142, 267);
-            TbAltura.Margin = new Padding(4);
+            TbAltura.Location = new Point(162, 356);
+            TbAltura.Margin = new Padding(5, 5, 5, 5);
             TbAltura.Multiline = false;
             TbAltura.Name = "TbAltura";
-            TbAltura.Padding = new Padding(10, 7, 10, 7);
+            TbAltura.Padding = new Padding(11, 9, 11, 9);
             TbAltura.PasswordChar = false;
             TbAltura.PlaceholderColor = Color.DarkGray;
             TbAltura.PlaceholderText = "Ingrese altura...";
             TbAltura.ReadOnly = false;
-            TbAltura.Size = new Size(281, 31);
+            TbAltura.Size = new Size(321, 39);
             TbAltura.TabIndex = 69;
             TbAltura.UnderlinedStyle = false;
             TbAltura.KeyPress += JustNumber_KeyPress;
@@ -339,9 +344,9 @@
             LbErrAltura.Anchor = AnchorStyles.None;
             LbErrAltura.AutoSize = true;
             LbErrAltura.ForeColor = Color.Red;
-            LbErrAltura.Location = new Point(318, 248);
+            LbErrAltura.Location = new Point(363, 331);
             LbErrAltura.Name = "LbErrAltura";
-            LbErrAltura.Size = new Size(105, 15);
+            LbErrAltura.Size = new Size(132, 20);
             LbErrAltura.TabIndex = 43;
             LbErrAltura.Text = "*Campo requerido";
             LbErrAltura.Visible = false;
@@ -364,10 +369,11 @@
             BtnSaveProgress.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BtnSaveProgress.IconSize = 1;
             BtnSaveProgress.ImageAlign = ContentAlignment.MiddleRight;
-            BtnSaveProgress.Location = new Point(168, 441);
+            BtnSaveProgress.Location = new Point(192, 588);
+            BtnSaveProgress.Margin = new Padding(3, 4, 3, 4);
             BtnSaveProgress.Name = "BtnSaveProgress";
-            BtnSaveProgress.Padding = new Padding(10, 0, 0, 0);
-            BtnSaveProgress.Size = new Size(222, 40);
+            BtnSaveProgress.Padding = new Padding(11, 0, 0, 0);
+            BtnSaveProgress.Size = new Size(254, 53);
             BtnSaveProgress.TabIndex = 71;
             BtnSaveProgress.Text = "Guardar Progreso";
             BtnSaveProgress.TextColor = Color.White;
@@ -379,9 +385,9 @@
             LbErrTitle.Anchor = AnchorStyles.None;
             LbErrTitle.AutoSize = true;
             LbErrTitle.ForeColor = Color.Red;
-            LbErrTitle.Location = new Point(318, 110);
+            LbErrTitle.Location = new Point(363, 147);
             LbErrTitle.Name = "LbErrTitle";
-            LbErrTitle.Size = new Size(105, 15);
+            LbErrTitle.Size = new Size(132, 20);
             LbErrTitle.TabIndex = 37;
             LbErrTitle.Text = "*Campo requerido";
             LbErrTitle.Visible = false;
@@ -391,20 +397,21 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.ForeColor = Color.Red;
-            label5.Location = new Point(318, 179);
+            label5.Location = new Point(363, 239);
             label5.Name = "label5";
-            label5.Size = new Size(105, 15);
+            label5.Size = new Size(132, 20);
             label5.TabIndex = 40;
             label5.Text = "*Campo requerido";
             label5.Visible = false;
             // 
             // AddProgressClientControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(PanelAddProgress);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AddProgressClientControl";
-            Size = new Size(900, 550);
+            Size = new Size(1029, 733);
             PanelAddProgress.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

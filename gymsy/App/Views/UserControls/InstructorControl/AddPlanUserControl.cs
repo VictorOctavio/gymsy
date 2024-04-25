@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace gymsy.UserControls
 {
@@ -73,90 +74,135 @@ namespace gymsy.UserControls
         }
 
         private void BAgregarPlan_Click(object sender, EventArgs e)
-        {
-            //en numeroIngresado se guarda el valor ingresado en el textbox de ser un numero valido
-            if (float.TryParse(TBPrecio.Text, out float numeroIngresado) && numeroIngresado >= 0)
+        {  try
             {
-                //Se verifica que se ha ingresado una descripcion
-                if (!string.IsNullOrWhiteSpace(TBDescripcion.Text))
+                //en numeroIngresado se guarda el valor ingresado en el textbox de ser un numero valido
+                if (float.TryParse(TBPrecio.Text, out float numeroIngresado) && numeroIngresado >= 0)
                 {
-                    // Aquí puedes realizar la acción que necesites con el número ingresado
-                    LPrecioRequerido.Visible = false;
-                    LDescripcionRequerido.Visible = false;
-
-                    if (isEditMode)
+                    //Se verifica que se ha ingresado una descripcion
+                    if (!string.IsNullOrWhiteSpace(TBDescripcion.Text))
                     {
+                        // Aquí puedes realizar la acción que necesites con el número ingresado
+                        LPrecioRequerido.Visible = false;
+                        LDescripcionRequerido.Visible = false;
+
+                        if (isEditMode)
+                        {
 
 
 
-                        DataGridViewRow selectedRow = DGPlan.Rows[this.indexRowSelect];
-                        selectedRow.Cells["Precio"].Value = TBPrecio.Text;
-                        selectedRow.Cells["Descripcion"].Value = TBDescripcion.Text;
+                            DataGridViewRow selectedRow = DGPlan.Rows[this.indexRowSelect];
+                            selectedRow.Cells["Precio"].Value = TBPrecio.Text;
+                            selectedRow.Cells["Descripcion"].Value = TBDescripcion.Text;
 
-                        int idPlan = int.Parse(selectedRow.Cells["id_plan"].Value.ToString());
+                            int idPlan = int.Parse(selectedRow.Cells["id_plan"].Value.ToString());
 
-                        var plan = this.dbContext.TrainingPlans.Where(p => p.IdTrainingPlan == idPlan).FirstOrDefault();
+                            var plan = this.dbContext.TrainingPlans.Where(p => p.IdTrainingPlan == idPlan).FirstOrDefault();
+                            if (DescripcionUnica(TBDescripcion.Text, idPlan))
+                            {
+                                plan.Description = TBDescripcion.Text;
+                                plan.Price = float.Parse(TBPrecio.Text);
 
-                        plan.Description = TBDescripcion.Text;
-                        plan.Price = float.Parse(TBPrecio.Text);
+                                this.dbContext.SaveChanges();
 
-                        this.dbContext.SaveChanges();
-
-                        //Se actualiza el plan en la base de datos
-
-
-                        // Actualiza la vista del DataGridView.
-                        DGPlan.Refresh();
+                                //Se actualiza el plan en la base de datos
 
 
-                        //MessageBox.Show("Se Edito correcetamente el plan con un precio de: $" + numeroIngresado.ToString() + "\nDescripcion: " + TBDescripcion.Text);
+                                // Actualiza la vista del DataGridView.
+                                DGPlan.Refresh();
 
-                        selectedRow = null;
-                        this.isEditMode = false;
 
-                        //Se cambia el boton para que ahora se pueda eliminar planes
-                        BEliminarPlan.IconChar = FontAwesome.Sharp.IconChar.Trash;
-                        BEliminarPlan.Text = "Eliminar Plan";
+                                //MessageBox.Show("Se Edito correcetamente el plan con un precio de: $" + numeroIngresado.ToString() + "\nDescripcion: " + TBDescripcion.Text);
 
-                        LModoEditOrAdd.Text = "Modo Agregar";
+                                selectedRow = null;
+                                this.isEditMode = false;
+
+                                //Se cambia el boton para que ahora se pueda eliminar planes
+                                BEliminarPlan.IconChar = FontAwesome.Sharp.IconChar.Trash;
+                                BEliminarPlan.Text = "Eliminar Plan";
+
+                                LModoEditOrAdd.Text = "Modo Agregar";
+
+                                // Limpiar los TextBox después de agregar la fila
+                                TBPrecio.Clear();
+                                TBDescripcion.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ya existe un plan con esa descripcion.");
+                            }
+
+                        }
+                        else
+                        {
+
+                            if (DescripcionUnica(TBDescripcion.Text))
+                            {
+                                TrainingPlan plan = new TrainingPlan();
+                                plan.Description = TBDescripcion.Text;
+                                plan.Price = float.Parse(TBPrecio.Text);
+                                plan.IdInstructor = AppState.Instructor.IdInstructor;
+
+                                this.dbContext.TrainingPlans.Add(plan);
+                                this.dbContext.SaveChanges();
+
+                                DGPlan.Rows.Add(plan.IdTrainingPlan, TBPrecio.Text, TBDescripcion.Text);
+
+                                MessageBox.Show("Plan guardado correctamente.");
+
+                                // Limpiar los TextBox después de agregar la fila
+                                TBPrecio.Clear();
+                                TBDescripcion.Clear();
+
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ya existe un plan con esa descripcion.");
+                            }
+
+                        }
+
+
+
+
+
+
                     }
                     else
                     {
-
-
-                        TrainingPlan plan = new TrainingPlan();
-                        plan.Description = TBDescripcion.Text;
-                        plan.Price = float.Parse(TBPrecio.Text);
-                        plan.IdInstructor = AppState.Instructor.IdInstructor;
-
-                        this.dbContext.TrainingPlans.Add(plan);
-                        this.dbContext.SaveChanges();
-
-                        DGPlan.Rows.Add(plan.IdTrainingPlan, TBPrecio.Text, TBDescripcion.Text);
-
-                        //MessageBox.Show("Se Ingreso correcetamente el plan con un precio de: $" + numeroIngresado.ToString() + "\nDescripcion: " + TBDescripcion.Text);
-
+                        LDescripcionRequerido.Visible = true;
                     }
-
-
-
-                    // Limpiar los TextBox después de agregar la fila
-                    TBPrecio.Clear();
-                    TBDescripcion.Clear();
-
 
                 }
                 else
                 {
-                    LDescripcionRequerido.Visible = true;
+                    LPrecioRequerido.Visible = true;
+                    MessageBox.Show("Por favor, verifique que haya ingresado correctamente todos los campos.");
                 }
-
-            }
-            else
+            } catch
             {
-                LPrecioRequerido.Visible = true;
-                MessageBox.Show("Por favor, verifique que haya ingresado correctamente todos los campos.");
+                MessageBox.Show("Error al guardar el plan.");
             }
+        }
+        // Función para verificar si no existe otra descripción igual en la base de datos
+        public bool DescripcionUnica(string nuevaDescripcion, int? idPlanActual = null)
+        {
+            // Consulta para encontrar planes con la misma descripción
+            var planesConMismaDescripcion = dbContext.TrainingPlans
+                .Where(p => p.Description == nuevaDescripcion);
+
+            // Si se está modificando un plan, excluimos el plan actual de la consulta
+            if (idPlanActual.HasValue)
+            {
+                planesConMismaDescripcion = planesConMismaDescripcion.Where(p => p.IdTrainingPlan != idPlanActual);
+            }
+
+            // Verificamos si se encontró algún plan con la misma descripción
+            bool descripcionUnica = !planesConMismaDescripcion.Any();
+
+            // Devolvemos el resultado
+            return descripcionUnica;
         }
 
         /**

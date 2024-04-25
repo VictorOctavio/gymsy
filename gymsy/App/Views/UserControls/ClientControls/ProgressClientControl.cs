@@ -22,13 +22,14 @@ namespace gymsy.UserControls.ClientControls
         public ProgressClientControl()
         {
             InitializeComponent();
-
+            /*
             if (AppState.person.RolId == 3)
             {
                 btnAddProgress.Visible = false;
                 rjButton1.Visible = false;
             }
-             
+             */
+
             PhotoActive.InitialImage = PhotoActive.Image;
         }
 
@@ -101,7 +102,15 @@ namespace gymsy.UserControls.ClientControls
 
         private void btnAddProgress_Click(object sender, EventArgs e)
         {
-            MainView.navigationControl.Display(8);
+            if(AppState.auxIdClient == 0)
+            {
+                MainView.navigationControl.Display(4);
+                
+            } else
+            {
+                MainView.navigationControl.Display(8);
+            }
+            
         }
 
         private void dataGridProgress_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

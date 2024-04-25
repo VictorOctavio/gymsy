@@ -38,6 +38,8 @@ namespace gymsy.Context
 
         public static bool isModeEdit { get; set; } = false;
 
+        public static int auxIdClient = 0;
+
 
 
     }
