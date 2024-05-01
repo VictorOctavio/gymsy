@@ -59,7 +59,7 @@ namespace gymsy.UserControls.AdminControls
                         Password = contraseña,
                         CreatedAt = DateTime.Now,
                         LastName = apellido,
-                        CBU = usuario,
+                        
                         NumberPhone = telefono,
                         Birthday = DPFechaNacimiento.Value,
                         Gender = sexo,
@@ -82,6 +82,7 @@ namespace gymsy.UserControls.AdminControls
                     {
                         Total = 0.0,
                         Retirable = 0.0,
+                        CBU = usuario,
                         Inactive = false,
                         IdPerson = persona.IdPerson
                     };
@@ -105,9 +106,14 @@ namespace gymsy.UserControls.AdminControls
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar el perfil instructor.");
+                MessageBox.Show($"Mensaje de la excepción: {ex.Message}\n\n" +
+                                $"Stack Trace: {ex.StackTrace}\n\n" +
+                                $"Excepción interna: {ex.InnerException}\n\n" +
+                                $"Data: {ex.Data}\n\n" +
+                                $"Origen: {ex.Source}\n\n" +
+                                $"Tipo de excepción: {ex.GetType().ToString()}");
                 throw;
             }
         }

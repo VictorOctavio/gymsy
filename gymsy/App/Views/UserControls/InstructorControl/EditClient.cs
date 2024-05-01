@@ -377,7 +377,7 @@ namespace gymsy.UserControls
                         personUpdated.Password = Bcrypt.HashPassoword( TBContraseña.Text);
                     }
                     personUpdated.LastName = TBApellido.Text;
-                    personUpdated.CBU = usuario;
+                    //personUpdated.CBU = usuario;
                     personUpdated.NumberPhone = TBTelefono.Text;
                     personUpdated.Gender = sexo;
                     personUpdated.Birthday = DPFechaNacimiento.Value;

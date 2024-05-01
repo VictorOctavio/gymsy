@@ -283,7 +283,7 @@ namespace gymsy.UserControls
                         Password = Bcrypt.HashPassoword(TBContraseña.Text),
                         CreatedAt = DateTime.Now,
                         LastName = TBApellido.Text,
-                        CBU = usuario,
+                        //CBU = usuario,
                         NumberPhone = TBTelefono.Text,
                         Birthday = DPFechaNacimiento.Value,
                         Gender = sexo,
@@ -310,6 +310,7 @@ namespace gymsy.UserControls
                         Total = 0.0,
                         Retirable = 0.0,
                         Inactive = false,
+                        CBU = usuario,
                         IdPerson = persona.IdPerson
                     };
 
