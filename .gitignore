@@ -27,7 +27,7 @@ x64/
 *_i.h
 *.ilk
 *.meta
-*.obj
+
 *.pch
 *.pdb
 *.pgc
@@ -173,3 +173,8 @@ _NCrunch*
 
 /gymsy/obj/Debug/net6.0-windows/gymsy.Properties.Resources.resources
 /gymsy/gymsy.csproj.user
+/gymsy/obj/Debug/net6.0-windows/gymsy.AssemblyInfo.cs
+/gymsy/obj/Debug/net6.0-windows/gymsy.AssemblyInfoInputs.cache
+/gymsy/obj/Debug/net6.0-windows/gymsy.GeneratedMSBuildEditorConfig.editorconfig
+/gymsy/obj/Debug/net6.0-windows/gymsy.csproj.FileListAbsolute.txt
+/gymsy/Properties/Resources.resx

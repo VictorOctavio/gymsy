@@ -7,8 +7,6 @@ public partial class DataFisic
 {
     public int IdDataFisic { get; set; }
 
-    public string? Title { get; set; }
-
     public double Weight { get; set; }
 
     public double Height { get; set; }
@@ -21,7 +19,13 @@ public partial class DataFisic
 
     public int IdClient { get; set; }
 
+    public string? Title { get; set; }
+
+    public virtual ICollection<DataFisicAudit> DataFisicAudits { get; set; } = new List<DataFisicAudit>();
+
     public virtual Client IdClientNavigation { get; set; } = null!;
+
+    public virtual ICollection<ImageAudit> ImageAudits { get; set; } = new List<ImageAudit>();
 
     public virtual ICollection<Image> Images { get; set; } = new List<Image>();
 }

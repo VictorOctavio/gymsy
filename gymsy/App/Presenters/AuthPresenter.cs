@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using gymsy.App.Models;
+
 namespace gymsy.App.Presenters
 {
     public class AuthPresenter

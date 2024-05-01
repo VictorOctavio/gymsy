@@ -11,5 +11,7 @@ public partial class Admin
 
     public int IdPerson { get; set; }
 
+    public virtual ICollection<AdminAudit> AdminAudits { get; set; } = new List<AdminAudit>();
+
     public virtual Person IdPersonNavigation { get; set; } = null!;
 }

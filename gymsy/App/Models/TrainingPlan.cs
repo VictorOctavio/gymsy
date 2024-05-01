@@ -18,4 +18,6 @@ public partial class TrainingPlan
     public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
 
     public virtual Instructor IdInstructorNavigation { get; set; } = null!;
+
+    public virtual ICollection<TrainingPlanAudit> TrainingPlanAudits { get; set; } = new List<TrainingPlanAudit>();
 }

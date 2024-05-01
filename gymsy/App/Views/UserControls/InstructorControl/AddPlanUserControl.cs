@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
+using gymsy.App.Presenters;
 
 namespace gymsy.UserControls
 {
@@ -19,14 +21,14 @@ namespace gymsy.UserControls
         //private int idPlan = 0;
         private bool isEditMode = false;
         private int indexRowSelect = 0;
-        private GymsyDbContext dbContext;
+        //private GymsyDbContext dbContext;
 
 
         //private DataGridViewRow selectedRow; // Declara una variable para mantener la fila seleccionada.
         public AddPlanUserControl()
         {
             //Se trae el contexto de la base de datos
-            this.dbContext = GymsyContext.GymsyContextDB;
+            //this.dbContext = GymsyContext.GymsyContextDB;
 
             InitializeComponent();
             InitializeGridPlanes();
@@ -38,7 +40,7 @@ namespace gymsy.UserControls
 
         private void InitializeGridPlanes()
         {
-            var trainingPlans = this.dbContext.TrainingPlans.Where(p => p.IdInstructor == AppState.Instructor.IdInstructor).ToList();
+            var trainingPlans = AddPlanUserPresenter.listarPlanesInstructor();
 
             if (trainingPlans != null)
             {
@@ -73,89 +75,110 @@ namespace gymsy.UserControls
         }
 
         private void BAgregarPlan_Click(object sender, EventArgs e)
-        {
-            //en numeroIngresado se guarda el valor ingresado en el textbox de ser un numero valido
-            if (float.TryParse(TBPrecio.Text, out float numeroIngresado) && numeroIngresado >= 0)
+        {  try
             {
-                //Se verifica que se ha ingresado una descripcion
-                if (!string.IsNullOrWhiteSpace(TBDescripcion.Text))
+                //en numeroIngresado se guarda el valor ingresado en el textbox de ser un numero valido
+                if (float.TryParse(TBPrecio.Text, out float numeroIngresado) && numeroIngresado >= 0)
                 {
-                    // Aquí puedes realizar la acción que necesites con el número ingresado
-                    LPrecioRequerido.Visible = false;
-                    LDescripcionRequerido.Visible = false;
-
-                    if (isEditMode)
+                    //Se verifica que se ha ingresado una descripcion
+                    if (!string.IsNullOrWhiteSpace(TBDescripcion.Text))
                     {
+                        // Aquí puedes realizar la acción que necesites con el número ingresado
+                        LPrecioRequerido.Visible = false;
+                        LDescripcionRequerido.Visible = false;
+
+                        if (isEditMode)
+                        {
 
 
 
-                        DataGridViewRow selectedRow = DGPlan.Rows[this.indexRowSelect];
-                        selectedRow.Cells["Precio"].Value = TBPrecio.Text;
-                        selectedRow.Cells["Descripcion"].Value = TBDescripcion.Text;
+                            DataGridViewRow selectedRow = DGPlan.Rows[this.indexRowSelect];
+                            selectedRow.Cells["Precio"].Value = TBPrecio.Text;
+                            selectedRow.Cells["Descripcion"].Value = TBDescripcion.Text;
 
-                        int idPlan = int.Parse(selectedRow.Cells["id_plan"].Value.ToString());
-
-                        var plan = this.dbContext.TrainingPlans.Where(p => p.IdTrainingPlan == idPlan).FirstOrDefault();
-
-                        plan.Description = TBDescripcion.Text;
-                        plan.Price = float.Parse(TBPrecio.Text);
-
-                        this.dbContext.SaveChanges();
-
-                        //Se actualiza el plan en la base de datos
+                            int idPlan = int.Parse(selectedRow.Cells["id_plan"].Value.ToString());
 
 
-                        // Actualiza la vista del DataGridView.
-                        DGPlan.Refresh();
+                            if (AddPlanUserPresenter.DescripcionUnica(TBDescripcion.Text, idPlan))
+                            {
 
 
-                        //MessageBox.Show("Se Edito correcetamente el plan con un precio de: $" + numeroIngresado.ToString() + "\nDescripcion: " + TBDescripcion.Text);
 
-                        selectedRow = null;
-                        this.isEditMode = false;
+                                float precio = float.Parse(TBPrecio.Text);
 
-                        //Se cambia el boton para que ahora se pueda eliminar planes
-                        BEliminarPlan.IconChar = FontAwesome.Sharp.IconChar.Trash;
-                        BEliminarPlan.Text = "Eliminar Plan";
+                                AddPlanUserPresenter.modificarPlan(idPlan, TBDescripcion.Text, precio);
 
-                        LModoEditOrAdd.Text = "Modo Agregar";
+                                // Actualiza la vista del DataGridView.
+                                DGPlan.Refresh();
+
+
+                                //MessageBox.Show("Se Edito correcetamente el plan con un precio de: $" + numeroIngresado.ToString() + "\nDescripcion: " + TBDescripcion.Text);
+
+                                selectedRow = null;
+                                this.isEditMode = false;
+
+                                //Se cambia el boton para que ahora se pueda eliminar planes
+                                BEliminarPlan.IconChar = FontAwesome.Sharp.IconChar.Trash;
+                                BEliminarPlan.Text = "Eliminar Plan";
+
+                                LModoEditOrAdd.Text = "Modo Agregar";
+
+                                // Limpiar los TextBox después de agregar la fila
+                                TBPrecio.Clear();
+                                TBDescripcion.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ya existe un plan con esa descripcion.");
+                            }
+
+                        }
+                        else
+                        {
+
+                            if (AddPlanUserPresenter.DescripcionUnica(TBDescripcion.Text))
+                            {
+                                float precio_a_guardar = float.Parse(TBPrecio.Text);
+
+                                TrainingPlan plan_guardado = AddPlanUserPresenter.guardarPlan(TBDescripcion.Text, precio_a_guardar);
+
+                                DGPlan.Rows.Add(plan_guardado.IdTrainingPlan, TBPrecio.Text, TBDescripcion.Text, false);
+
+                                MessageBox.Show("Plan guardado correctamente.");
+
+                                // Limpiar los TextBox después de agregar la fila
+                                TBPrecio.Clear();
+                                TBDescripcion.Clear();
+
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ya existe un plan con esa descripcion.");
+                            }
+
+                        }
+
+
+
+
+
+
                     }
                     else
                     {
-
-
-                        TrainingPlan plan = new TrainingPlan();
-                        plan.Description = TBDescripcion.Text;
-                        plan.Price = float.Parse(TBPrecio.Text);
-                        plan.IdInstructor = AppState.Instructor.IdInstructor;
-
-                        this.dbContext.TrainingPlans.Add(plan);
-                        this.dbContext.SaveChanges();
-
-                        DGPlan.Rows.Add(plan.IdTrainingPlan, TBPrecio.Text, TBDescripcion.Text);
-
-                        //MessageBox.Show("Se Ingreso correcetamente el plan con un precio de: $" + numeroIngresado.ToString() + "\nDescripcion: " + TBDescripcion.Text);
-
+                        LDescripcionRequerido.Visible = true;
                     }
-
-
-
-                    // Limpiar los TextBox después de agregar la fila
-                    TBPrecio.Clear();
-                    TBDescripcion.Clear();
-
 
                 }
                 else
                 {
-                    LDescripcionRequerido.Visible = true;
+                    LPrecioRequerido.Visible = true;
+                    MessageBox.Show("Por favor, verifique que haya ingresado correctamente todos los campos.");
                 }
-
-            }
-            else
+            } catch
             {
-                LPrecioRequerido.Visible = true;
-                MessageBox.Show("Por favor, verifique que haya ingresado correctamente todos los campos.");
+                MessageBox.Show("Error al guardar el plan.");
             }
         }
 
@@ -265,12 +288,7 @@ namespace gymsy.UserControls
 
                             var idPlan = int.Parse(DGPlan.SelectedRows[0].Cells["id_plan"].Value.ToString());
 
-                            var plan = this.dbContext.TrainingPlans.Where(p => p.IdTrainingPlan == idPlan).FirstOrDefault();
-                            if (plan != null)
-                            {
-                                plan.Inactive = deleteOrAcitive;
-                            }
-
+                            AddPlanUserPresenter.EliminarOActivarPlan(idPlan, deleteOrAcitive);
 
                             //Se limpia el indice
                             this.indexRowSelect = 0;
@@ -298,11 +316,7 @@ namespace gymsy.UserControls
 
                             var idPlan = int.Parse(DGPlan.SelectedRows[0].Cells["id_plan"].Value.ToString());
 
-                            var plan = this.dbContext.TrainingPlans.Where(p => p.IdTrainingPlan == idPlan).FirstOrDefault();
-                            if (plan != null)
-                            {
-                                plan.Inactive = deleteOrAcitive;
-                            }
+                            AddPlanUserPresenter.EliminarOActivarPlan(idPlan, deleteOrAcitive);
 
 
                             //Se limpia el indice
@@ -418,7 +432,7 @@ namespace gymsy.UserControls
             else
             {
                 this.isModeVerNoDelete = false;
-                BEliminarPlan.Text = "Activar Cliente";
+                BEliminarPlan.Text = "Activar Plan";
                 BEliminarPlan.BackColor = Color.FromArgb(255, 140, 0);
                 BEliminarPlan.IconChar = FontAwesome.Sharp.IconChar.Dumbbell;
 

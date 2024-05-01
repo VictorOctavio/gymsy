@@ -16,13 +16,15 @@ using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
+using gymsy.App.Presenters;
+
 
 namespace gymsy.App.Views.UserControls.ClientControls
 {
     public partial class AddProgressClientControl : UserControl
     {
 
-        private GymsyDbContext gymsydb = GymsyContext.GymsyContextDB;
+        //private GymsyDbContext gymsydb = GymsyContext.GymsyContextDB;
         private OpenFileDialog fileDialog = new OpenFileDialog();
 
         public AddProgressClientControl()
@@ -65,11 +67,14 @@ namespace gymsy.App.Views.UserControls.ClientControls
             {
                 if (!Utility.IsValidTextBoxRJ(textBoxCurrent, labelError))
                 {
+                    MessageBox.Show("Verifique que los campos esten correctos.");
                     return false;
                 }
             }
             return true;
         }
+        
+
 
         private void BtnSaveProgress_Click(object sender, EventArgs e)
         {
@@ -85,65 +90,56 @@ namespace gymsy.App.Views.UserControls.ClientControls
 
                 // Validar texts box
                 if (!ValidateTextBox(textBoxList)) return;
-
+  
 
                 // Verifica la extensión del archivo seleccionado
-                string extension = System.IO.Path.GetExtension(fileDialog.FileName).ToLower();
-                if (!(extension == ".jpg" || extension == ".jpeg" || extension == ".png" || extension == ".jfif"))
+                string extension_imagen = System.IO.Path.GetExtension(fileDialog.FileName).ToLower();
+                if (!(extension_imagen == ".jpg" || extension_imagen == ".jpeg" || extension_imagen == ".png" || extension_imagen == ".jfif"))
                 {
                     MessageBox.Show("Agrega una imagen al registro!");
                     return;
                 }
-
-
-                // Save image 
-                System.Drawing.Image File;
-                File = System.Drawing.Image.FromFile(fileDialog.FileName);
-
-                string directory = AppDomain.CurrentDomain.BaseDirectory;
-                string directoryPublic = Path.GetFullPath(Path.Combine(directory, @"..\..\..\App\Public"));
-
-                string RandomName = Guid.NewGuid().ToString();
-                string NameImage = $"{RandomName}{extension}";
-                string rutaCompleta = Path.Combine(directoryPublic, NameImage);
-                File.Save(rutaCompleta, ImageFormat.Png);
-
-
-
-                DataFisic DataFisicModel = new DataFisic();
-                DataFisicModel.CreatedAt = DateTime.Now;
-                DataFisicModel.IdClient = AppState.ClientActive.IdClient;
-                DataFisicModel.Inactive = false;
-                DataFisicModel.Title = TbTitle.Text;
-                DataFisicModel.Notes = TbNotes.Text;
-                DataFisicModel.Weight = float.Parse(TbPeso.Text);
-                DataFisicModel.Height = float.Parse(TbAltura.Text);
-
-                var DataFisicSave = this.gymsydb.Add(DataFisicModel);
-                this.gymsydb.SaveChanges();
-
-                if (DataFisicSave != null)
+                if (AddProgressClientPresenter.TituloUnico(TbTitle.Text))
                 {
-                    Models.Image ImageModel = new Models.Image();
-                    ImageModel.ImageUrl = NameImage;
-                    ImageModel.IdDataFisic = DataFisicSave.Entity.IdDataFisic;
-                    ImageModel.Inactive = false;
+                    string ruta_imagen = fileDialog.FileName;
+                    string title_dataFisic = TbTitle.Text;
+                    string notes_dataFisic = TbNotes.Text;
+                    float weight_dataFisic = float.Parse(TbPeso.Text);
+                    float height_dataFisic = float.Parse(TbAltura.Text);
 
-                    this.gymsydb.Add(ImageModel);
-                    this.gymsydb.SaveChanges();
+                    if (AddProgressClientPresenter.SaveProgress(title_dataFisic, notes_dataFisic, weight_dataFisic, height_dataFisic, ruta_imagen, extension_imagen))
+                    {
+                        MessageBox.Show("Se agrego Correctamente");
+                    } else
+                    {
+                        MessageBox.Show("A ocurrido un Error inesperado!");
+                    }
+                    
 
-
-                    MessageBox.Show("Se agrego Correctamente");
+                    this.ClearTextBox();
+                    MainView.navigationControl.Display(7, true);
+                } else
+                {
+                    MessageBox.Show("Ya existe un progreso con ese titulo.");
                 }
 
-                
-                this.ClearTextBox();
-                MainView.navigationControl.Display(7, true);
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                // Accede a la InnerException para obtener más detalles sobre el error
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine("Inner Exception Message: " + ex.InnerException.Message);
+                    Console.WriteLine("Inner Exception Stack Trace: " + ex.InnerException.StackTrace);
+                    // O cualquier otra acción que desees tomar para manejar el error
+                }
+                else
+                {
+                    Console.WriteLine("Error Message: " + ex.Message);
+                    Console.WriteLine("Stack Trace: " + ex.StackTrace);
+                    // O cualquier otra acción que desees tomar para manejar el error
+                }
             }
 
         }

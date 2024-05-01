@@ -136,10 +136,10 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Margin = new Padding(0);
-            sidebar.MaximumSize = new Size(260, 0);
-            sidebar.MinimumSize = new Size(70, 0);
+            sidebar.MaximumSize = new Size(297, 0);
+            sidebar.MinimumSize = new Size(80, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(260, 684);
+            sidebar.Size = new Size(297, 912);
             sidebar.TabIndex = 0;
             // 
             // panelAddAdmin
@@ -148,11 +148,12 @@
             panelAddAdmin.Controls.Add(button3);
             panelAddAdmin.Controls.Add(btnAddInstructor);
             panelAddAdmin.Controls.Add(btnAddAdmin);
-            panelAddAdmin.Location = new Point(0, 328);
-            panelAddAdmin.MaximumSize = new Size(260, 154);
-            panelAddAdmin.MinimumSize = new Size(260, 60);
+            panelAddAdmin.Location = new Point(0, 437);
+            panelAddAdmin.Margin = new Padding(3, 4, 3, 4);
+            panelAddAdmin.MaximumSize = new Size(297, 205);
+            panelAddAdmin.MinimumSize = new Size(297, 80);
             panelAddAdmin.Name = "panelAddAdmin";
-            panelAddAdmin.Size = new Size(260, 60);
+            panelAddAdmin.Size = new Size(297, 80);
             panelAddAdmin.TabIndex = 5;
             panelAddAdmin.Visible = false;
             // 
@@ -167,11 +168,11 @@
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(2, 106);
+            button3.Location = new Point(2, 141);
             button3.Margin = new Padding(0);
             button3.Name = "button3";
-            button3.Padding = new Padding(20, 0, 0, 0);
-            button3.Size = new Size(258, 39);
+            button3.Padding = new Padding(23, 0, 0, 0);
+            button3.Size = new Size(295, 52);
             button3.TabIndex = 2;
             button3.Text = "       Gestion";
             button3.TextAlign = ContentAlignment.MiddleLeft;
@@ -190,11 +191,11 @@
             btnAddInstructor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnAddInstructor.ForeColor = Color.White;
             btnAddInstructor.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddInstructor.Location = new Point(2, 65);
+            btnAddInstructor.Location = new Point(2, 87);
             btnAddInstructor.Margin = new Padding(0);
             btnAddInstructor.Name = "btnAddInstructor";
-            btnAddInstructor.Padding = new Padding(20, 0, 0, 0);
-            btnAddInstructor.Size = new Size(258, 39);
+            btnAddInstructor.Padding = new Padding(23, 0, 0, 0);
+            btnAddInstructor.Size = new Size(295, 52);
             btnAddInstructor.TabIndex = 1;
             btnAddInstructor.Text = "       Instructor";
             btnAddInstructor.TextAlign = ContentAlignment.MiddleLeft;
@@ -217,8 +218,8 @@
             btnAddAdmin.Location = new Point(2, 0);
             btnAddAdmin.Margin = new Padding(0);
             btnAddAdmin.Name = "btnAddAdmin";
-            btnAddAdmin.Padding = new Padding(18, 0, 0, 0);
-            btnAddAdmin.Size = new Size(260, 60);
+            btnAddAdmin.Padding = new Padding(21, 0, 0, 0);
+            btnAddAdmin.Size = new Size(297, 80);
             btnAddAdmin.TabIndex = 0;
             btnAddAdmin.Text = "    Add";
             btnAddAdmin.TextAlign = ContentAlignment.MiddleLeft;
@@ -232,11 +233,12 @@
             panelBtnAdd.Controls.Add(btnAdd);
             panelBtnAdd.Controls.Add(btnNavAddPlan);
             panelBtnAdd.Controls.Add(btnNavAddClient);
-            panelBtnAdd.Location = new Point(0, 329);
-            panelBtnAdd.MaximumSize = new Size(260, 154);
-            panelBtnAdd.MinimumSize = new Size(260, 60);
+            panelBtnAdd.Location = new Point(0, 439);
+            panelBtnAdd.Margin = new Padding(3, 4, 3, 4);
+            panelBtnAdd.MaximumSize = new Size(297, 205);
+            panelBtnAdd.MinimumSize = new Size(297, 80);
             panelBtnAdd.Name = "panelBtnAdd";
-            panelBtnAdd.Size = new Size(260, 60);
+            panelBtnAdd.Size = new Size(297, 80);
             panelBtnAdd.TabIndex = 2;
             panelBtnAdd.Visible = false;
             // 
@@ -255,8 +257,8 @@
             btnAdd.Location = new Point(2, -1);
             btnAdd.Margin = new Padding(0);
             btnAdd.Name = "btnAdd";
-            btnAdd.Padding = new Padding(18, 0, 0, 0);
-            btnAdd.Size = new Size(260, 60);
+            btnAdd.Padding = new Padding(21, 0, 0, 0);
+            btnAdd.Size = new Size(297, 80);
             btnAdd.TabIndex = 0;
             btnAdd.Text = "    Add";
             btnAdd.TextAlign = ContentAlignment.MiddleLeft;
@@ -276,11 +278,11 @@
             btnNavAddPlan.ForeColor = Color.White;
             btnNavAddPlan.Image = Properties.Resources.plan;
             btnNavAddPlan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavAddPlan.Location = new Point(2, 106);
+            btnNavAddPlan.Location = new Point(2, 141);
             btnNavAddPlan.Margin = new Padding(0);
             btnNavAddPlan.Name = "btnNavAddPlan";
-            btnNavAddPlan.Padding = new Padding(20, 0, 0, 0);
-            btnNavAddPlan.Size = new Size(258, 39);
+            btnNavAddPlan.Padding = new Padding(23, 0, 0, 0);
+            btnNavAddPlan.Size = new Size(295, 52);
             btnNavAddPlan.TabIndex = 2;
             btnNavAddPlan.Text = "       Plan";
             btnNavAddPlan.TextAlign = ContentAlignment.MiddleLeft;
@@ -300,11 +302,11 @@
             btnNavAddClient.ForeColor = Color.White;
             btnNavAddClient.Image = Properties.Resources.people_item;
             btnNavAddClient.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavAddClient.Location = new Point(2, 65);
+            btnNavAddClient.Location = new Point(2, 87);
             btnNavAddClient.Margin = new Padding(0);
             btnNavAddClient.Name = "btnNavAddClient";
-            btnNavAddClient.Padding = new Padding(20, 0, 0, 0);
-            btnNavAddClient.Size = new Size(258, 39);
+            btnNavAddClient.Padding = new Padding(23, 0, 0, 0);
+            btnNavAddClient.Size = new Size(295, 52);
             btnNavAddClient.TabIndex = 1;
             btnNavAddClient.Text = "       Client";
             btnNavAddClient.TextAlign = ContentAlignment.MiddleLeft;
@@ -320,13 +322,14 @@
             tableLayoutAdmin.Controls.Add(btnNavPaysAdmin, 0, 2);
             tableLayoutAdmin.Controls.Add(btnNavInstructorAdmin, 0, 1);
             tableLayoutAdmin.Controls.Add(btnNavDashAdmin, 0, 0);
-            tableLayoutAdmin.Location = new Point(0, 131);
+            tableLayoutAdmin.Location = new Point(0, 175);
+            tableLayoutAdmin.Margin = new Padding(3, 4, 3, 4);
             tableLayoutAdmin.Name = "tableLayoutAdmin";
             tableLayoutAdmin.RowCount = 3;
             tableLayoutAdmin.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutAdmin.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutAdmin.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutAdmin.Size = new Size(259, 192);
+            tableLayoutAdmin.Size = new Size(296, 256);
             tableLayoutAdmin.TabIndex = 3;
             tableLayoutAdmin.Visible = false;
             // 
@@ -343,12 +346,12 @@
             btnNavPaysAdmin.ForeColor = Color.White;
             btnNavPaysAdmin.Image = Properties.Resources.payments_item;
             btnNavPaysAdmin.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavPaysAdmin.Location = new Point(0, 128);
+            btnNavPaysAdmin.Location = new Point(0, 170);
             btnNavPaysAdmin.Margin = new Padding(0);
             btnNavPaysAdmin.Name = "btnNavPaysAdmin";
-            btnNavPaysAdmin.Padding = new Padding(10, 0, 0, 0);
+            btnNavPaysAdmin.Padding = new Padding(11, 0, 0, 0);
             btnNavPaysAdmin.RightToLeft = RightToLeft.No;
-            btnNavPaysAdmin.Size = new Size(259, 64);
+            btnNavPaysAdmin.Size = new Size(296, 86);
             btnNavPaysAdmin.TabIndex = 3;
             btnNavPaysAdmin.Text = "  Payments";
             btnNavPaysAdmin.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -368,12 +371,12 @@
             btnNavInstructorAdmin.ForeColor = Color.White;
             btnNavInstructorAdmin.Image = Properties.Resources.people_item;
             btnNavInstructorAdmin.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavInstructorAdmin.Location = new Point(0, 64);
+            btnNavInstructorAdmin.Location = new Point(0, 85);
             btnNavInstructorAdmin.Margin = new Padding(0);
             btnNavInstructorAdmin.Name = "btnNavInstructorAdmin";
-            btnNavInstructorAdmin.Padding = new Padding(20, 0, 0, 0);
+            btnNavInstructorAdmin.Padding = new Padding(23, 0, 0, 0);
             btnNavInstructorAdmin.RightToLeft = RightToLeft.No;
-            btnNavInstructorAdmin.Size = new Size(259, 64);
+            btnNavInstructorAdmin.Size = new Size(296, 85);
             btnNavInstructorAdmin.TabIndex = 2;
             btnNavInstructorAdmin.Text = "    Instructors";
             btnNavInstructorAdmin.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -396,9 +399,9 @@
             btnNavDashAdmin.Location = new Point(0, 0);
             btnNavDashAdmin.Margin = new Padding(0);
             btnNavDashAdmin.Name = "btnNavDashAdmin";
-            btnNavDashAdmin.Padding = new Padding(10, 0, 0, 0);
+            btnNavDashAdmin.Padding = new Padding(11, 0, 0, 0);
             btnNavDashAdmin.RightToLeft = RightToLeft.No;
-            btnNavDashAdmin.Size = new Size(259, 64);
+            btnNavDashAdmin.Size = new Size(296, 85);
             btnNavDashAdmin.TabIndex = 1;
             btnNavDashAdmin.Text = " Dashboard";
             btnNavDashAdmin.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -414,13 +417,14 @@
             tableLayout.Controls.Add(btnNavPayments, 0, 2);
             tableLayout.Controls.Add(btnNavClients, 0, 1);
             tableLayout.Controls.Add(btnNavDashboard, 0, 0);
-            tableLayout.Location = new Point(0, 136);
+            tableLayout.Location = new Point(0, 181);
+            tableLayout.Margin = new Padding(3, 4, 3, 4);
             tableLayout.Name = "tableLayout";
             tableLayout.RowCount = 3;
             tableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayout.Size = new Size(260, 192);
+            tableLayout.Size = new Size(297, 256);
             tableLayout.TabIndex = 1;
             tableLayout.Visible = false;
             // 
@@ -437,12 +441,12 @@
             btnNavPayments.ForeColor = Color.White;
             btnNavPayments.Image = Properties.Resources.payments_item;
             btnNavPayments.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavPayments.Location = new Point(0, 128);
+            btnNavPayments.Location = new Point(0, 170);
             btnNavPayments.Margin = new Padding(0);
             btnNavPayments.Name = "btnNavPayments";
-            btnNavPayments.Padding = new Padding(10, 0, 0, 0);
+            btnNavPayments.Padding = new Padding(11, 0, 0, 0);
             btnNavPayments.RightToLeft = RightToLeft.No;
-            btnNavPayments.Size = new Size(260, 64);
+            btnNavPayments.Size = new Size(297, 86);
             btnNavPayments.TabIndex = 3;
             btnNavPayments.Text = "  Payments";
             btnNavPayments.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -462,12 +466,12 @@
             btnNavClients.ForeColor = Color.White;
             btnNavClients.Image = Properties.Resources.people_item;
             btnNavClients.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavClients.Location = new Point(0, 64);
+            btnNavClients.Location = new Point(0, 85);
             btnNavClients.Margin = new Padding(0);
             btnNavClients.Name = "btnNavClients";
-            btnNavClients.Padding = new Padding(20, 0, 0, 0);
+            btnNavClients.Padding = new Padding(23, 0, 0, 0);
             btnNavClients.RightToLeft = RightToLeft.No;
-            btnNavClients.Size = new Size(260, 64);
+            btnNavClients.Size = new Size(297, 85);
             btnNavClients.TabIndex = 2;
             btnNavClients.Text = "    Clients";
             btnNavClients.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -490,9 +494,9 @@
             btnNavDashboard.Location = new Point(0, 0);
             btnNavDashboard.Margin = new Padding(0);
             btnNavDashboard.Name = "btnNavDashboard";
-            btnNavDashboard.Padding = new Padding(10, 0, 0, 0);
+            btnNavDashboard.Padding = new Padding(11, 0, 0, 0);
             btnNavDashboard.RightToLeft = RightToLeft.No;
-            btnNavDashboard.Size = new Size(260, 64);
+            btnNavDashboard.Size = new Size(297, 85);
             btnNavDashboard.TabIndex = 1;
             btnNavDashboard.Text = "  Dashboard";
             btnNavDashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -507,13 +511,14 @@
             tableLayoutClient.Controls.Add(btnNavPaysClient, 0, 2);
             tableLayoutClient.Controls.Add(btnNavProgress, 0, 1);
             tableLayoutClient.Controls.Add(btnNavAboutme, 0, 0);
-            tableLayoutClient.Location = new Point(0, 132);
+            tableLayoutClient.Location = new Point(0, 176);
+            tableLayoutClient.Margin = new Padding(3, 4, 3, 4);
             tableLayoutClient.Name = "tableLayoutClient";
             tableLayoutClient.RowCount = 3;
             tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutClient.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutClient.Size = new Size(257, 192);
+            tableLayoutClient.Size = new Size(294, 256);
             tableLayoutClient.TabIndex = 4;
             tableLayoutClient.Visible = false;
             // 
@@ -530,12 +535,12 @@
             btnNavPaysClient.ForeColor = Color.White;
             btnNavPaysClient.Image = Properties.Resources.payments_item;
             btnNavPaysClient.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavPaysClient.Location = new Point(0, 128);
+            btnNavPaysClient.Location = new Point(0, 170);
             btnNavPaysClient.Margin = new Padding(0);
             btnNavPaysClient.Name = "btnNavPaysClient";
-            btnNavPaysClient.Padding = new Padding(10, 0, 0, 0);
+            btnNavPaysClient.Padding = new Padding(11, 0, 0, 0);
             btnNavPaysClient.RightToLeft = RightToLeft.No;
-            btnNavPaysClient.Size = new Size(257, 64);
+            btnNavPaysClient.Size = new Size(294, 86);
             btnNavPaysClient.TabIndex = 3;
             btnNavPaysClient.Text = "  Pays";
             btnNavPaysClient.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -555,12 +560,12 @@
             btnNavProgress.ForeColor = Color.White;
             btnNavProgress.Image = Properties.Resources.people_item;
             btnNavProgress.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNavProgress.Location = new Point(0, 64);
+            btnNavProgress.Location = new Point(0, 85);
             btnNavProgress.Margin = new Padding(0);
             btnNavProgress.Name = "btnNavProgress";
-            btnNavProgress.Padding = new Padding(20, 0, 0, 0);
+            btnNavProgress.Padding = new Padding(23, 0, 0, 0);
             btnNavProgress.RightToLeft = RightToLeft.No;
-            btnNavProgress.Size = new Size(257, 64);
+            btnNavProgress.Size = new Size(294, 85);
             btnNavProgress.TabIndex = 2;
             btnNavProgress.Text = "    Progress";
             btnNavProgress.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -583,9 +588,9 @@
             btnNavAboutme.Location = new Point(0, 0);
             btnNavAboutme.Margin = new Padding(0);
             btnNavAboutme.Name = "btnNavAboutme";
-            btnNavAboutme.Padding = new Padding(10, 0, 0, 0);
+            btnNavAboutme.Padding = new Padding(11, 0, 0, 0);
             btnNavAboutme.RightToLeft = RightToLeft.No;
-            btnNavAboutme.Size = new Size(257, 64);
+            btnNavAboutme.Size = new Size(294, 85);
             btnNavAboutme.TabIndex = 1;
             btnNavAboutme.Text = " About me";
             btnNavAboutme.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -598,8 +603,9 @@
             panel3.Controls.Add(label1);
             panel3.ForeColor = SystemColors.ActiveCaption;
             panel3.Location = new Point(0, 1);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(259, 70);
+            panel3.Size = new Size(296, 93);
             panel3.TabIndex = 1;
             // 
             // label1
@@ -608,9 +614,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(19, 14);
+            label1.Location = new Point(22, 19);
             label1.Name = "label1";
-            label1.Size = new Size(121, 41);
+            label1.Size = new Size(148, 50);
             label1.TabIndex = 1;
             label1.Text = "GYMSY";
             // 
@@ -623,10 +629,10 @@
             panelNavUser.Controls.Add(PimagenPerson);
             panelNavUser.Controls.Add(BtnUserAvatar);
             panelNavUser.Dock = DockStyle.Bottom;
-            panelNavUser.Location = new Point(0, 561);
+            panelNavUser.Location = new Point(0, 748);
             panelNavUser.Margin = new Padding(0);
             panelNavUser.Name = "panelNavUser";
-            panelNavUser.Size = new Size(260, 123);
+            panelNavUser.Size = new Size(297, 164);
             panelNavUser.TabIndex = 2;
             // 
             // btnNavSignout
@@ -638,10 +644,10 @@
             btnNavSignout.FlatStyle = FlatStyle.Flat;
             btnNavSignout.ForeColor = SystemColors.ButtonFace;
             btnNavSignout.Image = Properties.Resources.logout_item;
-            btnNavSignout.Location = new Point(220, 41);
+            btnNavSignout.Location = new Point(251, 55);
             btnNavSignout.Margin = new Padding(0);
             btnNavSignout.Name = "btnNavSignout";
-            btnNavSignout.Size = new Size(27, 43);
+            btnNavSignout.Size = new Size(31, 57);
             btnNavSignout.TabIndex = 3;
             btnNavSignout.UseVisualStyleBackColor = true;
             btnNavSignout.Click += btnNavSignout_Click;
@@ -653,9 +659,9 @@
             LabelNavRol.FlatStyle = FlatStyle.Flat;
             LabelNavRol.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LabelNavRol.ForeColor = Color.FromArgb(9, 0, 20);
-            LabelNavRol.Location = new Point(76, 74);
+            LabelNavRol.Location = new Point(87, 99);
             LabelNavRol.Name = "LabelNavRol";
-            LabelNavRol.Size = new Size(82, 15);
+            LabelNavRol.Size = new Size(102, 20);
             LabelNavRol.TabIndex = 2;
             LabelNavRol.Text = "INSTRUCTOR";
             // 
@@ -668,10 +674,10 @@
             btnNavSettings.FlatStyle = FlatStyle.Flat;
             btnNavSettings.ForeColor = SystemColors.ButtonFace;
             btnNavSettings.Image = Properties.Resources.setting_item;
-            btnNavSettings.Location = new Point(186, 41);
+            btnNavSettings.Location = new Point(213, 55);
             btnNavSettings.Margin = new Padding(0);
             btnNavSettings.Name = "btnNavSettings";
-            btnNavSettings.Size = new Size(33, 43);
+            btnNavSettings.Size = new Size(38, 57);
             btnNavSettings.TabIndex = 1;
             btnNavSettings.UseVisualStyleBackColor = true;
             btnNavSettings.Click += btnNavSettings_Click;
@@ -687,9 +693,10 @@
             PimagenPerson.BorderSize = 2;
             PimagenPerson.ErrorImage = Properties.Resources.gorilla_avatar;
             PimagenPerson.GradientAngle = 50F;
-            PimagenPerson.Location = new Point(34, 37);
+            PimagenPerson.Location = new Point(39, 49);
+            PimagenPerson.Margin = new Padding(3, 4, 3, 4);
             PimagenPerson.Name = "PimagenPerson";
-            PimagenPerson.Size = new Size(60, 60);
+            PimagenPerson.Size = new Size(69, 69);
             PimagenPerson.SizeMode = PictureBoxSizeMode.Zoom;
             PimagenPerson.TabIndex = 1;
             PimagenPerson.TabStop = false;
@@ -706,10 +713,10 @@
             BtnUserAvatar.ForeColor = Color.White;
             BtnUserAvatar.Image = Properties.Resources.gorilla_avatar;
             BtnUserAvatar.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnUserAvatar.Location = new Point(2, 22);
+            BtnUserAvatar.Location = new Point(2, 29);
             BtnUserAvatar.Margin = new Padding(0);
             BtnUserAvatar.Name = "BtnUserAvatar";
-            BtnUserAvatar.Size = new Size(162, 75);
+            BtnUserAvatar.Size = new Size(185, 100);
             BtnUserAvatar.TabIndex = 0;
             BtnUserAvatar.TabStop = false;
             BtnUserAvatar.Text = "Barco1";
@@ -738,8 +745,8 @@
             mainWrapper.Location = new Point(0, 0);
             mainWrapper.Margin = new Padding(0);
             mainWrapper.Name = "mainWrapper";
-            mainWrapper.Padding = new Padding(260, 0, 0, 0);
-            mainWrapper.Size = new Size(1348, 684);
+            mainWrapper.Padding = new Padding(297, 0, 0, 0);
+            mainWrapper.Size = new Size(1541, 912);
             mainWrapper.TabIndex = 0;
             // 
             // navbar
@@ -749,12 +756,12 @@
             navbar.Controls.Add(panelNavRight);
             navbar.Controls.Add(panelNotifications);
             navbar.Dock = DockStyle.Top;
-            navbar.Location = new Point(260, 0);
+            navbar.Location = new Point(297, 0);
             navbar.Margin = new Padding(0);
-            navbar.MaximumSize = new Size(0, 133);
-            navbar.MinimumSize = new Size(0, 70);
+            navbar.MaximumSize = new Size(0, 177);
+            navbar.MinimumSize = new Size(0, 93);
             navbar.Name = "navbar";
-            navbar.Size = new Size(1088, 71);
+            navbar.Size = new Size(1244, 95);
             navbar.TabIndex = 0;
             // 
             // panel5
@@ -766,7 +773,7 @@
             panel5.Location = new Point(0, 0);
             panel5.Margin = new Padding(0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1088, 71);
+            panel5.Size = new Size(1244, 95);
             panel5.TabIndex = 2;
             panel5.Paint += panel5_Paint;
             // 
@@ -777,9 +784,10 @@
             Panel1.Controls.Add(label8);
             Panel1.Controls.Add(LabelAmuntWallet);
             Panel1.Controls.Add(BtnNavWallet);
-            Panel1.Location = new Point(740, 0);
+            Panel1.Location = new Point(847, 0);
+            Panel1.Margin = new Padding(3, 4, 3, 4);
             Panel1.Name = "Panel1";
-            Panel1.Size = new Size(348, 72);
+            Panel1.Size = new Size(398, 96);
             Panel1.TabIndex = 0;
             // 
             // label8
@@ -787,9 +795,9 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.Transparent;
-            label8.Location = new Point(55, 7);
+            label8.Location = new Point(63, 9);
             label8.Name = "label8";
-            label8.Size = new Size(42, 21);
+            label8.Size = new Size(54, 28);
             label8.TabIndex = 3;
             label8.Text = "Total";
             // 
@@ -799,9 +807,9 @@
             LabelAmuntWallet.BackColor = Color.Transparent;
             LabelAmuntWallet.Font = new Font("Segoe UI", 22F, FontStyle.Bold, GraphicsUnit.Point);
             LabelAmuntWallet.ForeColor = Color.White;
-            LabelAmuntWallet.Location = new Point(73, 21);
+            LabelAmuntWallet.Location = new Point(83, 28);
             LabelAmuntWallet.Name = "LabelAmuntWallet";
-            LabelAmuntWallet.Size = new Size(138, 41);
+            LabelAmuntWallet.Size = new Size(171, 50);
             LabelAmuntWallet.TabIndex = 2;
             LabelAmuntWallet.Text = "$ 250.4K";
             // 
@@ -812,9 +820,10 @@
             BtnNavWallet.FlatStyle = FlatStyle.Flat;
             BtnNavWallet.ForeColor = Color.Transparent;
             BtnNavWallet.Image = Properties.Resources.wallet_free;
-            BtnNavWallet.Location = new Point(270, 0);
+            BtnNavWallet.Location = new Point(309, 0);
+            BtnNavWallet.Margin = new Padding(3, 4, 3, 4);
             BtnNavWallet.Name = "BtnNavWallet";
-            BtnNavWallet.Size = new Size(78, 72);
+            BtnNavWallet.Size = new Size(89, 96);
             BtnNavWallet.TabIndex = 0;
             BtnNavWallet.UseVisualStyleBackColor = false;
             BtnNavWallet.Click += BtnNavWallet_Click;
@@ -826,10 +835,10 @@
             panelNavRight.Controls.Add(btnWalletNav);
             panelNavRight.Controls.Add(panel2);
             panelNavRight.ForeColor = Color.White;
-            panelNavRight.Location = new Point(4015, 0);
+            panelNavRight.Location = new Point(5833, 0);
             panelNavRight.Margin = new Padding(0);
             panelNavRight.Name = "panelNavRight";
-            panelNavRight.Size = new Size(348, 71);
+            panelNavRight.Size = new Size(398, 95);
             panelNavRight.TabIndex = 0;
             // 
             // btnWalletNav
@@ -842,9 +851,10 @@
             btnWalletNav.FlatAppearance.MouseOverBackColor = Color.DarkOrange;
             btnWalletNav.FlatStyle = FlatStyle.Flat;
             btnWalletNav.Image = Properties.Resources.wallet_free;
-            btnWalletNav.Location = new Point(287, 0);
+            btnWalletNav.Location = new Point(328, 0);
+            btnWalletNav.Margin = new Padding(3, 4, 3, 4);
             btnWalletNav.Name = "btnWalletNav";
-            btnWalletNav.Size = new Size(61, 72);
+            btnWalletNav.Size = new Size(70, 96);
             btnWalletNav.TabIndex = 4;
             btnWalletNav.TextImageRelation = TextImageRelation.TextAboveImage;
             btnWalletNav.UseVisualStyleBackColor = false;
@@ -857,9 +867,10 @@
             panel2.Controls.Add(label2);
             panel2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             panel2.ForeColor = Color.White;
-            panel2.Location = new Point(3, 2);
+            panel2.Location = new Point(3, 3);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(283, 69);
+            panel2.Size = new Size(323, 92);
             panel2.TabIndex = 1;
             // 
             // label5
@@ -867,9 +878,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(143, 27);
+            label5.Location = new Point(163, 36);
             label5.Name = "label5";
-            label5.Size = new Size(93, 32);
+            label5.Size = new Size(113, 41);
             label5.TabIndex = 3;
             label5.Text = "$ 155K";
             // 
@@ -878,9 +889,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(148, 8);
+            label4.Location = new Point(169, 11);
             label4.Name = "label4";
-            label4.Size = new Size(59, 21);
+            label4.Size = new Size(74, 28);
             label4.TabIndex = 2;
             label4.Text = "TOTAL/";
             // 
@@ -889,9 +900,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(42, 9);
+            label3.Location = new Point(48, 12);
             label3.Name = "label3";
-            label3.Size = new Size(47, 21);
+            label3.Size = new Size(59, 28);
             label3.TabIndex = 1;
             label3.Text = "MES/";
             // 
@@ -900,9 +911,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(35, 28);
+            label2.Location = new Point(40, 37);
             label2.Name = "label2";
-            label2.Size = new Size(86, 32);
+            label2.Size = new Size(104, 41);
             label2.TabIndex = 0;
             label2.Text = "$ 4.5K";
             // 
@@ -911,10 +922,11 @@
             panelNotifications.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelNotifications.BackColor = Color.White;
             panelNotifications.Controls.Add(label6);
-            panelNotifications.Location = new Point(4008, 70);
-            panelNotifications.MaximumSize = new Size(0, 62);
+            panelNotifications.Location = new Point(5825, 93);
+            panelNotifications.Margin = new Padding(3, 4, 3, 4);
+            panelNotifications.MaximumSize = new Size(0, 83);
             panelNotifications.Name = "panelNotifications";
-            panelNotifications.Size = new Size(0, 10);
+            panelNotifications.Size = new Size(0, 13);
             panelNotifications.TabIndex = 1;
             // 
             // label6
@@ -922,9 +934,9 @@
             label6.AutoSize = true;
             label6.FlatStyle = FlatStyle.Flat;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(46, 21);
+            label6.Location = new Point(53, 28);
             label6.Name = "label6";
-            label6.Size = new Size(255, 21);
+            label6.Size = new Size(321, 28);
             label6.TabIndex = 0;
             label6.Text = "No tienes notificaciones pendientes";
             // 
@@ -964,16 +976,17 @@
             // 
             // MainView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(1348, 684);
+            ClientSize = new Size(1541, 912);
             ControlBox = false;
             Controls.Add(sidebar);
             Controls.Add(mainWrapper);
             ForeColor = SystemColors.ActiveCaptionText;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MinimumSize = new Size(1364, 698);
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1556, 915);
             Name = "MainView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GYMSY";
