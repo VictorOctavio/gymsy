@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using gymsy.Utilities;
+using System.Runtime.CompilerServices;
 
 namespace gymsy.App.Presenters
 {
@@ -44,7 +45,7 @@ namespace gymsy.App.Presenters
                 Birthday = pBirthday, //DPFechaNacimiento.Value,
                 Gender = pSexo,
                 RolId = 3,//3 es el rol de cliente
-                Inactive = true
+                Inactive = true // ya que aun no ha pagado
             };
 
             //se guarda en la base de datos, primero la persona por la relacion de la llave foranea
