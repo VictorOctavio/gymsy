@@ -425,7 +425,7 @@ namespace gymsy.UserControls
                     int IdClientSelected = int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
 
                     AppState.auxIdClient = IdClientSelected;
-                    MainView.navigationControl.Display(7);
+                    MainView.navigationControl.Display(7, true);
                 }
             } catch (Exception ex)
             {
