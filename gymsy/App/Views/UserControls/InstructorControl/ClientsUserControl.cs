@@ -425,16 +425,24 @@ namespace gymsy.UserControls
 
         private void rjButton2_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                if (DGUsers.SelectedRows.Count > 0)
+                {
+                    //se guarda su indice
+                    this.indexRowSelect = DGUsers.SelectedRows[0].Index;
 
-            //se guarda su indice
-            this.indexRowSelect = DGUsers.SelectedRows[0].Index;
+                    // Accede a la celda "id" del cliente
 
-            // Accede a la celda "id" del cliente
+                    int IdClientSelected = int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
 
-            int IdClientSelected = int.Parse(DGUsers.Rows[this.indexRowSelect].Cells["IdClient"].Value.ToString());
-
-            AppState.auxIdClient = IdClientSelected;
-            MainView.navigationControl.Display(7);
+                    AppState.auxIdClient = IdClientSelected;
+                    MainView.navigationControl.Display(7);
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public override void Refresh()
