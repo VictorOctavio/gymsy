@@ -17,7 +17,7 @@ namespace gymsy.UserControls.ClientControls
     public partial class ProgressClientControl : UserControl
     {
 
-        private GymsyDbContext gymsydb = GymsyContext.GymsyContextDB;
+       
   
         public ProgressClientControl()
         {
