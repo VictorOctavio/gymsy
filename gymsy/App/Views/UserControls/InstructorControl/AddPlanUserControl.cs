@@ -102,7 +102,7 @@ namespace gymsy.UserControls
                             {
                                 plan.Description = TBDescripcion.Text;
                                 plan.Price = float.Parse(TBPrecio.Text);
-
+                            
                                 this.dbContext.SaveChanges();
 
                                 //Se actualiza el plan en la base de datos
@@ -141,12 +141,13 @@ namespace gymsy.UserControls
                                 TrainingPlan plan = new TrainingPlan();
                                 plan.Description = TBDescripcion.Text;
                                 plan.Price = float.Parse(TBPrecio.Text);
+                                plan.Inactive = false;
                                 plan.IdInstructor = AppState.Instructor.IdInstructor;
 
                                 this.dbContext.TrainingPlans.Add(plan);
                                 this.dbContext.SaveChanges();
 
-                                DGPlan.Rows.Add(plan.IdTrainingPlan, TBPrecio.Text, TBDescripcion.Text);
+                                DGPlan.Rows.Add(plan.IdTrainingPlan, TBPrecio.Text, TBDescripcion.Text, false);
 
                                 MessageBox.Show("Plan guardado correctamente.");
 
