@@ -317,6 +317,7 @@ namespace gymsy.UserControls
                                 plan.Inactive = deleteOrAcitive;
                             }
 
+                            this.dbContext.SaveChanges();
 
                             //Se limpia el indice
                             this.indexRowSelect = 0;
@@ -464,7 +465,7 @@ namespace gymsy.UserControls
             else
             {
                 this.isModeVerNoDelete = false;
-                BEliminarPlan.Text = "Activar Cliente";
+                BEliminarPlan.Text = "Activar Plan";
                 BEliminarPlan.BackColor = Color.FromArgb(255, 140, 0);
                 BEliminarPlan.IconChar = FontAwesome.Sharp.IconChar.Dumbbell;
 
